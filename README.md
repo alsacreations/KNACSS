@@ -1,5 +1,6 @@
 KNACSS
 ======
+http://www.knacss.com
 
 KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. 
 
