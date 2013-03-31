@@ -1,0 +1,197 @@
+
+/* ----------------------------- */
+/* ==desktop and retina medias   */
+/* ----------------------------- */
+
+@media (min-width: 641px) {
+/* here go rules for big resources and big screens like: background-images, font-faces, etc. */
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+/* Style adjustments for retina devices */
+}
+
+/* ---------------------------------- */
+/* ==Responsive large / medium / tiny */
+/* ---------------------------------- */
+
+@media (min-width: 1280px) {
+
+	/* layouts for large (l) screens */
+	.large-hidden,
+	.tablet-hidden { display: none !important; }
+	.large-visible { display: block !important; }
+	.large-no-float {float: none; }
+	.large-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.large-row {
+		display: table;
+		table-layout: fixed;
+		width: 100% !important;
+	}
+	.large-col {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	/* widths for large (l) screens */
+	.large-w25 { width: 25% !important; }
+	.large-w33 { width: 33.3333% !important; }
+	.large-w50 { width: 50% !important; }
+	.large-w66 { width: 66.6666% !important; }
+	.large-w75 { width: 75% !important; }
+	.large-w100 {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+
+	/* margins for large (l) screens */
+	.large-ma0,
+	.large-man { margin: 0 !important; }
+}
+
+@media (max-width: 768px) {
+
+	/* quick tablet reset */
+	.w60,
+	.w66,
+	.w70,
+	.w75,
+	.w80,
+	.w90,
+	.w100,
+	.w600p,
+	.w700p,
+	.w800p,
+	.w960p,
+	.mw960p,
+	.medium-wauto { width: auto; } 
+
+	/* layouts for medium (m) screens */
+	.medium-hidden,
+	.tablet-hidden { display: none !important; }
+	.medium-visible { display: block !important; }
+	.medium-no-float {float: none; }
+	.medium-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.medium-row {
+		display: table !important;
+		table-layout: fixed !important;
+		width: 100% !important;
+	}
+	.medium-col {
+		display: table-cell !important;
+		vertical-align: top !important;
+	}
+
+	/* widths for medium (m) screens */
+	.medium-w25 { width: 25% !important; }
+	.medium-w33 { width: 33.3333% !important; }
+	.medium-w50 { width: 50% !important; }
+	.medium-w66 { width: 66.6666% !important; }
+	.medium-w75 { width: 75% !important; }
+	.medium-w100 {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+	/* margins for medium (m) screens */
+	.medium-ma0,
+	.medium-man { margin: 0 !important; }
+
+	/* Responsive grids */
+	.grid4 > * {width: 49% !important; } 
+	.grid4 > :first-child + * + * {margin-left: 0 !important;}
+	.grid6 > * {width: 32% !important; }  
+	.grid6 > :first-child + * + * + * {margin-left: 0 !important;}
+}
+
+@media (max-width: 640px) {
+
+	/* quick smartphone reset */
+	.mod,
+	.item,
+	.col,
+	fieldset {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+	.w30,
+	.w33, 
+	.w40,
+	.w50,
+	.w300p,
+	.w400p,
+	.w500p {
+		width: auto;
+	}
+	.row { 
+		display: block !important;
+		width: 100% !important;
+	}
+
+	/* layouts for tiny (t) screens */
+	.tiny-hidden,
+	.phone-hidden { display: none !important; }
+	.tiny-visible { display: block !important; }
+	.tiny-no-float {float: none;}
+	.tiny-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.tiny-row {
+		display: table !important;
+		table-layout: fixed !important;
+		width: 100% !important;
+	}
+	.tiny-col {
+		display: table-cell !important;
+		vertical-align: top !important;
+	}
+	th,
+	td {
+		display: block !important;
+		width: auto !important;
+		text-align: left !important;
+	}
+	thead { display: none; }
+
+	/* widths for tiny (t) screens */
+	.tiny-w25 { width: 25% !important; }
+	.tiny-w33 { width: 33.3333% !important; }
+	.tiny-w50 { width: 50% !important; }
+	.tiny-w66 { width: 66.6666% !important; }
+	.tiny-w75 { width: 75% !important; }
+	.tiny-w100 { 
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+	/* margins for tiny (t) screens */
+	.tiny-ma0,
+	.tiny-man { margin: 0 !important; }
+}

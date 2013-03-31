@@ -1,0 +1,24 @@
+
+/* ----------------------------- */
+/* ==grids                       */
+/* ----------------------------- */
+
+/* equal grids with 2% gutter */
+[class*=grid] > * {float: left; } /* direct childrens are floating */
+[class*=grid] > * + * { margin-left: 2%; } /* here's the gutter */
+.grid2 > * { width: 49%; }
+.grid3 > * { width: 32%; }
+.grid4 > * { width: 23.5%; }
+.grid5 > * { width: 18.4%; }
+.grid6 > * { width: 15%; }
+
+/* unequal grids (1-2, 2-1, 1-3 and 3-1) */
+.grid2-1 > *:first-child,
+.grid1-2 > * + * { width: 66%; }
+.grid1-2 > *:first-child,
+.grid2-1 > * + * { width: 32%; }
+.grid1-3 > *:first-child,
+.grid3-1 > * + * { width: 23.5%; }
+.grid3-1 > *:first-child,
+.grid1-3 > * + * { width: 74.5%; }
+
