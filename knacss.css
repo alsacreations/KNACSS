@@ -20,7 +20,7 @@ body {
 }
 
 /* font-sizing for content */
-/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
+/* preserves vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
 p,
 ul,
 ol,
@@ -172,10 +172,10 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 div, textarea, table, td, th, code, pre, samp {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	     -o-hyphens: auto;
+	        hyphens: auto;
 }
 
 /* pictures */
@@ -215,8 +215,8 @@ body > script {display: none !important;}
 /* switching box model for all elements */
 * {
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 /* float layout */
@@ -262,56 +262,56 @@ body > script {display: none !important;}
 
 /* flexbox layout */
 .flex {
-	display : -webkit-box;
-	display : -moz-box;
+	display: -webkit-box;
+	display: -moz-box;
 	display: -ms-flexbox;
-	display : -webkit-flex;
-	display : flex;
+	display: -webkit-flex;
+	display: flex;
 }
 .flex-h {
 	-webkit-box-orient: horizontal;
-	-moz-box-orient: horizontal;
+	   -moz-box-orient: horizontal;
 	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 }
 .flex-v {
 	-webkit-box-orient: vertical;
-	-moz-box-orient: vertical;
+	   -moz-box-orient: vertical;
 	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 .flex-fluid {
 	-moz-box-flex: 1;
 	-webkit-flex: 1;
-	-moz-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+	   -moz-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 }
 .flex-start {
 	-webkit-box-ordinal-group: -1;
 	-moz-box-ordinal-group: 0;
-	-ms-flex-order : -1;
-	-webkit-order : -1;
-	-moz-order : -1;
-	order : -1;
+	-ms-flex-order: -1;
+	-webkit-order: -1;
+	   -moz-order: -1;
+	        order: -1;
 }
 .flex-mid {
 	-webkit-box-ordinal-group: 1;
 	-moz-box-ordinal-group: 1;
-	-ms-flex-order : 1;
-	-webkit-order : 1;
-	-moz-order : 1;
-	order : 1;
+	-ms-flex-order: 1;
+	-webkit-order: 1;
+	   -moz-order: 1;
+	        order: 1;
 }
 .flex-end {
 	-webkit-box-ordinal-group: 42;
 	-moz-box-ordinal-group: 42;
-	-ms-flex-order : 42;
-	-webkit-order : 42;
-	-moz-order : 42;
-	order : 42;
+	-ms-flex-order: 42;
+	-webkit-order: 42;
+	   -moz-order: 42;
+	        order: 42;
 }
 
 /* alignments (blocks and inline) */
@@ -342,7 +342,7 @@ img.left, img.right {
 .txtright  { text-align: right; }
 .txtcenter { text-align: center; }
 
-/* blocks widths (percentage and pixels) */
+/* blocks widths (percentages and pixels) */
 .w10    { width: 10%; }
 .w20    { width: 20%; }
 .w25    { width: 25%; }
@@ -374,7 +374,7 @@ img.left, img.right {
 /* spacing helpers
 p,m = padding,margin
 a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n = small(10px),medium(20px),large(30px),none(0)
+s,m,l,n,0 = small(10px),medium(20px),large(30px), zero or none(0)
 source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 */
 .m-reset, .ma0 { margin: 0 !important; }
@@ -473,7 +473,7 @@ textarea {
 /* ==iefix */
 /* ----------------------------- */
 
-/* haslayout for IE6/IE7 */
+/* hasLayout for IE6/IE7 */
 .ie67 .clearfix,
 .ie67 .line,
 .ie67 .mod,
@@ -483,7 +483,7 @@ textarea {
 }
 
 /* inline-block and table-cell for IE6/IE7 */
-/* warning: .col needs width on IE6/IE7 */
+/* warning: .col needs a width on IE6/IE7 */
 .ie67 .btn,
 .ie67 .col,
 .ie67 .inbl {
