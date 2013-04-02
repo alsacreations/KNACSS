@@ -1,0 +1,35 @@
+/* ----------------------------- */
+/* ==IEfix 						 */
+/* ----------------------------- */
+
+.ie67 {
+	/* haslayout for IE6/IE7 */
+	.clearfix, .line, .mod, .row, .col {
+		zoom: 1;
+	}
+
+	/**
+	 * inline-block and table-cell for IE6/IE7
+	 * warning: .col needs width on IE6/IE7 
+	 */
+	.btn, .col {
+		display: inline;
+		zoom: 1;
+	}
+
+	/**
+	 * Add a slash at the end of this comment
+	 * to enable box-sizing for IE6/IE7
+	 * @source https://github.com/Schepp/box-sizing-polyfill 
+	 *
+
+	* {
+		behavior: url(/js/boxsizing.htc);
+	}	
+
+	/**/
+}
+
+.ie8 img {
+	width: auto; /* @bugfix for IE8 */
+}
