@@ -1,0 +1,67 @@
+/* ----------------------------- */
+/* ==Mobile 					 */
+/* ----------------------------- */
+
+/* quick tablet reset */
+@include breakpoint(medium) {
+	
+	/* responsive widths for medium (m) screens, like tablets */
+	.m25 { width: 25%; }
+	.m33 { width: 33.3333%; }
+	.m50 { width: 50%; }
+	.m66 { width: 66.6666%; }
+	.m75 { width: 75%; }
+	.m100 {
+		display: block  !important;
+		float: none     !important;
+		clear: none     !important;
+		width: auto     !important;
+		margin-left: 0  !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+}
+
+/* quick smartphone reset */
+@include breakpoint(small) {
+	.mod,
+	.item,
+	.col,
+	fieldset {
+		display: block  !important;
+		float: none     !important;
+		clear: none     !important;
+		width: auto     !important;
+		margin-left: 0  !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+
+	/* responsive widths for tiny (t) screens, like smartphones */
+	.t25 { width: 25%; }
+	.t33 { width: 33.3333%; }
+	.t50 { width: 50%; }
+	.t66 { width: 66.6666%; }
+	.t75 { width: 75%; }
+	.t100 { 
+		display: block  !important;
+		float: none 	!important;
+		clear: none 	!important;
+		width: auto 	!important;
+		margin-left: 0  !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+
+	th,
+	td {
+		display: block   !important;
+		width: auto 	 !important;
+		text-align: left !important;
+	}
+	thead { display: none; }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+/* Style adjustments for retina devices */
+}

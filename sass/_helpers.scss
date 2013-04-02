@@ -1,0 +1,143 @@
+/* ----------------------------- */
+/* ==Helpers                     */
+/* ----------------------------- */
+
+/* ********* *\
+ * Variables *
+\* ********* */
+/* Define your variables here */
+
+
+
+/* ****** *\
+ * Mixins *
+\* ****** */
+
+/**
+ * REM mixin with PX fallback 
+ * @include rem('font-size', 14px) outputs:
+ * font-size: 14px;
+ * font-size: 1.4rem;
+ *
+ * The mixin relies on a baseline of 10px
+ */
+@mixin rem($property, $values) {
+  $px : ();
+  $rem: (); 
+  
+  @each $value in $values {
+   
+    @if $value == 0 or $value == auto { 
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+    
+    @else { 
+
+      $unit: unit($value);   
+      $val: $value / ($value * 0 + 1);
+
+      @if $unit == "px" { 
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+      
+      @if $unit == "rem" { 
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  
+  #{$property}: $px; 
+  #{$property}: $rem;
+}
+
+
+/**
+ * Mixin handling media queries breakpoints 
+ * Usage:
+ * @include breakpoint(small) { ... }
+ * Can be used INSIDE a rule
+ */
+@mixin breakpoint($point) {
+    @if $point == small {
+        @media (max-width: 45em) { @content; }
+    }
+    @if $point == medium {
+        @media (max-width: 55em) { @content; }
+    }
+    @if $point == large {
+        @media (min-width: 55em) { @content; } 
+    }
+}
+
+
+/** 
+ * Mixin making easier absolute/fixed positioning 
+ * Usage:
+ * @include position(0, 0, 0, 0, absolute);
+ * Currently unused. Only here for posterity.
+ */
+@mixin position($top: auto, $right: auto, $bottom: auto, $left: auto, $position: absolute) {
+	top      : $top;
+	right    : $right;
+	bottom   : $bottom;
+	left     : $left;
+	position : $position;
+}
+
+
+/* ******* *\
+ * Helpers *
+\* ******* */
+
+/**
+ * 1. Include this rule to trigger hasLayout and contain floats.
+ * 2. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 3. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix {
+	*zoom: 1;           /* 1 */
+
+	&:after, &:before {
+		content : ' ';  /* 2 */
+		display: table; /* 3 */
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* Hidden yet accessible content */
+.visually-hidden { 
+	position: absolute !important; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height :  1px !important; 
+	width  :  1px !important; 
+	margin : -1px !important; 
+	padding:  0   !important; 
+	border: none; 
+}
+
+.desktop-hidden { /* Hidden on desktop */
+	@include breakpoint(large) {
+		display: none;
+	}
+}  
+.mobile-hidden  { /* Hidden on mobile */
+	@include breakpoint(small) {
+		display: none;
+	} 
+}					
+.tablet-hidden  { /* Hidden on tablets */
+	@include breakpoint(medium) {
+		display: none;
+	} 
+} 	

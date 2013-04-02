@@ -1,0 +1,168 @@
+/* ----------------------------- */
+/* ==Reset                       */
+/* ----------------------------- */
+
+/**
+ * Base font-size
+ * corresponds to 10px 
+ * adapted to rem unit 
+ */
+html {
+	font-size: 62.5%;
+	/* Orientation iOS font-size fix */
+	@media (orientation: landscape) and (max-device-width: 768px) {
+		-webkit-text-size-adjust: 100%;
+	}
+}
+
+body {
+	background: white;
+	color: black;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	@include rem('font-size', 14px);
+	line-height: 1.5; /* adapt to your design */
+}
+
+/**
+ * Font-sizing for content
+ * Preserve vertical rythm
+ * Thanks to http://soqr.fr/vertical-rhythm/ 
+ */
+p, ul, ol, dl,
+blockquote, pre,
+td, th, 
+label, textarea,
+caption, details, figure, 
+hgroup {
+	@include rem('font-size', 14px);
+	line-height: 1.5;
+	margin: .75em 0 0;
+}
+
+/**
+ * Titles from h1 (.h1-like) to h6 (.h6-like)
+ */
+
+headings() { font-weight: normal; }
+
+h1, .h1-like {
+	@include rem('font-size', 26px);
+	@include rem('line-height', 22.5px);
+}
+
+h2, .h2-like {
+	@include rem('font-size', 24px);
+	@include rem('line-height', 24.5px);
+}
+
+h3, .h3-like {
+	@include rem('font-size', 22px);
+	@include rem('line-height', 26.5px);
+}
+
+h4, .h4-like {
+	@include rem('font-size', 20px);
+	@include rem('line-height', 14.5px);
+}
+
+h5, .h5-like {
+	@include rem('font-size', 18px);
+	@include rem('line-height', 16.5px);
+}
+
+h6, .h6-like {
+	@include rem('font-size', 16px);
+	@include rem('line-height', 18.5px);
+}
+
+
+/**
+ * Alternate font-sizing 
+ * .smaller: 10px;
+ * .small  : 12px;
+ * .medium : 14px;
+ * .big    : 16px;
+ * .bigger : 18px;
+ * .biggest: 20px;
+ */
+.smaller { @include rem('font-size', 10px); }
+.small   { @include rem('font-size', 12px); }
+.medium  { @include rem('font-size', 14px); }
+.big     { @include rem('font-size', 16px); }
+.bigger  { @include rem('font-size', 18px); }
+.biggest { @include rem('font-size', 20px); }
+
+
+/* Soft reset */
+html, body,
+textarea, label
+figure {
+	margin: 0;
+	padding: 0;
+}
+ul, ol {
+	padding-left: 2em;
+}
+code, pre, samp {
+	white-space: pre-wrap;
+	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+}
+code  { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* Avoid top margins on first content element */
+p, ul, ol, dl,
+blockquote, pre,
+h1,h2, h3, h4, h5, h6 {
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+/* Avoid margins on nested elements */
+li {
+	p, ul, ol {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/* Max width */
+img, table, td, blockquote, code, pre, textarea, input, video {
+	max-width: 100%;
+}
+
+/* You shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+	word-wrap: break-word;
+	@include hyphens(auto);
+}
+
+/* Pictures */
+img {
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+}
+a img { border: 0; }
+
+/* Scripts */
+body > script { display: none !important; }
+
+/* Skip-links */
+.skip-links {
+	position: absolute;
+	
+	a {
+		position: absolute;
+		left: -9999px;
+		padding: 0.5em;
+		background: black;
+		color: white;
+		text-decoration: none;
+
+		&:focus {
+			position: static;
+		}
+	}
+}

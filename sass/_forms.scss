@@ -1,0 +1,20 @@
+/* ----------------------------- */
+/* ==Forms						 */
+/* ----------------------------- */
+form,
+fieldset {
+	border: none;
+}
+
+input,
+button,
+select,
+label,
+.btn {
+	vertical-align: middle; /* @bugfix alignment */
+}
+
+textarea {
+	resize: vertical;
+	font-family: inherit;
+}

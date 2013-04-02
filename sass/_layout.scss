@@ -1,0 +1,255 @@
+/* ----------------------------- */
+/* ==layout and modules          */
+/* ----------------------------- */
+
+/**
+ * Switching box-model for all elements 
+ * Content-box: width = width + padding + border
+ * Padding-box: width = width + padding
+ * Border-box : width = width (FUCK YEAH!)
+ * 1. Enables box-sizing on pseudo-elements as well
+ */
+*, 
+*:before, 
+*:after { /* 1 */
+	@include box-sizing(border-box);
+}
+
+/* Clearfix blocks that must contain floats */
+.line, .mod {
+	@extend .clearfix;
+}
+
+/* Clear blocks that needs to be placed under floats */
+.clear, .line, .row {
+	clear: both;
+}
+
+/**
+ * Float layout
+ * ------------
+ * Tutorial : http://knacss.com/demos/tutoriel.html 
+ */
+
+/* Module, contains floats (.item is the same) */
+.mod, .item { 
+	overflow: hidden;
+}
+
+/**
+ * Table layout
+ * ------------
+ */
+.row {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+
+	@include breakpoint(small) {
+		display: block !important;
+		width: 100% !important;
+	}
+}
+
+.row > *,
+.col {
+	display: table-cell;
+	vertical-align: top;
+}
+
+/**
+ * Alignments (blocks and inline)
+ * ------------------------------
+ */
+
+/* Left elements */
+   .left { float: left; }
+img.left { margin-right: 1em; }
+
+/* Right elements */
+   .right { float: right; }
+img.right {	margin-left: 1em; }
+
+img.left, 
+img.right {	margin-bottom: 5px; }
+
+.center    { margin-left: auto; margin-right: auto; }
+.txtleft   { text-align: left; }
+.txtright  { text-align: right; }
+.txtcenter { text-align: center; }
+
+/* Simply inline-block */
+.inbl {
+	@include inline-block(top); /* All browsers back to IE6 */
+	margin-right: -.25em;
+}
+
+/**
+ * Grids
+ * -----
+ */
+
+/* Equal grids with 2% gutter */
+[class*=grid] > * {float: left; } /* direct childrens are floating */
+[class*=grid] > * + * { margin-left: 2%; } /* here's the gutter */
+.grid2 > * { width: 49%; }
+.grid3 > * { width: 32%; }
+.grid4 > * { width: 23.5%; }
+.grid5 > * { width: 18.4%; }
+.grid6 > * { width: 15%; }
+
+/* Unequal grids (1-2, 2-1, 1-3 and 3-1) */
+.grid2-1 > *:first-child,
+.grid1-2 > * + * { width: 66%; }
+.grid1-2 > *:first-child,
+.grid2-1 > * + * { width: 32%; }
+.grid1-3 > *:first-child,
+.grid3-1 > * + * { width: 23.5%; }
+.grid3-1 > *:first-child,
+.grid1-3 > * + * { width: 74.5%; }
+
+/**
+ * Blocks widths (percentage and pixels) 
+ */
+.w10    { width: 10%; }
+.w20    { width: 20%; }
+.w25    { width: 25%; }
+.w30    { width: 30%; }
+.w33    { width: 33.333%; }
+.w40    { width: 40%; }
+.w50    { width: 50%; }
+.w60    { width: 60%; }
+.w66    { width: 66.666%; }
+.w70    { width: 70%; }
+.w75    { width: 75%; }
+.w80    { width: 80%; }
+.w90    { width: 90%; }
+.w100   { width: 100%; }
+
+.w50p   { width: 50px; }
+.w100p  { width: 100px; }
+.w150p  { width: 150px; }
+.w200p  { width: 200px; }
+.w300p  { width: 300px; }
+.w400p  { width: 400px; }
+.w500p  { width: 500px; }
+.w600p  { width: 600px; }
+.w700p  { width: 700px; }
+.w800p  { width: 800px; }
+.w960p  { width: 960px; }
+.mw960p { max-width: 960px; }
+
+/**
+ * Spacing helpers
+ * p = padding
+ * m = margin
+ * a = all
+ * t = top
+ * r = right
+ * b = bottom
+ * l = left
+ * s = small  (10px)
+ * m = medium (20px)
+ * l = large  (30px)
+ * n = none   (0)
+ * Source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
+ */
+.m-reset, .ma0 { margin: 0; }
+.p-reset, .pa0 { padding: 0; }
+.ma1, .mas { margin: 10px; }
+.ma2, .mam { margin: 20px; }
+.ma3, .mal { margin: 30px; }
+.pa1, .pas { padding: 10px; }
+.pa2, .pam { padding: 20px; }
+.pa3, .pal { padding: 30px; }
+
+.mt0, .mtn { margin-top: 0; }
+.mt1, .mts { margin-top: 10px; }
+.mt2, .mtm { margin-top: 20px; }
+.mt3, .mtl { margin-top: 30px; }
+.mr0, .mrn { margin-right: 0; }
+.mr1, .mrs { margin-right: 10px; }
+.mr2, .mrm { margin-right: 20px; }
+.mr3, .mrl { margin-right: 30px; }
+.mb0, .mbn { margin-bottom: 0; }
+.mb1, .mbs { margin-bottom: 10px; }
+.mb2, .mbm { margin-bottom: 20px; }
+.mb3, .mbl { margin-bottom: 30px; }
+.ml0, .mln { margin-left: 0; }
+.ml1, .mls { margin-left: 10px; }
+.ml2, .mlm { margin-left: 20px; }
+.ml3, .mll { margin-left: 30px; }
+
+.pt0, .ptn { padding-top: 0; }
+.pt1, .pts { padding-top: 10px; }
+.pt2, .ptm { padding-top: 20px; }
+.pt3, .ptl { padding-top: 30px; }
+.pr0, .prn { padding-right: 0; }
+.pr1, .prs { padding-right: 10px; }
+.pr2, .prm { padding-right: 20px; }
+.pr3, .prl { padding-right: 30px; }
+.pb0, .pbn { padding-bottom: 0; }
+.pb1, .pbs { padding-bottom: 10px; }
+.pb2, .pbm { padding-bottom: 20px; }
+.pb3, .pbl { padding-bottom: 30px; }
+.pl0, .pln { padding-left: 0; }
+.pl1, .pls { padding-left: 10px; }
+.pl2, .plm { padding-left: 20px; }
+.pl3, .pll { padding-left: 30px; }
+
+
+/**
+ * Flexbox layout 
+ */
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+.flex-h {
+	-webkit-box-orient: horizontal;
+	   -moz-box-orient: horizontal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.flex-v {
+	-webkit-box-orient: vertical;
+	   -moz-box-orient: vertical;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.flex-fluid {
+	-moz-box-flex: 1;
+	-webkit-flex:  1;
+	   -moz-flex:  1;
+	    -ms-flex:  1;
+	        flex:  1;
+}
+.flex-start {
+	-webkit-box-ordinal-group: -1;
+	-moz-box-ordinal-group: 	0;
+	-ms-flex-order: 		   -1;
+	-webkit-order:  		   -1;
+	   -moz-order:  		   -1;
+	        order:  		   -1;
+}
+.flex-mid {
+	-webkit-box-ordinal-group: 1;
+	-moz-box-ordinal-group:    1;
+	-ms-flex-order: 		   1;
+	-webkit-order:  		   1;
+	   -moz-order:  		   1;
+	        order:  		   1;
+}
+.flex-end {
+	-webkit-box-ordinal-group: 42;
+	-moz-box-ordinal-group:    42;
+	-ms-flex-order: 		   42;
+	-webkit-order:  		   42;
+	   -moz-order:  		   42;
+	        order:  		   42;
+}
