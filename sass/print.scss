@@ -1,0 +1,73 @@
+/* ----------------------------- */
+/* ==print                       */
+/* ----------------------------- */
+
+@media print {
+	body {
+		width: auto !important;
+		margin: auto !important;
+		font-family: serif;
+		font-size: 12pt;
+		background-color: #fff !important;
+		color: #333 !important;
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	blockquote, p
+	ul, ol {
+		color: #000  !important;
+		margin: auto !important;
+	}
+
+	/**
+	 * Displays possible .print elements
+	 */
+	.print {
+		display: block;
+	}
+
+	/**
+	 * 1. No orphans
+	 * 2. No widows
+	 */
+	p,
+	blockquote {
+		orphans: 3; /* 1 */
+		widows:  3; /* 2 */
+	}
+
+	/**
+	 * Prevents breaks inside these elements
+	 */
+	blockquote,
+	ul, ol {
+		page-break-inside: avoid;
+	}
+
+	/**
+	 * Forces page break before main headers
+	 */
+	h1 {
+		page-break-before: always;
+	}
+
+	/**
+	 * Prevents breaks after these elements
+	 */
+	h1, h2, h3,
+	caption {
+		page-break-after: avoid;
+	}
+
+	/**
+	 * 1. Displays url after link
+	 */
+	a {
+		color: #000 !important;
+		text-decoration: underline !important;
+		
+		&[href]:after {
+			content: " (" attr(href) ")"; /* 1 */
+		}
+	}
+}
