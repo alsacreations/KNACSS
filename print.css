@@ -1,5 +1,10 @@
 /* quick print reset */
 @media print {
+	* {
+		background: transparent !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
 	body {
 		width: auto !important;
 		margin: auto !important;
@@ -23,6 +28,13 @@
 	}
 	.print {
 		display: block; /* displaying .print elements */
+	}
+	img { 
+	  -webkit-filter: grayscale(100%);
+	  -moz-filter: grayscale(100%);
+	  -ms-filter: grayscale(100%);
+	  -o-filter: grayscale(100%);
+	  filter: grayscale(100%);
 	}
 	p,
 	blockquote {
@@ -49,5 +61,9 @@
 	}
 	a[href]:after {
 		content: " (" attr(href) ")"; /* displaying URLs */
+	}
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
 	}
 }
