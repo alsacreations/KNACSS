@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6d @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6e @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -105,6 +105,9 @@ label {
 ul,
 ol {
 	padding-left: 2em;
+}
+ul.unstyled {
+	list-style: none;
 }
 code, 
 pre,
