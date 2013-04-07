@@ -168,6 +168,10 @@ figure, label {
 
 ul, ol {
 	padding-left: 2em;
+
+	&.unstyled {
+		list-style: none;
+	}
 }
 
 code, pre,
