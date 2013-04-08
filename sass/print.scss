@@ -3,20 +3,26 @@
 /* ----------------------------- */
 
 @media print {
-	body {
-		width: auto !important;
-		margin: auto !important;
-		font-family: serif;
-		font-size: 12pt;
-		background-color: #fff !important;
-		color: #333 !important;
+	* {
+		background:  transparent !important;
+		box-shadow:  none 		 !important;
+		text-shadow: none 		 !important;
 	}
 
-	h1, h2, h3, h4, h5, h6,
-	blockquote, p
+	body {
+		width:  auto 			 !important;
+		margin: auto 			 !important;
+		font-family: serif;
+		font-size: 12pt;
+		background-color: #fff   !important;
+		color: #333 			 !important;
+	}
+
+	h1,	h2,	h3, h4,	h5, h6,
+	p, blockquote,
 	ul, ol {
-		color: #000  !important;
-		margin: auto !important;
+		color: #000 			 !important;
+		margin: auto 			 !important;
 	}
 
 	/**
@@ -24,6 +30,10 @@
 	 */
 	.print {
 		display: block;
+	}
+
+	img { 
+	  @include filter(grayscale(100%));
 	}
 
 	/**
@@ -61,6 +71,7 @@
 
 	/**
 	 * 1. Displays url after link
+	 * 2. ... unless it's a JS or empty link
 	 */
 	a {
 		color: #000 !important;
@@ -68,6 +79,11 @@
 		
 		&[href]:after {
 			content: " (" attr(href) ")"; /* 1 */
+		}
+
+		&[href^="javascript:"]:after,
+		&[href^="#"]:after {
+			content: ''; /* 2 */
 		}
 	}
 }
