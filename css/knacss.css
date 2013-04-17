@@ -33,8 +33,7 @@ label,
 textarea,
 caption,
 details, 
-figure, 
-hgroup {
+figure {
 	font-size: 1em; /* equiv 14px */
 	line-height: 1.5;
 	margin: .75em 0 0;
