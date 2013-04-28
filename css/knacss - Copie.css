@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6e @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3 @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -15,7 +15,7 @@ body {
 	background-color: #fff;
 	color: #000;
 	font-family: "Century Gothic", helvetica, arial, sans-serif;
-	font-size: 1.4em; /* equiv 14px */
+	font-size: 1.0em; /* equiv 10px */
 	line-height: 1.5; /* adapt to your design */
 }
 
@@ -34,44 +34,69 @@ textarea,
 caption,
 details, 
 figure {
-	font-size: 1em; /* equiv 14px */
 	line-height: 1.5;
 	margin: .75em 0 0;
 }
+p,
+li,
+dd,
+pre,
+td,
+th,
+input,
+label,
+textarea,
+caption,
+figcaption,
+details {
+	font-size: 1.4em; /* equiv 14px */
+}
+li li,
+li p,
+td p,
+td li,
+th p,
+th li,
+dd p,
+blockquote p,
+p label,
+p input {
+	font-size: 1em; /* equiv 14px for nested elements */
+}
 h1, .h1-like {
-	font-size: 1.8571em; /* equiv 26px */
+	font-size: 2.6em; /* equiv 26px */
 	font-weight: normal;
-	line-height: 1.6154em;
+	line-height: 1.6154;
 	margin: .8077em 0 0 0;
 }
 h2, .h2-like {
-	font-size: 1.7143em; /* equiv 24px */
+	font-size: 2.4em; /* equiv 24px */
 	font-weight: normal;
-	line-height: 1.75em;
+	line-height: 1.75;
 	margin: .875em 0 0 0;
 }
 h3, .h3-like {
-	font-size: 1.5714em; /* equiv 22px */
+	font-size: 2.2em; /* equiv 22px */
 	font-weight: normal;
-	line-height: 1.909em;
+	line-height: 1.909;
 	margin: .9545em 0 0 0;
 }
 h4, .h4-like {
-	font-size: 1.4286em; /* equiv 20px */
+	font-size: 2.0em; /* equiv 20px */
 	font-weight: normal;
-	line-height: 1.05em;
+	line-height: 1.05;
 	margin:  1.05em 0 0 0;
 }
 h5, .h5-like {
-	font-size: 1.2857em; /* equiv 18px */
+	font-size: 1.8em; /* equiv 18px */
 	font-weight: normal;
-	line-height: 1.1667em;
+	line-height: 1.1667;
 	margin:  1.1667em 0 0 0;
 }
 h6, .h6-like {
-	font-size: 1.1429em; /* equiv 16px */
+	font-size: 1.6em; /* equiv 16px */
 	font-weight: normal;
-	line-height: 1.3125em;
+	line-height: 1.3125;
 	margin:  1.3125em 0 0 0;
 }
 
