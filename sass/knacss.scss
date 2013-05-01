@@ -113,7 +113,7 @@ p, ul, ol, dl,
 blockquote, pre,
 td, th,
 label, textarea,
-caption, details, figure, hgroup {
+caption, details, figure {
 	@include rem('font-size', 14px);
 	line-height: 1.5;
 	margin: .75em 0 0;
