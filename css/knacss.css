@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6e @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6f @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -138,17 +138,16 @@ mark {
 	padding:2px 4px;
 	background: #ff0;
 }
-/* avoid bad line-height */
 sup,
 sub {
-  vertical-align: 0;
-  position: relative;
+	vertical-align: 0;
+	position: relative;
 }
 sup {
-  bottom: 1ex;
+	bottom: 1ex;
 }
 sub {
-  top: .5ex;
+	top: .5ex;
 }
 
 table { margin-bottom: 1.5em; }
