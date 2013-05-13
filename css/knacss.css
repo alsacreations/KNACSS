@@ -138,6 +138,18 @@ mark {
 	padding:2px 4px;
 	background: #ff0;
 }
+/* avoid bad line-height */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
 
 table { margin-bottom: 1.5em; }
 
