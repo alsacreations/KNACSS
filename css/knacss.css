@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6f @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6g @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -180,17 +180,6 @@ li ol {
 img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
 }
-
-/* you shall not pass */
-div, textarea, table, td, th, code, pre, samp {
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	    -ms-hyphens: auto;
-	     -o-hyphens: auto;
-	        hyphens: auto;
-}
-
 /* pictures */
 img {
 	height: auto;
