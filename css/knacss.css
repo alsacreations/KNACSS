@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6g @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6h @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -372,6 +372,8 @@ img.left, img.right {
 .w800p  { width: 800px; }
 .w960p  { width: 960px; }
 .mw960p { max-width: 960px; }
+.w1140p  { width: 1140px; }
+.mw1140p { max-width: 1140px; }
 
 /* spacing helpers
 p,m = padding,margin
