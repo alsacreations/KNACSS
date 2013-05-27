@@ -2,10 +2,8 @@
 /* ==desktop and retina medias   */
 /* ----------------------------- */
 
-@include r(medium) {
-	/* Here go rules for big resources and big screens 
-	 * like: background-images, font-faces, etc. 
-	 */
+@media (min-width: 641px) {
+/* here go rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
 @media
@@ -20,7 +18,7 @@ only screen and (                min-resolution: 2dppx) {
 
 
 /* ---------------------------------- */
-/* ==Responsive large / medium / tiny */
+/* ==Responsive large / small / tiny */
 /* ---------------------------------- */
 
 @include r(large) {
@@ -69,7 +67,7 @@ only screen and (                min-resolution: 2dppx) {
 	.large-man { margin: 0 !important; }
 }
 
-@include r(medium) {
+@include r(small) {
 
 	/* quick tablet reset */
 	.w60,
@@ -84,39 +82,49 @@ only screen and (                min-resolution: 2dppx) {
 	.w800p,
 	.w960p,
 	.mw960p,
-	.medium-wauto { width: auto; } 
+	.small-wauto { width: auto; } 
 
-	/* layouts for medium (m) screens */
-	.medium-hidden,
+	/**
+	* You shall not pass 
+	*/
+	div, textarea, 
+	table, td, th, 
+	code, pre, samp {
+		word-wrap: break-word;
+		@include hyphens(auto);
+	}
+
+	/* layouts for small (s) screens */
+	.small-hidden,
 	.tablet-hidden  { display: none  !important; }
-	.medium-visible { display: block !important; }
+	.small-visible { display: block !important; }
 
-	.medium-no-float {float: none; }
+	.small-no-float { float: none; }
 
-	.medium-inbl {
+	.small-inbl {
 		@include inline-block(top);
 		float: none;
 	}
 
-	.medium-row {
+	.small-row {
 		display: table !important;
 		table-layout: fixed !important;
 		width: 100% !important;
 	}
 
-	.medium-col {
+	.small-col {
 		display: table-cell !important;
 		vertical-align: top !important;
 	}
 
-	/* widths for medium (m) screens */
-	.medium-w25 { width: 25% !important; }
-	.medium-w33 { width: 33.3333% !important; }
-	.medium-w50 { width: 50% !important; }
-	.medium-w66 { width: 66.6666% !important; }
-	.medium-w75 { width: 75% !important; }
+	/* widths for small (s) screens */
+	.small-w25 { width: 25% !important; }
+	.small-w33 { width: 33.3333% !important; }
+	.small-w50 { width: 50% !important; }
+	.small-w66 { width: 66.6666% !important; }
+	.small-w75 { width: 75% !important; }
 
-	.medium-w100 {
+	.small-w100 {
 		display: block  !important;
 		float: none 	!important;
 		clear: none 	!important;
@@ -125,9 +133,10 @@ only screen and (                min-resolution: 2dppx) {
 		margin-right: 0 !important;
 		border: 0;		
 	}
-	/* margins for medium (m) screens */
-	.medium-ma0,
-	.medium-man { margin: 0 !important; }
+
+	/* margins for small (s) screens */
+	.small-ma0,
+	.small-man { margin: 0 !important; }
 
 	/* Responsive grids */
 	.grid4 > * {width: 49% !important; } 
@@ -136,7 +145,7 @@ only screen and (                min-resolution: 2dppx) {
 	.grid6 > :first-child + * + * + * {margin-left: 0 !important;}
 }
 
-@include r(small) {
+@include r(tiny) {
 
 	/* Quick smartphone reset */
 	.mod,

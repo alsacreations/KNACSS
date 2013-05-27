@@ -50,10 +50,10 @@
 	@if $breakpoint == "large"  {
 		@media (min-width: 1280px) { @content; }
 	}
-	@if $breakpoint == "medium" {
+	@if $breakpoint == "small" {
 		@media (max-width: 768px)  { @content; }
 	}
-	@if $breakpoint == "small"  {
+	@if $breakpoint == "tiny"  {
 		@media (max-width: 640px)  { @content; }
 	}
 }
@@ -209,6 +209,18 @@ mark {
 	background: #ff0;
 }
 
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+
 table { 
 	margin-bottom: 1.5em; 
 }
@@ -241,16 +253,6 @@ img, table, td,
 blockquote, code, pre, 
 textarea, input, video {
 	max-width: 100%;
-}
-
-/**
- * You shall not pass 
- */
-div, textarea, 
-table, td, th, 
-code, pre, samp {
-	word-wrap: break-word;
-	@include hyphens(auto);
 }
 
 /**
