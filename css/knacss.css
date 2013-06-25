@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6h @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6i @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -381,27 +381,27 @@ a,t,r,b,l = all,top,right,bottom,left
 s,m,l,n,0 = small(10px),medium(20px),large(30px), zero or none(0)
 source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 */
-.m-reset, .ma0 { margin: 0 !important; }
-.p-reset, .pa0 { padding: 0 !important; }
-.ma1, .mas { margin: 10px !important; }
-.ma2, .mam { margin: 20px !important; }
-.ma3, .mal { margin: 30px !important; }
+.m-reset, .ma0 { margin: 0; }
+.p-reset, .pa0 { padding: 0; }
+.ma1, .mas { margin: 10px; }
+.ma2, .mam { margin: 20px; }
+.ma3, .mal { margin: 30px; }
 .pa1, .pas { padding: 10px; }
 .pa2, .pam { padding: 20px; }
 .pa3, .pal { padding: 30px; }
 
-.mt0, .mtn { margin-top: 0 !important; }
-.mt1, .mts { margin-top: 10px !important; }
-.mt2, .mtm { margin-top: 20px !important; }
-.mt3, .mtl { margin-top: 30px !important; }
+.mt0, .mtn { margin-top: 0; }
+.mt1, .mts { margin-top: 10px; }
+.mt2, .mtm { margin-top: 20px; }
+.mt3, .mtl { margin-top: 30px; }
 .mr0, .mrn { margin-right: 0; }
 .mr1, .mrs { margin-right: 10px; }
 .mr2, .mrm { margin-right: 20px; }
 .mr3, .mrl { margin-right: 30px; }
-.mb0, .mbn { margin-bottom: 0 !important; }
-.mb1, .mbs { margin-bottom: 10px !important; }
-.mb2, .mbm { margin-bottom: 20px !important; }
-.mb3, .mbl { margin-bottom: 30px !important; }
+.mb0, .mbn { margin-bottom: 0; }
+.mb1, .mbs { margin-bottom: 10px; }
+.mb2, .mbm { margin-bottom: 20px; }
+.mb3, .mbl { margin-bottom: 30px; }
 .ml0, .mln { margin-left: 0; }
 .ml1, .mls { margin-left: 10px; }
 .ml2, .mlm { margin-left: 20px; }
