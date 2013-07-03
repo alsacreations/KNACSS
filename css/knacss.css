@@ -259,7 +259,6 @@ body > script {display: none !important;}
 .inbl {
 	display: inline-block;
 	vertical-align: top;
-	margin-right: -.25em;
 }
 
 /* flexbox layout */
