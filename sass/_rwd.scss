@@ -2,32 +2,44 @@
 /* ==desktop and retina medias   */
 /* ----------------------------- */
 
-@media (min-width: 641px) {
-/* here go rules for big resources and big screens like: background-images, font-faces, etc. */
+/* ----------------------------- */
+/* ==viewport fixing for RWD     */
+/* ----------------------------- */
+@-webkit-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-moz-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-ms-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-o-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@viewport {
+	width: device-width;
+	zoom: 1.0;
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) { 
-  /* Retina-specific stuff here */
+@include mq(medium) {
+	/* Big resources like background-images, font-faces, etc. */
 }
 
+@include mq(retina) {
+	/* Retina-specific stuff here */
+}
 
 /* ---------------------------------- */
 /* ==Responsive large / small / tiny */
 /* ---------------------------------- */
 
-@include r(large) {
+@include mq(large) {
 
-	/* Layouts for large (l) screens */
-	.large-hidden,
-	.tablet-hidden { display: none  !important; }
-	.large-visible { display: block !important; }
-	
 	.large-no-float { float: none; }
 	
 	.large-inbl {
@@ -67,38 +79,7 @@ only screen and (                min-resolution: 2dppx) {
 	.large-man { margin: 0 !important; }
 }
 
-@include r(small) {
-
-	/* quick tablet reset */
-	.w60,
-	.w66,
-	.w70,
-	.w75,
-	.w80,
-	.w90,
-	.w100,
-	.w600p,
-	.w700p,
-	.w800p,
-	.w960p,
-	.mw960p,
-	.small-wauto { width: auto; } 
-
-	/**
-	* You shall not pass 
-	*/
-	div, textarea, 
-	table, td, th, 
-	code, pre, samp {
-		word-wrap: break-word;
-		@include hyphens(auto);
-	}
-
-	/* layouts for small (s) screens */
-	.small-hidden,
-	.tablet-hidden  { display: none  !important; }
-	.small-visible { display: block !important; }
-
+@include mq(small) {
 	.small-no-float { float: none; }
 
 	.small-inbl {
@@ -137,15 +118,9 @@ only screen and (                min-resolution: 2dppx) {
 	/* margins for small (s) screens */
 	.small-ma0,
 	.small-man { margin: 0 !important; }
-
-	/* Responsive grids */
-	.grid4 > * {width: 49% !important; } 
-	.grid4 > :first-child + * + * {margin-left: 0 !important;}
-	.grid6 > * {width: 32% !important; }  
-	.grid6 > :first-child + * + * + * {margin-left: 0 !important;}
 }
 
-@include r(tiny) {
+@include mq(tiny) {
 
 	/* Quick smartphone reset */
 	.mod,
@@ -176,10 +151,6 @@ only screen and (                min-resolution: 2dppx) {
 		width: 100% !important;
 	}
 
-	/* Layouts for tiny (t) screens */
-	.tiny-hidden,
-	.phone-hidden { display: none  !important; }
-	.tiny-visible { display: block !important; }
 
 	.tiny-no-float { float: none; }
 
@@ -198,15 +169,6 @@ only screen and (                min-resolution: 2dppx) {
 		display: table-cell !important;
 		vertical-align: top !important;
 	}
-
-	th,
-	td {
-		display: block !important;
-		width: auto !important;
-		text-align: left !important;
-	}
-
-	thead { display: none; }
 
 	/* widths for tiny (t) screens */
 	.tiny-w25 { width: 25% !important; }

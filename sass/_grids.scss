@@ -33,3 +33,12 @@
 .grid3-1 > *:first-child,
 .grid1-3 > * + * { width: 74.5%; }
 
+/**
+ * Responsive grids
+ */
+@include mq(small) {
+	.grid4 > * { width: 49% !important; } 
+	.grid4 > :first-child + * + * { margin-left: 0 !important; }
+	.grid6 > * { width: 32% !important; }  
+	.grid6 > :first-child + * + * + * { margin-left: 0 !important; }
+}
