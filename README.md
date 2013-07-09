@@ -14,6 +14,9 @@ There is nothing to install. It is only a CSS file you can call as usual in the 
 
     <link rel="stylesheet" href="knacss.css" media="all">
 
+
+... Or you can also the KNACSS Builder : http://knacss.com/builder/
+
 Usage
 -----
 KNACSS is a collection of ready to use styles and snippets to kick start your project. Feel free to use it as a “reset”, then make it grow to suit your needs.

@@ -1,5 +1,29 @@
 
 /* ----------------------------- */
+/* ==viewport fixing for RWD     */
+/* ----------------------------- */
+@-webkit-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-moz-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-ms-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@-o-viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+@viewport {
+	width: device-width;
+	zoom: 1.0;
+}
+
+/* ----------------------------- */
 /* ==desktop and retina medias   */
 /* ----------------------------- */
 
@@ -11,7 +35,7 @@
 }
 
 /* ---------------------------------- */
-/* ==Responsive large / medium / tiny */
+/* ==Responsive large / small / tiny  */
 /* ---------------------------------- */
 
 @media (min-width: 1280px) {
@@ -72,35 +96,45 @@
 	.w800p,
 	.w960p,
 	.mw960p,
-	.medium-wauto { width: auto; } 
+	.small-wauto { width: auto; } 
 
-	/* layouts for medium (m) screens */
-	.medium-hidden,
+	/* you shall not pass */
+	div, textarea, table, td, th, code, pre, samp {
+		word-wrap: break-word;
+		-webkit-hyphens: auto;
+		   -moz-hyphens: auto;
+		    -ms-hyphens: auto;
+		     -o-hyphens: auto;
+		        hyphens: auto;
+	}
+
+	/* layouts for small (s) screens */
+	.small-hidden,
 	.tablet-hidden { display: none !important; }
-	.medium-visible { display: block !important; }
-	.medium-no-float {float: none; }
-	.medium-inbl {
+	.small-visible { display: block !important; }
+	.small-no-float {float: none; }
+	.small-inbl {
 		display: inline-block;
 		float: none;
 		vertical-align: top;
 	}
-	.medium-row {
+	.small-row {
 		display: table !important;
 		table-layout: fixed !important;
 		width: 100% !important;
 	}
-	.medium-col {
+	.small-col {
 		display: table-cell !important;
 		vertical-align: top !important;
 	}
 
-	/* widths for medium (m) screens */
-	.medium-w25 { width: 25% !important; }
-	.medium-w33 { width: 33.3333% !important; }
-	.medium-w50 { width: 50% !important; }
-	.medium-w66 { width: 66.6666% !important; }
-	.medium-w75 { width: 75% !important; }
-	.medium-w100 {
+	/* widths for small (s) screens */
+	.small-w25 { width: 25% !important; }
+	.small-w33 { width: 33.3333% !important; }
+	.small-w50 { width: 50% !important; }
+	.small-w66 { width: 66.6666% !important; }
+	.small-w75 { width: 75% !important; }
+	.small-w100 {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -109,9 +143,9 @@
 		margin-right: 0 !important;
 		border: 0;		
 	}
-	/* margins for medium (m) screens */
-	.medium-ma0,
-	.medium-man { margin: 0 !important; }
+	/* margins for small (s) screens */
+	.small-ma0,
+	.small-man { margin: 0 !important; }
 
 	/* Responsive grids */
 	.grid4 > * {width: 49% !important; } 

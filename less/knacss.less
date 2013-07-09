@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6d @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6i @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
 */
 
@@ -15,18 +15,19 @@
 @gutter       : 1.5%; // gutter value (%) for grid layouts
 
 // LESS functions : don't touch ;)
-.pxtoem (@fontsize) {font-size: (@fontsize / @basefont) + 0em;}
-.line (@fontsize) {line-height: @l-h *2 / (@fontsize / @basefont) + 0em}
-.mtop (@fontsize) {margin: @l-h / (@fontsize / @basefont) + 0em 0 0}
-.grid (@number) {width: (100%-(@gutter*(@number - 1))) / @number;}
+.pxtoem (@fontsize) {font-size: ((@fontsize / @basefont) + 0em);}
+.line (@fontsize) {line-height: (@l-h *2 / (@fontsize / @basefont) + 0em)}
+.mtop (@fontsize) {margin: (@l-h / (@fontsize / @basefont) + 0em) 0 0}
+.grid (@number) {width: ((100%-(@gutter*(@number - 1))) / @number);}
+ 
 .flow(@font-size, @base-font: @basefont, @base-height: @l-h) {
-	@coef: ceil(1 / (@base-height * @base-font / @font-size));
-	@size: (@font-size / @base-font) + 0em;
-	@height: (@base-font * @base-height / @font-size) + 0em;	
-	font-size:   @size;
-	line-height: @height * @coef;
-	margin-top:  @height;
-	margin-bottom: 0;
+        @coef: ceil((1 / (@base-height * @base-font / @font-size)));
+        @size: ((@font-size / @base-font) + 0em);
+        @height: ((@base-font * @base-height / @font-size) + 0em);    
+        font-size:   @size;
+        line-height: (@height * @coef);
+        margin-top:  @height;
+        margin-bottom: 0;
 }
 
 
@@ -42,7 +43,7 @@ body {
 	background-color: #fff;
 	color: #000;
 	font-family: "Century Gothic", helvetica, arial, sans-serif;
-	font-size: (@basefont / 10) + 0em;
+	font-size: ((@basefont / 10) + 0em);
 	line-height: @l-h; // adapt to your design
 }
 
@@ -176,16 +177,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
 }
 
-/* you shall not pass */
-div, textarea, table, td, th, code, pre, samp {
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
-}
-
 /* pictures */
 img {
 	height: auto;
@@ -267,7 +258,6 @@ body > script {display: none !important;}
 .inbl {
 	display: inline-block;
 	vertical-align: top;
-	margin-right: -.25em;
 }
 
 /* flexbox layout */
@@ -426,27 +416,27 @@ a,t,r,b,l = all,top,right,bottom,left
 s,m,l,n = small(10px),medium(20px),large(30px),none(0)
 source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 */
-.m-reset, .ma0 { margin: 0 !important; }
-.p-reset, .pa0 { padding: 0 !important; }
-.ma1, .mas { margin: @smallvalue !important; }
-.ma2, .mam { margin: @mediumvalue !important; }
-.ma3, .mal { margin: @largevalue !important; }
+.m-reset, .ma0 { margin: 0; }
+.p-reset, .pa0 { padding: 0; }
+.ma1, .mas { margin: @smallvalue; }
+.ma2, .mam { margin: @mediumvalue; }
+.ma3, .mal { margin: @largevalue; }
 .pa1, .pas { padding: @smallvalue; }
 .pa2, .pam { padding: @mediumvalue; }
 .pa3, .pal { padding: @largevalue; }
 
-.mt0, .mtn { margin-top: 0 !important; }
-.mt1, .mts { margin-top: @smallvalue !important; }
-.mt2, .mtm { margin-top: @mediumvalue !important; }
-.mt3, .mtl { margin-top: @largevalue !important; }
+.mt0, .mtn { margin-top: 0; }
+.mt1, .mts { margin-top: @smallvalue; }
+.mt2, .mtm { margin-top: @mediumvalue; }
+.mt3, .mtl { margin-top: @largevalue; }
 .mr0, .mrn { margin-right: 0; }
 .mr1, .mrs { margin-right: @smallvalue; }
 .mr2, .mrm { margin-right: @mediumvalue; }
 .mr3, .mrl { margin-right: @largevalue; }
-.mb0, .mbn { margin-bottom: 0 !important; }
-.mb1, .mbs { margin-bottom: @smallvalue !important; }
-.mb2, .mbm { margin-bottom: @mediumvalue !important; }
-.mb3, .mbl { margin-bottom: @largevalue !important; }
+.mb0, .mbn { margin-bottom: 0; }
+.mb1, .mbs { margin-bottom: @smallvalue; }
+.mb2, .mbm { margin-bottom: @mediumvalue; }
+.mb3, .mbl { margin-bottom: @largevalue; }
 .ml0, .mln { margin-left: 0; }
 .ml1, .mls { margin-left: @smallvalue; }
 .ml2, .mlm { margin-left: @mediumvalue; }
@@ -671,6 +661,16 @@ textarea {
 	.medium-col {
 		display: table-cell !important;
 		vertical-align: top !important;
+	}
+
+	/* you shall not pass */
+	div, textarea, table, td, th, code, pre, samp {
+		word-wrap: break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-o-hyphens: auto;
+		hyphens: auto;
 	}
 
 	/* widths for medium (m) screens */
