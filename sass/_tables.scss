@@ -12,8 +12,17 @@ table,
 	vertical-align: top;
 }
 
+/**
+ * 1. Prevent reCAPTCHA from exploding
+ * See: https://github.com/raphaelgoetter/KNACSS/issues/18
+ */
 table {
 	width: 100%;
+	border: $border;
+
+	&#recaptcha_table {
+		table-layout: auto; /* 1 */
+	}
 }
 
 .table {
@@ -24,10 +33,6 @@ caption {
 	padding: 10px;
 	color: #555;
 	font-style: italic;	
-}
-
-table { 
-	border: $border;
 }
 
 thead {

@@ -58,3 +58,10 @@
 		*display: inline; 
 	}
 }
+
+@mixin prefix($property, $value) {
+	$vendors: "-webkit-", "-moz-", "-ms-", "-o-", "";
+	@each $v in $vendors {
+		#{$v}#{$property}: $value;
+	}
+}
