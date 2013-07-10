@@ -1,7 +1,10 @@
-/*
-* www.KNACSS.com V2.6d @author: Raphael Goetter, Alsacreations
-* Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
-*/
+/**
+ * www.KNACSS.com V2.6d @author: Raphael Goetter, Alsacreations
+ * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
+ * 
+ * Sass version maintained by @HugoGiraudel
+ * Please report any bug or suggestion
+ */
 
 /** 
  * Enable support for old browsers
@@ -14,14 +17,15 @@ $legacy-support-for-mozilla: true; /* 2 */
 /**
  * Import modules of your choice
  */
-@import "mixins";
-@import "helpers";
-@import "forms";
-@import "icons";
-@import "print";
-@import "tables";
-@import "grids";
-@import "layout";
-@import "typography";
-@import "iefix";
-@import "reset";
+@import "mixins";     // Sass only
+@import "reset";      // Home made reset
+@import "helpers";    // A couple of helper classes and Sass placeholders
+@import "layout";     // Everything to layout your pages
+@import "grids";      // Small grid system
+@import "typography"; // Typography baseline and vertical rythm
+@import "tables";     // Tables
+@import "forms";      // Forms
+@import "icons";      // Icons (unicode based) and bullets
+@import "messages";   // Message system
+@import "iefix";      // Some IE fixes
+@import "print";      // Print stylesheet

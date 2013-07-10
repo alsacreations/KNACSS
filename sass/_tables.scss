@@ -1,8 +1,8 @@
-/* ----------------------------- */
-/* ==tables                      */
-/* ----------------------------- */
+/*----------------------------*\
+ * Tables                     *
+\*----------------------------*/
 
-$border: 1px solid #ccc;
+$border: 1px solid #ccc; // Default border style for all tables
 
 table,
 .table {
@@ -19,6 +19,7 @@ table,
 table {
 	width: 100%;
 	border: $border;
+	margin-bottom: 1.5em; 
 
 	&#recaptcha_table {
 		table-layout: auto; /* 1 */
@@ -35,9 +36,12 @@ caption {
 	font-style: italic;	
 }
 
+/**
+ * Remove thead on tiny screens
+ */
 thead {
 	@include mq(tiny) {
-		display: none;
+		display: none; /* 1 */
 	}
 }
 

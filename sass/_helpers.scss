@@ -1,6 +1,6 @@
-/* ----------------------------- */
-/* ==helpers                       */
-/* ----------------------------- */
+/*----------------------------*\
+ * Helpers                    *
+\*----------------------------*/
 
 /**
  * .{SIZE}-hidden and .{SIZE}-visible helpers
@@ -65,3 +65,22 @@ $breakpoints: large, small, tiny;
     hyphens: auto;
 }
 
+/**
+ * Skip links 
+ */
+.skip-links {
+    position: absolute;
+
+    a {
+        position: absolute;
+        left: -7000px;
+        padding: 0.5em;
+        background: #000;
+        color:#fff;
+        text-decoration: none;
+
+        &:focus {
+            position: static;
+        }
+    }
+}

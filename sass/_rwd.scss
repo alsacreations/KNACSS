@@ -26,14 +26,6 @@
 	zoom: 1.0;
 }
 
-@include mq(medium) {
-	/* Big resources like background-images, font-faces, etc. */
-}
-
-@include mq(retina) {
-	/* Retina-specific stuff here */
-}
-
 /* ---------------------------------- */
 /* ==Responsive large / small / tiny */
 /* ---------------------------------- */

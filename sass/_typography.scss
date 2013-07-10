@@ -7,17 +7,19 @@
  * 2. Orientation iOS font-size fix
  */
 html {
-	font-size: 62.5%; /* 1 */
+	font: 62.5%/1.5 "Century Gothic", helvetica, arial, sans-serif; /* 1 */
+	color: #000;
+	
 	@media (orientation: landscape) and (max-device-width: 768px) {
 		-webkit-text-size-adjust: 100%; /* 2 */
 	}
 }
 
+/**
+ * 1. Put the base font-size at 14px (1.4rem)
+ */
 body {
-	color: #000;
-	font-family: "Century Gothic", helvetica, arial, sans-serif;
-	@include rem(14);
-	line-height: 1.5;
+	@include rem(14); /* 1 */
 }
 
 /**
