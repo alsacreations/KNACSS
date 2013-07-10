@@ -15,7 +15,7 @@
 		font-family: serif;
 		font-size: 12pt;
 		background-color: #fff   !important;
-		color: #333 			 !important;
+		color: #000 			 !important;
 	}
 
 	h1,	h2,	h3, h4,	h5, h6,
@@ -32,8 +32,15 @@
 		display: block;
 	}
 
+	/**
+	 * Try turning images to black and white if supported filters
+	 */
 	img { 
-	  @include filter(grayscale(100%));
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		-ms-filter: grayscale(100%);
+		-o-filter: grayscale(100%);
+		filter: grayscale(100%);
 	}
 
 	/**
@@ -82,7 +89,8 @@
 		}
 
 		&[href^="javascript:"]:after,
-		&[href^="#"]:after {
+		&[href^="#"]:after,
+		&[href=""] {
 			content: ''; /* 2 */
 		}
 	}

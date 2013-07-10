@@ -1,6 +1,7 @@
 /* ----------------------------- */
 /* ==tables                      */
 /* ----------------------------- */
+
 $border: 1px solid #ccc;
 
 table,
@@ -29,6 +30,12 @@ table {
 	border: $border;
 }
 
+thead {
+	@include mq(tiny) {
+		display: none;
+	}
+}
+
 tr > * + * {
 	border-left: $border;
 }
@@ -38,6 +45,12 @@ td {
 	padding: .3em .8em;
 	text-align: left;
 	border-bottom: $border;
+
+	@include mq(tiny) {
+		display: block !important;
+		width: auto !important;
+		text-align: left !important;
+	}
 }
 
 td {
@@ -50,10 +63,13 @@ td {
 .alternate { 
 	border: 0;
 
-	tbody { border: $border; }
+	thead tr > * + * { 
+		border-left: 0;
+	}
 
-	thead tr > * + * { border-left: 0; }
-	tbody tr > * + * { border-left: $border; }
+	tbody tr > * + * {
+		border-left: $border;
+	}
 }
 
 /** 
