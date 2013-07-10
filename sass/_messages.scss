@@ -1,0 +1,45 @@
+/*----------------------------*\
+ * Messages                   *
+\*----------------------------*/
+
+/**
+ * Shared classes between all types of messages
+ */
+%message {
+    padding: .5em;
+    border-radius: .1em;
+    border: 1px solid;
+    text-shadow: 0 1px 0 rgba(white, .2);
+}
+
+/**
+ * Color scheming based on a single color
+ */
+@mixin message-scheme($color) {
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten(adjust-hue($color, -10), 20%);
+}
+
+/**
+ * Message types
+ */
+.message-error {
+    @extend %message;
+    @include message-scheme(#b94a48);
+}
+
+.message-ok {
+    @extend %message;
+    @include message-scheme(#468847);
+}
+
+.message-warning {
+    @extend %message;
+    @include message-scheme(#c09853);
+}
+
+.message-info {
+    @extend %message;
+    @include message-scheme(#3a87ad);
+}

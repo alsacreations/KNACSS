@@ -1,6 +1,6 @@
-/* ----------------------------- */
-/* ==forms                       */
-/* ----------------------------- */
+/*----------------------------*\
+ * Forms                      *
+\*----------------------------*/
 
 /**
  * Thanks to HTML5boilerplate
@@ -38,6 +38,9 @@ textarea {
 	@include inline-block();
 }
 
+/**
+ * Alternative classes
+ */
 .btn.alternate {}
 .btn.highlight {}
 .login   	   {}

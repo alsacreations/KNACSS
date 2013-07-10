@@ -1,10 +1,7 @@
-/* ----------------------------- */
-/* ==reset                       */
-/* ----------------------------- */
+/*----------------------------*\
+ * Soft reset                 *
+\*----------------------------*/
 
-/**
- * Soft reset 
- */
 html, body,
 textarea,
 figure, label {
@@ -20,8 +17,7 @@ ul, ol {
 	}
 }
 
-code, pre,
-samp, kbd {
+code, pre, samp, kbd {
 	white-space: pre-wrap;
 	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
 	line-height: 1em;
@@ -55,8 +51,7 @@ mark {
 	background: #ff0;
 }
 
-sup,
-sub {
+sup, sub {
 	vertical-align: 0;
 	position: relative;
 }
@@ -67,10 +62,6 @@ sup {
 
 sub {
 	top: .5ex;
-}
-
-table { 
-	margin-bottom: 1.5em; 
 }
 
 /**
@@ -124,6 +115,17 @@ img {
 	}
 }
 
+/**
+ * Hide script and style tags in case of table mode
+ */
+body > script,
+body > style { 
+	display: none !important;
+}
+
+/**
+ * Force word wrapping on small screens
+ */
 @include mq(small) {
 	div, textarea, 
 	table, td, th, 
@@ -135,49 +137,4 @@ img {
 	    -moz-hyphens: auto;
 	    hyphens: auto;
     }
-}
-
-/**
- * Hide script and style tags in case of table mode
- */
-body > script,
-body > style { 
-	display: none !important;
-}
-
-
-/* skip-links */
-.skip-links {
-	position: absolute;
-
-	a {
-		position: absolute;
-		left: -7000px;
-		padding: 0.5em;
-		background: #000;
-		color:#fff;
-		text-decoration: none;
-
-		&:focus {
-			position: static;
-		}
-	}
-}
-
-/* Quick print reset */
-@media print {
-	p, blockquote {
-		orphans: 2;
-		widows: 2;
-	}
-
-	blockquote,
-	ul, ol {
-		page-break-inside: avoid;
-	}
-
-	h1, h2, h3,
-	caption {
-		page-break-after: avoid;
-	}
 }

@@ -1,6 +1,6 @@
-/* ----------------------------- */
-/* ==layouts                     */
-/* ----------------------------- */
+/*----------------------------*\
+ * Layout                     *
+\*----------------------------*/
 
 /**
  * Switching box-model for all elements
@@ -176,10 +176,10 @@ img.right { margin-bottom: 5px; }
 .w300p  { width: 300px; }
 .w400p  { width: 400px; }
 .w500p  { width: 500px; }
-.w600p  { width: 600px; @extend %width-helper; }
-.w700p  { width: 700px; @extend %width-helper; }
-.w800p  { width: 800px; @extend %width-helper; }
-.w960p  { width: 960px; @extend %width-helper; }
+.w600p  { width: 600px;   @extend %width-helper; }
+.w700p  { width: 700px;   @extend %width-helper; }
+.w800p  { width: 800px;   @extend %width-helper; }
+.w960p  { width: 960px;   @extend %width-helper; }
 .mw960p { max-width: 960px; }
 
 /**

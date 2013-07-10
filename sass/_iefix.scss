@@ -1,10 +1,18 @@
-/* HasLayout for IE6/IE7 */
+/*----------------------------*\
+ * IE Fix                     *
+\*----------------------------*/
+
+/**
+ * HasLayout for IE6/IE7 
+ */
 @if $legacy-support-for-ie {
 	.row, .col {
 		*zoom: 1;
 	}
 
-	/* Warning: .col needs a width on IE6/IE7 */
+	/**
+	 * Warning: .col needs a width on IE6/IE7 
+	 */
 	.col {
 		*display: inline;
 		*zoom: 1;

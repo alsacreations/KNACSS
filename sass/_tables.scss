@@ -1,8 +1,8 @@
-/* ----------------------------- */
-/* ==tables                      */
-/* ----------------------------- */
+/*----------------------------*\
+ * Tables                     *
+\*----------------------------*/
 
-$border: 1px solid #ccc;
+$border: 1px solid #ccc; // Default border style for all tables
 
 table,
 .table {
@@ -12,8 +12,18 @@ table,
 	vertical-align: top;
 }
 
+/**
+ * 1. Prevent reCAPTCHA from exploding
+ * See: https://github.com/raphaelgoetter/KNACSS/issues/18
+ */
 table {
 	width: 100%;
+	border: $border;
+	margin-bottom: 1.5em; 
+
+	&#recaptcha_table {
+		table-layout: auto; /* 1 */
+	}
 }
 
 .table {
@@ -26,13 +36,12 @@ caption {
 	font-style: italic;	
 }
 
-table { 
-	border: $border;
-}
-
+/**
+ * Remove thead on tiny screens
+ */
 thead {
 	@include mq(tiny) {
-		display: none;
+		display: none; /* 1 */
 	}
 }
 

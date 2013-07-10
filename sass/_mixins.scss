@@ -1,9 +1,9 @@
-/* ----------------------------- */
-/* ==mixins                      */
-/* ----------------------------- */
+/*----------------------------*\
+ * Mixins                     *
+\*----------------------------*/
 
 /**
- * Mixin to handle media queries breakpoints
+ * Mixin to handle media queries and retina
  */
 @mixin mq($keyword) {
 	@if $keyword == large  {
@@ -56,5 +56,15 @@
 		*vertical-align: auto;
 		zoom: 1;
 		*display: inline; 
+	}
+}
+
+/**
+ * Mixin to prefix properties
+ */
+@mixin prefix($property, $value) {
+	$vendors: "-webkit-", "-moz-", "-ms-", "-o-", "";
+	@each $v in $vendors {
+		#{$v}#{$property}: $value;
 	}
 }
