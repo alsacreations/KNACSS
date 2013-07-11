@@ -16,6 +16,10 @@ table {
 .table {
 	display: table;
 }
+table#recaptcha_table,
+table.table-auto {
+	table-layout:auto;
+}
 caption {
 	padding: 10px;
 	color: #555;
