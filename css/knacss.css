@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6i @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6j @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -14,7 +14,7 @@ html {
 body {
 	background-color: #fff;
 	color: #000;
-	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-family: helvetica, arial, sans-serif;
 	font-size: 1.4em; /* equiv 14px */
 	line-height: 1.5; /* adapt to your design */
 }
