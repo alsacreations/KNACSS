@@ -10,7 +10,7 @@ It handles basic elements, box sizing, margins, floats, simple and complex align
 
 Installation
 -----------
-There is nothing to install. It is only a CSS file you can call as usual in the head of your document with a <link> element:
+There is nothing to install. It is only a CSS file you can call as usual in the head of your document with a link element:
 
     <link rel="stylesheet" href="knacss.css" media="all">
 
