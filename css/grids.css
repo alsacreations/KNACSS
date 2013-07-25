@@ -44,11 +44,11 @@
 	font-size: 14em; font-size: 1.4rem; letter-spacing: normal; /* whitespace fix part 2 */
 	*display: inline; *zoom: 1; /* ie6 / ie7 hack */
 }
-.autogrid2 > * {width: 49.4%}
-.autogrid3 > * {width: 32.6%}
-.autogrid4 > * {width: 24.2%}
+.autogrid2 > * {width: 49.55%}
+.autogrid3 > * {width: 32.8%}
+.autogrid4 > * {width: 24.4%}
 .autogrid5 > * {width: 19.2%}
-.autogrid6 > * {width: 15.9%}
-.autogrid8 > * {width: 11.8%}
+.autogrid6 > * {width: 16%}
+.autogrid8 > * {width: 11.75%}
 .autogrid10 > * {width: 9.3%}
-.autogrid12 > * {width: 7.7%}
+.autogrid12 > * {width: 7.6%}
