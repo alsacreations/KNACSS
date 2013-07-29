@@ -52,3 +52,25 @@
 .autogrid8 > * {width: 11.75%}
 .autogrid10 > * {width: 9.3%}
 .autogrid12 > * {width: 7.6%}
+
+/* Responsiv-o-matic */
+
+@media (max-width: 1024px) {
+	.autogrid5 > *,
+	.autogrid6 > *,
+	.autogrid8 > *,
+	.autogrid10 > *,
+	.autogrid12 > * {width: 32.8%}
+}
+@media (max-width: 768px) {
+	.autogrid3 > *,
+	.autogrid4 > *,
+	.autogrid5 > *,
+	.autogrid6 > *,
+	.autogrid8 > *,
+	.autogrid10 > *,
+	.autogrid12 > * {width: 49.55%}
+}
+@media (max-width: 640px) {
+	[class^="autogrid"] > * {width: 100%}
+}
