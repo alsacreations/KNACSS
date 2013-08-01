@@ -162,7 +162,7 @@ ul.icon.after:after {content:""}
 .icon-nav > li:before,
 .icon-nav.after:after, 
 .icon-nav.after > li:after {
-  content: "\2630";
+  content: "\2261";
   font-weight: bold;
 }
 .icon-losange:before, 
