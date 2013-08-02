@@ -4,6 +4,11 @@
 /* ----------------------------- */
 
 /* equal grids with 2% gutter */
+[class^=grid]:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 [class^=grid] > * {float: left; } /* direct childrens are floating */
 [class^=grid] > * + * { margin-left: 2%; } /* here's the gutter */
 .grid2 > * { width: 49%; }

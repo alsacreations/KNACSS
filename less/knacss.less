@@ -348,7 +348,11 @@ img.left, img.right {
 
 /* grids                          */
 /* ------------------------------ */
-
+[class^=grid]:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 [class^=grid] > * {float: left; } /* direct childrens are floating */
 
 .grid2 > * {.grid(2);}
