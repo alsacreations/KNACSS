@@ -49,14 +49,14 @@
 	font-size: 14em; font-size: 1.4rem; letter-spacing: normal; /* whitespace fix part 2 */
 	*display: inline; *zoom: 1; /* ie6 / ie7 hack */
 }
-.autogrid2 > * {width: 49.55%}
-.autogrid3 > * {width: 32.8%}
-.autogrid4 > * {width: 24.4%}
-.autogrid5 > * {width: 19.4%}
-.autogrid6 > * {width: 16%}
-.autogrid8 > * {width: 11.75%}
-.autogrid10 > * {width: 9.3%}
-.autogrid12 > * {width: 7.6%}
+.autogrid2 > * {width: 49%}
+.autogrid3 > * {width: 32%}
+.autogrid4 > * {width: 23.6%}
+.autogrid5 > * {width: 19%}
+.autogrid6 > * {width: 15%}
+.autogrid8 > * {width: 10.8%}
+.autogrid10 > * {width: 9%}
+.autogrid12 > * {width: 6.4%}
 
 /* Responsiv-o-matic */
 
@@ -65,7 +65,7 @@
 	.autogrid6 > *,
 	.autogrid8 > *,
 	.autogrid10 > *,
-	.autogrid12 > * {width: 32.8%}
+	.autogrid12 > * {width: 32%}
 }
 @media (max-width: 768px) {
 	.autogrid3 > *,
@@ -74,7 +74,7 @@
 	.autogrid6 > *,
 	.autogrid8 > *,
 	.autogrid10 > *,
-	.autogrid12 > * {width: 49.55%}
+	.autogrid12 > * {width: 49%}
 }
 @media (max-width: 640px) {
 	[class*="autogrid"] > * {width: 100%}
