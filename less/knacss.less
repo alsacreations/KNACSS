@@ -391,16 +391,16 @@ img.left, img.right {
 
 /* auto-justified equal grids */
 
-[class^="autogrid"] {
+[class*="autogrid"] {
 	text-align: justify;
 	font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
 }
-[class^="autogrid"]:after {
+[class*="autogrid"]:after {
 	content: "";
 	display: inline-block;
 	width: 100%; 
 }
-[class^="autogrid"] > * {
+[class*="autogrid"] > * {
 	display: inline-block;
 	vertical-align: top;
 	text-align: left;
@@ -435,7 +435,7 @@ img.left, img.right {
 	.autogrid12 > * {width: 49.55%}
 }
 @media (max-width: @tinyscreen) {
-	[class^="autogrid"] > * {width: 100%}
+	[class*="autogrid"] > * {width: 100%}
 }
 
 /* blocks widths (percentage and pixels) */
