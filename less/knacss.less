@@ -397,7 +397,7 @@ img.left, img.right {
 
 [class*="autogrid"] {
 	text-align: justify;
-	font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
+	font-size: 1px; letter-spacing: -1px; /* whitespace fix part 1 */
 }
 [class*="autogrid"]:after {
 	content: "";
@@ -408,7 +408,9 @@ img.left, img.right {
 	display: inline-block;
 	vertical-align: top;
 	text-align: left;
-	font-size: 14em; font-size: 1.4rem; letter-spacing: normal; /* whitespace fix part 2 */
+	font-size: (@basefont + 0em);
+	font-size: ((@basefont / 10) + 0rem);
+	letter-spacing: normal; /* whitespace fix part 2 */
 	*display: inline; *zoom: 1; /* ie6 / ie7 hack */
 }
 .autogrid2 > * {width: 49%}
