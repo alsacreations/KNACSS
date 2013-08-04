@@ -9,8 +9,8 @@
 @smallvalue   : 10px; // small value for margins / paddings
 @mediumvalue  : 20px; // medium value for margins / paddings
 @largevalue   : 30px; // large value for margins / paddings
-@tinyscreen   : 480px; // small screens media query
-@mediumscreen : 768px; // medium screens media query
+@tinyscreen   : 480px; // tiny screens media query
+@smallscreen : 768px; // small screens media query
 @largescreen  : 1280px; // large screens media query
 @gutter       : 1.5%; // gutter value (%) for grid layouts
 
@@ -397,7 +397,7 @@ img.left, img.right {
 
 [class*="autogrid"] {
 	text-align: justify;
-	font-size: 1px; letter-spacing: -1px; /* whitespace fix part 1 */
+	font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
 }
 [class*="autogrid"]:after {
 	content: "";
@@ -431,7 +431,7 @@ img.left, img.right {
 	.autogrid10 > *,
 	.autogrid12 > * {width: 32%}
 }
-@media (max-width: @mediumscreen) {
+@media (max-width: @smallscreen) {
 	.autogrid3 > *,
 	.autogrid4 > *,
 	.autogrid5 > *,
@@ -629,7 +629,7 @@ textarea {
 /* ==desktop and retina medias   */
 /* ----------------------------- */
 
-@media (min-width: @mediumscreen) {
+@media (min-width: @smallscreen) {
 /* here go rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -683,7 +683,7 @@ textarea {
 	.large-man { margin: 0 !important; }
 }
 
-@media (max-width: @mediumscreen) {
+@media (max-width: @smallscreen) {
 
 	/* quick tablet reset */
 	.w60,
@@ -698,24 +698,27 @@ textarea {
 	.w800p,
 	.w960p,
 	.mw960p,
-	.medium-wauto { width: auto; } 
+	.small-wauto {
+		width: auto;
+		float: none;
+	} 
 
 	/* layouts for medium (m) screens */
-	.medium-hidden,
+	.small-hidden,
 	.tablet-hidden { display: none !important; }
-	.medium-visible { display: block !important; }
-	.medium-no-float {float: none; }
-	.medium-inbl {
+	.small-visible { display: block !important; }
+	.small-no-float {float: none; }
+	.small-inbl {
 		display: inline-block;
 		float: none;
 		vertical-align: top;
 	}
-	.medium-row {
+	.small-row {
 		display: table !important;
 		table-layout: fixed !important;
 		width: 100% !important;
 	}
-	.medium-col {
+	.small-col {
 		display: table-cell !important;
 		vertical-align: top !important;
 	}
@@ -730,13 +733,13 @@ textarea {
 		hyphens: auto;
 	}
 
-	/* widths for medium (m) screens */
-	.medium-w25 { width: 25% !important; }
-	.medium-w33 { width: 33.3333% !important; }
-	.medium-w50 { width: 50% !important; }
-	.medium-w66 { width: 66.6666% !important; }
-	.medium-w75 { width: 75% !important; }
-	.medium-w100 {
+	/* widths for small (s) screens */
+	.small-w25 { width: 25% !important; }
+	.small-w33 { width: 33.3333% !important; }
+	.small-w50 { width: 50% !important; }
+	.small-w66 { width: 66.6666% !important; }
+	.small-w75 { width: 75% !important; }
+	.small-w100  {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -745,9 +748,8 @@ textarea {
 		margin-right: 0 !important;
 		border: 0;		
 	}
-	/* margins for medium (m) screens */
-	.medium-ma0,
-	.medium-man { margin: 0 !important; }
+	/* margins for small (s) screens */
+	.small-ma0 { margin: 0 !important; }
 
 	/* Responsive grids */
 	.grid4 > * {.grid(2);} 
@@ -780,6 +782,7 @@ textarea {
 	.w400p,
 	.w500p {
 		width: auto;
+		float: none;
 	}
 	.row { 
 		display: block !important;
@@ -834,7 +837,7 @@ textarea {
 }
 
 /* orientation iOS font-size fix */
-@media (orientation: landscape) and (max-device-width: @mediumscreen) {
+@media (orientation: landscape) and (max-device-width: @smallscreen) {
 	html,
 	body {
 		-webkit-text-size-adjust: 100%;
