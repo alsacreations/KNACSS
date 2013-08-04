@@ -96,7 +96,10 @@
 	.w800p,
 	.w960p,
 	.mw960p,
-	.small-wauto { width: auto; } 
+	.small-wauto { 
+		width: auto;
+		float: none;
+		} 
 
 	/* you shall not pass */
 	div, textarea, table, td, th, code, pre, samp {
@@ -177,6 +180,7 @@
 	.w400p,
 	.w500p {
 		width: auto;
+		float: none;
 	}
 	.row { 
 		display: block !important;
