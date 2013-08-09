@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6m (2013-07) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -39,38 +39,32 @@ figure {
 	margin: .75em 0 0;
 }
 h1, .h1-like {
-	font-size: 1.8571em; /* equiv 26px */
-	font-weight: normal;
+	font-size: 2.286em; /* equiv 32px */
 	line-height: 1.6154em;
 	margin: .8077em 0 0 0;
 }
 h2, .h2-like {
-	font-size: 1.7143em; /* equiv 24px */
-	font-weight: normal;
+	font-size: 2em; /* equiv 28px */
 	line-height: 1.75em;
 	margin: .875em 0 0 0;
 }
 h3, .h3-like {
-	font-size: 1.5714em; /* equiv 22px */
-	font-weight: normal;
+	font-size: 1.714em; /* equiv 24px */
 	line-height: 1.909em;
 	margin: .9545em 0 0 0;
 }
 h4, .h4-like {
 	font-size: 1.4286em; /* equiv 20px */
-	font-weight: normal;
 	line-height: 1.05em;
 	margin:  1.05em 0 0 0;
 }
 h5, .h5-like {
 	font-size: 1.2857em; /* equiv 18px */
-	font-weight: normal;
 	line-height: 1.1667em;
 	margin:  1.1667em 0 0 0;
 }
 h6, .h6-like {
 	font-size: 1.1429em; /* equiv 16px */
-	font-weight: normal;
 	line-height: 1.3125em;
 	margin:  1.3125em 0 0 0;
 }
