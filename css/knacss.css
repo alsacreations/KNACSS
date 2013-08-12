@@ -400,6 +400,7 @@ label,
 textarea {
 	resize: vertical;
 	font-family: inherit;
+	font-size: inherit;
 }
 
 /* ----------------------------- */
