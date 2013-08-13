@@ -152,6 +152,7 @@ sub {
 table { margin-bottom: 1.5em; }
 
 /* avoid top margins on first content element */
+p:first-child,
 ul:first-child,
 ol:first-child,
 dl:first-child,
