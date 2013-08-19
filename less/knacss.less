@@ -1,7 +1,7 @@
-/*
-* www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
-* Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
-*/
+/**
+ * www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
+ * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
+ */
 
 // LESS values : adapt them to your design
 @basefont     : 14; // if "14" then 1em = 14px
@@ -19,31 +19,32 @@
 .line (@fontsize) {line-height: (@l-h *2 / (@fontsize / @basefont) + 0em)}
 .mtop (@fontsize) {margin: (@l-h / (@fontsize / @basefont) + 0em) 0 0}
 .grid (@number) {width: ((100%-(@gutter*(@number - 1))) / @number);}
- 
+
 .flow(@font-size, @base-font: @basefont, @base-height: @l-h) {
-        @coef: ceil((1 / (@base-height * @base-font / @font-size)));
-        @size: ((@font-size / @base-font) + 0em);
-        @height: ((@base-font * @base-height / @font-size) + 0em);    
-        font-size:   @size;
-        line-height: (@height * @coef);
-        margin-top:  @height;
-        margin-bottom: 0;
+    @coef: ceil((1 / (@base-height * @base-font / @font-size)));
+    @size: ((@font-size / @base-font) + 0em);
+    @height: ((@base-font * @base-height / @font-size) + 0em);
+    font-size:   @size;
+    line-height: (@height * @coef);
+    margin-top:  @height;
+    margin-bottom: 0;
 }
 
-/* ----------------------------- */
-/* ==reset                       */
-/* ----------------------------- */
+
+/* -----------------------------
+               reset
+   ----------------------------- */
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
-	font-size: 62.5%;
+    font-size: 62.5%;
 }
 body {
-	background-color: #fff;
-	color: #000;
-	font-family: helvetica, arial, sans-serif;
-	font-size: ((@basefont / 10) + 0em);
-	line-height: @l-h; // adapt to your design
+    background-color: #fff;
+    color: #000;
+    font-family: helvetica, arial, sans-serif;
+    font-size: ((@basefont / 10) + 0em);
+    line-height: @l-h; // adapt to your design
 }
 
 /* font-sizing for content */
@@ -59,45 +60,45 @@ th,
 label,
 textarea,
 caption,
-details, 
-figure, 
+details,
+figure,
 hgroup {
-	.flow(@basefont);
+    .flow(@basefont);
 }
 h1, .h1-like {
-	.flow(32); // equiv 32px
+    .flow(32); // equiv 32px
 }
 h2, .h2-like {
-	.flow(28); // equiv 28px
+    .flow(28); // equiv 28px
 }
 h3, .h3-like {
-	.flow(24); // equiv 24px
+    .flow(24); // equiv 24px
 }
 h4, .h4-like {
-	.flow(20); // equiv 20px
+    .flow(20); // equiv 20px
 }
 h5, .h5-like {
-	.flow(18); // equiv 18px
+    .flow(18); // equiv 18px
 }
 h6, .h6-like {
-	.flow(16); // equiv 16px
+    .flow(16); // equiv 16px
 }
 
 /* alternate font-sizing */
 .smaller {
-	.pxtoem (10); /* equiv 10px */
+    .pxtoem (10); /* equiv 10px */
 }
 .small {
-	.pxtoem (12); /* equiv 12px */
+    .pxtoem (12); /* equiv 12px */
 }
 .big {
-	.pxtoem (16); /* equiv 16px */
+    .pxtoem (16); /* equiv 16px */
 }
 .bigger {
-	.pxtoem (18); /* equiv 18px */
+    .pxtoem (18); /* equiv 18px */
 }
 .biggest {
-	.pxtoem (20); /* equiv 20px */
+    .pxtoem (20); /* equiv 20px */
 }
 
 /* soft reset */
@@ -106,50 +107,50 @@ body,
 textarea,
 figure,
 label {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 ul,
 ol {
-	padding-left: 2em;
+    padding-left: 2em;
 }
 ul.unstyled {
-	list-style: none;
+    list-style: none;
 }
-code, 
+code,
 pre,
 samp,
 kbd {
-	white-space: pre-wrap;
-	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
-	line-height: 1em;
+    white-space: pre-wrap;
+    font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+    line-height: 1em;
 }
 code, kbd, mark {
-	border-radius: 2px;
+    border-radius: 2px;
 }
 em {
-	font-style: italic;
+    font-style: italic;
 }
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 i,
 b {
-	font-style: normal;
-	font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
 }
 kbd {
-	padding: 0 2px;
-	border: 1px solid #999;
+    padding: 0 2px;
+    border: 1px solid #999;
 }
 code {
-	padding: 2px 4px;
-	background: rgba(0,0,0,.04);
-	color: #b11; 
+    padding: 2px 4px;
+    background: rgba(0,0,0,.04);
+    color: #b11;
 }
 mark {
-	padding:2px 4px;
-	background: #ff0;
+    padding:2px 4px;
+    background: #ff0;
 }
 table { margin-bottom: 1.5em; }
 
@@ -157,28 +158,28 @@ table { margin-bottom: 1.5em; }
 p, ul, ol, dl,
 blockquote, pre,
 h1, h2, h3, h4, h5, h6 {
-	&:first-child {
-		margin-top: 0;
-	}
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 /* avoid margins on nested elements */
 li p,
 li ul,
 li ol {
-	margin-top: 0;
-	margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* max values */
 img, table, td, blockquote, code, pre, textarea, input, video {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 /* pictures */
 img {
-	height: auto;
-	vertical-align: middle;
+    height: auto;
+    vertical-align: middle;
 }
 /* Gmap3 max-width bug fix on images */
 .gmnoscreen img,
@@ -191,148 +192,151 @@ body > script {display: none !important;}
 
 /* skip-links */
 .skip-links {
-	position: absolute;
+    position: absolute;
 
-	a {
-		position: absolute;
-		left: -7000px;
-		padding: 0.5em;
-		background: black;
-		color: white;
-		text-decoration: none;
-	
-		&:focus {
-			position: static;
-		}
-	}
+    a {
+        position: absolute;
+        left: -7000px;
+        padding: 0.5em;
+        background: black;
+        color: white;
+        text-decoration: none;
+
+        &:focus {
+            position: static;
+        }
+    }
 }
 
-/* ----------------------------- */
-/* ==layout and modules          */
-/* ----------------------------- */
+
+/* -----------------------------
+        layout and modules
+   ----------------------------- */
 
 /* switching box model for all elements */
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* float layout */
 /* module, gains superpower "BFC" Block Formating Context */
-.mod { 
-	overflow: hidden;
+.mod {
+    overflow: hidden;
 }
 
 /* blocks that needs to be placed under floats */
 .clear,
 .line,
 .row {
-	clear: both;
+    clear: both;
 }
 
 /* blocks that must contain floats */
 .clearfix:after,
 .line:after,
 .mod:after {
-	content: "";
-	display: table;
-	clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* table layout */
 .row {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
 }
 .row > *,
 .col {
-	display: table-cell;
-	vertical-align: top;
+    display: table-cell;
+    vertical-align: top;
 }
 
 /* inline-block */
 .inbl {
-	display: inline-block;
-	vertical-align: top;
+    display: inline-block;
+    vertical-align: top;
 }
 
 /* flexbox layout */
 .flex {
-	display : -webkit-box;
-	display : -moz-box;
-	display: -ms-flexbox;
-	display : -webkit-flex;
-	display : flex;
+    display : -webkit-box;
+    display : -moz-box;
+    display: -ms-flexbox;
+    display : -webkit-flex;
+    display : flex;
 }
 .flex-h {
-	-webkit-box-orient: horizontal;
-	-moz-box-orient: horizontal;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 .flex-v {
-	-webkit-box-orient: vertical;
-	-moz-box-orient: vertical;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 .flex-fluid {
-	-moz-box-flex: 1;
-	-webkit-flex: 1;
-	-moz-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 .flex-start {
-	-webkit-box-ordinal-group: -1;
-	-moz-box-ordinal-group: 0;
-	-ms-flex-order : -1;
-	-webkit-order : -1;
-	-moz-order : -1;
-	order : -1;
+    -webkit-box-ordinal-group: -1;
+    -moz-box-ordinal-group: 0;
+    -ms-flex-order : -1;
+    -webkit-order : -1;
+    -moz-order : -1;
+    order : -1;
 }
 .flex-mid {
-	-webkit-box-ordinal-group: 1;
-	-moz-box-ordinal-group: 1;
-	-ms-flex-order : 1;
-	-webkit-order : 1;
-	-moz-order : 1;
-	order : 1;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order : 1;
+    -webkit-order : 1;
+    -moz-order : 1;
+    order : 1;
 }
 .flex-end {
-	-webkit-box-ordinal-group: 42;
-	-moz-box-ordinal-group: 42;
-	-ms-flex-order : 42;
-	-webkit-order : 42;
-	-moz-order : 42;
-	order : 42;
+    -webkit-box-ordinal-group: 42;
+    -moz-box-ordinal-group: 42;
+    -ms-flex-order : 42;
+    -webkit-order : 42;
+    -moz-order : 42;
+    order : 42;
 }
 
-/* alignments (blocks and inline) */
-/* ------------------------------ */
+
+/* ------------------------------
+           alignments
+   ------------------------------ */
 
 /* left elements */
 .left {
-	float: left;
+    float: left;
 }
 img.left {
-	margin-right: 1em;
+    margin-right: 1em;
 }
 
 /* right elements */
 .right {
-	float: right;
+    float: right;
 }
 img.right {
-	margin-left: 1em;
+    margin-left: 1em;
 }
 
 img.left, img.right {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .center    { margin-left: auto; margin-right: auto; }
@@ -340,12 +344,15 @@ img.left, img.right {
 .txtright  { text-align: right; }
 .txtcenter { text-align: center; }
 
-/* grids                          */
-/* ------------------------------ */
+
+/* ------------------------------
+               grids
+   ------------------------------ */
+
 [class^=grid]:after {
-	content: "";
-	display: table;
-	clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 [class^=grid] > * {float: left; } /* direct childrens are floating */
 
@@ -364,48 +371,49 @@ img.left, img.right {
 .grid1-2 > * + *,
 .grid3-1 > * + *,
 .grid1-3 > * + * {
-	margin-left: @gutter;
+    margin-left: @gutter;
 }
 .grid2-1 > *,
 .grid1-2 > * {
-	width: (100%-@gutter) / 3;
+    width: (100%-@gutter) / 3;
 }
 .grid2-1 > :first-child,
 .grid1-2 > * + * {
-	width: (100%-@gutter) * 2 / 3;
+    width: (100%-@gutter) * 2 / 3;
 }
 .grid3-1 > *,
 .grid1-3 > * {
-	width: (100%-@gutter) / 4;
+    width: (100%-@gutter) / 4;
 }
 .grid3-1 > :first-child,
 .grid1-3 > * + * {
-	width: (100%-@gutter) * 3 / 4;
+    width: (100%-@gutter) * 3 / 4;
 }
 
-/* ----------------------------- */
-/* ==autogrids                   */
-/* ----------------------------- */
+
+/* -----------------------------
+            autogrids
+   ----------------------------- */
 
 /* auto-justified equal grids */
 
 [class*="autogrid"] {
-	text-align: justify;
-	font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
+    text-align: justify;
+    font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
 }
 [class*="autogrid"]:after {
-	content: "";
-	display: inline-block;
-	width: 100%; 
+    content: "";
+    display: inline-block;
+    width: 100%;
 }
 [class*="autogrid"] > * {
-	display: inline-block;
-	vertical-align: top;
-	text-align: left;
-	font-size: (@basefont + 0em);
-	font-size: ((@basefont / 10) + 0rem);
-	letter-spacing: normal; /* whitespace fix part 2 */
-	*display: inline; *zoom: 1; /* ie6 / ie7 hack */
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: (@basefont + 0em);
+    font-size: ((@basefont / 10) + 0rem);
+    letter-spacing: normal; /* whitespace fix part 2 */
+    *display: inline; *zoom: 1; /* ie6 / ie7 hack */
 }
 .autogrid2 > * {width: 49%}
 .autogrid3 > * {width: 32%}
@@ -419,23 +427,23 @@ img.left, img.right {
 /* Responsiv-o-matic */
 
 @media (max-width: @largescreen) {
-	.autogrid5 > *,
-	.autogrid6 > *,
-	.autogrid8 > *,
-	.autogrid10 > *,
-	.autogrid12 > * {width: 32%}
+    .autogrid5 > *,
+    .autogrid6 > *,
+    .autogrid8 > *,
+    .autogrid10 > *,
+    .autogrid12 > * {width: 32%}
 }
 @media (max-width: @smallscreen) {
-	.autogrid3 > *,
-	.autogrid4 > *,
-	.autogrid5 > *,
-	.autogrid6 > *,
-	.autogrid8 > *,
-	.autogrid10 > *,
-	.autogrid12 > * {width: 49%}
+    .autogrid3 > *,
+    .autogrid4 > *,
+    .autogrid5 > *,
+    .autogrid6 > *,
+    .autogrid8 > *,
+    .autogrid10 > *,
+    .autogrid12 > * {width: 49%}
 }
 @media (max-width: @tinyscreen) {
-	[class*="autogrid"] > * {width: 100%}
+    [class*="autogrid"] > * {width: 100%}
 }
 
 /* blocks widths (percentage and pixels) */
@@ -518,45 +526,48 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 /* hiding content */
 .visually-hidden {
-	position: absolute;
-	left: -7000px;
-	overflow: hidden;
+    position: absolute;
+    left: -7000px;
+    overflow: hidden;
 }
 [dir=rtl] .visually-hidden {
-	left: auto;
-	right: -7000px;
+    left: auto;
+    right: -7000px;
 }
 
 /* hidden on desktop */
-.desktop-hidden { display: none; } 
+.desktop-hidden { display: none; }
 /* hidden on mobile */
-.mobile-hidden { display: block; } 
+.mobile-hidden { display: block; }
 
-/* ----------------------------- */
-/* ==forms                       */
-/* ----------------------------- */
+
+/* -----------------------------
+               forms
+   ----------------------------- */
+
 form,
 fieldset {
-	border: none;
+    border: none;
 }
 input,
 button,
 select,
 label,
 .btn {
-	vertical-align: middle; /* @bugfix alignment */
-	font-family: inherit;
-	font-size: inherit;
+    vertical-align: middle; /* @bugfix alignment */
+    font-family: inherit;
+    font-size: inherit;
 }
 textarea {
-	resize: vertical;
-	font-family: inherit;
-	font-size: inherit;
+    resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
 }
 
-/* ----------------------------- */
-/* ==iefix                       */
-/* ----------------------------- */
+
+/* -----------------------------
+                iefix
+   ----------------------------- */
 
 /* haslayout for IE6/IE7 */
 .ie67 .clearfix,
@@ -564,7 +575,7 @@ textarea {
 .ie67 .mod,
 .ie67 .row,
 .ie67 .col {
-	zoom: 1;
+    zoom: 1;
 }
 
 /* inline-block and table-cell for IE6/IE7 */
@@ -572,48 +583,50 @@ textarea {
 .ie67 .btn,
 .ie67 .col,
 .ie67 .inbl {
-	display: inline;
-	zoom: 1;
+    display: inline;
+    zoom: 1;
 }
 .ie8 img {
-	width: auto; /* @bugfix for IE8 */
+    width: auto; /* @bugfix for IE8 */
 }
 
 /* Active box-sizing for IE6/IE7 */
 /* @source https://github.com/Schepp/box-sizing-polyfill */
 /*
 .ie67 * {
-	behavior: url(/js/boxsizing.htc);
+    behavior: url(/js/boxsizing.htc);
 }
 */
 
-/* ----------------------------- */
-/* ==print                       */
-/* ----------------------------- */
+
+/* -----------------------------
+              print
+   ----------------------------- */
 
 /* quick print reset */
 @media print {
-	p,
-	blockquote {
-		orphans: 2;
-		widows: 2;
-	}
-	blockquote,
-	ul,
-	ol {
-		page-break-inside: avoid;
-	}
-	h1,
-	h2,
-	h3,
-	caption {
-		page-break-after: avoid;
-	}
+    p,
+    blockquote {
+        orphans: 2;
+        widows: 2;
+    }
+    blockquote,
+    ul,
+    ol {
+        page-break-inside: avoid;
+    }
+    h1,
+    h2,
+    h3,
+    caption {
+        page-break-after: avoid;
+    }
 }
 
-/* ----------------------------- */
-/* ==own stylesheet               */
-/* ----------------------------- */
+
+/* -----------------------------
+          own stylesheet
+   ----------------------------- */
 
 /* Here should go your own CSS styles */
 /* You can link them with an @import or, better for webperf, just paste them here */
@@ -621,207 +634,208 @@ textarea {
 /* @import url(my-styles.css); */
 
 
-/* ----------------------------- */
-/* ==desktop and retina medias   */
-/* ----------------------------- */
+/* -----------------------------
+     desktop and retina medias
+   ----------------------------- */
 
 @media (min-width: @smallscreen) {
-/* here go rules for big resources and big screens like: background-images, font-faces, etc. */
+    /* here go rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-/* Style adjustments for retina devices */
+    /* Style adjustments for retina devices */
 }
 
-/* ---------------------------------- */
-/* ==Responsive large / medium / tiny */
-/* ---------------------------------- */
+
+/* ----------------------------------
+    Responsive large / medium / tiny
+   ---------------------------------- */
 
 @media (min-width: @largescreen) {
 
-	/* layouts for large (l) screens */
-	.large-hidden,
-	.tablet-hidden { display: none !important; }
-	.large-visible { display: block !important; }
-	.large-no-float {float: none; }
-	.large-inbl {
-		display: inline-block;
-		float: none;
-		vertical-align: top;
-	}
-	.large-row {
-		display: table;
-		table-layout: fixed;
-		width: 100% !important;
-	}
-	.large-col {
-		display: table-cell;
-		vertical-align: top;
-	}
+    /* layouts for large (l) screens */
+    .large-hidden,
+    .tablet-hidden { display: none !important; }
+    .large-visible { display: block !important; }
+    .large-no-float {float: none; }
+    .large-inbl {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .large-row {
+        display: table;
+        table-layout: fixed;
+        width: 100% !important;
+    }
+    .large-col {
+        display: table-cell;
+        vertical-align: top;
+    }
 
-	/* widths for large (l) screens */
-	.large-w25 { width: 25% !important; }
-	.large-w33 { width: 33.3333% !important; }
-	.large-w50 { width: 50% !important; }
-	.large-w66 { width: 66.6666% !important; }
-	.large-w75 { width: 75% !important; }
-	.large-w100 {
-		display: block !important;
-		float: none !important;
-		clear: none !important;
-		width: auto !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		border: 0;		
-	}
+    /* widths for large (l) screens */
+    .large-w25 { width: 25% !important; }
+    .large-w33 { width: 33.3333% !important; }
+    .large-w50 { width: 50% !important; }
+    .large-w66 { width: 66.6666% !important; }
+    .large-w75 { width: 75% !important; }
+    .large-w100 {
+        display: block !important;
+        float: none !important;
+        clear: none !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: 0;
+    }
 
-	/* margins for large (l) screens */
-	.large-ma0 { margin: 0 !important; }
+    /* margins for large (l) screens */
+    .large-ma0 { margin: 0 !important; }
 }
 
 @media (max-width: @smallscreen) {
 
-	/* quick tablet reset */
-	.w600p,
-	.w700p,
-	.w800p,
-	.w960p,
-	.mw960p,
-	.small-wauto {
-		width: auto;
-		float: none;
-	} 
+    /* quick tablet reset */
+    .w600p,
+    .w700p,
+    .w800p,
+    .w960p,
+    .mw960p,
+    .small-wauto {
+        width: auto;
+        float: none;
+    }
 
-	/* layouts for medium (m) screens */
-	.small-hidden,
-	.tablet-hidden { display: none !important; }
-	.small-visible { display: block !important; }
-	.small-no-float {float: none; }
-	.small-inbl {
-		display: inline-block;
-		float: none;
-		vertical-align: top;
-	}
-	.small-row {
-		display: table !important;
-		table-layout: fixed !important;
-		width: 100% !important;
-	}
-	.small-col {
-		display: table-cell !important;
-		vertical-align: top !important;
-	}
+    /* layouts for medium (m) screens */
+    .small-hidden,
+    .tablet-hidden { display: none !important; }
+    .small-visible { display: block !important; }
+    .small-no-float {float: none; }
+    .small-inbl {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .small-row {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+    .small-col {
+        display: table-cell !important;
+        vertical-align: top !important;
+    }
 
-	/* you shall not pass */
-	div, textarea, table, td, th, code, pre, samp {
-		word-wrap: break-word;
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		-ms-hyphens: auto;
-		-o-hyphens: auto;
-		hyphens: auto;
-	}
+    /* you shall not pass */
+    div, textarea, table, td, th, code, pre, samp {
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -o-hyphens: auto;
+        hyphens: auto;
+    }
 
-	/* widths for small (s) screens */
-	.small-w25 { width: 25% !important; }
-	.small-w33 { width: 33.3333% !important; }
-	.small-w50 { width: 50% !important; }
-	.small-w66 { width: 66.6666% !important; }
-	.small-w75 { width: 75% !important; }
-	.small-w100  {
-		display: block !important;
-		float: none !important;
-		clear: none !important;
-		width: auto !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		border: 0;		
-	}
-	/* margins for small (s) screens */
-	.small-ma0 { margin: 0 !important; }
+    /* widths for small (s) screens */
+    .small-w25 { width: 25% !important; }
+    .small-w33 { width: 33.3333% !important; }
+    .small-w50 { width: 50% !important; }
+    .small-w66 { width: 66.6666% !important; }
+    .small-w75 { width: 75% !important; }
+    .small-w100  {
+        display: block !important;
+        float: none !important;
+        clear: none !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: 0;
+    }
+    /* margins for small (s) screens */
+    .small-ma0 { margin: 0 !important; }
 
-	/* Responsive grids */
-	.grid4 > * {.grid(2);} 
-	.grid4 > :first-child + * + * {margin-left: 0}
+    /* Responsive grids */
+    .grid4 > * {.grid(2);}
+    .grid4 > :first-child + * + * {margin-left: 0}
 
-	.grid6 > * {.grid(3);}  
-	.grid6 > :first-child + * + * + * {margin-left: 0}
+    .grid6 > * {.grid(3);}
+    .grid6 > :first-child + * + * + * {margin-left: 0}
 }
 
 @media (max-width: @tinyscreen) {
 
-	/* quick smartphone reset */
-	.mod,
-	.col,
-	fieldset {
-		display: block !important;
-		float: none !important;
-		clear: none !important;
-		width: auto !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		border: 0;
-	}
-	.w300p,
-	.w400p,
-	.w500p {
-		width: auto;
-		float: none;
-	}
-	.row { 
-		display: block !important;
-		width: 100% !important;
-	}
+    /* quick smartphone reset */
+    .mod,
+    .col,
+    fieldset {
+        display: block !important;
+        float: none !important;
+        clear: none !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: 0;
+    }
+    .w300p,
+    .w400p,
+    .w500p {
+        width: auto;
+        float: none;
+    }
+    .row {
+        display: block !important;
+        width: 100% !important;
+    }
 
-	/* layouts for tiny (t) screens */
-	.tiny-hidden,
-	.phone-hidden { display: none !important; }
-	.tiny-visible { display: block !important; }
-	.tiny-no-float {float: none;}
-	.tiny-inbl {
-		display: inline-block;
-		float: none;
-		vertical-align: top;
-	}
-	.tiny-row {
-		display: table !important;
-		table-layout: fixed !important;
-		width: 100% !important;
-	}
-	.tiny-col {
-		display: table-cell !important;
-		vertical-align: top !important;
-	}
-	th,
-	td {
-		display: block !important;
-		width: auto !important;
-		text-align: left !important;
-	}
-	thead { display: none; }
+    /* layouts for tiny (t) screens */
+    .tiny-hidden,
+    .phone-hidden { display: none !important; }
+    .tiny-visible { display: block !important; }
+    .tiny-no-float {float: none;}
+    .tiny-inbl {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .tiny-row {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+    .tiny-col {
+        display: table-cell !important;
+        vertical-align: top !important;
+    }
+    th,
+    td {
+        display: block !important;
+        width: auto !important;
+        text-align: left !important;
+    }
+    thead { display: none; }
 
-	/* widths for tiny (t) screens */
-	.tiny-w25 { width: 25% !important; }
-	.tiny-w33 { width: 33.3333% !important; }
-	.tiny-w50 { width: 50% !important; }
-	.tiny-w66 { width: 66.6666% !important; }
-	.tiny-w75 { width: 75% !important; }
-	.tiny-w100 { 
-		display: block !important;
-		float: none !important;
-		clear: none !important;
-		width: auto !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		border: 0;
-	}
-	/* margins for tiny (t) screens */
-	.tiny-ma0 { margin: 0 !important; }
+    /* widths for tiny (t) screens */
+    .tiny-w25 { width: 25% !important; }
+    .tiny-w33 { width: 33.3333% !important; }
+    .tiny-w50 { width: 50% !important; }
+    .tiny-w66 { width: 66.6666% !important; }
+    .tiny-w75 { width: 75% !important; }
+    .tiny-w100 {
+        display: block !important;
+        float: none !important;
+        clear: none !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: 0;
+    }
+    /* margins for tiny (t) screens */
+    .tiny-ma0 { margin: 0 !important; }
 }
 
 /* orientation iOS font-size fix */
 @media (orientation: landscape) and (max-device-width: @smallscreen) {
-	html,
-	body {
-		-webkit-text-size-adjust: 100%;
-	}
+    html,
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
 }
