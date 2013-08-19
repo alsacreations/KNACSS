@@ -2,7 +2,7 @@ KNACSS
 ======
 http://www.knacss.com
 
-KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. 
+KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects.
 
 Designed by [Alsacreations agency](http://alsacreations.fr) and used on a daily basis in production, KNACSS is not only a lightweight documented framework but also a CSS reset, adapted to every project no matter its size.
 

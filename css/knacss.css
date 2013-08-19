@@ -1,22 +1,22 @@
-/*
-* www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
-* Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
-*/
+/**
+ * www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
+ * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
+ */
 
-/* ----------------------------- */
-/* ==reset                       */
-/* ----------------------------- */
+/* -----------------------------
+               reset
+   ----------------------------- */
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
-	font-size: 62.5%;
+    font-size: 62.5%;
 }
 body {
-	background-color: #fff;
-	color: #000;
-	font-family: helvetica, arial, sans-serif;
-	font-size: 1.4em; /* equiv 14px */
-	line-height: 1.5; /* adapt to your design */
+    background-color: #fff;
+    color: #000;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 1.4em; /* equiv 14px */
+    line-height: 1.5; /* adapt to your design */
 }
 
 /* font-sizing for content */
@@ -32,58 +32,58 @@ th,
 label,
 textarea,
 caption,
-details, 
+details,
 figure {
-	font-size: 1em; /* equiv 14px */
-	line-height: 1.5;
-	margin: .75em 0 0;
+    font-size: 1em; /* equiv 14px */
+    line-height: 1.5;
+    margin: .75em 0 0;
 }
 h1, .h1-like {
-	font-size: 2.286em; /* equiv 32px */
-	line-height: 1.6154em;
-	margin: .8077em 0 0 0;
+    font-size: 2.286em; /* equiv 32px */
+    line-height: 1.6154em;
+    margin: .8077em 0 0 0;
 }
 h2, .h2-like {
-	font-size: 2em; /* equiv 28px */
-	line-height: 1.75em;
-	margin: .875em 0 0 0;
+    font-size: 2em; /* equiv 28px */
+    line-height: 1.75em;
+    margin: .875em 0 0 0;
 }
 h3, .h3-like {
-	font-size: 1.714em; /* equiv 24px */
-	line-height: 1.909em;
-	margin: .9545em 0 0 0;
+    font-size: 1.714em; /* equiv 24px */
+    line-height: 1.909em;
+    margin: .9545em 0 0 0;
 }
 h4, .h4-like {
-	font-size: 1.4286em; /* equiv 20px */
-	line-height: 1.05em;
-	margin:  1.05em 0 0 0;
+    font-size: 1.4286em; /* equiv 20px */
+    line-height: 1.05em;
+    margin:  1.05em 0 0 0;
 }
 h5, .h5-like {
-	font-size: 1.2857em; /* equiv 18px */
-	line-height: 1.1667em;
-	margin:  1.1667em 0 0 0;
+    font-size: 1.2857em; /* equiv 18px */
+    line-height: 1.1667em;
+    margin:  1.1667em 0 0 0;
 }
 h6, .h6-like {
-	font-size: 1.1429em; /* equiv 16px */
-	line-height: 1.3125em;
-	margin:  1.3125em 0 0 0;
+    font-size: 1.1429em; /* equiv 16px */
+    line-height: 1.3125em;
+    margin:  1.3125em 0 0 0;
 }
 
 /* alternate font-sizing */
 .smaller {
-	font-size: .7143em; /* equiv 10px */
+    font-size: .7143em; /* equiv 10px */
 }
 .small {
-	font-size: .8571em; /* equiv 12px */
+    font-size: .8571em; /* equiv 12px */
 }
 .big {
-	font-size: 1.1429em; /* equiv 16px */
+    font-size: 1.1429em; /* equiv 16px */
 }
 .bigger {
-	font-size: 1.2857em; /* equiv 18px */
+    font-size: 1.2857em; /* equiv 18px */
 }
 .biggest {
-	font-size: 1.4286em; /* equiv 20px */
+    font-size: 1.4286em; /* equiv 20px */
 }
 
 /* soft reset */
@@ -92,61 +92,61 @@ body,
 textarea,
 figure,
 label {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 ul,
 ol {
-	padding-left: 2em;
+    padding-left: 2em;
 }
 ul.unstyled {
-	list-style: none;
+    list-style: none;
 }
-code, 
+code,
 pre,
 samp,
 kbd {
-	white-space: pre-wrap;
-	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
-	line-height: 1em;
+    white-space: pre-wrap;
+    font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+    line-height: 1em;
 }
 code, kbd, mark {
-	border-radius: 2px;
+    border-radius: 2px;
 }
 em {
-	font-style: italic;
+    font-style: italic;
 }
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 i,
 b {
-	font-style: normal;
-	font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
 }
 kbd {
-	padding: 0 2px;
-	border: 1px solid #999;
+    padding: 0 2px;
+    border: 1px solid #999;
 }
 code {
-	padding: 2px 4px;
-	background: rgba(0,0,0,.04);
-	color: #b11; 
+    padding: 2px 4px;
+    background: rgba(0,0,0,.04);
+    color: #b11;
 }
 mark {
-	padding:2px 4px;
-	background: #ff0;
+    padding:2px 4px;
+    background: #ff0;
 }
 sup,
 sub {
-	vertical-align: 0;
-	position: relative;
+    vertical-align: 0;
+    position: relative;
 }
 sup {
-	bottom: 1ex;
+    bottom: 1ex;
 }
 sub {
-	top: .5ex;
+    top: .5ex;
 }
 
 table { margin-bottom: 1.5em; }
@@ -164,25 +164,25 @@ h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 /* avoid margins on nested elements */
 li p,
 li ul,
 li ol {
-	margin-top: 0;
-	margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* max values */
 img, table, td, blockquote, code, pre, textarea, input, video {
-	max-width: 100%;
+    max-width: 100%;
 }
 /* pictures */
 img {
-	height: auto;
-	vertical-align: middle;
+    height: auto;
+    vertical-align: middle;
 }
 /* Gmap3 max-width bug fix on images */
 .gmnoscreen img,
@@ -195,92 +195,95 @@ body > script {display: none !important;}
 
 /* skip-links */
 .skip-links {
-	position: absolute;
+    position: absolute;
 }
 .skip-links a {
-	position: absolute;
-	left: -7000px;
-	padding: 0.5em;
-	background: #000;
-	color:#fff;
-	text-decoration: none;
+    position: absolute;
+    left: -7000px;
+    padding: 0.5em;
+    background: #000;
+    color:#fff;
+    text-decoration: none;
 }
 .skip-links a:focus {
-	position: static;
+    position: static;
 }
 
-/* ----------------------------- */
-/* ==layout and modules          */
-/* ----------------------------- */
+
+/* -----------------------------
+        layout and modules
+   ----------------------------- */
 
 /* switching box model for all elements */
 * {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* float layout */
 /* module, gains superpower "BFC" Block Formating Context */
-.mod { 
-	overflow: hidden;
+.mod {
+    overflow: hidden;
 }
 
 /* blocks that needs to be placed under floats */
 .clear,
 .line,
 .row {
-	clear: both;
+    clear: both;
 }
 
 /* blocks that must contain floats */
 .clearfix:after,
 .line:after,
 .mod:after {
-	content: "";
-	display: table;
-	clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* table layout */
 .row {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
 }
 .row > *,
 .col {
-	display: table-cell;
-	vertical-align: top;
+    display: table-cell;
+    vertical-align: top;
 }
 
 /* inline-block */
 .inbl {
-	display: inline-block;
-	vertical-align: top;
+    display: inline-block;
+    vertical-align: top;
 }
 
-/* alignments (blocks and inline) */
-/* ------------------------------ */
+
+/* ------------------------------
+            alignments
+   ------------------------------ */
 
 /* left elements */
 .left {
-	float: left;
+    float: left;
 }
 img.left {
-	margin-right: 1em;
+    margin-right: 1em;
 }
 
 /* right elements */
 .right {
-	float: right;
+    float: right;
 }
 img.right {
-	margin-left: 1em;
+    margin-left: 1em;
 }
 
 img.left, img.right {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .center    { margin-left: auto; margin-right: auto; }
@@ -370,42 +373,45 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 /* hiding content */
 .visually-hidden {
-	position: absolute;
-	left: -7000px;
-	overflow: hidden;
+    position: absolute;
+    left: -7000px;
+    overflow: hidden;
 }
 [dir=rtl] .visually-hidden {
-	left: auto;
-	right: -7000px;
+    left: auto;
+    right: -7000px;
 }
 
 .desktop-hidden { display: none; } /* hidden on desktop */
 
-/* ----------------------------- */
-/* ==forms                       */
-/* ----------------------------- */
+
+/* -----------------------------
+               forms
+   ----------------------------- */
+
 form,
 fieldset {
-	border: none;
+    border: none;
 }
 input,
 button,
 select,
 label,
 .btn {
-	vertical-align: middle; /* @bugfix alignment */
-	font-family: inherit;
-	font-size: inherit;
+    vertical-align: middle; /* @bugfix alignment */
+    font-family: inherit;
+    font-size: inherit;
 }
 textarea {
-	resize: vertical;
-	font-family: inherit;
-	font-size: inherit;
+    resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
 }
 
-/* ----------------------------- */
-/* ==iefix                       */
-/* ----------------------------- */
+
+/* -----------------------------
+               iefix
+   ----------------------------- */
 
 /* hasLayout for IE6/IE7 */
 .ie67 .clearfix,
@@ -413,7 +419,7 @@ textarea {
 .ie67 .mod,
 .ie67 .row,
 .ie67 .col {
-	zoom: 1;
+    zoom: 1;
 }
 
 /* inline-block and table-cell for IE6/IE7 */
@@ -421,60 +427,60 @@ textarea {
 .ie67 .btn,
 .ie67 .col,
 .ie67 .inbl {
-	display: inline;
-	zoom: 1;
+    display: inline;
+    zoom: 1;
 }
 .ie8 img {
-	width: auto; /* @bugfix for IE8 */
+    width: auto; /* @bugfix for IE8 */
 }
 
 /* Active box-sizing for IE6/IE7 */
 /* @source https://github.com/Schepp/box-sizing-polyfill */
 /*
 .ie67 * {
-	behavior: url(/js/boxsizing.htc);
+    behavior: url(/js/boxsizing.htc);
 }
 */
 
-/* ----------------------------- */
-/* ==print                       */
-/* ----------------------------- */
+
+/* -----------------------------
+              print
+   ----------------------------- */
 
 /* quick print reset */
 @media print {
-	p,
-	blockquote {
-		orphans: 2;
-		widows: 2;
-	}
-	blockquote,
-	ul,
-	ol {
-		page-break-inside: avoid;
-	}
-	h1,
-	h2,
-	h3,
-	caption {
-		page-break-after: avoid;
-	}
+    p,
+    blockquote {
+        orphans: 2;
+        widows: 2;
+    }
+    blockquote,
+    ul,
+    ol {
+        page-break-inside: avoid;
+    }
+    h1,
+    h2,
+    h3,
+    caption {
+        page-break-after: avoid;
+    }
 }
 
 /* orientation iOS font-size fix */
 @media (orientation: landscape) and (max-device-width: 768px) {
-	html,
-	body {
-		-webkit-text-size-adjust: 100%;
-	}
+    html,
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
 }
 
-/* ----------------------------- */
-/* ==own stylesheet              */
-/* ----------------------------- */
+
+/* -----------------------------
+          own stylesheet
+   ----------------------------- */
 
 /* Here should go your own CSS styles */
 /* You can link them with an @import or, better for webperf, just paste them here */
 
 /* @import url(my-styles.css); */
-
-

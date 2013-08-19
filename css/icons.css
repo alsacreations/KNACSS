@@ -1,7 +1,6 @@
-
-/* ----------------------------- */
-/* ==icons and bullets           */
-/* ----------------------------- */
+/* -----------------------------
+         icons and bullets
+   ----------------------------- */
 
 .icon {display: inline-block;}
 
@@ -9,30 +8,30 @@
 .icon > li:before,
 .icon.after:after,
 .icon.after > li:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  position: relative; top: -.1em;
-  margin: 0 0.3em 0 0;
-  font: 1.4em/1 sans-serif;
-  color: #000;
-  text-shadow: 1px 1px 0 rgba(0,0,0,.1);
-  speak: none;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; top: -.1em;
+    margin: 0 0.3em 0 0;
+    font: 1.4em/1 sans-serif;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+    speak: none;
 }
 
 @media (min-device-width: 768px) {
-  .icon:before,
-  .icon > li:before,
-  .icon.after:after,
-  .icon.after > li:after {
-  font: 1em/0.6 sans-serif;
-  -webkit-transform: rotateZ(0.05deg);
-  }
+    .icon:before,
+    .icon > li:before,
+    .icon.after:after,
+    .icon.after > li:after {
+        font: 1em/0.6 sans-serif;
+        -webkit-transform: rotateZ(0.05deg);
+    }
 }
 
 .icon.after:after,
 .icon.after > li:after {
-  margin: 0 0 0 8px;
+    margin: 0 0 0 8px;
 }
 
 ul.icon {display: block;}
@@ -42,159 +41,159 @@ ul.icon.after:after {content:""}
 .icon.after:before,
 .icon.after > li:before {content: "" !important}
 
-.icon-rate:before, 
+.icon-rate:before,
 .icon-rate > li:before,
-.icon-rate.after:after, 
+.icon-rate.after:after,
 .icon-rate.after > li:after {
-  content: "\2605";
+    content: "\2605";
 }
-.icon-unrate:before, 
+.icon-unrate:before,
 .icon-unrate > li:before,
-.icon-unrate.after:after, 
+.icon-unrate.after:after,
 .icon-unrate.after > li:after {
-  content: "\2606";
+    content: "\2606";
 }
-.icon-check:before, 
+.icon-check:before,
 .icon-check > li:before,
-.icon-check.after:after, 
+.icon-check.after:after,
 .icon-check.after > li:after {
-  content: "\2713";
+    content: "\2713";
 }
-.icon-uncheck:before, 
+.icon-uncheck:before,
 .icon-uncheck > li:before,
-.icon-uncheck.after:after, 
+.icon-uncheck.after:after,
 .icon-uncheck.after > li:after {
-  content: "\2717";
+    content: "\2717";
 }
-.icon-cloud:before, 
+.icon-cloud:before,
 .icon-cloud > li:before,
-.icon-cloud.after:after, 
+.icon-cloud.after:after,
 .icon-cloud.after > li:after {
-  content: "\2601";
+    content: "\2601";
 }
-.icon-dl:before, 
+.icon-dl:before,
 .icon-dl > li:before,
-.icon-dl.after:after, 
+.icon-dl.after:after,
 .icon-dl.after > li:after {
-  content: "\21E3";
-  font-weight: bold;
+    content: "\21E3";
+    font-weight: bold;
 }
-.icon-cross:before, 
+.icon-cross:before,
 .icon-cross > li:before,
-.icon-cross.after:after, 
+.icon-cross.after:after,
 .icon-cross.after > li:after {
-  content: "\2716";
-  font-weight: bold;
+    content: "\2716";
+    font-weight: bold;
 }
-.icon-arrow1:before, 
+.icon-arrow1:before,
 .icon-arrow1 > li:before,
-.icon-arrow1.after:after, 
+.icon-arrow1.after:after,
 .icon-arrow1.after > li:after {
-  content: "\2192";
-  position: relative; top: -0.15em;
+    content: "\2192";
+    position: relative; top: -0.15em;
 }
-.icon-arrow2:before, 
+.icon-arrow2:before,
 .icon-arrow2 > li:before,
-.icon-arrow2.after:after, 
+.icon-arrow2.after:after,
 .icon-arrow2.after > li:after {
-  content: "\279E";
+    content: "\279E";
 }
-.icon-arrow3:before, 
+.icon-arrow3:before,
 .icon-arrow3 > li:before,
-.icon-arrow3.after:after, 
+.icon-arrow3.after:after,
 .icon-arrow3.after > li:after {
-  content: "\279A";
+    content: "\279A";
 }
-.icon-bracket1:before, 
+.icon-bracket1:before,
 .icon-bracket1 > li:before,
-.icon-bracket1.after:after, 
+.icon-bracket1.after:after,
 .icon-bracket1.after > li:after {
-  content: "\2039";
-  font-weight: bold;
-  font-size: 1.6em;
-  position: relative; top: -0.15em;
+    content: "\2039";
+    font-weight: bold;
+    font-size: 1.6em;
+    position: relative; top: -0.15em;
 }
-.icon-bracket2:before, 
+.icon-bracket2:before,
 .icon-bracket2 > li:before,
-.icon-bracket2.after:after, 
+.icon-bracket2.after:after,
 .icon-bracket2.after > li:after {
-  content: "\203A";
-  font-weight: bold;
-  font-size: 1.6em;
-  position: relative; top: -0.15em;
+    content: "\203A";
+    font-weight: bold;
+    font-size: 1.6em;
+    position: relative; top: -0.15em;
 }
-.icon-up:before, 
+.icon-up:before,
 .icon-up > li:before,
-.icon-up.after:after, 
+.icon-up.after:after,
 .icon-up.after > li:after {
-  content: "\25B2";
+    content: "\25B2";
 }
-.icon-down:before, 
+.icon-down:before,
 .icon-down > li:before,
-.icon-down.after:after, 
+.icon-down.after:after,
 .icon-down.after > li:after {
-  content: "\25BC";
+    content: "\25BC";
 }
-.icon-bull:before, 
+.icon-bull:before,
 .icon-bull > li:before,
-.icon-bull.after:after, 
+.icon-bull.after:after,
 .icon-bull.after > li:after {
-  content: "\2022";
-  font-size: 1.2em;
-  top: -0.05em;
+    content: "\2022";
+    font-size: 1.2em;
+    top: -0.05em;
 }
-.icon-bull2:before, 
+.icon-bull2:before,
 .icon-bull2 > li:before,
-.icon-bull2.after:after, 
+.icon-bull2.after:after,
 .icon-bull2.after > li:after {
-  content: "\25E6";
-  top: -0.05em;
+    content: "\25E6";
+    top: -0.05em;
 }
-.icon-bull3:before, 
+.icon-bull3:before,
 .icon-bull3 > li:before,
-.icon-bull3.after:after, 
+.icon-bull3.after:after,
 .icon-bull3.after > li:after {
-  content: "\2023";
-  font-size: 1.6em;
-  top: -0.05em;
+    content: "\2023";
+    font-size: 1.6em;
+    top: -0.05em;
 }
-.icon-nav:before, 
+.icon-nav:before,
 .icon-nav > li:before,
-.icon-nav.after:after, 
+.icon-nav.after:after,
 .icon-nav.after > li:after {
-  content: "\2261";
-  font-weight: bold;
+    content: "\2261";
+    font-weight: bold;
 }
-.icon-losange:before, 
+.icon-losange:before,
 .icon-losange > li:before,
-.icon-losange.after:after, 
+.icon-losange.after:after,
 .icon-losange.after > li:after {
-  content: "\25C6";
+    content: "\25C6";
 }
-.icon-asteri:before, 
+.icon-asteri:before,
 .icon-asteri > li:before,
-.icon-asteri.after:after, 
+.icon-asteri.after:after,
 .icon-asteri.after > li:after {
-  content: "\2731";
-  font-weight: bold;
+    content: "\2731";
+    font-weight: bold;
 }
-.icon-mail:before, 
+.icon-mail:before,
 .icon-mail > li:before,
-.icon-mail.after:after, 
+.icon-mail.after:after,
 .icon-mail.after > li:after {
-  content: "\2709";
-  font-size: 1.6em;
-  top: -.05em;
+    content: "\2709";
+    font-size: 1.6em;
+    top: -.05em;
 }
 
-ol.styled {counter-reset: styled;} 
+ol.styled {counter-reset: styled;}
 ol.styled > li {
     list-style-type: none;
     counter-increment: styled;
     margin-bottom: .3em;
 }
 ol.styled > li:before {
-    content: counter(styled); 
+    content: counter(styled);
     display: inline-block;
     width: 1em; height: 1em;
     line-height: 1;
@@ -206,5 +205,5 @@ ol.styled > li:before {
     font-size: .9em;
     text-align: center;
     text-indent: -0.1em;
-    color: white;		
+    color: white;
 }

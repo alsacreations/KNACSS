@@ -1,13 +1,12 @@
-
-/* ----------------------------- */
-/* ==grids                       */
-/* ----------------------------- */
+/* -----------------------------
+               grids
+   ----------------------------- */
 
 /* equal grids with 2% gutter */
 [class^=grid]:after {
-	content: "";
-	display: table;
-	clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 [class^=grid] > * {float: left; } /* direct childrens are floating */
 [class^=grid] > * + * { margin-left: 2%; } /* here's the gutter */
@@ -27,27 +26,27 @@
 .grid3-1 > *:first-child,
 .grid1-3 > * + * { width: 74.5%; }
 
-/* ----------------------------- */
-/* ==autogrids                  */
-/* ----------------------------- */
+
+/* -----------------------------
+             autogrids
+   ----------------------------- */
 
 /* auto-justified equal grids */
-
 [class*="autogrid"] {
-	text-align: justify;
-	font-size: 1px; letter-spacing: -1px; /* whitespace fi xpart 1 */
+    text-align: justify;
+    font-size: 1px; letter-spacing: -1px; /* whitespace fix part 1 */
 }
 [class*="autogrid"]:after {
-	content: "";
-	display: inline-block;
-	width: 100%; 
+    content: "";
+    display: inline-block;
+    width: 100%;
 }
 [class*="autogrid"] > * {
-	display: inline-block;
-	vertical-align: top;
-	text-align: left;
-	font-size: 14em; font-size: 1.4rem; letter-spacing: normal; /* whitespace fix part 2 */
-	*display: inline; *zoom: 1; /* ie6 / ie7 hack */
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: 14em; font-size: 1.4rem; letter-spacing: normal; /* whitespace fix part 2 */
+    *display: inline; *zoom: 1; /* ie6 / ie7 hack */
 }
 .autogrid2 > * {width: 49%}
 .autogrid3 > * {width: 32%}
@@ -59,23 +58,22 @@
 .autogrid12 > * {width: 6.4%}
 
 /* Responsiv-o-matic */
-
 @media (max-width: 1024px) {
-	.autogrid5 > *,
-	.autogrid6 > *,
-	.autogrid8 > *,
-	.autogrid10 > *,
-	.autogrid12 > * {width: 32%}
+    .autogrid5 > *,
+    .autogrid6 > *,
+    .autogrid8 > *,
+    .autogrid10 > *,
+    .autogrid12 > * {width: 32%}
 }
 @media (max-width: 768px) {
-	.autogrid3 > *,
-	.autogrid4 > *,
-	.autogrid5 > *,
-	.autogrid6 > *,
-	.autogrid8 > *,
-	.autogrid10 > *,
-	.autogrid12 > * {width: 49%}
+    .autogrid3 > *,
+    .autogrid4 > *,
+    .autogrid5 > *,
+    .autogrid6 > *,
+    .autogrid8 > *,
+    .autogrid10 > *,
+    .autogrid12 > * {width: 49%}
 }
 @media (max-width: 640px) {
-	[class*="autogrid"] > * {width: 100%}
+    [class*="autogrid"] > * {width: 100%}
 }
