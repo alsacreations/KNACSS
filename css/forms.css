@@ -3,7 +3,10 @@
 /* ==forms                       */
 /* ----------------------------- */
 
-/* thanks to HTML5boilerplate, github.com/nathansmith/formalize and www.sitepen.com */
+/* thanks to HTML5boilerplate,
+* github.com/nathansmith/formalize 
+* and www.sitepen.com
+*/
 
 
 /* buttons */
@@ -65,7 +68,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 ::-webkit-input-placeholder { color: #777; }
 input:-moz-placeholder,
-textarea:-moz-placeholder   { color: #777; }
+textarea:-moz-placeholder { color: #777; }
 
 /* Removes inner padding and border in FF3+ */
 button::-moz-focus-inner,

@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.6n (2013-07) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.7 (2013-08) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -32,7 +32,7 @@ th,
 label,
 textarea,
 caption,
-details, 
+details,
 figure {
 	font-size: 1em; /* equiv 14px */
 	line-height: 1.5;
@@ -56,12 +56,12 @@ h3, .h3-like {
 h4, .h4-like {
 	font-size: 1.4286em; /* equiv 20px */
 	line-height: 1.05em;
-	margin:  1.05em 0 0 0;
+	margin: 1.05em 0 0 0;
 }
 h5, .h5-like {
 	font-size: 1.2857em; /* equiv 18px */
 	line-height: 1.1667em;
-	margin:  1.1667em 0 0 0;
+	margin: 1.1667em 0 0 0;
 }
 h6, .h6-like {
 	font-size: 1.1429em; /* equiv 16px */
@@ -476,5 +476,4 @@ textarea {
 /* You can link them with an @import or, better for webperf, just paste them here */
 
 /* @import url(my-styles.css); */
-
 

@@ -140,12 +140,6 @@
 	}
 	/* margins for small (s) screens */
 	.small-ma0 { margin: 0 !important; }
-
-	/* Responsive grids */
-	.grid4 > * {width: 49% !important; } 
-	.grid4 > :first-child + * + * {margin-left: 0 !important;}
-	.grid6 > * {width: 32% !important; }  
-	.grid6 > :first-child + * + * + * {margin-left: 0 !important;}
 }
 
 @media (max-width: 640px) {
