@@ -9,7 +9,7 @@
 .grid > * {
 	display: block;
 	padding: 0;
-	margin: 0 -20px; /* half gutter value */
+	margin: 0 -10px; /* half gutter value */
 	text-align: left;
 	letter-spacing: -0.31em;
 	text-rendering: optimizespeed;
@@ -21,7 +21,7 @@
 .grid > * > * {
 	width: 100%;
 	display: inline-block;
-	padding: 0 20px; /* half gutter value */
+	padding: 0 10px; /* half gutter value */
 	vertical-align: top;
 	text-align: left;
 	letter-spacing: normal;
