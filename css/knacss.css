@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.7 (2013-08) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.7b (2013-08) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -380,28 +380,6 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 }
 
 .desktop-hidden { display: none; } /* hidden on desktop */
-
-/* ----------------------------- */
-/* ==forms                       */
-/* ----------------------------- */
-form,
-fieldset {
-	border: none;
-}
-input,
-button,
-select,
-label,
-.btn {
-	vertical-align: middle; /* @bugfix alignment */
-	font-family: inherit;
-	font-size: inherit;
-}
-textarea {
-	resize: vertical;
-	font-family: inherit;
-	font-size: inherit;
-}
 
 /* ----------------------------- */
 /* ==iefix                       */

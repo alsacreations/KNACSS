@@ -10,18 +10,24 @@
 
 
 /* buttons */
-.btn { display: inline-block; }
-
-.btn.alternate {}
-.btn.highlight {}
-.login {}
-.logout {}
-.primary {}
-.warning {}
-.error {}
-.success {}
+.btn {
+	display: inline-block;
+}
 
 /* forms items */
+form,
+fieldset {
+	border: none;
+}
+input,
+button,
+select,
+label,
+.btn {
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: inherit;
+}
 label { 
 	display: inline-block;
 	vertical-align: middle;
@@ -31,15 +37,13 @@ legend {
 	border: 0;
 	white-space: normal;
 }
-button,
-input,
-select {
-	margin: 0;
-}
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
 	min-height: 5em;
 	vertical-align: top;
+	font-family: inherit;
+	font-size: inherit;
+	resize: vertical;
 }
 button,
 input[type="button"],
@@ -47,14 +51,14 @@ input[type="reset"],
 input[type="submit"] {
 	cursor: pointer;
 	-webkit-appearance: button; /* clickable input types in iOS */
-	*overflow: visible; /* Corrects inner spacing displayed oddly in IE7 */
 }
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Corrects excess space around these inputs in IE8/9 */
-	*width: 13px; *height: 13px; /* Corrects excess space around these inputs in IE7 */
 }
-input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
 
 /* if select styling bugs on WebKit */
 /* select { -webkit-appearance: none; } */
@@ -66,9 +70,13 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
 	display: none;
 }
-::-webkit-input-placeholder { color: #777; }
+::-webkit-input-placeholder {
+	color: #777;
+}
 input:-moz-placeholder,
-textarea:-moz-placeholder { color: #777; }
+textarea:-moz-placeholder {
+	color: #777;
+}
 
 /* Removes inner padding and border in FF3+ */
 button::-moz-focus-inner,
