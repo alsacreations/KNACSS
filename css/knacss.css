@@ -184,7 +184,8 @@ img {
 	height: auto;
 	vertical-align: middle;
 }
-/* Gmap3 max-width bug fix on images */
+/* Gmap3 bug fix on images */
+.gm-style img,
 .gmnoscreen img,
 .gmnoprint img {max-width: none !important;}
 
