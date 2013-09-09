@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.7b (2013-08) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.7 (2013-08) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
 */
 
@@ -437,6 +437,12 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 	caption {
 		page-break-after: avoid;
 	}
+}
+
+/* debug helper */
+.knacss-debug {
+	background: pink;
+	outline: 3px solid maroon;
 }
 
 /* orientation iOS font-size fix */
