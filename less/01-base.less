@@ -1,7 +1,3 @@
-/*
-* www.KNACSS.com V2.8 (2013-09) @author: Raphael Goetter, Alsacreations
-* Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
-*/
 
 /* ----------------------------- */
 /* ==reset                       */
@@ -14,13 +10,13 @@ html {
 body {
 	background-color: #fff;
 	color: #000;
-	font-family: helvetica, arial, sans-serif;
-	font-size: 1.4em; /* equiv 14px */
-	line-height: 1.5; /* adapt to your design */
+	font-family: @fontstack1;
+	font-size: ((@basefont / 10) + 0em);
+	line-height: @l-h; // adapt to your design
 }
 
 /* font-sizing for content */
-/* preserves vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
+/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
 p,
 ul,
 ol,
@@ -32,58 +28,45 @@ th,
 label,
 textarea,
 caption,
-details,
-figure {
-	font-size: 1em; /* equiv 14px */
-	line-height: 1.5;
-	margin: .75em 0 0;
+details, 
+figure, 
+hgroup {
+	.flow(@basefont);
 }
 h1, .h1-like {
-	font-size: 2.286em; /* equiv 32px */
-	line-height: 1.6154em;
-	margin: .8077em 0 0 0;
+	.flow(32); // equiv 32px
 }
 h2, .h2-like {
-	font-size: 2em; /* equiv 28px */
-	line-height: 1.75em;
-	margin: .875em 0 0 0;
+	.flow(28); // equiv 28px
 }
 h3, .h3-like {
-	font-size: 1.714em; /* equiv 24px */
-	line-height: 1.909em;
-	margin: .9545em 0 0 0;
+	.flow(24); // equiv 24px
 }
 h4, .h4-like {
-	font-size: 1.4286em; /* equiv 20px */
-	line-height: 1.05em;
-	margin: 1.05em 0 0 0;
+	.flow(20); // equiv 20px
 }
 h5, .h5-like {
-	font-size: 1.2857em; /* equiv 18px */
-	line-height: 1.1667em;
-	margin: 1.1667em 0 0 0;
+	.flow(18); // equiv 18px
 }
 h6, .h6-like {
-	font-size: 1.1429em; /* equiv 16px */
-	line-height: 1.3125em;
-	margin:  1.3125em 0 0 0;
+	.flow(16); // equiv 16px
 }
 
 /* alternate font-sizing */
 .smaller {
-	font-size: .7143em; /* equiv 10px */
+	.pxtoem (10); /* equiv 10px */
 }
 .small {
-	font-size: .8571em; /* equiv 12px */
+	.pxtoem (12); /* equiv 12px */
 }
 .big {
-	font-size: 1.1429em; /* equiv 16px */
+	.pxtoem (16); /* equiv 16px */
 }
 .bigger {
-	font-size: 1.2857em; /* equiv 18px */
+	.pxtoem (18); /* equiv 18px */
 }
 .biggest {
-	font-size: 1.4286em; /* equiv 20px */
+	.pxtoem (20); /* equiv 20px */
 }
 
 /* soft reset */
@@ -107,7 +90,7 @@ pre,
 samp,
 kbd {
 	white-space: pre-wrap;
-	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+	font-family: @fontstack2;
 	line-height: 1em;
 }
 code, kbd, mark {
@@ -137,34 +120,15 @@ mark {
 	padding:2px 4px;
 	background: #ff0;
 }
-sup,
-sub {
-	vertical-align: 0;
-	position: relative;
-}
-sup {
-	bottom: 1ex;
-}
-sub {
-	top: .5ex;
-}
-
 table { margin-bottom: 1.5em; }
 
 /* avoid top margins on first content element */
-p:first-child,
-ul:first-child,
-ol:first-child,
-dl:first-child,
-blockquote:first-child,
-pre:first-child,
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-	margin-top: 0;
+p, ul, ol, dl,
+blockquote, pre,
+h1, h2, h3, h4, h5, h6 {
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 /* avoid margins on nested elements */
@@ -179,12 +143,13 @@ li ol {
 img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
 }
+
 /* pictures */
 img {
 	height: auto;
 	vertical-align: middle;
 }
-/* Gmap3 bug fix on images */
+/* Gmap3 max-width bug fix on images */
 .gm-style img,
 .gmnoscreen img,
 .gmnoprint img {max-width: none !important;}
@@ -197,17 +162,19 @@ body > script {display: none !important;}
 /* skip-links */
 .skip-links {
 	position: absolute;
-}
-.skip-links a {
-	position: absolute;
-	left: -7000px;
-	padding: 0.5em;
-	background: #000;
-	color:#fff;
-	text-decoration: none;
-}
-.skip-links a:focus {
-	position: static;
+
+	a {
+		position: absolute;
+		left: -7000px;
+		padding: 0.5em;
+		background: black;
+		color: white;
+		text-decoration: none;
+	
+		&:focus {
+			position: static;
+		}
+	}
 }
 
 /* ----------------------------- */
@@ -217,8 +184,8 @@ body > script {display: none !important;}
 /* switching box model for all elements */
 * {
 	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* float layout */
@@ -261,6 +228,7 @@ body > script {display: none !important;}
 	vertical-align: top;
 }
 
+
 /* alignments (blocks and inline) */
 /* ------------------------------ */
 
@@ -289,7 +257,8 @@ img.left, img.right {
 .txtright  { text-align: right; }
 .txtcenter { text-align: center; }
 
-/* blocks widths (percentages and pixels) */
+
+/* blocks widths (percentage and pixels) */
 .w10    { width: 10%; }
 .w20    { width: 20%; }
 .w25    { width: 25%; }
@@ -317,57 +286,55 @@ img.left, img.right {
 .w800p  { width: 800px; }
 .w960p  { width: 960px; }
 .mw960p { max-width: 960px; }
-.w1140p  { width: 1140px; }
-.mw1140p { max-width: 1140px; }
 
 /* spacing helpers
 p,m = padding,margin
 a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n,0 = small(10px),medium(20px),large(30px), zero or none(0)
+s,m,l,n = small(10px),medium(20px),large(30px),none(0)
 source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 */
 .m-reset, .ma0 { margin: 0; }
 .p-reset, .pa0 { padding: 0; }
-.ma1, .mas { margin: 10px; }
-.ma2, .mam { margin: 20px; }
-.ma3, .mal { margin: 30px; }
-.pa1, .pas { padding: 10px; }
-.pa2, .pam { padding: 20px; }
-.pa3, .pal { padding: 30px; }
+.ma1, .mas { margin: @smallvalue; }
+.ma2, .mam { margin: @mediumvalue; }
+.ma3, .mal { margin: @largevalue; }
+.pa1, .pas { padding: @smallvalue; }
+.pa2, .pam { padding: @mediumvalue; }
+.pa3, .pal { padding: @largevalue; }
 
 .mt0, .mtn { margin-top: 0; }
-.mt1, .mts { margin-top: 10px; }
-.mt2, .mtm { margin-top: 20px; }
-.mt3, .mtl { margin-top: 30px; }
+.mt1, .mts { margin-top: @smallvalue; }
+.mt2, .mtm { margin-top: @mediumvalue; }
+.mt3, .mtl { margin-top: @largevalue; }
 .mr0, .mrn { margin-right: 0; }
-.mr1, .mrs { margin-right: 10px; }
-.mr2, .mrm { margin-right: 20px; }
-.mr3, .mrl { margin-right: 30px; }
+.mr1, .mrs { margin-right: @smallvalue; }
+.mr2, .mrm { margin-right: @mediumvalue; }
+.mr3, .mrl { margin-right: @largevalue; }
 .mb0, .mbn { margin-bottom: 0; }
-.mb1, .mbs { margin-bottom: 10px; }
-.mb2, .mbm { margin-bottom: 20px; }
-.mb3, .mbl { margin-bottom: 30px; }
+.mb1, .mbs { margin-bottom: @smallvalue; }
+.mb2, .mbm { margin-bottom: @mediumvalue; }
+.mb3, .mbl { margin-bottom: @largevalue; }
 .ml0, .mln { margin-left: 0; }
-.ml1, .mls { margin-left: 10px; }
-.ml2, .mlm { margin-left: 20px; }
-.ml3, .mll { margin-left: 30px; }
+.ml1, .mls { margin-left: @smallvalue; }
+.ml2, .mlm { margin-left: @mediumvalue; }
+.ml3, .mll { margin-left: @largevalue; }
 
 .pt0, .ptn { padding-top: 0; }
-.pt1, .pts { padding-top: 10px; }
-.pt2, .ptm { padding-top: 20px; }
-.pt3, .ptl { padding-top: 30px; }
+.pt1, .pts { padding-top: @smallvalue; }
+.pt2, .ptm { padding-top: @mediumvalue; }
+.pt3, .ptl { padding-top: @largevalue; }
 .pr0, .prn { padding-right: 0; }
-.pr1, .prs { padding-right: 10px; }
-.pr2, .prm { padding-right: 20px; }
-.pr3, .prl { padding-right: 30px; }
+.pr1, .prs { padding-right: @smallvalue; }
+.pr2, .prm { padding-right: @mediumvalue; }
+.pr3, .prl { padding-right: @largevalue; }
 .pb0, .pbn { padding-bottom: 0; }
-.pb1, .pbs { padding-bottom: 10px; }
-.pb2, .pbm { padding-bottom: 20px; }
-.pb3, .pbl { padding-bottom: 30px; }
+.pb1, .pbs { padding-bottom: @smallvalue; }
+.pb2, .pbm { padding-bottom: @mediumvalue; }
+.pb3, .pbl { padding-bottom: @largevalue; }
 .pl0, .pln { padding-left: 0; }
-.pl1, .pls { padding-left: 10px; }
-.pl2, .plm { padding-left: 20px; }
-.pl3, .pll { padding-left: 30px; }
+.pl1, .pls { padding-left: @smallvalue; }
+.pl2, .plm { padding-left: @mediumvalue; }
+.pl3, .pll { padding-left: @largevalue; }
 
 /* hiding content */
 .visually-hidden {
@@ -380,13 +347,17 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 	right: -7000px;
 }
 
-.desktop-hidden { display: none; } /* hidden on desktop */
+/* hidden on desktop */
+.desktop-hidden { display: none; } 
+/* hidden on mobile */
+.mobile-hidden { display: block; } 
+
 
 /* ----------------------------- */
 /* ==iefix                       */
 /* ----------------------------- */
 
-/* hasLayout for IE6/IE7 */
+/* haslayout for IE6/IE7 */
 .ie67 .clearfix,
 .ie67 .line,
 .ie67 .mod,
@@ -396,7 +367,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 }
 
 /* inline-block and table-cell for IE6/IE7 */
-/* warning: .col needs a width on IE6/IE7 */
+/* warning: .col needs width on IE6/IE7 */
 .ie67 .btn,
 .ie67 .col,
 .ie67 .inbl {
@@ -444,21 +415,3 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 	background: pink;
 	outline: 3px solid maroon;
 }
-
-/* orientation iOS font-size fix */
-@media (orientation: landscape) and (max-device-width: 768px) {
-	html,
-	body {
-		-webkit-text-size-adjust: 100%;
-	}
-}
-
-/* ----------------------------- */
-/* ==own stylesheet              */
-/* ----------------------------- */
-
-/* Here should go your own CSS styles */
-/* You can link them with an @import or, better for webperf, just paste them here */
-
-/* @import url(my-styles.css); */
-
