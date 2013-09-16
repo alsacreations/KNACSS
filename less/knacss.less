@@ -16,12 +16,10 @@
 @fontstack1		: "helvetica, arial, sans-serif"; // common font
 @fontstack2		: "consolas, 'DejaVu Sans Mono', courier, monospace"; // monospace font
 
-// LESS functions : don't touch or you'll be banned ;)
+// LESS mixins : don't touch or you'll be banned ;)
 .pxtoem (@fontsize) {font-size: ((@fontsize / @basefont) + 0em);}
 .line (@fontsize) {line-height: (@l-h *2 / (@fontsize / @basefont) + 0em)}
 .mtop (@fontsize) {margin: (@l-h / (@fontsize / @basefont) + 0em) 0 0}
-.grid (@number) {width: ((100%-(@gutter*(@number - 1))) / @number);}
- 
 .flow(@font-size, @base-font: @basefont, @base-height: @l-h) {
         @coef: ceil((1 / (@base-height * @base-font / @font-size)));
         @size: ((@font-size / @base-font) + 0em);
@@ -40,7 +38,7 @@
 /* ----------------------------- */
 
 /* Here should go your own CSS styles */
-/* You can link them with an LESS @import */
+/* You can link them with a LESS @import */
 /* @import "my-styles.less"; */
 
 
