@@ -1,11 +1,11 @@
 /*
-* www.KNACSS.com V2.8 (2013-09) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.8a (2013-09) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
 */
 
 // LESS values : adapt them to your design
-@basefont		: 14; // if "14" then 1em = 14px
-@l-h			: 1.5; // equiv line-height 1.5em
+@basefont		: 14px; // if "14px" then 1em = 14px
+@lh				: 1.5; // equiv line-height 1.5em
 @smallvalue		: 10px; // small value for margins / paddings
 @mediumvalue	: 20px; // medium value for margins / paddings
 @largevalue		: 30px; // large value for margins / paddings
@@ -17,17 +17,25 @@
 @fontstack2		: "consolas, 'DejaVu Sans Mono', courier, monospace"; // monospace font
 
 // LESS mixins : don't touch or you'll be banned ;)
-.pxtoem (@fontsize) {font-size: ((@fontsize / @basefont) + 0em);}
-.line (@fontsize) {line-height: (@l-h *2 / (@fontsize / @basefont) + 0em)}
-.mtop (@fontsize) {margin: (@l-h / (@fontsize / @basefont) + 0em) 0 0}
-.flow(@font-size, @base-font: @basefont, @base-height: @l-h) {
-        @coef: ceil((1 / (@base-height * @base-font / @font-size)));
-        @size: ((@font-size / @base-font) + 0em);
-        @height: ((@base-font * @base-height / @font-size) + 0em);    
-        font-size:   @size;
-        line-height: (@height * @coef);
-        margin-top:  @height;
-        margin-bottom: 0;
+// px to em/rem 
+.rem(@size, @bf: @basefont){
+	@em: round((@size / @bf),4);
+	font-size: unit(@em, em);
+	@rem: round((@size / 10),4);
+	font-size: unit(@rem, rem);
+}
+// flow for headings
+.flow(@size, @bf: @basefont, @bh: @lh) {
+	@marg: @bh * @bf / @size;
+	@mt: unit(round(@marg,4),em);
+	margin-top: @mt;
+	margin-bottom: 0; 
+	@em: round((@size / @bf),4);
+	font-size: unit(@em, em);
+	@rem: round((@size / 10),4);
+	font-size: unit(@rem, rem);
+	@coef: ceil(1/@mt);
+	line-height: (@mt * @coef);     
 }
 
 // LESS base styles
@@ -40,7 +48,6 @@
 /* Here should go your own CSS styles */
 /* You can link them with a LESS @import */
 /* @import "my-styles.less"; */
-
 
 // LESS files : chose the ones you need
 @import "02-grids.less";

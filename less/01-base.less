@@ -11,8 +11,8 @@ body {
 	background-color: #fff;
 	color: #000;
 	font-family: @fontstack1;
-	font-size: ((@basefont / 10) + 0em);
-	line-height: @l-h; // adapt to your design
+	font-size: unit((@basefont / 10), em);
+	line-height: @lh; // adapt to your design
 }
 
 /* font-sizing for content */
@@ -31,42 +31,44 @@ caption,
 details, 
 figure, 
 hgroup {
-	.flow(@basefont);
+	margin-top: .75em;
+	margin-bottom: 0;
+	line-height: @lh;
 }
 h1, .h1-like {
-	.flow(32); // equiv 32px
+	.flow(32px); // equiv 32px
 }
 h2, .h2-like {
-	.flow(28); // equiv 28px
+	.flow(28px); // equiv 28px
 }
 h3, .h3-like {
-	.flow(24); // equiv 24px
+	.flow(24px); // equiv 24px
 }
 h4, .h4-like {
-	.flow(20); // equiv 20px
+	.flow(20px); // equiv 20px
 }
 h5, .h5-like {
-	.flow(18); // equiv 18px
+	.flow(18px); // equiv 18px
 }
 h6, .h6-like {
-	.flow(16); // equiv 16px
+	.flow(16px); // equiv 16px
 }
 
 /* alternate font-sizing */
 .smaller {
-	.pxtoem (10); /* equiv 10px */
+	.rem (10px); /* equiv 10px */
 }
 .small {
-	.pxtoem (12); /* equiv 12px */
+	.rem (12px); /* equiv 12px */
 }
 .big {
-	.pxtoem (16); /* equiv 16px */
+	.rem (16px); /* equiv 16px */
 }
 .bigger {
-	.pxtoem (18); /* equiv 18px */
+	.rem (18px); /* equiv 18px */
 }
 .biggest {
-	.pxtoem (20); /* equiv 20px */
+	.rem (20px); /* equiv 20px */
 }
 
 /* soft reset */
