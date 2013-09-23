@@ -1,5 +1,5 @@
 /*
-* www.KNACSS.com V2.8a (2013-09) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.8b (2013-09) @author: Raphael Goetter, Alsacreations
 * Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/
 */
 
@@ -13,8 +13,8 @@
 @smallscreen	: 768px; // small screens media query
 @largescreen	: 1280px; // large screens media query
 @gutter			: 20px; // gutter value (%, px, em, rem, etc) for grid layouts
-@fontstack1		: "helvetica, arial, sans-serif"; // common font
-@fontstack2		: "consolas, 'DejaVu Sans Mono', courier, monospace"; // monospace font
+@fontstack1		: helvetica, arial, sans-serif; // common font
+@fontstack2		: consolas, 'DejaVu Sans Mono', courier, monospace; // monospace font
 
 // LESS mixins : don't touch or you'll be banned ;)
 // px to em/rem 
@@ -35,7 +35,7 @@
 	@rem: round((@size / 10),4);
 	font-size: unit(@rem, rem);
 	@coef: ceil(1/@mt);
-	line-height: (@mt * @coef);     
+	line-height: unit((@mt * @coef));    
 }
 
 // LESS base styles
