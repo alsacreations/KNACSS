@@ -5,16 +5,20 @@
 .grid > * {
 	display: block;
 	padding: 0;
-	margin: 0 (@gutter/2); /* half gutter value */
+	margin-left: @gutter; /* gutter value */
 	text-align: left;
 	letter-spacing: -0.31em;
-	word-spacing: -0.43em;
 	text-rendering: optimizespeed;
 }
+/* Opera hack */
+.opera:-o-prefocus,
+.grid > * {
+	word-spacing: -0.43em;
+}
 .grid > * > * {
-	width: 100%;
 	display: inline-block;
-	padding: 0 (@gutter/2); /* half gutter value */
+	width: 100%;
+	padding-left: @gutter; /* gutter value */
 	margin-left: 0;
 	vertical-align: top;
 	text-align: left;
@@ -23,7 +27,6 @@
 	text-rendering: auto;
 	*display: inline; *zoom: 1; /* IE67 hack */
 }
-
 .grid2 > * {width: 50%;}
 .grid3 > * {width: 33.333%;}
 .grid4 > * {width: 25%;}
@@ -44,7 +47,6 @@
 .grid1-3 > * + * { width: 75%; }
 
 /* Responsiv-o-matic */
-
 @media (max-width: @largescreen) {
 	.grid5 > *,
 	.grid6 > *,
@@ -62,5 +64,5 @@
 	.grid12 > * {width: 50%}
 }
 @media (max-width: @tinyscreen) {
-	.grid > * > * {width: 100%}
+	.grid > * > * {width: 100% !important}
 }
