@@ -73,10 +73,7 @@ h6, .h6-like {
 
 /* soft reset */
 html,
-body,
-textarea,
-figure,
-label {
+body {
 	margin: 0;
 	padding: 0;
 }
@@ -103,11 +100,6 @@ em {
 }
 strong {
 	font-weight: bold;
-}
-i,
-b {
-	font-style: normal;
-	font-weight: normal;
 }
 kbd {
 	padding: 0 2px;
@@ -148,13 +140,20 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 
 /* pictures */
 img {
-	height: auto;
 	vertical-align: middle;
 }
-/* Gmap3 max-width bug fix on images */
+/* Google Gmap3 bug fix on images */
+:not(.gm-style) img {
+	heigth: auto !important;
+}
+.ie678 .gm-style img {
+	height: 100%;  /* IE678 hack */
+}
 .gm-style img,
 .gmnoscreen img,
-.gmnoprint img {max-width: none !important;}
+.gmnoprint img {
+	max-width: none !important;
+}
 
 a img { border: 0; }
 
@@ -288,6 +287,8 @@ img.left, img.right {
 .w800p  { width: 800px; }
 .w960p  { width: 960px; }
 .mw960p { max-width: 960px; }
+.w1140p  { width: 1140px; }
+.mw1140p { max-width: 1140px; }
 
 /* spacing helpers
 p,m = padding,margin
@@ -416,4 +417,12 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .knacss-debug {
 	background: pink;
 	outline: 3px solid maroon;
+}
+
+/* orientation iOS font-size fix */
+@media (orientation: landscape) and (max-device-width: @smallscreen) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
 }

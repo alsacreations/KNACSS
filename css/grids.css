@@ -5,7 +5,10 @@
 
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
-.grid {overflow: hidden;}
+.grid {
+	overflow: hidden;
+	font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+}
 .grid > * {
 	display: block;
 	padding: 0;
@@ -30,6 +33,7 @@
 	word-spacing: normal;
 	text-rendering: auto;
 	*display: inline; *zoom: 1; /* IE67 hack */
+	font-family: helvetica, arial, sans-serif;
 }
 .grid2 > * {width: 50%;}
 .grid3 > * {width: 33.333%;}

@@ -1,6 +1,6 @@
-/*
-* www.KNACSS.com V2.8b (2013-09) @author: Raphael Goetter, Alsacreations
-* Licence CC-BY http://creativecommons.org/licenses/by/3.0/fr/ 
+/*!
+* www.KNACSS.com V2.9 (2013-10) @author: Raphael Goetter, Alsacreations
+* Licence WTFPL http://www.wtfpl.net/ 
 */
 
 /* ----------------------------- */
@@ -87,10 +87,7 @@ h6, .h6-like {
 
 /* soft reset */
 html,
-body,
-textarea,
-figure,
-label {
+body {
 	margin: 0;
 	padding: 0;
 }
@@ -118,11 +115,6 @@ em {
 strong {
 	font-weight: bold;
 }
-i,
-b {
-	font-style: normal;
-	font-weight: normal;
-}
 kbd {
 	padding: 0 2px;
 	border: 1px solid #999;
@@ -147,7 +139,6 @@ sup {
 sub {
 	top: .5ex;
 }
-
 table { margin-bottom: 1.5em; }
 
 /* avoid top margins on first content element */
@@ -180,13 +171,20 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 }
 /* pictures */
 img {
-	height: auto;
 	vertical-align: middle;
 }
-/* Gmap3 bug fix on images */
+/* Google Gmap3 bug fix on images */
+:not(.gm-style) img {
+	heigth: auto !important;
+}
+.ie678 .gm-style img {
+	height: 100%;  /* IE678 hack */
+}
 .gm-style img,
 .gmnoscreen img,
-.gmnoprint img {max-width: none !important;}
+.gmnoprint img {
+	max-width: none !important;
+}
 
 a img { border: 0; }
 
