@@ -175,7 +175,7 @@ img {
 }
 /* Google Gmap3 bug fix on images */
 :not(.gm-style) img {
-	heigth: auto !important;
+	height: auto !important;
 }
 .ie678 .gm-style img {
 	height: 100%;  /* IE678 hack */
