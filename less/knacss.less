@@ -40,7 +40,16 @@
 }
 
 // LESS base styles
-@import "01-base.less";
+@import "_01-base";
+
+// LESS files : chose the ones you need
+@import "_02-grids";
+@import "_03-tables"; 
+@import "_04-forms";
+@import "_05-icons";
+@import "_06-rwd";
+@import "_07-flexbox"; 
+@import "_08-print";
 
 /* ----------------------------- */
 /* ==own stylesheet              */
@@ -48,13 +57,4 @@
 
 /* Here should go your own CSS styles */
 /* You can link them with a LESS @import */
-/* @import "my-styles.less"; */
-
-// LESS files : chose the ones you need
-@import "02-grids.less";
-@import "03-tables.less"; 
-@import "04-forms.less";
-@import "05-icons.less";
-@import "06-rwd.less";
-@import "07-flexbox.less"; 
-@import "08-print.less";
+/* @import "_my-styles.less"; */
