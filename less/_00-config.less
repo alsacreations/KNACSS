@@ -1,0 +1,41 @@
+// Config file : variables, mixins, ...
+
+// LESS values : adapt them to your design
+@basefont				: 14px; // if "14px" then 1em = 14px
+@lh						: 1.5; // equiv line-height 1.5em
+@basecolor				: #000; // text color on body
+@basebg					: #fff; // body background color
+@basecolor-link			: #333; // primary links color;
+@basecolor-link-hover	: #000; // primary hovered/focused links color;
+@smallvalue				: 10px; // small value for margins / paddings
+@mediumvalue			: 20px; // medium value for margins / paddings
+@largevalue				: 30px; // large value for margins / paddings
+@tinyscreen				: 480px; // tiny screens media query
+@smallscreen			: 768px; // small screens media query
+@largescreen			: 1280px; // large screens media query
+@gutter					: 20px; // gutter value (%, px, em, rem, etc) for grid layouts
+@fontstack1				: helvetica, arial, sans-serif; // common font
+@fontstack2				: consolas, 'DejaVu Sans Mono', courier, monospace; // monospace font
+@fontstack3				: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // universal stack
+
+// LESS mixins : don't touch or you'll be banned ;)
+// px to em/rem 
+.rem(@size, @bf: @basefont){
+	@em: round((@size / @bf),4);
+	font-size: unit(@em, em);
+	@rem: round((@size / 10),4);
+	font-size: unit(@rem, rem);
+}
+// flow for headings
+.flow(@size, @bf: @basefont, @bh: @lh) {
+	@marg: @bh * @bf / @size;
+	@mt: unit(round(@marg,4),em);
+	margin-top: @mt;
+	margin-bottom: 0; 
+	@em: round((@size / @bf),4);
+	font-size: unit(@em, em);
+	@rem: round((@size / 10),4);
+	font-size: unit(@rem, rem);
+	@coef: ceil(1/@mt);
+	line-height: unit((@mt * @coef));    
+}
