@@ -27,11 +27,11 @@
 // LESS mixins : don't touch or you'll be banned ;)
 // px to em/rem 
 .rem(@size, @bf: @basefont){
-	@rem: round((@size / 10),4);
+	@rem: @size / 10;
 	font-size: unit(@rem, rem);
 }
 .em(@size, @bf: @basefont){
-	@em: round((@size / @bf),4);
+	@em: @size / @bf;
 	font-size: unit(@em, em);
 }
 // flow for headings
@@ -40,7 +40,7 @@
 	@mt: unit(@marg,em);
 	margin-top: @mt;
 	margin-bottom: 0; 
-	@rem: round((@size / 10),4);
+	@rem: @size / 10;
 	font-size: unit(@rem, rem);
 	@coef: ceil(1/@mt);
 	line-height: unit((@mt * @coef));    
