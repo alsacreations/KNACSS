@@ -36,39 +36,39 @@ hgroup {
 	line-height: @lh;
 }
 h1, .h1-like {
-	.flow(32px); // equiv 32px
+	.flow(@h1-size);
 }
 h2, .h2-like {
-	.flow(28px); // equiv 28px
+	.flow(@h2-size);
 }
 h3, .h3-like {
-	.flow(24px); // equiv 24px
+	.flow(@h3-size);
 }
 h4, .h4-like {
-	.flow(20px); // equiv 20px
+	.flow(@h4-size);
 }
 h5, .h5-like {
-	.flow(18px); // equiv 18px
+	.flow(@h5-size);
 }
 h6, .h6-like {
-	.flow(16px); // equiv 16px
+	.flow(@h6-size);
 }
 
 /* alternate font-sizing */
 .smaller {
-	.rem (10px); /* equiv 10px */
+	.em(@basefont - 4);
 }
 .small {
-	.rem (12px); /* equiv 12px */
+	.em(@basefont - 2);
 }
 .big {
-	.rem (16px); /* equiv 16px */
+	.em(@basefont + 2);
 }
 .bigger {
-	.rem (18px); /* equiv 18px */
+	.em(@basefont + 4);
 }
 .biggest {
-	.rem (20px); /* equiv 20px */
+	.em(@basefont + 6);
 }
 
 /* soft reset */
@@ -90,7 +90,7 @@ samp,
 kbd {
 	white-space: pre-wrap;
 	font-family: @fontstack2;
-	line-height: 1em;
+	line-height: 1;
 }
 code, kbd, mark {
 	border-radius: 2px;
@@ -359,6 +359,28 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 /* ----------------------------- */
 /* ==iefix                       */
 /* ----------------------------- */
+
+/* Make sure you are using Conditional Classes in your HTML */
+/* see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html */
+
+.ie678 h1, .ie678 .h1-like {
+	.em(@h1-size);
+}
+.ie678 h2, .ie678 .h2-like {
+	.em(@h2-size);
+}
+.ie678 h3, .ie678 .h3-like {
+	.em(@h3-size);
+}
+.ie678 h4, .ie678 .h4-like {
+	.em(@h4-size);
+}
+.ie678 h5, .ie678 .h5-like {
+	.em(@h5-size);
+}
+.ie678 h6, .ie678 .h6-like {
+	.em(@h6-size);
+}
 
 /* haslayout for IE6/IE7 */
 .ie67 .clearfix,
