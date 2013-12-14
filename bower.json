@@ -1,0 +1,22 @@
+{
+  "name": "KNACSS",
+  "version": "2.9.0",
+  "homepage": "http://www.knacss.com/",
+  "authors": [
+    "Raphaël GOETTER"
+  ],
+  "description": "KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. It relies on common best practices and experience on the topic.",
+  "main": "css/knacss.css",
+  "keywords": [
+    "css", "framework", "reset", "reponsive"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "less"
+  ]
+}
