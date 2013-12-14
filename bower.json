@@ -6,7 +6,6 @@
   ],
   "description": "KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. It relies on common best practices and experience on the topic.",
   "main": "css/knacss.css",
-  "componentsDirectory": "css/",
   "keywords": [
     "css", "framework", "reset", "reponsive"
   ],
