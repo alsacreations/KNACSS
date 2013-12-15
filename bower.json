@@ -17,6 +17,7 @@
     "bower_components",
     "test",
     "less/knackLESS.zip",
-    "tests"
+    "tests",
+    "README.md"
   ]
 }
