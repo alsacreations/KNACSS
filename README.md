@@ -14,9 +14,10 @@ There is nothing to install. It is only a CSS file you can call as usual in the 
 
     <link rel="stylesheet" href="knacss.css" media="all">
 
+You can also install KNACSS with [Bower](http://bower.io/) : ```bower install knacss```
+
 ... Or you can also choose the KNACSS Builder : http://knacss.com/builder/
 
-You can also install KNACSS with [Bower](http://bower.io/) : ```bower install knacss```
 
 Usage
 -----
