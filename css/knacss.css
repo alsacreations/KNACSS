@@ -1,15 +1,58 @@
 /*!
-* www.KNACSS.com V2.9 (2013-10) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.9.2 (2014-01) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/ 
 */
 
 /* ----------------------------- */
-/* ==reset                       */
+/* == soft reset                 */
+/* ----------------------------- */
+
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* soft reset */
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	padding-left: 2em;
+}
+ul.unstyled {
+	list-style: none;
+}
+img {
+	vertical-align: middle;
+	border: 0;
+}
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 0;
+}
+
+
+/* ----------------------------- */
+/* == typography                 */
 /* ----------------------------- */
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
 	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
 }
 body {
 	background-color: #fff;
@@ -85,23 +128,11 @@ h6, .h6-like {
 	font-size: 1.4286em; /* equiv 20px */
 }
 
-/* soft reset */
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-ul,
-ol {
-	padding-left: 2em;
-}
-ul.unstyled {
-	list-style: none;
-}
 code, 
 pre,
 samp,
 kbd {
+	white-space: pre-line; /* IE fix */
 	white-space: pre-wrap;
 	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
 	line-height: 1em;
@@ -139,7 +170,47 @@ sup {
 sub {
 	top: .5ex;
 }
-table { margin-bottom: 1.5em; }
+
+/* ----------------------------- */
+/* == hiding content             */
+/* ----------------------------- */
+
+/* hiding content */
+.visually-hidden {
+	position: absolute;
+	left: -7000px;
+	overflow: hidden;
+}
+[dir=rtl] .visually-hidden {
+	left: auto;
+	right: -7000px;
+}
+.desktop-hidden { display: none; } /* hidden on desktop */
+
+
+/* ----------------------------- */
+/* == skip links styling         */
+/* ----------------------------- */
+
+.skip-links {
+	position: absolute;
+}
+.skip-links a {
+	position: absolute;
+	left: -7000px;
+	padding: 0.5em;
+	background: #000;
+	color:#fff;
+	text-decoration: none;
+}
+.skip-links a:focus {
+	position: static;
+}
+
+
+/* ----------------------------- */
+/* == browsers consistency       */
+/* ----------------------------- */
 
 /* avoid top margins on first content element */
 p:first-child,
@@ -169,10 +240,10 @@ li ol {
 img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
 }
-/* pictures */
-img {
-	vertical-align: middle;
-}
+
+/* margin-bottom on tables */
+table { margin-bottom: 1.5em; }
+
 /* Google Gmap3 bug fix on images */
 :not(.gm-style) img {
 	height: auto !important;
@@ -186,37 +257,13 @@ img {
 	max-width: none !important;
 }
 
-a img { border: 0; }
-
 /* scripts */
 body > script {display: none !important;}
 
-/* skip-links */
-.skip-links {
-	position: absolute;
-}
-.skip-links a {
-	position: absolute;
-	left: -7000px;
-	padding: 0.5em;
-	background: #000;
-	color:#fff;
-	text-decoration: none;
-}
-.skip-links a:focus {
-	position: static;
-}
 
 /* ----------------------------- */
 /* ==layout and modules          */
 /* ----------------------------- */
-
-/* switching box model for all elements */
-* {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
 
 /* float layout */
 /* module, gains superpower "BFC" Block Formating Context */
@@ -286,6 +333,11 @@ img.left, img.right {
 .txtright  { text-align: right; }
 .txtcenter { text-align: center; }
 
+/* ----------------------------- */
+/* == width helpers              */
+/* .. use only when needed       */
+/* ----------------------------- */
+
 /* blocks widths (percentages and pixels) */
 .w10    { width: 10%; }
 .w20    { width: 20%; }
@@ -316,6 +368,12 @@ img.left, img.right {
 .mw960p { max-width: 960px; }
 .w1140p  { width: 1140px; }
 .mw1140p { max-width: 1140px; }
+
+
+/* ----------------------------- */
+/* == spacing helpers            */
+/* .. use only when needed       */
+/* ----------------------------- */
 
 /* spacing helpers
 p,m = padding,margin
@@ -366,21 +424,9 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .pl2, .plm { padding-left: 20px; }
 .pl3, .pll { padding-left: 30px; }
 
-/* hiding content */
-.visually-hidden {
-	position: absolute;
-	left: -7000px;
-	overflow: hidden;
-}
-[dir=rtl] .visually-hidden {
-	left: auto;
-	right: -7000px;
-}
-
-.desktop-hidden { display: none; } /* hidden on desktop */
 
 /* ----------------------------- */
-/* ==iefix                       */
+/* == iefix                      */
 /* ----------------------------- */
 
 /* hasLayout for IE6/IE7 */
@@ -408,15 +454,15 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 /* @source https://github.com/Schepp/box-sizing-polyfill */
 /*
 .ie67 * {
-	behavior: url(/js/boxsizing.htc);
+	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
 }
 */
 
+
 /* ----------------------------- */
-/* ==print                       */
+/* == quick print reset          */
 /* ----------------------------- */
 
-/* quick print reset */
 @media print {
 	p,
 	blockquote {
@@ -441,21 +487,3 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 	background: pink;
 	outline: 3px solid maroon;
 }
-
-/* orientation iOS font-size fix */
-@media (orientation: landscape) and (max-device-width: 768px) {
-	html,
-	body {
-		-webkit-text-size-adjust: 100%;
-	}
-}
-
-/* ----------------------------- */
-/* ==own stylesheet              */
-/* ----------------------------- */
-
-/* Here should go your own CSS styles */
-/* You can link them with an @import or, better for webperf, just paste them here */
-
-/* @import url(my-styles.css); */
-

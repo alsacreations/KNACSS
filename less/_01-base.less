@@ -1,11 +1,55 @@
 
 /* ----------------------------- */
-/* ==reset                       */
+/* == soft reset                 */
+/* ----------------------------- */
+
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* soft reset */
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	padding-left: 2em;
+}
+ul.unstyled {
+	list-style: none;
+}
+img {
+	vertical-align: middle;
+	border: 0;
+}
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 0;
+}
+
+
+
+/* ----------------------------- */
+/* == typography                 */
 /* ----------------------------- */
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
 	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
 }
 body {
 	background-color: @basebg;
@@ -71,23 +115,11 @@ h6, .h6-like {
 	.em(@basefont + 6);
 }
 
-/* soft reset */
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-ul,
-ol {
-	padding-left: 2em;
-}
-ul.unstyled {
-	list-style: none;
-}
 code, 
 pre,
 samp,
 kbd {
+	white-space: pre-line; /* IE fix */
 	white-space: pre-wrap;
 	font-family: @fontstack2;
 	line-height: 1;
@@ -114,7 +146,61 @@ mark {
 	padding:2px 4px;
 	background: #ff0;
 }
-table { margin-bottom: 1.5em; }
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+
+
+/* ----------------------------- */
+/* == hiding content             */
+/* ----------------------------- */
+
+/* hiding content */
+.visually-hidden {
+	position: absolute;
+	left: -7000px;
+	overflow: hidden;
+}
+[dir=rtl] .visually-hidden {
+	left: auto;
+	right: -7000px;
+}
+.desktop-hidden { display: none; } /* hidden on desktop */
+
+
+/* ----------------------------- */
+/* == skip links styling         */
+/* ----------------------------- */
+
+.skip-links {
+	position: absolute;
+
+	a {
+		position: absolute;
+		left: -7000px;
+		padding: 0.5em;
+		background: black;
+		color: white;
+		text-decoration: none;
+	
+		&:focus {
+			position: static;
+		}
+	}
+}
+
+
+/* ----------------------------- */
+/* == browsers consistency       */
+/* ----------------------------- */
 
 /* avoid top margins on first content element */
 p, ul, ol, dl,
@@ -138,10 +224,9 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
 }
 
-/* pictures */
-img {
-	vertical-align: middle;
-}
+/* margin-bottom on tables */
+table { margin-bottom: 1.5em; }
+
 /* Google Gmap3 bug fix on images */
 :not(.gm-style) img {
 	height: auto !important;
@@ -155,39 +240,13 @@ img {
 	max-width: none !important;
 }
 
-a img { border: 0; }
-
 /* scripts */
 body > script {display: none !important;}
 
-/* skip-links */
-.skip-links {
-	position: absolute;
-
-	a {
-		position: absolute;
-		left: -7000px;
-		padding: 0.5em;
-		background: black;
-		color: white;
-		text-decoration: none;
-	
-		&:focus {
-			position: static;
-		}
-	}
-}
 
 /* ----------------------------- */
 /* ==layout and modules          */
 /* ----------------------------- */
-
-/* switching box model for all elements */
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
 
 /* float layout */
 /* module, gains superpower "BFC" Block Formating Context */
@@ -259,6 +318,11 @@ img.left, img.right {
 .txtcenter { text-align: center; }
 
 
+/* ----------------------------- */
+/* == width helpers              */
+/* .. use only when needed       */
+/* ----------------------------- */
+
 /* blocks widths (percentage and pixels) */
 .w10    { width: 10%; }
 .w20    { width: 20%; }
@@ -289,6 +353,12 @@ img.left, img.right {
 .mw960p { max-width: 960px; }
 .w1140p  { width: 1140px; }
 .mw1140p { max-width: 1140px; }
+
+
+/* ----------------------------- */
+/* == spacing helpers            */
+/* .. use only when needed       */
+/* ----------------------------- */
 
 /* spacing helpers
 p,m = padding,margin
@@ -339,25 +409,9 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .pl2, .plm { padding-left: @mediumvalue; }
 .pl3, .pll { padding-left: @largevalue; }
 
-/* hiding content */
-.visually-hidden {
-	position: absolute;
-	left: -7000px;
-	overflow: hidden;
-}
-[dir=rtl] .visually-hidden {
-	left: auto;
-	right: -7000px;
-}
-
-/* hidden on desktop */
-.desktop-hidden { display: none; } 
-/* hidden on mobile */
-.mobile-hidden { display: block; } 
-
 
 /* ----------------------------- */
-/* ==iefix                       */
+/* == iefix                      */
 /* ----------------------------- */
 
 /* Make sure you are using Conditional Classes in your HTML */
@@ -407,15 +461,15 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 /* @source https://github.com/Schepp/box-sizing-polyfill */
 /*
 .ie67 * {
-	behavior: url(/inc/box-sizing-polyfill/boxsizing.htc);
+	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
 }
 */
 
+
 /* ----------------------------- */
-/* ==print                       */
+/* == quick print reset          */
 /* ----------------------------- */
 
-/* quick print reset */
 @media print {
 	p,
 	blockquote {
@@ -439,12 +493,4 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .knacss-debug {
 	background: pink;
 	outline: 3px solid maroon;
-}
-
-/* orientation iOS font-size fix */
-@media (orientation: landscape) and (max-device-width: @smallscreen) {
-	html,
-	body {
-		-webkit-text-size-adjust: 100%;
-	}
 }
