@@ -323,7 +323,7 @@ img.left, img.right {
 /* .. use only when needed       */
 /* ----------------------------- */
 
-/* blocks widths (percentage and pixels) */
+/* blocks widths (percentage, pixels and auto) */
 .w10    { width: 10%; }
 .w20    { width: 20%; }
 .w25    { width: 25%; }
@@ -354,6 +354,7 @@ img.left, img.right {
 .w1140p  { width: 1140px; }
 .mw1140p { max-width: 1140px; }
 
+.wauto  { width: auto; }
 
 /* ----------------------------- */
 /* == spacing helpers            */
@@ -436,7 +437,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 	.em(@h6-size);
 }
 
-/* haslayout for IE6/IE7 */
+/* hasLayout for IE6/IE7 */
 .ie67 .clearfix,
 .ie67 .line,
 .ie67 .mod,
