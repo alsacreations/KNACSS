@@ -1,33 +1,9 @@
-
-/* ----------------------------- */
-/* ==viewport fixing for RWD     */
-/* ----------------------------- */
-@-webkit-viewport {
-	width: device-width;
-	zoom: 1.0;
-}
-@-moz-viewport {
-	width: device-width;
-	zoom: 1.0;
-}
-@-ms-viewport {
-	width: device-width;
-	zoom: 1.0;
-}
-@-o-viewport {
-	width: device-width;
-	zoom: 1.0;
-}
-@viewport {
-	width: device-width;
-	zoom: 1.0;
-}
-
+@import "00-config";
 /* ----------------------------- */
 /* ==desktop and retina medias   */
 /* ----------------------------- */
 
-@media (min-width: 641px) {
+@media (min-width: @smallscreen) {
 /* here go rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -35,14 +11,13 @@
 }
 
 /* ---------------------------------- */
-/* ==Responsive large / small / tiny  */
+/* ==Responsive large / medium / tiny */
 /* ---------------------------------- */
 
-@media (min-width: 1280px) {
+@media (min-width: @largescreen) {
 
-	/* layouts for large (l) screens */
-	.large-hidden,
-	.tablet-hidden { display: none !important; }
+	/* layouts for large screens */
+	.large-hidden { display: none !important; }
 	.large-visible { display: block !important; }
 	.large-no-float {float: none; }
 	.large-inbl {
@@ -60,13 +35,14 @@
 		vertical-align: top;
 	}
 
-	/* widths for large (l) screens */
+	/* widths for large screens */
 	.large-w25 { width: 25% !important; }
 	.large-w33 { width: 33.3333% !important; }
 	.large-w50 { width: 50% !important; }
 	.large-w66 { width: 66.6666% !important; }
 	.large-w75 { width: 75% !important; }
-	.large-w100 {
+	.large-w100,
+	.large-wauto {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -76,36 +52,24 @@
 		border: 0;		
 	}
 
-	/* margins for large (l) screens */
+	/* margins for large screens */
 	.large-ma0 { margin: 0 !important; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: @smallscreen) {
 
-	/* quick tablet reset */
+	/* quick reset in small resolution and less */
 	.w600p,
 	.w700p,
 	.w800p,
 	.w960p,
-	.mw960p,
-	.small-wauto { 
+	.mw960p {
 		width: auto;
 		float: none;
-		} 
+	} 
 
-	/* you shall not pass */
-	div, textarea, table, td, th, code, pre, samp {
-		word-wrap: break-word;
-		-webkit-hyphens: auto;
-		   -moz-hyphens: auto;
-		    -ms-hyphens: auto;
-		     -o-hyphens: auto;
-		        hyphens: auto;
-	}
-
-	/* layouts for small (s) screens */
-	.small-hidden,
-	.tablet-hidden { display: none !important; }
+	/* layouts for small screens */
+	.small-hidden { display: none !important; }
 	.small-visible { display: block !important; }
 	.small-no-float {float: none; }
 	.small-inbl {
@@ -123,13 +87,24 @@
 		vertical-align: top !important;
 	}
 
-	/* widths for small (s) screens */
+	/* you shall not pass */
+	div, textarea, table, td, th, code, pre, samp {
+		word-wrap: break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-o-hyphens: auto;
+		hyphens: auto;
+	}
+
+	/* widths for small screens */
 	.small-w25 { width: 25% !important; }
 	.small-w33 { width: 33.3333% !important; }
 	.small-w50 { width: 50% !important; }
 	.small-w66 { width: 66.6666% !important; }
 	.small-w75 { width: 75% !important; }
-	.small-w100 {
+	.small-w100,
+	.small-wauto  {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -138,13 +113,13 @@
 		margin-right: 0 !important;
 		border: 0;		
 	}
-	/* margins for small (s) screens */
+	/* margins for small screens */
 	.small-ma0 { margin: 0 !important; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: @tinyscreen) {
 
-	/* quick smartphone reset */
+	/* quick tiny resolution reset */
 	.mod,
 	.col,
 	fieldset {
@@ -167,9 +142,8 @@
 		width: 100% !important;
 	}
 
-	/* layouts for tiny (t) screens */
-	.tiny-hidden,
-	.phone-hidden { display: none !important; }
+	/* layouts for tiny screens */
+	.tiny-hidden { display: none !important; }
 	.tiny-visible { display: block !important; }
 	.tiny-no-float {float: none;}
 	.tiny-inbl {
@@ -194,13 +168,14 @@
 	}
 	thead { display: none; }
 
-	/* widths for tiny (t) screens */
+	/* widths for tiny screens */
 	.tiny-w25 { width: 25% !important; }
 	.tiny-w33 { width: 33.3333% !important; }
 	.tiny-w50 { width: 50% !important; }
 	.tiny-w66 { width: 66.6666% !important; }
 	.tiny-w75 { width: 75% !important; }
-	.tiny-w100 { 
+	.tiny-w100,
+	.tiny-wauto { 
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -209,6 +184,6 @@
 		margin-right: 0 !important;
 		border: 0;
 	}
-	/* margins for tiny (t) screens */
+	/* margins for tiny screens */
 	.tiny-ma0 { margin: 0 !important; }
 }
