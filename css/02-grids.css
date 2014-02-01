@@ -1,3 +1,11 @@
+/* ---------------------------------- */
+
+/* ==classic grids                    */
+
+/* .. use it when gutter size matters */
+
+/* ---------------------------------- */
+
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
 /* font-family hack explained here : https://github.com/raphaelgoetter/KNACSS/issues/37 */
@@ -26,6 +34,9 @@
 
 .grid > * > * {
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  /* IE67 hack */
   width: 100%;
   padding-left: 20px;
   /* gutter value */
@@ -35,9 +46,6 @@
   letter-spacing: normal;
   word-spacing: normal;
   text-rendering: auto;
-  *display: inline;
-  *zoom: 1;
-  /* IE67 hack */
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -122,5 +130,104 @@
 @media (max-width: 480px) {
   .grid > * > * {
     width: 100% !important;
+  }
+}
+
+/* ---------------------------------- */
+
+/* ==autogrids                        */
+
+/* .. to automatically justify blocs  */
+
+/* ---------------------------------- */
+
+/* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
+
+[class*="autogrid"] {
+  text-align: justify;
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+/* Opera hack */
+
+[class*="autogrid"]:-o-prefocus {
+  word-spacing: -0.43em;
+}
+
+[class*="autogrid"]:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+[class*="autogrid"] > * {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* ie6 ie7 hack */
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
+
+.autogrid2 > * {
+  width: 49%;
+}
+
+.autogrid3 > * {
+  width: 32%;
+}
+
+.autogrid4 > * {
+  width: 23.6%;
+}
+
+.autogrid5 > * {
+  width: 19%;
+}
+
+.autogrid6 > * {
+  width: 15%;
+}
+
+.autogrid8 > * {
+  width: 10.8%;
+}
+
+.autogrid10 > * {
+  width: 9%;
+}
+
+.autogrid12 > * {
+  width: 6.4%;
+}
+
+@media (max-width: 1280px) {
+  .autogrid5 > *,
+  .autogrid6 > *,
+  .autogrid8 > *,
+  .autogrid10 > *,
+  .autogrid12 > * {
+    width: 32%;
+  }
+}
+
+@media (max-width: 768px) {
+  .autogrid5 > *,
+  .autogrid6 > *,
+  .autogrid8 > *,
+  .autogrid10 > *,
+  .autogrid12 > * {
+    width: 49%;
+  }
+}
+
+@media (max-width: 480px) {
+  [class*="autogrid"] > * {
+    width: 100%;
   }
 }

@@ -896,6 +896,14 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   outline: 3px solid maroon;
 }
 
+/* ---------------------------------- */
+
+/* ==classic grids                    */
+
+/* .. use it when gutter size matters */
+
+/* ---------------------------------- */
+
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
 /* font-family hack explained here : https://github.com/raphaelgoetter/KNACSS/issues/37 */
@@ -924,6 +932,9 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 .grid > * > * {
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  /* IE67 hack */
   width: 100%;
   padding-left: 20px;
   /* gutter value */
@@ -933,9 +944,6 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   letter-spacing: normal;
   word-spacing: normal;
   text-rendering: auto;
-  *display: inline;
-  *zoom: 1;
-  /* IE67 hack */
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -1020,6 +1028,105 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 @media (max-width: 480px) {
   .grid > * > * {
     width: 100% !important;
+  }
+}
+
+/* ---------------------------------- */
+
+/* ==autogrids                        */
+
+/* .. to automatically justify blocs  */
+
+/* ---------------------------------- */
+
+/* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
+
+[class*="autogrid"] {
+  text-align: justify;
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+/* Opera hack */
+
+[class*="autogrid"]:-o-prefocus {
+  word-spacing: -0.43em;
+}
+
+[class*="autogrid"]:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+[class*="autogrid"] > * {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* ie6 ie7 hack */
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
+
+.autogrid2 > * {
+  width: 49%;
+}
+
+.autogrid3 > * {
+  width: 32%;
+}
+
+.autogrid4 > * {
+  width: 23.6%;
+}
+
+.autogrid5 > * {
+  width: 19%;
+}
+
+.autogrid6 > * {
+  width: 15%;
+}
+
+.autogrid8 > * {
+  width: 10.8%;
+}
+
+.autogrid10 > * {
+  width: 9%;
+}
+
+.autogrid12 > * {
+  width: 6.4%;
+}
+
+@media (max-width: 1280px) {
+  .autogrid5 > *,
+  .autogrid6 > *,
+  .autogrid8 > *,
+  .autogrid10 > *,
+  .autogrid12 > * {
+    width: 32%;
+  }
+}
+
+@media (max-width: 768px) {
+  .autogrid5 > *,
+  .autogrid6 > *,
+  .autogrid8 > *,
+  .autogrid10 > *,
+  .autogrid12 > * {
+    width: 49%;
+  }
+}
+
+@media (max-width: 480px) {
+  [class*="autogrid"] > * {
+    width: 100%;
   }
 }
 
@@ -1541,7 +1648,6 @@ input[type='submit']::-moz-focus-inner {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    -o-hyphens: auto;
     hyphens: auto;
   }
 
@@ -1699,70 +1805,61 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 
 .flex {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
 }
 
 .flex-h {
   -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
   -moz-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .flex-v {
   -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
   -moz-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .flex-fluid {
-  -moz-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
   -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
 .flex-start {
-  -webkit-box-ordinal-group: -1;
+  -webkit-box-ordinal-group: 0;
+  -webkit-order: -1;
   -moz-box-ordinal-group: 0;
   -ms-flex-order: -1;
-  -webkit-order: -1;
-  -moz-order: -1;
-  -webkit-box-ordinal-group: 0;
   order: -1;
 }
 
 .flex-mid {
-  -webkit-box-ordinal-group: 1;
-  -moz-box-ordinal-group: 1;
-  -ms-flex-order: 1;
-  -webkit-order: 1;
-  -moz-order: 1;
   -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
   -moz-box-ordinal-group: 2;
+  -ms-flex-order: 1;
   order: 1;
 }
 
 .flex-end {
-  -webkit-box-ordinal-group: 42;
-  -moz-box-ordinal-group: 42;
-  -ms-flex-order: 42;
-  -webkit-order: 42;
-  -moz-order: 42;
   -webkit-box-ordinal-group: 43;
+  -webkit-order: 42;
   -moz-box-ordinal-group: 43;
+  -ms-flex-order: 42;
   order: 42;
 }
 
