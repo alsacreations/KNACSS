@@ -58,14 +58,14 @@
 .grid1-3 > * + * { width: 75%; }
 
 /* Responsiv-o-matic */
-@media (max-width: @largescreen) {
+@media (max-width: @large-screen) {
 	.grid5 > *,
 	.grid6 > *,
 	.grid8 > *,
 	.grid10 > *,
 	.grid12 > * {width: 33.333%}
 }
-@media (max-width: @smallscreen) {
+@media (max-width: @small-screen) {
 	.grid3 > *,
 	.grid4 > *,
 	.grid5 > *,
@@ -74,7 +74,7 @@
 	.grid10 > *,
 	.grid12 > * {width: 50%}
 }
-@media (max-width: @tinyscreen) {
+@media (max-width: @tiny-screen) {
 	.grid > * > * {width: 100% !important}
 }
 
@@ -119,7 +119,7 @@
 .autogrid10 > * {width: 9%}
 .autogrid12 > * {width: 6.4%}
 
-@media (max-width: @largescreen) {
+@media (max-width: @large-screen) {
 	.autogrid5 > *,
 	.autogrid6 > *,
 	.autogrid8 > *,
@@ -127,7 +127,7 @@
 	.autogrid12 > * {width: 32%}
 }
 
-@media (max-width: @smallscreen) {
+@media (max-width: @small-screen) {
 	.autogrid5 > *,
 	.autogrid6 > *,
 	.autogrid8 > *,
@@ -135,6 +135,6 @@
 	.autogrid12 > * {width: 49%}
 }
 
-@media (max-width: @tinyscreen) {
+@media (max-width: @tiny-screen) {
 	[class*="autogrid"] > * {width: 100%}
 }

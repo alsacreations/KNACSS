@@ -1,6 +1,6 @@
 // Config file : variables, mixins, ...
 
-// LESS values : adapt them to your design
+// font sizes
 @basefont				: 14px; // if "14px" then 1em = 14px
 @lh						: 1.5; // equiv line-height 1.5em
 @h1-size				: 32px; // equiv "32px"
@@ -9,20 +9,40 @@
 @h4-size				: 20px; // equiv "20px"
 @h5-size				: 18px; // equiv "18px"
 @h6-size				: 16px; // equiv "16px"
-@basecolor				: #000; // text color on body
-@basebg					: #fff; // body background color
-@basecolor-link			: #333; // primary links color;
-@basecolor-link-hover	: #000; // primary hovered/focused links color;
-@smallvalue				: 10px; // small value for margins / paddings
-@mediumvalue			: 20px; // medium value for margins / paddings
-@largevalue				: 30px; // large value for margins / paddings
-@tinyscreen				: 480px; // tiny screens media query
-@smallscreen			: 768px; // small screens media query
-@largescreen			: 1280px; // large screens media query
-@gutter					: 20px; // gutter value (%, px, em, rem, etc) for grid layouts
+
+// font stacks
 @fontstack1				: Helvetica, Arial, sans-serif; // common font
 @fontstack2				: Consolas, 'DejaVu Sans Mono', Courier, monospace; // monospace font
 @fontstack3				: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // universal stack
+
+// font colors
+@basecolor				: #000; // text color on body
+@basecolor-link			: #333; // primary links color;
+@basecolor-link-hover	: #000; // primary hovered/focused links color;
+
+// backgrounds
+@basebg					: #fff; // body background color
+
+// spacings
+@tiny-value				: .5em; // tiny value for margins / paddings
+@small-value			: 1em; // small value for margins / paddings
+@medium-value			: 2em; // medium value for margins / paddings
+@large-value			: 4em; // large value for margins / paddings
+@extra-large-value		: 6em; // extra large value for margins / paddings
+@ultra-large-value		: 10em; // ultra large value for margins / paddings
+
+// breakpoints
+@tiny-screen			: 320px; // tiny screens media query
+@small-screen			: 480px; // small screens media query
+@medium-screen			: 768px; // small screens media query
+@large-screen			: 1024px; // large screens media query
+@extra-large-screen		: 1280px; // extra large screens media query
+@ultra-large-screen		: 1600px; // ultra large screens media query
+
+// misc
+@gutter					: 20px; // gutter value (%, px, em, rem) for grid layouts
+
+
 
 // LESS mixins : don't touch or you'll be banned ;)
 // px to em/rem 
