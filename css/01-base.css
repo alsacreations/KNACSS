@@ -541,27 +541,6 @@ img.end {
 .pll {
   padding-left: 4em;
 }
-/* ----------------------------- */
-/* == quick print reset          */
-/* ----------------------------- */
-@media print {
-  p,
-  blockquote {
-    orphans: 2;
-    widows: 2;
-  }
-  blockquote,
-  ul,
-  ol {
-    page-break-inside: avoid;
-  }
-  h1,
-  h2,
-  h3,
-  caption {
-    page-break-after: avoid;
-  }
-}
 /* debug helper */
 .knacss-debug {
   background: pink;
