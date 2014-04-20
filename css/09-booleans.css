@@ -1,65 +1,11 @@
-/* styling elements */
-code,
-kbd,
-mark {
-  border-radius: 2px;
+/* Google Gmap3 bug fix on images */
+:not(.gm-style) img {
+  height: auto;
 }
-kbd {
-  padding: 0 2px;
-  border: 1px solid #999;
-}
-code {
-  padding: 2px 4px;
-  background: rgba(0, 0, 0, 0.04);
-  color: #b11;
-}
-pre code {
-  padding: none;
-  background: none;
-  color: inherit;
-  border-radius: 0;
-}
-mark {
-  padding: 2px 4px;
-  background: #ff0;
-}
-sup,
-sub {
-  vertical-align: 0;
-  position: relative;
-}
-sup {
-  bottom: 1ex;
-}
-sub {
-  top: .5ex;
-}
-blockquote {
-  margin-left: 0;
-  padding-left: 1em;
-  border-left: 4px solid rgba(0, 0, 0, 0.15);
-  font-style: italic;
-}
-q {
-  font-style: normal;
-}
-q,
-.q {
-  quotes: "“\00a0" "\00a0”";
-}
-q:lang(fr),
-.q:lang(fr) {
-  quotes: "«\00a0" "\00a0»";
-}
-hr {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin: 1em 0 2em;
-  padding: 0;
-  border: 0;
-  color: #ccc;
-  background-color: #ccc;
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+  max-width: none !important;
 }
 /* IE678 support */
 .ie678 h1,
@@ -147,4 +93,67 @@ hr {
     word-wrap: break-word;
     hyphens: auto;
   }
+}
+/* styling elements */
+code,
+kbd,
+mark {
+  border-radius: 2px;
+}
+kbd {
+  padding: 0 2px;
+  border: 1px solid #999;
+}
+code {
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #b11;
+}
+pre code {
+  padding: none;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+mark {
+  padding: 2px 4px;
+  background: #ff0;
+}
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  font-style: italic;
+}
+q {
+  font-style: normal;
+}
+q,
+.q {
+  quotes: "“\00a0" "\00a0”";
+}
+q:lang(fr),
+.q:lang(fr) {
+  quotes: "«\00a0" "\00a0»";
+}
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
 }
