@@ -3,6 +3,9 @@
 // google maps boolean
 & when (@gmaps = true) {
 	/* Google Gmap3 bug fix on images */
+	.gm-style img {
+		height: 100%;
+	}
 	:not(.gm-style) img {
 		height: auto;
 	}

@@ -23,6 +23,7 @@ ul.unstyled {
   list-style: none;
 }
 img {
+  height: auto;
   vertical-align: middle;
   border: 0;
 }
