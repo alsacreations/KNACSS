@@ -139,7 +139,7 @@ kbd {
   /* IE fix */
   white-space: pre-wrap;
   font-family: Consolas, 'DejaVu Sans Mono', Courier, monospace;
-  line-height: 1;
+  line-height: normal;
 }
 code,
 kbd,
