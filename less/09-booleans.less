@@ -2,6 +2,7 @@
 
 // Styling boolean
 & when (@styling = true) {
+	/* styling elements */
 	code, kbd, mark {
 		border-radius: 2px;
 	}
@@ -66,7 +67,7 @@
 
 // IE6, 7, 8 support boolean
 & when (@ie678 = true) {
-
+	/* IE678 support */
 	.ie678 h1, .ie678 .h1-like {
 		.em(@h1-size);
 	}
@@ -117,6 +118,7 @@
 
 // skip-links boolean
 & when (@skip-links = true) {
+	/* styling skip links */
 	.skip-links {
 		position: absolute;
 

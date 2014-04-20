@@ -1,3 +1,4 @@
+/* styling elements */
 code,
 kbd,
 mark {
@@ -60,6 +61,7 @@ hr {
   color: #ccc;
   background-color: #ccc;
 }
+/* IE678 support */
 .ie678 h1,
 .ie678 .h1-like {
   font-size: 2.28571429em;
@@ -111,6 +113,7 @@ hr {
 		behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
 	}
 	*/
+/* styling skip links */
 .skip-links {
   position: absolute;
 }
