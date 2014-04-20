@@ -90,6 +90,9 @@ hr {
   width: auto;
   /* @bugfix for IE8 */
 }
+.ie678 .gm-style img {
+  height: 100%;
+}
 /* hasLayout for IE6/IE7 */
 .clearfix,
 .line,
@@ -105,6 +108,9 @@ hr {
 .inbl {
   *display: inline;
   *zoom: 1;
+}
+.visually-hidden {
+  *clip: rect(1px 1px 1px 1px);
 }
 /* Active box-sizing for IE6/IE7 */
 /* @source https://github.com/Schepp/box-sizing-polyfill */

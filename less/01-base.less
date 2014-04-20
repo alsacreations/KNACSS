@@ -1,6 +1,6 @@
 @import "00-config";
 /*!
-* www.KNACSS.com V2.9.3 (2014-02) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V2.9.4 (2014-04) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -140,7 +140,6 @@ strong {
 /* hiding content */
 .visually-hidden { 
 	position: absolute !important; 
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px); 
 	overflow: hidden;
 	height: 1px; width: 1px;
@@ -178,9 +177,6 @@ table { margin-bottom: 1.5em; }
 /* Google Gmap3 bug fix on images */
 :not(.gm-style) img {
 	height: auto;
-}
-.ie678 .gm-style img {
-	height: 100%;  /* IE678 hack */
 }
 .gm-style img,
 .gmnoscreen img,
