@@ -100,18 +100,6 @@
     display: table-cell !important;
     vertical-align: top !important;
   }
-  /* you shall not pass */
-  div,
-  textarea,
-  table,
-  td,
-  th,
-  code,
-  pre,
-  samp {
-    word-wrap: break-word;
-    hyphens: auto;
-  }
   /* widths for small screens */
   .small-w25 {
     width: 25% !important;

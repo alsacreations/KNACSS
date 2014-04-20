@@ -141,46 +141,11 @@ kbd {
   font-family: Consolas, 'DejaVu Sans Mono', Courier, monospace;
   line-height: normal;
 }
-code,
-kbd,
-mark {
-  border-radius: 2px;
-}
 em {
   font-style: italic;
 }
 strong {
   font-weight: bold;
-}
-kbd {
-  padding: 0 2px;
-  border: 1px solid #999;
-}
-code {
-  padding: 2px 4px;
-  background: rgba(0, 0, 0, 0.04);
-  color: #b11;
-}
-pre code {
-  padding: none;
-  background: none;
-  color: inherit;
-  border-radius: 0;
-}
-mark {
-  padding: 2px 4px;
-  background: #ff0;
-}
-sup,
-sub {
-  vertical-align: 0;
-  position: relative;
-}
-sup {
-  bottom: 1ex;
-}
-sub {
-  top: .5ex;
 }
 /* ----------------------------- */
 /* == hiding content             */
@@ -194,23 +159,6 @@ sub {
   overflow: hidden;
   height: 1px;
   width: 1px;
-}
-/* ----------------------------- */
-/* == skip links styling         */
-/* ----------------------------- */
-.skip-links {
-  position: absolute;
-}
-.skip-links a {
-  position: absolute;
-  left: -7000px;
-  padding: 0.5em;
-  background: black;
-  color: white;
-  text-decoration: none;
-}
-.skip-links a:focus {
-  position: static;
 }
 /* ----------------------------- */
 /* == browsers consistency       */
@@ -346,10 +294,6 @@ img.end {
 .txtcenter {
   text-align: center;
 }
-/* ----------------------------- */
-/* == width helpers              */
-/* .. use only when needed       */
-/* ----------------------------- */
 /* blocks widths (percentage and pixels) */
 .w10 {
   width: 10%;
@@ -438,16 +382,11 @@ img.end {
 .wauto {
   width: auto;
 }
-/* ----------------------------- */
-/* == spacing helpers            */
-/* .. use only when needed       */
-/* ----------------------------- */
 /* spacing helpers
-p,m = padding,margin
-a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n = small(10px),medium(20px),large(30px),none(0)
-source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
-*/
+	p,m = padding,margin
+	a,t,r,b,l = all,top,right,bottom,left
+	s,m,l,n = small, medium, large, none
+	*/
 .m-reset,
 .ma0 {
   margin: 0;
@@ -608,62 +547,6 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .pll {
   padding-left: 4em;
 }
-/* ----------------------------- */
-/* == iefix                      */
-/* ----------------------------- */
-/* Make sure you are using Conditional Classes in your HTML */
-/* see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html */
-.ie678 h1,
-.ie678 .h1-like {
-  font-size: 2.28571429em;
-}
-.ie678 h2,
-.ie678 .h2-like {
-  font-size: 2em;
-}
-.ie678 h3,
-.ie678 .h3-like {
-  font-size: 1.71428571em;
-}
-.ie678 h4,
-.ie678 .h4-like {
-  font-size: 1.42857143em;
-}
-.ie678 h5,
-.ie678 .h5-like {
-  font-size: 1.28571429em;
-}
-.ie678 h6,
-.ie678 .h6-like {
-  font-size: 1.14285714em;
-}
-/* hasLayout for IE6/IE7 */
-.ie67 .clearfix,
-.ie67 .line,
-.ie67 .mod,
-.ie67 .row,
-.ie67 .col {
-  zoom: 1;
-}
-/* inline-block and table-cell for IE6/IE7 */
-/* warning: .col needs width on IE6/IE7 */
-.ie67 .btn,
-.ie67 .col,
-.ie67 .inbl {
-  display: inline;
-  zoom: 1;
-}
-.ie8 img {
-  width: auto;
-  /* @bugfix for IE8 */
-}
-/* Active box-sizing for IE6/IE7 */
-/* @source https://github.com/Schepp/box-sizing-polyfill */
-/*
-.ie67 * {
-	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
-}
-*/
 /* ----------------------------- */
 /* == quick print reset          */
 /* ----------------------------- */

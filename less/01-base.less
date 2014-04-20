@@ -126,46 +126,12 @@ kbd {
 	font-family: @fontstack2;
 	line-height: normal;
 }
-code, kbd, mark {
-	border-radius: 2px;
-}
 em {
 	font-style: italic;
 }
 strong {
 	font-weight: bold;
 }
-kbd {
-	padding: 0 2px;
-	border: 1px solid #999;
-}
-code {
-	padding: 2px 4px;
-	background: rgba(0,0,0,.04);
-	color: #b11; 
-}
-pre code {
-	padding: none;
-	background: none;
-	color: inherit;
-	border-radius: 0;
-}
-mark {
-	padding:2px 4px;
-	background: #ff0;
-}
-sup,
-sub {
-	vertical-align: 0;
-	position: relative;
-}
-sup {
-	bottom: 1ex;
-}
-sub {
-	top: .5ex;
-}
-
 
 /* ----------------------------- */
 /* == hiding content             */
@@ -179,29 +145,6 @@ sub {
 	overflow: hidden;
 	height: 1px; width: 1px;
 }
-
-
-/* ----------------------------- */
-/* == skip links styling         */
-/* ----------------------------- */
-
-.skip-links {
-	position: absolute;
-
-	a {
-		position: absolute;
-		left: -7000px;
-		padding: 0.5em;
-		background: black;
-		color: white;
-		text-decoration: none;
-	
-		&:focus {
-			position: static;
-		}
-	}
-}
-
 
 /* ----------------------------- */
 /* == browsers consistency       */
@@ -324,154 +267,92 @@ img.start, img.end {
 .txtcenter { text-align: center; }
 
 
-/* ----------------------------- */
-/* == width helpers              */
-/* .. use only when needed       */
-/* ----------------------------- */
+// width helpers boolean
+& when (@helpers-width = true) {
+	/* blocks widths (percentage and pixels) */
+	.w10    { width: 10%; }
+	.w20    { width: 20%; }
+	.w25    { width: 25%; }
+	.w30    { width: 30%; }
+	.w33    { width: 33.3333%; }
+	.w40    { width: 40%; }
+	.w50    { width: 50%; }
+	.w60    { width: 60%; }
+	.w66    { width: 66.6666%; }
+	.w70    { width: 70%; }
+	.w75    { width: 75%; }
+	.w80    { width: 80%; }
+	.w90    { width: 90%; }
+	.w100   { width: 100%; }
 
-/* blocks widths (percentage and pixels) */
-.w10    { width: 10%; }
-.w20    { width: 20%; }
-.w25    { width: 25%; }
-.w30    { width: 30%; }
-.w33    { width: 33.3333%; }
-.w40    { width: 40%; }
-.w50    { width: 50%; }
-.w60    { width: 60%; }
-.w66    { width: 66.6666%; }
-.w70    { width: 70%; }
-.w75    { width: 75%; }
-.w80    { width: 80%; }
-.w90    { width: 90%; }
-.w100   { width: 100%; }
-
-.w50p   { width: 50px; }
-.w100p  { width: 100px; }
-.w150p  { width: 150px; }
-.w200p  { width: 200px; }
-.w300p  { width: 300px; }
-.w400p  { width: 400px; }
-.w500p  { width: 500px; }
-.w600p  { width: 600px; }
-.w700p  { width: 700px; }
-.w800p  { width: 800px; }
-.w960p  { width: 960px; }
-.mw960p { max-width: 960px; }
-.w1140p  { width: 1140px; }
-.mw1140p { max-width: 1140px; }
-.wauto  { width: auto; }
-
-
-/* ----------------------------- */
-/* == spacing helpers            */
-/* .. use only when needed       */
-/* ----------------------------- */
-
-/* spacing helpers
-p,m = padding,margin
-a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n = small(10px),medium(20px),large(30px),none(0)
-source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
-*/
-.m-reset, .ma0 { margin: 0; }
-.p-reset, .pa0 { padding: 0; }
-.ma1, .mas { margin: @small-value; }
-.ma2, .mam { margin: @medium-value; }
-.ma3, .mal { margin: @large-value; }
-.pa1, .pas { padding: @small-value; }
-.pa2, .pam { padding: @medium-value; }
-.pa3, .pal { padding: @large-value; }
-
-.mt0, .mtn { margin-top: 0; }
-.mt1, .mts { margin-top: @small-value; }
-.mt2, .mtm { margin-top: @medium-value; }
-.mt3, .mtl { margin-top: @large-value; }
-.mr0, .mrn { margin-right: 0; }
-.mr1, .mrs { margin-right: @small-value; }
-.mr2, .mrm { margin-right: @medium-value; }
-.mr3, .mrl { margin-right: @large-value; }
-.mb0, .mbn { margin-bottom: 0; }
-.mb1, .mbs { margin-bottom: @small-value; }
-.mb2, .mbm { margin-bottom: @medium-value; }
-.mb3, .mbl { margin-bottom: @large-value; }
-.ml0, .mln { margin-left: 0; }
-.ml1, .mls { margin-left: @small-value; }
-.ml2, .mlm { margin-left: @medium-value; }
-.ml3, .mll { margin-left: @large-value; }
-
-.pt0, .ptn { padding-top: 0; }
-.pt1, .pts { padding-top: @small-value; }
-.pt2, .ptm { padding-top: @medium-value; }
-.pt3, .ptl { padding-top: @large-value; }
-.pr0, .prn { padding-right: 0; }
-.pr1, .prs { padding-right: @small-value; }
-.pr2, .prm { padding-right: @medium-value; }
-.pr3, .prl { padding-right: @large-value; }
-.pb0, .pbn { padding-bottom: 0; }
-.pb1, .pbs { padding-bottom: @small-value; }
-.pb2, .pbm { padding-bottom: @medium-value; }
-.pb3, .pbl { padding-bottom: @large-value; }
-.pl0, .pln { padding-left: 0; }
-.pl1, .pls { padding-left: @small-value; }
-.pl2, .plm { padding-left: @medium-value; }
-.pl3, .pll { padding-left: @large-value; }
-
-
-/* ----------------------------- */
-/* == iefix                      */
-/* ----------------------------- */
-
-/* Make sure you are using Conditional Classes in your HTML */
-/* see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html */
-
-.ie678 h1, .ie678 .h1-like {
-	.em(@h1-size);
-}
-.ie678 h2, .ie678 .h2-like {
-	.em(@h2-size);
-}
-.ie678 h3, .ie678 .h3-like {
-	.em(@h3-size);
-}
-.ie678 h4, .ie678 .h4-like {
-	.em(@h4-size);
-}
-.ie678 h5, .ie678 .h5-like {
-	.em(@h5-size);
-}
-.ie678 h6, .ie678 .h6-like {
-	.em(@h6-size);
+	.w50p   { width: 50px; }
+	.w100p  { width: 100px; }
+	.w150p  { width: 150px; }
+	.w200p  { width: 200px; }
+	.w300p  { width: 300px; }
+	.w400p  { width: 400px; }
+	.w500p  { width: 500px; }
+	.w600p  { width: 600px; }
+	.w700p  { width: 700px; }
+	.w800p  { width: 800px; }
+	.w960p  { width: 960px; }
+	.mw960p { max-width: 960px; }
+	.w1140p  { width: 1140px; }
+	.mw1140p { max-width: 1140px; }
+	.wauto  { width: auto; }
 }
 
-/* hasLayout for IE6/IE7 */
-.ie67 .clearfix,
-.ie67 .line,
-.ie67 .mod,
-.ie67 .row,
-.ie67 .col {
-	zoom: 1;
-}
 
-/* inline-block and table-cell for IE6/IE7 */
-/* warning: .col needs width on IE6/IE7 */
-.ie67 .btn,
-.ie67 .col,
-.ie67 .inbl {
-	display: inline;
-	zoom: 1;
-}
-.ie8 img {
-	width: auto; /* @bugfix for IE8 */
-}
+// spacing helpers boolean
+& when (@helpers-spacing = true) {
+	/* spacing helpers
+	p,m = padding,margin
+	a,t,r,b,l = all,top,right,bottom,left
+	s,m,l,n = small, medium, large, none
+	*/
+	.m-reset, .ma0 { margin: 0; }
+	.p-reset, .pa0 { padding: 0; }
+	.ma1, .mas { margin: @small-value; }
+	.ma2, .mam { margin: @medium-value; }
+	.ma3, .mal { margin: @large-value; }
+	.pa1, .pas { padding: @small-value; }
+	.pa2, .pam { padding: @medium-value; }
+	.pa3, .pal { padding: @large-value; }
 
-/* Active box-sizing for IE6/IE7 */
-/* @source https://github.com/Schepp/box-sizing-polyfill */
-/*
-.ie67 * {
-	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
-}
-*/
+	.mt0, .mtn { margin-top: 0; }
+	.mt1, .mts { margin-top: @small-value; }
+	.mt2, .mtm { margin-top: @medium-value; }
+	.mt3, .mtl { margin-top: @large-value; }
+	.mr0, .mrn { margin-right: 0; }
+	.mr1, .mrs { margin-right: @small-value; }
+	.mr2, .mrm { margin-right: @medium-value; }
+	.mr3, .mrl { margin-right: @large-value; }
+	.mb0, .mbn { margin-bottom: 0; }
+	.mb1, .mbs { margin-bottom: @small-value; }
+	.mb2, .mbm { margin-bottom: @medium-value; }
+	.mb3, .mbl { margin-bottom: @large-value; }
+	.ml0, .mln { margin-left: 0; }
+	.ml1, .mls { margin-left: @small-value; }
+	.ml2, .mlm { margin-left: @medium-value; }
+	.ml3, .mll { margin-left: @large-value; }
 
+	.pt0, .ptn { padding-top: 0; }
+	.pt1, .pts { padding-top: @small-value; }
+	.pt2, .ptm { padding-top: @medium-value; }
+	.pt3, .ptl { padding-top: @large-value; }
+	.pr0, .prn { padding-right: 0; }
+	.pr1, .prs { padding-right: @small-value; }
+	.pr2, .prm { padding-right: @medium-value; }
+	.pr3, .prl { padding-right: @large-value; }
+	.pb0, .pbn { padding-bottom: 0; }
+	.pb1, .pbs { padding-bottom: @small-value; }
+	.pb2, .pbm { padding-bottom: @medium-value; }
+	.pb3, .pbl { padding-bottom: @large-value; }
+	.pl0, .pln { padding-left: 0; }
+	.pl1, .pls { padding-left: @small-value; }
+	.pl2, .plm { padding-left: @medium-value; }
+	.pl3, .pll { padding-left: @large-value; }
+}
 
 /* ----------------------------- */
 /* == quick print reset          */
