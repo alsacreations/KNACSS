@@ -161,6 +161,12 @@ code {
   background: rgba(0, 0, 0, 0.04);
   color: #b11;
 }
+pre code {
+  padding: none;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
 mark {
   padding: 2px 4px;
   background: #ff0;
