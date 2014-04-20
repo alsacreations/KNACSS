@@ -296,22 +296,27 @@ body > script {display: none !important;}
 /* alignments (blocks and inline) */
 /* ------------------------------ */
 
-/* left elements */
-.left {
+/* left (or starting) elements */
+.left,
+.start {
 	float: left;
 }
-img.left {
-	margin-right: 1em;
+img.left,
+img.start  {
+	margin-right: @small-value;
 }
-/* right elements */
-.right {
+/* right (or ending) elements */
+.right,
+.end {
 	float: right;
 }
-img.right {
-	margin-left: 1em;
+img.right,
+img.end {
+	margin-left: @small-value;
 }
-img.left, img.right {
-	margin-bottom: 5px;
+img.left, img.right,
+img.start, img.end {
+	margin-bottom: @tiny-value;
 }
 .center    { margin-left: auto; margin-right: auto; }
 .txtleft   { text-align: left; }

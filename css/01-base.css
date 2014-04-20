@@ -309,23 +309,29 @@ body > script {
 }
 /* alignments (blocks and inline) */
 /* ------------------------------ */
-/* left elements */
-.left {
+/* left (or starting) elements */
+.left,
+.start {
   float: left;
 }
-img.left {
+img.left,
+img.start {
   margin-right: 1em;
 }
-/* right elements */
-.right {
+/* right (or ending) elements */
+.right,
+.end {
   float: right;
 }
-img.right {
+img.right,
+img.end {
   margin-left: 1em;
 }
 img.left,
-img.right {
-  margin-bottom: 5px;
+img.right,
+img.start,
+img.end {
+  margin-bottom: 0.5em;
 }
 .center {
   margin-left: auto;
