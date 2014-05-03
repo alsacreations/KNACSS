@@ -39,34 +39,12 @@ video {
 svg:not(:root) {
 	overflow: hidden;
 }
-:rtl * {
-	direction: rtl;
-	text-align: right;
-}
-[hidden],
-audio:not([controls]),
-area,
-base,
-command,
-datalist,
-head,
-input[type=hidden],
-link,
-menu[type=context],
-meta,
-param,
-rp,
-script,
-source,
-style,
-title {
-	display: none;
-}
+
 /* ----------------------------- */
 /* == typography                 */
 /* ----------------------------- */
 
-/* base font-size corresponds to 10px and is adapted to rem unit */
+/* base font-size corresponds to "10px" and is adapted to rem unit */
 html {
 	font-size: 62.5%;
 	-webkit-text-size-adjust: 100%;
@@ -82,7 +60,6 @@ body {
 }
 
 /* font-sizing for content */
-/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
 p,
 .p-like,
 ul,
