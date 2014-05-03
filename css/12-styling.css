@@ -1,0 +1,119 @@
+/* ----------------------------- */
+
+/* ==minor stylings              */
+
+/* ----------------------------- */
+
+code,
+kbd,
+mark {
+  border-radius: 2px;
+}
+
+kbd {
+  padding: 0 2px;
+  border: 1px solid #999;
+}
+
+code {
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #b11;
+}
+
+pre code {
+  padding: none;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+
+mark {
+  padding: 2px 4px;
+  background: #ff0;
+}
+
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  font-style: italic;
+}
+
+q {
+  font-style: normal;
+}
+
+q,
+.q {
+  quotes: "“\00a0" "\00a0”";
+}
+
+q:lang(fr),
+.q:lang(fr) {
+  quotes: "«\00a0" "\00a0»";
+}
+
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
+}
+
+.alternate {
+  border: 0;
+}
+
+.alternate tbody {
+  border: 1px solid #ccc;
+}
+
+.alternate thead tr > * + * {
+  border-left: 0;
+}
+
+.alternate tbody tr > * + * {
+  border-left: 1px solid #ccc;
+}
+
+.alternate-vert {
+  border: 0;
+  border-right: 1px solid #ccc;
+}
+
+.alternate-vert tr > :first-child {
+  border-bottom: 0;
+}
+
+.alternate-vert tr > * + * {
+  border-top: 1px solid #ccc;
+}
+
+.striped tbody tr:nth-child(odd) {
+  background: #eee;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.striped-vert tr > :first-child {
+  background: #eee;
+  background: rgba(0, 0, 0, 0.05);
+}

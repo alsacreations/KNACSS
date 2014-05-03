@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V2.9.3 (2014-02) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3.0.0 (2014-05) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -35,6 +35,7 @@ ul.unstyled {
 }
 
 img {
+  height: auto;
   vertical-align: middle;
   border: 0;
 }
@@ -49,22 +50,19 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-figure {
-  margin: 0;
-}
-
 /* ----------------------------- */
 
 /* == typography                 */
 
 /* ----------------------------- */
 
-/* base font-size corresponds to 10px and is adapted to rem unit */
+/* base font-size corresponds to "10px" and is adapted to rem unit */
 
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -77,9 +75,8 @@ body {
 
 /* font-sizing for content */
 
-/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
-
 p,
+.p-like,
 ul,
 ol,
 dl,
@@ -93,79 +90,61 @@ caption,
 details,
 figure,
 hgroup {
-  margin-top: .75em;
+  margin-top: 0.75em;
   margin-bottom: 0;
   line-height: 1.5;
 }
 
 h1,
 .h1-like {
-  margin-top: 0.65625em;
-  margin-bottom: 0;
   font-size: 3.2rem;
-  line-height: 1.3125;
 }
 
 h2,
 .h2-like {
-  margin-top: 0.75em;
-  margin-bottom: 0;
   font-size: 2.8rem;
-  line-height: 1.5;
 }
 
 h3,
 .h3-like {
-  margin-top: 0.875em;
-  margin-bottom: 0;
   font-size: 2.4rem;
-  line-height: 1.75;
 }
 
 h4,
 .h4-like {
-  margin-top: 1.05em;
-  margin-bottom: 0;
   font-size: 2rem;
-  line-height: 1.05;
 }
 
 h5,
 .h5-like {
-  margin-top: 1.1666666666666667em;
-  margin-bottom: 0;
   font-size: 1.8rem;
-  line-height: 1.1666666666666667;
 }
 
 h6,
 .h6-like {
-  margin-top: 1.3125em;
-  margin-bottom: 0;
   font-size: 1.6rem;
-  line-height: 1.3125;
 }
 
 /* alternate font-sizing */
 
 .smaller {
-  font-size: 0.7142857142857143em;
+  font-size: 0.71em;
 }
 
 .small {
-  font-size: 0.8571428571428571em;
+  font-size: 0.86em;
 }
 
 .big {
-  font-size: 1.1428571428571428em;
+  font-size: 1.14em;
 }
 
 .bigger {
-  font-size: 1.2857142857142858em;
+  font-size: 1.29em;
 }
 
 .biggest {
-  font-size: 1.4285714285714286em;
+  font-size: 1.43em;
 }
 
 code,
@@ -176,51 +155,36 @@ kbd {
   /* IE fix */
   white-space: pre-wrap;
   font-family: Consolas, 'DejaVu Sans Mono', Courier, monospace;
-  line-height: 1;
+  line-height: normal;
 }
 
-code,
-kbd,
-mark {
-  border-radius: 2px;
-}
-
-em {
+em,
+.em,
+address,
+cite,
+dfn,
+i,
+var {
   font-style: italic;
 }
 
-strong {
+.no-em {
+  font-style: normal;
+}
+
+strong,
+.strong {
   font-weight: bold;
 }
 
-kbd {
-  padding: 0 2px;
-  border: 1px solid #999;
+.no-strong {
+  font-weight: normal;
 }
 
-code {
-  padding: 2px 4px;
-  background: rgba(0, 0, 0, 0.04);
-  color: #b11;
-}
-
-mark {
-  padding: 2px 4px;
-  background: #ff0;
-}
-
-sup,
-sub {
-  vertical-align: 0;
-  position: relative;
-}
-
+small,
+sub,
 sup {
-  bottom: 1ex;
-}
-
-sub {
-  top: .5ex;
+  font-size: smaller;
 }
 
 /* ----------------------------- */
@@ -229,46 +193,34 @@ sub {
 
 /* ----------------------------- */
 
-/* hiding content */
-
 .visually-hidden {
-  position: absolute;
-  left: -7000px;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
+  height: 1px;
+  width: 1px;
 }
 
-[dir=rtl] .visually-hidden {
-  left: auto;
-  right: -7000px;
+body > script {
+  display: none !important;
 }
 
-.desktop-hidden {
-  display: none;
+@media print {
+  .no-print {
+    display: none;
+  }
 }
 
-/* hidden on desktop */
-
-/* ----------------------------- */
-
-/* == skip links styling         */
-
-/* ----------------------------- */
-
-.skip-links {
-  position: absolute;
+@media (max-width: 480px) {
+  .no-small-screen {
+    display: none;
+  }
 }
 
-.skip-links a {
-  position: absolute;
-  left: -7000px;
-  padding: 0.5em;
-  background: black;
-  color: white;
-  text-decoration: none;
-}
-
-.skip-links a:focus {
-  position: static;
+@media (min-width: 1024px) {
+  .no-large-screen {
+    display: none;
+  }
 }
 
 /* ----------------------------- */
@@ -280,6 +232,7 @@ sub {
 /* avoid top margins on first content element */
 
 p:first-child,
+.p-like:first-child,
 ul:first-child,
 ol:first-child,
 dl:first-child,
@@ -297,6 +250,7 @@ h6:first-child {
 /* avoid margins on nested elements */
 
 li p,
+li .p-like,
 li ul,
 li ol {
   margin-top: 0;
@@ -320,30 +274,7 @@ video {
 /* margin-bottom on tables */
 
 table {
-  margin-bottom: 1.5em;
-}
-
-/* Google Gmap3 bug fix on images */
-
-:not(.gm-style) img {
-  height: auto !important;
-}
-
-.ie678 .gm-style img {
-  height: 100%;
-  /* IE678 hack */
-}
-
-.gm-style img,
-.gmnoscreen img,
-.gmnoprint img {
-  max-width: none !important;
-}
-
-/* scripts */
-
-body > script {
-  display: none !important;
+  margin-bottom: 2em;
 }
 
 /* ----------------------------- */
@@ -371,8 +302,7 @@ body > script {
 /* blocks that must contain floats */
 
 .clearfix:after,
-.line:after,
-.mod:after {
+.line:after {
   content: "";
   display: table;
   clear: both;
@@ -403,29 +333,35 @@ body > script {
 
 /* ------------------------------ */
 
-/* left elements */
+/* left (or starting) elements */
 
-.left {
+.left,
+.start {
   float: left;
 }
 
-img.left {
+img.left,
+img.start {
   margin-right: 1em;
 }
 
-/* right elements */
+/* right (or ending) elements */
 
-.right {
+.right,
+.end {
   float: right;
 }
 
-img.right {
+img.right,
+img.end {
   margin-left: 1em;
 }
 
 img.left,
-img.right {
-  margin-bottom: 5px;
+img.right,
+img.start,
+img.end {
+  margin-bottom: 0.5em;
 }
 
 .center {
@@ -444,16 +380,6 @@ img.right {
 .txtcenter {
   text-align: center;
 }
-
-/* ----------------------------- */
-
-/* == width helpers              */
-
-/* .. use only when needed       */
-
-/* ----------------------------- */
-
-/* blocks widths (percentage and pixels) */
 
 .w10 {
   width: 10%;
@@ -571,329 +497,164 @@ img.right {
   width: auto;
 }
 
-/* ----------------------------- */
-
-/* == spacing helpers            */
-
-/* .. use only when needed       */
-
-/* ----------------------------- */
-
-/* spacing helpers
-p,m = padding,margin
-a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n = small(10px),medium(20px),large(30px),none(0)
-source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
-*/
-
-.m-reset,
-.ma0 {
+.man {
   margin: 0;
 }
 
-.p-reset,
-.pa0 {
+.pan {
   padding: 0;
 }
 
-.ma1,
 .mas {
-  margin: 10px;
+  margin: 1em;
 }
 
-.ma2,
 .mam {
-  margin: 20px;
+  margin: 2em;
 }
 
-.ma3,
 .mal {
-  margin: 30px;
+  margin: 4em;
 }
 
-.pa1,
 .pas {
-  padding: 10px;
+  padding: 1em;
 }
 
-.pa2,
 .pam {
-  padding: 20px;
+  padding: 2em;
 }
 
-.pa3,
 .pal {
-  padding: 30px;
+  padding: 4em;
 }
 
-.mt0,
 .mtn {
   margin-top: 0;
 }
 
-.mt1,
 .mts {
-  margin-top: 10px;
+  margin-top: 1em;
 }
 
-.mt2,
 .mtm {
-  margin-top: 20px;
+  margin-top: 2em;
 }
 
-.mt3,
 .mtl {
-  margin-top: 30px;
+  margin-top: 4em;
 }
 
-.mr0,
 .mrn {
   margin-right: 0;
 }
 
-.mr1,
 .mrs {
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
-.mr2,
 .mrm {
-  margin-right: 20px;
+  margin-right: 2em;
 }
 
-.mr3,
 .mrl {
-  margin-right: 30px;
+  margin-right: 4em;
 }
 
-.mb0,
 .mbn {
   margin-bottom: 0;
 }
 
-.mb1,
 .mbs {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
-.mb2,
 .mbm {
-  margin-bottom: 20px;
+  margin-bottom: 2em;
 }
 
-.mb3,
 .mbl {
-  margin-bottom: 30px;
+  margin-bottom: 4em;
 }
 
-.ml0,
 .mln {
   margin-left: 0;
 }
 
-.ml1,
 .mls {
-  margin-left: 10px;
+  margin-left: 1em;
 }
 
-.ml2,
 .mlm {
-  margin-left: 20px;
+  margin-left: 2em;
 }
 
-.ml3,
 .mll {
-  margin-left: 30px;
+  margin-left: 4em;
 }
 
-.pt0,
 .ptn {
   padding-top: 0;
 }
 
-.pt1,
 .pts {
-  padding-top: 10px;
+  padding-top: 1em;
 }
 
-.pt2,
 .ptm {
-  padding-top: 20px;
+  padding-top: 2em;
 }
 
-.pt3,
 .ptl {
-  padding-top: 30px;
+  padding-top: 4em;
 }
 
-.pr0,
 .prn {
   padding-right: 0;
 }
 
-.pr1,
 .prs {
-  padding-right: 10px;
+  padding-right: 1em;
 }
 
-.pr2,
 .prm {
-  padding-right: 20px;
+  padding-right: 2em;
 }
 
-.pr3,
 .prl {
-  padding-right: 30px;
+  padding-right: 4em;
 }
 
-.pb0,
 .pbn {
   padding-bottom: 0;
 }
 
-.pb1,
 .pbs {
-  padding-bottom: 10px;
+  padding-bottom: 1em;
 }
 
-.pb2,
 .pbm {
-  padding-bottom: 20px;
+  padding-bottom: 2em;
 }
 
-.pb3,
 .pbl {
-  padding-bottom: 30px;
+  padding-bottom: 4em;
 }
 
-.pl0,
 .pln {
   padding-left: 0;
 }
 
-.pl1,
 .pls {
-  padding-left: 10px;
+  padding-left: 1em;
 }
 
-.pl2,
 .plm {
-  padding-left: 20px;
+  padding-left: 2em;
 }
 
-.pl3,
 .pll {
-  padding-left: 30px;
-}
-
-/* ----------------------------- */
-
-/* == iefix                      */
-
-/* ----------------------------- */
-
-/* Make sure you are using Conditional Classes in your HTML */
-
-/* see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html */
-
-.ie678 h1,
-.ie678 .h1-like {
-  font-size: 2.2857142857142856em;
-}
-
-.ie678 h2,
-.ie678 .h2-like {
-  font-size: 2em;
-}
-
-.ie678 h3,
-.ie678 .h3-like {
-  font-size: 1.7142857142857142em;
-}
-
-.ie678 h4,
-.ie678 .h4-like {
-  font-size: 1.4285714285714286em;
-}
-
-.ie678 h5,
-.ie678 .h5-like {
-  font-size: 1.2857142857142858em;
-}
-
-.ie678 h6,
-.ie678 .h6-like {
-  font-size: 1.1428571428571428em;
-}
-
-/* hasLayout for IE6/IE7 */
-
-.ie67 .clearfix,
-.ie67 .line,
-.ie67 .mod,
-.ie67 .row,
-.ie67 .col {
-  zoom: 1;
-}
-
-/* inline-block and table-cell for IE6/IE7 */
-
-/* warning: .col needs width on IE6/IE7 */
-
-.ie67 .btn,
-.ie67 .col,
-.ie67 .inbl {
-  display: inline;
-  zoom: 1;
-}
-
-.ie8 img {
-  width: auto;
-  /* @bugfix for IE8 */
-}
-
-/* Active box-sizing for IE6/IE7 */
-
-/* @source https://github.com/Schepp/box-sizing-polyfill */
-
-/*
-.ie67 * {
-	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
-}
-*/
-
-/* ----------------------------- */
-
-/* == quick print reset          */
-
-/* ----------------------------- */
-
-@media print {
-  p,
-  blockquote {
-    orphans: 2;
-    widows: 2;
-  }
-
-  blockquote,
-  ul,
-  ol {
-    page-break-inside: avoid;
-  }
-
-  h1,
-  h2,
-  h3,
-  caption {
-    page-break-after: avoid;
-  }
-}
-
-/* debug helper */
-
-.knacss-debug {
-  background: pink;
-  outline: 3px solid maroon;
+  padding-left: 4em;
 }
 
 /* ---------------------------------- */
@@ -906,21 +667,39 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
-/* font-family hack explained here : https://github.com/raphaelgoetter/KNACSS/issues/37 */
-
 .grid {
+  /* overall container of grids */
   overflow: hidden;
-  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
 }
 
 .grid > * {
+  /* global styles for direct child ex. .grid3 */
   display: block;
   padding: 0;
   margin-left: -20px;
   /* gutter value */
   text-align: left;
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
+}
+
+.grid > * > * {
+  /* global styles for each "cell" */
+  display: inline-block;
+  padding-left: -20px;
+  /* gutter value */
+  margin-left: 0;
+  vertical-align: top;
+}
+
+/* whitespace fixing for modern browsers including IE9+ */
+
+:root .grid {
+  font-size: 0;
+}
+
+:root .grid > * > * {
+  font-size: 14px;
+  /* fallback for Opera Mini */
+  font-size: 1.4rem;
 }
 
 /* Opera hack */
@@ -928,23 +707,6 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 .opera:-o-prefocus,
 .grid > * {
   word-spacing: -0.43em;
-}
-
-.grid > * > * {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  /* IE67 hack */
-  width: 100%;
-  padding-left: 20px;
-  /* gutter value */
-  margin-left: 0;
-  vertical-align: top;
-  text-align: left;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .grid2 > * {
@@ -1003,7 +765,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 /* Responsiv-o-matic */
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .grid5 > *,
   .grid6 > *,
   .grid8 > *,
@@ -1013,7 +775,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .grid3 > *,
   .grid4 > *,
   .grid5 > *,
@@ -1025,7 +787,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid > * > * {
     width: 100% !important;
   }
@@ -1042,16 +804,8 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
 [class*="autogrid"] {
+  /* container of autogrids */
   text-align: justify;
-  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
-}
-
-/* Opera hack */
-
-[class*="autogrid"]:-o-prefocus {
-  word-spacing: -0.43em;
 }
 
 [class*="autogrid"]:after {
@@ -1062,14 +816,26 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 [class*="autogrid"] > * {
   display: inline-block;
-  *display: inline;
-  zoom: 1;
-  /* ie6 ie7 hack */
-  font-family: Helvetica, Arial, sans-serif;
-  letter-spacing: normal;
-  word-spacing: normal;
   vertical-align: top;
-  text-rendering: auto;
+  text-align: left;
+}
+
+/* whitespace fixing for modern browsers including IE9+ */
+
+:root [class*="autogrid"] {
+  font-size: 0;
+}
+
+:root [class*="autogrid"] > * > * {
+  font-size: 14px;
+  /* fallback for Opera Mini */
+  font-size: 1.4rem;
+}
+
+/* Opera hack */
+
+[class*="autogrid"]:-o-prefocus {
+  word-spacing: -0.43em;
 }
 
 .autogrid2 > * {
@@ -1104,7 +870,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   width: 6.4%;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .autogrid5 > *,
   .autogrid6 > *,
   .autogrid8 > *,
@@ -1114,7 +880,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .autogrid5 > *,
   .autogrid6 > *,
   .autogrid8 > *,
@@ -1124,7 +890,7 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   [class*="autogrid"] > * {
     width: 100%;
   }
@@ -1138,14 +904,12 @@ source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css
 
 table,
 .table {
+  width: 100%;
   max-width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
   vertical-align: top;
-}
-
-table {
-  width: 100%;
+  border: 1px solid #ccc;
 }
 
 .table {
@@ -1158,75 +922,19 @@ table.table-auto {
 }
 
 caption {
-  padding: 10px;
+  padding: 1em;
   color: #555;
   font-style: italic;
 }
 
-table {
-  border: 1px solid #ccc;
-}
-
-tr > * + * {
-  border-left: 1px solid #ccc;
-}
-
-th,
-td {
-  padding: .3em .8em;
+td,
+th {
+  padding: 0.3em 0.8em;
+  border: 1px #aaa dotted;
+  vertical-align: top;
+  min-width: 2em;
+  cursor: default;
   text-align: left;
-  border-bottom: 1px solid #ccc;
-}
-
-td {
-  color: #333;
-}
-
-/* alternate tables */
-
-.alternate {
-  border: 0;
-}
-
-.alternate tbody {
-  border: 1px solid #ccc;
-}
-
-.alternate thead tr > * + * {
-  border-left: 0;
-}
-
-.alternate tbody tr > * + * {
-  border-left: 1px solid #ccc;
-}
-
-/* alternate-vert tables */
-
-.alternate-vert {
-  border: 0;
-  border-right: 1px solid #ccc;
-}
-
-.alternate-vert tr > :first-child {
-  border-bottom: 0;
-}
-
-.alternate-vert tr > * + * {
-  border-top: 1px solid #ccc;
-}
-
-/* striped tables */
-
-.striped tbody tr:nth-child(odd) {
-  background: #eee;
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* striped-vert tables */
-
-.striped-vert tr > :first-child {
-  background: #eee;
-  background: rgba(0, 0, 0, 0.05);
 }
 
 /* ----------------------------- */
@@ -1275,8 +983,6 @@ legend {
 }
 
 textarea {
-  overflow: auto;
-  /* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
   min-height: 5em;
   vertical-align: top;
   font-family: inherit;
@@ -1291,12 +997,6 @@ input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
   /* clickable input types in iOS */
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  padding: 0;
-  /* Corrects excess space around these inputs in IE8/9 */
 }
 
 input[type="search"] {
@@ -1357,7 +1057,7 @@ input[type='submit']::-moz-focus-inner {
   speak: none;
 }
 
-@media (min-device-width: 768px) {
+@media (min-device-width: 480px) {
   .icon:before,
   .icon.after:after {
     font: 1em/0.6 sans-serif;
@@ -1501,11 +1201,11 @@ input[type='submit']::-moz-focus-inner {
 
 /* ----------------------------- */
 
-/* ==desktop and retina medias   */
+/* ==desktop and HD devices      */
 
 /* ----------------------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   /* here go rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
@@ -1515,11 +1215,11 @@ input[type='submit']::-moz-focus-inner {
 
 /* ---------------------------------- */
 
-/* ==Responsive large / medium / tiny */
+/* ==Responsive large / small / tiny  */
 
 /* ---------------------------------- */
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   /* layouts for large screens */
 
   .large-hidden {
@@ -1586,12 +1286,12 @@ input[type='submit']::-moz-focus-inner {
 
   /* margins for large screens */
 
-  .large-ma0 {
+  .large-man {
     margin: 0 !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   /* quick reset in small resolution and less */
 
   .w600p,
@@ -1634,23 +1334,6 @@ input[type='submit']::-moz-focus-inner {
     vertical-align: top !important;
   }
 
-  /* you shall not pass */
-
-  div,
-  textarea,
-  table,
-  td,
-  th,
-  code,
-  pre,
-  samp {
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  }
-
   /* widths for small screens */
 
   .small-w25 {
@@ -1686,12 +1369,16 @@ input[type='submit']::-moz-focus-inner {
 
   /* margins for small screens */
 
-  .small-ma0 {
+  .small-man {
     margin: 0 !important;
+  }
+
+  .small-pan {
+    padding: 0 !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   /* quick tiny resolution reset */
 
   .mod,
@@ -1795,8 +1482,12 @@ input[type='submit']::-moz-focus-inner {
 
   /* margins for tiny screens */
 
-  .tiny-ma0 {
+  .tiny-man {
     margin: 0 !important;
+  }
+
+  .tiny-pan {
+    padding: 0 !important;
   }
 }
 
@@ -1951,6 +1642,282 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
   a[href^="#"]:after {
     content: "";
   }
+}
+
+/* ----------------------------- */
+
+/* ==booleans                    */
+
+/* ----------------------------- */
+
+.skip-links {
+  position: absolute;
+}
+
+.skip-links a {
+  position: absolute;
+  left: -7000px;
+  padding: 0.5em;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+
+.skip-links a:focus {
+  position: static;
+}
+
+@media (max-width: 480px) {
+  /* you shall not pass */
+
+  div,
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+/* ----------------------------- */
+
+/* ==gmaps support               */
+
+/* ----------------------------- */
+
+.gm-style img {
+  height: 100%;
+}
+
+:not(.gm-style) img {
+  height: auto;
+}
+
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+  max-width: none !important;
+}
+
+/* ----------------------------- */
+
+/* ==IE6, IE7, IE8 support       */
+
+/* ----------------------------- */
+
+.ie678 h1,
+.ie678 .h1-like {
+  font-size: 2.29em;
+}
+
+.ie678 h2,
+.ie678 .h2-like {
+  font-size: 2em;
+}
+
+.ie678 h3,
+.ie678 .h3-like {
+  font-size: 1.71em;
+}
+
+.ie678 h4,
+.ie678 .h4-like {
+  font-size: 1.43em;
+}
+
+.ie678 h5,
+.ie678 .h5-like {
+  font-size: 1.29em;
+}
+
+.ie678 h6,
+.ie678 .h6-like {
+  font-size: 1.14em;
+}
+
+.ie678 img {
+  width: auto;
+  /* @bugfix for IE8 */
+}
+
+.ie678 .gm-style img {
+  height: 100%;
+}
+
+.clearfix,
+.line,
+.mod,
+.row,
+.col {
+  *zoom: 1;
+}
+
+.btn,
+.col,
+.inbl {
+  *display: inline;
+  *zoom: 1;
+}
+
+.visually-hidden {
+  *clip: rect(1px 1px 1px 1px);
+}
+
+.ie8 .grid > *,
+.ie8 [class*="autogrid"] > * {
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+.ie8 .grid > * > *,
+.ie8 [class*="autogrid"] > * > * {
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: auto;
+}
+
+.grid > * > *,
+[class*="autogrid"] > * > * {
+  *display: inline;
+  *zoom: 1;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  /* Corrects excess space around these inputs in IE8/9 */
+}
+
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
+}
+
+/* ----------------------------- */
+
+/* ==minor stylings              */
+
+/* ----------------------------- */
+
+code,
+kbd,
+mark {
+  border-radius: 2px;
+}
+
+kbd {
+  padding: 0 2px;
+  border: 1px solid #999;
+}
+
+code {
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #b11;
+}
+
+pre code {
+  padding: none;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+
+mark {
+  padding: 2px 4px;
+  background: #ff0;
+}
+
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  font-style: italic;
+}
+
+q {
+  font-style: normal;
+}
+
+q,
+.q {
+  quotes: "“\00a0" "\00a0”";
+}
+
+q:lang(fr),
+.q:lang(fr) {
+  quotes: "«\00a0" "\00a0»";
+}
+
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
+}
+
+.alternate {
+  border: 0;
+}
+
+.alternate tbody {
+  border: 1px solid #ccc;
+}
+
+.alternate thead tr > * + * {
+  border-left: 0;
+}
+
+.alternate tbody tr > * + * {
+  border-left: 1px solid #ccc;
+}
+
+.alternate-vert {
+  border: 0;
+  border-right: 1px solid #ccc;
+}
+
+.alternate-vert tr > :first-child {
+  border-bottom: 0;
+}
+
+.alternate-vert tr > * + * {
+  border-top: 1px solid #ccc;
+}
+
+.striped tbody tr:nth-child(odd) {
+  background: #eee;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.striped-vert tr > :first-child {
+  background: #eee;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* ----------------------------- */

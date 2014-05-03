@@ -1,0 +1,19 @@
+/* ----------------------------- */
+
+/* ==gmaps support               */
+
+/* ----------------------------- */
+
+.gm-style img {
+  height: 100%;
+}
+
+:not(.gm-style) img {
+  height: auto;
+}
+
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+  max-width: none !important;
+}

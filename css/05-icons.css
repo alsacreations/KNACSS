@@ -1,9 +1,13 @@
 /* ----------------------------- */
+
 /* ==icons and bullets	         */
+
 /* ----------------------------- */
+
 .icon {
   display: inline-block;
 }
+
 .icon:before,
 .icon.after:after {
   content: "";
@@ -17,6 +21,7 @@
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   speak: none;
 }
+
 @media (min-device-width: 480px) {
   .icon:before,
   .icon.after:after {
@@ -24,56 +29,69 @@
     -webkit-transform: rotateZ(0.05deg);
   }
 }
+
 .icon.after:after {
   margin: 0 0 0 8px;
 }
+
 .icon.after:before {
   content: "" !important;
 }
+
 .icon-rate:before,
 .icon-rate.after:after {
   content: "\2605";
 }
+
 .icon-unrate:before,
 .icon-unrate.after:after {
   content: "\2606";
 }
+
 .icon-check:before,
 .icon-check.after:after {
   content: "\2713";
 }
+
 .icon-uncheck:before,
 .icon-uncheck.after:after {
   content: "\2717";
 }
+
 .icon-cloud:before,
 .icon-cloud.after:after {
   content: "\2601";
 }
+
 .icon-dl:before,
 .icon-dl.after:after {
   content: "\21E3";
   font-weight: bold;
 }
+
 .icon-cross:before,
 .icon-cross.after:after {
   content: "\2716";
   font-weight: bold;
 }
+
 .icon-arrow1:before,
 .icon-arrow1.after:after {
   content: "\2192";
   position: relative;
   top: -0.15em;
 }
+
 .icon-arrow2:before,
 .icon-arrow2.after:after {
   content: "\279E";
 }
+
 .icon-arrow3:before,
 .icon-arrow3.after:after {
   content: "\279A";
 }
+
 .icon-bracket1:before,
 .icon-bracket1.after:after {
   content: "\2039";
@@ -82,6 +100,7 @@
   position: relative;
   top: -0.15em;
 }
+
 .icon-bracket2:before,
 .icon-bracket2.after:after {
   content: "\203A";
@@ -90,45 +109,54 @@
   position: relative;
   top: -0.15em;
 }
+
 .icon-up:before,
 .icon-up.after:after {
   content: "\25B2";
 }
+
 .icon-down:before,
 .icon-down.after:after {
   content: "\25BC";
 }
+
 .icon-bull:before,
 .icon-bull.after:after {
   content: "\2022";
   font-size: 1.2em;
   top: -0.05em;
 }
+
 .icon-bull2:before,
 .icon-bull2.after:after {
   content: "\25E6";
   top: -0.05em;
 }
+
 .icon-bull3:before,
 .icon-bull3.after:after {
   content: "\2023";
   font-size: 1.6em;
   top: -0.05em;
 }
+
 .icon-nav:before,
 .icon-nav.after:after {
   content: "\2261";
   font-weight: bold;
 }
+
 .icon-losange:before,
 .icon-losange.after:after {
   content: "\25C6";
 }
+
 .icon-asteri:before,
 .icon-asteri.after:after {
   content: "\2731";
   font-weight: bold;
 }
+
 .icon-mail:before,
 .icon-mail.after:after {
   content: "\2709";

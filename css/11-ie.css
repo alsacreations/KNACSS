@@ -1,0 +1,93 @@
+/* ----------------------------- */
+
+/* ==IE6, IE7, IE8 support       */
+
+/* ----------------------------- */
+
+.ie678 h1,
+.ie678 .h1-like {
+  font-size: 2.29em;
+}
+
+.ie678 h2,
+.ie678 .h2-like {
+  font-size: 2em;
+}
+
+.ie678 h3,
+.ie678 .h3-like {
+  font-size: 1.71em;
+}
+
+.ie678 h4,
+.ie678 .h4-like {
+  font-size: 1.43em;
+}
+
+.ie678 h5,
+.ie678 .h5-like {
+  font-size: 1.29em;
+}
+
+.ie678 h6,
+.ie678 .h6-like {
+  font-size: 1.14em;
+}
+
+.ie678 img {
+  width: auto;
+  /* @bugfix for IE8 */
+}
+
+.ie678 .gm-style img {
+  height: 100%;
+}
+
+.clearfix,
+.line,
+.mod,
+.row,
+.col {
+  *zoom: 1;
+}
+
+.btn,
+.col,
+.inbl {
+  *display: inline;
+  *zoom: 1;
+}
+
+.visually-hidden {
+  *clip: rect(1px 1px 1px 1px);
+}
+
+.ie8 .grid > *,
+.ie8 [class*="autogrid"] > * {
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+.ie8 .grid > * > *,
+.ie8 [class*="autogrid"] > * > * {
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: auto;
+}
+
+.grid > * > *,
+[class*="autogrid"] > * > * {
+  *display: inline;
+  *zoom: 1;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  /* Corrects excess space around these inputs in IE8/9 */
+}
+
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
+}
