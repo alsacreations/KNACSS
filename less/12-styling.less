@@ -1,4 +1,7 @@
 @import "00-config";
+/* ----------------------------- */
+/* ==minor stylings              */
+/* ----------------------------- */
 
 // Styling boolean
 & when (@styling = true) {
@@ -62,5 +65,40 @@
 		border: 0;
 		color: #ccc;
 		background-color: #ccc;
+	}
+	/* alternate tables */
+	.alternate { border: 0; }
+	.alternate tbody { 
+		border: 1px solid #ccc; 
+	}
+	.alternate thead tr > * + * {
+		border-left: 0;
+	}
+	.alternate tbody tr > * + * {
+		border-left: 1px solid #ccc;
+	}
+
+	/* alternate-vert tables */
+	.alternate-vert { 
+		border: 0;
+		border-right: 1px solid #ccc;
+	}
+	.alternate-vert tr > :first-child {
+		border-bottom: 0;
+	}
+	.alternate-vert tr > * + * {
+		border-top: 1px solid #ccc;
+	}
+
+	/* striped tables */
+	.striped tbody tr:nth-child(odd) {
+		background: #eee;
+		background: rgba(0, 0, 0, .05);
+	}
+
+	/* striped-vert tables */
+	.striped-vert tr > :first-child {
+		background: #eee;
+		background: rgba(0, 0, 0, .05);
 	}
 }
