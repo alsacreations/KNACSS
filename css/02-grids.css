@@ -167,7 +167,7 @@
   font-size: 0;
 }
 
-:root [class*="autogrid"] > * > * {
+:root [class*="autogrid"] > * {
   font-size: 14px;
   /* fallback for Opera Mini */
   font-size: 1.4rem;
