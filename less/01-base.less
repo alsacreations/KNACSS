@@ -53,6 +53,7 @@ html {
 	font-size: 62.5%;
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
+	        text-size-adjust: 100%;
 }
 body {
 	background-color: @basebg;
@@ -65,6 +66,7 @@ body {
 /* font-sizing for content */
 /* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
 p,
+.p-like,
 ul,
 ol,
 dl,
@@ -151,7 +153,7 @@ strong {
 /* ----------------------------- */
 
 /* avoid top margins on first content element */
-p, ul, ol, dl,
+p, .p-like, ul, ol, dl,
 blockquote, pre,
 h1, h2, h3, h4, h5, h6 {
 	&:first-child {
@@ -161,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* avoid margins on nested elements */
 li p,
+li .p-like,
 li ul,
 li ol {
 	margin-top: 0;
@@ -341,10 +344,4 @@ img.start, img.end {
 	.pl1, .pls { padding-left: @small-value; }
 	.pl2, .plm { padding-left: @medium-value; }
 	.pl3, .pll { padding-left: @large-value; }
-}
-
-/* debug helper */
-.knacss-debug {
-	background: pink;
-	outline: 3px solid maroon;
 }
