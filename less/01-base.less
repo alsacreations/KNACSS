@@ -155,7 +155,21 @@ strong,
 	overflow: hidden;
 	height: 1px; width: 1px;
 }
-
+@media print {
+	.no-print {
+		display: none;
+	}
+}
+@media (max-width: @small-screen) {
+	.no-small-screen {
+		display: none;
+	}
+}
+@media (min-width: @large-screen) {
+	.no-large-screen {
+		display: none;
+	}
+}
 /* ----------------------------- */
 /* == browsers consistency       */
 /* ----------------------------- */
