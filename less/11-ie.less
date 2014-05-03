@@ -1,0 +1,58 @@
+@import "00-config";
+
+// IE6, 7, 8 support boolean
+& when (@ie678 = true) {
+	/* IE678 support */
+	.ie678 h1, .ie678 .h1-like {
+		.em(@h1-size);
+	}
+	.ie678 h2, .ie678 .h2-like {
+		.em(@h2-size);
+	}
+	.ie678 h3, .ie678 .h3-like {
+		.em(@h3-size);
+	}
+	.ie678 h4, .ie678 .h4-like {
+		.em(@h4-size);
+	}
+	.ie678 h5, .ie678 .h5-like {
+		.em(@h5-size);
+	}
+	.ie678 h6, .ie678 .h6-like {
+		.em(@h6-size);
+	}
+	.ie678 img {
+		width: auto; /* @bugfix for IE8 */
+	}
+	.ie678 .gm-style img {
+		height: 100%;
+	}
+
+	/* hasLayout for IE6/IE7 */
+	.clearfix,
+	.line,
+	.mod,
+	.row,
+	.col {
+		*zoom: 1;
+	}
+	/* inline-block and table-cell for IE6/IE7 */
+	/* warning: .col needs width on IE6/IE7 */
+	.btn,
+	.col,
+	.inbl {
+		*display: inline;
+		*zoom: 1;
+	}
+	.visually-hidden { 
+		*clip: rect(1px 1px 1px 1px); 
+	}
+
+	/* Active box-sizing for IE6/IE7 */
+	/* @source https://github.com/Schepp/box-sizing-polyfill */
+	/*
+	.ie67 * {
+		behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
+	}
+	*/
+}
