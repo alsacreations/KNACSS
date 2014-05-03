@@ -79,27 +79,27 @@ caption,
 details, 
 figure, 
 hgroup {
-	margin-top: .75em;
+	margin-top: 0.75em;
 	margin-bottom: 0;
 	line-height: @lh;
 }
 h1, .h1-like {
-	.flow(@h1-size);
+	.rem(@h1-size);
 }
 h2, .h2-like {
-	.flow(@h2-size);
+	.rem(@h2-size);
 }
 h3, .h3-like {
-	.flow(@h3-size);
+	.rem(@h3-size);
 }
 h4, .h4-like {
-	.flow(@h4-size);
+	.rem(@h4-size);
 }
 h5, .h5-like {
-	.flow(@h5-size);
+	.rem(@h5-size);
 }
 h6, .h6-like {
-	.flow(@h6-size);
+	.rem(@h6-size);
 }
 
 /* alternate font-sizing */
@@ -147,12 +147,14 @@ strong,
 /* == hiding content             */
 /* ----------------------------- */
 
-/* hiding content */
 .visually-hidden { 
 	position: absolute !important; 
 	clip: rect(1px, 1px, 1px, 1px); 
 	overflow: hidden;
 	height: 1px; width: 1px;
+}
+body > script {
+	display: none !important;
 }
 @media print {
 	.no-print {
@@ -198,9 +200,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
 
 /* margin-bottom on tables */
 table { margin-bottom: @medium-value; }
-
-/* scripts */
-body > script {display: none !important;}
 
 
 /* ----------------------------- */

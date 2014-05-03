@@ -58,21 +58,10 @@
 // px to em/rem 
 .rem(@size, @bf: @basefont){
 	@rem: @size / 10;
-	font-size: @basefont;
+	font-size: @basefont * @size / 10;
 	font-size: unit(@rem, rem);
 }
 .em(@size, @bf: @basefont){
 	@em: @size / @bf;
 	font-size: unit(@em, em);
-}
-// flow for headings
-.flow(@size, @bf: @basefont, @bh: @lh) {
-	@marg: @bh * @bf / @size;
-	@mt: unit(@marg,em);
-	margin-top: @mt;
-	margin-bottom: 0; 
-	@rem: @size / 10;
-	font-size: unit(@rem, rem);
-	@coef: ceil(1/@mt);
-	line-height: unit((@mt * @coef));    
 }
