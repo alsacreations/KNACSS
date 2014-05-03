@@ -7,35 +7,33 @@
 
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
-.grid {
+.grid { /* overall container of grids */
 	overflow: hidden;
-	font-family: @fontstack3;
 }
-.grid > * {
+.grid > * { /* global styles for direct child ex. .grid3 */
 	display: block;
 	padding: 0;
 	margin-left: -@gutter; /* gutter value */
 	text-align: left;
-	letter-spacing: -0.31em;
-	text-rendering: optimizespeed;
+}
+.grid > * > * { /* global styles for each "cell" */
+	display: inline-block;
+	padding-left: -@gutter; /* gutter value */ 
+	margin-left: 0;
+	vertical-align: top;
+}
+/* whitespace fixing for modern browsers including IE9+ */
+:root .grid {
+	font-size: 0;
+}
+:root .grid > * > * {
+	font-size: @basefont; /* fallback for Opera Mini */
+	font-size: unit((@basefont / 10), rem);
 }
 /* Opera hack */
 .opera:-o-prefocus,
 .grid > * {
 	word-spacing: -0.43em;
-}
-.grid > * > * {
-	display: inline-block;
-	*display: inline; *zoom: 1; /* IE67 hack */
-	width: 100%;
-	padding-left: @gutter; /* gutter value */
-	margin-left: 0;
-	vertical-align: top;
-	text-align: left;
-	letter-spacing: normal;
-	word-spacing: normal;
-	text-rendering: auto;
-	font-family: @fontstack1;
 }
 .grid2 > * {width: 50%;}
 .grid3 > * {width: 33.333%;}
@@ -77,7 +75,6 @@
 	.grid > * > * {width: 100% !important}
 }
 
-
 /* ---------------------------------- */
 /* ==autogrids                        */
 /* .. to automatically justify blocs  */
@@ -85,15 +82,8 @@
 
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
-[class*="autogrid"] {
+[class*="autogrid"] { /* container of autogrids */
 	text-align: justify;
-	font-family: @fontstack3;
-	letter-spacing: -0.31em;
-	text-rendering: optimizespeed;
-}
-/* Opera hack */
-[class*="autogrid"]:-o-prefocus {
-	word-spacing: -0.43em;
 }
 [class*="autogrid"]:after {
 	content: "";
@@ -102,13 +92,20 @@
 }
 [class*="autogrid"] > * {
 	display: inline-block;
-	*display: inline; zoom: 1; /* ie6 ie7 hack */
-	font-family: @fontstack1;
-	letter-spacing: normal;
-	word-spacing: normal;
 	vertical-align: top;
 	text-align: left;
-	text-rendering: auto;
+}
+/* whitespace fixing for modern browsers including IE9+ */
+:root [class*="autogrid"] {
+	font-size: 0;
+}
+:root [class*="autogrid"] > * > * {
+	font-size: @basefont; /* fallback for Opera Mini */
+	font-size: unit((@basefont / 10), rem);
+}
+/* Opera hack */
+[class*="autogrid"]:-o-prefocus {
+	word-spacing: -0.43em;
 }
 .autogrid2 > * {width: 49%}
 .autogrid3 > * {width: 32%}

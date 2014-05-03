@@ -47,6 +47,26 @@
 	.visually-hidden { 
 		*clip: rect(1px 1px 1px 1px); 
 	}
+	
+	/* IE8 grid hack */
+	.ie8 .grid > *,
+	.ie8 [class*="autogrid"] > * {
+		letter-spacing: -0.31em;
+		text-rendering: optimizespeed;
+	}
+	.ie8 .grid > * > *,
+	.ie8 [class*="autogrid"] > * > *{
+		letter-spacing: normal;
+		word-spacing: normal;
+		text-rendering: auto;
+	}
+
+	/* IE7 grid hack */
+	.grid > * > *,
+	[class*="autogrid"] > * > *{
+		*display: inline;
+		*zoom: 1;
+	}
 
 	/* Active box-sizing for IE6/IE7 */
 	/* @source https://github.com/Schepp/box-sizing-polyfill */
