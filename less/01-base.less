@@ -197,11 +197,13 @@ body > script {display: none !important;}
 }
 
 /* blocks that must contain floats */
-.clearfix:after,
-.line:after {
-	content: "";
-	display: table;
-	clear: both;
+.clearfix,
+.line {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 /* table layout */
