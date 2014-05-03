@@ -58,6 +58,7 @@
 // px to em/rem 
 .rem(@size, @bf: @basefont){
 	@rem: @size / 10;
+	font-size: @basefont;
 	font-size: unit(@rem, rem);
 }
 .em(@size, @bf: @basefont){
