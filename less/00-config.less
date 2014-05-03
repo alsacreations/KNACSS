@@ -53,15 +53,14 @@
 @gutter		: 20px; // gutter value (%, px, em, rem) for grid layouts
 
 
-
 // LESS mixins : don't touch or you'll be banned ;)
 // px to em/rem 
 .rem(@size, @bf: @basefont){
-	@rem: @size / 10;
-	font-size: @basefont * @size / 10;
+	@rem: @size;
+	font-size: unit(round(@basefont * @size), px);
 	font-size: unit(@rem, rem);
 }
 .em(@size, @bf: @basefont){
 	@em: @size / @bf;
-	font-size: unit(@em, em);
+	font-size: unit(round(@em,2), em);
 }
