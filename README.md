@@ -29,4 +29,3 @@ Useful links
 * Website and download : http://knacss.com/
 * Tutorial : http://knacss.com/demos/tutoriel.html
 * Commented code : http://knacss.com/knacss.html
-* Sass version on Hugo Giraudel's repo : https://github.com/HugoGiraudel/KNACSS-Sass
