@@ -52,10 +52,10 @@ html {
 	        text-size-adjust: 100%;
 }
 body {
-	background-color: @basebg;
-	color: @basecolor;
-	font-family: @fontstack1;
-	font-size: unit((@basefont / 10), em);
+	background-color: @base-background;
+	color: @base-color;
+	font-family: @font-stack-common;
+	font-size: unit((@base-font-size / 10), em);
 	line-height: @line-height;
 }
 
@@ -100,19 +100,19 @@ h6, .h6-like {
 
 /* alternate font-sizing */
 .smaller {
-	.em(@basefont - 4);
+	.em(@base-font-size - 4);
 }
 .small {
-	.em(@basefont - 2);
+	.em(@base-font-sizefont-stack-common - 2);
 }
 .big {
-	.em(@basefont + 2);
+	.em(@base-font-sizefont-stack-common + 2);
 }
 .bigger {
-	.em(@basefont + 4);
+	.em(@base-font-sizefont-stack-common + 4);
 }
 .biggest {
-	.em(@basefont + 6);
+	.em(@base-font-sizefont-stack-common + 6);
 }
 
 code, 
@@ -121,7 +121,7 @@ samp,
 kbd {
 	white-space: pre-line; /* IE fix */
 	white-space: pre-wrap;
-	font-family: @fontstack2;
+	font-family: @font-stack-monospace;
 	line-height: normal;
 }
 em,
