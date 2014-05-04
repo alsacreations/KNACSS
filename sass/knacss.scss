@@ -1,0 +1,26 @@
+// Sass config file
+@import "00-config";
+
+// Sass base styles
+@import "01-base";
+
+// Sass files : chose the ones you need
+@import "02-grids";
+@import "03-tables"; 
+@import "04-forms";
+@import "05-icons";
+@import "06-rwd";
+@import "07-flexbox"; 
+@import "08-print";
+@import "09-booleans";
+@import "10-gmaps";
+@import "11-ie";
+@import "12-styling";
+
+/* ----------------------------- */
+/* ==own stylesheet              */
+/* ----------------------------- */
+
+/* Here should go your own CSS styles */
+/* You can also link them with a Sass @import */
+/* @import "my-styles"; */

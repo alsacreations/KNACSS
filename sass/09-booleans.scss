@@ -1,0 +1,35 @@
+@import "00-config";
+/* ----------------------------- */
+/* ==booleans                    */
+/* ----------------------------- */
+// skip-links boolean
+@if $enable-skip-links == true {
+	/* styling skip links */
+	.skip-links {
+		position: absolute;
+
+		a {
+			position: absolute;
+			left: -7000px;
+			padding: 0.5em;
+			background: black;
+			color: white;
+			text-decoration: none;
+		
+			&:focus {
+				position: static;
+			}
+		}
+	}
+}
+
+// hyphens boolean
+@if $enable-hyphens == true {
+	@media (max-width: $small-screen) {
+		/* you shall not pass */
+		div, textarea, table, td, th, code, pre, samp {
+			word-wrap: break-word;
+			hyphens: auto;
+		}
+	}
+}

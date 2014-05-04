@@ -1,0 +1,76 @@
+// Config file : variables, mixins, ...
+
+
+// booleans
+$enable-ie678 			: true; // "true" to activate IE6/IE7/IE8 support
+$enable-styling			: true; // "true" to design basic elements like code, mark, blockquotes, etc.
+$enable-gmaps			: true; // if google maps is used
+$enable-skip-links		: true; // "true" to design skip links for accessibility concerns
+$enable-hyphens			: true; // activate automatic hyphens on small screens
+$enable-helpers-width	: true; // decide whether or not you need width helpers
+$enable-helpers-spacing	: true; // decide whether or not you need spacing helpers
+
+// font sizes
+$base-font-size	: 14px; // if "14px" then 1em = 14px
+$line-height	: 1.5; // equiv line-height 1.5
+$h1-size		: 3.2rem; // equiv "32px"
+$h2-size		: 2.8rem; // equiv "28px"
+$h3-size		: 2.4rem; // equiv "24px"
+$h4-size		: 2.0rem; // equiv "20px"
+$h5-size		: 1.8rem; // equiv "18px"
+$h6-size		: 1.6rem; // equiv "16px"
+
+// font stacks
+$font-stack-common		: Helvetica, Arial, sans-serif; // common font
+$font-stack-monospace	: Consolas, 'DejaVu Sans Mono', Courier, monospace; // monospace font
+$font-stack-universal	: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // universal stack
+
+// font colors
+$base-color				: #000; // text color on body
+$base-color-link		: #333; // primary links color;
+$base-color-link-hover	: #000; // primary hovered/focused links color;
+
+// backgrounds
+$base-background		: #fff; // body background color
+
+// spacings
+$tiny-value				: 0.5em; // tiny value for margins / paddings
+$small-value			: 1em; // small value for margins / paddings
+$medium-value			: 2em; // medium value for margins / paddings
+$large-value			: 4em; // large value for margins / paddings
+$extra-large-value		: 6em; // extra large value for margins / paddings
+$ultra-large-value		: 10em; // ultra large value for margins / paddings
+
+// breakpoints
+$tiny-screen			: 320px; // tiny screens media query
+$small-screen			: 480px; // small screens media query
+$medium-screen			: 768px; // small screens media query
+$large-screen			: 1024px; // large screens media query
+$extra-large-screen		: 1280px; // extra large screens media query
+$ultra-large-screen		: 1600px; // ultra large screens media query
+
+// misc
+$gutter		: 20px; // gutter value (%, px, em, rem) for grid layouts
+
+
+// Sass mixins : don't touch or you'll be banned ;)
+// px to em/rem 
+
+@mixin rem($size) {	
+	@if unitless($size) {
+	 	font-size: ($size * 1rem) / 1rem * $base-font-size;
+	 	font-size: $size * 1rem;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
+@mixin em($size) {	
+	@if unitless($size) {
+		$bf: $base-font-size / 1px;
+	 	font-size: $size / $bf * 1em;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
