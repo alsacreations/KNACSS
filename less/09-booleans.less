@@ -3,7 +3,7 @@
 /* ==booleans                    */
 /* ----------------------------- */
 // skip-links boolean
-& when (@skip-links = true) {
+& when (@enable-skip-links = true) {
 	/* styling skip links */
 	.skip-links {
 		position: absolute;
@@ -24,7 +24,7 @@
 }
 
 // hyphens boolean
-& when (@hyphens = true) {
+& when (@enable-hyphens = true) {
 	@media (max-width: @small-screen) {
 		/* you shall not pass */
 		div, textarea, table, td, th, code, pre, samp {
