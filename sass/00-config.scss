@@ -54,9 +54,7 @@ $ultra-large-screen		: 1600px; // ultra large screens media query
 $gutter		: 20px; // gutter value (%, px, em, rem) for grid layouts
 
 
-// Sass mixins
-
-// Rem with px fallback
+// [Mixin] Rem with px fallback
 @mixin rem($size) {
 	@if unitless($size) {
 	 	font-size: ($size * 1rem) / 1rem * $base-font-size;
@@ -67,7 +65,7 @@ $gutter		: 20px; // gutter value (%, px, em, rem) for grid layouts
 	}
 }
 
-// Em from px
+// [Mixin] Em from px
 @mixin em($size) {
 	@if unitless($size) {
 		$bf: $base-font-size / 1px;

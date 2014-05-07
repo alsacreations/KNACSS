@@ -2,7 +2,6 @@
 
 /* ---------------------------------- */
 /* ==classic grids                    */
-/* .. use it when gutter size matters */
 /* ---------------------------------- */
 
 /**
@@ -17,28 +16,42 @@
 	overflow: hidden;
 }
 
-.grid > * { /* global styles for direct child ex. .grid3 */
+/**
+ * Global styles for direct child
+ * e.g. `.grid3`
+ * 1. Gutter value
+ */
+.grid > * {
 	display: block;
 	padding: 0;
-	margin-left: -$gutter; /* gutter value */
+	margin-left: -$gutter;
 	text-align: left;
 }
 
-.grid > * > * { /* global styles for each "cell" */
+/**
+ * Global styles for each "cell"
+ * 1. Gutter value
+ */
+.grid > * > * {
 	display: inline-block;
-	padding-left: $gutter; /* gutter value */
+	padding-left: $gutter;
 	margin-left: 0;
 	vertical-align: top;
 }
 
-/* whitespace fixing for modern browsers including IE9+ */
+/**
+ * Whitespace fixing for modern browsers including IE9+
+ */
 :root .grid {
 	font-size: 0;
 }
 
+/**
+ * 1. Rem fallback for Opera Mini
+ */
 :root .grid > * > * {
-	font-size: $base-font-size; /* fallback for Opera Mini */
-	font-size: ($base-font-size / 10px) + rem;
+	font-size: $base-font-size;
+	font-size: ($base-font-size / 10px) * 1rem;
 }
 
 /* Opera hack */
@@ -47,32 +60,73 @@
 	word-spacing: -0.43em;
 }
 
-.grid2 > * {width: 50%;}
-.grid3 > * {width: 33.333%;}
-.grid4 > * {width: 25%;}
-.grid5 > * {width: 20%;}
-.grid6 > * {width: 16.667%;}
-.grid8 > * {width: 12.5%;}
-.grid10 > * {width: 10%;}
-.grid12 > * {width: 8.333%;}
+.grid2 > * {
+	width: 50%;
+}
 
-/* unequal grids (1-2, 2-1, 1-3 and 3-1) for 2 blocks */
+.grid3 > * {
+	width: 33.333%;
+}
+
+.grid4 > * {
+	width: 25%;
+}
+
+.grid5 > * {
+	width: 20%;
+}
+
+.grid6 > * {
+	width: 16.667%;
+}
+
+.grid8 > * {
+	width: 12.5%;
+}
+
+.grid10 > * {
+	width: 10%;
+}
+
+.grid12 > * {
+	width: 8.333%;
+}
+
+/**
+ * Unequal grids
+ * (1-2, 2-1, 1-3 and 3-1) for 2 blocks
+ */
 .grid2-1 > *:first-child,
-.grid1-2 > * + * { width: 66.666%; }
-.grid1-2 > *:first-child,
-.grid2-1 > * + * { width: 33.333%; }
-.grid1-3 > *:first-child,
-.grid3-1 > * + * { width: 25%; }
-.grid3-1 > *:first-child,
-.grid1-3 > * + * { width: 75%; }
+.grid1-2 > * + * {
+	width: 66.666%;
+}
 
-/* Responsiv-o-matic */
+.grid1-2 > *:first-child,
+.grid2-1 > * + * {
+	width: 33.333%;
+}
+
+.grid1-3 > *:first-child,
+.grid3-1 > * + * {
+	width: 25%;
+}
+
+.grid3-1 > *:first-child,
+.grid1-3 > * + * {
+	width: 75%;
+}
+
+/**
+ * Responsive-o-matic
+ */
 @media (max-width: $large-screen) {
 	.grid5 > *,
 	.grid6 > *,
 	.grid8 > *,
 	.grid10 > *,
-	.grid12 > * {width: 33.333%}
+	.grid12 > * {
+		width: 33.333%;
+	}
 }
 
 @media (max-width: $small-screen) {
@@ -82,11 +136,15 @@
 	.grid6 > *,
 	.grid8 > *,
 	.grid10 > *,
-	.grid12 > * {width: 50%}
+	.grid12 > * {
+		width: 50%;
+	}
 }
 
 @media (max-width: $tiny-screen) {
-	.grid > * > * {width: 100% !important}
+	.grid > * > * {
+		width: 100% !important,
+	}
 }
 
 /* ---------------------------------- */
@@ -94,10 +152,9 @@
 /* .. to automatically justify blocs  */
 /* ---------------------------------- */
 
-/* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
-
 /**
  * Container of autogrids
+ * Demo : http://codepen.io/raphaelgoetter/pen/Kqehf
  */
 [class*="autogrid"] {
 	text-align: justify;

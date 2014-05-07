@@ -4,10 +4,10 @@
 /* ==forms                       */
 /* ----------------------------- */
 
-/* thanks to HTML5boilerplate,
-* github.com/nathansmith/formalize
-* and www.sitepen.com
-*/
+/**
+ * Thanks to HTML5boilerplate,
+ * Source: github.com/nathansmith/formalize and www.sitepen.com
+ */
 
 /**
  * Buttons
@@ -53,12 +53,15 @@ textarea {
 	resize: vertical;
 }
 
+/**
+ * 1. Clickable input types in iOS
+ */
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	cursor: pointer;
-	-webkit-appearance: button; /* clickable input types in iOS */
+	-webkit-appearance: button;
 }
 
 input[type="search"] {
@@ -94,9 +97,9 @@ textarea:-moz-placeholder {
  * Removes inner padding and border in FF3+
  */
 button::-moz-focus-inner,
-input[type='button']::-moz-focus-inner,
-input[type='reset']::-moz-focus-inner,
-input[type='submit']::-moz-focus-inner {
+input[type="button"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
