@@ -4,6 +4,10 @@
 
 /* ----------------------------- */
 
+.ie67 * {
+  behavior: url(/js/boxsizing.htc);
+}
+
 .ie678 h1,
 .ie678 .h1-like {
   font-size: 2.29em;
@@ -36,7 +40,6 @@
 
 .ie678 img {
   width: auto;
-  /* @bugfix for IE8 */
 }
 
 .ie678 .gm-style img {

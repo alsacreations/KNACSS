@@ -4,7 +4,15 @@
 /* ----------------------------- */
 // IE6, 7, 8 support boolean
 & when (@enable-ie678 = true) {
-	/* IE678 support */
+	
+	/* Active box-sizing for IE6/IE7 */
+	/* @source https://github.com/Schepp/box-sizing-polyfill */
+	
+	.ie67 * {
+		behavior: url(/js/boxsizing.htc);
+	}
+	
+	
 	.ie678 h1, .ie678 .h1-like {
 		@em: @h1-size * 10 / @base-font-size;
 		font-size: unit(round(@em,2), em);
@@ -35,8 +43,9 @@
 		font-size: unit(round(@em,2), em);
 	}
 	
+	/* @bugfix for IE8 */
 	.ie678 img {
-		width: auto; /* @bugfix for IE8 */
+		width: auto; 
 	}
 	
 	.ie678 .gm-style img {
@@ -52,8 +61,8 @@
 		*zoom: 1;
 	}
 	
-	/* inline-block and table-cell for IE6/IE7 */
-	/* warning: .col needs width on IE6/IE7 */
+	/*! inline-block and table-cell for IE6/IE7 */
+	/*! warning: .col needs width on IE6/IE7 */
 	.btn,
 	.col,
 	.inbl {
@@ -97,12 +106,6 @@
 	textarea {
 		overflow: auto; 
 	}
-
-	/* Active box-sizing for IE6/IE7 */
-	/* @source https://github.com/Schepp/box-sizing-polyfill */
-	/*
-	.ie67 * {
-		behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
-	}
-	*/
+	
 }
+
