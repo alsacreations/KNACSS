@@ -2,15 +2,20 @@
 /* ----------------------------- */
 /* ==gmaps support               */
 /* ----------------------------- */
-// google maps boolean
+
+/**
+ * Google Maps fixes
+ * Only output when `$enable-gmaps` is true
+ */
 @if $enable-gmaps == true {
-	/* Google Gmap3 bug fix on images */
 	.gm-style img {
 		height: 100%;
 	}
+
 	:not(.gm-style) img {
 		height: auto;
 	}
+
 	.gm-style img,
 	.gmnoscreen img,
 	.gmnoprint img {

@@ -1,3 +1,8 @@
+/*!
+* www.KNACSS.com V3.0.0 (2014-05) @author: Raphael Goetter, Alsacreations (with help from Hugo Giraudel)
+* Licence WTFPL http://www.wtfpl.net/
+*/
+
 // Sass config file
 @import "00-config";
 
@@ -6,11 +11,11 @@
 
 // Sass files : chose the ones you need
 @import "02-grids";
-@import "03-tables"; 
+@import "03-tables";
 @import "04-forms";
 @import "05-icons";
 @import "06-rwd";
-@import "07-flexbox"; 
+@import "07-flexbox";
 @import "08-print";
 @import "09-booleans";
 @import "10-gmaps";

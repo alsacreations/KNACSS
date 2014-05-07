@@ -5,36 +5,48 @@
 /* .. use it when gutter size matters */
 /* ---------------------------------- */
 
-/* grids inspired from SUIT https://github.com/suitcss/suit */
+/**
+ * Grids inspired from SUIT
+ * Source: https://github.com/suitcss/suit
+ */
 
-.grid { /* overall container of grids */
+/**
+ * Overall container of grids
+ */
+.grid {
 	overflow: hidden;
 }
+
 .grid > * { /* global styles for direct child ex. .grid3 */
 	display: block;
 	padding: 0;
 	margin-left: -$gutter; /* gutter value */
 	text-align: left;
 }
+
 .grid > * > * { /* global styles for each "cell" */
 	display: inline-block;
-	padding-left: $gutter; /* gutter value */ 
+	padding-left: $gutter; /* gutter value */
 	margin-left: 0;
 	vertical-align: top;
 }
+
 /* whitespace fixing for modern browsers including IE9+ */
 :root .grid {
 	font-size: 0;
 }
+
 :root .grid > * > * {
 	font-size: $base-font-size; /* fallback for Opera Mini */
 	font-size: ($base-font-size / 10px) + rem;
 }
+
 /* Opera hack */
 .opera:-o-prefocus,
 .grid > * {
 	word-spacing: -0.43em;
 }
+
 .grid2 > * {width: 50%;}
 .grid3 > * {width: 33.333%;}
 .grid4 > * {width: 25%;}
@@ -62,6 +74,7 @@
 	.grid10 > *,
 	.grid12 > * {width: 33.333%}
 }
+
 @media (max-width: $small-screen) {
 	.grid3 > *,
 	.grid4 > *,
@@ -71,6 +84,7 @@
 	.grid10 > *,
 	.grid12 > * {width: 50%}
 }
+
 @media (max-width: $tiny-screen) {
 	.grid > * > * {width: 100% !important}
 }
@@ -82,46 +96,87 @@
 
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
-[class*="autogrid"] { /* container of autogrids */
+/**
+ * Container of autogrids
+ */
+[class*="autogrid"] {
 	text-align: justify;
+
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+	}
 }
-[class*="autogrid"]:after {
-	content: "";
-	display: inline-block;
-	width: 100%; 
-}
-[class*="autogrid"] > * {
-	display: inline-block;
-	vertical-align: top;
-	text-align: left;
-}
-/* whitespace fixing for modern browsers including IE9+ */
+
+/**
+ * Whitespace fixing for modern browsers including IE9+
+ */
 :root [class*="autogrid"] {
 	font-size: 0;
 }
+
+/**
+ * Rem fallback for Opera Mini
+ */
 :root [class*="autogrid"] > * {
-	font-size: $base-font-size; /* fallback for Opera Mini */
-	font-size: ($base-font-size / 10px) + rem;
+	font-size: $base-font-size; /* 1 */
+	font-size: ($base-font-size / 10px) * 1rem;
 }
-/* Opera hack */
+
+/**
+ * Opera hack
+ */
 [class*="autogrid"]:-o-prefocus {
 	word-spacing: -0.43em;
 }
-.autogrid2 > * {width: 49%}
-.autogrid3 > * {width: 32%}
-.autogrid4 > * {width: 23.6%}
-.autogrid5 > * {width: 19%}
-.autogrid6 > * {width: 15%}
-.autogrid8 > * {width: 10.8%}
-.autogrid10 > * {width: 9%}
-.autogrid12 > * {width: 6.4%}
+
+.autogrid2 > * {
+	width: 49%;
+}
+
+.autogrid3 > * {
+	width: 32%;
+}
+
+.autogrid4 > * {
+	width: 23.6%;
+}
+
+.autogrid5 > * {
+	width: 19%;
+}
+
+.autogrid6 > * {
+	width: 15%;
+}
+
+.autogrid8 > * {
+	width: 10.8%;
+}
+
+.autogrid10 > * {
+	width: 9%;
+}
+
+.autogrid12 > * {
+	width: 6.4%;
+}
 
 @media (max-width: $large-screen) {
 	.autogrid5 > *,
 	.autogrid6 > *,
 	.autogrid8 > *,
 	.autogrid10 > *,
-	.autogrid12 > * {width: 32%}
+	.autogrid12 > * {
+		width: 32%;
+	}
 }
 
 @media (max-width: $small-screen) {
@@ -129,9 +184,13 @@
 	.autogrid6 > *,
 	.autogrid8 > *,
 	.autogrid10 > *,
-	.autogrid12 > * {width: 49%}
+	.autogrid12 > * {
+		width: 49%;
+	}
 }
 
 @media (max-width: $tiny-screen) {
-	[class*="autogrid"] > * {width: 100%}
+	[class*="autogrid"] > * {
+		width: 100%
+	}
 }
