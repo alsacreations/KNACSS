@@ -12,18 +12,22 @@ table,
 	vertical-align: top;
 	border: 1px solid #ccc;
 }
+
 .table {
 	display: table;
 }
+
 table#recaptcha_table,
 table.table-auto {
 	table-layout:auto;
 }
+
 caption {
 	padding: $small-value;
 	color: #555;
 	font-style: italic;	
 }
+
 td,
 th {
 	padding: 0.3em 0.8em;

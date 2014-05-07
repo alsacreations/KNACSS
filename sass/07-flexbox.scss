@@ -4,21 +4,27 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 .flex {
 	display : flex;
 }
+
 .flex-h {
 	flex-direction: row;
 }
+
 .flex-v {
 	flex-direction: column;
 }
+
 .flex-fluid {
 	flex: 1;
 }
+
 .flex-start {
 	order : -1;
 }
+
 .flex-mid {
 	order : 1;
 }
+
 .flex-end {
 	order : 42;
 }

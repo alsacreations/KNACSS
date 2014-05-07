@@ -6,6 +6,7 @@
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
+	
 	body {
 		width: auto !important;
 		margin: auto !important;
@@ -14,6 +15,7 @@
 		background-color: #fff !important;
 		color: #333 !important;
 	}
+	
 	p,
 	h1,
 	h2,
@@ -27,42 +29,56 @@
 		color: #000 !important;
 		margin: auto !important;
 	}
+	
 	.print {
-		display: block; /* displaying .print elements */
+		display: block;
 	}
+	
+	.no-print {
+		display: none;
+	}
+	
 	img { 
-		-webkit-filter: grayscale(100%);
-		-moz-filter: grayscale(100%);
-		-ms-filter: grayscale(100%);
-		-o-filter: grayscale(100%);
 		filter: grayscale(100%);
 	}
+	
+	/* no orphans, no widows */
 	p,
 	blockquote {
-		orphans: 3; /* no orphans */
-		widows: 3; /* no widows */
+		orphans: 3; 
+		widows: 3;
 	}
+	
+	/* no breaks inside these elements */
 	blockquote,
 	ul,
 	ol {
-		page-break-inside: avoid; /* no breaks inside these elements */
+		page-break-inside: avoid; 
 	}
+	
+	/* page break before main headers */
 	h1 {
-		page-break-before: always; /* page break before main headers */
+		page-break-before: always; 
 	}
+	
+	/* no breaks after these elements */
 	h1,
 	h2,
 	h3,
 	caption {
-		page-break-after: avoid; /* no breaks after these elements */
+		page-break-after: avoid; 
 	}
+	
 	a {
 		color: #000 !important;
 		text-decoration: underline !important;
 	}
+	
+	/* displaying URLs */
 	a[href]:after {
-		content: " (" attr(href) ")"; /* displaying URLs */
+		content: " (" attr(href) ")"; 
 	}
+	
 	a[href^="javascript:"]:after,
 	a[href^="#"]:after {
 		content: "";
