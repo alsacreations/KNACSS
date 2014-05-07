@@ -51,13 +51,14 @@ textarea {
   resize: vertical;
 }
 
+/* clickable input types in iOS */
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
-  /* clickable input types in iOS */
 }
 
 input[type="search"] {

@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V3.0.0 (2014-05) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3.0.2 (2014-05-07) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -88,8 +88,7 @@ label,
 textarea,
 caption,
 details,
-figure,
-hgroup {
+figure {
   margin-top: 0.75em;
   margin-bottom: 0;
   line-height: 1.5;
@@ -193,22 +192,20 @@ sup {
 
 /* ----------------------------- */
 
+/* hidden but not for assistance tools, Yahoo! method */
+
 .visually-hidden {
   position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 body > script {
   display: none !important;
-}
-
-@media print {
-  .no-print {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {

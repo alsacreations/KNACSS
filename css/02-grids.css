@@ -8,30 +8,39 @@
 
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
+/* overall container of grids */
+
 .grid {
-  /* overall container of grids */
   overflow: hidden;
 }
 
+/* global styles for direct child ex. .grid3 */
+
+/* 1- gutter value */
+
 .grid > * {
-  /* global styles for direct child ex. .grid3 */
   display: block;
   padding: 0;
   margin-left: -20px;
-  /* gutter value */
+  /* 1 */
   text-align: left;
 }
 
+/* global styles for each "cell" */
+
+/* 1- gutter value */
+
 .grid > * > * {
-  /* global styles for each "cell" */
   display: inline-block;
   padding-left: 20px;
-  /* gutter value */
+  /* 1 */
   margin-left: 0;
   vertical-align: top;
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
+
+/* 1- fallback for Opera Mini */
 
 :root .grid {
   font-size: 0;
@@ -39,7 +48,7 @@
 
 :root .grid > * > * {
   font-size: 14px;
-  /* fallback for Opera Mini */
+  /* 1 */
   font-size: 1.4rem;
 }
 
@@ -144,8 +153,9 @@
 
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
+/* container of autogrids */
+
 [class*="autogrid"] {
-  /* container of autogrids */
   text-align: justify;
 }
 
@@ -163,13 +173,15 @@
 
 /* whitespace fixing for modern browsers including IE9+ */
 
+/* 1- fallback for Opera Mini */
+
 :root [class*="autogrid"] {
   font-size: 0;
 }
 
 :root [class*="autogrid"] > * {
   font-size: 14px;
-  /* fallback for Opera Mini */
+  /* 1 */
   font-size: 1.4rem;
 }
 

@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V3.0.0 (2014-05) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3.0.2 (2014-05-07) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -14,7 +14,7 @@
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* soft reset */
@@ -88,8 +88,7 @@ label,
 textarea,
 caption,
 details,
-figure,
-hgroup {
+figure {
   margin-top: 0.75em;
   margin-bottom: 0;
   line-height: 1.5;
@@ -193,22 +192,20 @@ sup {
 
 /* ----------------------------- */
 
+/* hidden but not for assistance tools, Yahoo! method */
+
 .visually-hidden {
   position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 body > script {
   display: none !important;
-}
-
-@media print {
-  .no-print {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
@@ -667,30 +664,39 @@ img.end {
 
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
+/* overall container of grids */
+
 .grid {
-  /* overall container of grids */
   overflow: hidden;
 }
 
+/* global styles for direct child ex. .grid3 */
+
+/* 1- gutter value */
+
 .grid > * {
-  /* global styles for direct child ex. .grid3 */
   display: block;
   padding: 0;
   margin-left: -20px;
-  /* gutter value */
+  /* 1 */
   text-align: left;
 }
 
+/* global styles for each "cell" */
+
+/* 1- gutter value */
+
 .grid > * > * {
-  /* global styles for each "cell" */
   display: inline-block;
   padding-left: 20px;
-  /* gutter value */
+  /* 1 */
   margin-left: 0;
   vertical-align: top;
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
+
+/* 1- fallback for Opera Mini */
 
 :root .grid {
   font-size: 0;
@@ -698,7 +704,7 @@ img.end {
 
 :root .grid > * > * {
   font-size: 14px;
-  /* fallback for Opera Mini */
+  /* 1 */
   font-size: 1.4rem;
 }
 
@@ -803,8 +809,9 @@ img.end {
 
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
+/* container of autogrids */
+
 [class*="autogrid"] {
-  /* container of autogrids */
   text-align: justify;
 }
 
@@ -822,13 +829,15 @@ img.end {
 
 /* whitespace fixing for modern browsers including IE9+ */
 
+/* 1- fallback for Opera Mini */
+
 :root [class*="autogrid"] {
   font-size: 0;
 }
 
 :root [class*="autogrid"] > * {
   font-size: 14px;
-  /* fallback for Opera Mini */
+  /* 1 */
   font-size: 1.4rem;
 }
 
@@ -990,13 +999,14 @@ textarea {
   resize: vertical;
 }
 
+/* clickable input types in iOS */
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
-  /* clickable input types in iOS */
 }
 
 input[type="search"] {
@@ -1497,6 +1507,7 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 .flex {
   display: -webkit-box;
   display: -webkit-flex;
+  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1505,44 +1516,52 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
   -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .flex-v {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
   -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-fluid {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
+  -moz-box-flex: 1;
   -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 .flex-start {
   -webkit-box-ordinal-group: 0;
   -webkit-order: -1;
+  -moz-box-ordinal-group: 0;
   -ms-flex-order: -1;
-          order: -1;
+  order: -1;
 }
 
 .flex-mid {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
+  -moz-box-ordinal-group: 2;
   -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .flex-end {
   -webkit-box-ordinal-group: 43;
   -webkit-order: 42;
+  -moz-box-ordinal-group: 43;
   -ms-flex-order: 42;
-          order: 42;
+  order: 42;
 }
 
 /* quick print reset */
@@ -1551,7 +1570,7 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
   * {
     background: transparent !important;
     -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
 
@@ -1580,43 +1599,46 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 
   .print {
     display: block;
-    /* displaying .print elements */
+  }
+
+  .no-print {
+    display: none;
   }
 
   img {
     -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
   }
+
+  /* no orphans, no widows */
 
   p,
   blockquote {
     orphans: 3;
-    /* no orphans */
     widows: 3;
-    /* no widows */
   }
+
+  /* no breaks inside these elements */
 
   blockquote,
   ul,
   ol {
     page-break-inside: avoid;
-    /* no breaks inside these elements */
   }
+
+  /* page break before main headers */
 
   h1 {
     page-break-before: always;
-    /* page break before main headers */
   }
+
+  /* no breaks after these elements */
 
   h1,
   h2,
   h3,
   caption {
     page-break-after: avoid;
-    /* no breaks after these elements */
   }
 
   a {
@@ -1624,9 +1646,10 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
     text-decoration: underline !important;
   }
 
+  /* displaying URLs */
+
   a[href]:after {
     content: " (" attr(href) ")";
-    /* displaying URLs */
   }
 
   a[href^="javascript:"]:after,
@@ -1673,7 +1696,7 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-            hyphens: auto;
+    hyphens: auto;
   }
 }
 
@@ -1783,12 +1806,10 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
-  /* Corrects excess space around these inputs in IE8/9 */
 }
 
 textarea {
   overflow: auto;
-  /* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
 }
 
 /* ----------------------------- */
