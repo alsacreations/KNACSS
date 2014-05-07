@@ -18,6 +18,7 @@ form,
 fieldset {
 	border: none;
 }
+
 input,
 button,
 select,
@@ -27,15 +28,18 @@ label,
 	font-family: inherit;
 	font-size: inherit;
 }
+
 label { 
 	display: inline-block;
 	vertical-align: middle;
 	cursor: pointer;
 }
+
 legend {
 	border: 0;
 	white-space: normal;
 }
+
 textarea {
 	min-height: 5em;
 	vertical-align: top;
@@ -43,13 +47,16 @@ textarea {
 	font-size: inherit;
 	resize: vertical;
 }
+
+/* clickable input types in iOS */
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	cursor: pointer;
-	-webkit-appearance: button; /* clickable input types in iOS */
+	-webkit-appearance: button; 
 }
+
 input[type="search"] {
 	-webkit-appearance: textfield;
 }
@@ -64,9 +71,11 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
 	display: none;
 }
+
 ::-webkit-input-placeholder {
 	color: #777;
 }
+
 input:-moz-placeholder,
 textarea:-moz-placeholder {
 	color: #777;
