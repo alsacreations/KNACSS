@@ -31,12 +31,14 @@
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
-/* 1- fallback for Opera Mini */
+/* 1- fallback for IE9+ */
+/* 2- fallback for Opera Mini */
 :root .grid {
 	font-size: 0;
+	text-justify: distribute-all-lines; /* 1 */
 }
 :root .grid > * > * {
-	font-size: @base-font-size; /* 1 */
+	font-size: @base-font-size; /* 2 */
 	font-size: unit((@base-font-size / 10), rem);
 }
 
@@ -151,13 +153,15 @@
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
-/* 1- fallback for Opera Mini */
+/* 1- fallback for IE9+ */
+/* 2- fallback for Opera Mini */
 :root [class*="autogrid"] {
 	font-size: 0;
+	text-justify: distribute-all-lines; /* 1 */
 }
 
 :root [class*="autogrid"] > * {
-	font-size: @base-font-size; /* 1 */
+	font-size: @base-font-size; /* 2 */
 	font-size: unit((@base-font-size / 10), rem);
 }
 
