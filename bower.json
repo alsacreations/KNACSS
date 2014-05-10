@@ -8,7 +8,7 @@
   "description": "KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. It relies on common best practices and experience on the topic.",
   "main": "css/knacss.css",
   "keywords": [
-    "css", "framework", "reset", "responsive", "rwd", "boilerplate", "workflow"
+    "css", "framework", "reset", "responsive", "less", "sass", "rwd", "boilerplate", "workflow"
   ],
   "license": "WTFPL",
   "ignore": [
