@@ -24,7 +24,7 @@ Usage
 KNACSS is a collection of ready to use styles and snippets to kick start your project. Feel free to use it as a “reset”, then make it grow to suit your needs.
 Take the time to read the documentation before jumping in. Indeed, KNACSS doesn’t always suit beginners’ needs since a little thing can have big consequences.
 
-# Vendor Prefixes 
+## Vendor Prefixes 
 
 If you use one of the pre-processed version of KNACSS (LESS / Sass) know that all the properties are declared **without vendor prefixes** (-webkit-,-moz-,-ms-,…), to gain clarity, and length of initial code.
 
