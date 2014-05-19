@@ -13,33 +13,33 @@
 }
 
 /* global styles for direct child ex. .grid3 */
-/* 1- gutter value */
 .grid > * { 
 	display: block;
 	padding: 0;
-	margin-left: -$gutter; /* 1 */
+	/* gutter value */
+	margin-left: -$gutter;
 	text-align: left;
 }
 
 /* global styles for each "cell" */
-/* 1- gutter value */
 .grid > * > * { 
 	display: inline-block;
-	padding-left: $gutter; /* 1 */ 
+	/* gutter value */
+	padding-left: $gutter;
 	margin-left: 0;
 	vertical-align: top;
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
-/* 1- fallback for IE9+ */
-/* 2- fallback for Opera Mini */
 :root .grid {
 	font-size: 0;
-	text-justify: distribute-all-lines; /* 1 */
+	/* fallback for IE9+ */
+	text-justify: distribute-all-lines;
 }
 
 :root .grid > * > * {
-	font-size: $base-font-size; /* 2 */
+	/* fallback for Opera Mini */
+	font-size: $base-font-size;
 	font-size: ($base-font-size / 10px) + rem;
 }
 
@@ -154,15 +154,15 @@
 }
 
 /* whitespace fixing for modern browsers including IE9+ */
-/* 1- fallback for IE9+ */
-/* 2- fallback for Opera Mini */
 :root [class*="autogrid"] {
 	font-size: 0;
-	text-justify: distribute-all-lines; /* 1 */
+	/* fallback for IE9+ */
+	text-justify: distribute-all-lines;
 }
 
 :root [class*="autogrid"] > * {
-	font-size: $base-font-size; /* 2 */
+	/* fallback for Opera Mini */
+	font-size: $base-font-size;
 	font-size: ($base-font-size / 10px) + rem;
 }
 

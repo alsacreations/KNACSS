@@ -5,11 +5,11 @@
 /* ----------------------------- */
 
 @media (min-width: 480px) {
-  /* here go rules for big resources and big screens like: background-images, font-faces, etc. */
+  /* rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  /* Style adjustments for retina devices */
+  /* style adjustments for high density devices */
 }
 
 /* ---------------------------------- */
