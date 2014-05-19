@@ -10,7 +10,8 @@
 
 		a {
 			position: absolute;
-			left: -7000px;
+			overflow: hidden;
+			clip: rect(1px, 1px, 1px, 1px);
 			padding: 0.5em;
 			background: black;
 			color: white;
@@ -18,6 +19,8 @@
 		
 			&:focus {
 				position: static;
+				overflow: visible;
+				clip: auto;
 			}
 		}
 	}
