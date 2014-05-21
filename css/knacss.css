@@ -1519,11 +1519,11 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 	*display: inline;
 	*zoom: 1;
 }
-input[type="checkbox"],
-input[type="radio"] {
+.ie678 input[type="checkbox"],
+.ie678 input[type="radio"] {
 	padding: 0;
 }
-textarea {
+.ie678 textarea {
 	overflow: auto;
 }
 /* ----------------------------- */
