@@ -54,8 +54,8 @@
 // LESS mixins : don't touch or you'll be banned ;)
 // px to em/rem 
 .rem(@size, @bf: @base-font-size){
-	@rem: @size;
-	font-size: unit(round(@base-font-size * @size), px);
+	@rem: @size / 10;
+	font-size: unit(round(@base-font-size * @size /10), px);
 	font-size: unit(@rem, rem);
 }
 .em(@size, @bf: @base-font-size){
