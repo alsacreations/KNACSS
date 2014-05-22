@@ -1,0 +1,18 @@
+/* Config file */
+@import "00-config.css";
+
+/* Base styles */
+@import "01-base.css";
+
+/* Optional files : chose the ones you need */
+@import "02-grids.css";
+@import "03-tables.css"; 
+@import "04-forms.css";
+@import "05-icons.css";
+@import "06-rwd.css";
+@import "07-flexbox.css"; 
+@import "08-print.css";
+@import "09-booleans.css";
+@import "10-gmaps.css";
+@import "11-ie.css";
+@import "12-styling.css";

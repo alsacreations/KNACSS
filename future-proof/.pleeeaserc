@@ -1,0 +1,15 @@
+{
+	"input": "styles.css",
+	"output": "styles.min.css",
+	"fallbacks": {
+		"autoprefixer": true,
+		"variables": true,
+		"rem": ["62.5%", {"replace": false}],
+		"pseudoElements": true
+	},
+	"optimizers": {
+		"import": true,
+		"minifier": false,
+		"mqpacker": true
+	}
+}

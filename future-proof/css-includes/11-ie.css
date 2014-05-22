@@ -1,0 +1,76 @@
+/* ----------------------------- */
+/* ==IE6, IE7, IE8 support       */
+/* ----------------------------- */
+
+/* Active box-sizing for IE6/IE7 */
+/* @source https://github.com/Schepp/box-sizing-polyfill 
+
+.ie67 * {
+	behavior: url(/js/boxsizing.htc);
+}
+*/
+
+/* @bugfix for IE8 */
+.ie678 img {
+	width: auto; 
+}
+
+.ie678 .gm-style img {
+	height: 100%;
+}
+
+/* hasLayout for IE6/IE7 */
+.clearfix,
+.line,
+.mod,
+.row,
+.col {
+	*zoom: 1;
+}
+
+/*! inline-block and table-cell for IE6/IE7 */
+/*! warning: .col needs width on IE6/IE7 */
+.btn,
+.col,
+.inbl {
+	*display: inline;
+	*zoom: 1;
+}
+
+.visually-hidden { 
+	*clip: rect(1px 1px 1px 1px); 
+}
+
+/* IE8 grid hack */
+.ie8 .grid > *,
+.ie8 [class*="autogrid"] > * {
+	letter-spacing: -0.31em;
+	text-rendering: optimizespeed;
+}
+
+.ie8 .grid > * > *,
+.ie8 [class*="autogrid"] > * > *{
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+}
+
+/* IE7 grid hack */
+.grid > * > *,
+[class*="autogrid"] > * > *{
+	*display: inline;
+	*zoom: 1;
+}
+
+/* forms */
+/* Corrects excess space around these inputs in IE8/9 */
+.ie678 input[type="checkbox"],
+.ie678 input[type="radio"] {
+	padding: 0; 
+}
+
+/* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
+.ie678 textarea {
+	overflow: auto; 
+}
+

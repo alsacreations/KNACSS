@@ -1,0 +1,89 @@
+/* ----------------------------- */
+/* ==forms                       */
+/* ----------------------------- */
+
+/* thanks to HTML5boilerplate,
+* github.com/nathansmith/formalize and www.sitepen.com
+*/
+
+/* buttons */
+.btn {
+	display: inline-block;
+}
+
+/* forms items */
+form,
+fieldset {
+	border: none;
+}
+
+input,
+button,
+select,
+label,
+.btn {
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+label { 
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+legend {
+	border: 0;
+	white-space: normal;
+}
+
+textarea {
+	min-height: 5em;
+	vertical-align: top;
+	font-family: inherit;
+	font-size: inherit;
+	resize: vertical;
+}
+
+/* clickable input types in iOS */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button; 
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+/* if select styling bugs on WebKit */
+/* select { -webkit-appearance: none; } */
+
+/* 'x' appears on right of search input when text is entered. This removes it */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	color: #777;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #777;
+}
+
+/* Removes inner padding and border in FF3+ */
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
