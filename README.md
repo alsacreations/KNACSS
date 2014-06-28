@@ -28,10 +28,10 @@ Take the time to read the documentation before jumping in. Indeed, KNACSS doesnâ
 
 If you use one of the pre-processed version of KNACSS (LESS / Sass), beware that all the properties are declared **without vendor prefixes** (-webkit-,-moz-,-ms-,â€¦), to gain clarity, and length of initial code.
 
-You will certainly need to add these vendor prefixes yourself (this is usually done automatically today with Autoprefixer, Mixture, Prepros, Grunt, etc.).
+You will certainly need to add these vendor prefixes yourself (this is usually done automatically today with Autoprefixer, [Mixture](http://mixture.io), [Prepros](http://alphapixels.com/prepros/), [Grunt](http://gruntjs.com), etc.).
 
 Useful links
 ------------
-* Website and download : http://knacss.com/
+* Website and download : http://knacss.com
 * Tutorial : http://knacss.com/demos/tutoriel.html
 * Commented code : http://knacss.com/knacss.html
