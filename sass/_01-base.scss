@@ -157,7 +157,7 @@ kbd {
 }
 
 em,
-.em,
+.italic,
 address,
 cite,
 dfn,
@@ -166,17 +166,9 @@ var {
 	font-style: italic;
 }
 
-.no-em {
-	font-style: normal;
-}
-
 strong,
-.strong {
+.bold {
 	font-weight: bold;
-}
-
-.no-strong {
-	font-weight: normal;
 }
 
 small,
