@@ -1,21 +1,20 @@
-@import "00-config";
 /* ----------------------------- */
 /* ==desktop and HD devices      */
 /* ----------------------------- */
 
-@media (min-width: $small-screen) {
-/* rules for big resources and big screens like: background-images, font-faces, etc. */
+@media (min-width: @small-screen) {
+	/* rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-/* style adjustments for high density devices */
+	/* style adjustments for high density devices */
 }
 
 /* ---------------------------------- */
 /* ==Responsive large / small / tiny  */
 /* ---------------------------------- */
 
-@media (min-width: $large-screen) {
+@media (min-width: @large-screen) {
 
 	/* layouts for large screens */
 	.large-hidden { 
@@ -83,7 +82,7 @@
 	}
 }
 
-@media (max-width: $small-screen) {
+@media (max-width: @small-screen) {
 
 	/* quick reset in small resolution and less */
 	.w600p,
@@ -165,7 +164,7 @@
 	}
 }
 
-@media (max-width: $tiny-screen) {
+@media (max-width: @tiny-screen) {
 
 	/* quick tiny resolution reset */
 	.mod,
@@ -229,7 +228,9 @@
 		text-align: left !important;
 	}
 	
-	thead { display: none; }
+	thead { 
+		display: none; 
+	}
 
 	/* widths for tiny screens */
 	.tiny-w25 { 

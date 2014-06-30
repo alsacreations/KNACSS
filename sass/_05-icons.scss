@@ -1,4 +1,3 @@
-@import "00-config";
 /* ----------------------------- */
 /* ==icons and bullets	         */
 /* ----------------------------- */
@@ -18,11 +17,11 @@
 	speak: none;
 }
 
-@media (min-device-width: @small-screen) {
+@media (min-device-width: $small-screen) {
 	.icon:before,
 	.icon.after:after {
-		font: 1em/0.6 sans-serif;
-		-webkit-transform: rotateZ(0.05deg);
+	font: 1em/0.6 sans-serif;
+	-webkit-transform: rotateZ(0.05deg);
 	}
 }
 
@@ -31,14 +30,13 @@
 }
 
 .icon.after:before {
-	content: "" !important;
+	content: "" !important
 }
 
 .icon-rate:before,
 .icon-rate.after:after {
 	content: "\2605";
 }
-
 .icon-unrate:before,
 .icon-unrate.after:after{
 	content: "\2606";

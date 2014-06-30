@@ -1,15 +1,5 @@
 // Config file : variables, mixins, ...
 
-
-// booleans
-$enable-ie678 			: true; // "true" to activate IE6/IE7/IE8 support
-$enable-styling			: true; // "true" to design basic elements like code, mark, blockquotes, etc.
-$enable-gmaps			: true; // if google maps is used
-$enable-skip-links		: true; // "true" to design skip links for accessibility concerns
-$enable-hyphens			: true; // activate automatic hyphens on small screens
-$enable-helpers-width	: true; // decide whether or not you need width helpers
-$enable-helpers-spacing	: true; // decide whether or not you need spacing helpers
-
 // font sizes
 $base-font-size	: 14px; // if "14px" then 1em = 14px
 $line-height	: 1.5; // equiv line-height 1.5
@@ -22,16 +12,17 @@ $h6-size		: 1.6rem; // equiv "16px"
 
 // font stacks
 $font-stack-common		: Helvetica, Arial, sans-serif; // common font
+$font-stack-headings	: Helvetica, Arial, sans-serif; // headings font
 $font-stack-monospace	: Consolas, 'DejaVu Sans Mono', Courier, monospace; // monospace font
 $font-stack-universal	: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // universal stack
 
 // font colors
-$base-color				: #000; // text color on body
-$base-color-link		: #333; // primary links color;
-$base-color-link-hover	: #000; // primary hovered/focused links color;
+$primary-color				: #000; // text color on body
+$primary-color-link			: #333; // primary links color;
+$primary-color-link-hover	: #000; // primary hovered/focused links color;
 
 // backgrounds
-$base-background		: #fff; // body background color
+$primary-background		: #fff; // body background color
 
 // spacings
 $tiny-value				: 0.5em; // tiny value for margins / paddings
@@ -44,13 +35,22 @@ $ultra-large-value		: 10em; // ultra large value for margins / paddings
 // breakpoints
 $tiny-screen			: 320px; // tiny screens media query
 $small-screen			: 480px; // small screens media query
-$medium-screen			: 768px; // small screens media query
+$medium-screen			: 768px; // medium screens media query
 $large-screen			: 1024px; // large screens media query
 $extra-large-screen		: 1280px; // extra large screens media query
 $ultra-large-screen		: 1600px; // ultra large screens media query
 
 // misc
-$gutter		: 20px; // gutter value (%, px, em, rem) for grid layouts
+$gutter		: 20px; // gutter value for grid layouts. Unit can be: %, px, em, rem
+
+// booleans
+$enable-ie678 			: true; // "true" to activate IE6/IE7/IE8 support
+$enable-styling			: true; // "true" to design basic elements like code, mark, blockquotes, etc.
+$enable-gmaps			: true; // if google maps is used
+$enable-skip-links		: true; // "true" to design skip links for accessibility concerns
+$enable-hyphens			: true; // activate automatic hyphens on small screens
+$enable-helpers-width	: true; // decide whether or not you need width helpers
+$enable-helpers-spacing	: true; // decide whether or not you need spacing helpers
 
 
 // Sass mixins : don't touch or you'll be banned ;)

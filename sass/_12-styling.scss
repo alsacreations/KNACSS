@@ -1,14 +1,11 @@
-@import "00-config";
 /* ----------------------------- */
 /* ==minor stylings              */
 /* ----------------------------- */
 
 // Styling boolean
-& when (@enable-styling = true) {
+@if $enable-styling == true {
 	/* styling elements */
-	code, 
-	kbd, 
-	mark {
+	code, kbd, mark {
 		border-radius: 2px;
 	}
 	

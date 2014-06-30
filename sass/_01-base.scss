@@ -1,6 +1,5 @@
-@import "00-config";
 /*!
-* www.KNACSS.com V3.0.3 (2014-05-19) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3.0.4 (2014-06-30) @author: Raphael Goetter, Alsacreations (with help from Hugo Giraudel)
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -49,7 +48,6 @@ svg:not(:root) {
 /* == typography                 */
 /* ----------------------------- */
 
-
 html {
 	
 	/* set base font-size to equiv "10px", which is adapted to rem unit */
@@ -67,12 +65,12 @@ html {
 body {
 	
 	/* set body font-size in em (1.4em equiv "14px") */
-	font-size: unit((@base-font-size / 10), em);
+	font-size: ($base-font-size / 10px) + em;
 	
-	background-color: @base-background;
-	color: @base-color;
-	font-family: @font-stack-common;	
-	line-height: @line-height;
+	background-color: $primary-background;
+	color: $primary-color;
+	font-family: $font-stack-common;
+	line-height: $line-height;
 }
 
 /* font-sizing for content */
@@ -92,58 +90,52 @@ details,
 figure {
 	margin-top: 0.75em;
 	margin-bottom: 0;
-	line-height: @line-height;
+	line-height: $line-height;
 }
 
-h1,
-.h1-like {
-	font-size: @h1-size;
+h1, .h1-like {
+	font-size: $h1-size;
 }
 
-h2,
-.h2-like {
-	font-size: @h2-size;
+h2, .h2-like {
+	font-size: $h2-size;
 }
 
-h3,
-.h3-like {
-	font-size: @h3-size;
+h3, .h3-like {
+	font-size: $h3-size;
 }
 
-h4,
-.h4-like {
-	font-size: @h4-size;
+h4, .h4-like {
+	font-size: $h4-size;
 }
 
-h5,
-.h5-like {
-	font-size: @h5-size;
+h5, .h5-like {
+	font-size: $h5-size;
 }
 
-h6,
-.h6-like {
-	font-size: @h6-size;
+h6, .h6-like {
+	font-size: $h6-size;
 }
 
 /* alternate font-sizing */
 .smaller {
-	.em(@base-font-size - 4);
+	@include em($base-font-size / 1px - 4);
 }
 
 .small {
-	.em(@base-font-size - 2);
+	@include em($base-font-size / 1px - 2);
 }
 
 .big {
-	.em(@base-font-size + 2);
+	@include em($base-font-size / 1px + 2);
 }
 
 .bigger {
-	.em(@base-font-size + 4);
+	@include em($base-font-size / 1px + 4);
 }
 
 .biggest {
-	.em(@base-font-size + 6);
+	@include em($base-font-size / 1px + 6);
 }
 
 code, 
@@ -151,11 +143,12 @@ pre,
 samp,
 kbd {
 	/* IE fix */
-	white-space: pre-line; 
+	white-space: pre-line;
 	white-space: pre-wrap;
-	font-family: @font-stack-monospace;
+	font-family: $font-stack-monospace;
 	line-height: normal;
 }
+
 em,
 .em,
 address,
@@ -165,16 +158,20 @@ i,
 var {
 	font-style: italic;
 }
+
 .no-em {
 	font-style: normal;
 }
+
 strong,
 .strong {
 	font-weight: bold;
 }
+
 .no-strong {
 	font-weight: normal;
 }
+
 small,
 sub,
 sup {
@@ -185,7 +182,7 @@ sup {
 /* == hiding content             */
 /* ----------------------------- */
 
-/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
+/* hidden but not for assistance tools, Yahoo! method */
 .visually-hidden { 
 	position: absolute !important;
     border: 0 !important;
@@ -200,13 +197,13 @@ body > script {
 	display: none !important;
 }
 
-@media (max-width: @small-screen) {
+@media (max-width: $small-screen) {
 	.no-small-screen {
 		display: none;
 	}
 }
 
-@media (min-width: @large-screen) {
+@media (min-width: $large-screen) {
 	.no-large-screen {
 		display: none;
 	}
@@ -217,7 +214,7 @@ body > script {
 /* ----------------------------- */
 
 /* avoid top margins on first content element */
-p,
+p, 
 .p-like, 
 ul, 
 ol, 
@@ -258,9 +255,10 @@ video {
 }
 
 /* margin-bottom on tables */
-table {
-	margin-bottom: @medium-value;
+table { 
+	margin-bottom: $medium-value; 
 }
+
 
 /* ----------------------------- */
 /* ==layout and modules          */
@@ -308,6 +306,7 @@ table {
 	vertical-align: top;
 }
 
+
 /* alignments (blocks and inline) */
 /* ------------------------------ */
 
@@ -319,7 +318,7 @@ table {
 
 img.left,
 img.start  {
-	margin-right: @small-value;
+	margin-right: $small-value;
 }
 
 /* right (or ending) elements */
@@ -330,92 +329,92 @@ img.start  {
 
 img.right,
 img.end {
-	margin-left: @small-value;
+	margin-left: $small-value;
 }
 
 img.left, 
 img.right,
 img.start, 
 img.end {
-	margin-bottom: @tiny-value;
+	margin-bottom: $tiny-value;
 }
 
-.center    {
+.center    { 
 	margin-left: auto; 
-	margin-right: auto;
+	margin-right: auto; 
 }
 
-.txtleft   {
-	text-align: left;
+.txtleft   { 
+	text-align: left; 
 }
 
-.txtright  {
-	text-align: right;
+.txtright  { 
+	text-align: right; 
 }
 
-.txtcenter {
-	text-align: center;
+.txtcenter { 
+	text-align: center; 
 }
+
 
 // width helpers boolean
-& when (@enable-helpers-width = true) {
+@if $enable-helpers-width == true {
 	/* blocks widths (percentage and pixels) */
-	.w10 {
-		width: 10%;
+	.w10    { 
+		width: 10%; 
 	}
 	
-	.w20 {
-		width: 20%;
+	.w20    { 
+		width: 20%; 
 	}
 	
-	.w25 { 
+	.w25    { 
 		width: 25%; 
 	}
 	
-	.w30 { 
+	.w30    { 
 		width: 30%; 
 	}
 	
-	.w33 { 
+	.w33    { 
 		width: 33.3333%; 
 	}
 	
-	.w40 { 
+	.w40    { 
 		width: 40%; 
 	}
 	
-	.w50 { 
+	.w50    { 
 		width: 50%; 
 	}
 	
-	.w60 { 
+	.w60    { 
 		width: 60%; 
 	}
 	
-	.w66 { 
+	.w66    { 
 		width: 66.6666%; 
 	}
 	
-	.w70 { 
+	.w70    { 
 		width: 70%; 
 	}
 	
-	.w75 { 
+	.w75    { 
 		width: 75%; 
 	}
 	
-	.w80 { 
+	.w80    { 
 		width: 80%; 
 	}
 	
-	.w90 { 
+	.w90    { 
 		width: 90%; 
 	}
 	
 	.w100   { 
 		width: 100%; 
 	}
-	
 
 	.w50p   { 
 		width: 50px; 
@@ -476,11 +475,11 @@ img.end {
 	.wauto  { 
 		width: auto; 
 	}
-	
 }
 
+
 // spacing helpers boolean
-& when (@enable-helpers-spacing = true) {
+@if $enable-helpers-spacing == true {
 	/* spacing helpers
 	p,m = padding,margin
 	a,t,r,b,l = all,top,right,bottom,left
@@ -495,59 +494,59 @@ img.end {
 	}
 	
 	.mas { 
-		margin: @small-value; 
+		margin: $small-value; 
 	}
 	
-	.mam { 
-		margin: @medium-value; 
+	.mam {
+		margin: $medium-value; 
 	}
 	
 	.mal { 
-		margin: @large-value; 
+		margin: $large-value; 
 	}
 	
 	.pas { 
-		padding: @small-value; 
+		padding: $small-value; 
 	}
 	
 	.pam { 
-		padding: @medium-value; 
+		padding: $medium-value; 
 	}
 	
 	.pal { 
-		padding: @large-value; 
+		padding: $large-value; 
 	}
-	
+
 	.mtn { 
 		margin-top: 0; 
 	}
 	
 	.mts { 
-		margin-top: @small-value; 
+		margin-top: $small-value; 
 	}
 	
 	.mtm { 
-		margin-top: @medium-value; 
+		margin-top: $medium-value; 
 	}
 	
 	.mtl { 
-		margin-top: @large-value; 
+		margin-top: $large-value; 
 	}
 	
 	.mrn { 
 		margin-right: 0; 
 	}
 	
-	.mrs { 
-		margin-right: @small-value; 
+	.mrs {
+		margin-right: $small-value; 
 	}
 	
 	.mrm { 
-		margin-right: @medium-value; 
+		margin-right: $medium-value; 
 	}
 	
 	.mrl { 
-		margin-right: @large-value; 
+		margin-right: $large-value; 
 	}
 	
 	.mbn { 
@@ -555,15 +554,15 @@ img.end {
 	}
 	
 	.mbs { 
-		margin-bottom: @small-value; 
+		margin-bottom: $small-value; 
 	}
 	
 	.mbm { 
-		margin-bottom: @medium-value; 
+		margin-bottom: $medium-value; 
 	}
 	
 	.mbl { 
-		margin-bottom: @large-value; 
+		margin-bottom: $large-value; 
 	}
 	
 	.mln { 
@@ -571,15 +570,15 @@ img.end {
 	}
 	
 	.mls { 
-		margin-left: @small-value; 
+		margin-left: $small-value; 
 	}
 	
 	.mlm { 
-		margin-left: @medium-value; 
+		margin-left: $medium-value; 
 	}
 	
 	.mll { 
-		margin-left: @large-value; 
+		margin-left: $large-value; 
 	}
 
 	.ptn { 
@@ -587,15 +586,15 @@ img.end {
 	}
 	
 	.pts { 
-		padding-top: @small-value; 
+		padding-top: $small-value; 
 	}
 	
 	.ptm { 
-		padding-top: @medium-value; 
+		padding-top: $medium-value; 
 	}
 	
 	.ptl { 
-		padding-top: @large-value; 
+		padding-top: $large-value; 
 	}
 	
 	.prn { 
@@ -603,15 +602,15 @@ img.end {
 	}
 	
 	.prs { 
-		padding-right: @small-value; 
+		padding-right: $small-value; 
 	}
 	
 	.prm { 
-		padding-right: @medium-value; 
+		padding-right: $medium-value; 
 	}
 	
 	.prl { 
-		padding-right: @large-value; 
+		padding-right: $large-value; 
 	}
 	
 	.pbn { 
@@ -619,15 +618,15 @@ img.end {
 	}
 	
 	.pbs { 
-		padding-bottom: @small-value; 
+		padding-bottom: $small-value; 
 	}
 	
 	.pbm { 
-		padding-bottom: @medium-value; 
+		padding-bottom: $medium-value; 
 	}
 	
 	.pbl { 
-		padding-bottom: @large-value; 
+		padding-bottom: $large-value; 
 	}
 	
 	.pln { 
@@ -635,15 +634,14 @@ img.end {
 	}
 	
 	.pls { 
-		padding-left: @small-value; 
+		padding-left: $small-value; 
 	}
 	
 	.plm { 
-		padding-left: @medium-value; 
+		padding-left: $medium-value; 
 	}
 	
 	.pll { 
-		padding-left: @large-value; 
+		padding-left: $large-value; 
 	}
-	
 }

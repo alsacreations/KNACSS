@@ -1,51 +1,48 @@
-@import "00-config";
 /* ----------------------------- */
 /* ==IE6, IE7, IE8 support       */
 /* ----------------------------- */
 // IE6, 7, 8 support boolean
-& when (@enable-ie678 = true) {
-	
-	/* Active box-sizing for IE6/IE7 */
-	/* @source https://github.com/Schepp/box-sizing-polyfill */
-	
-	.ie67 * {
-		behavior: url(/js/boxsizing.htc);
-	}
-	
-	
+@if $enable-ie678 == true {
+	$bf: $base-font-size / 1px;
+	/* IE678 support */
 	.ie678 h1, .ie678 .h1-like {
-		@em: @h1-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h1-size / 1rem; 
+		$em : $val * 10 / $bf;
+		font-size: $em +0em; 
 	}
 	
 	.ie678 h2, .ie678 .h2-like {
-		@em: @h2-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h2-size / 1rem;
+		$em : $val * 10 / $bf;
+		font-size: $em +0em;
 	}
 	
 	.ie678 h3, .ie678 .h3-like {
-		@em: @h3-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h3-size / 1rem;
+		$em : $val * 10 / $bf;
+		font-size: $em +0em;
 	}
 	
 	.ie678 h4, .ie678 .h4-like {
-		@em: @h4-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h4-size / 1rem;
+		$em : $val * 10 / $bf;
+		font-size: $em +0em;
 	}
 	
 	.ie678 h5, .ie678 .h5-like {
-		@em: @h5-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h5-size / 1rem;
+		$em : $val * 10 / $bf;
+		font-size: $em +0em;
 	}
 	
 	.ie678 h6, .ie678 .h6-like {
-		@em: @h6-size * 10 / @base-font-size;
-		font-size: unit(round(@em,2), em);
+		$val: $h6-size / 1rem;
+		$em : $val * 10 / $bf;
+		font-size: $em +0em;
 	}
 	
-	/* @bugfix for IE8 */
 	.ie678 img {
-		width: auto; 
+		width: auto; /* @bugfix for IE8 */
 	}
 	
 	.ie678 .gm-style img {
@@ -61,16 +58,14 @@
 		*zoom: 1;
 	}
 	
-	/*! inline-block and table-cell for IE6/IE7 */
-	/*! warning: .col needs width on IE6/IE7 */
+	/* inline-block and table-cell for IE6/IE7 */
+	/* warning: .col needs width on IE6/IE7 */
 	.btn,
 	.col,
 	.inbl {
 		*display: inline;
 		*zoom: 1;
 	}
-	
-	/* old syntax of clip for IE6/IE7 */
 	.visually-hidden { 
 		*clip: rect(1px 1px 1px 1px); 
 	}
@@ -97,16 +92,22 @@
 	}
 	
 	/* forms */
-	/* Corrects excess space around these inputs in IE8/9 */
+	 /* Corrects excess space around these inputs in IE8/9 */
 	.ie678 input[type="checkbox"],
 	.ie678 input[type="radio"] {
-		padding: 0; 
+		padding: 0;
 	}
 	
 	/* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
 	.ie678 textarea {
-		overflow: auto; 
+		overflow: auto;
 	}
-	
-}
 
+	/* Active box-sizing for IE6/IE7 */
+	/* @source https://github.com/Schepp/box-sizing-polyfill */
+	/*
+	.ie67 * {
+		behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
+	}
+	*/
+}
