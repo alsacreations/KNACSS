@@ -73,6 +73,13 @@ body {
 	line-height: $line-height;
 }
 
+a {
+	color: $primary-color-link;
+	&:hover, &:focus, &:active {
+		color: $primary-color-link-hover;
+	}
+}
+
 /* font-sizing for content */
 p,
 .p-like,
