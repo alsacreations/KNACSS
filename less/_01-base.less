@@ -68,16 +68,16 @@ body {
 	/* set body font-size in em (1.4em equiv "14px") */
 	font-size: unit((@base-font-size / 10), em);
 	
-	background-color: @primary-background;
-	color: @primary-color;
+	background-color: @base-background;
+	color: @base-color;
 	font-family: @font-stack-common;	
 	line-height: @line-height;
 }
 
 a {
-	color: @primary-color-link;
+	color: @base-color-link;
 	&:hover, &:focus, &:active {
-		color: @primary-color-link-hover;
+		color: @base-color-link-hover;
 	}
 }
 
@@ -104,11 +104,13 @@ figure {
 h1,
 .h1-like {
 	font-size: @h1-size;
+	font-family: @font-stack-headings;
 }
 
 h2,
 .h2-like {
 	font-size: @h2-size;
+	font-family: @font-stack-headings;
 }
 
 h3,
