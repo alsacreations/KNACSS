@@ -33,5 +33,5 @@ You will certainly need to add these vendor prefixes yourself (this is usually d
 Useful links
 ------------
 * Website and download : http://knacss.com
-* Tutorial : http://knacss.com/demos/tutoriel.html
+* Documentation : http://knacss.com/doc.html
 * Commented code : http://knacss.com/knacss.html
