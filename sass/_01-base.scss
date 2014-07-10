@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V3.0.4 (2014-06-30) @author: Raphael Goetter, Alsacreations (with help from Hugo Giraudel)
+* www.KNACSS.com V3.0.5 (2014-07-10) @author: Raphael Goetter, Alsacreations (with help from Hugo Giraudel)
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -32,6 +32,11 @@ img {
 	height: auto;
 	vertical-align: middle;
 	border: 0;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 audio,
