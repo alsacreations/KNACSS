@@ -80,9 +80,40 @@
 	.large-man { 
 		margin: 0 !important; 
 	}
+	
+	/* grid rwd for large screens */
+	.grid5 > *,
+	.grid6 > *,
+	.grid8 > *,
+	.grid10 > *,
+	.grid12 > * {
+		width: 33.333%;
+	}
+	
+	/* autogrid rwd for large screens */
+	.autogrid5 > *,
+	.autogrid6 > *,
+	.autogrid8 > *,
+	.autogrid10 > *,
+	.autogrid12 > * {
+		width: 32%;
+	}
 }
 
 @media (max-width: $small-screen) {
+	
+	/* quick small resolution reset */
+	.mod,
+	.col,
+	fieldset {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
 
 	/* quick reset in small resolution and less */
 	.w600p,
@@ -162,22 +193,29 @@
 	.small-pan { 
 		padding: 0 !important; 
 	}
+	
+	/* grid rwd for small screens */
+	.grid3 > *,
+	.grid4 > *,
+	.grid5 > *,
+	.grid6 > *,
+	.grid8 > *,
+	.grid10 > *,
+	.grid12 > * {
+		width: 50%;
+	}
+	
+	/* autogrid rwd for small screens */
+	.autogrid5 > *,
+	.autogrid6 > *,
+	.autogrid8 > *,
+	.autogrid10 > *,
+	.autogrid12 > * {
+		width: 49% !important;
+	}
 }
 
 @media (max-width: $tiny-screen) {
-
-	/* quick tiny resolution reset */
-	.mod,
-	.col,
-	fieldset {
-		display: block !important;
-		float: none !important;
-		clear: none !important;
-		width: auto !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		border: 0;
-	}
 	
 	.w300p,
 	.w400p,
@@ -269,5 +307,15 @@
 	
 	.tiny-pan { 
 		padding: 0 !important; 
+	}
+	
+	/* grid rwd for tiny screens */
+	.grid > * > * {
+		width: 100% !important;
+	}
+	
+	/* autogrid rwd for tiny screens */
+	[class*="autogrid"] > * {
+		width: 100% !important;
 	}
 }
