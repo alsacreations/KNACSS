@@ -30,12 +30,12 @@ $primary-background		: #fff; // primary elements background color
 $secondary-background	: #fff; // secondary elements background color
 
 // spacings
-$tiny-value				: 0.5em; // tiny value for margins / paddings
-$small-value			: 1em; // small value for margins / paddings
-$medium-value			: 2em; // medium value for margins / paddings
-$large-value			: 4em; // large value for margins / paddings
-$extra-large-value		: 6em; // extra large value for margins / paddings
-$ultra-large-value		: 10em; // ultra large value for margins / paddings
+$tiny-value				: 0.5rem; // tiny value for margins / paddings
+$small-value			: 1rem; // small value for margins / paddings
+$medium-value			: 2rem; // medium value for margins / paddings
+$large-value			: 4rem; // large value for margins / paddings
+$extra-large-value		: 6rem; // extra large value for margins / paddings
+$ultra-large-value		: 10rem; // ultra large value for margins / paddings
 
 // breakpoints
 $tiny-screen			: 320px; // tiny screens media query
@@ -74,6 +74,15 @@ $enable-helpers-spacing	: true; // decide whether or not you need spacing helper
 	@if unitless($size) {
 		$bf: $base-font-size / 1px;
 	 	font-size: $size / $bf * 1em;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
+@mixin px($size) {	
+	@if unitless($size) {
+		$bf: $base-font-size / 1px;
+	 	font-size: $size * $bf * 1px;
 	}
 	@else {
 	  @warn "Please make sure `$size` is unitless."

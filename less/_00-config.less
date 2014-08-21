@@ -30,12 +30,12 @@
 @secondary-background	: #fff; // secondary elements background color
 
 // spacings
-@tiny-value				: 0.5em; // tiny value for margins / paddings
-@small-value			: 1em; // small value for margins / paddings
-@medium-value			: 2em; // medium value for margins / paddings
-@large-value			: 4em; // large value for margins / paddings
-@extra-large-value		: 6em; // extra large value for margins / paddings
-@ultra-large-value		: 10em; // ultra large value for margins / paddings
+@tiny-value				: 0.5rem; // tiny value for margins / paddings
+@small-value			: 1rem; // small value for margins / paddings
+@medium-value			: 2rem; // medium value for margins / paddings
+@large-value			: 4rem; // large value for margins / paddings
+@extra-large-value		: 6rem; // extra large value for margins / paddings
+@ultra-large-value		: 10rem; // ultra large value for margins / paddings
 
 // breakpoints
 @tiny-screen			: 320px; // tiny screens media query
@@ -67,4 +67,8 @@
 .em(@size, @bf: @base-font-size){
 	@em: @size / @bf;
 	font-size: unit(round(@em,2), em);
+}
+.px(@size, @bf: @base-font-size){
+	@px: @size * @bf;
+	font-size: unit(round(@px,2), px);
 }
