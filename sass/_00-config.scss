@@ -29,15 +29,15 @@ $base-background		: #fff; // body background color
 $primary-background		: #fff; // primary elements background color
 $secondary-background	: #fff; // secondary elements background color
 
-// spacings
-$tiny-value				: 0.5rem; // tiny value for margins / paddings
-$small-value			: 1rem; // small value for margins / paddings
-$medium-value			: 2rem; // medium value for margins / paddings
-$large-value			: 4rem; // large value for margins / paddings
-$extra-large-value		: 6rem; // extra large value for margins / paddings
-$ultra-large-value		: 10rem; // ultra large value for margins / paddings
+// spacings (choose unit you prefer)
+$tiny-value				: 5px; // tiny value for margins / paddings
+$small-value			: 10px; // small value for margins / paddings
+$medium-value			: 20px; // medium value for margins / paddings
+$large-value			: 40px; // large value for margins / paddings
+$extra-large-value		: 80px; // extra large value for margins / paddings
+$ultra-large-value		: 160px; // ultra large value for margins / paddings
 
-// breakpoints
+// breakpoints (choose unit you prefer)
 $tiny-screen			: 320px; // tiny screens media query
 $small-screen			: 480px; // small screens media query
 $medium-screen			: 768px; // medium screens media query
@@ -45,7 +45,7 @@ $large-screen			: 1024px; // large screens media query
 $extra-large-screen		: 1280px; // extra large screens media query
 $ultra-large-screen		: 1600px; // ultra large screens media query
 
-// misc
+// misc (choose unit you prefer)
 $gutter		: 20px; // gutter value for grid layouts. Unit can be: %, px, em, rem
 
 // booleans

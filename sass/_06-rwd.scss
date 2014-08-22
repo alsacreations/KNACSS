@@ -2,7 +2,7 @@
 /* ==desktop and HD devices      */
 /* ----------------------------- */
 
-@media (min-width: $small-screen) {
+@media (min-width: $medium-screen) {
 /* rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
@@ -11,7 +11,7 @@
 }
 
 /* ---------------------------------- */
-/* ==Responsive large / small / tiny  */
+/* ==Responsive large                 */
 /* ---------------------------------- */
 
 @media (min-width: $large-screen) {
@@ -100,7 +100,83 @@
 	}
 }
 
-@media (max-width: $small-screen) {
+/* ---------------------------------- */
+/* ==Responsive medium                */
+/* ---------------------------------- */
+
+@media (min-width: $medium-screen) and (max-width: ($large-screen - 1))  {
+
+	/* layouts for medium screens */
+	.medium-hidden { 
+		display: none !important; 
+	}
+	
+	.medium-visible { 
+		display: block !important; 
+	}
+	
+	.medium-no-float {
+		float: none; 
+	}
+	
+	.medium-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.medium-row {
+		display: table;
+		table-layout: fixed;
+		width: 100% !important;
+	}
+	.medium-col {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	/* widths for medium screens */
+	.medium-w25 { 
+		width: 25% !important; 
+	}
+	
+	.medium-w33 { 
+		width: 33.3333% !important; 
+	}
+	
+	.medium-w50 { 
+		width: 50% !important; 
+	}
+	
+	.medium-w66 { 
+		width: 66.6666% !important; 
+	}
+	
+	.medium-w75 { 
+		width: 75% !important; 
+	}
+	
+	.medium-w100,
+	.medium-wauto {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+
+	/* margins for medium screens */
+	.medium-man { 
+		margin: 0 !important; 
+	}
+}
+
+/* ---------------------------------- */
+/* ==Responsive small                 */
+/* ---------------------------------- */
+
+@media (max-width: $small-screen) and (max-width: ($medium-screen - 1)) {
 	
 	/* quick small resolution reset */
 	.mod,
@@ -215,7 +291,11 @@
 	}
 }
 
-@media (max-width: $tiny-screen) {
+/* ---------------------------------- */
+/* ==Responsive tiny                  */
+/* ---------------------------------- */
+
+@media (max-width: $tiny-screen) and (max-width: ($small-screen - 1)) {
 	
 	.w300p,
 	.w400p,
