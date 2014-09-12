@@ -2,7 +2,7 @@
 /* ==desktop and HD devices      */
 /* ----------------------------- */
 
-@media (min-width: $medium-screen) {
+@media (min-width: ($medium-screen + 1)) {
 /* rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 
@@ -14,7 +14,7 @@
 /* ==Responsive large                 */
 /* ---------------------------------- */
 
-@media (min-width: $large-screen) {
+@media (min-width: ($medium-screen + 1)) {
 
 	/* layouts for large screens */
 	.large-hidden { 
@@ -104,7 +104,7 @@
 /* ==Responsive medium                */
 /* ---------------------------------- */
 
-@media (min-width: $medium-screen) and (max-width: ($large-screen - 1))  {
+@media (min-width: ($small-screen + 1)) and (max-width: $medium-screen)  {
 
 	/* layouts for medium screens */
 	.medium-hidden { 
@@ -176,7 +176,7 @@
 /* ==Responsive small                 */
 /* ---------------------------------- */
 
-@media (max-width: $small-screen) and (max-width: ($medium-screen - 1)) {
+@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
 	
 	/* quick small resolution reset */
 	.mod,
@@ -295,7 +295,7 @@
 /* ==Responsive tiny                  */
 /* ---------------------------------- */
 
-@media (max-width: $tiny-screen) and (max-width: ($small-screen - 1)) {
+@media (max-width: $tiny-screen) {
 	
 	.w300p,
 	.w400p,
