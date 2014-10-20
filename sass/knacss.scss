@@ -6,17 +6,18 @@
 @import "_01-base";
 
 // Sass files : chose the ones you need
-@import "_02-grids";
-@import "_03-tables"; 
-@import "_04-forms";
-@import "_05-icons";
-@import "_06-rwd";
-@import "_07-flexbox"; 
-@import "_08-print";
-@import "_09-booleans";
-@import "_10-gmaps";
-@import "_11-ie";
-@import "_12-styling";
+@import "_02-helpers"; // width and spacers visually classes
+@import "_03-grids"; // grids and autogrids
+@import "_04-tables"; 
+@import "_05-forms";
+@import "_06-icons"; // UTF-8 icons
+@import "_07-flexbox";
+@import "_08-rwd"; // Responsive Web Design helpers
+@import "_09-print";
+@import "_10-booleans"; // skip links and hyphens
+@import "_11-gmaps"; // Google maps bugs fix
+@import "_12-ie"; // IE6, IE7, IE8 support
+@import "_13-styling"; // minor stylings 
 
 /* ----------------------------- */
 /* ==own stylesheet              */

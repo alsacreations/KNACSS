@@ -1,11 +1,13 @@
 /* ----------------------------- */
 /* ==skip-hyphens                */
 /* ----------------------------- */
+
 /* styling skip links */
+
 .skip-links {
 	position: absolute;
-
-	a {
+	
+	& a {
 		position: absolute;
 		overflow: hidden;
 		clip: rect(1px, 1px, 1px, 1px);
@@ -13,7 +15,7 @@
 		background: black;
 		color: white;
 		text-decoration: none;
-
+		
 		&:focus {
 			position: static;
 			overflow: visible;
@@ -22,19 +24,18 @@
 	}
 }
 
-// hyphens boolean
-@media (max-width: $small-screen) {
+// hyphens
+@media (max-width: @small-screen) {
 	/* you shall not pass */
-	div, 
-	textarea, 
-	table, 
-	td, 
-	th, 
-	code, 
-	pre, 
+	div,
+	textarea,
+	table,
+	td,
+	th,
+	code,
+	pre,
 	samp {
 		word-wrap: break-word;
 		hyphens: auto;
 	}
 }
-

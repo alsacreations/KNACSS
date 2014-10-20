@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V3.0.9 (2014-09-12) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V3.1.0 (2014-10-20) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -307,6 +307,10 @@ img.end {
 .txtcenter {
   text-align: center;
 }
+/* ---------------------------------- */
+/* ==visual helpers                   */
+/* .. use them with parcimony !       */
+/* ---------------------------------- */
 /* blocks widths (percentage and pixels) */
 .w10 {
   width: 10%;
@@ -396,10 +400,10 @@ img.end {
   width: auto;
 }
 /* spacing helpers
-	p,m = padding,margin
-	a,t,r,b,l = all,top,right,bottom,left
-	s,m,l,n = small, medium, large, none
-	*/
+p,m = padding,margin
+a,t,r,b,l = all,top,right,bottom,left
+s,m,l,n = small, medium, large, none
+*/
 .man {
   margin: 0;
 }
@@ -905,6 +909,52 @@ input[type='submit']::-moz-focus-inner {
   font-size: 1.6em;
   top: -0.05em;
 }
+/* flexbox layout 
+Tutorial: http://knacss.com/demos/tutoriel.html#flex */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-h {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-fluid {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-start {
+  -webkit-box-ordinal-group: 0;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+.flex-mid {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+.flex-end {
+  -webkit-box-ordinal-group: 43;
+  -webkit-order: 42;
+  -ms-flex-order: 42;
+  order: 42;
+}
 /* ----------------------------- */
 /* ==desktop and HD devices      */
 /* ----------------------------- */
@@ -1238,52 +1288,6 @@ input[type='submit']::-moz-focus-inner {
     width: 100% !important;
   }
 }
-/* flexbox layout 
-Tutorial: http://knacss.com/demos/tutoriel.html#flex */
-.flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.flex-h {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-.flex-v {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-.flex-fluid {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-.flex-start {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-  -ms-flex-order: -1;
-  order: -1;
-}
-.flex-mid {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-}
-.flex-end {
-  -webkit-box-ordinal-group: 43;
-  -webkit-order: 42;
-  -ms-flex-order: 42;
-  order: 42;
-}
 /* quick print reset */
 @media print {
   * {
@@ -1360,7 +1364,7 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
   }
 }
 /* ----------------------------- */
-/* ==booleans                    */
+/* ==skip-hyphens                */
 /* ----------------------------- */
 /* styling skip links */
 .skip-links {
