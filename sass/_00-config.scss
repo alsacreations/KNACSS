@@ -48,16 +48,6 @@ $ultra-large-screen		: 1920px; // ultra large screens
 // misc (choose unit you prefer)
 $gutter		: 20px; // gutter value for grid layouts. Unit can be: %, px, em, rem
 
-// booleans
-$enable-ie678 			: true; // "true" to activate IE6/IE7/IE8 support
-$enable-styling			: true; // "true" to design basic elements like code, mark, blockquotes, etc.
-$enable-gmaps			: true; // if google maps is used
-$enable-skip-links		: true; // "true" to design skip links for accessibility concerns
-$enable-hyphens			: true; // activate automatic hyphens on small screens
-$enable-helpers-width	: true; // decide whether or not you need width helpers
-$enable-helpers-spacing	: true; // decide whether or not you need spacing helpers
-
-
 // Sass mixins : don't touch or you'll be banned ;)
 // px to em/rem 
 
