@@ -6,10 +6,13 @@
 /* == soft reset                 */
 /* ----------------------------- */
 /* switching box model for all elements */
-* {
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 /* soft reset */
 html,
@@ -909,7 +912,7 @@ input[type='submit']::-moz-focus-inner {
   font-size: 1.6em;
   top: -0.05em;
 }
-/* flexbox layout 
+/* flexbox layout
 Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 .flex {
   display: -webkit-box;

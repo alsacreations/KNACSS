@@ -8,8 +8,11 @@
 /* ----------------------------- */
 
 /* switching box model for all elements */
-* {
+html {
 	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
 /* soft reset */
@@ -56,27 +59,27 @@ svg:not(:root) {
 
 
 html {
-	
+
 	/* set base font-size to equiv "10px", which is adapted to rem unit */
 	font-size: 62.5%;
-	
+
 	/* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
 	/* thanks to @guardian, @victorbritopro and @eQRoeil */
     font-size: calc(1em * 0.625);
-	
+
 	/* disallow text zooming on orientation change (non standard property) */
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
 }
 
 body {
-	
+
 	/* set body font-size in em (1.4em equiv "14px") */
 	font-size: unit((@base-font-size / 10), em);
-	
+
 	background-color: @base-background;
 	color: @base-color;
-	font-family: @font-stack-common;	
+	font-family: @font-stack-common;
 	line-height: @line-height;
 }
 
@@ -100,7 +103,7 @@ th,
 label,
 textarea,
 caption,
-details, 
+details,
 figure {
 	margin-top: 0.75em;
 	margin-bottom: 0;
@@ -160,12 +163,12 @@ h6,
 	.em(@base-font-size + 6);
 }
 
-code, 
+code,
 pre,
 samp,
 kbd {
 	/* IE fix */
-	white-space: pre-line; 
+	white-space: pre-line;
 	white-space: pre-wrap;
 	font-family: @font-stack-monospace;
 	line-height: normal;
@@ -197,10 +200,10 @@ sup {
 /* ----------------------------- */
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden { 
+.visually-hidden {
 	position: absolute !important;
     border: 0 !important;
-    height: 1px !important; 
+    height: 1px !important;
     width: 1px !important;
     padding: 0 !important;
     overflow: hidden !important;
@@ -229,17 +232,17 @@ body > script {
 
 /* avoid top margins on first content element */
 p,
-.p-like, 
-ul, 
-ol, 
+.p-like,
+ul,
+ol,
 dl,
-blockquote, 
+blockquote,
 pre,
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
 	&:first-child {
 		margin-top: 0;
@@ -256,14 +259,14 @@ li ol {
 }
 
 /* max values */
-img, 
-table, 
-td, 
-blockquote, 
-code, 
-pre, 
-textarea, 
-input, 
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
 video {
 	max-width: 100%;
 }
@@ -279,7 +282,7 @@ table {
 
 /* float layout */
 /* module, gains superpower "BFC" Block Formating Context */
-.mod { 
+.mod {
 	overflow: hidden;
 }
 
@@ -345,15 +348,15 @@ img.end {
 	margin-left: @small-value;
 }
 
-img.left, 
+img.left,
 img.right,
-img.start, 
+img.start,
 img.end {
 	margin-bottom: @tiny-value;
 }
 
 .center    {
-	margin-left: auto; 
+	margin-left: auto;
 	margin-right: auto;
 }
 
