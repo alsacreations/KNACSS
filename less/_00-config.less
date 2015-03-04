@@ -47,19 +47,3 @@
 
 // misc (choose unit you prefer)
 @gutter : 20px; // gutter value for grid layouts. Unit can be: %, px, em, rem
-
-// LESS mixins : don't touch or you'll be banned ;)
-// px to em/rem
-.rem(@size, @bf: @base-font-size){
-	@rem: @size / 10;
-	font-size: unit(round(@base-font-size * @size /10), px);
-	font-size: unit(@rem, rem);
-}
-.em(@size, @bf: @base-font-size){
-	@em: @size / @bf;
-	font-size: unit(round(@em,2), em);
-}
-.px(@size, @bf: @base-font-size){
-	@px: @size * @bf;
-	font-size: unit(round(@px,2), px);
-}

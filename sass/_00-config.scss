@@ -47,34 +47,3 @@ $ultra-large-screen     : 1920px; // ultra large screens
 
 // misc (choose unit you prefer)
 $gutter : 20px; // gutter value for grid layouts. Unit can be: %, px, em, rem
-
-// Sass mixins : don't touch or you'll be banned ;)
-// px to em/rem
-
-@mixin rem($size) {
-	@if unitless($size) {
-	 	font-size: ($size * 1rem) / 1rem * $base-font-size;
-	 	font-size: $size * 1rem;
-	}
-	@else {
-	  @warn "Please make sure `$size` is unitless."
-	}
-}
-@mixin em($size) {
-	@if unitless($size) {
-		$bf: $base-font-size / 1px;
-	 	font-size: $size / $bf * 1em;
-	}
-	@else {
-	  @warn "Please make sure `$size` is unitless."
-	}
-}
-@mixin px($size) {
-	@if unitless($size) {
-		$bf: $base-font-size / 1px;
-	 	font-size: $size * $bf * 1px;
-	}
-	@else {
-	  @warn "Please make sure `$size` is unitless."
-	}
-}

@@ -142,23 +142,23 @@ h6, .h6-like {
 
 /* alternate font-sizing */
 .smaller {
-	@include em($base-font-size / 1px - 4);
+	font-size: 0.6em;
 }
 
 .small {
-	@include em($base-font-size / 1px - 2);
+	font-size: 0.8em;
 }
 
 .big {
-	@include em($base-font-size / 1px + 2);
+	font-size: 1.2em;
 }
 
 .bigger {
-	@include em($base-font-size / 1px + 4);
+	font-size: 1.5em;
 }
 
 .biggest {
-	@include em($base-font-size / 1px + 6);
+	font-size: 2em;
 }
 
 code,
@@ -332,6 +332,33 @@ body > script {
 /* alignments (blocks and inline) */
 /* ------------------------------ */
 
+/* blocks alignment */
+.left {
+	margin-right: auto;
+}
+
+.right {
+	margin-left: auto;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* text and contents alignment */
+.txtleft {
+	text-align: left;
+}
+
+.txtright {
+	text-align: right;
+}
+
+.txtcenter {
+	text-align: center;
+}
+
 /* left (or starting) elements */
 .left,
 .start {
@@ -361,19 +388,3 @@ img.end {
 	margin-bottom: $tiny-value;
 }
 
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.txtleft {
-	text-align: left;
-}
-
-.txtright {
-	text-align: right;
-}
-
-.txtcenter {
-	text-align: center;
-}
