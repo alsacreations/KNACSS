@@ -207,10 +207,6 @@ sup {
 	clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
-body > script {
-	display: none !important;
-}
-
 @media (max-width: @small-screen) {
 	.no-small-screen {
 		display: none;
@@ -318,6 +314,11 @@ table {
 .col {
 	display: table-cell;
 	vertical-align: top;
+}
+
+/* no table-cell for script tag when body is a .row */
+body > script {
+	display: none !important;
 }
 
 /* inline-block */
