@@ -7,9 +7,13 @@
 /* == soft reset                 */
 /* ----------------------------- */
 
-/* switching box model for all elements */
-* {
+/* switching to border-box model for all elements */
+html {
 	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
 }
 
 /* soft reset */
@@ -29,9 +33,13 @@ ul.unstyled {
 }
 
 img {
-	height: auto;
 	vertical-align: middle;
 	border: 0;
+}
+
+/* height auto only for non SVG images */
+img:not([src$=".svg"]) {
+	height: auto;
 }
 
 blockquote,
