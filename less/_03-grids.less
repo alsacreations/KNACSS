@@ -6,24 +6,22 @@
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
 /* overall container of grids */
-.grid { 
+.grid {
 	overflow: hidden;
 }
 
 /* global styles for direct child ex. .grid3 */
-.grid > * { 
+.grid > * {
 	display: block;
 	padding: 0;
-	/* gutter value */
-	margin-left: -@gutter;
+	margin-left: -@gutter; /* gutter value */
 	text-align: left;
 }
 
 /* global styles for each "cell" */
-.grid > * > * { 
+.grid > * > * {
 	display: inline-block;
-	/* gutter value */
-	padding-left: @gutter;
+	padding-left: @gutter; /* gutter value */
 	margin-left: 0;
 	vertical-align: top;
 }
@@ -31,8 +29,7 @@
 /* whitespace fixing for modern browsers including IE9+ */
 :root .grid {
 	font-size: 0;
-	/* fallback for IE9+ */
-	text-justify: distribute-all-lines;
+	text-justify: distribute-all-lines; /* fallback for IE9+ */
 }
 
 :root .grid > * > * {
@@ -81,23 +78,23 @@
 
 /* unequal grids (1-2, 2-1, 1-3 and 3-1) for 2 blocks */
 .grid2-1 > *:first-child,
-.grid1-2 > * + * { 
-	width: 66.666%; 
+.grid1-2 > * + * {
+	width: 66.666%;
 }
 
 .grid1-2 > *:first-child,
-.grid2-1 > * + * { 
-	width: 33.333%; 
+.grid2-1 > * + * {
+	width: 33.333%;
 }
 
 .grid1-3 > *:first-child,
-.grid3-1 > * + * { 
-	width: 25%; 
+.grid3-1 > * + * {
+	width: 25%;
 }
 
 .grid3-1 > *:first-child,
-.grid1-3 > * + * { 
-	width: 75%; 
+.grid1-3 > * + * {
+	width: 75%;
 }
 
 /* ---------------------------------- */
@@ -108,14 +105,14 @@
 /* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
 
 /* container of autogrids */
-[class*="autogrid"] { 
+[class*="autogrid"] {
 	text-align: justify;
 }
 
 [class*="autogrid"]:after {
 	content: "";
 	display: inline-block;
-	width: 100%; 
+	width: 100%;
 }
 
 [class*="autogrid"] > * {

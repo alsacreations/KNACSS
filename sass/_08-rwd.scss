@@ -17,16 +17,16 @@
 @media (min-width: ($medium-screen + 1)) {
 
 	/* layouts for large screens */
-	.large-hidden { 
-		display: none !important; 
+	.large-hidden {
+		display: none !important;
 	}
 	
-	.large-visible { 
-		display: block !important; 
+	.large-visible {
+		display: block !important;
 	}
 	
 	.large-no-float {
-		float: none; 
+		float: none;
 	}
 	
 	.large-inbl {
@@ -45,24 +45,24 @@
 	}
 
 	/* widths for large screens */
-	.large-w25 { 
-		width: 25% !important; 
+	.large-w25 {
+		width: 25% !important;
 	}
 	
-	.large-w33 { 
-		width: 33.3333% !important; 
+	.large-w33 {
+		width: 33.3333% !important;
 	}
 	
-	.large-w50 { 
-		width: 50% !important; 
+	.large-w50 {
+		width: 50% !important;
 	}
 	
-	.large-w66 { 
-		width: 66.6666% !important; 
+	.large-w66 {
+		width: 66.6666% !important;
 	}
 	
-	.large-w75 { 
-		width: 75% !important; 
+	.large-w75 {
+		width: 75% !important;
 	}
 	
 	.large-w100,
@@ -73,30 +73,13 @@
 		width: auto !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		border: 0;		
+		border: 0;
 	}
 
 	/* margins for large screens */
-	.large-man { 
-		margin: 0 !important; 
-	}
-	
-	/* grid rwd for large screens */
-	.grid5 > *,
-	.grid6 > *,
-	.grid8 > *,
-	.grid10 > *,
-	.grid12 > * {
-		width: 33.333%;
-	}
-	
-	/* autogrid rwd for large screens */
-	.autogrid5 > *,
-	.autogrid6 > *,
-	.autogrid8 > *,
-	.autogrid10 > *,
-	.autogrid12 > * {
-		width: 32%;
+	.large-man,
+	.large-ma0 {
+		margin: 0 !important;
 	}
 }
 
@@ -107,16 +90,16 @@
 @media (min-width: ($small-screen + 1)) and (max-width: $medium-screen)  {
 
 	/* layouts for medium screens */
-	.medium-hidden { 
-		display: none !important; 
+	.medium-hidden {
+		display: none !important;
 	}
 	
-	.medium-visible { 
-		display: block !important; 
+	.medium-visible {
+		display: block !important;
 	}
 	
 	.medium-no-float {
-		float: none; 
+		float: none;
 	}
 	
 	.medium-inbl {
@@ -124,35 +107,37 @@
 		float: none;
 		vertical-align: top;
 	}
+	
 	.medium-row {
 		display: table;
 		table-layout: fixed;
 		width: 100% !important;
 	}
+	
 	.medium-col {
 		display: table-cell;
 		vertical-align: top;
 	}
 
 	/* widths for medium screens */
-	.medium-w25 { 
-		width: 25% !important; 
+	.medium-w25 {
+		width: 25% !important;
 	}
 	
-	.medium-w33 { 
-		width: 33.3333% !important; 
+	.medium-w33 {
+		width: 33.3333% !important;
 	}
 	
-	.medium-w50 { 
-		width: 50% !important; 
+	.medium-w50 {
+		width: 50% !important;
 	}
 	
-	.medium-w66 { 
-		width: 66.6666% !important; 
+	.medium-w66 {
+		width: 66.6666% !important;
 	}
 	
-	.medium-w75 { 
-		width: 75% !important; 
+	.medium-w75 {
+		width: 75% !important;
 	}
 	
 	.medium-w100,
@@ -163,12 +148,13 @@
 		width: auto !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		border: 0;		
+		border: 0;
 	}
 
 	/* margins for medium screens */
-	.medium-man { 
-		margin: 0 !important; 
+	.medium-man,
+	.medium-ma0 {
+		margin: 0 !important;
 	}
 }
 
@@ -199,19 +185,19 @@
 	.mw960p {
 		width: auto;
 		float: none;
-	} 
+	}
 
 	/* layouts for small screens */
-	.small-hidden { 
-		display: none !important; 
+	.small-hidden {
+		display: none !important;
 	}
 	
-	.small-visible { 
-		display: block !important; 
+	.small-visible {
+		display: block !important;
 	}
 	
 	.small-no-float {
-		float: none; 
+		float: none;
 	}
 	
 	.small-inbl {
@@ -219,55 +205,59 @@
 		float: none;
 		vertical-align: top;
 	}
+	
 	.small-row {
 		display: table !important;
 		table-layout: fixed !important;
 		width: 100% !important;
 	}
+	
 	.small-col {
 		display: table-cell !important;
 		vertical-align: top !important;
 	}
 
 	/* widths for small screens */
-	.small-w25 { 
-		width: 25% !important; 
+	.small-w25 {
+		width: 25% !important;
 	}
 	
-	.small-w33 { 
-		width: 33.3333% !important; 
+	.small-w33 {
+		width: 33.3333% !important;
 	}
 	
-	.small-w50 { 
-		width: 50% !important; 
+	.small-w50 {
+		width: 50% !important;
 	}
 	
-	.small-w66 { 
-		width: 66.6666% !important; 
+	.small-w66 {
+		width: 66.6666% !important;
 	}
 	
-	.small-w75 { 
-		width: 75% !important; 
+	.small-w75 {
+		width: 75% !important;
 	}
 	
 	.small-w100,
-	.small-wauto  {
+	.small-wauto {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
 		width: auto !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		border: 0;		
+		border: 0;
 	}
 	
 	/* margins for small screens */
-	.small-man { 
-		margin: 0 !important; 
+	.small-man,
+	.small-ma0 {
+		margin: 0 !important;
 	}
 	
-	.small-pan { 
-		padding: 0 !important; 
+	.small-pan,
+	.small-pa0 {
+		padding: 0 !important;
 	}
 	
 	/* grid rwd for small screens */
@@ -304,18 +294,18 @@
 		float: none;
 	}
 	
-	.row { 
+	.row {
 		display: block !important;
 		width: 100% !important;
 	}
 
 	/* layouts for tiny screens */
-	.tiny-hidden { 
-		display: none !important; 
+	.tiny-hidden {
+		display: none !important;
 	}
 	
-	.tiny-visible { 
-		display: block !important; 
+	.tiny-visible {
+		display: block !important;
 	}
 	
 	.tiny-no-float {
@@ -346,31 +336,33 @@
 		text-align: left !important;
 	}
 	
-	thead { display: none; }
+	thead {
+		display: none;
+	}
 
 	/* widths for tiny screens */
-	.tiny-w25 { 
-		width: 25% !important; 
+	.tiny-w25 {
+		width: 25% !important;
 	}
 	
-	.tiny-w33 { 
-		width: 33.3333% !important; 
+	.tiny-w33 {
+		width: 33.3333% !important;
 	}
 	
-	.tiny-w50 { 
-		width: 50% !important; 
+	.tiny-w50 {
+		width: 50% !important;
 	}
 	
-	.tiny-w66 { 
-		width: 66.6666% !important; 
+	.tiny-w66 {
+		width: 66.6666% !important;
 	}
 	
-	.tiny-w75 { 
-		width: 75% !important; 
+	.tiny-w75 {
+		width: 75% !important;
 	}
 	
 	.tiny-w100,
-	.tiny-wauto { 
+	.tiny-wauto {
 		display: block !important;
 		float: none !important;
 		clear: none !important;
@@ -381,12 +373,14 @@
 	}
 	
 	/* margins for tiny screens */
-	.tiny-man { 
-		margin: 0 !important; 
+	.tiny-man,
+	.tiny-ma0 {
+		margin: 0 !important;
 	}
 	
-	.tiny-pan { 
-		padding: 0 !important; 
+	.tiny-pan,
+	.tiny-pa0 {
+		padding: 0 !important;
 	}
 	
 	/* grid rwd for tiny screens */

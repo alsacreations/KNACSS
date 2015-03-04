@@ -37,14 +37,14 @@
 		display: none;
 	}
 	
-	img { 
+	img {
 		filter: grayscale(100%);
 	}
 	
 	/* no orphans, no widows */
 	p,
 	blockquote {
-		orphans: 3; 
+		orphans: 3;
 		widows: 3;
 	}
 	
@@ -52,12 +52,12 @@
 	blockquote,
 	ul,
 	ol {
-		page-break-inside: avoid; 
+		page-break-inside: avoid;
 	}
 	
 	/* page break before main headers */
 	h1 {
-		page-break-before: always; 
+		page-break-before: always;
 	}
 	
 	/* no breaks after these elements */
@@ -75,7 +75,7 @@
 	
 	/* displaying URLs */
 	a[href]:after {
-		content: " (" attr(href) ")"; 
+		content: " (" attr(href) ")";
 	}
 	
 	a[href^="javascript:"]:after,

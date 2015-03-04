@@ -6,12 +6,12 @@
 /* grids inspired from SUIT https://github.com/suitcss/suit */
 
 /* overall container of grids */
-.grid { 
+.grid {
 	overflow: hidden;
 }
 
 /* global styles for direct child ex. .grid3 */
-.grid > * { 
+.grid > * {
 	display: block;
 	padding: 0;
 	/* gutter value */
@@ -20,7 +20,7 @@
 }
 
 /* global styles for each "cell" */
-.grid > * > * { 
+.grid > * > * {
 	display: inline-block;
 	/* gutter value */
 	padding-left: $gutter;
