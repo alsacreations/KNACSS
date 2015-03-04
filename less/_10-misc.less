@@ -1,6 +1,7 @@
 /* ----------------------------- */
-/* ==skip-hyphens                */
+/* ==misc rules                  */
 /* ----------------------------- */
+
 /* styling skip links */
 .skip-links {
 	position: absolute;
@@ -13,7 +14,7 @@
 		background: black;
 		color: white;
 		text-decoration: none;
-
+		
 		&:focus {
 			position: static;
 			overflow: visible;
@@ -22,19 +23,33 @@
 	}
 }
 
-// hyphens boolean
-@media (max-width: $small-screen) {
+// hyphens on small screens
+@media (max-width: @small-screen) {
 	/* you shall not pass */
-	div, 
-	textarea, 
-	table, 
-	td, 
-	th, 
-	code, 
-	pre, 
+	div,
+	textarea,
+	table,
+	td,
+	th,
+	code,
+	pre,
 	samp {
 		word-wrap: break-word;
 		hyphens: auto;
 	}
 }
 
+/* Google Gmap3 bug fix on images */
+.gm-style img {
+	height: 100%;
+}
+
+:not(.gm-style) img {
+	height: auto;
+}
+
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+	max-width: none !important;
+}
