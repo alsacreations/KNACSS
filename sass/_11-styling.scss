@@ -113,16 +113,16 @@ hr {
 }
 
 /* alternate-vert tables */
-.table-alternate-vert {
+.table-alternate-v {
 	border: 0;
 	border-right: 1px solid #ccc;
 }
 
-.table-alternate-vert tr > :first-child {
+.table-alternate-v tr > :first-child {
 	border-bottom: 0;
 }
 
-.table-alternate-vert tr > * + * {
+.table-alternate-v tr > * + * {
 	border-top: 1px solid #ccc;
 }
 
@@ -133,7 +133,7 @@ hr {
 }
 
 /* striped-vert tables */
-.table-striped-vert tr > :first-child {
+.table-striped-v tr > :first-child {
 	background: #eee;
 	background: rgba(0, 0, 0, .05);
 }
