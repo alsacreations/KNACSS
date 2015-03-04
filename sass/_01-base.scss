@@ -229,11 +229,17 @@ dl,
 blockquote,
 pre,
 h1,
+.h1-like,
 h2,
+.h2-like,
 h3,
+.h3-like,
 h4,
+.h4-like,
 h5,
-h6 {
+.h5-like,
+h6,
+.h6-like {
 	&:first-child {
 		margin-top: 0;
 	}
@@ -262,7 +268,7 @@ video {
 }
 
 /* margin-bottom on tables */
-table { 
+table {
 	margin-bottom: $medium-value; 
 }
 
@@ -324,7 +330,7 @@ table {
 }
 
 img.left,
-img.start  {
+img.start {
 	margin-right: $small-value;
 }
 
