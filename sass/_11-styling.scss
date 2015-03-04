@@ -96,41 +96,44 @@ hr {
 }
 
 /* alternate tables */
-.alternate { border: 0; }
-.alternate tbody {
+.table-alternate {
+	border: 0;
+}
+
+.table-alternate tbody {
 	border: 1px solid #ccc;
 }
 
-.alternate thead tr > * + * {
+.table-alternate thead tr > * + * {
 	border-left: 0;
 }
 
-.alternate tbody tr > * + * {
+.table-alternate tbody tr > * + * {
 	border-left: 1px solid #ccc;
 }
 
 /* alternate-vert tables */
-.alternate-vert {
+.table-alternate-vert {
 	border: 0;
 	border-right: 1px solid #ccc;
 }
 
-.alternate-vert tr > :first-child {
+.table-alternate-vert tr > :first-child {
 	border-bottom: 0;
 }
 
-.alternate-vert tr > * + * {
+.table-alternate-vert tr > * + * {
 	border-top: 1px solid #ccc;
 }
 
 /* striped tables */
-.striped tbody tr:nth-child(odd) {
+.table-striped tbody tr:nth-child(odd) {
 	background: #eee;
 	background: rgba(0, 0, 0, .05);
 }
 
 /* striped-vert tables */
-.striped-vert tr > :first-child {
+.table-striped-vert tr > :first-child {
 	background: #eee;
 	background: rgba(0, 0, 0, .05);
 }
