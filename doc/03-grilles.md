@@ -1,4 +1,4 @@
-# les grilles de mise en page
+# Grilles de mise en page
 Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 - Les grilles à colonnes égales
