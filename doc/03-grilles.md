@@ -6,6 +6,12 @@ Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 Dans les deux cas, la technique associée depuis KNACSS v4 pour concevoir les grilles est **CSS3 Flexbox**, ce qui signifie que la compatibilité de **cette fonctionnalité sera réservée aux [navigateurs modernes](http://caniuse.com/#search=flexbox)** (IE10 et tous les autres, soit environ 95% du marché en France en 2015).
 
+**Exemple de grille de colonnes égales :**
+![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
+
+**Exemple de grille de colonnes inégales (2/3 - 1/3) :**
+![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-uneven.png)
+
 **NOTE pour les utilisateurs de LESS / Sass :** par défaut, les grilles sont activées dans KNACSS. Si vous avez le moindre souci, vérifiez que `@import "_03-grids";` est présent et non commenté dans votre fichier `less/knacss.less` ou `sass/knacss.scss`). 
 
 ## Précautions à prendre
