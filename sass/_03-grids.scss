@@ -37,9 +37,6 @@
 	& > .flexitem-double {
 		width: (2/$number * 100) + 0%;
 	}
-	& > .flexitem-first {
-		order: -1;
-	}
 	@media (min-width: ($small-screen + 1)) and (max-width: $medium-screen) {
 		& > * {
 				width: 33.3333%;
@@ -102,10 +99,6 @@
 
 .grid-12 {
 	@include grid(12);
-}
-
-.grid-16 {
-	@include grid(16);
 }
 
 // LESS mixins for *unequal* columns grid container

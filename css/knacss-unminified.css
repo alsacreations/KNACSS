@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.0.0 BETA (2015-03-05) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.0.2 BETA (2015-03-05) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -399,12 +399,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-2 > .flexitem-double {
   width: 100%;
 }
-.grid-2 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-2 > * {
     width: 33.3333%;
@@ -459,12 +453,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 .grid-3 > .flexitem-double {
   width: 66.66666667%;
-}
-.grid-3 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-3 > * {
@@ -521,12 +509,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-4 > .flexitem-double {
   width: 50%;
 }
-.grid-4 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-4 > * {
     width: 33.3333%;
@@ -581,12 +563,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 .grid-5 > .flexitem-double {
   width: 40%;
-}
-.grid-5 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-5 > * {
@@ -643,12 +619,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-6 > .flexitem-double {
   width: 33.33333333%;
 }
-.grid-6 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-6 > * {
     width: 33.3333%;
@@ -703,12 +673,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 .grid-7 > .flexitem-double {
   width: 28.57142857%;
-}
-.grid-7 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-7 > * {
@@ -765,12 +729,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-8 > .flexitem-double {
   width: 25%;
 }
-.grid-8 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-8 > * {
     width: 33.3333%;
@@ -825,12 +783,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 .grid-10 > .flexitem-double {
   width: 20%;
-}
-.grid-10 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-10 > * {
@@ -887,12 +839,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-12 > .flexitem-double {
   width: 16.66666667%;
 }
-.grid-12 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-12 > * {
     width: 33.3333%;
@@ -914,67 +860,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
     width: 100%;
   }
   .grid-12 > .flexitem-double {
-    width: 100%;
-  }
-}
-.grid-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-left: -1em;
-}
-.grid-16 > * {
-  /* grid child can be any element */
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  width: 6.25%;
-  display: block;
-  /* IE fix */
-  border-left: 1em solid transparent;
-  background-clip: padding-box !important;
-  /* no background on border */
-}
-.grid-16 > .flexitem-double {
-  width: 12.5%;
-}
-.grid-16 > .flexitem-first {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .grid-16 > * {
-    width: 33.3333%;
-  }
-  .grid-16 > .flexitem-double {
-    width: 66.6666%;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  .grid-16 > * {
-    width: 50%;
-  }
-  .grid-16 > .flexitem-double {
-    width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  .grid-16 > * {
-    width: 100%;
-  }
-  .grid-16 > .flexitem-double {
     width: 100%;
   }
 }
