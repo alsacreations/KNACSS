@@ -37,7 +37,7 @@ Il est très simple de construire une grille, il vous suffit :
 Le **conteneur** sera l'élément HTML que vous voulez (`div`, `section`, `ul`, ...). Il vous suffit simplement de le munir d'une classe selon votre choix de grille :
 
 - `.grid-2`, `.grid-3`, `.grid-4`, ... `.grid-12` pour les grilles de largeur égale
-- `.grid-2-1`, `.grid-1-2`, `.grid-3-1`, `.grid-1-3`, `.grid-3-2`, `.grid-2-3`, `.grid-4-1`, `.grid-1-4` pour les grilles de largeurs inégales (2/3 - 1/3 par exemple)
+- `.grid-2-1`, `.grid-1-2`, `.grid-3-1`, `.grid-1-3`, `.grid-3-2`, `.grid-2-3`, `.grid-4-1`, `.grid-1-4` pour les grilles de largeurs inégales (`.grid-2-1` vaut pour "2/3 - 1/3" par exemple).
 
 Par défaut, chaque colonne est séparée de sa voisine par une gouttière dont la largeur par défaut est `1em`. Pour modifier ce réglage, il sera nécessaire de passer par la version préprocesseur (LESS, Sass) de KNACSS (voir plus loin).
 
