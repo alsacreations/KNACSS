@@ -34,4 +34,3 @@ Useful links
 ------------
 * Website and download : http://knacss.com
 * Documentation : http://knacss.com/doc.html
-* Commented code : http://knacss.com/knacss.html
