@@ -24,7 +24,7 @@ Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [
 **Exemple de grille de colonnes égales :**
 ![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
 
-**Exemple de grille de colonnes inégales (2/3 - 1/3) :**
+**Exemple de grille de colonnes inégales (3/4 - 1/4) :**
 ![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-uneven.png)
 
 ## Mise en oeuvre
@@ -36,12 +36,12 @@ Il est très simple de construire une grille, il vous suffit :
 
 Le **conteneur** sera l'élément HTML que vous voulez (`div`, `section`, `ul`, ...). Il vous suffit simplement de le munir d'une classe selon votre choix de grille :
 
-- `.grid-2`, `.grid-3`, `.grid-4`, ... `.grid-12` pour les grilles de largeur égales
-- `.grid-2-1`, `.grid-1-2`, `.grid-3-1`, ... `.grid-1-4` pour les grilles de largeur inégales (2/3 - 1/3 par exemple)
+- `.grid-2`, `.grid-3`, `.grid-4`, ... `.grid-12` pour les grilles de largeur égale
+- `.grid-2-1`, `.grid-1-2`, `.grid-3-1`, `.grid-1-3`, `.grid-3-2`, `.grid-2-3`, `.grid-4-1`, `.grid-1-4` pour les grilles de largeurs inégales (2/3 - 1/3 par exemple)
 
 Par défaut, chaque colonne est séparée de sa voisine par une gouttière dont la largeur par défaut est `1em`. Pour modifier ce réglage, il sera nécessaire de passer par la version préprocesseur (LESS, Sass) de KNACSS (voir plus loin).
 
-Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent automatiquement au sein de la grille formée par leur conteneur. Par exemple, 6 enfants contenus dans un parent de classe `.grid-3` se répartiront en 3 colonnes et 2 lignes.
+Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent automatiquement au sein de la grille formée par leur conteneur. Par exemple, 6 enfants contenus dans un parent de classe `.grid-3` se répartiront en 3 colonnes de 2 lignes.
 
 ## Offsets 
 
@@ -49,12 +49,12 @@ Il vous est très facile de "pousser" un élément à droite ou à gauche de sa 
 
 Pour cela, appliquez simplement l'une ou l'autre de ces déclarations sur l'élément :
 
-- `margin-left: auto` pour le pousser à droite sur sa ligne
-- `margin-right: auto` pour le pousser à gauche sur sa ligne
+- `margin-left: auto` pour le pousser à droite sur sa ligne (ou avec la classe `.left`)
+- `margin-right: auto` pour le pousser à gauche sur sa ligne (ou avec la classe `.right`)
 
 ## Mise en exergue
 
-Il est possible de mettre un élément particulier en exergue, en doublant sa taille par rapport aux autres, tout en conservant un agencement parfait de la grille.
+Il est possible de mettre un élément particulier en exergue, en **doublant sa taille** par rapport aux autres, tout en conservant un agencement parfait de la grille.
 
 Pour ce faire, appliquez la classe `.flexitem-double` à cet élément.
 
@@ -113,7 +113,6 @@ CSS compilé (sans Autoprefixer) :
   flex: 0 0 auto;
   width: 16.66666667%;
   display: block;  /* IE fix */
-  padding: 1em;
   border-left: 10px solid transparent;
   background-clip: padding-box !important;   /* no background on border */
 }
@@ -143,7 +142,6 @@ section {
 }
 section > * {
   display: block; /* IE fix */
-  padding: 1em;
   border-left: 15px solid transparent;
   background-clip: padding-box !important; /* no background on border */
 }
