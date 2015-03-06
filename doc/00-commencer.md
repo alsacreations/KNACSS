@@ -45,6 +45,12 @@ Libre à vous de le modifier selon les contraintes de votre projet.
 
 **Attention**, si vous importez KNACSS automatiquement via Bower par exemple (dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`.
 
+Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principaux seront :
+- le fichier `less/_00-config.less` contenant toutes les variables du projet à définir une fois pour toute au départ
+- le fichier `less/knacss.less` qui importe tous les fichiers que vous risquez d'employez dans votre projet (`layout.css`, `responsive.css`, `forms.css`, `print.css`, etc.).
+
+En cours de développement, il vous suffit de compiler ce fichier `less/knacss.less` (ou `less/knacss.scss`) pour obtenir vos fichiers CSS utiles.
+
 ### Préfixes navigateurs
 
 Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, ...) pour être certain que les propriétés CSS fonctionneront partout.
