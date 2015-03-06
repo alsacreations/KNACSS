@@ -52,11 +52,15 @@ Pour cela, appliquez simplement l'une ou l'autre de ces déclarations sur l'él�
 - `margin-left: auto` pour le pousser à droite sur sa ligne (ou avec la classe `.left`)
 - `margin-right: auto` pour le pousser à gauche sur sa ligne (ou avec la classe `.right`)
 
+![offset](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-offset.png)
+
 ## Mise en exergue
 
 Il est possible de mettre un élément particulier en exergue, en **doublant sa taille** par rapport aux autres, tout en conservant un agencement parfait de la grille.
 
 Pour ce faire, appliquez la classe `.flexitem-double` à cet élément.
+
+![mise en exergue](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-double.PNG)
 
 ## Pousser au début ou à la fin
 
@@ -64,6 +68,8 @@ Vous pouvez modifier l'ordre d'affichage des éléments au sein d'une grille à 
 
 - `.flexitem-first` (l'élément apparaîtra avant tous les autres) 
 - `.flexitem-last` (l'élément apparaîtra tout à la fin de la grille)
+
+![preums!](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-first.PNG)
 
 ## Plus loin avec les préprocesseurs
 
@@ -86,17 +92,17 @@ Il vous suffit de modifier les valeurs de ces variables de config pour répercut
 
 Indépendamment des variables de configuration, rien de vous empêche de créer une grille personnalisée en incluant directement l'un des deux mixins possibles dans vos éléments : 
 
-- `.grid(n,g)` pour personnaliser une grille de colonnes **égales**. Les arguments sont "n" = nombre de colonnes et "g" = largeur de gouttière (exemple ci-dessous)
-- `.uneven-grid(l,r,g)` pour personnaliser une grille de colonnes **inégales**. Les arguments sont "l" = pour le ratio de la colonne de gauche,  "r" = pour le ratio de la colonne de droite et "g" = largeur de gouttière (exemple ci-dessous)
+- `.grid(n)` pour personnaliser une grille de colonnes **égales**. Les arguments sont "n" = nombre de colonnes
+- `.uneven-grid(l,r)` pour personnaliser une grille de colonnes **inégales**. Les arguments sont "l" = pour le ratio de la colonne de gauche,  "r" = pour le ratio de la colonne de droite
 
 #### Grille de colonnes égales en LESS
 
-**Objectif : je souhaite que mon élément `.grid-container` crée une grille de 6 colonnes égales, séparées par une gouttière de 10px.**
+**Objectif : je souhaite que mon élément `.grid-container` crée une grille de 6 colonnes égales**
 
 LESS (fichier de développement) :
 ```css
 .grid-container { 
-	.grid(6, 10px); 
+	.grid(6); 
 }
 ```
 
@@ -107,13 +113,13 @@ CSS compilé (sans Autoprefixer) :
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -10px;
+  margin-left: -1em;
 }
 .grid-container > * {
   flex: 0 0 auto;
   width: 16.66666667%;
   display: block;  /* IE fix */
-  border-left: 10px solid transparent;
+  border-left: 1em solid transparent;
   background-clip: padding-box !important; /* no background on border */
 }
 ...
@@ -121,13 +127,13 @@ CSS compilé (sans Autoprefixer) :
 
 #### Grille de colonnes inégales en LESS
 
-**Objectif : je souhaite que mon élément `.grid-truc` crée une grille de 2 colonnes réparties en 2/3 et 1/3, séparées par une gouttière de 15px.**
+**Objectif : je souhaite que mon élément `.grid-truc` crée une grille de 2 colonnes réparties en 2/3 et 1/3.**
 
 LESS (fichier de développement) :
 
 ```css
 .grid-truc { 
-	.uneven-grid(2, 1, 15px);
+	.uneven-grid(2, 1);
 }
 ```
 
@@ -138,11 +144,11 @@ CSS compilé (sans Autoprefixer) :
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -15px;
+  margin-left: -1em;
 }
 .grid-truc > * {
   display: block; /* IE fix */
-  border-left: 15px solid transparent;
+  border-left: 1em solid transparent;
   background-clip: padding-box !important; /* no background on border */
 }
 .grid-truc > *:nth-child(odd) {
