@@ -103,14 +103,14 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
 .flexbox,
-.flexbox-v {
+.flexbox-h {
 	display : flex;
 	flex-wrap: wrap;
-	flex-direction: column;
+	flex-direction: row;
 }
 
-.flexbox-h {
-	flex-direction: row;
+.flexbox-v {
+	flex-direction: column;
 }
 
 .flexitem-fluid {

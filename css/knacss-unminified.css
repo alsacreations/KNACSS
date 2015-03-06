@@ -319,7 +319,7 @@ body > script {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 .flexbox,
-.flexbox-v {
+.flexbox-h {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -327,18 +327,18 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.flexbox-h {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+.flexbox-v {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .flexitem-fluid {
   -webkit-box-flex: 1;
