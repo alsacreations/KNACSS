@@ -11,31 +11,36 @@
 // - <div class="grid-2-1"> for an uneven columns grid container
 
 // Usage with preprocessors : if you're using LESS, you can config grids variables :
-// n = number of columns (default = 4) / g = gutter value (default = 1em)
-// example : .grid-container { .grid(12, 10px); }
+// n = number of columns (default = 4)
+// example : .grid-perso { .grid(12); }
 // ... or uneven grids :
-// left = left ratio column (default = 2) / right = right ratio column (default = 1) / gutter (default = 1em)
-// example : .grid-container { .uneven-grid(2, 1, 10px); }
+// left = left ratio column (default = 2) / right = right ratio column (default = 1)
+// example : .grid-perso { .uneven-grid(2, 1); }
 
-// LESS mixins for *equal* columns grid container
-// example : .grid-container { .grid(12, 10px); }
-.grid(@number:@number, @gutter:@gutter) {
+[class*="grid-"] {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-left: -@gutter;
+}
 
-& > * {
-		/* grid child can be any element */
-		flex: 0 0 auto;
+[class*="grid-"] > * {
+	flex: 0 0 auto;
+	display: block; /* IE fix */
+	border-left: @gutter solid transparent;
+	background-clip: padding-box !important; /* no background on border */
+}
+
+// LESS mixins for *equal* columns grid container
+// example : .grid-perso { .grid(12); }
+.grid(@number:@number) {
+	& > * {
 		width: (1/@number * 100) + 0%;
-		display: block; /* IE fix */
-		border-left: @gutter solid transparent;
-		background-clip: padding-box !important; /* no background on border */
 	}
 	& > .flexitem-double {
 		width: (2/@number * 100) + 0%;
 	}
+
 	@media (min-width: (@small-screen + 1)) and (max-width: @medium-screen) {
 		& > * {
 			width: 33.3333%;
@@ -62,7 +67,7 @@
 	}
 }
 
-/* Examples : will be compiled in CSS */
+// Examples : will be compiled in CSS
 
 .grid-2 {
 	.grid(2);
@@ -101,23 +106,14 @@
 }
 
 // LESS mixins for *unequal* columns grid container
-// example : .grid-container { .uneven-grid(2, 1, 10px); }
+// example : .grid-perso { .uneven-grid(2, 1); }
 
-.uneven-grid(@left:@left, @right:@right, @gutter:@gutter) {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-left: -@gutter;
+.uneven-grid(@left:@left, @right:@right) {
 
-& > * {
-	display: block; /* IE fix */
-		border-left: @gutter solid transparent;
-		background-clip: padding-box !important; /* no background on border */
-	}
-	 
 	& > *:nth-child(odd) {
 		width: (@left / (@left + @right)) * 100%;
 	}
+
 	& > *:nth-child(even) {
 		width: (@right / (@left + @right)) * 100%;
 	}
@@ -130,7 +126,7 @@
 }
 
 
-/* Examples : will be compiled in CSS */
+// Examples : will be compiled in CSS
 
 .grid-2-1 {
 	.uneven-grid(2,1);

@@ -22,10 +22,10 @@ Au sein de la version CSS de KNACSS, l'ensemble des préfixes est présent, **vo
 Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [un exemple "bac à sable"](http://codepen.io/raphaelgoetter/full/zxBMLW/) sur CodePen.
 
 **Exemple de grille de colonnes égales :**
-![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
+![grille de largeur égale](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
 
 **Exemple de grille de colonnes inégales (3/4 - 1/4) :**
-![enter image description here](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-uneven.png)
+![grille de largeur inégale](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-uneven.png)
 
 ## Mise en oeuvre
 
@@ -114,19 +114,19 @@ CSS compilé (sans Autoprefixer) :
   width: 16.66666667%;
   display: block;  /* IE fix */
   border-left: 10px solid transparent;
-  background-clip: padding-box !important;   /* no background on border */
+  background-clip: padding-box !important; /* no background on border */
 }
 ...
 ```
 
 #### Grille de colonnes inégales en LESS
 
-**Objectif : je souhaite que mon élément `<section>` crée une grille de 2 colonnes réparties en 2/3 et 1/3, séparées par une gouttière de 15px.**
+**Objectif : je souhaite que mon élément `.grid-truc` crée une grille de 2 colonnes réparties en 2/3 et 1/3, séparées par une gouttière de 15px.**
 
 LESS (fichier de développement) :
 
 ```css
-section { 
+.grid-truc { 
 	.uneven-grid(2, 1, 15px);
 }
 ```
@@ -134,21 +134,21 @@ section {
 CSS compilé (sans Autoprefixer) :
 
 ```css
-section {
+.grid-truc {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: -15px;
 }
-section > * {
+.grid-truc > * {
   display: block; /* IE fix */
   border-left: 15px solid transparent;
   background-clip: padding-box !important; /* no background on border */
 }
-section > *:nth-child(odd) {
+.grid-truc > *:nth-child(odd) {
   width: 66.66666667%;
 }
-section > *:nth-child(even) {
+.grid-truc > *:nth-child(even) {
   width: 33.33333333%;
 }
 ...

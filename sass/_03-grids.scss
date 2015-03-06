@@ -12,58 +12,65 @@
 
 // Usage with preprocessors : if you're using Sass, you can config grids variables :
 // n = number of columns (default = 4) / g = gutter value (default = 1em)
-// example : .grid-container { @include grid(12, 10px); }
+// example : .grid-perso { @include grid(12, 10px); }
 // ... or uneven grids :
 // left = left ratio column (default = 2) / right = right ratio column (default = 1) / gutter (default = 1em)
-// example : .grid-container { @include uneven-grid(2, 1, 10px); }
+// example : .grid-perso { @include uneven-grid(2, 1, 10px); }
 
-// Sass mixins for *equal* columns grid container
-// example : .grid-container { @include grid(12, 10px); }
-@mixin grid($number:$number,$gutter:$gutter) {
+[class*="grid-"] {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-left: -$gutter;
+}
+
+[class*="grid-"] > * {
+	flex: 0 0 auto;
+	display: block; /* IE fix */
+	border-left: $gutter solid transparent;
+	background-clip: padding-box !important; /* no background on border */
+}
+
+// Sass mixins for *equal* columns grid container
+// example : .grid-perso { @include grid(12); }
+@mixin grid($number:$number) {
 
 	& > * {
-		/* grid child can be any element */
-		flex: 0 0 auto;
 		width: (1/$number * 100) + 0%;
-		display: block; /* IE fix */
-		padding: 1em;
-		border-left: $gutter solid transparent;
-		background-clip: padding-box !important; /* no background on border */
 	}
 	& > .flexitem-double {
 		width: (2/$number * 100) + 0%;
 	}
+
 	@media (min-width: ($small-screen + 1)) and (max-width: $medium-screen) {
 		& > * {
-				width: 33.3333%;
+			width: 33.3333%;
 		}
 		& > .flexitem-double {
-				width: 66.6666%;
+			width: 66.6666%;
 		}
 	}
+
 	@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
 		& > * {
-				width: 50%;
+			width: 50%;
 		}
 		& > .flexitem-double {
-				width: 100%;
+			width: 100%;
 		}
 	}
+
 	@media (max-width: $tiny-screen) {
 		& > * {
-				width: 100%;
+			width: 100%;
 		}
 		& > .flexitem-double {
-				width: 100%;
+			width: 100%;
 		}
 	}
 }
 
-/* Examples : will be compiled in CSS */
+// Examples : will be compiled in CSS
 
 .grid-2 {
 	@include grid(2);
@@ -102,23 +109,14 @@
 }
 
 // LESS mixins for *unequal* columns grid container
-// example : .grid-container { @include uneven-grid(2, 1, 10px); }
+// example : .grid-perso { @include uneven-grid(2, 1); }
 
-@mixin uneven-grid($left:$left, $right:$right, $gutter:$gutter) {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-left: -$gutter;
+@mixin uneven-grid($left:$left, $right:$right) {
 
-& > * {
-	display: block; /* IE fix */
-		border-left: $gutter solid transparent;
-		background-clip: padding-box !important; /* no background on border */
-	}
-	 
 	& > *:nth-child(odd) {
 		width: ($left / ($left + $right)) * 100%;
 	}
+
 	& > *:nth-child(even) {
 		width: ($right / ($left + $right)) * 100%;
 	}
@@ -131,7 +129,7 @@
 }
 
 
-/* Examples : will be compiled in CSS */
+// Examples : will be compiled in CSS
 
 .grid-2-1 {
 	@include uneven-grid(2,1);
