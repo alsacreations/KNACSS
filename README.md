@@ -38,13 +38,23 @@ Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc
 
 ## Préprocesseurs
 
-### Vendor Prefixes
+KNACSS est conçu et pensé pour être adapté aux préprocesseurs que sont LESS et Sass. Nous employons LESS en interne, nos fichiers de travail sont donc des `.less` et non des `.css` (cela fonctionne aussi avec Sass).
 
-If you use one of the pre-processed version of KNACSS (LESS / Sass), beware that all the properties are declared **without vendor prefixes** (-webkit-,-moz-,-ms-,…), to gain clarity, and length of initial code.
+Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/less/_00-config.less) contenant toutes les variables du projet est intégré.
+Libre à vous de le modifier selon les contraintes de votre projet.
 
-You will certainly need to add these vendor prefixes yourself (this is usually done automatically today with Autoprefixer, [Mixture](http://mixture.io), [Prepros](http://alphapixels.com/prepros/), [Grunt](http://gruntjs.com), etc.).
+**Attention**, si vous importez KNACSS automatiquement via Bower par exemple (dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`.
+
+### Préfixes navigateurs
+
+Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, ...) pour être certain que les propriétés CSS fonctionneront partout.
+
+Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est présent, **vous n'avez donc pas à vous en soucier**.
+
+**Par contre, dans les versions LESS et Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
 
 ## Liens utiles
 
-* Website and download : http://knacss.com
-* Documentation : http://knacss.com/doc.html
+* Site web de KNACSS : http://knacss.com
+* [**Documentation détaillée**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc)
+* Sur Alsacreations.com : ["découverte du framework KNACSS"](http://www.alsacreations.com/tuto/lire/1577-decouverte-du-framework-css-KNACSS.html)
