@@ -25,7 +25,7 @@ KNACSS a prévu des classes spécifiques pour mieux vous en sortir avec les flot
 HTML :
 ```html
 <div class="txtcenter">
-    <img src="licorne.png">
+    <img src="licorne.png" alt="aïe ça pique">
 </div>
 ```
 
