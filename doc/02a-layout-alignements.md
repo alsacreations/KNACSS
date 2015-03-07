@@ -40,7 +40,23 @@ HTML :
 
 ### Centrer verticalement
 
-HTML :
+![centrer verticalement](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/02-layout.png)
+
+Version table-cell (HTML) :
+```html
+<section class="col">
+    <div class="w50 center">centré horizontalement et verticalement</div>
+</section>
+```
+
+Version table-cell (CSS) :
+```css
+section {
+    vertical-align: middle;
+}
+```
+
+Version flexbox (HTML):
 ```html
 <section class="flexbox-v">
     <div class="center w50">centré horizontalement et verticalement</div>

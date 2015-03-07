@@ -1209,18 +1209,6 @@ s,m,l,n = small, medium, large, none
 /* ==Responsive small                 */
 /* ---------------------------------- */
 @media (min-width: 481px) and (max-width: 768px) {
-  /* quick small resolution reset */
-  .mod,
-  .col,
-  fieldset {
-    display: block !important;
-    float: none !important;
-    clear: none !important;
-    width: auto !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    border: 0;
-  }
   /* quick reset in small resolution and less */
   .w600p,
   .w700p,
@@ -1312,6 +1300,18 @@ s,m,l,n = small, medium, large, none
 /* ==Responsive tiny                  */
 /* ---------------------------------- */
 @media (max-width: 480px) {
+  /* quick tiny resolution reset */
+  .mod,
+  .col,
+  fieldset {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
   .w300p,
   .w400p,
   .w500p {
