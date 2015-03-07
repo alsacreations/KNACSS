@@ -1,154 +1,48 @@
-# Alignements et positionnements
+# Alignements
 
-## Différents choix
+Différentes classes utilitaires intégrées à KNACSS sont prévues pour gérer les alignements d'éléments.
 
-- positionnement flottant
-- positionnement avec `display: inline-block`
-- positionnement avec `display: table-cell`
-- positionnement avec Flexbox
+- les textes et contenus "inline" sont gérés via les classes `.txtleft`, `.txtright` et `.txtcenter` qui agiront sur la propriété CSS `text-align`
+- les blocs sont alignés avec les classes `.left`, `.right` et `.center` qui affectent la valeur `auto` à la propriété `margin`
+- les flottements sont gérés via les classes `.fl` (pour `float: left`) et `.fr` (pour `float: right`)
 
-Il n'y a pas de mystère : chaque type de positionnement est capable de répondre à différents types de contraintes. Il n'y a pas de meilleur choix qu'un autre.
+## Cas des flottants et les .mod
 
-Votre décision pourra être guidée par les indices suivants :
-- il est généralement plus profitable de ne pas opter pour des positionnement hors-flux (`float`, `position: absolute`)
-- Flexbox est certainement le modèle le plus polyvalent et propre, mais n'est compatible qu'à partir de IE10+.
+Le positionnement flottant compte parmi les plus employés mais n'est pas exempt d'inconvénients. Le principal étant d'être un positionnement hors du flux qui nécessitera des ajustements (clearfix et autres anti-débordements).
+
+KNACSS a prévu des classes spécifiques pour mieux vous en sortir avec les flottants :
+
+- **le super élément `.mod`**. Il a plein d'avantages: il contient les flottants (ils ne débordent pas) et il ne s'écoule pas autour d'un frère flottant (il s'affiche proprement à côté) et il crée un [contexte "BFC"](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html)
+- `.clearfix`. Les éléments disposant de cette classe contiennent les flottants, tel les `.mod`
+- les éléments `.clear`, `.line` et `.row` bénéficient d'un autre pouvoir : celui de toujours se pousser sous un flottant précédent. Il sont dédiés aux empilements verticaux des contenus.
 
 ## Concrètement : je veux faire quoi ?
-
-### Deux blocs voisins de largeur fixe
-
-Les choix offerts avec KNACSS :
-
-#### flottant et flottant
-
-La classe `.fl` pour `float: left` permet à un élément d'être flottant à gauche.
-
-Il vous suffit de faire flotter vos deux éléments et de leur attribuer la largeur souhaitée pour qu'ils s'affichent l'un à côté de l'autre :
-
-HTML :
-```html
-<div class="fl w400px">premier</div>
-<div class="fl w400px">deuxième</div>
-```
-
-- **Avantage :** simple, rapide, intuitif, hyper compatible
-- **Inconvénient :** positionnement hors du flux, nécessitera des ajustements (clearfix et autres anti-débordements)
-
-#### inline-block et inline-block
-
-La propriété `display: inline-block` (sous forme de classe `.inbl` chez KNACSS) permet à un élément de s'afficher tel un "inline" tout en étant dimensionné.
-
-HTML :
-```html
-<div class="inbl w400px">premier</div>
-<div class="inbl w400px">deuxième</div>
-```
-
-- **Avantage :** positionnement dans le flux, compatible dès IE8
-- **Inconvénient :** un espace "whitespace" apparaîtra entre les deux div et nécessitera de coller les balises ou de bidouiller en CSS pour être supprimé
-
-#### table-cell et table-cell
-
-HTML :
-```html
-<div class="row">
-    <div class="col w400px">premier</div>
-    <div class="col w400px">deuxième</div>
-</div>
-```
-
-- **Avantage :** positionnement dans le flux, compatible dès IE8
-- **Inconvénient :**
-
-#### flexbox
-
-HTML :
-```html
-<div class="flexbox">
-    <div class="w400px">premier</div>
-    <div class="w400px">deuxième</div>
-</div>
-```
-
-- **Avantage :**
-- **Inconvénient :**
-
-### Deux blocs voisins dont un fixe et un fluide
-
-Les choix offerts avec KNACSS :
-
-#### flottant et flottant
-
-Pas possible [Résolu]
-
-#### inline-block et inline-block
-
-Pas possible [Résolu]
-
-#### table-cell et table-cell
-
-HTML :
-```html
-<div class="row">
-    <div class="col w400px">premier</div>
-    <div class="col">deuxième</div>
-</div>
-```
-
-#### flexbox
-
-HTML :
-```html
-<div class="flexbox">
-    <div class="w400px">premier</div>
-    <div class="flexitem-fluid">deuxième</div>
-</div>
-```
-
-### Deux blocs voisins de même hauteur
-
-Les choix offerts avec KNACSS :
-
-#### flottant et flottant
-
-Pas possible [Résolu]
-
-#### inline-block et inline-block
-
-Pas possible [Résolu]
-
-#### table-cell et table-cell
-
-Par défaut, les éléments constituant des "cellules de tableau", donc `table-cell` ont automatiquement la même hauteur entre frères. Il n'y a donc rien à faire si l'on opte pour ce positionnement : ça marche tout seul.
-
-HTML :
-```html
-<div class="row">
-    <div class="col">premier</div>
-    <div class="col">deuxième</div>
-</div>
-```
-
-#### flexbox
-
-Là aussi c'est automatique : les enfants d'un conteneur `flexbox` ont tous par défaut la même hauteur.
-
-HTML :
-```html
-<div class="flexbox">
-    <div>premier</div>
-    <div>deuxième</div>
-</div>
-```
-
-### Plusieurs blocs voisins de même taille
-
-Si vous souhaitez réaliser des constructions de plusieurs éléments de même taille (fixe ou fluide) avec ou sans espace entre les éléments (gouttière), je vous invite à prendre connaissance des possibilités de **grilles** offertes par KNACSS.
 
 ### Centrer horizontalement
 
 #### Du texte ou une image
 
+HTML :
+```html
+<div class="txtcenter">
+    <img src="licorne.png">
+</div>
+```
+
 #### Un bloc
 
+HTML :
+```html
+<section>
+    <div class="center w50">centré horizontalement</div>
+</section>
+```
+
 ### Centrer verticalement
+
+HTML :
+```html
+<section class="flexbox-v">
+    <div class="center w50">centré horizontalement et verticalement</div>
+</section>
+```

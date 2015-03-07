@@ -159,12 +159,8 @@ HTML :
 
 ### Plusieurs blocs voisins de même taille
 
+![grilles](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-layout4.png)
+
 Si vous souhaitez réaliser des constructions de plusieurs éléments de même taille (fixe ou fluide) avec ou sans espace entre les éléments (gouttière), je vous invite à prendre connaissance des possibilités de **grilles** offertes par KNACSS.
 
-### Centrer horizontalement
-
-#### Du texte ou une image
-
-#### Un bloc
-
-### Centrer verticalement
+Voir **[la Doc au point 03-grilles](https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md)**.
