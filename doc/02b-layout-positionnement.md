@@ -1,6 +1,12 @@
-# Alignements et positionnements
+# Positionnements avec KNACSS
 
-## Différents choix
+Au-delà des alignements d'éléments, KNACSS permet de positionner et d'architecturer vos gabarits à travers plusieurs solutions.
+
+Dans cette page de documentation, nous étudierons en détail chaque cas concret auquel vous risquez d'être confronté et proposerons une réponse adaptée.
+
+## Différents choix offerts
+
+Les types de positionnements inclus nativement dans KNACSS sont les suivants :
 
 - positionnement flottant
 - positionnement avec `display: inline-block`
@@ -13,9 +19,11 @@ Votre décision pourra être guidée par les indices suivants :
 - il est généralement plus profitable de ne pas opter pour des positionnement hors-flux (`float`, `position: absolute`)
 - Flexbox est certainement le modèle le plus polyvalent et propre, mais n'est compatible qu'à partir de IE10+.
 
-## Cas concrets : je veux faire quoi ?
+## Concrètement : je veux faire quoi ?
 
 ### Deux blocs voisins de largeur fixe
+
+![Deux blocs voisins de largeur fixe](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-layout1.png)
 
 Les choix offerts avec KNACSS :
 
@@ -27,8 +35,8 @@ Il vous suffit de faire flotter vos deux éléments et de leur attribuer la larg
 
 HTML :
 ```html
-<div class="fl w400px">premier</div>
-<div class="fl w400px">deuxième</div>
+<div class="fl w400p">premier</div>
+<div class="fl w400p">deuxième</div>
 ```
 
 - **Avantage :** simple, rapide, intuitif, hyper compatible
@@ -40,8 +48,8 @@ La propriété `display: inline-block` (sous forme de classe `.inbl` chez KNACSS
 
 HTML :
 ```html
-<div class="inbl w400px">premier</div>
-<div class="inbl w400px">deuxième</div>
+<div class="inbl w400p">premier</div>
+<div class="inbl w400p">deuxième</div>
 ```
 
 - **Avantage :** positionnement dans le flux, compatible dès IE8
@@ -52,8 +60,8 @@ HTML :
 HTML :
 ```html
 <div class="row">
-    <div class="col w400px">premier</div>
-    <div class="col w400px">deuxième</div>
+    <div class="col w400p">premier</div>
+    <div class="col w400p">deuxième</div>
 </div>
 ```
 
@@ -65,8 +73,8 @@ HTML :
 HTML :
 ```html
 <div class="flexbox">
-    <div class="w400px">premier</div>
-    <div class="w400px">deuxième</div>
+    <div class="w400p">premier</div>
+    <div class="w400p">deuxième</div>
 </div>
 ```
 
@@ -75,11 +83,17 @@ HTML :
 
 ### Deux blocs voisins dont un fixe et un fluide
 
+![Deux blocs voisins de largeur fixe et fluide](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-layout2.png)
+
 Les choix offerts avec KNACSS :
 
-#### flottant et flottant
+#### flottant et .mod
 
-Pas possible [Résolu]
+HTML :
+```html
+<div class="fl w400p">premier</div>
+<div class="mod">deuxième</div>
+```
 
 #### inline-block et inline-block
 
@@ -90,7 +104,7 @@ Pas possible [Résolu]
 HTML :
 ```html
 <div class="row">
-    <div class="col w400px">premier</div>
+    <div class="col w400p">premier</div>
     <div class="col">deuxième</div>
 </div>
 ```
@@ -100,12 +114,14 @@ HTML :
 HTML :
 ```html
 <div class="flexbox">
-    <div class="w400px">premier</div>
+    <div class="w400p">premier</div>
     <div class="flexitem-fluid">deuxième</div>
 </div>
 ```
 
 ### Deux blocs voisins de même hauteur
+
+![Deux blocs voisins de même hauteur](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-layout3.png)
 
 Les choix offerts avec KNACSS :
 
