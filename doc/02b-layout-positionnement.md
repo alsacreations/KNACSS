@@ -66,7 +66,7 @@ HTML :
 ```
 
 - **Avantage :** positionnement dans le flux, compatible dès IE8
-- **Inconvénient :**
+- **Inconvénient :** Le positionnement tabulaire observe [des règles parfois complexes](http://www.alsacreations.com/tuto/lire/1522-le-modele-tabulaire-en-css.html) et surprenantes pour les non habitués.
 
 #### flexbox
 
@@ -78,8 +78,8 @@ HTML :
 </div>
 ```
 
-- **Avantage :**
-- **Inconvénient :**
+- **Avantage :** fluide, propre, simple
+- **Inconvénient :** compatibilité IE10 minimum
 
 ### Deux blocs voisins dont un fixe et un fluide
 
