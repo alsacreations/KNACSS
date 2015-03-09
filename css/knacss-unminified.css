@@ -321,37 +321,46 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .flexbox,
 .flexbox-h,
 .flexbox-v {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 .flexbox-v {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 .flexitem-fluid {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .flexitem-first {
+  -webkit-box-ordinal-group: 0;
   -webkit-order: -1;
       -ms-flex-order: -1;
           order: -1;
 }
 .flexitem-medium {
+  -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
       -ms-flex-order: 0;
           order: 0;
 }
 .flexitem-last {
+  -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1;
@@ -363,9 +372,12 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 /* ==Grids                            */
 /* ---------------------------------- */
 [class*="grid-"] {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -375,13 +387,14 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   margin-left: -1em;
 }
 [class*="grid-"] > * {
+  -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   display: block;
   /* IE fix */
   border-left: 1em solid transparent;
-  background-clip: padding-box !important
+  background-clip: padding-box !important;
   /* no background on border */
 }
 .grid-2 > * {
@@ -1076,6 +1089,25 @@ s,m,l,n = small, medium, large, none
 }
 .pll {
   padding-left: 40px;
+}
+/* ----------------------------- */
+/* == quick mobile reset         */
+/* ----------------------------- */
+.btn:focus,
+input:focus,
+button:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+}
+.btn::-­moz-­focus-­inner,
+input::-­moz-­focus-­inner,
+button::-­moz-­focus-­inner {
+  border: 0;
 }
 /* ----------------------------- */
 /* ==desktop and HD devices      */
@@ -1810,3 +1842,9 @@ img.wp-smiley {
 .gallery-caption {
   display: block;
 }
+/* ----------------------------- */
+/* ==own stylesheet              */
+/* ----------------------------- */
+/* Here should go your own CSS styles */
+/* You can also link them with a LESS @import */
+/* @import "my-styles.less"; */
