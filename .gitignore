@@ -163,3 +163,6 @@ pip-log.txt
 .DS_Store
 /README 1.md
 *.cfg
+
+# parce qu'on s'en fout
+*.log
