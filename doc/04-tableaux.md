@@ -1,6 +1,6 @@
 # Tableaux de données
 
-KNACSS propose une feuille de style minimale appliquée aux tableaux de données ainsi qu'aus éléments disposant d'une classe `.table`.
+KNACSS propose une feuille de style minimale appliquée aux tableaux de données ainsi qu'aux éléments disposant d'une classe `.table`.
 
 Pour débuter, KNACSS impose un modèle d'affichage fixé à tous les tableaux via `table-layout: fixed;`. Ainsi, ce ne sera plus le contenu qui décidera de la largeur des cellules, mais ce que vous aurez spécifié dans les tailles CSS.
 
