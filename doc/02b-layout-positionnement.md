@@ -164,3 +164,9 @@ HTML :
 Si vous souhaitez réaliser des constructions de plusieurs éléments de même taille (fixe ou fluide) avec ou sans espace entre les éléments (gouttière), je vous invite à prendre connaissance des possibilités de **grilles** offertes par KNACSS.
 
 Voir **[la Doc au point 03-grilles](https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md)**.
+
+### Schnaps.it, générateur de templates KNACSS
+
+Alsacréations tient à jour un générateur de gabarits HTML/CSS basé sur le framework KNACSS, **[Schnaps.it](http://schnaps.it/)**, n'hésitez pas à en user et en abuser&nbsp;!
+
+![grilles](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/schnapsit.png)
