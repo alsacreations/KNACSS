@@ -19,7 +19,7 @@ Au sein de la version CSS de KNACSS, l'ensemble des préfixes est présent, **vo
 
 ## Exemple concret
 
-Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [un exemple "bac à sable"](http://codepen.io/raphaelgoetter/full/zxBMLW/) sur CodePen.
+Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [un exemple "bac à sable"](http://codepen.io/raphaelgoetter/pen/BybOag?editors=110) sur CodePen.
 
 **Exemple de grille de colonnes égales :**
 ![grille de largeur égale](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
