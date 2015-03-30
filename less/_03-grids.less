@@ -21,48 +21,40 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	margin-left: -@gutter;
 }
 
 [class*="grid-"] > * {
 	flex: 0 0 auto;
 	display: block; /* IE fix */
-	border-left: @gutter solid transparent;
-	background-clip: padding-box !important; /* no background on border */
+	width: ~'calc(100% * 1 / @{number} - @{gutter})';
+	margin-left: @gutter;
 }
 
 // LESS mixins for *equal* columns grid container
 // example : .grid-perso { .grid(12); }
-.grid(@number:@number) {
-	& > * {
-		width: (1/@number * 100) + 0%;
+.grid(@number:@number, @gutter:@gutter) { 
+ & > * {
+	  width: ~'calc(100% * 1 / @{number} - @{gutter})';
 	}
 	& > .flexitem-double {
-		width: (2/@number * 100) + 0%;
-	}
-
-	@media (min-width: (@small-screen + 1)) and (max-width: @medium-screen) {
-		& > * {
-			width: 33.3333%;
-		}
-		& > .flexitem-double {
-			width: 66.6666%;
-		}
+		width: ~'calc(100% * 2 / @{number} - @{gutter})';
 	}
 	@media (min-width: (@tiny-screen + 1)) and (max-width: @small-screen) {
 		& > * {
-			width: 50%;
+			width: ~'calc(100% * 1 / 2 - @{gutter})';
 		}
 		& > .flexitem-double {
-			width: 100%;
+			width: ~'calc(100% - @{gutter})';
 		}
 	}
 	@media (max-width: @tiny-screen) {
 		& > * {
-			width: 100%;
+			width: ~'calc(100% - @{gutter})';
 		}
 		& > .flexitem-double {
-			width: 100%;
+			width: ~'calc(100% - @{gutter})';
 		}
 	}
 }
@@ -107,20 +99,18 @@
 
 // LESS mixins for *unequal* columns grid container
 // example : .grid-perso { .uneven-grid(2, 1); }
-
-.uneven-grid(@left:@left, @right:@right) {
-
+ .uneven-grid(@left:@left, @right:@right, @gutter:@gutter) { 
 	& > *:nth-child(odd) {
-		width: (@left / (@left + @right)) * 100%;
+		@size: (@left / (@left + @right)) * 100%;
+		width: ~'calc(@{size} - @{gutter})';
 	}
-
 	& > *:nth-child(even) {
-		width: (@right / (@left + @right)) * 100%;
+		@size: (@right / (@left + @right)) * 100%;
+		width: ~'calc(@{size} - @{gutter})';
 	}
-
 	@media (max-width: @tiny-screen) {
 		& > *:nth-child(n) {
-			width: 100%;
+			width: ~'calc(100% - @{gutter})';
 		}
 	}
 }
