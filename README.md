@@ -26,6 +26,8 @@ Selon votre environnement de travail vous suffit de récupérer la feuille de st
 
 _Les versions LESS et Sass seront bien évidemment plus malléables grâce à l'apport de variables et fonctions._
 
+À noter que KNACSS est basé sur un socle [Normalize.css](http://necolas.github.io/normalize.css/), célèbre - et éprouvé - reset CSS employé par Twitter, Github, Bootstrap, Guardian, etc.
+
 ## Usage
 
 KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos goûts), qu'il vous suffit d'ajouter à votre page HTML :
