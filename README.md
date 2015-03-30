@@ -58,3 +58,4 @@ Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est pré
 * Site web de KNACSS : http://knacss.com
 * [**Documentation détaillée**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc)
 * Sur Alsacreations.com : ["découverte du framework KNACSS"](http://www.alsacreations.com/tuto/lire/1577-decouverte-du-framework-css-KNACSS.html)
+* Générateur de gabarits HTML/CSS : ["Schnaps.it"](http://schnaps.it/)
