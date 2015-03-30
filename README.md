@@ -4,7 +4,11 @@ http://www.knacss.com
 
 KNACSS, c'est un peu comme une feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign).
 
+<hr>
+
 **KNACSS 4 est sorti, voir toutes les modifications dans le [Changelog](https://github.com/raphaelgoetter/KNACSS/blob/master/changelog.md)**
+
+<hr>
 
 KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement !
 
