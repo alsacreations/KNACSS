@@ -49,7 +49,7 @@ blockquote {
 	padding-left: 3em;
 }
 
-blockquote:before {
+blockquote::before {
 	content: "\201C";
 	position: absolute;
 	left: 0;
@@ -66,7 +66,7 @@ blockquote > footer {
 	color: rgba(0, 0, 0, .7);
 }
 
-blockquote > footer:before {
+blockquote > footer::before {
 	content: "\2014 \0020";
 }
 
