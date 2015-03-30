@@ -1551,6 +1551,11 @@ s,m,l,n = small, medium, large, none
     margin-right: 0 !important;
     border: 0;
   }
+  .flexbox {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .w300p,
   .w400p,
   .w500p {
