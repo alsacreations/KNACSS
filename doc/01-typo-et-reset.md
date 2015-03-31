@@ -1,6 +1,6 @@
 # Typographie
 
-Accessible avant tout, KNACSS propose une gamme de tailles de polices d'unités fluides (`em`, `rem`) plutôt que le pixel, figé et non malléable, donc moint accessible.
+Accessible avant tout, KNACSS propose une gamme de tailles de polices d'unités fluides (`em`, `rem`) plutôt que le pixel, figé et non malléable, donc moins accessible.
 
 En résumé, voilà les bases typographiques de KNACSS :
 
