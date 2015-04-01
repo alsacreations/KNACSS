@@ -25,7 +25,7 @@ Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [
 
 HTML :
 ```html
-<div class="grid-4"> /* parent div (ou autre) de 4 colonnes */
+<div class="grid-4"> <!-- parent div (ou autre) de 4 colonnes -->
     <div>un div ou n'importe quoi d'autre</div>
     <div>un 2è div ou n'importe quoi d'autre</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
@@ -40,7 +40,7 @@ Résultat :
 
 HTML :
 ```html
-<div class="grid-3-1"> /* parent div (ou autre) de 3-1 colonnes */
+<div class="grid-3-1"> <!-- parent div (ou autre) de 3-1 colonnes -->
     <div>un div ou n'importe quoi d'autre</div>
     <div>un 2è div ou n'importe quoi d'autre</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
@@ -76,6 +76,17 @@ Pour cela, appliquez simplement l'une ou l'autre de ces déclarations sur l'él�
 - `margin-left: auto` pour le pousser à droite sur sa ligne (ou avec la classe `.left`)
 - `margin-right: auto` pour le pousser à gauche sur sa ligne (ou avec la classe `.right`)
 
+HTML :
+```html
+<div class="grid-4">
+    <div>un div ou n'importe quoi d'autre</div>
+    <div class="right">je suis poussé à droite</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
+
+Résultat :
 ![offset](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-offset.png)
 
 ## Mise en exergue
@@ -84,6 +95,17 @@ Il est possible de mettre un élément particulier en exergue, en **doublant sa 
 
 Pour ce faire, appliquez la classe `.flexitem-double` à cet élément.
 
+HTML :
+```html
+<div class="grid-4">
+    <div>un div ou n'importe quoi d'autre</div>
+    <div class="flexitem-double">je suis deux fois plus large que mes frères</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
+
+Résultat :
 ![mise en exergue](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-double.PNG)
 
 ## Pousser au début ou à la fin
@@ -93,6 +115,17 @@ Vous pouvez modifier l'ordre d'affichage des éléments au sein d'une grille à 
 - `.flexitem-first` (l'élément apparaîtra avant tous les autres) 
 - `.flexitem-last` (l'élément apparaîtra tout à la fin de la grille)
 
+HTML :
+```html
+<div class="grid-4">
+    <div>un div ou n'importe quoi d'autre</div>
+    <div class="flexitem-first">je m'affiche avant tous mes frères</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
+
+Résultat :
 ![preums!](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-first.PNG)
 
 ## Plus loin avec les préprocesseurs
