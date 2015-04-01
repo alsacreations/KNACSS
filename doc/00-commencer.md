@@ -45,7 +45,7 @@ KNACSS est conçu et pensé pour être adapté aux préprocesseurs que sont LESS
 Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/less/_00-config.less) contenant toutes les variables du projet est intégré.
 Libre à vous de le modifier selon les contraintes de votre projet.
 
-**Attention**, si vous importez KNACSS automatiquement via Bower par exemple (dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`.
+**Attention**, si vous importez KNACSS automatiquement via Bower (par exemple dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`.
 
 Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principaux seront :
 - le fichier `less/_00-config.less` contenant toutes les variables du projet à définir une fois pour toute au départ
