@@ -1,9 +1,9 @@
 # changelog v4.1.1 (30 mars 2015)
 
-## TL/DR
+## Vite fait
 
 * grosse remise à jour, orientée vers les technos modernes (flexbox, rem, calc,  ...) et moins de "bidouille"
-* fin du support d'IE6-IE8
+* fin du support d'IE6-IE8 Si vous souhaitez utiliser KNACSS sur d'anciens navigateurs, préférez la [Version 3](https://github.com/raphaelgoetter/KNACSS/tree/3.1.0)
 * ajout du reset [normalize.css](http://necolas.github.io/normalize.css/)
 * un grand merci à @7studio pour ses conseils et observations sur la version beta de KNACSS 4.0
 * attention : rétrocompatibilité non préservée pour certaines classes ( .left, .start, .txtleft, .fl, .table-, .flex-start, .flex-end)
