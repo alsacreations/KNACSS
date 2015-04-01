@@ -22,9 +22,33 @@ Au sein de la version CSS de KNACSS, l'ensemble des préfixes est présent, **vo
 Pour vous faire une idée, et jouer avec les valeurs possibles, vous trouverez [un exemple "bac à sable"](http://codepen.io/raphaelgoetter/pen/BybOag?editors=110) sur CodePen.
 
 **Exemple de grille de colonnes égales :**
+
+HTML :
+```html
+<div class="grid-4"> /* parent div (ou autre) de 4 colonnes */
+    <div>un div ou n'importe quoi d'autre</div>
+    <div>un 2è div ou n'importe quoi d'autre</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
+
+Résultat :
 ![grille de largeur égale](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-even.png)
 
 **Exemple de grille de colonnes inégales (3/4 - 1/4) :**
+
+HTML :
+```html
+<div class="grid-3-1"> /* parent div (ou autre) de 3-1 colonnes */
+    <div>un div ou n'importe quoi d'autre</div>
+    <div>un 2è div ou n'importe quoi d'autre</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
+
+Résultat :
 ![grille de largeur inégale](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-grid-uneven.png)
 
 ## Mise en oeuvre
