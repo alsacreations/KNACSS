@@ -1,0 +1,248 @@
+/* ----------------------------- */
+/* == soft reset                 */
+/* ----------------------------- */
+
+/* switching to border-box model for all elements */
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+ul,
+ol {
+	padding-left: 2em;
+}
+
+ul.unstyled {
+	list-style: none;
+}
+
+img {
+	vertical-align: middle;
+}
+
+/* height auto only for non SVG images */
+img:not([src$=".svg"]) {
+	height: auto;
+}
+
+blockquote,
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* ----------------------------- */
+/* == typography                 */
+/* ----------------------------- */
+
+html {
+	
+	/* set base font-size to equiv "10px", which is adapted to rem unit */
+	font-size: 62.5%;
+	
+	/* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+	/* thanks to @guardian, @victorbritopro and @eQRoeil */
+	font-size: calc(1em * 0.625);
+	
+	/* disallow text zooming on orientation change (non standard property) */
+	-webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
+}
+
+body {
+	
+	/* set body font-size in em (1.4em equiv "14px") */
+	font-size: ($base-font-size / 10px) + em;
+	
+	background-color: $base-background;
+	color: $base-color;
+	font-family: $font-stack-common;
+	line-height: $line-height;
+}
+
+a {
+	color: $base-color-link;
+	&:hover, &:focus, &:active {
+		color: $base-color-link-hover;
+	}
+}
+
+/* font-sizing for content */
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details,
+figure {
+	margin-top: 0.75em;
+	margin-bottom: 0;
+	line-height: $line-height;
+}
+
+h1, .h1-like {
+	font-size: $h1-size;
+	font-family: $font-stack-headings;
+}
+
+h2, .h2-like {
+	font-size: $h2-size;
+	font-family: $font-stack-headings;
+}
+
+h3, .h3-like {
+	font-size: $h3-size;
+}
+
+h4, .h4-like {
+	font-size: $h4-size;
+}
+
+h5, .h5-like {
+	font-size: $h5-size;
+}
+
+h6, .h6-like {
+	font-size: $h6-size;
+}
+
+/* alternate font-sizing */
+.smaller {
+	font-size: 0.6em;
+}
+
+.small {
+	font-size: 0.8em;
+}
+
+.big {
+	font-size: 1.2em;
+}
+
+.bigger {
+	font-size: 1.5em;
+}
+
+.biggest {
+	font-size: 2em;
+}
+
+code,
+pre,
+samp,
+kbd {
+	/* IE fix */
+	white-space: pre-line;
+	white-space: pre-wrap;
+	font-family: $font-stack-monospace;
+	line-height: normal;
+}
+
+em,
+.italic,
+address,
+cite,
+i,
+var {
+	font-style: italic;
+}
+
+small,
+sub,
+sup {
+	font-size: smaller;
+}
+
+/* ----------------------------- */
+/* == hiding content             */
+/* ----------------------------- */
+
+/* hidden but not for assistance tools, Yahoo! method */
+.visually-hidden {
+	position: absolute !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+@media (max-width: $small-screen) {
+	.no-small-screen {
+		display: none;
+	}
+}
+
+@media (min-width: $large-screen) {
+	.no-large-screen {
+		display: none;
+	}
+}
+
+/* ----------------------------- */
+/* == browsers consistency       */
+/* ----------------------------- */
+
+/* avoid top margins on first content element */
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+h1,
+.h1-like,
+h2,
+.h2-like,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like {
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+/* avoid margins on nested elements */
+li p,
+li .p-like,
+li ul,
+li ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* max values */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+	max-width: 100%;
+}
+
+/* margin-bottom on tables */
+table {
+	margin-bottom: $medium-value; 
+}

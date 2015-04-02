@@ -27,7 +27,7 @@ label,
 	font-size: inherit;
 }
 
-label { 
+label {
 	display: inline-block;
 	vertical-align: middle;
 	cursor: pointer;
@@ -44,19 +44,6 @@ textarea {
 	font-family: inherit;
 	font-size: inherit;
 	resize: vertical;
-}
-
-/* clickable input types in iOS */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	cursor: pointer;
-	-webkit-appearance: button; 
-}
-
-input[type="search"] {
-	-webkit-appearance: textfield;
 }
 
 /* if select styling bugs on WebKit */
@@ -79,11 +66,14 @@ textarea:-moz-placeholder {
 	color: #777;
 }
 
-/* Removes inner padding and border in FF3+ */
-button::-moz-focus-inner,
-input[type='button']::-moz-focus-inner,
-input[type='reset']::-moz-focus-inner,
-input[type='submit']::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+.btn:focus,
+input:focus,
+button:focus {
+	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
 }

@@ -1,0 +1,24 @@
+{
+    "name": "knacss",
+    "version": "4.1.1",
+    "homepage": "http://www.knacss.com/",
+    "bugs": "https://github.com/raphaelgoetter/KNACSS/issues",
+    "author": [
+        "Raphaël GOETTER, Alsacreations (http://goetter.fr)"
+    ],
+    "contributors": [
+        "Raphaël GOETTER, Alsacreations"
+    ],
+    "description": "KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. It relies on common best practices and experience on the topic.",
+    "main": "css/knacss.css",
+    "keywords": [
+        "css", "framework", "reset", "responsive", "less", "sass", "rwd", "boilerplate", "workflow"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/raphaelgoetter/KNACSS"
+    },
+    "license": "WTFPL",
+    "dependencies": {},
+    "engines": {}
+}

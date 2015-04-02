@@ -1,175 +1,151 @@
 /* ---------------------------------- */
-/* ==classic grids                    */
-/* .. use it when gutter size matters */
+/* ==Grids                            */
 /* ---------------------------------- */
 
-/* grids inspired from SUIT https://github.com/suitcss/suit */
+// WARNING : KNACSS grids are flexbox based and only supported by IE10+
+// Tuto : http://www.alsacreations.com/tuto/lire/1659-une-grille-responsive-avec-flexbox-et-LESS.html
+// Demo : http://codepen.io/raphaelgoetter/pen/ZYjwEB
 
-/* overall container of grids */
-.grid { 
-	overflow: hidden;
-}
+// Usage in vanilla CSS:
+// - <div class="grid-4"> for an equal fourth columns grid container
+// - <div class="grid-2-1"> for an uneven columns grid container
 
-/* global styles for direct child ex. .grid3 */
-.grid > * { 
-	display: block;
-	padding: 0;
-	/* gutter value */
+// Usage with preprocessors : if you're using Sass, you can config grids variables :
+// n = number of columns (default = 4) / g = gutter value (default = 1em)
+// example : .grid-perso { @include grid(12, 10px); }
+// ... or uneven grids :
+// left = left ratio column (default = 2) / right = right ratio column (default = 1) / gutter (default = 1em)
+// example : .grid-perso { @include uneven-grid(2, 1, 10px); }
+
+[class*="grid-"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin-left: -$gutter;
-	text-align: left;
 }
 
-/* global styles for each "cell" */
-.grid > * > * { 
-	display: inline-block;
-	/* gutter value */
-	padding-left: $gutter;
-	margin-left: 0;
-	vertical-align: top;
+[class*="grid-"] > * {
+	flex: 0 0 auto;
+	display: block; /* IE fix */
+	width: calc(100% * 1 / #{$number} - #{$gutter});
+	margin-left: $gutter;
 }
 
-/* whitespace fixing for modern browsers including IE9+ */
-:root .grid {
-	font-size: 0;
-	/* fallback for IE9+ */
-	text-justify: distribute-all-lines;
+// Sass mixins for *equal* columns grid container
+// example : .grid-perso { @include grid(12); }
+@mixin grid($number:$number,$gutter:$gutter) {
+& > * {
+	width: calc(100% * 1 / #{$number} - #{$gutter});
+}
+& > .flexitem-double {
+	width: calc(100% * 2 / #{$number} - #{$gutter});
+}
+	@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+		& > * {
+			width: calc(100% * 1 / 2 - #{$gutter});
+		}
+		& > .flexitem-double {
+			width: calc(100% - #{$gutter});
+		}
+	}
+	@media (max-width: $tiny-screen) {
+		& > * {
+			width: calc(100% - #{$gutter});
+		}
+		& > .flexitem-double {
+			width: calc(100% - #{$gutter});
+		}
+	}
 }
 
-:root .grid > * > * {
-	/* fallback for Opera Mini */
-	font-size: $base-font-size;
-	font-size: ($base-font-size / 10px) + rem;
+// Examples : will be compiled in CSS
+
+.grid-2 {
+	@include grid(2);
 }
 
-/* Opera hack */
-.opera:-o-prefocus,
-.grid > * {
-	word-spacing: -0.43em;
+.grid-3 {
+	@include grid(3);
 }
 
-.grid2 > * {
-	width: 50%;
+.grid-4 {
+	@include grid(4);
 }
 
-.grid3 > * {
-	width: 33.333%;
+.grid-5 {
+	@include grid(5);
 }
 
-.grid4 > * {
-	width: 25%;
+.grid-6 {
+	@include grid(6);
 }
 
-.grid5 > * {
-	width: 20%;
+.grid-7 {
+	@include grid(7);
 }
 
-.grid6 > * {
-	width: 16.667%;
+.grid-8 {
+	@include grid(8);
 }
 
-.grid8 > * {
-	width: 12.5%;
+.grid-10 {
+	@include grid(10);
 }
 
-.grid10 > * {
-	width: 10%;
+.grid-12 {
+	@include grid(12);
 }
 
-.grid12 > * {
-	width: 8.333%;
+// LESS mixins for *unequal* columns grid container
+// example : .grid-perso { @include uneven-grid(2, 1); }
+@mixin uneven-grid($left:$left, $right:$right, $gutter:$gutter) {
+	& > *:nth-child(odd) {
+		$size: ($left / ($left + $right)) * 100%;
+		width: calc(#{$size} - #{$gutter});
+	}
+	& > *:nth-child(even) {
+		$size: ($right / ($left + $right)) * 100%;
+		width: calc(#{$size} - #{$gutter});
+	}
+	@media (max-width: $tiny-screen) {
+		& > *:nth-child(n) {
+			width: calc(100% - #{$gutter});
+		}
+	}
 }
 
-/* unequal grids (1-2, 2-1, 1-3 and 3-1) for 2 blocks */
-.grid2-1 > *:first-child,
-.grid1-2 > * + * { 
-	width: 66.666%; 
+
+// Examples : will be compiled in CSS
+
+.grid-2-1 {
+	@include uneven-grid(2,1);
 }
 
-.grid1-2 > *:first-child,
-.grid2-1 > * + * { 
-	width: 33.333%; 
+.grid-1-2 {
+	@include uneven-grid(1,2);
 }
 
-.grid1-3 > *:first-child,
-.grid3-1 > * + * { 
-	width: 25%; 
+.grid-3-1 {
+	@include uneven-grid(3,1);
 }
 
-.grid3-1 > *:first-child,
-.grid1-3 > * + * { 
-	width: 75%; 
+.grid-1-3 {
+	@include uneven-grid(1,3);
 }
 
-/* ---------------------------------- */
-/* ==autogrids                        */
-/* .. to automatically justify blocs  */
-/* ---------------------------------- */
-
-/* Demo : http://codepen.io/raphaelgoetter/pen/Kqehf */
-
-/* container of autogrids */
-[class*="autogrid"] { 
-	text-align: justify;
+.grid-3-2 {
+	@include uneven-grid(3,2);
 }
 
-[class*="autogrid"]:after {
-	content: "";
-	display: inline-block;
-	width: 100%; 
+.grid-2-3 {
+	@include uneven-grid(2,3);
 }
 
-[class*="autogrid"] > * {
-	display: inline-block;
-	vertical-align: top;
-	text-align: left;
+.grid-4-1 {
+	@include uneven-grid(4,1);
 }
 
-/* whitespace fixing for modern browsers including IE9+ */
-:root [class*="autogrid"] {
-	font-size: 0;
-	/* fallback for IE9+ */
-	text-justify: distribute-all-lines;
-}
-
-:root [class*="autogrid"] > * {
-	/* fallback for Opera Mini */
-	font-size: $base-font-size;
-	font-size: ($base-font-size / 10px) + rem;
-}
-
-/* Opera hack */
-[class*="autogrid"]:-o-prefocus {
-	word-spacing: -0.43em;
-}
-
-.autogrid2 > * {
-	width: 49%;
-}
-
-.autogrid3 > * {
-	width: 32%;
-}
-
-.autogrid4 > * {
-	width: 23.6%;
-}
-
-.autogrid5 > * {
-	width: 19%;
-}
-
-.autogrid6 > * {
-	width: 15%;
-}
-
-.autogrid8 > * {
-	width: 10.8%;
-}
-
-.autogrid10 > * {
-	width: 9%;
-}
-
-.autogrid12 > * {
-	width: 6.4%;
+.grid-1-4 {
+	@include uneven-grid(1,4);
 }

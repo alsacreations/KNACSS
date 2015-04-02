@@ -1,0 +1,55 @@
+/* ----------------------------- */
+/* ==misc rules                  */
+/* ----------------------------- */
+
+/* styling skip links */
+.skip-links {
+	position: absolute;
+	
+	& a {
+		position: absolute;
+		overflow: hidden;
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0.5em;
+		background: black;
+		color: white;
+		text-decoration: none;
+
+		&:focus {
+			position: static;
+			overflow: visible;
+			clip: auto;
+		}
+	}
+}
+
+// hyphens on small screens
+@media (max-width: $small-screen) {
+	/* you shall not pass */
+	div, 
+	textarea, 
+	table, 
+	td, 
+	th, 
+	code, 
+	pre, 
+	samp {
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+}
+
+/* Google Gmap3 bug fix on images */
+.gm-style img {
+	height: 100%;
+}
+
+:not(.gm-style) img {
+	height: auto;
+}
+
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+	max-width: none !important;
+}
