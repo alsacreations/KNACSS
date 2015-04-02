@@ -4,6 +4,7 @@
 	Contributors: Automattic, Geoffrey Crofte
 	Description: Reset styles for WordPress usage of Knacss
 	Creation date: 2014-11-20
+	Last update: 2015-03-04
 */
 
 /*--------------------------------------------------------------
@@ -48,6 +49,14 @@
 --------------------------------------------------------------*/
 
 // class in img elements
+.alignnone {
+	margin: .25em 1.5em 1.5em 0;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 1.5em auto;
+}
 .alignleft {
 	float: left;
 	margin: 0 1.5em .25em 0;
@@ -56,11 +65,7 @@
 	float: right;
 	margin: 0 0 .25em 1.5em;
 }
-.aligncenter {
-	clear: both;
-	display: block;
-	margin: 1.5em auto;
-}
+
 
 
 
@@ -113,7 +118,21 @@
 
 // format of post
 .format- {
+	&aside {
+	}
+	&gallery {
+	}
+	&link {
+	}
+	&image {
+	}
+	&quote {
+	}
+	&status {
+	}
 	&video {
+	}
+	&chat {
 	}
 }
 
@@ -184,6 +203,7 @@
 }
 
 // text direction if right-to-left
+// prefer rtl.css: http://codex.wordpress.org/Right-to-Left_Language_Support
 .rtl {
 }
 
