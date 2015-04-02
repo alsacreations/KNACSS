@@ -166,3 +166,6 @@ pip-log.txt
 
 # parce qu'on s'en fout
 *.log
+
+# parce que trop lourd
+node_modules/
