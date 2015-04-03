@@ -43,6 +43,8 @@ La contrepartie est que cela nécessite de votre part de bonnes connaissances en
 
 Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée est en cours de rédaction. Je vous invite vivement à la parcourir avant de vous jeter sur KNACSS.
 
+Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
+
 
 ## Préprocesseurs
 
