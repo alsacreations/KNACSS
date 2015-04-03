@@ -12,6 +12,7 @@
 ## done
 
 * documentation en français
+* PDF pense-bête mis à jour : http://knacss.com/KNACSS-cheatsheet.pdf
 * gros ménage de printemps (gros nettoyage de tous les espaces et tabulations disgrâcieux) 
 * dans la section "quick print reset", ajout des classes .p-like, h1-like, h2-like etc.
 * mise en commun globale de tous les styles p avec .p-like (h1 et h1-like, etc.).
