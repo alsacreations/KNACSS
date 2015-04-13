@@ -653,7 +653,7 @@ body > script {
 /* flexbox layout
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
-.flex-container {
+[class*="flex-container"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

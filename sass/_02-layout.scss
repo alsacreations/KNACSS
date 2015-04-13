@@ -102,7 +102,7 @@ body > script {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
-.flex-container {
+[class*="flex-container"] {
 	display : flex;
 	flex-wrap: wrap;
 }
