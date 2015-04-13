@@ -93,13 +93,13 @@ Résultat :
 
 Il est possible de mettre un élément particulier en exergue, en **doublant sa taille** par rapport aux autres, tout en conservant un agencement parfait de la grille.
 
-Pour ce faire, appliquez la classe `.flexitem-double` à cet élément.
+Pour ce faire, appliquez la classe `.flex-item-double` à cet élément.
 
 HTML :
 ```html
 <div class="grid-4">
     <div>un div ou n'importe quoi d'autre</div>
-    <div class="flexitem-double">je suis deux fois plus large que mes frères</div>
+    <div class="flex-item-double">je suis deux fois plus large que mes frères</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
     <div>etc.</div>
 </div>
@@ -112,14 +112,14 @@ Résultat :
 
 Vous pouvez modifier l'ordre d'affichage des éléments au sein d'une grille à l'aide des classes :
 
-- `.flexitem-first` (l'élément apparaîtra avant tous les autres) 
-- `.flexitem-last` (l'élément apparaîtra tout à la fin de la grille)
+- `.flex-item-first` (l'élément apparaîtra avant tous les autres) 
+- `.flex-item-last` (l'élément apparaîtra tout à la fin de la grille)
 
 HTML :
 ```html
 <div class="grid-4">
     <div>un div ou n'importe quoi d'autre</div>
-    <div class="flexitem-first">je m'affiche avant tous mes frères</div>
+    <div class="flex-item-first">je m'affiche avant tous mes frères</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
     <div>etc.</div>
 </div>

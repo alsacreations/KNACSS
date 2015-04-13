@@ -102,34 +102,35 @@ body > script {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
-.flexbox,
-.flexbox-h,
-.flexbox-v {
+.flex-container {
 	display : flex;
 	flex-wrap: wrap;
+}
+
+.flex-container-h {
 	flex-direction: row;
 }
 
-.flexbox-v {
+.flex-container-v {
 	flex-direction: column;
 }
 
-.flexitem-fluid {
+.flex-item-fluid {
 	flex: 1;
 }
 
-.flexitem-first {
+.flex-item-first {
 	order : -1;
 }
 
-.flexitem-medium {
+.flex-item-medium {
 	order : 0;
 }
 
-.flexitem-last {
+.flex-item-last {
 	order : 1;
 }
 
-.flexitem-center {
+.flex-item-center {
 	margin: auto;
 }

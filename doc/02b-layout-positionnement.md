@@ -115,7 +115,7 @@ HTML :
 ```html
 <div class="flexbox">
     <div class="w400p">premier</div>
-    <div class="flexitem-fluid">deuxième</div>
+    <div class="flex-item-fluid">deuxième</div>
 </div>
 ```
 
