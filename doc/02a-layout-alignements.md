@@ -58,7 +58,7 @@ section {
 
 Version flexbox (HTML):
 ```html
-<section class="flexbox-v">
+<section class="flex-container-v">
     <div class="center w50">centré horizontalement et verticalement</div>
 </section>
 ```

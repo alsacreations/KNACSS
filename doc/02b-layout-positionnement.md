@@ -72,7 +72,7 @@ HTML :
 
 HTML :
 ```html
-<div class="flexbox">
+<div class="flex-container">
     <div class="w400p">premier</div>
     <div class="w400p">deuxième</div>
 </div>
@@ -113,7 +113,7 @@ HTML :
 
 HTML :
 ```html
-<div class="flexbox">
+<div class="flex-container">
     <div class="w400p">premier</div>
     <div class="flex-item-fluid">deuxième</div>
 </div>
@@ -151,7 +151,7 @@ Là aussi c'est automatique : les enfants d'un conteneur `flexbox` ont tous par 
 
 HTML :
 ```html
-<div class="flexbox">
+<div class="flex-container">
     <div>premier</div>
     <div>deuxième</div>
 </div>
