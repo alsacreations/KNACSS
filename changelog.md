@@ -1,3 +1,27 @@
+# changelog v4.1.3 (13 avril 2015)
+
+Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
+
+Anciens noms : 
+
+```
+.flexbox, .flexbox-h
+.flexbox-v
+.flexitem-fluid
+.flexitem-center
+.flexitem-first, .flexitem-medium, .flexitem-last
+```
+
+Nouveaux noms : 
+
+```
+.flex-container, .flex-container-h
+.flex-container-v
+.flex-item-fluid
+.flex-item-center
+.flex-item-first, .flex-item-medium, .flex-item-last
+```
+
 # changelog v4.1.1 (30 mars 2015)
 
 ## Vite fait
