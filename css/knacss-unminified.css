@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.1.4 (2015-04-14) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.1.5 (2015-04-14) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -1063,6 +1063,13 @@ label,
   vertical-align: middle;
   font-family: inherit;
   font-size: inherit;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: #000000;
 }
 label {
   display: inline-block;
