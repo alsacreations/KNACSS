@@ -1,3 +1,9 @@
+# changelog v4.1.4 (14 avril 2015)
+
+- ajout de node_modules dans le .gitignore
+- ajout d'un gulpfile.js et des dépendances dans package.json
+- ajout de la classe .unstyled destinée aux éléments de formulaires
+
 # changelog v4.1.3 (13 avril 2015)
 
 Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
