@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.1.5 (2015-04-14) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.1.6 (2015-04-17) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -1104,7 +1104,7 @@ textarea:-moz-placeholder {
   color: #777;
 }
 .btn:focus,
-input:focus,
+input[type="button"]:focus,
 button:focus {
   outline: 0;
   -webkit-tap-highlight-color: transparent;
@@ -1718,11 +1718,12 @@ s,m,l,n = small, medium, large, none
   ol {
     page-break-inside: avoid;
   }
-  /* page break before main headers */
-  h1,
-  .h1-like {
-    page-break-before: always;
-  }
+  /* page break before main headers
+	h1,
+	.h1-like {
+		page-break-before: always;
+	}
+	*/
   /* no breaks after these elements */
   h1,
   .h1-like,
