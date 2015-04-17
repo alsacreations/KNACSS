@@ -53,7 +53,7 @@ Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principa
 - le fichier `less/_00-config.less` contenant toutes les variables du projet à définir une fois pour toute au départ
 - le fichier `less/knacss.less` qui importe tous les fichiers que vous risquez d'employez dans votre projet (`layout.css`, `responsive.css`, `forms.css`, `print.css`, etc.).
 
-En cours de développement, il vous suffit de compiler ce fichier `less/knacss.less` (ou `less/knacss.scss`) pour obtenir vos fichiers CSS utiles.
+En cours de développement, il vous suffit de compiler ce fichier `less/knacss.less` (ou `sass/knacss.scss`) pour obtenir vos fichiers CSS utiles.
 
 ### Préfixes navigateurs
 
