@@ -1,3 +1,9 @@
+# changelog v4.1.6 (17 avril 2015)
+
+- mise en commentaire des sauts de page print avant un h1
+- correction d'anomalie sur les input (user-select: none)
+- correction d'erreur de compilation Sass
+
 # changelog v4.1.4 (14 avril 2015)
 
 - ajout de node_modules dans le .gitignore

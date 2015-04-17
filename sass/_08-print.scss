@@ -59,11 +59,12 @@
 		page-break-inside: avoid;
 	}
 	
-	/* page break before main headers */
+	/* page break before main headers
 	h1,
 	.h1-like {
 		page-break-before: always;
 	}
+	*/
 	
 	/* no breaks after these elements */
 	h1,

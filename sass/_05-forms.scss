@@ -75,7 +75,7 @@ textarea:-moz-placeholder {
 }
 
 .btn:focus,
-input:focus,
+input[type="button"]:focus,
 button:focus {
 	outline: 0;
 	-webkit-tap-highlight-color: transparent;
@@ -86,25 +86,24 @@ button:focus {
 }
 
 /* unstyled forms */
-.unstyled {
-	button&,
-	input[type="button"]&,
-	input[type="submit"]&,
-	input[type="reset"]& {
-		padding: 0;
-		border: none;
-		line-height: 1;
-		text-align: left;
-		background: none;
-		border-radius: 0;
-		box-shadow: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
 
-		&:focus {
-			box-shadow: none;
-			outline: none;
-		}
+button.unstyled,
+input[type="button"].unstyled,
+input[type="submit"].unstyled,
+input[type="reset"].unstyled {
+	padding: 0;
+	border: none;
+	line-height: 1;
+	text-align: left;
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+
+	&:focus {
+		box-shadow: none;
+		outline: none;
 	}
 }
