@@ -63,6 +63,12 @@ Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est pré
 
 **Par contre, dans les versions LESS et Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
 
+### Utilisateur de SPIP ?
+
+Le CMS SPIP impose une classe générique `.fr` sur l'élément `<html>`, or cette classe est également employée pour les positionnements flottants dans KNACSS.
+
+Si vous êtes un utilisateur de SPIP, nous vous conseillons de modifier les fichiers CSS de KNACSS et de remplacer les classes `.fr` et `.fl` par `:not(html) .fr` et `:not(html) .fl`
+
 ## Liens utiles
 
 * Site web de KNACSS : http://knacss.com
