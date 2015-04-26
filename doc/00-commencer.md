@@ -30,6 +30,15 @@ KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos go�
 
 Il est également possible de l'installer (toutes versions) via [Bower](http://bower.io/) : ```bower install knacss```
 
+## Compatibilité
+
+KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs à partir d'IE8 inclus.
+
+Seules exceptions :
+
+- les positionnements avancés à base de Flexbox (IE10+ minimum), c'est à dire toutes les classes débutant par `.flex-`
+- les grilles de mise en page, également basées sur flexbox  (IE10, Android 4.4+), c'est à dire toutes les classes débutant par `.grid-`
+
 ## RTFM!
 
 KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
