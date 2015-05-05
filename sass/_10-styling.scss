@@ -75,12 +75,12 @@ q {
 }
 
 q,
-.q {
+.#{$kna-namespace}q {
 	quotes: "“\00a0" "\00a0”";
 }
 
 q:lang(fr),
-.q:lang(fr) {
+.#{$kna-namespace}q:lang(fr) {
 	quotes: "«\00a0" "\00a0»";
 }
 
@@ -96,44 +96,44 @@ hr {
 }
 
 /* alternate tables */
-.table-alternate {
+.#{$kna-namespace}table-alternate {
 	border: 0;
 }
 
-.table-alternate tbody {
+.#{$kna-namespace}table-alternate tbody {
 	border: 1px solid #ccc;
 }
 
-.table-alternate thead tr > * + * {
+.#{$kna-namespace}table-alternate thead tr > * + * {
 	border-left: 0;
 }
 
-.table-alternate tbody tr > * + * {
+.#{$kna-namespace}table-alternate tbody tr > * + * {
 	border-left: 1px solid #ccc;
 }
 
 /* alternate-vert tables */
-.table-alternate-v {
+.#{$kna-namespace}table-alternate-v {
 	border: 0;
 	border-right: 1px solid #ccc;
 }
 
-.table-alternate-v tr > :first-child {
+.#{$kna-namespace}table-alternate-v tr > :first-child {
 	border-bottom: 0;
 }
 
-.table-alternate-v tr > * + * {
+.#{$kna-namespace}table-alternate-v tr > * + * {
 	border-top: 1px solid #ccc;
 }
 
 /* striped tables */
-.table-striped tbody tr:nth-child(odd) {
+.#{$kna-namespace}table-striped tbody tr:nth-child(odd) {
 	background: #eee;
 	background: rgba(0, 0, 0, .05);
 }
 
 /* striped-vert tables */
-.table-striped-v tr > :first-child {
+.#{$kna-namespace}table-striped-v tr > :first-child {
 	background: #eee;
 	background: rgba(0, 0, 0, .05);
 }
