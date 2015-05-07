@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.1.6 (2015-04-17) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.2.0 (05 mai 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -564,7 +564,8 @@ code,
 pre,
 textarea,
 input,
-video {
+video,
+svg {
   max-width: 100%;
 }
 /* margin-bottom on tables */
@@ -1621,9 +1622,9 @@ s,m,l,n = small, medium, large, none
   }
   th,
   td {
-    display: block !important;
-    width: auto !important;
-    text-align: left !important;
+    display: block;
+    width: auto;
+    text-align: left;
   }
   thead {
     display: none;
