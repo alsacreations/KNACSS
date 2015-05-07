@@ -3,7 +3,7 @@
 /* ----------------------------- */
 
 table,
-.table {
+.#{$kna-namespace}table {
 	width: 100%;
 	max-width : 100%;
 	table-layout: fixed;
@@ -12,12 +12,12 @@ table,
 	border: 1px solid #ccc;
 }
 
-.table {
+.#{$kna-namespace}table {
 	display: table;
 }
 
-table#recaptcha_table,
-table.table-auto {
+table##{$kna-namespace}recaptcha_table,
+table.#{$kna-namespace}table-auto {
 	table-layout:auto;
 }
 

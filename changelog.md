@@ -1,3 +1,7 @@
+# changelog v4.2.0 (05 mai 2015)
+
+- possibilité d'ajouter un namespace à l'ensemble des classes (configurable dans le fichier config de Less et Sass)
+
 # changelog v4.1.6 (17 avril 2015)
 
 - mise en commentaire des sauts de page print avant un h1
@@ -14,7 +18,7 @@
 
 Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
 
-Anciens noms : 
+Anciens noms :
 
 ```
 .flexbox, .flexbox-h
@@ -24,7 +28,7 @@ Anciens noms :
 .flexitem-first, .flexitem-medium, .flexitem-last
 ```
 
-Nouveaux noms : 
+Nouveaux noms :
 
 ```
 .flex-container, .flex-container-h
@@ -49,7 +53,7 @@ Nouveaux noms :
 
 * documentation en français
 * PDF pense-bête mis à jour : http://knacss.com/KNACSS-cheatsheet.pdf
-* gros ménage de printemps (gros nettoyage de tous les espaces et tabulations disgrâcieux) 
+* gros ménage de printemps (gros nettoyage de tous les espaces et tabulations disgrâcieux)
 * dans la section "quick print reset", ajout des classes .p-like, h1-like, h2-like etc.
 * mise en commun globale de tous les styles p avec .p-like (h1 et h1-like, etc.).
 * déplacement et commentaire sur la règle body > script

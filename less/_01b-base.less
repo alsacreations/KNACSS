@@ -16,7 +16,7 @@ ol {
 	padding-left: 2em;
 }
 
-ul.unstyled {
+ul.@{kna-namespace}unstyled {
 	list-style: none;
 }
 
@@ -40,24 +40,24 @@ figure {
 /* ----------------------------- */
 
 html {
-	
+
 	/* set base font-size to equiv "10px", which is adapted to rem unit */
 	font-size: 62.5%;
-	
+
 	/* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
 	/* thanks to @guardian, @victorbritopro and @eQRoeil */
 	font-size: ~'calc(1em * .625)';
-	
+
 	/* disallow text zooming on orientation change (non standard property) */
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
 }
 
 body {
-	
+
 	/* set body font-size in em (1.4em equiv "14px") */
 	font-size: unit((@base-font-size / 10), em);
-	
+
 	background-color: @base-background;
 	color: @base-color;
 	font-family: @font-stack-common;
@@ -73,7 +73,7 @@ a {
 
 /* font-sizing for content */
 p,
-.p-like,
+.@{kna-namespace}p-like,
 ul,
 ol,
 dl,
@@ -92,55 +92,55 @@ figure {
 }
 
 h1,
-.h1-like {
+.@{kna-namespace}h1-like {
 	font-size: @h1-size;
 	font-family: @font-stack-headings;
 }
 
 h2,
-.h2-like {
+.@{kna-namespace}h2-like {
 	font-size: @h2-size;
 	font-family: @font-stack-headings;
 }
 
 h3,
-.h3-like {
+.@{kna-namespace}h3-like {
 	font-size: @h3-size;
 }
 
 h4,
-.h4-like {
+.@{kna-namespace}h4-like {
 	font-size: @h4-size;
 }
 
 h5,
-.h5-like {
+.@{kna-namespace}h5-like {
 	font-size: @h5-size;
 }
 
 h6,
-.h6-like {
+.@{kna-namespace}h6-like {
 	font-size: @h6-size;
 }
 
 /* alternate font-sizing */
-.smaller {
+.@{kna-namespace}smaller {
 	font-size: 0.6em;
 }
 
-.small {
+.@{kna-namespace}small {
 	font-size: 0.8em;
 }
 
-.big {
+.@{kna-namespace}big {
 	font-size: 1.2em;
 }
 
-.bigger {
+.@{kna-namespace}bigger {
 	font-size: 1.5em;
 }
 
-.biggest {
+.@{kna-namespace}biggest {
 	font-size: 2em;
 }
 
@@ -156,7 +156,7 @@ kbd {
 }
 
 em,
-.italic,
+.@{kna-namespace}italic,
 address,
 cite,
 i,
@@ -175,7 +175,7 @@ sup {
 /* ----------------------------- */
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden {
+.@{kna-namespace}visually-hidden {
 	position: absolute !important;
 	border: 0 !important;
 	height: 1px !important;
@@ -186,13 +186,13 @@ sup {
 }
 
 @media (max-width: @small-screen) {
-	.no-small-screen {
+	.@{kna-namespace}no-small-screen {
 		display: none;
 	}
 }
 
 @media (min-width: @large-screen) {
-	.no-large-screen {
+	.@{kna-namespace}no-large-screen {
 		display: none;
 	}
 }
@@ -203,24 +203,24 @@ sup {
 
 /* avoid top margins on first content element */
 p,
-.p-like,
+.@{kna-namespace}p-like,
 ul,
 ol,
 dl,
 blockquote,
 pre,
 h1,
-.h1-like,
+.@{kna-namespace}h1-like,
 h2,
-.h2-like,
+.@{kna-namespace}h2-like,
 h3,
-.h3-like,
+.@{kna-namespace}h3-like,
 h4,
-.h4-like,
+.@{kna-namespace}h4-like,
 h5,
-.h5-like,
+.@{kna-namespace}h5-like,
 h6,
-.h6-like {
+.@{kna-namespace}h6-like {
 	&:first-child {
 		margin-top: 0;
 	}
@@ -228,7 +228,7 @@ h6,
 
 /* avoid margins on nested elements */
 li p,
-li .p-like,
+li .@{kna-namespace}p-like,
 li ul,
 li ol {
 	margin-top: 0;
@@ -253,4 +253,3 @@ svg {
 table {
 	margin-bottom: @medium-value;
 }
-

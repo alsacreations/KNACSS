@@ -7,7 +7,7 @@
 */
 
 /* buttons */
-.btn {
+.#{$kna-namespace}btn {
 	display: inline-block;
 }
 
@@ -21,7 +21,7 @@ input,
 button,
 select,
 label,
-.btn {
+.#{$kna-namespace}btn {
 	vertical-align: middle;
 	font-family: inherit;
 	font-size: inherit;
@@ -74,7 +74,7 @@ textarea:-moz-placeholder {
 	color: #777;
 }
 
-.btn:focus,
+.#{$kna-namespace}btn:focus,
 input[type="button"]:focus,
 button:focus {
 	outline: 0;
@@ -87,10 +87,10 @@ button:focus {
 
 /* unstyled forms */
 
-button.unstyled,
-input[type="button"].unstyled,
-input[type="submit"].unstyled,
-input[type="reset"].unstyled {
+button.#{$kna-namespace}unstyled,
+input[type="button"].#{$kna-namespace}unstyled,
+input[type="submit"].#{$kna-namespace}unstyled,
+input[type="reset"].#{$kna-namespace}unstyled {
 	padding: 0;
 	border: none;
 	line-height: 1;

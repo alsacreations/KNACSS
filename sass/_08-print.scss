@@ -5,7 +5,7 @@
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
-	
+
 	body {
 		width: auto !important;
 		margin: auto !important;
@@ -14,79 +14,79 @@
 		background-color: #fff !important;
 		color: #333 !important;
 	}
-	
+
 	p,
-	.p-like,
+	.#{$kna-namespace}p-like,
 	h1,
-	.h1-like,
+	.#{$kna-namespace}h1-like,
 	h2,
-	.h2-like,
+	.#{$kna-namespace}h2-like,
 	h3,
-	.h3-like,
+	.#{$kna-namespace}h3-like,
 	h4,
-	.h4-like,
+	.#{$kna-namespace}h4-like,
 	h5,
-	.h5-like,
+	.#{$kna-namespace}h5-like,
 	h6,
-	.h6-like,
+	.#{$kna-namespace}h6-like,
 	blockquote,
 	ul,
 	ol {
 		color: #000 !important;
 		margin: auto !important;
 	}
-	
-	.print {
+
+	.#{$kna-namespace}print {
 		display: block;
 	}
-	
-	.no-print {
+
+	.#{$kna-namespace}no-print {
 		display: none;
 	}
-	
+
 	/* no orphans, no widows */
 	p,
-	.p-like,
+	.#{$kna-namespace}p-like,
 	blockquote {
 		orphans: 3;
 		widows: 3;
 	}
-	
+
 	/* no breaks inside these elements */
 	blockquote,
 	ul,
 	ol {
 		page-break-inside: avoid;
 	}
-	
+
 	/* page break before main headers
 	h1,
 	.h1-like {
 		page-break-before: always;
 	}
 	*/
-	
+
 	/* no breaks after these elements */
 	h1,
-	.h1-like,
+	.#{$kna-namespace}h1-like,
 	h2,
-	.h2-like,
+	.#{$kna-namespace}h2-like,
 	h3,
-	.h3-like,
+	.#{$kna-namespace}h3-like,
 	caption {
 		page-break-after: avoid;
 	}
-	
+
 	a {
 		color: #000 !important;
 		text-decoration: underline !important;
 	}
-	
+
 	/* displaying URLs */
 	a[href]::after {
 		content: " (" attr(href) ")";
 	}
-	
+
 	a[href^="javascript:"]::after,
 	a[href^="#"]::after {
 		content: "";

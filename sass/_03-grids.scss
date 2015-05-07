@@ -17,7 +17,7 @@
 // left = left ratio column (default = 2) / right = right ratio column (default = 1) / gutter (default = 1em)
 // example : .grid-perso { @include uneven-grid(2, 1, 10px); }
 
-[class*="grid-"] {
+[class*="#{$kna-namespace}grid-"] {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -25,7 +25,7 @@
 	margin-left: -$gutter;
 }
 
-[class*="grid-"] > * {
+[class*="#{$kna-namespace}grid-"] > * {
 	flex: 0 0 auto;
 	display: block; /* IE fix */
 	width: calc(100% * 1 / #{$number} - #{$gutter});
@@ -38,14 +38,14 @@
 & > * {
 	width: calc(100% * 1 / #{$number} - #{$gutter});
 }
-& > .flex-item-double {
+& > .#{$kna-namespace}flex-item-double {
 	width: calc(100% * 2 / #{$number} - #{$gutter});
 }
 	@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
 		& > * {
 			width: calc(100% * 1 / 2 - #{$gutter});
 		}
-		& > .flex-item-double {
+		& > .#{$kna-namespace}flex-item-double {
 			width: calc(100% - #{$gutter});
 		}
 	}
@@ -53,7 +53,7 @@
 		& > * {
 			width: calc(100% - #{$gutter});
 		}
-		& > .flex-item-double {
+		& > .#{$kna-namespace}flex-item-double {
 			width: calc(100% - #{$gutter});
 		}
 	}
@@ -61,39 +61,39 @@
 
 // Examples : will be compiled in CSS
 
-.grid-2 {
+.#{$kna-namespace}grid-2 {
 	@include grid(2);
 }
 
-.grid-3 {
+.#{$kna-namespace}grid-3 {
 	@include grid(3);
 }
 
-.grid-4 {
+.#{$kna-namespace}grid-4 {
 	@include grid(4);
 }
 
-.grid-5 {
+.#{$kna-namespace}grid-5 {
 	@include grid(5);
 }
 
-.grid-6 {
+.#{$kna-namespace}grid-6 {
 	@include grid(6);
 }
 
-.grid-7 {
+.#{$kna-namespace}grid-7 {
 	@include grid(7);
 }
 
-.grid-8 {
+.#{$kna-namespace}grid-8 {
 	@include grid(8);
 }
 
-.grid-10 {
+.#{$kna-namespace}grid-10 {
 	@include grid(10);
 }
 
-.grid-12 {
+.#{$kna-namespace}grid-12 {
 	@include grid(12);
 }
 
@@ -118,34 +118,34 @@
 
 // Examples : will be compiled in CSS
 
-.grid-2-1 {
+.#{$kna-namespace}grid-2-1 {
 	@include uneven-grid(2,1);
 }
 
-.grid-1-2 {
+.#{$kna-namespace}grid-1-2 {
 	@include uneven-grid(1,2);
 }
 
-.grid-3-1 {
+.#{$kna-namespace}grid-3-1 {
 	@include uneven-grid(3,1);
 }
 
-.grid-1-3 {
+.#{$kna-namespace}grid-1-3 {
 	@include uneven-grid(1,3);
 }
 
-.grid-3-2 {
+.#{$kna-namespace}grid-3-2 {
 	@include uneven-grid(3,2);
 }
 
-.grid-2-3 {
+.#{$kna-namespace}grid-2-3 {
 	@include uneven-grid(2,3);
 }
 
-.grid-4-1 {
+.#{$kna-namespace}grid-4-1 {
 	@include uneven-grid(4,1);
 }
 
-.grid-1-4 {
+.#{$kna-namespace}grid-1-4 {
 	@include uneven-grid(1,4);
 }
