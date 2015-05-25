@@ -1,3 +1,7 @@
+# changelog v4.2.1 (25 mai 2015)
+
+- pour les grilles, suppression de l'alignement justifié par défaut (justify-content: space-between)
+
 # changelog v4.2.0 (05 mai 2015)
 
 - possibilité d'ajouter un namespace à l'ensemble des classes (configurable dans le fichier config de Less et Sass)

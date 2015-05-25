@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.2.0 (05 mai 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.2.1 (25 mai 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -708,9 +708,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-left: -1em;
 }
 [class*="grid-"] > * {
