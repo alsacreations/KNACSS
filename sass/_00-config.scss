@@ -6,55 +6,55 @@
 // Config file and project variables
 
 // font sizes
-$base-font-size : 14px; // if "14px" then 1em = 14px
-$line-height    : 1.5; // equiv line-height 1.5
-$h1-size        : 3.2rem; // equiv "32px"
-$h2-size        : 2.8rem; // equiv "28px"
-$h3-size        : 2.4rem; // equiv "24px"
-$h4-size        : 2.0rem; // equiv "20px"
-$h5-size        : 1.8rem; // equiv "18px"
-$h6-size        : 1.6rem; // equiv "16px"
+$base-font-size : 14px !default; // if "14px" then 1em = 14px
+$line-height    : 1.5 !default; // equiv line-height 1.5
+$h1-size        : 3.2rem !default; // equiv "32px"
+$h2-size        : 2.8rem !default; // equiv "28px"
+$h3-size        : 2.4rem !default; // equiv "24px"
+$h4-size        : 2.0rem !default; // equiv "20px"
+$h5-size        : 1.8rem !default; // equiv "18px"
+$h6-size        : 1.6rem !default; // equiv "16px"
 
 // font stacks
-$font-stack-common    : Helvetica, Arial, sans-serif; // common font
-$font-stack-headings  : Helvetica, Arial, sans-serif; // headings font
-$font-stack-monospace : Consolas, DejaVu Sans Mono, Courier, monospace; // monospace font
-$font-stack-universal : FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; // universal stack
+$font-stack-common    : Helvetica, Arial, sans-serif !default; // common font
+$font-stack-headings  : Helvetica, Arial, sans-serif !default; // headings font
+$font-stack-monospace : Consolas, DejaVu Sans Mono, Courier, monospace !default; // monospace font
+$font-stack-universal : FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif !default; // universal stack
 
 // font colors
-$base-color             : #000; // text color on body and content
-$primary-color          : #000; // text color on primary elements
-$secondary-color        : #000; // text color on secondary elements
-$headings-color         : #000; // text color on headings
-$base-color-link        : #333; // base links color
-$base-color-link-hover  : #000; // base hovered/focused links color
+$base-color             : #000 !default; // text color on body and content
+$primary-color          : #000 !default; // text color on primary elements
+$secondary-color        : #000 !default; // text color on secondary elements
+$headings-color         : #000 !default; // text color on headings
+$base-color-link        : #333 !default; // base links color
+$base-color-link-hover  : #000 !default; // base hovered/focused links color
 
 // backgrounds
-$base-background        : #fff; // body background color
-$primary-background     : #fff; // primary elements background color
-$secondary-background   : #fff; // secondary elements background color
+$base-background        : #fff !default; // body background color
+$primary-background     : #fff !default; // primary elements background color
+$secondary-background   : #fff !default; // secondary elements background color
 
 // spacings (choose unit you prefer)
-$tiny-value             : 5px; // tiny value for margins / paddings
-$small-value            : 10px; // small value for margins / paddings
-$medium-value           : 20px; // medium value for margins / paddings
-$large-value            : 40px; // large value for margins / paddings
-$extra-large-value      : 80px; // extra large value for margins / paddings
-$ultra-large-value      : 160px; // ultra large value for margins / paddings
+$tiny-value             : 5px !default; // tiny value for margins / paddings
+$small-value            : 10px !default; // small value for margins / paddings
+$medium-value           : 20px !default; // medium value for margins / paddings
+$large-value            : 40px !default; // large value for margins / paddings
+$extra-large-value      : 80px !default; // extra large value for margins / paddings
+$ultra-large-value      : 160px !default; // ultra large value for margins / paddings
 
 // breakpoints (choose unit you prefer)
-$tiny-screen            : 480px; // tiny screens media query (less than 480px)
-$small-screen           : 768px; // screens between 481px and 768px
-$medium-screen          : 1024px; // screens between 769px and 1024px
-$large-screen           : 1280px; // screens between 1025px and 1280px
-$extra-large-screen     : 1600px; // screens between 1281px and 1600px
-$ultra-large-screen     : 1920px; // ultra large screens
+$tiny-screen            : 480px !default; // tiny screens media query (less than 480px)
+$small-screen           : 768px !default; // screens between 481px and 768px
+$medium-screen          : 1024px !default; // screens between 769px and 1024px
+$large-screen           : 1280px !default; // screens between 1025px and 1280px
+$extra-large-screen     : 1600px !default; // screens between 1281px and 1600px
+$ultra-large-screen     : 1920px !default; // ultra large screens
 
 // grids variables (choose unit you prefer)
-$gutter:  1em; // gutter value for grid layouts. Unit can be: %, px, em, rem
-$number:  4; // number of equal columns
-$left:    2; // left side of uneven columns
-$right:   1; // right side of uneven columns
+$gutter:  1em !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$number:  4 !default; // number of equal columns
+$left:    2 !default; // left side of uneven columns
+$right:   1 !default; // right side of uneven columns
 
 //kna-namespace (default : null)
 $kna-namespace: null !default;
