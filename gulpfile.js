@@ -9,13 +9,9 @@ var minifycss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
-// Common tasks
-gulp.task('styles', ['styles-less']);
-gulp.task('doallthethings', ['styles-less']);
 
-
-// Styles LESS
-gulp.task('styles-less', function () {
+// tâche CSS = compile vers knacss.css et knacss-unminified.css
+gulp.task('css', function () {
   return gulp.src('./less/knacss.less')
     .pipe(less())
     .pipe(autoprefixer())
@@ -26,12 +22,11 @@ gulp.task('styles-less', function () {
     .pipe(minifycss({keepBreaks:false,keepSpecialComments:0}))
     .pipe(sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest('./css/'));
-
 });
 
 // Watcher
 gulp.task('watch', function() {
-  gulp.watch(['./less/*.less'], ['styles-less']);
+  gulp.watch(['./less/*.less'], ['css']);
 });
 
-gulp.task('default', ['doallthethings']);
+gulp.task('default', ['css']);
