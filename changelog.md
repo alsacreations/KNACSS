@@ -1,6 +1,10 @@
 # changelog v4.2.2 (26 juin 2015)
 
 - Ajout de !default aux variables SASS dans le fichier _00-config.scss
+- Flex-container enhancement
+- select element enhancement on webkit
+- correction largeurs des grilles pour IE
+- correction de divers doublons
 
 
 
