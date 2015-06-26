@@ -72,6 +72,55 @@ Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est pré
 
 **Par contre, dans les versions LESS et Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
 
+### Mise à jour depuis une version précédente de KNACSS ?
+
+La version `4.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `3.*.*`.
+
+Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 4 de KNACSS&nbsp;:
+
+#### Alignements et flottants
+
+La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.txtleft`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;:
+
+- `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche
+- `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite
+- `.start` et `.end` n'existent plus
+
+#### Nommages des grilles
+
+Le système de grilles de KNACSS 4 est à présent basé sur flexbox (donc non compatible IE9).
+
+De plus, les noms des conteneurs ont changé et nécessitent systématiquement un trait d'union.
+
+Exemple : 
+
+- ancien nommage : `.grid2`, `.grid1-3`
+- nouveau nommage : `.grid-2`, `.grid-1-3`
+
+#### Nommages de flexbox
+
+Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
+
+Ancien nommage :
+
+```
+.flexbox, .flexbox-h
+.flexbox-v
+.flexitem-fluid
+.flexitem-center
+.flexitem-first, .flexitem-medium, .flexitem-last
+```
+
+Nouveau nommage :
+
+```
+.flex-container, .flex-container-h
+.flex-container-v
+.flex-item-fluid
+.flex-item-center
+.flex-item-first, .flex-item-medium, .flex-item-last
+```
+
 ### Utilisateur de SPIP ?
 
 Le CMS SPIP impose une classe générique `.fr` sur l'élément `<html>`, or cette classe est également employée pour les positionnements flottants dans KNACSS.
