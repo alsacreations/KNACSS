@@ -1,3 +1,9 @@
+# changelog v4.2.2 (26 juin 2015)
+
+- Ajout de !default aux variables SASS dans le fichier _00-config.scss
+
+
+
 # changelog v4.2.1 (25 mai 2015)
 
 - pour les grilles, suppression de l'alignement justifié par défaut (justify-content: space-between)
