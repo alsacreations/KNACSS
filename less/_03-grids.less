@@ -27,7 +27,7 @@
 [class*="@{kna-namespace}grid-"] > * {
 	flex: 0 0 auto;
 	display: block; /* IE fix */
-	width: ~'calc(100% * 1 / @{number} - @{gutter})';
+	width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
 	margin-left: @gutter;
 }
 
@@ -35,25 +35,25 @@
 // example : .grid-perso { .grid(12); }
 .grid(@number:@number, @gutter:@gutter) {
  & > * {
-	  width: ~'calc(100% * 1 / @{number} - @{gutter})';
+	  width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
 	}
 	& > .@{kna-namespace}flex-item-double {
-		width: ~'calc(100% * 2 / @{number} - @{gutter})';
+		width: ~'calc(100% * 2 / @{number} - @{gutter} - .01px)';
 	}
 	@media (min-width: (@tiny-screen + 1)) and (max-width: @small-screen) {
 		& > * {
-			width: ~'calc(100% * 1 / 2 - @{gutter})';
+			width: ~'calc(100% * 1 / 2 - @{gutter} - .01px)';
 		}
 		& > .@{kna-namespace}flex-item-double {
-			width: ~'calc(100% - @{gutter})';
+			width: ~'calc(100% - @{gutter} - .01px)';
 		}
 	}
 	@media (max-width: @tiny-screen) {
 		& > * {
-			width: ~'calc(100% - @{gutter})';
+			width: ~'calc(100% - @{gutter} - .01px)';
 		}
 		& > .@{kna-namespace}flex-item-double {
-			width: ~'calc(100% - @{gutter})';
+			width: ~'calc(100% - @{gutter} - .01px)';
 		}
 	}
 }
