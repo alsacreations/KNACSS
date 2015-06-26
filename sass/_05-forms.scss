@@ -54,6 +54,10 @@ textarea {
 	resize: vertical;
 }
 
+select {
+	-webkit-appearance: menulist-button;
+}
+
 /* if select styling bugs on WebKit */
 /* select { -webkit-appearance: none; } */
 
