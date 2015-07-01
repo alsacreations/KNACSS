@@ -6,134 +6,134 @@
 code,
 kbd,
 mark {
-	border-radius: 2px;
+  border-radius: 2px;
 }
 
 kbd {
-	padding: 0 2px;
-	border: 1px solid #999;
+  padding: 0 2px;
+  border: 1px solid #999;
 }
 
 code {
-	padding: 2px 4px;
-	background: rgba(0,0,0,0.04);
-	color: #b11;
+  padding: 2px 4px;
+  background: rgba(0,0,0,0.04);
+  color: #b11;
 }
 
 pre code {
-	padding: none;
-	background: none;
-	color: inherit;
-	border-radius: 0;
+  padding: none;
+  background: none;
+  color: inherit;
+  border-radius: 0;
 }
 
 mark {
-	padding:2px 4px;
+  padding:2px 4px;
 }
 
 sup,
 sub {
-	vertical-align: 0;
+  vertical-align: 0;
 }
 
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
 
 sub {
-	top: 0.5ex;
+  top: 0.5ex;
 }
 
 blockquote {
-	position: relative;
-	padding-left: 3em;
+  position: relative;
+  padding-left: 3em;
 }
 
 blockquote::before {
-	content: "\201C";
-	position: absolute;
-	left: 0;
-	top: 0;
-	font-family: georgia, serif;
-	font-size: 5em;
-	line-height: 0.9;
-	color: rgba(0, 0, 0, .3);
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: georgia, serif;
+  font-size: 5em;
+  line-height: 0.9;
+  color: rgba(0, 0, 0, .3);
 }
 
 blockquote > footer {
-	margin-top: .75em;
-	font-size: 0.9em;
-	color: rgba(0, 0, 0, .7);
+  margin-top: .75em;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, .7);
 }
 
 blockquote > footer::before {
-	content: "\2014 \0020";
+  content: "\2014 \0020";
 }
 
 q {
-	font-style: normal;
+  font-style: normal;
 }
 
 q,
 .@{kna-namespace}q {
-	quotes: "“\00a0" "\00a0”";
+  quotes: "“\00a0" "\00a0”";
 }
 
 q:lang(fr),
 .@{kna-namespace}q:lang(fr) {
-	quotes: "«\00a0" "\00a0»";
+  quotes: "«\00a0" "\00a0»";
 }
 
 hr {
-	display: block;
-	clear: both;
-	height: 1px;
-	margin: 1em 0 2em;
-	padding: 0;
-	border: 0;
-	color: #ccc;
-	background-color: #ccc;
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
 }
 
 /* alternate tables */
 .@{kna-namespace}table-alternate {
-	border: 0;
+  border: 0;
 }
 
 .@{kna-namespace}table-alternate tbody {
-	border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 .@{kna-namespace}table-alternate thead tr > * + * {
-	border-left: 0;
+  border-left: 0;
 }
 
 .@{kna-namespace}table-alternate tbody tr > * + * {
-	border-left: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 /* alternate-vert tables */
 .@{kna-namespace}table-alternate-v {
-	border: 0;
-	border-right: 1px solid #ccc;
+  border: 0;
+  border-right: 1px solid #ccc;
 }
 
 .@{kna-namespace}table-alternate-v tr > :first-child {
-	border-bottom: 0;
+  border-bottom: 0;
 }
 
 .@{kna-namespace}table-alternate-v tr > * + * {
-	border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 
 /* striped tables */
 .@{kna-namespace}table-striped tbody tr:nth-child(odd) {
-	background: #eee;
-	background: rgba(0, 0, 0, .05);
+  background: #eee;
+  background: rgba(0, 0, 0, .05);
 }
 
 /* striped-vert tables */
 .@{kna-namespace}table-striped-v tr > :first-child {
-	background: #eee;
-	background: rgba(0, 0, 0, .05);
+  background: #eee;
+  background: rgba(0, 0, 0, .05);
 }
