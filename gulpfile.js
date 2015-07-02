@@ -19,7 +19,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./css/'))
     .pipe(rename('knacss.css'))
     .pipe(sourcemaps.init())
-    .pipe(minifycss({keepBreaks:false,keepSpecialComments:0}))
+    .pipe(minifycss())
     .pipe(sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest('./css/'));
 });

@@ -1,6 +1,13 @@
+# changelog v4.2.3 (2 juillet 2015)
+
+- Passage à l'indentation via 2 espaces et non plus tabulations (+ `.editorconfig` à jour)
+- Répartition des styles tabulaires entre les fichiers `tables` et `styling`
+- pas de namespace sur les classes `.clear`, `.clearfix` et `.visually-hidden`
+- ajout d'une classe `.bfc` (identique à `.mod`) et qui crée un contexte de formatage block
+
 # changelog v4.2.2 (26 juin 2015)
 
-- Ajout de !default aux variables SASS dans le fichier _00-config.scss
+- Ajout de !default aux variables SASS dans le fichier `_00-config.scss`
 - Flex-container enhancement
 - select element enhancement on webkit
 - correction largeurs des grilles pour IE

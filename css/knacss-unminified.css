@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.2.2 (26 juin 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.2.3 (1er juillet 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -13,7 +13,7 @@ html {
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
   /* 2 */
 }
 /**
@@ -55,7 +55,7 @@ progress,
 video {
   display: inline-block;
   /* 1 */
-  vertical-align: baseline
+  vertical-align: baseline;
   /* 2 */
 }
 /**
@@ -213,7 +213,7 @@ textarea {
   /* 1 */
   font: inherit;
   /* 2 */
-  margin: 0
+  margin: 0;
   /* 3 */
 }
 /**
@@ -245,7 +245,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
-  cursor: pointer
+  cursor: pointer;
   /* 3 */
 }
 /**
@@ -281,7 +281,7 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
-  padding: 0
+  padding: 0;
   /* 2 */
 }
 /**
@@ -328,7 +328,7 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
-  padding: 0
+  padding: 0;
   /* 2 */
 }
 /**
@@ -571,7 +571,8 @@ table {
 /* ==layout and modules          */
 /* ----------------------------- */
 /* module, gains superpower "BFC" Block Formating Context */
-.mod {
+.mod,
+.bfc {
   overflow: hidden;
 }
 /* blocks that needs to be placed under floats */
@@ -651,6 +652,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 [class*="flex-container"],
 .flex-container {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -659,31 +661,39 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
           flex-wrap: wrap;
 }
 .flex-container-h {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 .flex-container-v {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 .flex-item-fluid {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .flex-item-first {
+  -webkit-box-ordinal-group: 0;
   -webkit-order: -1;
       -ms-flex-order: -1;
           order: -1;
 }
 .flex-item-medium {
+  -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
       -ms-flex-order: 0;
           order: 0;
 }
 .flex-item-last {
+  -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1;
@@ -695,9 +705,12 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 /* ==Grids                            */
 /* ---------------------------------- */
 [class*="grid-"] {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -707,6 +720,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   margin-left: -1em;
 }
 [class*="grid-"] > * {
+  -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -1011,28 +1025,19 @@ table,
   table-layout: fixed;
   border-collapse: collapse;
   vertical-align: top;
-  border: 1px solid #ccc;
 }
 .table {
   display: table;
 }
-table#recaptcha_table,
+#recaptcha_table,
 table.table-auto {
   table-layout: auto;
 }
-caption {
-  padding: 10px;
-  color: #555;
-  font-style: italic;
-}
 td,
 th {
-  padding: 0.3em 0.8em;
-  border: 1px #aaa dotted;
   vertical-align: top;
   min-width: 20px;
   cursor: default;
-  text-align: left;
 }
 /* ----------------------------- */
 /* ==forms                       */
@@ -1578,6 +1583,8 @@ s,m,l,n = small, medium, large, none
     border: 0;
   }
   .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -1716,11 +1723,11 @@ s,m,l,n = small, medium, large, none
     page-break-inside: avoid;
   }
   /* page break before main headers
-	h1,
-	.h1-like {
-		page-break-before: always;
-	}
-	*/
+  h1,
+  .h1-like {
+    page-break-before: always;
+  }
+  */
   /* no breaks after these elements */
   h1,
   .h1-like,
@@ -1873,6 +1880,22 @@ hr {
   border: 0;
   color: #ccc;
   background-color: #ccc;
+}
+/* tables */
+table,
+.table {
+  border: 1px solid #ccc;
+}
+caption {
+  padding: 10px;
+  color: #555;
+  font-style: italic;
+}
+td,
+th {
+  padding: 0.3em 0.8em;
+  border: 1px #aaa dotted;
+  text-align: left;
 }
 /* alternate tables */
 .table-alternate {
@@ -2067,3 +2090,9 @@ img.wp-smiley {
 .gallery-caption {
   display: block;
 }
+/* ----------------------------- */
+/* ==own stylesheet              */
+/* ----------------------------- */
+/* Here should go your own CSS styles */
+/* You can also link them with a LESS @import */
+/* @import "my-styles.less"; */
