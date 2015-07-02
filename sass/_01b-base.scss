@@ -163,7 +163,7 @@ var {
 /* ----------------------------- */
 
 /* hidden but not for assistance tools, Yahoo! method */
-.#{$kna-namespace}visually-hidden {
+.visually-hidden {
   position: absolute !important;
   border: 0 !important;
   height: 1px !important;

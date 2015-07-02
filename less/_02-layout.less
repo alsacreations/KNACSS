@@ -3,19 +3,20 @@
 /* ----------------------------- */
 
 /* module, gains superpower "BFC" Block Formating Context */
-.@{kna-namespace}mod {
+.@{kna-namespace}mod,
+.@{kna-namespace}bfc {
   overflow: hidden;
 }
 
 /* blocks that needs to be placed under floats */
-.@{kna-namespace}clear,
+.clear,
 .@{kna-namespace}line,
 .@{kna-namespace}row {
   clear: both;
 }
 
 /* blocks that must contain floats */
-.@{kna-namespace}clearfix,
+.clearfix,
 .@{kna-namespace}line {
   &::after {
     content: "";
