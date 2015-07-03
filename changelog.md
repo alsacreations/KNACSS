@@ -1,3 +1,7 @@
+# changelog v4.3.0 (3 juillet 2015)
+
+- Les grilles de KNACSS sont à présent rétrocompatibles jusqu'à IE8 et Android2 grâce à un fallback en `display: inline-block` pour ces anciens navigateurs. Cependant les fonctionnalités resteront limitées chez ces dinosaures (pas de `flex-item-double`, de `flex-item-first`, etc.)
+
 # changelog v4.2.3 (2 juillet 2015)
 
 - Passage à l'indentation via 2 espaces et non plus tabulations (+ `.editorconfig` à jour)
@@ -12,8 +16,6 @@
 - select element enhancement on webkit
 - correction largeurs des grilles pour IE
 - correction de divers doublons
-
-
 
 # changelog v4.2.1 (25 mai 2015)
 

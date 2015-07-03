@@ -2,7 +2,6 @@
 /* ==Grids                            */
 /* ---------------------------------- */
 
-// WARNING : KNACSS grids are flexbox based and only supported by IE10+ and Android4.4+
 // Tuto : http://www.alsacreations.com/tuto/lire/1659-une-grille-responsive-avec-flexbox-et-LESS.html
 // Demo : http://codepen.io/raphaelgoetter/pen/zxBMLW
 
@@ -17,18 +16,29 @@
 // left = left ratio column (default = 2) / right = right ratio column (default = 1)
 // example : .grid-perso { .uneven-grid(2, 1); }
 
+/* grid container */
 [class*="@{kna-namespace}grid-"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: -@gutter;
+
+  /* inline-block fallback for IE9 generation */
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
 }
 
+/* grid childs */
 [class*="@{kna-namespace}grid-"] > * {
   flex: 0 0 auto;
-  display: block; /* IE fix */
   width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
   margin-left: @gutter;
+
+  /* inline-block fallback for IE9 generation */
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: normal;
+  text-rendering: auto;
 }
 
 // LESS mixins for *equal* columns grid container

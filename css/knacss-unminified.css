@@ -704,6 +704,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 /* ---------------------------------- */
 /* ==Grids                            */
 /* ---------------------------------- */
+/* grid container */
 [class*="grid-"] {
   display: -webkit-box;
   display: -webkit-flex;
@@ -718,16 +719,23 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   margin-left: -1em;
+  /* inline-block fallback for IE9 generation */
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
 }
+/* grid childs */
 [class*="grid-"] > * {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  display: block;
-  /* IE fix */
   width: calc(100% * 1 / 4 - 1em - .01px);
   margin-left: 1em;
+  /* inline-block fallback for IE9 generation */
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: normal;
+  text-rendering: auto;
 }
 .grid-2 > * {
   width: calc(100% * 1 / 2 - 1em - .01px);
