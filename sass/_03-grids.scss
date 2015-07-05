@@ -13,7 +13,7 @@
 // n = number of columns (default = 4) / g = gutter value (default = 1em)
 // example : .grid-perso { @include grid(12, 10px); }
 // ... or uneven grids :
-// left = left ratio column (default = 2) / right = right ratio column (default = 1) / gutter (default = 1em)
+// left = left ratio column (default = 2) / right = right ratio column (default = 1)
 // example : .grid-perso { @include uneven-grid(2, 1, 10px); }
 
 /* grid container */
@@ -44,66 +44,96 @@
 // Sass mixins for *equal* columns grid container
 // example : .grid-perso { @include grid(12); }
 @mixin grid($number:$number,$gutter:$gutter) {
-& > * {
-  width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
-}
-& > .#{$kna-namespace}flex-item-double {
-  width: calc(100% * 2 / #{$number} - #{$gutter});
-}
-  @media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
-    & > * {
-      width: calc(100% * 1 / 2 - #{$gutter} - .01px);
-    }
-    & > .#{$kna-namespace}flex-item-double {
-      width: calc(100% - #{$gutter} - .01px);
-    }
+  & > * {
+    width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
   }
-  @media (max-width: $tiny-screen) {
-    & > * {
-      width: calc(100% - #{$gutter} - .01px);
-    }
-    & > .#{$kna-namespace}flex-item-double {
-      width: calc(100% - #{$gutter} - .01px);
-    }
+  & > .#{$kna-namespace}flex-item-double {
+    width: calc(100% * 2 / #{$number} - #{$gutter});
   }
 }
 
 // Examples : will be compiled in CSS
 
-.#{$kna-namespace}grid-2 {
+[class*="#{$kna-namespace}grid-2"] {
   @include grid(2);
 }
 
-.#{$kna-namespace}grid-3 {
+[class*="#{$kna-namespace}grid-3"] {
   @include grid(3);
 }
 
-.#{$kna-namespace}grid-4 {
+[class*="#{$kna-namespace}grid-4"] {
   @include grid(4);
 }
 
-.#{$kna-namespace}grid-5 {
+[class*="#{$kna-namespace}grid-5"] {
   @include grid(5);
 }
 
-.#{$kna-namespace}grid-6 {
+[class*="#{$kna-namespace}grid-6"] {
   @include grid(6);
 }
 
-.#{$kna-namespace}grid-7 {
+[class*="#{$kna-namespace}grid-7"] {
   @include grid(7);
 }
 
-.#{$kna-namespace}grid-8 {
+[class*="#{$kna-namespace}grid-8"] {
   @include grid(8);
 }
 
-.#{$kna-namespace}grid-10 {
+[class*="#{$kna-namespace}grid-10"] {
   @include grid(10);
 }
 
-.#{$kna-namespace}grid-12 {
+[class*="#{$kna-namespace}grid-12"] {
   @include grid(12);
+}
+
+/* Responsive grid */
+// "small-2" = 2 columns when small screen
+// example : .grid-4-small-2 will be 4 then 2 columns
+@media (max-width: $small-screen) {
+  [class*="-small-4"] > * {
+    width: calc(100% * 1 / 4 - #{$gutter} - .01px);
+  }
+  [class*="-small-4"] > .flexitem-double {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-small-3"] > * {
+    width: calc(100% * 1 / 3 - #{$gutter} - .01px);
+  }
+  [class*="-small-3"] > .flexitem-double {
+    width: calc(100% * 2 / 3 - #{$gutter} - .01px);
+  }
+  [class*="-small-2"] > * {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-small-2"] > .flexitem-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-small-1"] > * {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-small-1"] > .flexitem-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+}
+// "tiny-1" = 1 column when tiny screen
+// example : .grid-4-small-2-tiny-1 will be 4 then 2 columns then 1 column
+@media (max-width: $tiny-screen) {
+  [class*="-tiny-2"] > * {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-tiny-2"] > .flexitem-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-tiny-1"] > * {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-tiny-1"] > .flexitem-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
 }
 
 // LESS mixins for *unequal* columns grid container

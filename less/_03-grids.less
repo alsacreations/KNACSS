@@ -44,117 +44,129 @@
 // LESS mixins for *equal* columns grid container
 // example : .grid-perso { .grid(12); }
 .grid(@number:@number, @gutter:@gutter) {
- & > * {
+  & > * {
     width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
   }
   & > .@{kna-namespace}flex-item-double {
     width: ~'calc(100% * 2 / @{number} - @{gutter} - .01px)';
   }
-  @media (min-width: (@tiny-screen + 1)) and (max-width: @small-screen) {
-    & > * {
-      width: ~'calc(100% * 1 / 2 - @{gutter} - .01px)';
-    }
-    & > .@{kna-namespace}flex-item-double {
-      width: ~'calc(100% - @{gutter} - .01px)';
-    }
-  }
-  @media (max-width: @tiny-screen) {
-    & > * {
-      width: ~'calc(100% - @{gutter} - .01px)';
-    }
-    & > .@{kna-namespace}flex-item-double {
-      width: ~'calc(100% - @{gutter} - .01px)';
-    }
-  }
 }
 
 // Examples : will be compiled in CSS
-
-.@{kna-namespace}grid-2 {
+[class*="@{kna-namespace}grid-2"] {
   .grid(2);
 }
-
-.@{kna-namespace}grid-3 {
+[class*="@{kna-namespace}grid-3"] {
   .grid(3);
 }
-
-.@{kna-namespace}grid-4 {
+[class*="@{kna-namespace}grid-4"] {
   .grid(4);
 }
-
-.@{kna-namespace}grid-5 {
+[class*="@{kna-namespace}grid-5"] {
   .grid(5);
 }
-
-.@{kna-namespace}grid-6 {
+[class*="@{kna-namespace}grid-6"] {
   .grid(6);
 }
-
-.@{kna-namespace}grid-7 {
+[class*="@{kna-namespace}grid-7"] {
   .grid(7);
 }
-
-.@{kna-namespace}grid-8 {
+[class*="@{kna-namespace}grid-8"] {
   .grid(8);
 }
-
-.@{kna-namespace}grid-10 {
+[class*="@{kna-namespace}grid-10"] {
   .grid(10);
 }
-
-.@{kna-namespace}grid-12 {
+[class*="@{kna-namespace}grid-12"] {
   .grid(12);
+}
+
+/* Responsive grid */
+// "small-2" = 2 columns when small screen
+// example : .grid-4-small-2 will be 4 then 2 columns
+@media (max-width: @small-screen) {
+  [class*="-small-4"] > * {
+    width: ~'calc(100% * 1 / 4 - @{gutter} - .01px)';
+  }
+  [class*="-small-4"] > .flexitem-double {
+    width: ~'calc(100% * 1 / 2 - @{gutter} - .01px)';
+  }
+  [class*="-small-3"] > * {
+    width: ~'calc(100% * 1 / 3 - @{gutter} - .01px)';
+  }
+  [class*="-small-3"] > .flexitem-double {
+    width: ~'calc(100% * 2 / 3 - @{gutter} - .01px)';
+  }
+  [class*="-small-2"] > * {
+    width: ~'calc(100% * 1 / 2 - @{gutter} - .01px)';
+  }
+  [class*="-small-2"] > .flexitem-double {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
+  [class*="-small-1"] > * {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
+  [class*="-small-1"] > .flexitem-double {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
+}
+// "tiny-1" = 1 column when tiny screen
+// example : .grid-4-small-2-tiny-1 will be 4 then 2 columns then 1 column
+@media (max-width: @tiny-screen) {
+  [class*="-tiny-2"] > * {
+    width: ~'calc(100% * 1 / 2 - @{gutter} - .01px)';
+  }
+  [class*="-tiny-2"] > .flexitem-double {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
+  [class*="-tiny-1"] > * {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
+  [class*="-tiny-1"] > .flexitem-double {
+    width: ~'calc(100% - @{gutter} - .01px)';
+  }
 }
 
 // LESS mixins for *unequal* columns grid container
 // example : .grid-perso { .uneven-grid(2, 1); }
- .uneven-grid(@left:@left, @right:@right, @gutter:@gutter) {
+.uneven-grid(@left:@left, @right:@right, @gutter:@gutter) {
   & > *:nth-child(odd) {
     @size: (@left / (@left + @right)) * 100%;
-    width: ~'calc(@{size} - @{gutter})';
+    width: ~'calc(@{size} - @{gutter} - .01px)';
   }
   & > *:nth-child(even) {
     @size: (@right / (@left + @right)) * 100%;
-    width: ~'calc(@{size} - @{gutter})';
+    width: ~'calc(@{size} - @{gutter} - .01px)';
   }
   @media (max-width: @tiny-screen) {
     & > *:nth-child(n) {
-      width: ~'calc(100% - @{gutter})';
+      width: ~'calc(100% - @{gutter} - .01px)';
     }
   }
 }
 
-
 // Examples : will be compiled in CSS
-
 .@{kna-namespace}grid-2-1 {
   .uneven-grid(2,1);
 }
-
 .@{kna-namespace}grid-1-2 {
   .uneven-grid(1,2);
 }
-
 .@{kna-namespace}grid-3-1 {
   .uneven-grid(3,1);
 }
-
 .@{kna-namespace}grid-1-3 {
   .uneven-grid(1,3);
 }
-
 .@{kna-namespace}grid-3-2 {
   .uneven-grid(3,2);
 }
-
 .@{kna-namespace}grid-2-3 {
   .uneven-grid(2,3);
 }
-
 .@{kna-namespace}grid-4-1 {
   .uneven-grid(4,1);
 }
-
 .@{kna-namespace}grid-1-4 {
   .uneven-grid(1,4);
 }
