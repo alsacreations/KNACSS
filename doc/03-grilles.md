@@ -6,7 +6,7 @@ Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 Dans les deux cas, la technique associée depuis KNACSS v4 pour concevoir les grilles est **CSS3 Flexbox**, ce qui signifie que la compatibilité de **cette fonctionnalité sera réservée aux [navigateurs modernes](http://caniuse.com/#search=flexbox)** (IE10, Android 4.4+ et tous les autres).
 
-**NOTE pour les utilisateurs de LESS / Sass :** par défaut, les grilles sont activées dans KNACSS. Si vous avez le moindre souci, vérifiez que `@import "_03-grids";` est présent et non commenté dans votre fichier `less/knacss.less` ou `sass/knacss.scss`). 
+**NOTE pour les utilisateurs de LESS / Sass :** par défaut, les grilles sont activées dans KNACSS. Si vous avez le moindre souci, vérifiez que `@import "_03-grids";` est présent et non commenté dans votre fichier `less/knacss.less` ou `sass/knacss.scss`).
 
 ## Précautions à prendre
 
@@ -67,7 +67,7 @@ Par défaut, chaque colonne est séparée de sa voisine par une gouttière dont 
 
 Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent automatiquement au sein de la grille formée par leur conteneur. Par exemple, 6 enfants contenus dans un parent de classe `.grid-3` se répartiront en 3 colonnes de 2 lignes.
 
-## Offsets 
+## Offsets
 
 Il vous est très facile de "pousser" un élément à droite ou à gauche de sa ligne dans la grille, et créer ainsi un espacement volontaire, ce que l'on appelle "offset".
 
@@ -112,7 +112,7 @@ Résultat :
 
 Vous pouvez modifier l'ordre d'affichage des éléments au sein d'une grille à l'aide des classes :
 
-- `.flex-item-first` (l'élément apparaîtra avant tous les autres) 
+- `.flex-item-first` (l'élément apparaîtra avant tous les autres)
 - `.flex-item-last` (l'élément apparaîtra tout à la fin de la grille)
 
 HTML :
@@ -127,6 +127,23 @@ HTML :
 
 Résultat :
 ![preums!](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/03-first.PNG)
+
+## Grilles responsive
+
+Vous pouvez définir le nombre de colonnes selon les tailles d'écran à l'aide des mots-clés suivants :
+
+- `-small-*` : définit le nombre de colonnes lorsque le point de rupture atteint la valeur de la variable `small-screen`
+- `-tiny-*` : définit le nombre de colonnes lorsque le point de rupture atteint la valeur de la variable `tiny-screen`
+
+La grille ci-dessous s'affichera en 4 colonnes sur grand écran, puis en 2 colonnes sur un écran réduit, puis en une seule colonne sur petit écran :
+```html
+<div class="grid-4-small-2-tiny-1">
+    <div>un div ou n'importe quoi d'autre</div>
+    <div>un 2è div ou n'importe quoi d'autre</div>
+    <div>un 3è div ou n'importe quoi d'autre</div>
+    <div>etc.</div>
+</div>
+```
 
 ## Plus loin avec les préprocesseurs
 
@@ -147,7 +164,7 @@ Il vous suffit de modifier les valeurs de ces variables de config pour répercut
 
 ### Générer des grilles personnalisées
 
-Indépendamment des variables de configuration, rien de vous empêche de créer une grille personnalisée en incluant directement l'un des deux mixins possibles dans vos éléments : 
+Indépendamment des variables de configuration, rien de vous empêche de créer une grille personnalisée en incluant directement l'un des deux mixins possibles dans vos éléments :
 
 - `.grid(n)` pour personnaliser une grille de colonnes **égales**. Les arguments sont "n" = nombre de colonnes
 - `.uneven-grid(l,r)` pour personnaliser une grille de colonnes **inégales**. Les arguments sont "l" = pour le ratio de la colonne de gauche,  "r" = pour le ratio de la colonne de droite
@@ -158,8 +175,8 @@ Indépendamment des variables de configuration, rien de vous empêche de créer 
 
 LESS (fichier de développement) :
 ```css
-.grid-container { 
-	.grid(6); 
+.grid-container {
+	.grid(6);
 }
 ```
 
@@ -189,7 +206,7 @@ CSS compilé (sans Autoprefixer) :
 LESS (fichier de développement) :
 
 ```css
-.grid-truc { 
+.grid-truc {
 	.uneven-grid(2, 1);
 }
 ```

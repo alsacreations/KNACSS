@@ -1,3 +1,7 @@
+# changelog v4.3.1 (5 juillet 2015)
+
+- Amélioration des grilles responsive. Par exemple la classe `grid-4-small-2-tiny-1` définira une grille de 4 colonnes sur grand écran, puis en 2 colonnes sur un écran réduit, puis en une seule colonne sur petit écran. La notation `grid-4` fonctionne toujours, mais ne sera pas automatiquement responsive.
+
 # changelog v4.3.0 (3 juillet 2015)
 
 - Les grilles de KNACSS sont à présent rétrocompatibles jusqu'à IE8 et Android2 grâce à un fallback en `display: inline-block` pour ces anciens navigateurs. Cependant les fonctionnalités resteront limitées chez ces dinosaures (pas de `flex-item-double`, de `flex-item-first`, etc.)
