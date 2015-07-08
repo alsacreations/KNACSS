@@ -507,7 +507,7 @@ var {
   overflow: hidden !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .no-small-screen {
     display: none;
   }
@@ -565,7 +565,7 @@ svg {
 }
 /* margin-bottom on tables */
 table {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 /* ----------------------------- */
 /* ==layout and modules          */
@@ -615,17 +615,17 @@ table {
   float: left;
 }
 img.fl {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 .fr {
   float: right;
 }
 img.fr {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 img.fl,
 img.fr {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 /* table layout */
 .row {
@@ -792,7 +792,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   width: calc(100% * 2 / 12 - 1em - .01px);
 }
 /* Responsive grid */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   [class*="-small-4"] > * {
     width: calc(100% * 1 / 4 - 1em - .01px);
   }
@@ -818,7 +818,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
     width: calc(100% - 1em - .01px);
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   [class*="-tiny-2"] > * {
     width: calc(100% * 1 / 2 - 1em - .01px);
   }
@@ -838,7 +838,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-2-1 > *:nth-child(even) {
   width: calc(33.33333333333333% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-2-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -849,7 +849,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-2 > *:nth-child(even) {
   width: calc(66.66666666666666% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-1-2 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -860,7 +860,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-3-1 > *:nth-child(even) {
   width: calc(25% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-3-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -871,7 +871,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-3 > *:nth-child(even) {
   width: calc(75% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-1-3 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -882,7 +882,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-3-2 > *:nth-child(even) {
   width: calc(40% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-3-2 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -893,7 +893,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-2-3 > *:nth-child(even) {
   width: calc(60% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-2-3 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -904,7 +904,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-4-1 > *:nth-child(even) {
   width: calc(20% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-4-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -915,7 +915,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-4 > *:nth-child(even) {
   width: calc(80% - 1em - .01px);
 }
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .grid-1-4 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -941,7 +941,7 @@ table.table-auto {
 td,
 th {
   vertical-align: top;
-  min-width: 20px;
+  min-width: 2rem;
   cursor: default;
 }
 /* ----------------------------- */
@@ -1149,131 +1149,131 @@ s,m,l,n = small, medium, large, none
   padding: 0;
 }
 .mas {
-  margin: 10px;
+  margin: 1rem;
 }
 .mam {
-  margin: 20px;
+  margin: 2rem;
 }
 .mal {
-  margin: 40px;
+  margin: 4rem;
 }
 .pas {
-  padding: 10px;
+  padding: 1rem;
 }
 .pam {
-  padding: 20px;
+  padding: 2rem;
 }
 .pal {
-  padding: 40px;
+  padding: 4rem;
 }
 .mtn,
 .mt0 {
   margin-top: 0;
 }
 .mts {
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 .mtm {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .mtl {
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 .mrn,
 .mr0 {
   margin-right: 0;
 }
 .mrs {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 .mrm {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .mrl {
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 .mbn,
 .mb0 {
   margin-bottom: 0;
 }
 .mbs {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .mbm {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .mbl {
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 .mln,
 .ml0 {
   margin-left: 0;
 }
 .mls {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 .mlm {
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 .mll {
-  margin-left: 40px;
+  margin-left: 4rem;
 }
 .ptn,
 .pt0 {
   padding-top: 0;
 }
 .pts {
-  padding-top: 10px;
+  padding-top: 1rem;
 }
 .ptm {
-  padding-top: 20px;
+  padding-top: 2rem;
 }
 .ptl {
-  padding-top: 40px;
+  padding-top: 4rem;
 }
 .prn,
 .pr0 {
   padding-right: 0;
 }
 .prs {
-  padding-right: 10px;
+  padding-right: 1rem;
 }
 .prm {
-  padding-right: 20px;
+  padding-right: 2rem;
 }
 .prl {
-  padding-right: 40px;
+  padding-right: 4rem;
 }
 .pbn,
 .pb0 {
   padding-bottom: 0;
 }
 .pbs {
-  padding-bottom: 10px;
+  padding-bottom: 1rem;
 }
 .pbm {
-  padding-bottom: 20px;
+  padding-bottom: 2rem;
 }
 .pbl {
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
 }
 .pln,
 .pl0 {
   padding-left: 0;
 }
 .pls {
-  padding-left: 10px;
+  padding-left: 1rem;
 }
 .plm {
-  padding-left: 20px;
+  padding-left: 2rem;
 }
 .pll {
-  padding-left: 40px;
+  padding-left: 4rem;
 }
 /* ----------------------------- */
 /* ==desktop and HD devices      */
 /* ----------------------------- */
-@media (min-width: 1025px) {
+@media (min-width: 961px) {
   /* rules for big resources and big screens like: background-images, font-faces, etc. */
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -1282,7 +1282,7 @@ s,m,l,n = small, medium, large, none
 /* ---------------------------------- */
 /* ==Responsive large                 */
 /* ---------------------------------- */
-@media (min-width: 1025px) {
+@media (min-width: 961px) {
   /* layouts for large screens */
   .large-hidden {
     display: none !important;
@@ -1341,7 +1341,7 @@ s,m,l,n = small, medium, large, none
 /* ---------------------------------- */
 /* ==Responsive medium                */
 /* ---------------------------------- */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 641px) and (max-width: 960px) {
   /* layouts for medium screens */
   .medium-hidden {
     display: none !important;
@@ -1401,7 +1401,7 @@ s,m,l,n = small, medium, large, none
 /* ---------------------------------- */
 /* ==Responsive small                 */
 /* ---------------------------------- */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 640px) {
   /* quick reset in small resolution and less */
   .w600p,
   .w700p,
@@ -1474,7 +1474,7 @@ s,m,l,n = small, medium, large, none
 /* ---------------------------------- */
 /* ==Responsive tiny                  */
 /* ---------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   /* quick tiny resolution reset */
   .mod,
   .col,
@@ -1677,7 +1677,7 @@ s,m,l,n = small, medium, large, none
   overflow: visible;
   clip: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   /* you shall not pass */
   div,
   textarea,
@@ -1792,7 +1792,7 @@ table,
   border: 1px solid #ccc;
 }
 caption {
-  padding: 10px;
+  padding: 1rem;
   color: #555;
   font-style: italic;
 }

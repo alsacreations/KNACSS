@@ -4,12 +4,20 @@
 
 Par défaut, KNACSS tient compte des valeurs de points de rupture suivants :
 
-- "tiny" : correspond à une fenêtre de 480px ou moins
-- "small" : correspond à une fenêtre entre 481px et 768px inclus
-- "medium"correspond à une fenêtre entre 769px et 1024px inclus
-- "large"correspond à une fenêtre entre 1025px et 1280px inclus
-- "extra-large"correspond à une fenêtre entre 1281px et 1600px inclus
-- "ultra-large"correspond à une fenêtre à partir de 1601px
+```
+// breakpoints (choose unit you prefer)
+@tiny-screen            : 320px; // tiny screens media query (less-equal than 320px)
+@tiny-plus-screen       : 480px; // screens between 321px and 480px
+@small-screen           : 640px; // screens between 481px and 640px
+@small-plus-screen      : 768px; // screens between 641px and 768px
+@medium-screen          : 960px; // screens between 769px and 960px
+@medium-plus-screen     : 1024px; // screens between 961px and 1024px
+@large-screen           : 1280px; // screens between 1025px and 1280px
+@large-plus-screen      : 1440px; // screens between 1281px and 1440px
+@extra-large-screen     : 1600px; // screens between 1441px and 1600px
+@ultra-large-screen     : 1920px; // ultra large screens
+```
+
 
 _Les valeurs des points de rupture peuvent être modifiées au sein du fichier de configuration LESS / Sass._
 
