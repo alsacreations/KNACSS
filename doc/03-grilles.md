@@ -4,7 +4,7 @@ Il existe deux types principaux de systèmes de grilles dans KNACSS :
 - Les grilles à colonnes égales
 - Les grilles à colonnes inégales
 
-Dans les deux cas, la technique associée depuis KNACSS v4 pour concevoir les grilles est **CSS3 Flexbox**, ce qui signifie que la compatibilité de **cette fonctionnalité sera réservée aux [navigateurs modernes](http://caniuse.com/#search=flexbox)** (IE10, Android 4.4+ et tous les autres).
+Dans les deux cas, la technique associée depuis KNACSS v4 pour concevoir les grilles est **CSS3 Flexbox**, ce qui signifie que la compatibilité de **cette fonctionnalité sera réservée aux [navigateurs modernes](http://caniuse.com/#search=flexbox)** (IE10, Android 4.4+ et tous les autres). Note : une alternative, basée sur `inline-block` est cependant proposée automatiquement pour les anciens navigateurs (IE8, Android 2).
 
 **NOTE pour les utilisateurs de LESS / Sass :** par défaut, les grilles sont activées dans KNACSS. Si vous avez le moindre souci, vérifiez que `@import "_03-grids";` est présent et non commenté dans votre fichier `less/knacss.less` ou `sass/knacss.scss`).
 
@@ -66,6 +66,9 @@ Le **conteneur** sera l'élément HTML que vous voulez (`div`, `section`, `ul`, 
 Par défaut, chaque colonne est séparée de sa voisine par une gouttière dont la largeur par défaut est `1em`. Pour modifier ce réglage, il sera nécessaire de passer par la version préprocesseur (LESS, Sass) de KNACSS (voir plus loin).
 
 Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent automatiquement au sein de la grille formée par leur conteneur. Par exemple, 6 enfants contenus dans un parent de classe `.grid-3` se répartiront en 3 colonnes de 2 lignes.
+
+- Tester une [grille simple en ligne](http://codepen.io/raphaelgoetter/pen/GAenb?editors=110) (Codepen).
+- Tester une [grille de largeur inégale en ligne](http://codepen.io/raphaelgoetter/pen/jmAkx?editors=110) (Codepen).
 
 ## Offsets
 
@@ -144,6 +147,29 @@ La grille ci-dessous s'affichera en 4 colonnes sur grand écran, puis en 2 colon
     <div>etc.</div>
 </div>
 ```
+
+## Grilles imbriquées
+
+Il est parfaitement possible d'imbriquer une grille dans une grille (mais n'en abusez pas !). Par exemple :
+
+HTML :
+```html
+<div class="grid-2-1">
+  <div>
+    <ul class="unstyled grid-3">
+    	<li>1</li>
+    	<li>2</li>
+    	<li>3</li>
+    </ul>
+  </div>
+  <aside>
+    2- lorem ipsum Hopla choucroute !
+  </aside>
+</div>
+```
+
+Résultat :
+![imbriquée](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/imbriquee.png)
 
 ## Plus loin avec les préprocesseurs
 
