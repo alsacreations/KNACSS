@@ -6,7 +6,7 @@ var less = require('gulp-less');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var minifycss = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
+// var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
 
@@ -18,9 +18,9 @@ gulp.task('css', function () {
     .pipe(rename('knacss-unminified.css'))
     .pipe(gulp.dest('./css/'))
     .pipe(rename('knacss.css'))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(minifycss())
-    .pipe(sourcemaps.write('.', {includeContent: false}))
+    //.pipe(sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest('./css/'));
 });
 
