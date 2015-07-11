@@ -6,6 +6,14 @@ Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 Dans les deux cas, la technique associée depuis KNACSS v4 pour concevoir les grilles est **CSS3 Flexbox**, ce qui signifie que la compatibilité de **cette fonctionnalité sera réservée aux [navigateurs modernes](http://caniuse.com/#search=flexbox)** (IE10, Android 4.4+ et tous les autres). Note : une alternative, basée sur `inline-block` est cependant proposée automatiquement pour les anciens navigateurs (IE8, Android 2).
 
+Quelques exemples pour vous échauffer :
+- `<div class="grid-4">` : grille de 4 colonnes également réparties
+- `<div class="grid-2-1">` : grille de répartition 2/3 - 1/3
+- `<div class="grid-3-tiny-1">` : grille de 3 colonnes égales, puis 1 colonne sur très petit écran
+- `<div class="grid-6-small-3-tiny-2">` : grille de 6 colonnes, puis 3 colonnes sur écran "small", puis 2 colonnes sur écran "tiny".
+
+Et maintenant passons aux explications&nbsp;!
+
 **NOTE pour les utilisateurs de LESS / Sass :** par défaut, les grilles sont activées dans KNACSS. Si vous avez le moindre souci, vérifiez que `@import "_03-grids";` est présent et non commenté dans votre fichier `less/knacss.less` ou `sass/knacss.scss`).
 
 ## Précautions à prendre
@@ -76,8 +84,8 @@ Il vous est très facile de "pousser" un élément à droite ou à gauche de sa 
 
 Pour cela, appliquez simplement l'une ou l'autre de ces déclarations sur l'élément :
 
-- `margin-left: auto` pour le pousser à droite sur sa ligne (ou avec la classe `.left`)
-- `margin-right: auto` pour le pousser à gauche sur sa ligne (ou avec la classe `.right`)
+- la classe `.right` pour le pousser à droite sur sa ligne (applique un `margin-left: auto`)
+- la classe `.left` pour le pousser à gauche sur sa ligne (applique un `margin-right: auto`)
 
 HTML :
 ```html
