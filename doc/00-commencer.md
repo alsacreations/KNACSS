@@ -37,7 +37,6 @@ KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateu
 Seules exceptions :
 
 - les positionnements avancés à base de Flexbox (IE10+ minimum), c'est à dire toutes les classes débutant par `.flex-`
-- les grilles de mise en page, également basées sur flexbox  (IE10, Android 4.4+), c'est à dire toutes les classes débutant par `.grid-`
 
 ## RTFM!
 
@@ -92,7 +91,7 @@ Le système de grilles de KNACSS 4 est à présent basé sur flexbox (donc non c
 
 De plus, les noms des conteneurs ont changé et nécessitent systématiquement un trait d'union.
 
-Exemple : 
+Exemple :
 
 - ancien nommage : `.grid2`, `.grid1-3`
 - nouveau nommage : `.grid-2`, `.grid-1-3`
