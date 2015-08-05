@@ -205,7 +205,7 @@ Indépendamment des variables de configuration, rien de vous empêche de créer 
 
 #### Grille de colonnes égales en LESS
 
-**Objectif : je souhaite que mon élément `.grid-container` crée une grille de 6 colonnes égales**
+**Objectif : je souhaite créer un mixin sur mon élément `.grid-container` afin que celui-ci crée une grille de 6 colonnes égales**
 
 LESS (fichier de développement) :
 ```css
@@ -213,6 +213,8 @@ LESS (fichier de développement) :
 	.grid(6);
 }
 ```
+
+**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.) **
 
 CSS compilé (sans Autoprefixer) :
 
@@ -244,6 +246,8 @@ LESS (fichier de développement) :
 	.uneven-grid(2, 1);
 }
 ```
+
+**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.) **
 
 CSS compilé (sans Autoprefixer) :
 
