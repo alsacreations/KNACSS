@@ -214,7 +214,7 @@ LESS (fichier de développement) :
 }
 ```
 
-**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.) **
+**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.)**
 
 CSS compilé (sans Autoprefixer) :
 
@@ -247,7 +247,8 @@ LESS (fichier de développement) :
 }
 ```
 
-**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.) **
+**Important : il est nécessaire que le nom de votre classe globale contienne la chaîne `grid-` pour que le mixin fonctionne (ex. `grid-container`, `grid-box`, `grid-truc4`, etc.)**
+
 
 CSS compilé (sans Autoprefixer) :
 
