@@ -8,12 +8,10 @@
   }
 
   body {
-    width: auto !important;
-    margin: auto !important;
+    width: auto;
+    margin: auto;
     font-family: serif;
     font-size: 12pt;
-    background-color: #fff !important;
-    color: #333 !important;
   }
 
   p,
@@ -33,8 +31,8 @@
   blockquote,
   ul,
   ol {
-    color: #000 !important;
-    margin: auto !important;
+    color: #000;
+    margin: auto;
   }
 
   .@{kna-namespace}print {
@@ -79,14 +77,14 @@
   }
 
   a {
-    color: #000 !important;
-    text-decoration: underline !important;
+    color: #000;
   }
 
-  /* displaying URLs */
+  /* displaying URLs
   a[href]::after {
     content: " (" attr(href) ")";
   }
+  */
 
   a[href^="javascript:"]::after,
   a[href^="#"]::after {
