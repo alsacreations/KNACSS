@@ -1,3 +1,9 @@
+# changelog v4.3.3 (6 août 2015)
+
+- ajout de helpers (breakpoints responsive)
+- modification du seuil de breakpoint pour les grilles inégales `@tiny-screen` -> `@small-screen`
+- corrections feuille de style print (modifications plus faciles pour l'utilisateur)
+
 # changelog v4.3.1 (5 juillet 2015)
 
 - Amélioration des grilles responsive. Par exemple la classe `grid-4-small-2-tiny-1` définira une grille de 4 colonnes sur grand écran, puis en 2 colonnes sur un écran réduit, puis en une seule colonne sur petit écran. La notation `grid-4` fonctionne toujours, mais ne sera pas automatiquement responsive.

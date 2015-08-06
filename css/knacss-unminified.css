@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.3.2 (8 juillet 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.3.3 (6 août 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -838,7 +838,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-2-1 > *:nth-child(even) {
   width: calc(33.33333333333333% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-2-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -849,7 +849,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-2 > *:nth-child(even) {
   width: calc(66.66666666666666% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-1-2 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -860,7 +860,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-3-1 > *:nth-child(even) {
   width: calc(25% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-3-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -871,7 +871,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-3 > *:nth-child(even) {
   width: calc(75% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-1-3 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -882,7 +882,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-3-2 > *:nth-child(even) {
   width: calc(40% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-3-2 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -893,7 +893,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-2-3 > *:nth-child(even) {
   width: calc(60% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-2-3 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -904,7 +904,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-4-1 > *:nth-child(even) {
   width: calc(20% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-4-1 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -915,7 +915,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .grid-1-4 > *:nth-child(even) {
   width: calc(80% - 1em - .01px);
 }
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid-1-4 > *:nth-child(n) {
     width: calc(100% - 1em - .01px);
   }
@@ -1581,12 +1581,10 @@ s,m,l,n = small, medium, large, none
     text-shadow: none !important;
   }
   body {
-    width: auto !important;
-    margin: auto !important;
+    width: auto;
+    margin: auto;
     font-family: serif;
     font-size: 12pt;
-    background-color: #fff !important;
-    color: #333 !important;
   }
   p,
   .p-like,
@@ -1605,8 +1603,8 @@ s,m,l,n = small, medium, large, none
   blockquote,
   ul,
   ol {
-    color: #000 !important;
-    margin: auto !important;
+    color: #000;
+    margin: auto;
   }
   .print {
     display: block;
@@ -1644,13 +1642,13 @@ s,m,l,n = small, medium, large, none
     page-break-after: avoid;
   }
   a {
-    color: #000 !important;
-    text-decoration: underline !important;
+    color: #000;
   }
-  /* displaying URLs */
+  /* displaying URLs
   a[href]::after {
     content: " (" attr(href) ")";
   }
+  */
   a[href^="javascript:"]::after,
   a[href^="#"]::after {
     content: "";
