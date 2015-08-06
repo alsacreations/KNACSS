@@ -147,7 +147,7 @@
     $size: ($right / ($left + $right)) * 100%;
     width: calc(#{$size} - #{$gutter});
   }
-  @media (max-width: $tiny-screen) {
+  @media (max-width: $small-screen) {
     & > *:nth-child(n) {
       width: calc(100% - #{$gutter});
     }

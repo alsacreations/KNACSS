@@ -138,7 +138,7 @@
     @size: (@right / (@left + @right)) * 100%;
     width: ~'calc(@{size} - @{gutter} - .01px)';
   }
-  @media (max-width: @tiny-screen) {
+  @media (max-width: @small-screen) {
     & > *:nth-child(n) {
       width: ~'calc(100% - @{gutter} - .01px)';
     }
