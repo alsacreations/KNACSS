@@ -920,6 +920,12 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
     width: calc(100% - 1em - .01px);
   }
 }
+.pull {
+  margin-right: auto;
+}
+.push {
+  margin-left: auto;
+}
 /* ----------------------------- */
 /* ==tables                      */
 /* ----------------------------- */
