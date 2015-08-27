@@ -87,7 +87,7 @@ La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.
 
 #### Nommages des grilles
 
-Le système de grilles de KNACSS 4 est à présent basé sur flexbox (donc non compatible IE9).
+Le système de grilles de KNACSS 4 est à présent basé sur flexbox (mais demeure compatible IE8 grâce à une alternative inline-block).
 
 De plus, les noms des conteneurs ont changé et nécessitent systématiquement un trait d'union.
 
