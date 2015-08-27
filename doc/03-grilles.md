@@ -84,14 +84,14 @@ Il vous est très facile de "pousser" un élément à droite ou à gauche de sa 
 
 Pour cela, appliquez simplement l'une ou l'autre de ces déclarations sur l'élément :
 
-- la classe `.right` pour le pousser à droite sur sa ligne (applique un `margin-left: auto`)
-- la classe `.left` pour le pousser à gauche sur sa ligne (applique un `margin-right: auto`)
+- la classe `.push` pour le pousser à droite sur sa ligne (applique un `margin-left: auto`)
+- la classe `.pull` pour le pousser à gauche sur sa ligne (applique un `margin-right: auto`)
 
 HTML :
 ```html
 <div class="grid-4">
     <div>un div ou n'importe quoi d'autre</div>
-    <div class="right">je suis poussé à droite</div>
+    <div class="push">je suis poussé à droite</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
     <div>etc.</div>
 </div>
