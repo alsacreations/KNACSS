@@ -79,7 +79,7 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 
 #### Alignements et flottants
 
-La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.txtleft`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;:
+La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;:
 
 - `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche
 - `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite

@@ -2,10 +2,8 @@
 
 KNACSS impose une mise en forme d'impression par défaut, à savoir :
 
-- suppression des couleurs de fond des éléments
 - suppression des ombrages de boîte et de texte
 - largeur automatique à la page (body)
-- couleur de texte #333, couleur de page blanche, taille de texte 12 points, etc.
 
 ```css
 * {
@@ -13,13 +11,12 @@ KNACSS impose une mise en forme d'impression par défaut, à savoir :
   box-shadow: none !important;
   text-shadow: none !important;
 }
+
 body {
-  width: auto !important;
-  margin: auto !important;
+  width: auto;
+  margin: auto;
   font-family: serif;
   font-size: 12pt;
-  background-color: #fff !important;
-  color: #333 !important;
 }
 ```
 
@@ -67,11 +64,3 @@ Une classe spécifique permet d'afficher ou de masquer du contenu sur imprimante
 }
 ```
 
-Bonus : par défaut, KNACSS décide de rendre toutes les images noir et blanc (sauvons les cartouches d'encre !) :
-
-```css
-img {
-    -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-}
-```
