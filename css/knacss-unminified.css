@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.3.3 (6 août 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.3.4 (27 août 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -505,7 +505,7 @@ var {
   width: 1px !important;
   padding: 0 !important;
   overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 @media (max-width: 640px) {
   .no-small-screen {
@@ -1805,40 +1805,6 @@ th {
   padding: 0.3em 0.8em;
   border: 1px #aaa dotted;
   text-align: left;
-}
-/* alternate tables */
-.table-alternate {
-  border: 0;
-}
-.table-alternate tbody {
-  border: 1px solid #ccc;
-}
-.table-alternate thead tr > * + * {
-  border-left: 0;
-}
-.table-alternate tbody tr > * + * {
-  border-left: 1px solid #ccc;
-}
-/* alternate-vert tables */
-.table-alternate-v {
-  border: 0;
-  border-right: 1px solid #ccc;
-}
-.table-alternate-v tr > :first-child {
-  border-bottom: 0;
-}
-.table-alternate-v tr > * + * {
-  border-top: 1px solid #ccc;
-}
-/* striped tables */
-.table-striped tbody tr:nth-child(odd) {
-  background: #eee;
-  background: rgba(0, 0, 0, 0.05);
-}
-/* striped-vert tables */
-.table-striped-v tr > :first-child {
-  background: #eee;
-  background: rgba(0, 0, 0, 0.05);
 }
 /* ----------------------------- */
 /* ==WordPress reset             */
