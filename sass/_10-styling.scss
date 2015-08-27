@@ -1,11 +1,9 @@
 /* ----------------------------- */
 /* ==minor stylings              */
 /* ----------------------------- */
-/* styling elements */
 
-code,
-kbd,
-mark {
+/* styling elements */
+code, kbd, mark {
   border-radius: 2px;
 }
 
@@ -16,7 +14,7 @@ kbd {
 
 code {
   padding: 2px 4px;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(0,0,0,0.04);
   color: #b11;
 }
 
@@ -28,7 +26,7 @@ pre code {
 }
 
 mark {
-  padding: 2px 4px;
+  padding:2px 4px;
 }
 
 sup,
@@ -75,20 +73,12 @@ q {
 }
 
 q,
-.# {
-  $kna-namespace
-}
-
-q {
+.#{$kna-namespace}q {
   quotes: "“\00a0" "\00a0”";
 }
 
 q:lang(fr),
-.# {
-  $kna-namespace
-}
-
-q:lang(fr) {
+.#{$kna-namespace}q:lang(fr) {
   quotes: "«\00a0" "\00a0»";
 }
 
@@ -102,14 +92,10 @@ hr {
   color: #ccc;
   background-color: #ccc;
 }
+
 /* tables */
-
 table,
-.# {
-  $kna-namespace
-}
-
-table {
+.#{$kna-namespace}table {
   border: 1px solid #ccc;
 }
 
