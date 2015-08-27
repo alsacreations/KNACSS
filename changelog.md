@@ -1,3 +1,9 @@
+# changelog v4.3.4 (27 août 2015)
+
+- ajout des classes `.pull` et `.push` pour les offsets des grilles
+- corrections de la doc Print et Commencer
+- corrections de nommages reliquats : `.flexitem-double` -> `.flex-item-double`
+
 # changelog v4.3.3 (6 août 2015)
 
 - ajout de helpers (breakpoints responsive)
