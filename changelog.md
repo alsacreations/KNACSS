@@ -4,6 +4,7 @@
 - corrections de la doc Print et Commencer
 - corrections de nommages reliquats : `.flexitem-double` -> `.flex-item-double`
 - suppression des styles graphiques pour tableaux alternate et striped
+- modifications sur la classe `.visually-hidden`
 
 # changelog v4.3.3 (6 août 2015)
 
