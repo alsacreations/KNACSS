@@ -3,6 +3,7 @@
 - ajout des classes `.pull` et `.push` pour les offsets des grilles
 - corrections de la doc Print et Commencer
 - corrections de nommages reliquats : `.flexitem-double` -> `.flex-item-double`
+- suppression des styles graphiques pour tableaux alternate et striped
 
 # changelog v4.3.3 (6 août 2015)
 

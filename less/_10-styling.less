@@ -1,8 +1,8 @@
 /* ----------------------------- */
 /* ==minor stylings              */
 /* ----------------------------- */
-
 /* styling elements */
+
 code,
 kbd,
 mark {
@@ -16,7 +16,7 @@ kbd {
 
 code {
   padding: 2px 4px;
-  background: rgba(0,0,0,0.04);
+  background: rgba(0, 0, 0, 0.04);
   color: #b11;
 }
 
@@ -28,7 +28,7 @@ pre code {
 }
 
 mark {
-  padding:2px 4px;
+  padding: 2px 4px;
 }
 
 sup,
@@ -75,12 +75,20 @@ q {
 }
 
 q,
-.@{kna-namespace}q {
+.@ {
+  kna-namespace
+}
+
+q {
   quotes: "“\00a0" "\00a0”";
 }
 
 q:lang(fr),
-.@{kna-namespace}q:lang(fr) {
+.@ {
+  kna-namespace
+}
+
+q:lang(fr) {
   quotes: "«\00a0" "\00a0»";
 }
 
@@ -94,10 +102,14 @@ hr {
   color: #ccc;
   background-color: #ccc;
 }
-
 /* tables */
+
 table,
-.@{kna-namespace}table {
+.@ {
+  kna-namespace
+}
+
+table {
   border: 1px solid #ccc;
 }
 
@@ -112,47 +124,4 @@ th {
   padding: 0.3em 0.8em;
   border: 1px #aaa dotted;
   text-align: left;
-}
-
-/* alternate tables */
-.@{kna-namespace}table-alternate {
-  border: 0;
-}
-
-.@{kna-namespace}table-alternate tbody {
-  border: 1px solid #ccc;
-}
-
-.@{kna-namespace}table-alternate thead tr > * + * {
-  border-left: 0;
-}
-
-.@{kna-namespace}table-alternate tbody tr > * + * {
-  border-left: 1px solid #ccc;
-}
-
-/* alternate-vert tables */
-.@{kna-namespace}table-alternate-v {
-  border: 0;
-  border-right: 1px solid #ccc;
-}
-
-.@{kna-namespace}table-alternate-v tr > :first-child {
-  border-bottom: 0;
-}
-
-.@{kna-namespace}table-alternate-v tr > * + * {
-  border-top: 1px solid #ccc;
-}
-
-/* striped tables */
-.@{kna-namespace}table-striped tbody tr:nth-child(odd) {
-  background: #eee;
-  background: rgba(0, 0, 0, .05);
-}
-
-/* striped-vert tables */
-.@{kna-namespace}table-striped-v tr > :first-child {
-  background: #eee;
-  background: rgba(0, 0, 0, .05);
 }
