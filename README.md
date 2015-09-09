@@ -6,10 +6,6 @@ KNACSS, c'est un peu comme une feuille de style CSS "reset" sur-vitaminée qui p
 
 <hr>
 
-**KNACSS 4 est sorti, voir toutes les modifications dans le [Changelog](https://github.com/raphaelgoetter/KNACSS/blob/master/changelog.md)**
-
-<hr>
-
 KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement !
 
 Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tels que LESS ou Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
@@ -45,14 +41,30 @@ Seules exceptions :
 - les positionnements avancés à base de Flexbox (IE10+ minimum), c'est à dire toutes les classes débutant par `.flex-`
 - les grilles de mise en page, également basées sur flexbox  (IE10, Android 4.4+), c'est à dire toutes les classes débutant par `.grid-`. Note : une alternative, basée sur `inline-block` est cependant proposée automatiquement pour les anciens navigateurs (IE8, Android 2).
 
-## RTFM!
+## Documentation
 
 KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
 La contrepartie est que cela nécessite de votre part de bonnes connaissances en CSS et un petit effort de compréhension et de d'apprentissage des mécanismes de l'outil.
 
-Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée est en cours de rédaction. Je vous invite vivement à la parcourir avant de vous jeter sur KNACSS.
+Je vous invite vivement à parcourir la [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) avant de vous jeter sur KNACSS.
 
 Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
+
+<p>Vous y trouverez en détail, avec codes et illustrations, les différentes sections suivantes&nbsp;:</p>
+      <ol>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/00-commencer.md">Comment débuter avec KNACSS</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/01-typo-et-reset.md">Typographie et reset</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02a-layout-alignements.md">Gérer les alignements de base</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02b-layout-positionnement.md">Gérer le positionnement des éléments</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md">Construire des grilles de mise en page</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/04-tableaux.md">Styler les tableaux</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/05-formulaires.md">Styler les formulaires</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/06-helpers.md">Classes "visuelles"</a> (marges et largeurs)</li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/07-responsive.md">Responsive Webdesign</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/08-print.md">Styles pour l'impression</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/09-misc.md">Styles divers (césures, Google Maps, liens d'évitement)</a></li>
+        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/11-wordpress.md">Adaptations pour WordPress</a></li>
+      </ol>
 
 
 ## Préprocesseurs
