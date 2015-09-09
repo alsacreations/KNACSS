@@ -51,20 +51,20 @@ Je vous invite vivement à parcourir la [**documentation**](https://github.com/r
 Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
 
 <p>Vous y trouverez en détail, avec codes et illustrations, les différentes sections suivantes&nbsp;:</p>
-      <ol>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/00-commencer.md">Comment débuter avec KNACSS</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/01-typo-et-reset.md">Typographie et reset</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02a-layout-alignements.md">Gérer les alignements de base</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02b-layout-positionnement.md">Gérer le positionnement des éléments</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md">Construire des grilles de mise en page</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/04-tableaux.md">Styler les tableaux</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/05-formulaires.md">Styler les formulaires</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/06-helpers.md">Classes "visuelles"</a> (marges et largeurs)</li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/07-responsive.md">Responsive Webdesign</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/08-print.md">Styles pour l'impression</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/09-misc.md">Styles divers (césures, Google Maps, liens d'évitement)</a></li>
-        <li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/11-wordpress.md">Adaptations pour WordPress</a></li>
-      </ol>
+<ol>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/00-commencer.md">Comment débuter avec KNACSS</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/01-typo-et-reset.md">Typographie et reset</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02a-layout-alignements.md">Gérer les alignements de base</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02b-layout-positionnement.md">Gérer le positionnement des éléments</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md">Construire des grilles de mise en page</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/04-tableaux.md">Styler les tableaux</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/05-formulaires.md">Styler les formulaires</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/06-helpers.md">Classes "visuelles"</a> (marges et largeurs)</li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/07-responsive.md">Responsive Webdesign</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/08-print.md">Styles pour l'impression</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/09-misc.md">Styles divers (césures, Google Maps, liens d'évitement)</a></li>
+<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/11-wordpress.md">Adaptations pour WordPress</a></li>
+</ol>
 
 
 ## Préprocesseurs
