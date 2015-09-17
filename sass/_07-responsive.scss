@@ -77,10 +77,175 @@
   }
 
   /* margins for large screens */
-  .#{$kna-namespace}large-man,
-  .#{$kna-namespace}large-ma0 {
-    margin: 0 !important;
-  }
+    .#{$kna-namespace}large-man,
+    .#{$kna-namespace}large-ma0 {
+      margin: 0 !important;
+    }
+
+    .#{$kna-namespace}large-pan,
+    .#{$kna-namespace}large-pa0 {
+      padding: 0 !important;
+    }
+
+    .#{$kna-namespace}large-mas {
+      margin: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-mam {
+      margin: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-mal {
+      margin: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-pas {
+      padding: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-pam {
+      padding: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-pal {
+      padding: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-mtn,
+    .#{$kna-namespace}large-mt0 {
+      margin-top: 0 !important;
+    }
+
+    .#{$kna-namespace}large-mts {
+      margin-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-mtm {
+      margin-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-mtl {
+      margin-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-mrn,
+    .#{$kna-namespace}large-mr0 {
+      margin-right: 0 !important;
+    }
+
+    .#{$kna-namespace}large-mrs {
+      margin-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-mrm {
+      margin-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-mrl {
+      margin-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-mbn,
+    .#{$kna-namespace}large-mb0 {
+      margin-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}large-mbs {
+      margin-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-mbm {
+      margin-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-mbl {
+      margin-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-mln,
+    .#{$kna-namespace}large-ml0 {
+      margin-left: 0 !important;
+    }
+
+    .#{$kna-namespace}large-mls {
+      margin-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-mlm {
+      margin-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-mll {
+      margin-left: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-ptn,
+    .#{$kna-namespace}large-pt0 {
+      padding-top: 0 !important;
+    }
+
+    .#{$kna-namespace}large-pts {
+      padding-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-ptm {
+      padding-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-ptl {
+      padding-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-prn,
+    .#{$kna-namespace}large-pr0 {
+      padding-right: 0 !important;
+    }
+
+    .#{$kna-namespace}large-prs {
+      padding-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-prm {
+      padding-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-prl {
+      padding-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-pbn,
+    .#{$kna-namespace}large-pb0 {
+      padding-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}large-pbs {
+      padding-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-pbm {
+      padding-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-pbl {
+      padding-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}large-pln,
+    .#{$kna-namespace}large-pl0 {
+      padding-left: 0 !important;
+    }
+
+    .#{$kna-namespace}large-pls {
+      padding-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}large-plm {
+      padding-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}large-pll {
+      padding-left: $large-value !important;
+    }
 }
 
 /* ---------------------------------- */
@@ -152,10 +317,175 @@
   }
 
   /* margins for medium screens */
-  .#{$kna-namespace}medium-man,
-  .#{$kna-namespace}medium-ma0 {
-    margin: 0 !important;
-  }
+    .#{$kna-namespace}medium-man,
+    .#{$kna-namespace}medium-ma0 {
+      margin: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-pan,
+    .#{$kna-namespace}medium-pa0 {
+      padding: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-mas {
+      margin: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-mam {
+      margin: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-mal {
+      margin: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-pas {
+      padding: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-pam {
+      padding: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-pal {
+      padding: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-mtn,
+    .#{$kna-namespace}medium-mt0 {
+      margin-top: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-mts {
+      margin-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-mtm {
+      margin-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-mtl {
+      margin-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-mrn,
+    .#{$kna-namespace}medium-mr0 {
+      margin-right: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-mrs {
+      margin-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-mrm {
+      margin-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-mrl {
+      margin-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-mbn,
+    .#{$kna-namespace}medium-mb0 {
+      margin-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-mbs {
+      margin-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-mbm {
+      margin-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-mbl {
+      margin-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-mln,
+    .#{$kna-namespace}medium-ml0 {
+      margin-left: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-mls {
+      margin-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-mlm {
+      margin-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-mll {
+      margin-left: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-ptn,
+    .#{$kna-namespace}medium-pt0 {
+      padding-top: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-pts {
+      padding-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-ptm {
+      padding-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-ptl {
+      padding-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-prn,
+    .#{$kna-namespace}medium-pr0 {
+      padding-right: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-prs {
+      padding-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-prm {
+      padding-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-prl {
+      padding-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-pbn,
+    .#{$kna-namespace}medium-pb0 {
+      padding-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-pbs {
+      padding-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-pbm {
+      padding-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-pbl {
+      padding-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}medium-pln,
+    .#{$kna-namespace}medium-pl0 {
+      padding-left: 0 !important;
+    }
+
+    .#{$kna-namespace}medium-pls {
+      padding-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}medium-plm {
+      padding-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}medium-pll {
+      padding-left: $large-value !important;
+    }
 }
 
 /* ---------------------------------- */
@@ -237,16 +567,175 @@
   }
 
   /* margins for small screens */
-  .#{$kna-namespace}small-man,
-  .#{$kna-namespace}small-ma0 {
-    margin: 0 !important;
-  }
+    .#{$kna-namespace}small-man,
+    .#{$kna-namespace}small-ma0 {
+      margin: 0 !important;
+    }
 
-  .#{$kna-namespace}small-pan,
-  .#{$kna-namespace}small-pa0 {
-    padding: 0 !important;
-  }
+    .#{$kna-namespace}small-pan,
+    .#{$kna-namespace}small-pa0 {
+      padding: 0 !important;
+    }
 
+    .#{$kna-namespace}small-mas {
+      margin: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-mam {
+      margin: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-mal {
+      margin: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-pas {
+      padding: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-pam {
+      padding: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-pal {
+      padding: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-mtn,
+    .#{$kna-namespace}small-mt0 {
+      margin-top: 0 !important;
+    }
+
+    .#{$kna-namespace}small-mts {
+      margin-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-mtm {
+      margin-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-mtl {
+      margin-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-mrn,
+    .#{$kna-namespace}small-mr0 {
+      margin-right: 0 !important;
+    }
+
+    .#{$kna-namespace}small-mrs {
+      margin-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-mrm {
+      margin-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-mrl {
+      margin-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-mbn,
+    .#{$kna-namespace}small-mb0 {
+      margin-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}small-mbs {
+      margin-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-mbm {
+      margin-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-mbl {
+      margin-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-mln,
+    .#{$kna-namespace}small-ml0 {
+      margin-left: 0 !important;
+    }
+
+    .#{$kna-namespace}small-mls {
+      margin-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-mlm {
+      margin-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-mll {
+      margin-left: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-ptn,
+    .#{$kna-namespace}small-pt0 {
+      padding-top: 0 !important;
+    }
+
+    .#{$kna-namespace}small-pts {
+      padding-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-ptm {
+      padding-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-ptl {
+      padding-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-prn,
+    .#{$kna-namespace}small-pr0 {
+      padding-right: 0 !important;
+    }
+
+    .#{$kna-namespace}small-prs {
+      padding-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-prm {
+      padding-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-prl {
+      padding-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-pbn,
+    .#{$kna-namespace}small-pb0 {
+      padding-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}small-pbs {
+      padding-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-pbm {
+      padding-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-pbl {
+      padding-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}small-pln,
+    .#{$kna-namespace}small-pl0 {
+      padding-left: 0 !important;
+    }
+
+    .#{$kna-namespace}small-pls {
+      padding-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}small-plm {
+      padding-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}small-pll {
+      padding-left: $large-value !important;
+    }
 }
 
 /* ---------------------------------- */
@@ -358,14 +847,173 @@
   }
 
   /* margins for tiny screens */
-  .#{$kna-namespace}tiny-man,
-  .#{$kna-namespace}tiny-ma0 {
-    margin: 0 !important;
-  }
+    .#{$kna-namespace}tiny-man,
+    .#{$kna-namespace}tiny-ma0 {
+      margin: 0 !important;
+    }
 
-  .#{$kna-namespace}tiny-pan,
-  .#{$kna-namespace}tiny-pa0 {
-    padding: 0 !important;
-  }
+    .#{$kna-namespace}tiny-pan,
+    .#{$kna-namespace}tiny-pa0 {
+      padding: 0 !important;
+    }
 
+    .#{$kna-namespace}tiny-mas {
+      margin: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mam {
+      margin: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mal {
+      margin: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pas {
+      padding: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pam {
+      padding: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pal {
+      padding: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mtn,
+    .#{$kna-namespace}tiny-mt0 {
+      margin-top: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-mts {
+      margin-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mtm {
+      margin-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mtl {
+      margin-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mrn,
+    .#{$kna-namespace}tiny-mr0 {
+      margin-right: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-mrs {
+      margin-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mrm {
+      margin-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mrl {
+      margin-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mbn,
+    .#{$kna-namespace}tiny-mb0 {
+      margin-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-mbs {
+      margin-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mbm {
+      margin-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mbl {
+      margin-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mln,
+    .#{$kna-namespace}tiny-ml0 {
+      margin-left: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-mls {
+      margin-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mlm {
+      margin-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-mll {
+      margin-left: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-ptn,
+    .#{$kna-namespace}tiny-pt0 {
+      padding-top: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-pts {
+      padding-top: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-ptm {
+      padding-top: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-ptl {
+      padding-top: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-prn,
+    .#{$kna-namespace}tiny-pr0 {
+      padding-right: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-prs {
+      padding-right: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-prm {
+      padding-right: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-prl {
+      padding-right: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pbn,
+    .#{$kna-namespace}tiny-pb0 {
+      padding-bottom: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-pbs {
+      padding-bottom: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pbm {
+      padding-bottom: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pbl {
+      padding-bottom: $large-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pln,
+    .#{$kna-namespace}tiny-pl0 {
+      padding-left: 0 !important;
+    }
+
+    .#{$kna-namespace}tiny-pls {
+      padding-left: $small-value !important;
+    }
+
+    .#{$kna-namespace}tiny-plm {
+      padding-left: $medium-value !important;
+    }
+
+    .#{$kna-namespace}tiny-pll {
+      padding-left: $large-value !important;
+    }
 }
