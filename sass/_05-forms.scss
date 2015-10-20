@@ -81,7 +81,6 @@ textarea:-moz-placeholder {
 .#{$kna-namespace}btn:focus,
 input[type="button"]:focus,
 button:focus {
-  outline: 0;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
      -moz-user-select: none;

@@ -395,25 +395,22 @@ html {
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   /* thanks to @guardian, @victorbritopro and @eQRoeil */
   font-size: calc(1em * .625);
-  /* disallow text zooming on orientation change (non standard property) */
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
 }
 body {
   /* set body font-size in em (1.4em equiv "14px") */
   font-size: 1.4em;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #fff;
+  color: #000;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
 a {
-  color: #333333;
+  color: #333;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #000000;
+  color: #000;
 }
 /* font-sizing for content */
 p,
@@ -979,7 +976,7 @@ input,
 optgroup,
 select,
 textarea {
-  color: #000000;
+  color: #000;
 }
 label {
   display: inline-block;
@@ -1019,7 +1016,6 @@ textarea:-moz-placeholder {
 .btn:focus,
 input[type="button"]:focus,
 button:focus {
-  outline: 0;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1696,6 +1692,9 @@ s,m,l,n = small, medium, large, none
        -moz-hyphens: auto;
         -ms-hyphens: auto;
             hyphens: auto;
+  }
+  a {
+    word-break: break-all;
   }
 }
 /* Google Gmap3 bug fix on images */

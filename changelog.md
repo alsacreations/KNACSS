@@ -1,3 +1,10 @@
+# changelog v4.3.5 (20 octobre 2015)
+
+- correction de doublons
+- ajout de `word-break: break-all` sur les liens en responsive
+- suppression du `outline: 0` sur les boutons au focus
+- correction de visuels dans la documentation
+
 # changelog v4.3.4 (27 août 2015)
 
 - ajout des classes `.pull` et `.push` pour les offsets des grilles

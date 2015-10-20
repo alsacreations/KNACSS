@@ -47,10 +47,6 @@ html {
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   /* thanks to @guardian, @victorbritopro and @eQRoeil */
   font-size: calc(1em * 0.625);
-
-  /* disallow text zooming on orientation change (non standard property) */
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
 }
 
 body {
