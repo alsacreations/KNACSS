@@ -64,7 +64,7 @@ $extra-large-screen     : 1600px !default; // screens between 1441px and 1600px
 $ultra-large-screen     : 1920px !default; // ultra large screens
 
 // grids variables (choose unit you prefer)
-$gutter:  1em !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$gutter:  1rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
 $number:  4 !default; // number of equal columns
 $left:    2 !default; // left side of uneven columns
 $right:   1 !default; // right side of uneven columns
