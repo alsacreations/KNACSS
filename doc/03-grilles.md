@@ -188,7 +188,7 @@ KNACSS est pensé pour être utilisé à l'aide de preprocesseurs tels que LESS 
 Les variables de configuration des grilles se trouvent dans le fichier `less/_00-config.less` (pour les utilisateurs de LESS) et `sass/_00-config.scss` (en version Sass) :
 
 ```css
-@gutter: 1em;
+@gutter: 1rem;
 @number: 4; // for equal columns
 @left: 2; // left side of uneven columns
 @right: 1; // right side of uneven columns
