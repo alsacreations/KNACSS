@@ -1729,7 +1729,7 @@ code {
   color: #b11;
 }
 pre code {
-  padding: none;
+  padding: 0;
   background: none;
   color: inherit;
   border-radius: 0;
