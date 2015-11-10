@@ -1,3 +1,8 @@
+# changelog v4.3.6 (10 novembre 2015)
+
+- modification de la valeur par défaut de gouttière (`1em` -> `2rem`)
+- correction d'un `padding: none` en `padding: 0` dans styling.less|sass
+
 # changelog v4.3.5 (20 octobre 2015)
 
 - correction de doublons
