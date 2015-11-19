@@ -136,7 +136,7 @@
   }
 }
 
-// LESS mixins for *unequal* columns grid container
+// Sass mixins for *unequal* columns grid container
 // example : .grid-perso { @include uneven-grid(2, 1); }
 @mixin uneven-grid($left:$left, $right:$right, $gutter:$gutter) {
   & > *:nth-child(odd) {
