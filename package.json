@@ -1,10 +1,10 @@
 {
   "name": "knacss",
-  "version": "4.3.6",
+  "version": "4.4.0",
   "homepage": "http://www.knacss.com/",
   "bugs": "https://github.com/raphaelgoetter/KNACSS/issues",
   "author": [
-    "Raphaël GOETTER, Alsacreations (http://goetter.fr)"
+    "Raphaël GOETTER, Alsacreations (http://www.alsacreations.fr)"
   ],
   "contributors": [
     "Raphaël GOETTER, Alsacreations"

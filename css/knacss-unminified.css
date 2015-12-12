@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.3.6 (10 novembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.0 (12 décembre 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -371,9 +371,6 @@ ul,
 ol {
   padding-left: 2em;
 }
-ul.unstyled {
-  list-style: none;
-}
 img {
   vertical-align: middle;
 }
@@ -397,11 +394,10 @@ html {
   font-size: calc(1em * .625);
 }
 body {
-  /* set body font-size in em (1.4em equiv "14px") */
-  font-size: 1.4em;
+  font-size: 1.4rem;
   background-color: #fff;
   color: #000;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
 }
 a {
@@ -434,12 +430,12 @@ figure {
 h1,
 .h1-like {
   font-size: 3.2rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
 h2,
 .h2-like {
   font-size: 2.8rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
 h3,
 .h3-like {
@@ -480,7 +476,7 @@ kbd {
   /* IE fix */
   white-space: pre-line;
   white-space: pre-wrap;
-  font-family: Consolas, "DejaVu Sans Mono", Courier, monospace;
+  font-family: consolas, courier, monospace;
   line-height: normal;
 }
 em,
@@ -490,29 +486,6 @@ cite,
 i,
 var {
   font-style: italic;
-}
-/* ----------------------------- */
-/* == hiding content             */
-/* ----------------------------- */
-/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden {
-  position: absolute !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-}
-@media (max-width: 640px) {
-  .no-small-screen {
-    display: none;
-  }
-}
-@media (min-width: 1280px) {
-  .no-large-screen {
-    display: none;
-  }
 }
 /* ----------------------------- */
 /* == browsers consistency       */
@@ -1046,6 +1019,37 @@ input[type="reset"].unstyled:focus {
   outline: none;
 }
 /* ---------------------------------- */
+/* ==state helpers                    */
+/* ---------------------------------- */
+/* invisible for all */
+.is-hidden,
+[hidden] {
+  display: none;
+}
+/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+.is-disabled,
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+ul.is-unstyled,
+ul.unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+/* ---------------------------------- */
 /* ==visual helpers                   */
 /* .. use them with parcimony !       */
 /* ---------------------------------- */
@@ -1219,6 +1223,21 @@ s,m,l,n = small, medium, large, none
 }
 .mll {
   margin-left: 4rem;
+}
+.mauto {
+  margin: auto;
+}
+.mtauto {
+  margin-top: auto;
+}
+.mrauto {
+  margin-right: auto;
+}
+.mbauto {
+  margin-bottom: auto;
+}
+.mlauto {
+  margin-left: auto;
 }
 .ptn,
 .pt0 {
@@ -1697,6 +1716,15 @@ s,m,l,n = small, medium, large, none
     word-break: break-all;
   }
 }
+@media (max-width: 640px) {
+  .no-wrapping {
+    word-wrap: normal;
+    -webkit-hyphens: manual;
+       -moz-hyphens: manual;
+        -ms-hyphens: manual;
+            hyphens: manual;
+  }
+}
 /* Google Gmap3 bug fix on images */
 .gm-style img {
   height: 100%;
@@ -1804,165 +1832,6 @@ th {
   padding: 0.3em 0.8em;
   border: 1px #aaa dotted;
   text-align: left;
-}
-/* ----------------------------- */
-/* ==WordPress reset             */
-/* ----------------------------- */
-/*
-Author: Geoffrey Crofte, Alsacréations
-Contributors: Automattic, Geoffrey Crofte
-Description: Reset styles for WordPress usage of KNACSS
-*/
-/* ----------------------------- */
-/* ==Menus                       */
-/* ----------------------------- */
-.comment-navigation,
-.paging-navigation,
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-/* ----------------------------- */
-/* ==Alignments                  */
-/* ----------------------------- */
-.alignnone {
-  margin: .25em 1.5em 1.5em 0;
-}
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 1.5em auto;
-}
-.alignleft {
-  float: left;
-  margin: 0 1.5em .25em 0;
-}
-.alignright {
-  float: right;
-  margin: 0 0 .25em 1.5em;
-}
-/* ----------------------------- */
-/* ==Clearings                   */
-/* ----------------------------- */
-.entry-content,
-.comment-content {
-  clear: both;
-}
-.entry-content::after,
-.comment-content::after,
-.entry-content::before,
-.comment-content::before {
-  content: "";
-  display: table;
-}
-/* ----------------------------- */
-/* ==Widgets                     */
-/* ----------------------------- */
-.widget + .widget {
-  margin: 1.5em 0 0;
-}
-.widget select {
-  max-width: 100%;
-}
-/* ----------------------------- */
-/* ==Posts and pages             */
-/* ----------------------------- */
-/* === 5.1 Posts - post_class === */
-/* === 5.2 Pages - body_class === */
-/* === 5.3 Posts and Pages - Contents === */
-.hentry {
-  margin: 0 0 1.5em;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-/* ----------------------------- */
-/* ==Comments                    */
-/* ----------------------------- */
-.comment-content a {
-  word-wrap: break-word;
-}
-/* ----------------------------- */
-/* ==Media                       */
-/* ----------------------------- */
-img.wp-smiley {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-  border: none;
-}
-/* ----------------------------- */
-/* ==Captions                    */
-/* ----------------------------- */
-.wp-caption {
-  max-width: 100%;
-  margin-bottom: 1.5em;
-}
-.wp-caption img {
-  display: block;
-  margin: 0 auto;
-}
-.wp-caption-text {
-  margin: 1em 0;
-  text-align: center;
-}
-/* ----------------------------- */
-/* ==Galleries                   */
-/* ----------------------------- */
-.gallery {
-  margin-bottom: 1.5em;
-}
-.gallery-item {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  vertical-align: top;
-}
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
-}
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
-}
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
-}
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
-}
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
-}
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
-}
-.gallery-caption {
-  display: block;
 }
 /* ----------------------------- */
 /* ==own stylesheet              */

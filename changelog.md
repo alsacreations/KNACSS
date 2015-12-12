@@ -1,3 +1,15 @@
+# changelog v4.4.0 (12 décembre 2015)
+
+- ajout de classes d'état dans les helpers (`is-disabled`, `is-hidden`, `is-visually-hidden`, `is-unstyled`)
+- import de la feuille de style dédiée WordPress mise en commentaire par défaut et activable au besoin
+- la taille de police de base est à présent de "1.4rem" et non un calcul en `em` à partir d'une valeur en pixels
+- suppression de `@font-stack-universal` devenue inutile (servait dans les grilles inline-block)
+- suppression de "helvetica, arial" dans les font-stacks par défaut (seul reste "sans-serif")
+- ajout d'une classe `.bfc` (actuellement alias de l'existante `.mod`)
+- ajout d'une classe `.no-wrapping` pour les éléments qui ne doivent pas adopter de césures sur petit écran
+- ajout de classes helpers pour les marges automatiques (`.mtauto`, `mrauto`, `.mauto`, etc.)
+
+
 # changelog v4.3.6 (10 novembre 2015)
 
 - modification de la valeur par défaut de gouttière (`1em` -> `2rem`)

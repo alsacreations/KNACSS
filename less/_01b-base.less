@@ -16,10 +16,6 @@ ol {
   padding-left: 2em;
 }
 
-ul.@{kna-namespace}unstyled {
-  list-style: none;
-}
-
 img {
   vertical-align: middle;
 }
@@ -50,9 +46,7 @@ html {
 }
 
 body {
-
-  /* set body font-size in em (1.4em equiv "14px") */
-  font-size: unit((@base-font-size / 10), em);
+  font-size: @base-font-size;
 
   background-color: @base-background;
   color: @base-color;
@@ -158,33 +152,6 @@ cite,
 i,
 var {
   font-style: italic;
-}
-
-/* ----------------------------- */
-/* == hiding content             */
-/* ----------------------------- */
-
-/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden {
-  position: absolute !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-}
-
-@media (max-width: @small-screen) {
-  .@{kna-namespace}no-small-screen {
-    display: none;
-  }
-}
-
-@media (min-width: @large-screen) {
-  .@{kna-namespace}no-large-screen {
-    display: none;
-  }
 }
 
 /* ----------------------------- */

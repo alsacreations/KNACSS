@@ -42,6 +42,14 @@
   }
 }
 
+// use .no-wrapping to disallow hyphens on small screens
+@media (max-width: $small-screen) {
+  .no-wrapping {
+    word-wrap: normal;
+    hyphens: manual;
+  }
+}
+
 /* Google Gmap3 bug fix on images */
 .gm-style img {
   height: 100%;

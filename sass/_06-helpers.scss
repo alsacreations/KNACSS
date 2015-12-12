@@ -1,4 +1,39 @@
 /* ---------------------------------- */
+/* ==state helpers                    */
+/* ---------------------------------- */
+
+/* invisible for all */
+.is-hidden,
+[hidden] {
+  display: none;
+}
+
+/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+.is-disabled,
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+ul.is-unstyled,
+ul.unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ---------------------------------- */
 /* ==visual helpers                   */
 /* .. use them with parcimony !       */
 /* ---------------------------------- */
@@ -225,6 +260,26 @@ s,m,l,n = small, medium, large, none
 
 .#{$kna-namespace}mll {
   margin-left: $large-value;
+}
+
+.#{$kna-namespace}mauto {
+  margin: auto;
+}
+
+.#{$kna-namespace}mtauto {
+  margin-top: auto;
+}
+
+.#{$kna-namespace}mrauto {
+  margin-right: auto;
+}
+
+.#{$kna-namespace}mbauto {
+  margin-bottom: auto;
+}
+
+.#{$kna-namespace}mlauto {
+  margin-left: auto;
 }
 
 .#{$kna-namespace}ptn,
