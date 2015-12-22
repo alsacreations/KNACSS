@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.4.0 (12 décembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.1 (22 décembre 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -766,25 +766,25 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   [class*="-small-4"] > * {
     width: calc(100% * 1 / 4 - 2rem - .01px);
   }
-  [class*="-small-4"] > .flexitem-double {
+  [class*="-small-4"] > .flex-item-double {
     width: calc(100% * 1 / 2 - 2rem - .01px);
   }
   [class*="-small-3"] > * {
     width: calc(100% * 1 / 3 - 2rem - .01px);
   }
-  [class*="-small-3"] > .flexitem-double {
+  [class*="-small-3"] > .flex-item-double {
     width: calc(100% * 2 / 3 - 2rem - .01px);
   }
   [class*="-small-2"] > * {
     width: calc(100% * 1 / 2 - 2rem - .01px);
   }
-  [class*="-small-2"] > .flexitem-double {
+  [class*="-small-2"] > .flex-item-double {
     width: calc(100% - 2rem - .01px);
   }
   [class*="-small-1"] > * {
     width: calc(100% - 2rem - .01px);
   }
-  [class*="-small-1"] > .flexitem-double {
+  [class*="-small-1"] > .flex-item-double {
     width: calc(100% - 2rem - .01px);
   }
 }
@@ -792,13 +792,13 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   [class*="-tiny-2"] > * {
     width: calc(100% * 1 / 2 - 2rem - .01px);
   }
-  [class*="-tiny-2"] > .flexitem-double {
+  [class*="-tiny-2"] > .flex-item-double {
     width: calc(100% - 2rem - .01px);
   }
   [class*="-tiny-1"] > * {
     width: calc(100% - 2rem - .01px);
   }
-  [class*="-tiny-1"] > .flexitem-double {
+  [class*="-tiny-1"] > .flex-item-double {
     width: calc(100% - 2rem - .01px);
   }
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V4.3.6 (10 novembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.1 (22 décembre 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -445,22 +445,21 @@ html {
 
 /* line 48, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 body {
-  /* set body font-size in em (1.4em equiv "14px") */
-  font-size: 1.4em;
+  font-size: 1.4rem;
   background-color: #fff;
   color: #000;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5; }
 
-/* line 59, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 57, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 a {
   color: #333; }
-  /* line 61, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+  /* line 59, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
   a:hover, a:focus, a:active {
     color: #000; }
 
 /* font-sizing for content */
-/* line 66, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 64, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 p,
 .p-like,
 ul,
@@ -479,54 +478,54 @@ figure {
   margin-bottom: 0;
   line-height: 1.5; }
 
-/* line 71, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 69, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h1, .h1-like {
   font-size: 3.2rem;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: sans-serif; }
 
-/* line 76, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 74, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h2, .h2-like {
   font-size: 2.8rem;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: sans-serif; }
 
-/* line 81, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 79, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h3, .h3-like {
   font-size: 2.4rem; }
 
-/* line 85, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 83, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h4, .h4-like {
   font-size: 2rem; }
 
-/* line 89, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 87, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h5, .h5-like {
   font-size: 1.8rem; }
 
-/* line 93, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 91, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 h6, .h6-like {
   font-size: 1.6rem; }
 
 /* alternate font-sizing */
-/* line 99, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 97, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 .smaller {
   font-size: 0.6em; }
 
-/* line 102, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 100, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 .small {
   font-size: 0.8em; }
 
-/* line 106, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 104, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 .big {
   font-size: 1.2em; }
 
-/* line 110, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 108, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 .bigger {
   font-size: 1.5em; }
 
-/* line 114, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 112, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 .biggest {
   font-size: 2em; }
 
-/* line 123, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 121, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 code,
 pre,
 samp,
@@ -534,10 +533,10 @@ kbd {
   /* IE fix */
   white-space: pre-line;
   white-space: pre-wrap;
-  font-family: Consolas, DejaVu Sans Mono, Courier, monospace;
+  font-family: consolas, courier, monospace;
   line-height: normal; }
 
-/* line 129, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 127, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 em,
 .italic,
 address,
@@ -550,7 +549,7 @@ var {
 /* == browsers consistency       */
 /* ----------------------------- */
 /* avoid top margins on first content element */
-/* line 141, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 139, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 p:first-child,
 .p-like:first-child,
 ul:first-child,
@@ -573,7 +572,7 @@ h6:first-child,
   margin-top: 0; }
 
 /* avoid margins on nested elements */
-/* line 146, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 144, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 li p,
 li .p-like,
 li ul,
@@ -582,7 +581,7 @@ li ol {
   margin-bottom: 0; }
 
 /* max values */
-/* line 162, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 160, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 img,
 table,
 td,
@@ -596,7 +595,7 @@ svg {
   max-width: 100%; }
 
 /* margin-bottom on tables */
-/* line 167, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
+/* line 165, /Users/raphael/Documents/GitHub/KNACSS/sass/_01b-base.scss */
 table {
   margin-bottom: 2rem; }
 
@@ -604,20 +603,20 @@ table {
 /* ==layout and modules          */
 /* ----------------------------- */
 /* module, gains superpower "BFC" Block Formating Context */
-/* line 5, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 7, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .mod,
 .bfc {
   overflow: hidden; }
 
 /* blocks that needs to be placed under floats */
-/* line 10, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 11, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .clear,
 .line,
 .row {
   clear: both; }
 
 /* blocks that must contain floats */
-/* line 17, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 18, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .clearfix::after,
 .line::after {
   content: "";
@@ -626,74 +625,74 @@ table {
   border-collapse: collapse; }
 
 /* simple blocks alignment */
-/* line 25, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 26, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .left {
   margin-right: auto; }
 
-/* line 28, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 29, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .right {
   margin-left: auto; }
 
-/* line 32, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 33, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .center {
   margin-left: auto;
   margin-right: auto; }
 
 /* text and contents alignment */
-/* line 39, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 40, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .txtleft {
   text-align: left; }
 
-/* line 42, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 43, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .txtright {
   text-align: right; }
 
-/* line 46, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 47, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .txtcenter {
   text-align: center; }
 
 /* floating elements */
-/* line 52, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 53, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .fl {
   float: left; }
 
-/* line 55, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 56, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 img.fl {
   margin-right: 1rem; }
 
-/* line 59, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 60, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .fr {
   float: right; }
 
-/* line 63, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 64, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 img.fr {
   margin-left: 1rem; }
 
-/* line 67, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 68, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 img.fl,
 img.fr {
   margin-bottom: 0.5rem; }
 
 /* table layout */
-/* line 73, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 74, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .row {
   display: table;
   table-layout: fixed;
   width: 100%; }
 
-/* line 78, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 79, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .row > *,
 .col {
   display: table-cell;
   vertical-align: top; }
 
 /* no table-cell for script tag when body is a .row */
-/* line 86, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 87, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 body > script {
   display: none !important; }
 
 /* inline-block */
-/* line 90, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 91, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .inbl {
   display: inline-block;
   vertical-align: top; }
@@ -701,36 +700,36 @@ body > script {
 /* flexbox layout
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
-/* line 100, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 101, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 [class*="flex-container"] {
   display: flex;
   flex-wrap: wrap; }
 
-/* line 103, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 104, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-container-h {
   flex-direction: row; }
 
-/* line 107, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 108, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-container-v {
   flex-direction: column; }
 
-/* line 111, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 112, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-item-fluid {
   flex: 1; }
 
-/* line 115, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 116, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-item-first {
   order: -1; }
 
-/* line 119, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 120, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-item-medium {
   order: 0; }
 
-/* line 123, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 124, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-item-last {
   order: 1; }
 
-/* line 127, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
+/* line 128, /Users/raphael/Documents/GitHub/KNACSS/sass/_02-layout.scss */
 .flex-item-center {
   margin: auto; }
 
@@ -838,25 +837,25 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   [class*="-small-4"] > * {
     width: calc(100% * 1 / 4 - 2rem - .01px); }
   /* line 100, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-small-4"] > .flexitem-double {
+  [class*="-small-4"] > .flex-item-double {
     width: calc(100% * 1 / 2 - 2rem - .01px); }
   /* line 103, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
   [class*="-small-3"] > * {
     width: calc(100% * 1 / 3 - 2rem - .01px); }
   /* line 106, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-small-3"] > .flexitem-double {
+  [class*="-small-3"] > .flex-item-double {
     width: calc(100% * 2 / 3 - 2rem - .01px); }
   /* line 109, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
   [class*="-small-2"] > * {
     width: calc(100% * 1 / 2 - 2rem - .01px); }
   /* line 112, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-small-2"] > .flexitem-double {
+  [class*="-small-2"] > .flex-item-double {
     width: calc(100% - 2rem - .01px); }
   /* line 115, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
   [class*="-small-1"] > * {
     width: calc(100% - 2rem - .01px); }
   /* line 118, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-small-1"] > .flexitem-double {
+  [class*="-small-1"] > .flex-item-double {
     width: calc(100% - 2rem - .01px); } }
 
 @media (max-width: 320px) {
@@ -864,13 +863,13 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   [class*="-tiny-2"] > * {
     width: calc(100% * 1 / 2 - 2rem - .01px); }
   /* line 128, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-tiny-2"] > .flexitem-double {
+  [class*="-tiny-2"] > .flex-item-double {
     width: calc(100% - 2rem - .01px); }
   /* line 131, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
   [class*="-tiny-1"] > * {
     width: calc(100% - 2rem - .01px); }
   /* line 134, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
-  [class*="-tiny-1"] > .flexitem-double {
+  [class*="-tiny-1"] > .flex-item-double {
     width: calc(100% - 2rem - .01px); } }
 
 /* line 142, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */
@@ -1387,70 +1386,90 @@ s,m,l,n = small, medium, large, none
   margin-left: 4rem; }
 
 /* line 257, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+.mauto {
+  margin: auto; }
+
+/* line 261, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+.mtauto {
+  margin-top: auto; }
+
+/* line 265, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+.mrauto {
+  margin-right: auto; }
+
+/* line 269, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+.mbauto {
+  margin-bottom: auto; }
+
+/* line 273, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+.mlauto {
+  margin-left: auto; }
+
+/* line 277, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .ptn,
 .pt0 {
   padding-top: 0; }
 
-/* line 261, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 281, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pts {
   padding-top: 1rem; }
 
-/* line 265, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 285, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .ptm {
   padding-top: 2rem; }
 
-/* line 269, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 289, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .ptl {
   padding-top: 4rem; }
 
-/* line 273, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 293, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .prn,
 .pr0 {
   padding-right: 0; }
 
-/* line 277, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 297, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .prs {
   padding-right: 1rem; }
 
-/* line 281, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 301, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .prm {
   padding-right: 2rem; }
 
-/* line 285, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 305, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .prl {
   padding-right: 4rem; }
 
-/* line 289, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 309, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pbn,
 .pb0 {
   padding-bottom: 0; }
 
-/* line 293, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 313, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pbs {
   padding-bottom: 1rem; }
 
-/* line 297, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 317, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pbm {
   padding-bottom: 2rem; }
 
-/* line 301, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 321, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pbl {
   padding-bottom: 4rem; }
 
-/* line 305, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 325, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pln,
 .pl0 {
   padding-left: 0; }
 
-/* line 309, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 329, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pls {
   padding-left: 1rem; }
 
-/* line 313, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 333, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .plm {
   padding-left: 2rem; }
 
-/* line 317, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
+/* line 337, /Users/raphael/Documents/GitHub/KNACSS/sass/_06-helpers.scss */
 .pll {
   padding-left: 4rem; }
 
@@ -1868,16 +1887,22 @@ s,m,l,n = small, medium, large, none
   a {
     word-break: break-all; } }
 
+@media (max-width: 640px) {
+  /* line 47, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+  .no-wrapping {
+    word-wrap: normal;
+    hyphens: manual; } }
+
 /* Google Gmap3 bug fix on images */
-/* line 46, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 54, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 .gm-style img {
   height: 100%; }
 
-/* line 50, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 58, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 :not(.gm-style) img {
   height: auto; }
 
-/* line 56, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 64, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 .gm-style img,
 .gmnoscreen img,
 .gmnoprint img {
