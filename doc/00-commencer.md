@@ -47,6 +47,14 @@ Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc
 
 Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
 
+## Juste une grille ?
+
+Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par LESS ou Sass&nbsp;?
+
+Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il ne pèse que 4.2ko seulement&nbsp;!
+
+Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concocté rien que pour vous.
+
 
 ## Préprocesseurs
 

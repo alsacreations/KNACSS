@@ -41,6 +41,14 @@ Seules exceptions :
 - les positionnements avancés à base de Flexbox (IE10+ minimum), c'est à dire toutes les classes débutant par `.flex-`
 - les grilles de mise en page, également basées sur flexbox  (IE10, Android 4.4+), c'est à dire toutes les classes débutant par `.grid-`. Note : une alternative, basée sur `inline-block` est cependant proposée automatiquement pour les anciens navigateurs (IE8, Android 2).
 
+## Juste une grille ?
+
+Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par LESS ou Sass&nbsp;?
+
+Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il ne pèse que 4.2ko seulement&nbsp;!
+
+Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concocté rien que pour vous.
+
 ## Documentation
 
 KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
