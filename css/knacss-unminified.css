@@ -695,6 +695,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 /* grid childs */
 [class*="grid-"] > * {
+  box-sizing: border-box;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;

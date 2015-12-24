@@ -30,6 +30,7 @@
 
 /* grid childs */
 [class*="@{kna-namespace}grid-"] > * {
+  box-sizing: border-box;
   flex: 0 0 auto;
   width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
   margin-left: @gutter;
