@@ -49,7 +49,7 @@ Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est �
 
 ## Juste une grille ?
 
-KNACSS en version complète ne vous intéresse pas&bsp;? Bienvenue dans *Grillade* !
+KNACSS en version complète ne vous intéresse pas&nbsp;? Bienvenue dans *Grillade* !
 
 ### via LESS ou Sass ?
 
