@@ -65,7 +65,7 @@ Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsac
 
 Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
 
-## Documentation
+## Documentation de KNACSS
 
 KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
 La contrepartie est que cela nécessite de votre part de bonnes connaissances en CSS et un petit effort de compréhension et de d'apprentissage des mécanismes de l'outil.
