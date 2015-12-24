@@ -49,15 +49,19 @@ Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est �
 
 ## Juste une grille ?
 
-Bienvenue dans *Grillade* !
+KNACSS en version complète ne vous intéresse pas&bsp;? Bienvenue dans *Grillade* !
 
 ### via LESS ou Sass ?
 
 Il est possible de n'utiliser KNACSS que pour sa fonctionnalité de grille de positionnement et de bénéficier de colonnes égales, inégales, responsive, des offsets, des pull et push et des mises en exergue. Bref, de [tout l'attirail des grilles KNACSS](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md).
 
-Il vous suffit pour cela de commenter, dans le fichier `knacss.less` tous les imports de fichiers à l'exception des deux nécessaires :
-- `_00-config.less` (nécessaire pour les variables, les tailles de gouttières et les valeurs de breakpoints)
-- `_03-grids.less` (ben oui, quand même)
+Il vous suffit pour cela de récupérer l'un ou l'autre fichier selon votre choix de préprocesseur :
+- [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.less)
+- [grillade.scss](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss)
+
+Ces fichiers ne sont rien d'autre que la concaténation de deux fichiers essentiels :
+- `_00-config.less|scss` (nécessaire pour les variables, les tailles de gouttières et les valeurs de breakpoints)
+- `_03-grids.less|scss` (ben oui, quand même)
 
 ### vous êtes plutôt nature ?
 
