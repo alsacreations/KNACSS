@@ -1,3 +1,8 @@
+# changelog v4.4.2 (24 décembre 2015)
+
+- correction d'un bug responsive des classes `.flex-item-double`
+- création de la feuille de style dédiée aux grilles : *grillade.css* pour ceux qui souhaitent se contenter des grilles de KNACSS
+
 # changelog v4.4.0 (12 décembre 2015)
 
 - ajout de classes d'état dans les helpers (`is-disabled`, `is-hidden`, `is-visually-hidden`, `is-unstyled`)

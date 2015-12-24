@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V4.4.1 (22 décembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.2 (24 décembre 2015) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -734,7 +734,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   margin: auto; }
 
 /* ---------------------------------- */
-/* ==Grids                            */
+/* ==Grillade                         */
 /* ---------------------------------- */
 /* grid container */
 /* line 20, /Users/raphael/Documents/GitHub/KNACSS/sass/_03-grids.scss */

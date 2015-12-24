@@ -24,6 +24,15 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./css/'));
 });
 
+gulp.task('grillade', function() {
+  return gulp.src(['./less/_00-config.less', './less/_03-grids.less'])
+    .pipe(concat('grillade.less'))
+    .pipe(less())
+    .pipe(autoprefixer())
+    .pipe(minifycss())
+    .pipe(gulp.dest('./css/'));
+});
+
 // Watcher
 gulp.task('watch', function() {
   gulp.watch(['./less/*.less'], ['css']);
