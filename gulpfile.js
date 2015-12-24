@@ -24,12 +24,18 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('grillade', function() {
+gulp.task('grillade-less', function() {
   return gulp.src(['./less/_00-config.less', './less/_03-grids.less'])
     .pipe(concat('grillade.less'))
+    .pipe(gulp.dest('./css/'))
     .pipe(less())
     .pipe(autoprefixer())
     .pipe(minifycss())
+    .pipe(gulp.dest('./css/'));
+});
+gulp.task('grillade-sass', function() {
+  return gulp.src(['./sass/_00-config.scss', './sass/_03-grids.scss'])
+    .pipe(concat('grillade.scss'))
     .pipe(gulp.dest('./css/'));
 });
 
@@ -37,5 +43,7 @@ gulp.task('grillade', function() {
 gulp.task('watch', function() {
   gulp.watch(['./less/*.less'], ['css']);
 });
+
+gulp.task('grillade', ['grillade-less', 'grillade-sass']);
 
 gulp.task('default', ['css']);
