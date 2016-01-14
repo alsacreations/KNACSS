@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.4.2 (24 décembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.3 (14 janvier 2016) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -98,7 +98,6 @@ $kna-namespace: null !default;
 
   /* inline-block fallback for IE9 generation */
   letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
 }
 
 /* grid childs */
@@ -106,13 +105,13 @@ $kna-namespace: null !default;
   box-sizing: border-box;
   flex: 0 0 auto;
   width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
+  min-width: 0;
   margin-left: $gutter;
 
   /* inline-block fallback for IE9 generation */
   display: inline-block;
   vertical-align: top;
   letter-spacing: normal;
-  text-rendering: auto;
 }
 
 // Sass mixins for *equal* columns grid container
@@ -266,7 +265,6 @@ $kna-namespace: null !default;
 .#{$kna-namespace}pull {
   margin-right: auto;
 }
-
 .#{$kna-namespace}push {
   margin-left: auto;
 }

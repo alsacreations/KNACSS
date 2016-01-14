@@ -25,7 +25,6 @@
 
   /* inline-block fallback for IE9 generation */
   letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
 }
 
 /* grid childs */
@@ -33,13 +32,13 @@
   box-sizing: border-box;
   flex: 0 0 auto;
   width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
+  min-width: 0;
   margin-left: @gutter;
 
   /* inline-block fallback for IE9 generation */
   display: inline-block;
   vertical-align: top;
   letter-spacing: normal;
-  text-rendering: auto;
 }
 
 // LESS mixins for *equal* columns grid container
@@ -175,7 +174,6 @@
 .@{kna-namespace}pull {
   margin-right: auto;
 }
-
 .@{kna-namespace}push {
   margin-left: auto;
 }

@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V4.4.2 (24 décembre 2015) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.3 (14 janvier 2016) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -691,7 +691,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   margin-left: -2rem;
   /* inline-block fallback for IE9 generation */
   letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
 }
 /* grid childs */
 [class*="grid-"] > * {
@@ -701,12 +700,12 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   width: calc(100% * 1 / 4 - 2rem - .01px);
+  min-width: 0;
   margin-left: 2rem;
   /* inline-block fallback for IE9 generation */
   display: inline-block;
   vertical-align: top;
   letter-spacing: normal;
-  text-rendering: auto;
 }
 [class*="grid-2"] > * {
   width: calc(100% * 1 / 2 - 2rem - .01px);
