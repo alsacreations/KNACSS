@@ -22,7 +22,6 @@ button,
 select,
 label,
 .#{$kna-namespace}btn {
-  vertical-align: middle;
   font-family: inherit;
   font-size: inherit;
 }
@@ -36,7 +35,6 @@ textarea {
 }
 
 label {
-  display: inline-block;
   vertical-align: middle;
   cursor: pointer;
 }

@@ -1035,11 +1035,10 @@ button,
 select,
 label,
 .btn {
-  vertical-align: middle;
   font-family: inherit;
   font-size: inherit; }
 
-/* line 30, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 29, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 button,
 input,
 optgroup,
@@ -1047,18 +1046,17 @@ select,
 textarea {
   color: #000; }
 
-/* line 34, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 33, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 label {
-  display: inline-block;
   vertical-align: middle;
   cursor: pointer; }
 
-/* line 40, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 38, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 legend {
   border: 0;
   white-space: normal; }
 
-/* line 45, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 43, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 textarea {
   min-height: 5em;
   vertical-align: top;
@@ -1066,30 +1064,30 @@ textarea {
   font-size: inherit;
   resize: vertical; }
 
-/* line 53, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 51, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 select {
   -webkit-appearance: menulist-button; }
 
 /* if select styling bugs on WebKit */
 /* select { -webkit-appearance: none; } */
 /* 'x' appears on right of search input when text is entered. This removes it */
-/* line 64, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 62, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none; }
 
-/* line 68, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 66, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 ::-webkit-input-placeholder {
   color: #777; }
 
-/* line 73, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 71, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #777; }
 
-/* line 75, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 73, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 .btn:focus,
 input[type="button"]:focus,
 button:focus {
@@ -1100,7 +1098,7 @@ button:focus {
   user-select: none; }
 
 /* unstyled forms */
-/* line 85, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+/* line 83, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
 button.unstyled,
 input[type="button"].unstyled,
 input[type="submit"].unstyled,
@@ -1115,7 +1113,7 @@ input[type="reset"].unstyled {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
-  /* line 99, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
+  /* line 97, /Users/raphael/Documents/GitHub/KNACSS/sass/_05-forms.scss */
   button.unstyled:focus,
   input[type="button"].unstyled:focus,
   input[type="submit"].unstyled:focus,
