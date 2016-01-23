@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V4.4.3 (14 janvier 2016) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V4.4.4 (23 janvier 2016) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
-/*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
  */
 /* line 9, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 html {
@@ -33,7 +33,7 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 45, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 44, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 article,
 aside,
 details,
@@ -41,7 +41,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -53,7 +52,7 @@ summary {
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 57, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 56, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 audio,
 canvas,
 progress,
@@ -67,16 +66,16 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 67, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 66, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0; }
 
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
  */
-/* line 78, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 77, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 [hidden],
 template {
   display: none; }
@@ -86,12 +85,13 @@ template {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 89, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 88, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 a {
   background-color: transparent; }
 
 /**
- * Improve readability when focused and also mouse hovered in all browsers.
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
  */
 /* line 98, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 a:active,
@@ -101,24 +101,40 @@ a:hover {
 /* Text-level semantics
    ========================================================================== */
 /**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ * Address inconsistent styling of `abbr[title]`.
+ * 1. Correct styling in Firefox 39 and Opera 12.
+ * 2. Correct missing styling in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 109, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 111, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 abbr[title] {
-  border-bottom: 1px dotted; }
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
 
 /**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ * Address inconsistent styling of b and strong.
+ * 1. Correct duplicate application of `bolder` in Safari 6.0.2.
+ * 2. Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+.
  */
-/* line 118, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 124, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 b,
 strong {
-  font-weight: bold; }
+  font-weight: inherit;
+  /* 1 */ }
+
+/* line 129, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+  /* 2 */ }
 
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 126, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 137, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 dfn {
   font-style: italic; }
 
@@ -126,7 +142,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-/* line 135, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 146, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -134,22 +150,22 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 144, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 155, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 mark {
-  background: #ff0;
+  background-color: #ff0;
   color: #000; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 153, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 164, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 162, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 173, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -157,11 +173,11 @@ sup {
   position: relative;
   vertical-align: baseline; }
 
-/* line 169, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 180, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 sup {
   top: -0.5em; }
 
-/* line 173, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 184, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 sub {
   bottom: -0.25em; }
 
@@ -170,14 +186,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-/* line 184, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 195, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 img {
   border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 192, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 203, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -186,36 +202,44 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-/* line 203, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 214, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 figure {
   margin: 1em 40px; }
 
 /**
- * Address differences between Firefox and other browsers.
+ * Address inconsistent styling of `hr`.
+ * 1. Correct `box-sizing` set to `border-box` in Firefox.
+ * 2. Correct `overflow` set to `hidden` in IE 8/9/10/11 and Edge 12.
  */
-/* line 211, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 224, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
-  height: 0; }
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
 
 /**
  * Contain overflow in all browsers.
  */
-/* line 221, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 234, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 pre {
   overflow: auto; }
 
 /**
- * Address odd `em`-unit font size rendering in all browsers.
+ * 1. Correct inheritance and scaling of font-size for preformatted text.
+ * 2. Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 232, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 246, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em; }
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
 
 /* Forms
    ========================================================================== */
@@ -224,28 +248,24 @@ samp {
  * styling of `select`, unless a `border` property is set.
  */
 /**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 1. Correct font properties not being inherited.
+ * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 256, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 268, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button,
 input,
 optgroup,
 select,
 textarea {
-  color: inherit;
-  /* 1 */
   font: inherit;
-  /* 2 */
+  /* 1 */
   margin: 0;
-  /* 3 */ }
+  /* 2 */ }
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 266, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 277, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button {
   overflow: visible; }
 
@@ -255,7 +275,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 278, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 289, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button,
 select {
   text-transform: none; }
@@ -267,7 +287,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 293, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 304, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button,
 html input[type="button"], input[type="reset"],
 input[type="submit"] {
@@ -279,7 +299,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 303, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 314, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default; }
@@ -287,7 +307,7 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 312, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 323, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -297,7 +317,7 @@ input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 322, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 333, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 input {
   line-height: normal; }
 
@@ -308,7 +328,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 335, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 346, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -321,31 +341,24 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 347, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 358, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
+ * Address `appearance` set to `searchfield` in Safari and Chrome.
  */
-/* line 357, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 366, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box; }
+  -webkit-appearance: textfield; }
 
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 371, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 377, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -353,7 +366,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 379, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 385, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -363,7 +376,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 390, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 396, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -373,7 +386,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 399, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 405, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 textarea {
   overflow: auto; }
 
@@ -381,7 +394,7 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 408, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 414, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 optgroup {
   font-weight: bold; }
 
@@ -390,12 +403,12 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-/* line 419, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 425, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 425, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
+/* line 431, /Users/raphael/Documents/GitHub/KNACSS/sass/_01a-normalize.scss */
 td,
 th {
   padding: 0; }
