@@ -1893,27 +1893,24 @@ s,m,l,n = small, medium, large, none
   pre,
   samp {
     word-wrap: break-word;
-    hyphens: auto; }
-  /* line 40, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
-  a {
-    word-break: break-all; } }
+    hyphens: auto; } }
 
 @media (max-width: 640px) {
-  /* line 47, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+  /* line 44, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
   .no-wrapping {
     word-wrap: normal;
     hyphens: manual; } }
 
 /* Google Gmap3 bug fix on images */
-/* line 54, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 51, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 .gm-style img {
   height: 100%; }
 
-/* line 58, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 55, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 :not(.gm-style) img {
   height: auto; }
 
-/* line 64, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
+/* line 61, /Users/raphael/Documents/GitHub/KNACSS/sass/_09-misc.scss */
 .gm-style img,
 .gmnoscreen img,
 .gmnoprint img {
