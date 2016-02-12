@@ -45,23 +45,21 @@ Seules exceptions :
 
 KNACSS en version complète ne vous convient pas&nbsp;? Seule la grille flexbox vous intéresse&nbsp;? Bienvenue dans *Grillade* !
 
-### votre grillade avec LESS ou Sass ?
+### votre grillade avec LESS ?
 
 Il est possible de n'utiliser KNACSS que pour sa fonctionnalité de grille de positionnement et de bénéficier de colonnes égales, inégales, responsive, des offsets, des pull et push et des mises en exergue. Bref, de [tout l'attirail des grilles KNACSS](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md).
 
-Il vous suffit pour cela de récupérer l'un ou l'autre fichier selon votre choix de préprocesseur :
-- [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.less)
-- [grillade.scss](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss)
+Il vous suffit pour cela de récupérer le fichier suivant : [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.less)
 
-Ces fichiers ne sont rien d'autre que la concaténation de deux fichiers essentiels :
-- `_00-config.less|scss` (nécessaire pour les variables, les tailles de gouttières et les valeurs de breakpoints)
-- `_03-grids.less|scss` (ben oui, quand même)
+Ce fichier n'est rien d'autre que la concaténation de deux fichiers essentiels :
+- `_00-config.less` (nécessaire pour les variables, les tailles de gouttières et les valeurs de breakpoints)
+- `_03-grids.less` (ben oui, quand même)
 
 ### votre grillade plutôt nature ?
 
 Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par LESS ou Sass&nbsp;?
 
-Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il ne pèse que 4.2ko seulement&nbsp;!
+Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il est parfaitement autonome et ne pèse que 4ko seulement&nbsp;!
 
 Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
 
