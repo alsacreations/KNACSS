@@ -44,8 +44,10 @@
 // Sass mixins for *equal* columns grid container
 // example : .grid-perso { @include grid(12); }
 @mixin grid($number:$number,$gutter:$gutter) {
+  margin-left: -$gutter;
   & > * {
     width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
+    margin-left: $gutter;
   }
   & > .#{$kna-namespace}flex-item-double {
     width: calc(100% * 2 / #{$number} - #{$gutter});
@@ -139,13 +141,17 @@
 // Sass mixins for *unequal* columns grid container
 // example : .grid-perso { @include uneven-grid(2, 1); }
 @mixin uneven-grid($left:$left, $right:$right, $gutter:$gutter) {
-  & > *:nth-child(odd) {
-    $size: ($left / ($left + $right)) * 100%;
-    width: calc(#{$size} - #{$gutter});
-  }
-  & > *:nth-child(even) {
-    $size: ($right / ($left + $right)) * 100%;
-    width: calc(#{$size} - #{$gutter});
+  margin-left: -$gutter;
+  > * {
+    margin-left: $gutter;
+    &:nth-child(odd) {
+      $size: ($left / ($left + $right)) * 100%;
+      width: calc(#{$size} - #{$gutter});
+    }
+    &:nth-child(even) {
+      $size: ($right / ($left + $right)) * 100%;
+      width: calc(#{$size} - #{$gutter});
+    }
   }
   @media (max-width: $small-screen) {
     & > *:nth-child(n) {
