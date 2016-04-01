@@ -1,3 +1,9 @@
+# changelog v4.4.5 (1er avril 2016)
+
+- mise à jour vers Normalize 4 : https://github.com/necolas/normalize.css/blob/4.0.0/CHANGELOG.md
+- application de min-width: 0 sur les flex-item-fluid pour éviter les minimum automatiques des flex-items
+- suppression des styles spécifiques à Gmap (sélecteurs trop lourds pour un cas très particuliers)
+
 # changelog v4.4.4 (23 janvier 2016)
 
 - mise à jour vers Normalize 3.0.3 : https://github.com/necolas/normalize.css/
