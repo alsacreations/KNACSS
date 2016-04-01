@@ -2,7 +2,7 @@
   "name": "knacss",
   "version": "4.4.5",
   "homepage": "http://www.knacss.com/",
-  "bugs": "https://github.com/raphaelgoetter/KNACSS/issues",
+  "bugs": "https://github.com/alsacreations/KNACSS/issues",
   "author": [
     "Raphaël GOETTER, Alsacreations (http://www.alsacreations.fr)"
   ],
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/raphaelgoetter/KNACSS"
+    "url": "https://github.com/alsacreations/KNACSS"
   },
   "license": "WTFPL",
   "dependencies": {},
