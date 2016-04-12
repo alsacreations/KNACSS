@@ -70,7 +70,7 @@ Largeurs spéciales :
 
 ## les Helpers d'espacement
 
-Les herpers d'espacement comportent des classes dédiées aux marges externes (margin) et aux marges internes (padding).
+Les helpers d'espacement comportent des classes dédiées aux marges externes (margin) et aux marges internes (padding).
 
 Leur nommage est assez intuitif :
 
