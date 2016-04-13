@@ -41,11 +41,18 @@
   letter-spacing: normal;
 }
 
+// LESS mixin for custom grid container
+.check-new-margin(@newgutter, @multiplier) when not (@newgutter = @gutter) {
+  margin-left: @newgutter * @multiplier;
+}
+
 // LESS mixins for *equal* columns grid container
 // example : .grid-perso { .grid(12); }
 .grid(@number:@number, @gutter:@gutter) {
+  .check-new-margin(@gutter, -1);
   & > * {
     width: ~'calc(100% * 1 / @{number} - @{gutter} - .01px)';
+    .check-new-margin(@gutter, 1);
   }
   & > .@{kna-namespace}flex-item-double {
     width: ~'calc(100% * 2 / @{number} - @{gutter} - .01px)';
@@ -130,14 +137,19 @@
 // LESS mixins for *unequal* columns grid container
 // example : .grid-perso { .uneven-grid(2, 1); }
 .uneven-grid(@left:@left, @right:@right, @gutter:@gutter) {
-  & > *:nth-child(odd) {
-    @size: (@left / (@left + @right)) * 100%;
-    width: ~'calc(@{size} - @{gutter} - .01px)';
+  .check-new-margin(@gutter, -1);
+  & > * {
+    .check-new-margin(@gutter, 1);
+    &:nth-child(odd) {
+      @size: (@left / (@left + @right)) * 100%;
+      width: ~'calc(@{size} - @{gutter} - .01px)';
+    }
+    &:nth-child(even) {
+      @size: (@right / (@left + @right)) * 100%;
+      width: ~'calc(@{size} - @{gutter} - .01px)';
+    }
   }
-  & > *:nth-child(even) {
-    @size: (@right / (@left + @right)) * 100%;
-    width: ~'calc(@{size} - @{gutter} - .01px)';
-  }
+
   @media (max-width: @small-screen) {
     & > *:nth-child(n) {
       width: ~'calc(100% - @{gutter} - .01px)';
