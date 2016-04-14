@@ -43,12 +43,18 @@
 
 // Sass mixins for *equal* columns grid container
 // example : .grid-perso { @include grid(12); }
-@mixin grid($number:$number,$gutter:$gutter) {
+@mixin grid($number:$number,$newgutter:$gutter) {
+  @if $newgutter != $gutter {
+    margin-left: -$newgutter;
+  }
   & > * {
-    width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
+    width: calc(100% * 1 / #{$number} - #{$newgutter} - .01px);
+    @if $newgutter != $gutter {
+      margin-left: $newgutter;
+    }
   }
   & > .#{$kna-namespace}flex-item-double {
-    width: calc(100% * 2 / #{$number} - #{$gutter});
+    width: calc(100% * 2 / #{$number} - #{$newgutter});
   }
 }
 
@@ -138,18 +144,26 @@
 
 // Sass mixins for *unequal* columns grid container
 // example : .grid-perso { @include uneven-grid(2, 1); }
-@mixin uneven-grid($left:$left, $right:$right, $gutter:$gutter) {
-  & > *:nth-child(odd) {
-    $size: ($left / ($left + $right)) * 100%;
-    width: calc(#{$size} - #{$gutter});
+@mixin uneven-grid($left:$left, $right:$right, $newgutter:$gutter) {
+  @if $newgutter != $gutter {
+    margin-left: -$newgutter;
   }
-  & > *:nth-child(even) {
-    $size: ($right / ($left + $right)) * 100%;
-    width: calc(#{$size} - #{$gutter});
+  > * {
+    @if $newgutter != $gutter {
+      margin-left: $newgutter;
+    }
+    &:nth-child(odd) {
+      $size: ($left / ($left + $right)) * 100%;
+      width: calc(#{$size} - #{$newgutter});
+    }
+    &:nth-child(even) {
+      $size: ($right / ($left + $right)) * 100%;
+      width: calc(#{$size} - #{$newgutter});
+    }
   }
   @media (max-width: $small-screen) {
     & > *:nth-child(n) {
-      width: calc(100% - #{$gutter});
+      width: calc(100% - #{$newgutter});
     }
   }
 }
