@@ -1,4 +1,12 @@
 # Grilles de mise en page
+
+Une grille "KNACSS" a les caractéristiques globales suivantes :
+
+- Les largeurs des colonnes sont fluides (définies en pourcentage du parent),
+- Une gouttière sépare chaque colonne (la valeur de cette gouttière est modifiable dans les fichiers `less/knacss.less` ou `sass/knacss.scss`),
+- Par défaut, une grille n'est pas responsive mais il est très simple d'activer cette fonctionnalité,
+- La technologie employée est [CSS3 Flexbox](http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html).
+
 Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 - Les grilles à colonnes égales
