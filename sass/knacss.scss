@@ -1,28 +1,37 @@
-// Sass config file
+/*!
+* www.KNACSS.com V5.0.0 (16 mai 2016) @author: Raphael Goetter, Alsacreations
+* Licence WTFPL http://www.wtfpl.net/
+*/
+
+// This is the global Sass imports file
 // -----------------
 
-// (WARNING : you should comment this line and move config file from vendor/knacss folder to your own folder)
-@import "_00-config";
+// normalize and include-media imports
+@import "_normalize/_normalize.scss"; // normalize
+@import "_include-media/_include-media.scss"; // include-media
 
-// normalize include
-@import "_01a-normalize"; // normalize
+// (WARNING : you should comment this line and move config file from vendor/knacss folder to your own project folder)
+@import "_config-variables.scss";
 
-// Sass base styles
-@import "_01b-base"; // reset and basic styles
+// Libraries
+@import "_library-base.scss"; // reset and basic styles
+@import "_library-print.scss"; // print quick reset
+@import "_library-styling.scss"; // minor stylings
+@import "_library-misc.scss"; // skip links, hyphens
+// @import "_library-wordpress.scss"; // WordPress reset and basic styles
 
-// Sass files : chose the ones you need
-@import "_02-layout"; // alignment, modules, positionning
-@import "_03-grids"; // grids
-@import "_04-tables"; // data tables consistency
-@import "_05-forms"; // forms consistency
-@import "_06-helpers"; // width and spacers visually classes
-@import "_07-responsive"; // Responsive Web Design helpers
-@import "_08-print"; // print quick reset
-@import "_09-misc"; // skip links, google maps and hyphens
-@import "_10-styling"; // minor stylings
+// Layout
+@import "_layout-general.scss"; // alignment, modules, positionning
+@import "_layout-grids.scss"; // grids
 
-// WordPress base styles
-// @import "_11-wordpress"; // WordPress reset and basic styles
+// Objects
+@import "_object-tables.scss"; // data tables consistency
+@import "_object-forms.scss"; // forms consistency
+
+// Overrides
+@import "_override-helpers.scss"; // width and spacers helpers
+@import "_override-responsive.scss"; // Responsive Web Design helpers
+
 
 /* ----------------------------- */
 /* ==own stylesheet              */

@@ -1,3 +1,15 @@
+# changelog v5.0.0 (16 mai 2016)
+- suppression du support IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
+- suppression du support LESS (à partir de la version KNACSS 5.0, seul le préprocesseur Sass est encore pris en charge pour des raisons de maintenabilité)
+- mise à jour vers Normalize 4.1.1 : https://github.com/necolas/normalize.css/blob/4.1.1/CHANGELOG.md
+- restructuration / renommage des fichiers avec préfixes `_config-`, `_layout-`, `_library-`, `_object-`, `_override-`
+- ajout de la library include-media (http://include-media.com/) pour faciliter la gestion des media queries
+- adaptation des variables de breakpoint pour les rendre compatibles avec include-media
+- adaptation des fichiers gulpfile, package.json et bower.json
+- grille "grillade" à présent en mobile first (par défaut 1 colonne sur "tiny", 2 colonnes sur "small", valeurs modifiables)
+- mise à jour de la documentation
+- ajout de commentaires dans les grilles
+
 # changelog v4.4.5 (1er avril 2016)
 
 - mise à jour vers Normalize 4 : https://github.com/necolas/normalize.css/blob/4.0.0/CHANGELOG.md

@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 
 // Include plugins
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var minifycss = require('gulp-minify-css');
@@ -12,8 +12,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 // tâche CSS = compile vers knacss.css et knacss-unminified.css
 gulp.task('css', function () {
-  return gulp.src('./less/knacss.less')
-    .pipe(less())
+  return gulp.src('./sass/knacss.scss')
+    .pipe(sass())
     .pipe(autoprefixer())
     .pipe(rename('knacss-unminified.css'))
     .pipe(gulp.dest('./css/'))
@@ -25,10 +25,10 @@ gulp.task('css', function () {
 });
 
 gulp.task('grillade', function() {
-  return gulp.src(['./less/_00-config.less', './less/_03-grids.less'])
-    .pipe(concat('grillade.less'))
+  return gulp.src(['./sass/_include-media/_include-media.scss','./sass/_config-variables.scss', './sass/_layout-grids.scss'])
+    .pipe(concat('grillade.scss'))
     .pipe(gulp.dest('./css/'))
-    .pipe(less())
+    .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifycss())
     .pipe(gulp.dest('./css/'));
@@ -36,7 +36,7 @@ gulp.task('grillade', function() {
 
 // Watcher
 gulp.task('watch', function() {
-  gulp.watch(['./less/*.less'], ['css']);
+  gulp.watch(['./sass/*.scss'], ['css']);
 });
 
 

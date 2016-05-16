@@ -22,23 +22,24 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: -$gutter;
-
-  /* inline-block fallback for IE9 generation */
-  letter-spacing: -0.31em;
 }
 
 /* grid childs */
 [class*="#{$kna-namespace}grid-"] > * {
   box-sizing: border-box;
   flex: 0 0 auto;
-  width: calc(100% * 1 / #{$number} - #{$gutter} - .01px);
+  width: calc(100% - #{$gutter} - .01px);// @bugfix IE https://github.com/alsacreations/KNACSS/issues/133;
   min-width: 0;
+  min-height: 0;
   margin-left: $gutter;
-
-  /* inline-block fallback for IE9 generation */
-  display: inline-block;
-  vertical-align: top;
-  letter-spacing: normal;
+  @include media('>tiny-screen', '<=small-screen') {
+    & {
+      width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+    }
+    &.flex-item-double {
+      width: calc(100% - #{$gutter} - .01px);
+    }
+  }
 }
 
 // Sass mixins for *equal* columns grid container
@@ -59,47 +60,17 @@
 }
 
 // Examples : will be compiled in CSS
-
-[class*="#{$kna-namespace}grid-2"] {
-  @include grid(2);
-}
-
-[class*="#{$kna-namespace}grid-3"] {
-  @include grid(3);
-}
-
-[class*="#{$kna-namespace}grid-4"] {
-  @include grid(4);
-}
-
-[class*="#{$kna-namespace}grid-5"] {
-  @include grid(5);
-}
-
-[class*="#{$kna-namespace}grid-6"] {
-  @include grid(6);
-}
-
-[class*="#{$kna-namespace}grid-7"] {
-  @include grid(7);
-}
-
-[class*="#{$kna-namespace}grid-8"] {
-  @include grid(8);
-}
-
-[class*="#{$kna-namespace}grid-10"] {
-  @include grid(10);
-}
-
-[class*="#{$kna-namespace}grid-12"] {
-  @include grid(12);
+@include media('>small-screen') {
+  @for $i from 2 through 12 {
+    [class*="#{$kna-namespace}grid-#{$i}"] {
+        @include grid(#{$i});
+    }
+  }
 }
 
 /* Responsive grid */
-// "small-2" = 2 columns when small screen
-// example : .grid-4-small-2 will be 4 then 2 columns
-@media (max-width: $small-screen) {
+// example : .grid-4-small-2 will be 1 column (tiny) then 2 columns (small) then 4 columns
+@include media('>tiny-screen', '<=small-screen') {
   [class*="-small-4"] > * {
     width: calc(100% * 1 / 4 - #{$gutter} - .01px);
   }
@@ -125,22 +96,7 @@
     width: calc(100% - #{$gutter} - .01px);
   }
 }
-// "tiny-1" = 1 column when tiny screen
-// example : .grid-4-small-2-tiny-1 will be 4 then 2 columns then 1 column
-@media (max-width: $tiny-screen) {
-  [class*="-tiny-2"] > * {
-    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
-  }
-  [class*="-tiny-2"] > .flex-item-double {
-    width: calc(100% - #{$gutter} - .01px);
-  }
-  [class*="-tiny-1"] > * {
-    width: calc(100% - #{$gutter} - .01px);
-  }
-  [class*="-tiny-1"] > .flex-item-double {
-    width: calc(100% - #{$gutter} - .01px);
-  }
-}
+
 
 // Sass mixins for *unequal* columns grid container
 // example : .grid-perso { @include uneven-grid(2, 1); }
@@ -151,19 +107,17 @@
   > * {
     @if $newgutter != $gutter {
       margin-left: $newgutter;
+      width: calc(100% - #{$newgutter});
     }
-    &:nth-child(odd) {
+  }
+  @include media('>small-screen') {
+    & :nth-child(odd) {
       $size: ($left / ($left + $right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
     }
-    &:nth-child(even) {
+    & :nth-child(even) {
       $size: ($right / ($left + $right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
-    }
-  }
-  @media (max-width: $small-screen) {
-    & > *:nth-child(n) {
-      width: calc(100% - #{$newgutter});
     }
   }
 }
