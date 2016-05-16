@@ -90,7 +90,7 @@ Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent au
 Les grilles KNACSS sont mobile-first et "plus ou moins" responsive naturellement, dans la mesure où par défaut :
 - elles s'affichent systématiquement sur une seule colonne sur un très petit écran ("tiny"),
 - elles s'affichent par défaut en 2 colonnes sur un écran de taille réduite ("small"),
-- elles occupent le nombre de colonnes définies dans la variable `$number` sur un écran suffisamment large.
+- elles occupent le nombre de colonnes définies dans la variable `$grid-number` sur un écran suffisamment large.
 
 Vous pouvez définir le nombre de colonnes selon les tailles d'écran à l'aide du mot-clé : `-small-*`.
 Ce mot-clé définit le nombre de colonnes lorsque le point de rupture se situe au-delà de la taille "tiny" et en-deçà de la taille "medium".
@@ -200,10 +200,10 @@ KNACSS est pensé pour être utilisé à l'aide de preprocesseurs tels que LESS 
 Les variables de configuration des grilles se trouvent dans le fichier `sass/_config-variables.scss` :
 
 ```css
-$gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
-$number:  4 !default; // number of equal columns
-$left:    2 !default; // left side of uneven columns
-$right:   1 !default; // right side of uneven columns
+$grid-gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$grid-number:  4 !default; // number of equal columns
+$grid-left:    2 !default; // left side of uneven columns
+$grid-right:   1 !default; // right side of uneven columns
 ```
 
 Il vous suffit de modifier les valeurs de ces variables de config pour répercuter vos préférences sur l'ensemble du projet dès que vos fichiers Sass seront compilés en CSS.

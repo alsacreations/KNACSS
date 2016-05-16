@@ -7,6 +7,7 @@
 - adaptation des variables de breakpoint pour les rendre compatibles avec include-media
 - adaptation des fichiers gulpfile, package.json et bower.json
 - grille "grillade" à présent en mobile first (par défaut 1 colonne sur "tiny", 2 colonnes sur "small", valeurs modifiables)
+- nommage de variables préfixé pour plus de maintenabilité : `$gutter` -> `$grid-gutter`, `$number` -> `$grid-number`, `$left` -> `$grid-left` et `$right` -> `$grid-right`
 - mise à jour de la documentation
 - ajout de commentaires dans les grilles
 

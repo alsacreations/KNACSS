@@ -21,41 +21,41 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -$gutter;
+  margin-left: -$grid-gutter;
 }
 
 /* grid childs */
 [class*="#{$kna-namespace}grid-"] > * {
   box-sizing: border-box;
   flex: 0 0 auto;
-  width: calc(100% - #{$gutter} - .01px);// @bugfix IE https://github.com/alsacreations/KNACSS/issues/133;
+  width: calc(100% - #{$grid-gutter} - .01px);// @bugfix IE https://github.com/alsacreations/KNACSS/issues/133;
   min-width: 0;
   min-height: 0;
-  margin-left: $gutter;
+  margin-left: $grid-gutter;
   @include media('>tiny-screen', '<=small-screen') {
     & {
-      width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+      width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
     }
     &.flex-item-double {
-      width: calc(100% - #{$gutter} - .01px);
+      width: calc(100% - #{$grid-gutter} - .01px);
     }
   }
 }
 
 // Sass mixins for *equal* columns grid container
 // example : .grid-perso { @include grid(12); }
-@mixin grid($number:$number,$newgutter:$gutter) {
-  @if $newgutter != $gutter {
+@mixin grid($grid-number:$grid-number,$newgutter:$grid-gutter) {
+  @if $newgutter != $grid-gutter {
     margin-left: -$newgutter;
   }
   & > * {
-    width: calc(100% * 1 / #{$number} - #{$newgutter} - .01px);
-    @if $newgutter != $gutter {
+    width: calc(100% * 1 / #{$grid-number} - #{$newgutter} - .01px);
+    @if $newgutter != $grid-gutter {
       margin-left: $newgutter;
     }
   }
   & > .#{$kna-namespace}flex-item-double {
-    width: calc(100% * 2 / #{$number} - #{$newgutter});
+    width: calc(100% * 2 / #{$grid-number} - #{$newgutter});
   }
 }
 
@@ -72,51 +72,51 @@
 // example : .grid-4-small-2 will be 1 column (tiny) then 2 columns (small) then 4 columns
 @include media('>tiny-screen', '<=small-screen') {
   [class*="-small-4"] > * {
-    width: calc(100% * 1 / 4 - #{$gutter} - .01px);
+    width: calc(100% * 1 / 4 - #{$grid-gutter} - .01px);
   }
   [class*="-small-4"] > .flex-item-double {
-    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+    width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
   }
   [class*="-small-3"] > * {
-    width: calc(100% * 1 / 3 - #{$gutter} - .01px);
+    width: calc(100% * 1 / 3 - #{$grid-gutter} - .01px);
   }
   [class*="-small-3"] > .flex-item-double {
-    width: calc(100% * 2 / 3 - #{$gutter} - .01px);
+    width: calc(100% * 2 / 3 - #{$grid-gutter} - .01px);
   }
   [class*="-small-2"] > * {
-    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+    width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
   }
   [class*="-small-2"] > .flex-item-double {
-    width: calc(100% - #{$gutter} - .01px);
+    width: calc(100% - #{$grid-gutter} - .01px);
   }
   [class*="-small-1"] > * {
-    width: calc(100% - #{$gutter} - .01px);
+    width: calc(100% - #{$grid-gutter} - .01px);
   }
   [class*="-small-1"] > .flex-item-double {
-    width: calc(100% - #{$gutter} - .01px);
+    width: calc(100% - #{$grid-gutter} - .01px);
   }
 }
 
 
 // Sass mixins for *unequal* columns grid container
 // example : .grid-perso { @include uneven-grid(2, 1); }
-@mixin uneven-grid($left:$left, $right:$right, $newgutter:$gutter) {
-  @if $newgutter != $gutter {
+@mixin uneven-grid($grid-left:$grid-left, $grid-right:$grid-right, $newgutter:$grid-gutter) {
+  @if $newgutter != $grid-gutter {
     margin-left: -$newgutter;
   }
   > * {
-    @if $newgutter != $gutter {
+    @if $newgutter != $grid-gutter {
       margin-left: $newgutter;
       width: calc(100% - #{$newgutter});
     }
   }
   @include media('>small-screen') {
     & :nth-child(odd) {
-      $size: ($left / ($left + $right)) * 100%;
+      $size: ($grid-left / ($grid-left + $grid-right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
     }
     & :nth-child(even) {
-      $size: ($right / ($left + $right)) * 100%;
+      $size: ($grid-right / ($grid-left + $grid-right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
     }
   }

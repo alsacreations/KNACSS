@@ -61,10 +61,10 @@ $breakpoints: (
 );
 
 // grids variables (choose unit you prefer)
-$gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
-$number:  4 !default; // number of equal columns
-$left:    2 !default; // left side of uneven columns
-$right:   1 !default; // right side of uneven columns
+$grid-gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$grid-number:  4 !default; // number of equal columns
+$grid-left:    2 !default; // left side of uneven columns
+$grid-right:   1 !default; // right side of uneven columns
 
 //kna-namespace (default : null)
 $kna-namespace: null !default;
