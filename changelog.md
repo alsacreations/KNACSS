@@ -10,6 +10,7 @@
 - nommage de variables préfixé pour plus de maintenabilité : `$gutter` -> `$grid-gutter`, `$number` -> `$grid-number`, `$left` -> `$grid-left` et `$right` -> `$grid-right`
 - mise à jour de la documentation
 - ajout de commentaires dans les grilles
+- ajout de Table des Matières dans la feuille de style non minifiée
 
 # changelog v4.4.5 (1er avril 2016)
 

@@ -3,18 +3,34 @@
 * Licence WTFPL http://www.wtfpl.net/
 */
 
+/* ----------------------------- */
+/* ==Table Of Content            */
+/* ----------------------------- */
+/* 1- Normalize (basic reset) */
+/* 2- Base (basic styles) */
+/* 3- Print (print quick reset) */
+/* 4- Stylings (minor stylings) */
+/* 5- Misc (skip links, hyphens) */
+/* (6- WordPress reset (disabled by default)) */
+/* 7- Global Layout (alignment, modules, positionning) */
+/* 8- Grid Layout (grillade) */
+/* 9- Tables (data tables consistency) */
+/* 10- Forms (forms consistency) */
+/* 11- Helpers (width and spacers helpers) */
+/* 12- Responsive (Responsive Web Design helpers) */
+
 // This is the global Sass imports file
 // -----------------
 
 // normalize and include-media imports
-@import "_normalize/_normalize.scss"; // normalize
+@import "_normalize/_normalize.scss"; // normalize (basic reset)
 @import "_include-media/_include-media.scss"; // include-media
 
 // (WARNING : you should comment this line and move config file from vendor/knacss folder to your own project folder)
 @import "_config-variables.scss";
 
 // Libraries
-@import "_library-base.scss"; // reset and basic styles
+@import "_library-base.scss"; // basic styles
 @import "_library-print.scss"; // print quick reset
 @import "_library-styling.scss"; // minor stylings
 @import "_library-misc.scss"; // skip links, hyphens
