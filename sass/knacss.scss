@@ -22,11 +22,15 @@
 // This is the global Sass imports file
 // -----------------
 
-// normalize and include-media imports
+/* ---------------------------------- */
+/* ==Normalize (basic reset)          */
+/* ---------------------------------- */
+
 @import "_normalize/_normalize.scss"; // normalize (basic reset)
 @import "_include-media/_include-media.scss"; // include-media
 
-// (WARNING : you should comment this line and move config file from vendor/knacss folder to your own project folder)
+// WARNING : you should comment the following @import (config)
+// and move config file from knacss folder to your own project folder!
 @import "_config-variables.scss";
 
 // Libraries
