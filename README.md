@@ -50,24 +50,15 @@ Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est �
 
 KNACSS en version complète ne vous convient pas&nbsp;? Seule la grille flexbox vous intéresse&nbsp;? Bienvenue dans *Grillade* !
 
-### votre grillade avec Sass ?
+- en version [CSS classique](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css) (parfaitement autonome et ne pèse que 4ko seulement&nbsp;!)
+- en version [Sass](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss) (avec variables)
 
-Il est possible de n'utiliser KNACSS que pour sa fonctionnalité de grille de positionnement et de bénéficier de colonnes égales, inégales, responsive, des offsets, des pull et push et des mises en exergue. Bref, de [tout l'attirail des grilles KNACSS](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md).
-
-Il vous suffit pour cela de récupérer le fichier suivant : [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss)
-
-### votre grillade plutôt nature ?
-
-Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par Sass&nbsp;?
-
-Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il est parfaitement autonome et ne pèse que 4ko seulement&nbsp;!
-
-Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
+Dans tous les cas n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
 
 
 ## Préprocesseurs
 
-KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc des `.scss` et non des `.css`.
+KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
 
 Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/sass/_config-variables.scss) contenant toutes les variables du projet est intégré.
 Libre à vous de le modifier selon les contraintes de votre projet.
