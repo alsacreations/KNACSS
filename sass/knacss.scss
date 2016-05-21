@@ -1,11 +1,12 @@
 /*!
-* www.KNACSS.com V5.0.0 (16 mai 2016) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V5.0.0 (20 mai 2016) @author: Raphael Goetter, Alsacreations
 * Licence WTFPL http://www.wtfpl.net/
 */
 
 /* ----------------------------- */
 /* ==Table Of Content            */
 /* ----------------------------- */
+
 /* 1- Normalize (basic reset) */
 /* 2- Base (basic styles) */
 /* 3- Print (print quick reset) */
@@ -18,9 +19,6 @@
 /* 10- Forms (forms consistency) */
 /* 11- Helpers (width and spacers helpers) */
 /* 12- Responsive (Responsive Web Design helpers) */
-
-// This is the global Sass imports file
-// -----------------
 
 /* ---------------------------------- */
 /* ==Normalize (basic reset)          */
@@ -58,5 +56,5 @@
 /* ----------------------------- */
 
 /* Here should go your own CSS styles */
-/* You can also link them with a Sass @import */
-/* @import "my-styles"; */
+// You can also link them with a Sass @import
+// @import "my-styles";
