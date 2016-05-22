@@ -11,7 +11,7 @@ En résumé, voilà les bases typographiques de KNACSS :
 
 ## Reset "light"
 
-Le reset de KNACSS est volotairement minimal, le but n'étant pas de tout mettre à zéro pour le redéfinir par la suite.
+Le reset de KNACSS est volontairement minimal, le but n'étant pas de tout mettre à zéro pour le redéfinir par la suite.
 
 La feuille de style débute ainsi par une variante de l'incontournable `* {box-sizing: border-box}` afin d'imposer le très pratique modèle de boîte CSS3 à tous les éléments du document.
 
