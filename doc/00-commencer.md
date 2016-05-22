@@ -50,24 +50,15 @@ Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est �
 
 KNACSS en version complète ne vous convient pas&nbsp;? Seule la grille flexbox vous intéresse&nbsp;? Bienvenue dans *Grillade* !
 
-### votre grillade avec Sass ?
+- en version [CSS classique](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css) (parfaitement autonome et ne pèse que 4ko seulement&nbsp;!)
+- en version [Sass](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss) (avec variables)
 
-Il est possible de n'utiliser KNACSS que pour sa fonctionnalité de grille de positionnement et de bénéficier de colonnes égales, inégales, responsive, des offsets, des pull et push et des mises en exergue. Bref, de [tout l'attirail des grilles KNACSS](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md).
-
-Il vous suffit pour cela de récupérer le fichier suivant : [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss)
-
-### votre grillade plutôt nature ?
-
-Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par Sass&nbsp;?
-
-Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il est parfaitement autonome et ne pèse que 4ko seulement&nbsp;!
-
-Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
+Dans tous les cas n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
 
 
 ## Préprocesseurs
 
-KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc des `.scss` et non des `.css`.
+KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
 
 Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/sass/_config-variables.scss) contenant toutes les variables du projet est intégré.
 Libre à vous de le modifier selon les contraintes de votre projet.
@@ -104,48 +95,10 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 
 #### Modifications majeures depuis la `3.*.*`
 
-##### Alignements et flottants
-
-La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;:
-
-- `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche
-- `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite
-- `.start` et `.end` n'existent plus
-
-##### Nommages des grilles
-
-Le système de grilles de KNACSS 4 est à présent basé sur flexbox (mais demeure compatible IE8 grâce à une alternative inline-block).
-
-De plus, les noms des conteneurs ont changé et nécessitent systématiquement un trait d'union.
-
-Exemple :
-
-- ancien nommage : `.grid2`, `.grid1-3`
-- nouveau nommage : `.grid-2`, `.grid-1-3`
-
-##### Nommages de flexbox
-
-Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
-
-Ancien nommage :
-
-```
-.flexbox, .flexbox-h
-.flexbox-v
-.flexitem-fluid
-.flexitem-center
-.flexitem-first, .flexitem-medium, .flexitem-last
-```
-
-Nouveau nommage :
-
-```
-.flex-container, .flex-container-h
-.flex-container-v
-.flex-item-fluid
-.flex-item-center
-.flex-item-first, .flex-item-medium, .flex-item-last
-```
+- La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;: `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche;  `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite; `.start` et `.end` n'existent plus
+- Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
+- Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage :
+`.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last`
 
 ### Utilisateur de SPIP ?
 

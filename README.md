@@ -95,48 +95,10 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 
 #### Modifications majeures depuis la `3.*.*`
 
-##### Alignements et flottants
-
-La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;:
-
-- `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche
-- `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite
-- `.start` et `.end` n'existent plus
-
-##### Nommages des grilles
-
-Le système de grilles de KNACSS 4 est à présent basé sur flexbox (mais demeure compatible IE8 grâce à une alternative inline-block).
-
-De plus, les noms des conteneurs ont changé et nécessitent systématiquement un trait d'union.
-
-Exemple :
-
-- ancien nommage : `.grid2`, `.grid1-3`
-- nouveau nommage : `.grid-2`, `.grid-1-3`
-
-##### Nommages de flexbox
-
-Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes).
-
-Ancien nommage :
-
-```
-.flexbox, .flexbox-h
-.flexbox-v
-.flexitem-fluid
-.flexitem-center
-.flexitem-first, .flexitem-medium, .flexitem-last
-```
-
-Nouveau nommage :
-
-```
-.flex-container, .flex-container-h
-.flex-container-v
-.flex-item-fluid
-.flex-item-center
-.flex-item-first, .flex-item-medium, .flex-item-last
-```
+- La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;: `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche;  `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite; `.start` et `.end` n'existent plus
+- Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
+- Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage :
+`.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last` 
 
 ### Utilisateur de SPIP ?
 
