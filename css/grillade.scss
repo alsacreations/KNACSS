@@ -751,11 +751,11 @@ $kna-namespace: null !default;
     }
   }
   @include media('>small-screen') {
-    & :nth-child(odd) {
+    & > :nth-child(odd) {
       $size: ($grid-left / ($grid-left + $grid-right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
     }
-    & :nth-child(even) {
+    & > :nth-child(even) {
       $size: ($grid-right / ($grid-left + $grid-right)) * 100%;
       width: calc(#{$size} - #{$newgutter});
     }

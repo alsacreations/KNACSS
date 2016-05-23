@@ -1003,51 +1003,51 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
     width: calc(100% - 2rem - .01px); } }
 
 @media (min-width: 641px) {
-  .grid-2-1 :nth-child(odd) {
+  .grid-2-1 > :nth-child(odd) {
     width: calc(66.66667% - 2rem); }
-  .grid-2-1 :nth-child(even) {
+  .grid-2-1 > :nth-child(even) {
     width: calc(33.33333% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-1-2 :nth-child(odd) {
+  .grid-1-2 > :nth-child(odd) {
     width: calc(33.33333% - 2rem); }
-  .grid-1-2 :nth-child(even) {
+  .grid-1-2 > :nth-child(even) {
     width: calc(66.66667% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-3-1 :nth-child(odd) {
+  .grid-3-1 > :nth-child(odd) {
     width: calc(75% - 2rem); }
-  .grid-3-1 :nth-child(even) {
+  .grid-3-1 > :nth-child(even) {
     width: calc(25% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-1-3 :nth-child(odd) {
+  .grid-1-3 > :nth-child(odd) {
     width: calc(25% - 2rem); }
-  .grid-1-3 :nth-child(even) {
+  .grid-1-3 > :nth-child(even) {
     width: calc(75% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-3-2 :nth-child(odd) {
+  .grid-3-2 > :nth-child(odd) {
     width: calc(60% - 2rem); }
-  .grid-3-2 :nth-child(even) {
+  .grid-3-2 > :nth-child(even) {
     width: calc(40% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-2-3 :nth-child(odd) {
+  .grid-2-3 > :nth-child(odd) {
     width: calc(40% - 2rem); }
-  .grid-2-3 :nth-child(even) {
+  .grid-2-3 > :nth-child(even) {
     width: calc(60% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-4-1 :nth-child(odd) {
+  .grid-4-1 > :nth-child(odd) {
     width: calc(80% - 2rem); }
-  .grid-4-1 :nth-child(even) {
+  .grid-4-1 > :nth-child(even) {
     width: calc(20% - 2rem); } }
 
 @media (min-width: 641px) {
-  .grid-1-4 :nth-child(odd) {
+  .grid-1-4 > :nth-child(odd) {
     width: calc(20% - 2rem); }
-  .grid-1-4 :nth-child(even) {
+  .grid-1-4 > :nth-child(even) {
     width: calc(80% - 2rem); } }
 
 .pull {
