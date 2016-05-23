@@ -67,7 +67,7 @@ Libre à vous de le modifier selon les contraintes de votre projet.
 
 Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principaux seront :
 - le fichier `sass/_config-variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
-- le fichier `sass/knacss.scss` qui importe tous les fichiers que vous risquez d'employez dans votre projet.
+- le fichier `sass/knacss.scss` qui importe tous les fichiers que vous risquez d'employer dans votre projet.
 
 En cours de développement, il vous suffit de compiler ce fichier `sass/knacss.scss` pour obtenir vos fichiers CSS utiles.
 
