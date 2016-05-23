@@ -90,6 +90,7 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 - suppression de la version LESS (à partir de la version KNACSS 5.0, seul le préprocesseur Sass est encore pris en charge)
 - suppression des fallbacks pour IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
 - restructuration / renommage des fichiers avec préfixes `_config-`, `_layout-`, `_library-`, `_object-`, `_override-`
+- renommage des éléments de grilles : `.flex-item-double` --> `.grid-item-double` (plus cohérent)
 - ajout de la library include-media (http://include-media.com/)
 - grille "grillade" à présent en mobile first
 
