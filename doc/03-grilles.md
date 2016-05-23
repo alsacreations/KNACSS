@@ -89,7 +89,7 @@ Les **enfants** directs d'un conteneur, quels qu'ils soient, se répartissent au
 
 Les grilles KNACSS sont mobile-first et "plus ou moins" responsive naturellement, dans la mesure où par défaut :
 - elles s'affichent systématiquement sur une seule colonne sur un très petit écran ("tiny"),
-- elles s'affichent par défaut en 2 colonnes sur un écran de taille réduite ("small"),
+- elles s'affichent en 2 colonnes sur un écran de taille réduite ("small"),
 - elles occupent le nombre de colonnes définies dans la variable `$grid-number` sur un écran suffisamment large.
 
 Vous pouvez définir le nombre de colonnes selon les tailles d'écran à l'aide du mot-clé : `-small-*`.
@@ -131,13 +131,13 @@ Résultat :
 
 Il est possible de mettre un élément particulier en exergue, en **doublant sa taille** par rapport aux autres, tout en conservant un agencement parfait de la grille.
 
-Pour ce faire, appliquez la classe `.flex-item-double` à cet élément.
+Pour ce faire, appliquez la classe `.grid-item-double` à cet élément.
 
 HTML :
 ```html
 <div class="grid-4">
     <div>un div ou n'importe quoi d'autre</div>
-    <div class="flex-item-double">je suis deux fois plus large que mes frères</div>
+    <div class="grid-item-double">je suis deux fois plus large que mes frères</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
     <div>etc.</div>
 </div>
@@ -150,14 +150,14 @@ Résultat :
 
 Vous pouvez modifier l'ordre d'affichage des éléments au sein d'une grille à l'aide des classes :
 
-- `.flex-item-first` (l'élément apparaîtra avant tous les autres)
-- `.flex-item-last` (l'élément apparaîtra tout à la fin de la grille)
+- `.grid-item-first` (l'élément apparaîtra avant tous les autres)
+- `.grid-item-last` (l'élément apparaîtra tout à la fin de la grille)
 
 HTML :
 ```html
 <div class="grid-4">
     <div>un div ou n'importe quoi d'autre</div>
-    <div class="flex-item-first">je m'affiche avant tous mes frères</div>
+    <div class="grid-item-first">je m'affiche avant tous mes frères</div>
     <div>un 3è div ou n'importe quoi d'autre</div>
     <div>etc.</div>
 </div>
@@ -238,7 +238,7 @@ CSS compilé (sans Autoprefixer) :
   width: calc(100% * 1 / 4 - 12px - .01px);
   margin-left: 12px;
 }
-.grid-container > .flex-item-double {
+.grid-container > .grid-item-double {
   width: calc(100% * 2 / 4 - 12px);
 }
 ...
