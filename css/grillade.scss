@@ -676,7 +676,7 @@ $kna-namespace: null !default;
     & {
       width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
     }
-    &.flex-item-double {
+    &.grid-item-double {
       width: calc(100% - #{$grid-gutter} - .01px);
     }
   }
@@ -694,7 +694,7 @@ $kna-namespace: null !default;
       margin-left: $newgutter;
     }
   }
-  & > .#{$kna-namespace}flex-item-double {
+  & > .#{$kna-namespace}grid-item-double {
     width: calc(100% * 2 / #{$grid-number} - #{$newgutter});
   }
 }
@@ -714,25 +714,25 @@ $kna-namespace: null !default;
   [class*="-small-4"] > * {
     width: calc(100% * 1 / 4 - #{$grid-gutter} - .01px);
   }
-  [class*="-small-4"] > .flex-item-double {
+  [class*="-small-4"] > .grid-item-double {
     width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
   }
   [class*="-small-3"] > * {
     width: calc(100% * 1 / 3 - #{$grid-gutter} - .01px);
   }
-  [class*="-small-3"] > .flex-item-double {
+  [class*="-small-3"] > .grid-item-double {
     width: calc(100% * 2 / 3 - #{$grid-gutter} - .01px);
   }
   [class*="-small-2"] > * {
     width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
   }
-  [class*="-small-2"] > .flex-item-double {
+  [class*="-small-2"] > .grid-item-double {
     width: calc(100% - #{$grid-gutter} - .01px);
   }
   [class*="-small-1"] > * {
     width: calc(100% - #{$grid-gutter} - .01px);
   }
-  [class*="-small-1"] > .flex-item-double {
+  [class*="-small-1"] > .grid-item-double {
     width: calc(100% - #{$grid-gutter} - .01px);
   }
 }
