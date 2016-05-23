@@ -1,5 +1,5 @@
 /* ----------------------------- */
-/* == soft reset                 */
+/* ==Base (basic styles)         */
 /* ----------------------------- */
 
 /* switching to border-box model for all elements */
@@ -31,15 +31,9 @@ figure {
   margin-right: 0;
 }
 
-/* ----------------------------- */
-/* == typography                 */
-/* ----------------------------- */
-
 html {
-
   /* set base font-size to equiv "10px", which is adapted to rem unit */
   font-size: 62.5%;
-
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   /* thanks to @guardian, @victorbritopro and @eQRoeil */
   font-size: calc(1em * 0.625);
@@ -47,7 +41,6 @@ html {
 
 body {
   font-size: $base-font-size;
-
   background-color: $base-background;
   color: $base-color;
   font-family: $font-stack-common;
@@ -147,10 +140,6 @@ i,
 var {
   font-style: italic;
 }
-
-/* ----------------------------- */
-/* == browsers consistency       */
-/* ----------------------------- */
 
 /* avoid top margins on first content element */
 p,

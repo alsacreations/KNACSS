@@ -1,6 +1,9 @@
 /* ---------------------------------- */
-/* ==state helpers                    */
+/* ==Helpers                          */
 /* ---------------------------------- */
+
+/* State Helpers */
+/* ------------- */
 
 /* invisible for all */
 .is-hidden,
@@ -33,10 +36,8 @@ ul.unstyled {
   padding-left: 0;
 }
 
-/* ---------------------------------- */
-/* ==visual helpers                   */
-/* .. use them with parcimony !       */
-/* ---------------------------------- */
+/* Width Helpers */
+/* ------------- */
 
 /* blocks widths (percentage and pixels) */
 .#{$kna-namespace}w10 {
@@ -155,11 +156,9 @@ ul.unstyled {
   width: auto;
 }
 
-/* spacing helpers
-p,m = padding,margin
-a,t,r,b,l = all,top,right,bottom,left
-s,m,l,n = small, medium, large, none
-*/
+/* Spacing Helpers */
+/* --------------- */
+
 .#{$kna-namespace}man,
 .#{$kna-namespace}ma0 {
   margin: 0;

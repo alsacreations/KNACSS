@@ -1,20 +1,11 @@
-/* ----------------------------- */
-/* ==desktop and HD devices      */
-/* ----------------------------- */
+/* -------------------------- */
+/* ==Responsive helpers       */
+/* -------------------------- */
 
-@media (min-width: ($medium-screen + 1)) {
-/* rules for big resources and big screens like: background-images, font-faces, etc. */
-}
+/* large screens */
+/* ------------- */
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-/* style adjustments for high density devices */
-}
-
-/* ---------------------------------- */
-/* ==Responsive large                 */
-/* ---------------------------------- */
-
-@media (min-width: ($medium-screen + 1)) {
+@include media('>=large-screen') {
 
   /* layouts for large screens */
   .#{$kna-namespace}large-hidden {
@@ -83,11 +74,10 @@
   }
 }
 
-/* ---------------------------------- */
-/* ==Responsive medium                */
-/* ---------------------------------- */
+/* medium screens */
+/* -------------- */
 
-@media (min-width: ($small-screen + 1)) and (max-width: $medium-screen)  {
+@include media('>=medium-screen', '<large-screen') {
 
   /* layouts for medium screens */
   .#{$kna-namespace}medium-hidden {
@@ -158,11 +148,10 @@
   }
 }
 
-/* ---------------------------------- */
-/* ==Responsive small                 */
-/* ---------------------------------- */
+/* small screens */
+/* ------------- */
 
-@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+@include media('>=small-screen', '<medium-screen') {
 
   /* quick reset in small resolution and less */
   .#{$kna-namespace}w600p,
@@ -249,11 +238,10 @@
 
 }
 
-/* ---------------------------------- */
-/* ==Responsive tiny                  */
-/* ---------------------------------- */
+/* tiny screens */
+/* ------------ */
 
-@media (max-width: $tiny-screen) {
+@include media('<small-screen') {
 
   /* quick small resolution reset */
   .#{$kna-namespace}mod,

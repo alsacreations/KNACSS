@@ -1,11 +1,9 @@
 /* ----------------------------- */
-/* ==minor stylings              */
+/* ==Stylings (minor stylings)   */
 /* ----------------------------- */
 
 /* styling elements */
-code,
-kbd,
-mark {
+code, kbd, mark {
   border-radius: 2px;
 }
 
@@ -75,12 +73,12 @@ q {
 }
 
 q,
-.@{kna-namespace}q {
+.#{$kna-namespace}q {
   quotes: "“\00a0" "\00a0”";
 }
 
 q:lang(fr),
-.@{kna-namespace}q:lang(fr) {
+.#{$kna-namespace}q:lang(fr) {
   quotes: "«\00a0" "\00a0»";
 }
 
@@ -97,12 +95,12 @@ hr {
 
 /* tables */
 table,
-.@{kna-namespace}table {
+.#{$kna-namespace}table {
   border: 1px solid #ccc;
 }
 
 caption {
-  padding: @small-value;
+  padding: $small-value;
   color: #555;
   font-style: italic;
 }

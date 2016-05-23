@@ -8,10 +8,6 @@ Contributors: Automattic, Geoffrey Crofte
 Description: Reset styles for WordPress usage of KNACSS
 */
 
-/* ----------------------------- */
-/* ==Menus                       */
-/* ----------------------------- */
-
 // current menu elements
 .current_page_item > a {
 }
@@ -43,10 +39,6 @@ Description: Reset styles for WordPress usage of KNACSS
   width: 50%;
 }
 
-/* ----------------------------- */
-/* ==Alignments                  */
-/* ----------------------------- */
-
 // class in img elements
 .alignnone {
   margin: .25em 1.5em 1.5em 0;
@@ -68,10 +60,6 @@ Description: Reset styles for WordPress usage of KNACSS
   margin: 0 0 .25em 1.5em;
 }
 
-/* ----------------------------- */
-/* ==Clearings                   */
-/* ----------------------------- */
-
 .entry-content,
 .comment-content {
   clear: both;
@@ -82,10 +70,6 @@ Description: Reset styles for WordPress usage of KNACSS
   }
 }
 
-/* ----------------------------- */
-/* ==Widgets                     */
-/* ----------------------------- */
-
 .widget + .widget {
   margin: 1.5em 0 0;
 }
@@ -94,10 +78,6 @@ Description: Reset styles for WordPress usage of KNACSS
 .widget select {
   max-width: 100%;
 }
-
-/* ----------------------------- */
-/* ==Posts and pages             */
-/* ----------------------------- */
 
 /* === 5.1 Posts - post_class === */
 
@@ -215,10 +195,6 @@ Description: Reset styles for WordPress usage of KNACSS
   margin: 0 0 1.5em;
 }
 
-/* ----------------------------- */
-/* ==Comments                    */
-/* ----------------------------- */
-
 .comment-content a {
   word-wrap: break-word;
 }
@@ -227,20 +203,12 @@ Description: Reset styles for WordPress usage of KNACSS
   // some make-the-logo-bigger styles
 }
 
-/* ----------------------------- */
-/* ==Media                       */
-/* ----------------------------- */
-
 img.wp-smiley {
   margin-bottom: 0;
   margin-top: 0;
   padding: 0;
   border: none;
 }
-
-/* ----------------------------- */
-/* ==Captions                    */
-/* ----------------------------- */
 
 .wp-caption {
   max-width: 100%;
@@ -256,10 +224,6 @@ img.wp-smiley {
   margin: 1em 0;
   text-align: center;
 }
-
-/* ----------------------------- */
-/* ==Galleries                   */
-/* ----------------------------- */
 
 .gallery {
   margin-bottom: 1.5em;

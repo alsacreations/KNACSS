@@ -1,5 +1,5 @@
 /* ----------------------------- */
-/* ==misc rules                  */
+/* ==Misc (skip links, hyphens)  */
 /* ----------------------------- */
 
 /* styling skip links */
@@ -23,8 +23,8 @@
   }
 }
 
-// hyphens on small screens
-@media (max-width: $small-screen) {
+// hyphens on tiny screens
+@include media('<=tiny-screen') {
   /* you shall not pass */
   div,
   textarea,
@@ -40,7 +40,7 @@
 }
 
 // use .no-wrapping to disallow hyphens on small screens
-@media (max-width: $small-screen) {
+@include media('<=tiny-screen') {
   .no-wrapping {
     word-wrap: normal;
     hyphens: manual;
