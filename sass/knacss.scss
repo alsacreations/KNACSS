@@ -1,33 +1,60 @@
-// Sass config file
-// -----------------
-
-// (WARNING : you should comment this line and move config file from vendor/knacss folder to your own folder)
-@import "_00-config";
-
-// normalize include
-@import "_01a-normalize"; // normalize
-
-// Sass base styles
-@import "_01b-base"; // reset and basic styles
-
-// Sass files : chose the ones you need
-@import "_02-layout"; // alignment, modules, positionning
-@import "_03-grids"; // grids
-@import "_04-tables"; // data tables consistency
-@import "_05-forms"; // forms consistency
-@import "_06-helpers"; // width and spacers visually classes
-@import "_07-responsive"; // Responsive Web Design helpers
-@import "_08-print"; // print quick reset
-@import "_09-misc"; // skip links, google maps and hyphens
-@import "_10-styling"; // minor stylings
-
-// WordPress base styles
-// @import "_11-wordpress"; // WordPress reset and basic styles
+/*!
+* www.KNACSS.com V5.0.0 (23 mai 2016) @author: Raphael Goetter, Alsacreations
+* Licence WTFPL http://www.wtfpl.net/
+*/
 
 /* ----------------------------- */
-/* ==own stylesheet              */
+/* ==Table Of Content            */
+/* ----------------------------- */
+
+/* 1- Normalize (basic reset) */
+/* 2- Base (basic styles) */
+/* 3- Print (print quick reset) */
+/* 4- Stylings (minor stylings) */
+/* 5- Misc (skip links, hyphens) */
+/* (6- WordPress reset (disabled by default)) */
+/* 7- Global Layout (alignment, modules, positionning) */
+/* 8- Grid Layout (grillade) */
+/* 9- Tables (data tables consistency) */
+/* 10- Forms (forms consistency) */
+/* 11- Helpers (width and spacers helpers) */
+/* 12- Responsive (Responsive Web Design helpers) */
+
+/* ---------------------------------- */
+/* ==Normalize (basic reset)          */
+/* ---------------------------------- */
+
+@import "_normalize/_normalize.scss"; // normalize (basic reset)
+@import "_include-media/_include-media.scss"; // include-media
+
+// WARNING : you should comment the following @import (config)
+// and move config file from knacss folder to your own project folder!
+@import "_config-variables.scss";
+
+// Libraries
+@import "_library-base.scss"; // basic styles
+@import "_library-print.scss"; // print quick reset
+@import "_library-styling.scss"; // minor stylings
+@import "_library-misc.scss"; // skip links, hyphens
+// @import "_library-wordpress.scss"; // WordPress reset and basic styles
+
+// Layout
+@import "_layout-general.scss"; // alignment, modules, positionning
+@import "_layout-grids.scss"; // grids
+
+// Objects
+@import "_object-tables.scss"; // data tables consistency
+@import "_object-forms.scss"; // forms consistency
+
+// Overrides
+@import "_override-helpers.scss"; // width and spacers helpers
+@import "_override-responsive.scss"; // Responsive Web Design helpers
+
+
+/* ----------------------------- */
+/* ==Own stylesheet              */
 /* ----------------------------- */
 
 /* Here should go your own CSS styles */
-/* You can also link them with a Sass @import */
-/* @import "my-styles"; */
+// You can also link them with a Sass @import
+// @import "my-styles";

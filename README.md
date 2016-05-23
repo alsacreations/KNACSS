@@ -4,8 +4,6 @@ http://www.knacss.com
 
 KNACSS, c'est un peu comme une feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign).
 
-<hr>
-
 KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement !
 
 Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tels que LESS ou Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
@@ -17,12 +15,14 @@ La version courte est "il n'y a rien à installer".
 Selon votre environnement de travail vous suffit de récupérer la feuille de styles :
 
 - en version [CSS classique](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss-unminified.css) (ou [minifié](vhttps://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss.css))
-- en version [LESS](https://github.com/raphaelgoetter/KNACSS/tree/master/less)
 - en version [Sass](https://github.com/raphaelgoetter/KNACSS/tree/master/sass)
 
-_Les versions LESS et Sass seront bien évidemment plus malléables grâce à l'apport de variables et fonctions._
+_La version Sass sera bien évidemment plus malléable grâce à l'apport de variables et fonctions._
 
-À noter que KNACSS est basé sur un socle [Normalize.css](http://necolas.github.io/normalize.css/), célèbre - et éprouvé - reset CSS employé par Twitter, Github, Bootstrap, Guardian, etc.
+À noter que KNACSS est basé sur deux outils :
+
+- [Normalize.css](http://necolas.github.io/normalize.css/), célèbre - et éprouvé - reset CSS employé par Twitter, Github, Bootstrap, Guardian, etc.
+- [include-media](http://include-media.com/), mixins Sass pour la gestion des Media Queries.
 
 ## Usage
 
@@ -34,81 +34,81 @@ Il est également possible de l'installer (toutes versions) via [Bower](http://b
 
 ## Compatibilité
 
-KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs à partir d'IE8 inclus.
+KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs à partir d'IE10 inclus.
 
-Seules exceptions :
 
-- les positionnements avancés à base de Flexbox (IE10+ minimum), c'est à dire toutes les classes débutant par `.flex-`
-- les grilles de mise en page, également basées sur flexbox  (IE10, Android 4.4+), c'est à dire toutes les classes débutant par `.grid-`. Note : une alternative, basée sur `inline-block` est cependant proposée automatiquement pour les anciens navigateurs (IE8, Android 2).
+## RTFM!
+
+KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
+La contrepartie est que cela nécessite de votre part de bonnes connaissances en CSS et un petit effort de compréhension et de d'apprentissage des mécanismes de l'outil.
+
+Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée est en cours de rédaction. Je vous invite vivement à la parcourir avant de vous jeter sur KNACSS.
+
+Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
 
 ## Juste une grille ? Grillade !
 
 KNACSS en version complète ne vous convient pas&nbsp;? Seule la grille flexbox vous intéresse&nbsp;? Bienvenue dans *Grillade* !
 
-### votre grillade avec LESS ?
+- en version [CSS classique](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css) (parfaitement autonome et ne pèse que 4ko seulement&nbsp;!)
+- en version [Sass](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss) (avec variables)
 
-Il est possible de n'utiliser KNACSS que pour sa fonctionnalité de grille de positionnement et de bénéficier de colonnes égales, inégales, responsive, des offsets, des pull et push et des mises en exergue. Bref, de [tout l'attirail des grilles KNACSS](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md).
-
-Il vous suffit pour cela de récupérer le fichier suivant : [grillade.less](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.less)
-
-Ce fichier n'est rien d'autre que la concaténation de deux fichiers essentiels :
-- `_00-config.less` (nécessaire pour les variables, les tailles de gouttières et les valeurs de breakpoints)
-- `_03-grids.less` (ben oui, quand même)
-
-### votre grillade plutôt nature ?
-
-Vous souhaitez simplement bénéficier d'une grille de mise en page simple mais fonctionnelle, en pur CSS sans passer par LESS ou Sass&nbsp;?
-
-Alors contentez-vous du fichier <a href="https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css"><strong>grillade.css</strong></a>, il est parfaitement autonome et ne pèse que 4ko seulement&nbsp;!
-
-Par contre, n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
-
-## Documentation de KNACSS
-
-KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
-La contrepartie est que cela nécessite de votre part de bonnes connaissances en CSS et un petit effort de compréhension et de d'apprentissage des mécanismes de l'outil.
-
-Je vous invite vivement à parcourir la [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) avant de vous jeter sur KNACSS.
-
-Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
-
-<p>Vous y trouverez en détail, avec codes et illustrations, les différentes sections suivantes&nbsp;:</p>
-<ol>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/00-commencer.md">Comment débuter avec KNACSS</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/01-typo-et-reset.md">Typographie et reset</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02a-layout-alignements.md">Gérer les alignements de base</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/02b-layout-positionnement.md">Gérer le positionnement des éléments</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/03-grilles.md">Construire des grilles de mise en page</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/04-tableaux.md">Styler les tableaux</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/05-formulaires.md">Styler les formulaires</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/06-helpers.md">Classes "visuelles"</a> (marges et largeurs)</li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/07-responsive.md">Responsive Webdesign</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/08-print.md">Styles pour l'impression</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/09-misc.md">Styles divers (césures, Google Maps, liens d'évitement)</a></li>
-<li><a href="https://github.com/raphaelgoetter/KNACSS/blob/master/doc/11-wordpress.md">Adaptations pour WordPress</a></li>
-</ol>
+Dans tous les cas n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
 
 
 ## Préprocesseurs
 
-KNACSS est conçu et pensé pour être adapté aux préprocesseurs que sont LESS et Sass. Nous employons LESS en interne, nos fichiers de travail sont donc des `.less` et non des `.css` (cela fonctionne aussi avec Sass).
+KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
 
-Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/less/_00-config.less) contenant toutes les variables du projet est intégré.
+Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/sass/_config-variables.scss) contenant toutes les variables du projet est intégré.
 Libre à vous de le modifier selon les contraintes de votre projet.
 
-**Attention**, si vous importez KNACSS automatiquement via Bower par exemple (dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`.
+**Attention**, si vous importez KNACSS automatiquement via Bower (par exemple dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
+
+Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principaux seront :
+- le fichier `sass/_config-variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
+- le fichier `sass/knacss.scss` qui importe tous les fichiers que vous risquez d'employez dans votre projet.
+
+En cours de développement, il vous suffit de compiler ce fichier `sass/knacss.scss` pour obtenir vos fichiers CSS utiles.
 
 ### Préfixes navigateurs
 
 Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, ...) pour être certain que les propriétés CSS fonctionneront partout.
 
-Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est présent, **vous n'avez donc pas à vous en soucier** (paramètres de Autoprefixer : "last 2 versions").
+Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est présent, **vous n'avez donc pas à vous en soucier** (Autoprefixer réglé à "last 2 versions").
 
-**Par contre, dans les versions LESS et Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
+**Par contre, dans la version Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
+
+### Mise à jour depuis une version précédente de KNACSS ?
+
+La version `5.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `4.*.*`.
+
+Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 5 de KNACSS&nbsp;:
+
+#### Modifications majeures depuis la `4.*.*`
+
+- suppression de la version LESS (à partir de la version KNACSS 5.0, seul le préprocesseur Sass est encore pris en charge)
+- suppression des fallbacks pour IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
+- restructuration / renommage des fichiers avec préfixes `_config-`, `_layout-`, `_library-`, `_object-`, `_override-`
+- renommage des éléments de grilles : `.flex-item-double` --> `.grid-item-double` (plus cohérent)
+- ajout de la library include-media (http://include-media.com/)
+- grille "grillade" à présent en mobile first
+
+#### Modifications majeures depuis la `3.*.*`
+
+- La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;: `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche;  `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite; `.start` et `.end` n'existent plus
+- Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
+- Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage :
+`.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last`
+
+### Utilisateur de SPIP ?
+
+Le CMS SPIP impose une classe générique `.fr` sur l'élément `<html>`, or cette classe est également employée pour les positionnements flottants dans KNACSS.
+
+Si vous êtes un utilisateur de SPIP, nous vous conseillons de modifier les fichiers CSS de KNACSS et de remplacer les classes `.fr` et `.fl` par `:not(html) .fr` et `:not(html) .fl`
 
 ## Liens utiles
 
 * Site web de KNACSS : http://knacss.com
 * [**Documentation détaillée**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc)
 * Sur Alsacreations.com : ["découverte du framework KNACSS"](http://www.alsacreations.com/tuto/lire/1577-decouverte-du-framework-css-KNACSS.html)
-* Générateur de gabarits HTML/CSS : ["Schnaps.it"](http://schnaps.it/)

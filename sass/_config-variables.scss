@@ -1,8 +1,3 @@
-/*!
-* www.KNACSS.com V4.4.5 (1er avril 2016) @author: Raphael Goetter, Alsacreations
-* Licence WTFPL http://www.wtfpl.net/
-*/
-
 // Config file and project variables
 
 // font sizes
@@ -22,8 +17,8 @@ $font-stack-monospace : consolas, courier, monospace !default; // monospace font
 
 // font colors
 $base-color             : #000 !default; // text color on body and content
-$primary-color          : #000 !default; // text color on primary elements
-$secondary-color        : #000 !default; // text color on secondary elements
+$alpha-color            : #000 !default; // text color on primary elements
+$beta-color             : #000 !default; // text color on secondary elements
 $headings-color         : #000 !default; // text color on headings
 $headings-1-color       : #000 !default; // text color on headings level 1
 $headings-2-color       : #000 !default; // text color on headings level 2
@@ -32,9 +27,9 @@ $base-color-link        : #333 !default; // base links color
 $base-color-link-hover  : #000 !default; // base hovered/focused links color
 
 // backgrounds
-$base-background        : #fff !default; // body background color
-$primary-background     : #fff !default; // primary elements background color
-$secondary-background   : #fff !default; // secondary elements background color
+$base-background      : #fff !default; // body background color
+$alpha-background     : #fff !default; // primary elements background color
+$beta-background      : #fff !default; // secondary elements background color
 
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem !default; // tiny value for margins / paddings
@@ -50,23 +45,26 @@ $extra-large-plus-value : 12rem !default; // extra large value for margins / pad
 $ultra-large-value      : 16rem !default; // ultra large value for margins / paddings
 $ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
 
-// breakpoints (choose unit you prefer)
-$tiny-screen            : 320px !default; // tiny screens media query (less-equal than 320px)
-$tiny-plus-screen       : 480px !default; // screens between 321px and 480px
-$small-screen           : 640px !default; // screens between 481px and 640px
-$small-plus-screen      : 768px !default; // screens between 641px and 768px
-$medium-screen          : 960px !default; // screens between 769px and 960px
-$medium-plus-screen     : 1024px !default; // screens between 961px and 1024px
-$large-screen           : 1280px !default; // screens between 1025px and 1280px
-$large-plus-screen      : 1440px !default; // screens between 1281px and 1440px
-$extra-large-screen     : 1600px !default; // screens between 1441px and 1600px
-$ultra-large-screen     : 1920px !default; // ultra large screens
+// breakpoints (overrides include-media.scss) (choose unit you prefer)
+// doc : http://include-media.com/documentation/
+$breakpoints: (
+  tiny-screen       : 320px,
+  tiny-plus-screen  : 480px,
+  small-screen      : 640px,
+  small-plus-screen : 768px,
+  medium-screen     : 960px,
+  medium-plus-screen: 1024px,
+  large-screen      : 1280px,
+  large-plus-screen : 1440px,
+  extra-large-screen: 1600px,
+  ultra-large-screen: 1920px
+);
 
 // grids variables (choose unit you prefer)
-$gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
-$number:  4 !default; // number of equal columns
-$left:    2 !default; // left side of uneven columns
-$right:   1 !default; // right side of uneven columns
+$grid-gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$grid-number:  4 !default; // number of equal columns
+$grid-left:    2 !default; // left side of uneven columns
+$grid-right:   1 !default; // right side of uneven columns
 
 //kna-namespace (default : null)
 $kna-namespace: null !default;
