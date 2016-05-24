@@ -1,3 +1,6 @@
+# changelog v5.0.1 (24 mai 2016)
+- les helpers de largeurs deviennent mobile-first et ne s'activent que sur écran d'une certaine taille. Ex. `.w700p {width: 700px;}` devient `@include media('>640px') {.w700p {width: 700px;}}`. Ainsi il n'est plus nécessaire de les écraser dans la feuille de style responsive.
+
 # changelog v5.0.0 (23 mai 2016)
 - suppression du support IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
 - suppression du support LESS (à partir de la version KNACSS 5.0, seul le préprocesseur Sass est encore pris en charge pour des raisons de maintenabilité)

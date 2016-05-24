@@ -116,40 +116,47 @@ ul.unstyled {
   width: 300px;
 }
 
-.#{$kna-namespace}w400p {
-  width: 400px;
+@include media('>=400px') {
+  .#{$kna-namespace}w400p {
+    width: 400px;
+  }
+
+  .#{$kna-namespace}w500p {
+    width: 500px;
+  }
+
+  .#{$kna-namespace}w600p {
+    width: 600px;
+  }
 }
 
-.#{$kna-namespace}w500p {
-  width: 500px;
+@include media('>=700px') {
+
+  .#{$kna-namespace}w700p {
+    width: 700px;
+  }
+
+  .#{$kna-namespace}w800p {
+    width: 800px;
+  }
 }
 
-.#{$kna-namespace}w600p {
-  width: 600px;
-}
+@include media('>=960px') {
+  .#{$kna-namespace}w960p {
+    width: 960px;
+  }
 
-.#{$kna-namespace}w700p {
-  width: 700px;
-}
+  .#{$kna-namespace}mw960p {
+    max-width: 960px;
+  }
 
-.#{$kna-namespace}w800p {
-  width: 800px;
-}
+  .#{$kna-namespace}w1140p {
+    width: 1140px;
+  }
 
-.#{$kna-namespace}w960p {
-  width: 960px;
-}
-
-.#{$kna-namespace}mw960p {
-  max-width: 960px;
-}
-
-.#{$kna-namespace}w1140p {
-  width: 1140px;
-}
-
-.#{$kna-namespace}mw1140p {
-  max-width: 1140px;
+  .#{$kna-namespace}mw1140p {
+    max-width: 1140px;
+  }
 }
 
 .#{$kna-namespace}wauto {

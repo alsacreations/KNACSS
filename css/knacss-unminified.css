@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V5.0.0 (23 mai 2016) @author: Raphael Goetter, Alsacreations
+* www.KNACSS.com V5.0.1 (24 mai 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -1268,32 +1268,29 @@ ul.unstyled {
 .w300p {
   width: 300px; }
 
-.w400p {
-  width: 400px; }
+@media (min-width: 400px) {
+  .w400p {
+    width: 400px; }
+  .w500p {
+    width: 500px; }
+  .w600p {
+    width: 600px; } }
 
-.w500p {
-  width: 500px; }
+@media (min-width: 700px) {
+  .w700p {
+    width: 700px; }
+  .w800p {
+    width: 800px; } }
 
-.w600p {
-  width: 600px; }
-
-.w700p {
-  width: 700px; }
-
-.w800p {
-  width: 800px; }
-
-.w960p {
-  width: 960px; }
-
-.mw960p {
-  max-width: 960px; }
-
-.w1140p {
-  width: 1140px; }
-
-.mw1140p {
-  max-width: 1140px; }
+@media (min-width: 960px) {
+  .w960p {
+    width: 960px; }
+  .mw960p {
+    max-width: 960px; }
+  .w1140p {
+    width: 1140px; }
+  .mw1140p {
+    max-width: 1140px; } }
 
 .wauto {
   width: auto; }
@@ -1543,14 +1540,6 @@ ul.unstyled {
 /* small screens */
 /* ------------- */
 @media (min-width: 640px) and (max-width: 959px) {
-  /* quick reset in small resolution and less */
-  .w600p,
-  .w700p,
-  .w800p,
-  .w960p,
-  .mw960p {
-    width: auto;
-    float: none; }
   /* layouts for small screens */
   .small-hidden {
     display: none !important; }
@@ -1617,11 +1606,6 @@ ul.unstyled {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
-  .w300p,
-  .w400p,
-  .w500p {
-    width: auto;
-    float: none; }
   .row {
     display: block !important;
     width: 100% !important; }
