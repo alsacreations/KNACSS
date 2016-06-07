@@ -72,6 +72,11 @@
   .#{$kna-namespace}large-ma0 {
     margin: 0 !important;
   }
+
+  .#{$kna-namespace}large-pal {
+    padding: $large-value !important;
+  }
+
 }
 
 /* medium screens */
@@ -146,6 +151,11 @@
   .#{$kna-namespace}medium-ma0 {
     margin: 0 !important;
   }
+
+  .#{$kna-namespace}medium-pam {
+    padding: $medium-value !important;
+  }
+
 }
 
 /* small screens */
@@ -234,6 +244,10 @@
   .#{$kna-namespace}small-pan,
   .#{$kna-namespace}small-pa0 {
     padding: 0 !important;
+  }
+
+  .#{$kna-namespace}small-pas {
+    padding: $small-value !important;
   }
 
 }
