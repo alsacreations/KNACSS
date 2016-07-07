@@ -2,74 +2,81 @@
 
 http://www.knacss.com
 
-KNACSS, c'est un peu comme une feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign).
+KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign).
 
-KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement !
+KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement&nbsp;!
 
-Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tels que LESS ou Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
-
-## Installation
-
-La version courte est "il n'y a rien à installer".
-
-Selon votre environnement de travail vous suffit de récupérer la feuille de styles :
-
-- en version [CSS classique](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss-unminified.css) (ou [minifié](vhttps://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss.css))
-- en version [Sass](https://github.com/raphaelgoetter/KNACSS/tree/master/sass)
-
-_La version Sass sera bien évidemment plus malléable grâce à l'apport de variables et fonctions._
-
-À noter que KNACSS est basé sur deux outils :
-
-- [Normalize.css](http://necolas.github.io/normalize.css/), célèbre - et éprouvé - reset CSS employé par Twitter, Github, Bootstrap, Guardian, etc.
-- [include-media](http://include-media.com/), mixins Sass pour la gestion des Media Queries.
-
-## Usage
-
-KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos goûts), qu'il vous suffit d'ajouter à votre page HTML :
-
-    <link rel="stylesheet" href="knacss.css">
-
-Il est également possible de l'installer (toutes versions) via [Bower](http://bower.io/) : ```bower install knacss```
+Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
 
 ## Compatibilité
 
-KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs à partir d'IE10 inclus.
+KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs desktop et mobiles à partir d'IE10 inclus.
 
+## Installation
 
-## RTFM!
+Selon votre profil (débutant, utilisateur de Sass, adepte de Bower / npm), l'installation est différente.
 
-KNACSS se veut être un outil simple (contrairement aux usines à gaz que sont Bootstrap ou Foundation), mais évolutif.
-La contrepartie est que cela nécessite de votre part de bonnes connaissances en CSS et un petit effort de compréhension et de d'apprentissage des mécanismes de l'outil.
+### Vous êtes débutant ou pressé&nbsp;?
 
-Une [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée est en cours de rédaction. Je vous invite vivement à la parcourir avant de vous jeter sur KNACSS.
+La version courte est "il n'y a rien à installer".
 
-Sachez qu'un [pense-bête en PDF](http://knacss.com/KNACSS-cheatsheet.pdf) est également disponible pour vous rappeler des classes utiles de KNACSS.
+KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos goûts)&nbsp;:
 
-## Juste une grille ? Grillade !
+- en version [CSS classique et lisible](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss-unminified.css)
+- ou en [version minifiée](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss.css)
 
-KNACSS en version complète ne vous convient pas&nbsp;? Seule la grille flexbox vous intéresse&nbsp;? Bienvenue dans *Grillade* !
+Si vous ne comptez pas décortiquer le fichier CSS, il est préférable d'opter pour la version minifiée, plus légère.
+Il vous suffit ensuite de l'insérer à votre page HTML, avant votre propre feuille de style, bien entendu&nbsp;:
 
-- en version [CSS classique](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css) (parfaitement autonome et ne pèse que 4ko seulement&nbsp;!)
-- en version [Sass](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.scss) (avec variables)
+```
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vive les knack!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/knacss.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-Dans tous les cas n'oubliez quand même pas de lire [la documentation](https://github.com/alsacreations/KNACSS/blob/master/doc/03-grilles.md) que l'on a concoctée rien que pour vous.
+</body>
+</html>
+```
 
-
-## Préprocesseurs
+### Vous préférez Sass&nbsp;?
 
 KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
 
 Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/sass/_config-variables.scss) contenant toutes les variables du projet est intégré.
 Libre à vous de le modifier selon les contraintes de votre projet.
 
-**Attention**, si vous importez KNACSS automatiquement via Bower (par exemple dans un dossier `vendor`), ce fichier de configuration risque d'être écrasé à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
+La version Sass, à compiler par vos soins, sera bien évidemment plus malléable grâce à l'apport de variables et fonctions.
+Vous pouvez également inclure ou non les fichiers partiels qui vous intéressent (tableaux, formulaires, grilles, WordPress, classes utilitaires, etc.).
 
-Dans le cas d'un usage via préprocesseur, vos deux fichiers de travail principaux seront :
+Téléchargez [KNACSS complet](https://github.com/alsacreations/KNACSS/archive/master.zip) pour bénéficier de toute l'architecture de l'outil, avec les fichiers Sass, package.json et gulpfile.js si nécessaires.
+
+### Installation via Bower ou npm
+
+- via [Bower](http://bower.io/) : ```bower install knacss```
+- via [npm](https://www.npmjs.com/) : ```npm install knacss```
+
+**Attention**, si vous importez KNACSS automatiquement via Bower ou npm (par exemple dans un dossier `vendor` ou `node_modules`), le fichier de configuration (contenant les variables) risque d'être écrasé à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
+
+
+## Comment débuter&nbsp;?
+
+Que vous ayez opté pour la version CSS simple ou la version Sass, il est vivement conseillé de parcourir la [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée avant de vous jeter sur KNACSS.
+
+Sachez qu'un [**Pense-bête en PDF**](http://knacss.com/KNACSS-cheatsheet.pdf) et un [**Guide de styles**](http://codepen.io/raphaelgoetter/full/LNwOjz/) sont également disponibles pour vous souvenir des classes utiles de KNACSS.
+
+Dans le cas d'un usage via Sass, vos deux fichiers de travail principaux seront&nbsp;:
 - le fichier `sass/_config-variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
-- le fichier `sass/knacss.scss` qui importe tous les fichiers que vous risquez d'employer dans votre projet.
+- le fichier `sass/knacss.scss` qui importe tous les autres fichiers que vous risquez d'employer dans votre projet.
 
-En cours de développement, il vous suffit de compiler ce fichier `sass/knacss.scss` pour obtenir vos fichiers CSS utiles.
+En phase d'intégration, il vous suffit de compiler le fichier `sass/knacss.scss` pour obtenir votre fichier CSS final.
+
+
 
 ### Préfixes navigateurs
 
