@@ -7,6 +7,8 @@ Une grille "KNACSS" a les caractéristiques globales suivantes :
 - Par défaut, une grille est "mobile-first" (une seule colonne sur petit écran, 2 colonnes sur écran "small") et il est très simple d'activer la fonctionnalité "Responsive",
 - La technologie employée est [CSS3 Flexbox](http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html).
 
+> Le système de grilles de KNACSS existe en version CSS autonome, nommée "Grillade", que vous pouvez [télécharger directement (4.2ko)](https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/grillade.css) sans avoir à installer le reste du framework.
+
 Il existe deux types principaux de systèmes de grilles dans KNACSS :
 
 - Les grilles à colonnes égales
@@ -19,7 +21,7 @@ Quelques exemples pour vous échauffer :
 - `<div class="grid-2-1">` : grille de répartition 2/3 - 1/3
 - `<div class="grid-3-small-1">` : grille de 3 colonnes égales, puis 1 colonne sur écran "small"
 - `<div class="grid-6-small-3">` : grille de 6 colonnes, puis 3 colonnes sur écran "small"
-- note : sur écran très petit ("tiny"), il n'y aura systématiquement qu'une seule colonne.
+- *note* : sur écran très petit ("tiny"), il n'y aura systématiquement qu'une seule colonne.
 
 Et maintenant passons aux explications&nbsp;!
 
