@@ -1,6 +1,8 @@
 # changelog v6.0.0 (21 septembre 2016)
 - suppression de include-media (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
 - refonte des valeurs des Breakpoints et des classes responsive.
+- modularisation des fichiers et dossiers, classés par fonctions (config, vendor, library, objects, utility)
+- ajout des objects courants : media et autogrid
 
 # changelog v5.0.1 (24 mai 2016)
 - les helpers de largeurs deviennent mobile-first et ne s'activent que sur écran d'une certaine taille. Ex. `.w700p {width: 700px;}` devient `@include media('>640px') {.w700p {width: 700px;}}`. Ainsi il n'est plus nécessaire de les écraser dans la feuille de style responsive.

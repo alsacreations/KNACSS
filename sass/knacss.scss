@@ -33,25 +33,25 @@
 @import "_config/_breakpoints.scss";
 @import "_config/_mixins.scss";
 
-
 // Libraries
-@import "_library-base.scss"; // basic styles
-@import "_library-print.scss"; // print quick reset
-@import "_library-styling.scss"; // minor stylings
-@import "_library-misc.scss"; // skip links, hyphens
-// @import "_library-wordpress.scss"; // WordPress reset and basic styles
-
-// Layout
-@import "_layout-general.scss"; // alignment, modules, positionning
-@import "_layout-grids.scss"; // grids
+@import "library/_base.scss"; // basic styles
+@import "library/_print.scss"; // print quick reset
+@import "library/_styling.scss"; // minor stylings
+@import "library/_misc.scss"; // skip links, hyphens
+@import "library/_tables.scss"; // data tables consistency
+@import "library/_forms.scss"; // forms consistency
 
 // Objects
-@import "_object-tables.scss"; // data tables consistency
-@import "_object-forms.scss"; // forms consistency
+@import "objects/_media.scss"; // media object
 
-// Overrides
-@import "_override-helpers.scss"; // width and spacers helpers
-@import "_override-responsive.scss"; // Responsive Web Design helpers
+// Utilities
+@import "utilities/_layout.scss"; // alignment, modules, positionning
+@import "utilities/_helpers.scss"; // width and spacers helpers
+// @import "utilities/_wordpress.scss"; // WordPress reset and basic styles
+@import "utilities/_responsive.scss"; // Responsive Web Design helpers
+
+// Grids
+@import "grids/_grillade.scss"; // grids
 
 
 /* ----------------------------- */
