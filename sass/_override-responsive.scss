@@ -5,7 +5,7 @@
 /* large screens */
 /* ------------- */
 
-@include media('>=large-screen') {
+@media (min-width: ($large + 1)) {
 
   /* layouts for large screens */
   .#{$kna-namespace}large-hidden {
@@ -77,7 +77,7 @@
 /* medium screens */
 /* -------------- */
 
-@include media('>=medium-screen', '<large-screen') {
+@media (min-width: ($small + 1)) and (max-width: $large) {
 
   /* layouts for medium screens */
   .#{$kna-namespace}medium-hidden {
@@ -151,7 +151,7 @@
 /* small screens */
 /* ------------- */
 
-@include media('>=small-screen', '<medium-screen') {
+@media (min-width: ($tiny + 1)) and (max-width: $small) {
 
   /* layouts for small screens */
   .#{$kna-namespace}small-hidden {
@@ -231,7 +231,7 @@
 /* tiny screens */
 /* ------------ */
 
-@include media('<small-screen') {
+@media (max-width: $tiny) {
 
   /* quick small resolution reset */
   .#{$kna-namespace}mod,

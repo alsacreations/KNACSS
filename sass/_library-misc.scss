@@ -24,7 +24,7 @@
 }
 
 // hyphens on tiny screens
-@include media('<=tiny-screen') {
+@media (max-width: $tiny) {
   /* you shall not pass */
   div,
   textarea,
@@ -40,7 +40,7 @@
 }
 
 // use .no-wrapping to disallow hyphens on small screens
-@include media('<=tiny-screen') {
+@media (max-width: $tiny) {
   .no-wrapping {
     word-wrap: normal;
     hyphens: manual;

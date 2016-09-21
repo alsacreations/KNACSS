@@ -24,12 +24,15 @@
 /* ==Normalize (basic reset)          */
 /* ---------------------------------- */
 
-@import "_normalize/_normalize.scss"; // normalize (basic reset)
-@import "_include-media/_include-media.scss"; // include-media
+@import "_vendor/_normalize.scss"; // normalize (basic reset)
 
-// WARNING : you should comment the following @import (config)
-// and move config file from knacss folder to your own project folder!
-@import "_config-variables.scss";
+// WARNING : you should comment the following @import (variables)
+// and move variables file from knacss folder to your own project folder!
+@import "_config/_variables.scss";
+
+@import "_config/_breakpoints.scss";
+@import "_config/_mixins.scss";
+
 
 // Libraries
 @import "_library-base.scss"; // basic styles
