@@ -6,6 +6,8 @@
 - ajout des objects courants : media et autogrid
 - suppression des positionnements tabulaires. `.row`, `.col` et `.line` n'ont plus lieu d'être depuis Flexbox, peuvent entrer en conflit avec d'autres frameworks et ne font que parasiter KNACSS
 - amélioration du fichier Gulpfile.js
+- corrections de bugs divers
+- mise à jour de la doc
 
 # changelog v5.0.1 (24 mai 2016)
 - les helpers de largeurs deviennent mobile-first et ne s'activent que sur écran d'une certaine taille. Ex. `.w700p {width: 700px;}` devient `@include media('>640px') {.w700p {width: 700px;}}`. Ainsi il n'est plus nécessaire de les écraser dans la feuille de style responsive.

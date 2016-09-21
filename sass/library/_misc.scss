@@ -39,7 +39,7 @@
   }
 }
 
-// use .no-wrapping to disallow hyphens on small screens
+// use .no-wrapping to disallow hyphens on tiny screens
 @media (max-width: $tiny) {
   .no-wrapping {
     word-wrap: normal;

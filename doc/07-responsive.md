@@ -6,20 +6,111 @@ Par défaut, KNACSS tient compte des valeurs de points de rupture suivants :
 
 ```
 // breakpoints (choose unit you prefer)
-@tiny-screen            : 320px; // tiny screens media query (less-equal than 320px)
-@tiny-plus-screen       : 480px; // screens between 321px and 480px
-@small-screen           : 640px; // screens between 481px and 640px
-@small-plus-screen      : 768px; // screens between 641px and 768px
-@medium-screen          : 960px; // screens between 769px and 960px
-@medium-plus-screen     : 1024px; // screens between 961px and 1024px
-@large-screen           : 1280px; // screens between 1025px and 1280px
-@large-plus-screen      : 1440px; // screens between 1281px and 1440px
-@extra-large-screen     : 1600px; // screens between 1441px and 1600px
-@ultra-large-screen     : 1920px; // ultra large screens
+$tiny: 544px !default; // or 'em' if you prefer, of course
+$small: 768px !default;
+$medium: 1024px !default;
+$large: 1200px !default;
+$extra-large: 1440px !default;
+```
+
+_Les valeurs des points de rupture peuvent être modifiées au sein du fichier de configuration LESS / Sass._
+
+## Convention d'écriture
+
+### Choix des valeurs de breakpoints
+
+1. Choisir principalement des valeurs de breakpoints selon votre design, pas par rapport à des devices (se servir des variables de breakpoints fournies si l'on ne peut pas se baser sur son design)
+2. En plus de vos propres valeurs, il est possible d'employer :
+  - les variables fournies (`$tiny`, `$small`, `$medium`, `$large`),
+  - mais aussi des alias qui représentent des intervalles et que l'on utilise sous forme de mixins: (`mobile`, `portrait`, `landscape`, `desktop`)
+3. Éviter de multiplier les valeurs. Un maximum de 5 ou 6 breakpoints devrait suffire dans la grande majorité des projets
+4. Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, adopter une convention pour définir la valeur d’un Breakpoint : `(max-width: $BP) and (min-width: ($BP + 1))`
+
+Exemple :
+
+Non, pas bien :
+```
+@media (min-width: 768px) {...}
+@media (max-width: 767px) {...}
+```
+
+Oui, bien :
+```
+@media (min-width: 769px) {...}
+@media (max-width: 768px) {...}
+@media (max-width: $small-screen) {...}
+@media (min-width: $small-screen + 1) and (max-width: $large-screen) {...}
+```
+
+## Mixins "Alias"
+
+En addition aux variables, des mixins de breakpoints "utilitaires" (des "alias" des valeurs précédentes) liées aux types de devices (forcément indicatifs, mais simples à retenir) sont prévues :
+
+**NOTE : je commence à avoir du mal avec les « large, medium, small » : en pratique, je ne sais jamais à quoi ça correspond et je dois systématiquement aller vérifier dans le fichier de variables.
+Au final, je me dis qu’un « mobile, tablet, desktop », même purement indicatif est bien plus parlant**
+
+```
+// Additionnal "utility" breakpoints aliases
+@function breakpoint($bp) {
+  @if $bp == 'mobile' {
+    @return '(max-width: #{$tiny})';
+  }
+  @else if $bp == 'portrait' {
+    @return '(min-width: #{$tiny + 1}) and (max-width: #{$small})';
+  }
+  @else if $bp == 'landscape' {
+    @return '(min-width: #{$small + 1}) and (max-width: #{$medium})';
+  }
+  @else if $bp == 'desktop' {
+    @return '(min-width: #{$medium + 1})';
+  }
+  @else if $bp == 'portrait-down' {
+    @return '(max-width: #{$small})';
+  }
+  @else if $bp == 'portrait-up' {
+    @return '(min-width: #{$tiny + 1})';
+  }
+  @else if $bp == 'landscape-down' {
+    @return '(max-width: #{$medium})';
+  }
+  @else if $bp == 'landscape-up' {
+    @return '(min-width: #{$small + 1})';
+  }
+  @else if $bp == 'retina' {
+    @return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)';
+  }
+}
+
+@mixin respond-to($value) {
+  $string: breakpoint($value);
+  @media screen and #{$string} {
+    @content;
+  }
+}
 ```
 
 
-_Les valeurs des points de rupture peuvent être modifiées au sein du fichier de configuration LESS / Sass._
+Exemple d'usage :
+
+```
+// styles
+.when-portrait-up {
+  @include respond-to("portrait-up") {
+    background: green;
+    color: #fff;
+  }
+}
+.is-hidden-mobile {
+  @include respond-to("mobile") {
+    display: none;
+  }
+}
+```
+
+Voir le CodePen : http://codepen.io/raphaelgoetter/pen/EyRwAp/?editors=1100
+
+Illustration :
+![offset](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/breakpoints.png)
 
 ## Préfixes de classe
 
@@ -55,15 +146,6 @@ Modèles d'affichage :
     display: inline-block;
     float: none;
     vertical-align: top;
-}
-.tiny-row {
-    display: table !important;
-    table-layout: fixed !important;
-    width: 100% !important;
-}
-.tiny-col {
-    display: table-cell !important;
-    vertical-align: top !important;
 }
 ```
 
@@ -101,26 +183,11 @@ Marges :
 
 ```css
 .tiny-man,
-    .tiny-ma0 {
+.tiny-ma0 {
         margin: 0 !important;
 }
 .tiny-pan,
 .tiny-pa0 {
     padding: 0 !important;
-}
-```
-
-
-## Règles de styles particulières
-
-```css
-@media (min-width: 1025px) {
-  /* rules for big resources and big screens like: background-images, font-faces, etc. */
-}
-```
-
-```css
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  /* style adjustments for high density devices */
 }
 ```

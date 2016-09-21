@@ -28,12 +28,12 @@ KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos go�
 Si vous ne comptez pas décortiquer le fichier CSS, il est préférable d'opter pour la version minifiée, plus légère.
 Il vous suffit ensuite de l'insérer à votre page HTML, avant votre propre feuille de style, bien entendu&nbsp;:
 
-```
+```HTML
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Vive les knack!</title>
+  <title>Vive les knacks!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="stylesheet" href="css/knacss.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -48,8 +48,8 @@ Il vous suffit ensuite de l'insérer à votre page HTML, avant votre propre feui
 
 KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
 
-Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [fichier de configuration](https://github.com/raphaelgoetter/KNACSS/blob/master/sass/_config-variables.scss) contenant toutes les variables du projet est intégré.
-Libre à vous de le modifier selon les contraintes de votre projet.
+Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [dossier de configuration](https://github.com/alsacreations/KNACSS/tree/v6/sass/_config) contenant toutes les variables du projet, les breakpoints et les mixins est intégré.
+Libre à vous de modifier ces fichiers selon les contraintes de votre projet.
 
 La version Sass, à compiler par vos soins, sera bien évidemment plus malléable grâce à l'apport de variables et fonctions.
 Vous pouvez également inclure ou non les fichiers partiels qui vous intéressent (tableaux, formulaires, grilles, WordPress, classes utilitaires, etc.).
@@ -71,7 +71,7 @@ Que vous ayez opté pour la version CSS simple ou la version Sass, il est viveme
 Sachez qu'un [**Pense-bête en PDF**](http://knacss.com/KNACSS-cheatsheet.pdf) et un [**Guide de styles**](http://codepen.io/raphaelgoetter/full/LNwOjz/) sont également disponibles pour vous souvenir des classes utiles de KNACSS.
 
 Dans le cas d'un usage via Sass, vos deux fichiers de travail principaux seront&nbsp;:
-- le fichier `sass/_config-variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
+- le fichier `sass/_config/_variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
 - le fichier `sass/knacss.scss` qui importe tous les autres fichiers que vous risquez d'employer dans votre projet.
 
 En phase d'intégration, il vous suffit de compiler le fichier `sass/knacss.scss` pour obtenir votre fichier CSS final.
@@ -80,17 +80,24 @@ En phase d'intégration, il vous suffit de compiler le fichier `sass/knacss.scss
 
 ### Préfixes navigateurs
 
-Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, ...) pour être certain que les propriétés CSS fonctionneront partout.
+Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, &hellip;) pour être certain que les propriétés CSS fonctionneront partout.
 
 Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est présent, **vous n'avez donc pas à vous en soucier** (Autoprefixer réglé à "last 2 versions").
 
-**Par contre, dans la version Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou aux excellents outils que sont [autoprefixer](https://github.com/postcss/autoprefixer) ou [pleeease](http://pleeease.io/).
+**Par contre, dans la version Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou à l'excellent outil qu'est [autoprefixer](https://github.com/postcss/autoprefixer).
 
 ### Mise à jour depuis une version précédente de KNACSS ?
 
-La version `5.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `4.*.*`.
+La version `6.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `6.*.*`.
 
-Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 5 de KNACSS&nbsp;:
+Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 6 de KNACSS&nbsp;:
+
+#### Modifications majeures depuis la `5.*.*`
+
+- le grille de mise en forme a été entièrement modifiée. Détails de modifications: https://github.com/alsacreations/KNACSS/issues/207
+- les positionnements tabulaires. `.row`, `.col` et `.line`, devenus inutiles et confusants depuis Flexbox, ont été supprimés
+- de nouvelles valeurs de breakpoints ont été définies. Détails: https://github.com/alsacreations/KNACSS/issues/210
+- suppression de l'outils *include-media* (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final)
 
 #### Modifications majeures depuis la `4.*.*`
 
