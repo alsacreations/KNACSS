@@ -88,7 +88,7 @@ Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est pré
 
 ### Mise à jour depuis une version précédente de KNACSS ?
 
-La version `6.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `6.*.*`.
+La version `6.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `5.*.*`.
 
 Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 6 de KNACSS&nbsp;:
 
