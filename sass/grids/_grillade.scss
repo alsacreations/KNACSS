@@ -1,165 +1,342 @@
 /* ---------------------------------- */
-/* ==Grid Layout (grillade)           */
+/* ==Grillade : Simple Grid System    */
 /* ---------------------------------- */
+/* Doc : http://grillade.knacss.com */
 
-// Tuto : http://www.alsacreations.com/tuto/lire/1659-une-grille-responsive-avec-flexbox-et-LESS.html
-// Demo : http://codepen.io/raphaelgoetter/pen/ZYjwEB
+// Breakpoints variables
+$tiny: 544px !default;
+$small: 768px !default;
+// Grids variables
+$grid-gutter: 1rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$grid-gutter-l: $grid-gutter * 2;
+$grid-gutter-xl: $grid-gutter * 4;
 
-// Usage in vanilla CSS:
-// - <div class="grid-4"> for an equal fourth columns grid container
-// - <div class="grid-2-1"> for an uneven columns grid container
-
-// Usage with preprocessors : if you're using Sass, you can config grids variables :
-// n = number of columns (default = 4) / g = gutter value (default = 1em)
-// example : .grid-perso { @include grid(12, 10px); }
-// ... or uneven grids :
-// left = left ratio column (default = 2) / right = right ratio column (default = 1)
-// example : .grid-perso { @include uneven-grid(2, 1, 10px); }
-
-/* grid container */
-[class*="#{$kna-namespace}grid-"] {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: -$grid-gutter;
-}
-
-/* grid childs */
-[class*="#{$kna-namespace}grid-"] > * {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  width: calc(100% - #{$grid-gutter} - .01px);// @bugfix IE https://github.com/alsacreations/KNACSS/issues/133;
-  min-width: 0;
-  min-height: 0;
-  margin-left: $grid-gutter;
-  @include media('>tiny-screen', '<=small-screen') {
-    & {
-      width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
+/* Grids common rules (for mono- and multi-lines grid) */
+@media (min-width: ($tiny + 1)) {
+  [class*=" grid"],
+  [class^="grid"] {
+    & > * {
+      box-sizing: border-box;
+      min-width: 0; /* avoid min-width: auto */
+      min-height: 0; /* avoid min-height: auto */
     }
-    &.grid-item-double {
+
+    &.has-gutter {
+      margin-right: -$grid-gutter / 2;
+      margin-left: -$grid-gutter / 2;
+
+      & > * {
+        margin-right: $grid-gutter / 2;
+        margin-left: $grid-gutter / 2;
+      }
+    }
+
+    &.has-gutter-l {
+      margin-right: -$grid-gutter-l / 2;
+      margin-left: -$grid-gutter-l / 2;
+
+      & > * {
+        margin-right: $grid-gutter-l / 2;
+        margin-left: $grid-gutter-l / 2;
+      }
+    }
+
+    &.has-gutter-xl {
+      margin-right: -$grid-gutter-xl / 2;
+      margin-left: -$grid-gutter-xl / 2;
+
+      & > * {
+        margin-right: $grid-gutter-xl / 2;
+        margin-left: $grid-gutter-xl / 2;
+      }
+    }
+  }
+  /* Mono-line grid system (.grid) */
+  .grid {
+    display: flex;
+
+    & > * {
+      flex: 1 1 0;
+    }
+  }
+  /* Multi-line grid system (.grid-X) */
+  [class*=" grid-"],
+  [class^="grid-"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 0 0 auto;
+      width: calc(100% - .01px); /* @bugfix IE https://github.com/alsacreations/KNACSS/issues/133; */
+    }
+
+    &.has-gutter > * {
       width: calc(100% - #{$grid-gutter} - .01px);
     }
-  }
-}
 
-// Sass mixins for *equal* columns grid container
-// example : .grid-perso { @include grid(12); }
-@mixin grid($grid-number:$grid-number,$newgutter:$grid-gutter) {
-  @if $newgutter != $grid-gutter {
-    margin-left: -$newgutter;
-  }
-  & > * {
-    width: calc(100% * 1 / #{$grid-number} - #{$newgutter} - .01px);
-    @if $newgutter != $grid-gutter {
-      margin-left: $newgutter;
+    &.has-gutter-l > * {
+      width: calc(100% - #{$grid-gutter-l} - .01px);
     }
-  }
-  & > .#{$kna-namespace}grid-item-double {
-    width: calc(100% * 2 / #{$grid-number} - #{$newgutter});
-  }
-}
 
-// Examples : will be compiled in CSS
-@include media('>small-screen') {
-  @for $i from 2 through 12 {
-    [class*="#{$kna-namespace}grid-#{$i}"] {
-        @include grid(#{$i});
+    &.has-gutter-xl > * {
+      width: calc(100% - #{$grid-gutter-xl} - .01px);
     }
   }
 }
-
-/* Responsive grid */
-// example : .grid-4-small-2 will be 1 column (tiny) then 2 columns (small) then 4 columns
-@include media('>tiny-screen', '<=small-screen') {
-  [class*="-small-4"] > * {
-    width: calc(100% * 1 / 4 - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-4"] > .grid-item-double {
-    width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-3"] > * {
-    width: calc(100% * 1 / 3 - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-3"] > .grid-item-double {
-    width: calc(100% * 2 / 3 - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-2"] > * {
-    width: calc(100% * 1 / 2 - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-2"] > .grid-item-double {
-    width: calc(100% - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-1"] > * {
-    width: calc(100% - #{$grid-gutter} - .01px);
-  }
-  [class*="-small-1"] > .grid-item-double {
-    width: calc(100% - #{$grid-gutter} - .01px);
-  }
+/* Grid offsets */
+.push {
+  margin-left: auto;
 }
 
-
-// Sass mixins for *unequal* columns grid container
-// example : .grid-perso { @include uneven-grid(2, 1); }
-@mixin uneven-grid($grid-left:$grid-left, $grid-right:$grid-right, $newgutter:$grid-gutter) {
-  @if $newgutter != $grid-gutter {
-    margin-left: -$newgutter;
-  }
-  > * {
-    @if $newgutter != $grid-gutter {
-      margin-left: $newgutter;
-      width: calc(100% - #{$newgutter});
-    }
-  }
-  @include media('>small-screen') {
-    & > :nth-child(odd) {
-      $size: ($grid-left / ($grid-left + $grid-right)) * 100%;
-      width: calc(#{$size} - #{$newgutter});
-    }
-    & > :nth-child(even) {
-      $size: ($grid-right / ($grid-left + $grid-right)) * 100%;
-      width: calc(#{$size} - #{$newgutter});
-    }
-  }
-}
-
-
-// Examples : will be compiled in CSS
-
-.#{$kna-namespace}grid-2-1 {
-  @include uneven-grid(2,1);
-}
-
-.#{$kna-namespace}grid-1-2 {
-  @include uneven-grid(1,2);
-}
-
-.#{$kna-namespace}grid-3-1 {
-  @include uneven-grid(3,1);
-}
-
-.#{$kna-namespace}grid-1-3 {
-  @include uneven-grid(1,3);
-}
-
-.#{$kna-namespace}grid-3-2 {
-  @include uneven-grid(3,2);
-}
-
-.#{$kna-namespace}grid-2-3 {
-  @include uneven-grid(2,3);
-}
-
-.#{$kna-namespace}grid-4-1 {
-  @include uneven-grid(4,1);
-}
-
-.#{$kna-namespace}grid-1-4 {
-  @include uneven-grid(1,4);
-}
-
-.#{$kna-namespace}pull {
+.pull {
   margin-right: auto;
 }
-.#{$kna-namespace}push {
-  margin-left: auto;
+/* Grid order */
+.grid-item-first {
+  order: -1;
+}
+
+.grid-item-last {
+  order: 1;
+}
+
+[class*="--reverse"] {
+  flex-direction: row-reverse;
+}
+// Sass mixin for Multi-line grid system
+// example : .grid-perso { @include grid(12, 3rem); }
+@mixin grid($grid-number:4, $new-gutter:$grid-gutter) {
+  & > * {
+    width: calc(100% * 1 / #{$grid-number} - .01px);
+  }
+
+  &.has-gutter > * {
+    width: calc(100% * 1 / #{$grid-number} - #{$grid-gutter} - .01px);
+  }
+
+  &.has-gutter-l > * {
+    width: calc(100% * 1 / #{$grid-number} - #{$grid-gutter-l} - .01px);
+  }
+
+  &.has-gutter-xl > * {
+    width: calc(100% * 1 / #{$grid-number} - #{$grid-gutter-xl} - .01px);
+  }
+  @if ($new-gutter != 0) {
+     @if ($new-gutter != $grid-gutter){
+      margin-right: -$new-gutter / 2;
+      margin-left: -$new-gutter / 2;
+
+      & > * {
+        margin-right: $new-gutter / 2;
+        margin-left: $new-gutter / 2;
+        width: calc(100% * 1 / #{$grid-number} - #{$new-gutter} - .01px);
+      }
+    }
+  }
+}
+// Constructing grids : will be compiled in CSS
+@media (min-width: ($tiny + 1)) {
+   @for $i from 2 through 12{
+    [class*="grid-#{$i}"] {
+      @include grid(#{$i},0);
+    }
+  }
+}
+/* Sizing individual children */
+@media (min-width: ($tiny + 1)) {
+  .full {
+    flex: 0 0 auto;
+    width: calc(100% - .01px);
+
+    .has-gutter & {
+      width: calc(100% - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .one-half {
+    flex: 0 0 auto;
+    width: calc(50% - .01px);
+
+    .has-gutter & {
+      width: calc(50% - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(50% - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(50% - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .one-third {
+    flex: 0 0 auto;
+    width: calc(100% / 3 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 3 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 3 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 3 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .one-quarter {
+    flex: 0 0 auto;
+    width: calc(100% / 4 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 4 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 4 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 4 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .one-fifth {
+    flex: 0 0 auto;
+    width: calc(100% / 5 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 5 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 5 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 5 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .two-thirds {
+    flex: 0 0 auto;
+    width: calc(100% / 3 * 2 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 3 * 2 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 3 * 2 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 3 * 2 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  .three-quarters {
+    flex: 0 0 auto;
+    width: calc(100% / 4 * 3 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 4 * 3 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 4 * 3 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 4 * 3 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+}
+/* Responsive Small Breakpoint */
+// -small-X suffix means "X columns on small screen"
+// example : .grid-4-small-2 will be 1 column (tiny and down) then 2 columns (until small) then 4 columns
+@media (min-width: ($tiny + 1)) and (max-width: $small) {
+  [class*="-small-4"] {
+    & > * {
+      width: calc(100% / 4 - .01px);
+    }
+
+    &.has-gutter > * {
+      width: calc(100% / 4 - #{$grid-gutter} - .01px);
+    }
+
+    &.has-gutter-l > * {
+      width: calc(100% / 4 - #{$grid-gutter-l} - .01px);
+    }
+
+    &.has-gutter-xl > * {
+      width: calc(100% / 4 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  [class*="-small-3"] {
+    & > * {
+      width: calc(100% / 3 - .01px);
+    }
+
+    &.has-gutter > * {
+      width: calc(100% / 3 - #{$grid-gutter} - .01px);
+    }
+
+    &.has-gutter-l > * {
+      width: calc(100% / 3 - #{$grid-gutter-l} - .01px);
+    }
+
+    &.has-gutter-xl > * {
+      width: calc(100% / 3 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  [class*="-small-2"] {
+    & > * {
+      width: calc(100% / 2 - .01px);
+    }
+
+    &.has-gutter > * {
+      width: calc(100% / 2 - #{$grid-gutter} - .01px);
+    }
+
+    &.has-gutter-l > * {
+      width: calc(100% / 2 - #{$grid-gutter-l} - .01px);
+    }
+
+    &.has-gutter-xl > * {
+      width: calc(100% / 2 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+
+  [class*="-small-1"] {
+    & > * {
+      width: calc(100% - .01px);
+    }
+
+    &.has-gutter > * {
+      width: calc(100% - #{$grid-gutter} - .01px);
+    }
+
+    &.has-gutter-l > * {
+      width: calc(100% - #{$grid-gutter-l} - .01px);
+    }
+
+    &.has-gutter-xl > * {
+      width: calc(100% - #{$grid-gutter-xl} - .01px);
+    }
+  }
 }

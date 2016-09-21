@@ -25,7 +25,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('grillade', function() {
-  return gulp.src(['./sass/_include-media/_include-media.scss','./sass/_config-variables.scss', './sass/_layout-grids.scss'])
+  return gulp.src(['./sass/_config/_variables.scss', './sass/_config/_breakpoints.scss', './sass/grids/_grillade.scss'])
     .pipe(concat('grillade.scss'))
     .pipe(gulp.dest('./css/'))
     .pipe(sass())

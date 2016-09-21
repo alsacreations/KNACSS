@@ -1,7 +1,7 @@
 // Warning : you should use your own values, regardless of the devices
 // GOOD : (max-width: $BP) and (min-width: ($BP + 1))
-$tiny: 544px; // or 'em' if you prefer, of course
-$small: 768px;
-$medium: 1024px;
-$large: 1200px;
-$extra-large: 1440px;
+$tiny: 544px !default; // or 'em' if you prefer, of course
+$small: 768px !default;
+$medium: 1024px !default;
+$large: 1200px !default;
+$extra-large: 1440px !default;

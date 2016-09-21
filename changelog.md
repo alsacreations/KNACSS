@@ -1,4 +1,5 @@
 # changelog v6.0.0 (21 septembre 2016)
+- refonte intégrale de la grille de mise en forme (adoption de grillade.knacss.com)
 - suppression de include-media (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
 - refonte des valeurs des Breakpoints et des classes responsive.
 - modularisation des fichiers et dossiers, classés par fonctions (config, vendor, library, objects, utility)
