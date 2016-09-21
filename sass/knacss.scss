@@ -1,5 +1,5 @@
 /*!
-* www.KNACSS.com V5.0.1 (24 mai 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com V6.0.0 (21 septembre 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 
@@ -12,13 +12,15 @@
 /* 3- Print (print quick reset) */
 /* 4- Stylings (minor stylings) */
 /* 5- Misc (skip links, hyphens) */
-/* (6- WordPress reset (disabled by default)) */
-/* 7- Global Layout (alignment, modules, positionning) */
-/* 8- Grid Layout (grillade) */
-/* 9- Tables (data tables consistency) */
-/* 10- Forms (forms consistency) */
+/* 6- Tables (data tables consistency) */
+/* 7- Forms (forms consistency) */
+/* 8- Media object */
+/* 9- Autogrid object */
+/* 10- Global Layout (alignment, modules, positionning) */
 /* 11- Helpers (width and spacers helpers) */
-/* 12- Responsive (Responsive Web Design helpers) */
+/* (12- WordPress reset (disabled by default)) */
+/* 13- Responsive (Responsive Web Design helpers) */
+/* 14- Grid Layout (grillade) */
 
 /* ---------------------------------- */
 /* ==Normalize (basic reset)          */
@@ -43,6 +45,7 @@
 
 // Objects
 @import "objects/_media.scss"; // media object
+@import "objects/_autogrid.scss"; // media object
 
 // Utilities
 @import "utilities/_layout.scss"; // alignment, modules, positionning
