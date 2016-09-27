@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V6.0.0 (21 septembre 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com V6.0.0 (27 septembre 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -399,22 +399,6 @@ html {
 * {
   box-sizing: inherit; }
 
-ul,
-ol {
-  padding-left: 2em; }
-
-img {
-  vertical-align: middle; }
-
-/* height auto only for non SVG images */
-img:not([src$=".svg"]) {
-  height: auto; }
-
-blockquote,
-figure {
-  margin-left: 0;
-  margin-right: 0; }
-
 html {
   /* set base font-size to equiv "10px", which is adapted to rem unit */
   font-size: 62.5%;
@@ -433,6 +417,18 @@ a {
   color: #333; }
   a:hover, a:focus, a:active {
     color: #000; }
+
+ul,
+ol {
+  padding-left: 2em; }
+
+img {
+  vertical-align: middle; }
+
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0; }
 
 /* font-sizing for content */
 p,
@@ -550,9 +546,8 @@ video,
 svg {
   max-width: 100%; }
 
-/* margin-bottom on tables */
-table {
-  margin-bottom: 2rem; }
+img {
+  height: auto; }
 
 /* ----------------------------- */
 /* ==Print (quick print reset)   */
@@ -762,6 +757,10 @@ th {
         -ms-hyphens: manual;
             hyphens: manual; } }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%; } }
+
 /* ----------------------------- */
 /* ==Tables                      */
 /* ----------------------------- */
@@ -771,7 +770,8 @@ table,
   max-width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  vertical-align: top; }
+  vertical-align: top;
+  margin-bottom: 2rem; }
 
 .table {
   display: table; }
@@ -1538,8 +1538,8 @@ ul.unstyled {
     display: flex; }
     .grid > * {
       -webkit-box-flex: 1;
-          -ms-flex: 1 1 0;
-              flex: 1 1 0; }
+          -ms-flex: 1 1 0%;
+              flex: 1 1 0%; }
   /* Multi-line grid system (.grid-X) */
   [class*=" grid-"],
   [class^="grid-"] {

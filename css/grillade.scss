@@ -63,7 +63,7 @@ $grid-gutter-xl: $grid-gutter * 4;
     display: flex;
 
     & > * {
-      flex: 1 1 0;
+      flex: 1 1 0%;
     }
   }
   /* Multi-line grid system (.grid-X) */
