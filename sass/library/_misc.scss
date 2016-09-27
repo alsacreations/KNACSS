@@ -46,3 +46,10 @@
     hyphens: manual;
   }
 }
+
+// SVG width IE fix
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}
