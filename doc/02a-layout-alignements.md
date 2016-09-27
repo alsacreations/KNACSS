@@ -14,7 +14,7 @@ KNACSS a prévu des classes spécifiques pour mieux vous en sortir avec les flot
 
 - **le super élément `.mod`**. Il a plein d'avantages: il contient les flottants (ils ne débordent pas) et il ne s'écoule pas autour d'un frère flottant (il s'affiche proprement à côté) et il crée un [contexte "BFC"](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html)
 - `.clearfix`. Les éléments disposant de cette classe contiennent les flottants, tel les `.mod`
-- les éléments `.clear`, `.line` et `.row` bénéficient d'un autre pouvoir : celui de toujours se pousser sous un flottant précédent. Il sont dédiés aux empilements verticaux des contenus.
+- les éléments `.clear` bénéficient d'un autre pouvoir : celui de toujours se pousser sous un flottant précédent. Il sont dédiés aux empilements verticaux des contenus.
 
 ## Concrètement : je veux faire quoi ?
 
@@ -42,21 +42,7 @@ HTML :
 
 ![centrer verticalement](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/doc/illust/02-layout.png)
 
-Version table-cell (HTML) :
-```html
-<section class="col">
-    <div class="w50 center">centré horizontalement et verticalement</div>
-</section>
-```
 
-Version table-cell (CSS) :
-```css
-section {
-    vertical-align: middle;
-}
-```
-
-Version flexbox (HTML):
 ```html
 <section class="flex-container-v">
     <div class="center w50">centré horizontalement et verticalement</div>

@@ -9,15 +9,12 @@
 }
 
 /* blocks that needs to be placed under floats */
-.clear,
-.#{$kna-namespace}line,
-.#{$kna-namespace}row {
+.clear {
   clear: both;
 }
 
 /* blocks that must contain floats */
-.clearfix,
-.#{$kna-namespace}line {
+.clearfix {
   &::after {
     content: "";
     display: table;
@@ -73,24 +70,6 @@ img.#{$kna-namespace}fr {
 img.#{$kna-namespace}fl,
 img.#{$kna-namespace}fr {
   margin-bottom: $tiny-value;
-}
-
-/* table layout */
-.#{$kna-namespace}row {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-
-.#{$kna-namespace}row > *,
-.#{$kna-namespace}col {
-  display: table-cell;
-  vertical-align: top;
-}
-
-/* no table-cell for script tag when body is a .row */
-body > script {
-  display: none !important;
 }
 
 /* inline-block */

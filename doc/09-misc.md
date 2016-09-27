@@ -30,10 +30,11 @@ KNACSS propose des styles par défaut pour ces liens : masqués au départ, ils 
 
 ## Césures
 
-KNACSS gère automatiquement les césures et les mots longs dès lors que le point de rupture "small" est atteint.
+KNACSS gère automatiquement les césures et les mots longs dès lors que le point de rupture "$tiny" est atteint.
 
-```css
-@media (max-width: 768px) {
+```
+// hyphens on tiny screens
+@media (max-width: $tiny) {
   /* you shall not pass */
   div,
   textarea,
@@ -44,28 +45,15 @@ KNACSS gère automatiquement les césures et les mots longs dès lors que le poi
   pre,
   samp {
     word-wrap: break-word;
-    -webkit-hyphens: auto;
-       -moz-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
+    hyphens: auto;
   }
 }
-```
 
-## Google maps
-
-KNACSS règle les bugs d'affichage dans le cas spécifique des images google.
-
-```css
-.gm-style img {
-  height: 100%;
-}
-:not(.gm-style) img {
-  height: auto;
-}
-.gm-style img,
-.gmnoscreen img,
-.gmnoprint img {
-  max-width: none !important;
+// use .no-wrapping to disallow hyphens on tiny screens
+@media (max-width: $tiny) {
+  .no-wrapping {
+    word-wrap: normal;
+    hyphens: manual;
+  }
 }
 ```

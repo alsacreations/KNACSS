@@ -11,26 +11,6 @@ html {
   box-sizing: inherit;
 }
 
-ul,
-ol {
-  padding-left: 2em;
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* height auto only for non SVG images */
-img:not([src$=".svg"]) {
-  height: auto;
-}
-
-blockquote,
-figure {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 html {
   /* set base font-size to equiv "10px", which is adapted to rem unit */
   font-size: 62.5%;
@@ -52,6 +32,21 @@ a {
   &:hover, &:focus, &:active {
     color: $base-color-link-hover;
   }
+}
+
+ul,
+ol {
+  padding-left: 2em;
+}
+
+img {
+  vertical-align: middle;
+}
+
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* font-sizing for content */
@@ -189,7 +184,6 @@ svg {
   max-width: 100%;
 }
 
-/* margin-bottom on tables */
-table {
-  margin-bottom: $medium-value;
+img {
+  height: auto;
 }

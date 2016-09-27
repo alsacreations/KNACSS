@@ -116,7 +116,7 @@ ul.unstyled {
   width: 300px;
 }
 
-@include media('>=400px') {
+@media (min-width: 401px) {
   .#{$kna-namespace}w400p {
     width: 400px;
   }
@@ -130,7 +130,7 @@ ul.unstyled {
   }
 }
 
-@include media('>=700px') {
+@media (min-width: 701px) {
 
   .#{$kna-namespace}w700p {
     width: 700px;
@@ -141,7 +141,7 @@ ul.unstyled {
   }
 }
 
-@include media('>=960px') {
+@media (min-width: 961px) {
   .#{$kna-namespace}w960p {
     width: 960px;
   }

@@ -9,6 +9,7 @@ table,
   table-layout: fixed;
   border-collapse: collapse;
   vertical-align: top;
+  margin-bottom: $medium-value;
 }
 
 .#{$kna-namespace}table {

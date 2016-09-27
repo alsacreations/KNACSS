@@ -45,26 +45,5 @@ $extra-large-plus-value : 12rem !default; // extra large value for margins / pad
 $ultra-large-value      : 16rem !default; // ultra large value for margins / paddings
 $ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
 
-// breakpoints (overrides include-media.scss) (choose unit you prefer)
-// doc : http://include-media.com/documentation/
-$breakpoints: (
-  tiny-screen       : 320px,
-  tiny-plus-screen  : 480px,
-  small-screen      : 640px,
-  small-plus-screen : 768px,
-  medium-screen     : 960px,
-  medium-plus-screen: 1024px,
-  large-screen      : 1280px,
-  large-plus-screen : 1440px,
-  extra-large-screen: 1600px,
-  ultra-large-screen: 1920px
-);
-
-// grids variables (choose unit you prefer)
-$grid-gutter:  2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
-$grid-number:  4 !default; // number of equal columns
-$grid-left:    2 !default; // left side of uneven columns
-$grid-right:   1 !default; // right side of uneven columns
-
 //kna-namespace (default : null)
 $kna-namespace: null !default;

@@ -10,14 +10,13 @@ Les types de positionnements inclus nativement dans KNACSS sont les suivants :
 
 - positionnement flottant
 - positionnement avec `display: inline-block`
-- positionnement avec `display: table-cell`
 - positionnement avec Flexbox
 
 Il n'y a pas de mystère : chaque type de positionnement est capable de répondre à différents types de contraintes. Il n'y a pas de meilleur choix qu'un autre.
 
 Votre décision pourra être guidée par les indices suivants :
 - il est généralement plus profitable de ne pas opter pour des positionnement hors-flux (`float`, `position: absolute`)
-- Flexbox est certainement le modèle le plus polyvalent et propre, mais n'est compatible qu'à partir de IE10+.
+- Flexbox est certainement le modèle le plus polyvalent et propre, il est compatible qu'à partir de IE10+.
 
 ## Concrètement : je veux faire quoi ?
 
@@ -55,20 +54,8 @@ HTML :
 - **Avantage :** positionnement dans le flux, compatible dès IE8
 - **Inconvénient :** un espace "whitespace" apparaîtra entre les deux div et nécessitera de coller les balises ou de bidouiller en CSS pour être supprimé
 
-#### table-cell et table-cell
 
-HTML :
-```html
-<div class="row">
-    <div class="col w400p">premier</div>
-    <div class="col w400p">deuxième</div>
-</div>
-```
-
-- **Avantage :** positionnement dans le flux, compatible dès IE8
-- **Inconvénient :** Le positionnement tabulaire observe [des règles parfois complexes](http://www.alsacreations.com/tuto/lire/1522-le-modele-tabulaire-en-css.html) et surprenantes pour les non habitués.
-
-#### flexbox
+#### Flexbox
 
 HTML :
 ```html
@@ -97,19 +84,10 @@ HTML :
 
 #### inline-block et inline-block
 
-Pas possible [Résolu]
+Pas possible
 
-#### table-cell et table-cell
 
-HTML :
-```html
-<div class="row">
-    <div class="col w400p">premier</div>
-    <div class="col">deuxième</div>
-</div>
-```
-
-#### flexbox
+#### Flexbox
 
 HTML :
 ```html
@@ -127,25 +105,14 @@ Les choix offerts avec KNACSS :
 
 #### flottant et flottant
 
-Pas possible [Résolu]
+Pas possible
 
 #### inline-block et inline-block
 
-Pas possible [Résolu]
+Pas possible
 
-#### table-cell et table-cell
 
-Par défaut, les éléments constituant des "cellules de tableau", donc `table-cell` ont automatiquement la même hauteur entre frères. Il n'y a donc rien à faire si l'on opte pour ce positionnement : ça marche tout seul.
-
-HTML :
-```html
-<div class="row">
-    <div class="col">premier</div>
-    <div class="col">deuxième</div>
-</div>
-```
-
-#### flexbox
+#### Flexbox
 
 Là aussi c'est automatique : les enfants d'un conteneur `flexbox` ont tous par défaut la même hauteur.
 
