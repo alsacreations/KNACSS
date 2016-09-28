@@ -1,6 +1,6 @@
 # changelog v6.0.0 (26 septembre 2016)
 - refonte intégrale de la grille de mise en forme (adoption de [grillade.css](http://grillade.knacss.com))
-- suppression de include-media (cause de bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
+- suppression de include-media (cause de bugs d'encodage : cf. [#203](https://github.com/alsacreations/KNACSS/issues/203) / [#197](https://github.com/alsacreations/KNACSS/issues/197) , nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
 - refonte des valeurs des Breakpoints et des classes responsive. [voir issue #210](https://github.com/alsacreations/KNACSS/issues/210)
 - modularisation des fichiers et dossiers, classés par fonctions (config, vendor, library, objects, utility)
 - ajout des objects courants : [media](http://codepen.io/raphaelgoetter/pen/KMWWwj) et [autogrid](http://codepen.io/raphaelgoetter/pen/KMgBJd?editors=1100)
