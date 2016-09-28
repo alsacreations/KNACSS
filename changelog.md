@@ -1,10 +1,10 @@
-# changelog v6.0.0 (21 septembre 2016)
-- refonte intégrale de la grille de mise en forme (adoption de grillade.knacss.com)
-- suppression de include-media (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
-- refonte des valeurs des Breakpoints et des classes responsive.
+# changelog v6.0.0 (26 septembre 2016)
+- refonte intégrale de la grille de mise en forme (adoption de [grillade.css](http://grillade.knacss.com))
+- suppression de include-media (cause de bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
+- refonte des valeurs des Breakpoints et des classes responsive. [voir issue #210](https://github.com/alsacreations/KNACSS/issues/210)
 - modularisation des fichiers et dossiers, classés par fonctions (config, vendor, library, objects, utility)
-- ajout des objects courants : media et autogrid
-- suppression des positionnements tabulaires. `.row`, `.col` et `.line` n'ont plus lieu d'être depuis Flexbox, peuvent entrer en conflit avec d'autres frameworks et ne font que parasiter KNACSS
+- ajout des objects courants : [media](http://codepen.io/raphaelgoetter/pen/KMWWwj) et [autogrid](http://codepen.io/raphaelgoetter/pen/KMgBJd?editors=1100)
+- suppression des positionnements tabulaires. `.row`, `.col` et `.line` n'ont plus lieu d'être depuis Flexbox, pouvaient entrer en conflit avec d'autres frameworks et ne font que parasiter KNACSS
 - amélioration du fichier Gulpfile.js
 - corrections de bugs divers
 - mise à jour de la doc
