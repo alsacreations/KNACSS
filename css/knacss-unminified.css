@@ -407,7 +407,7 @@ html {
   font-size: calc(1em * 0.625); }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background-color: #fff;
   color: #000;
   font-family: sans-serif;
@@ -906,6 +906,7 @@ input[type="reset"].unstyled {
             flex-direction: row-reverse; }
   .o-media-figure--center {
     -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center; } }
 
 /* Autogrid object */
