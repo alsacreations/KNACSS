@@ -5,7 +5,7 @@
 /* large screens */
 /* ------------- */
 
-@media (min-width: ($large + 1)) {
+@media (min-width: ($medium + 1)) {
 
   /* layouts for large screens */
   .#{$kna-namespace}large-hidden {

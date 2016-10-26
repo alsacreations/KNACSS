@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V6.0.0 (27 septembre 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com V6.0.1 (26 octobre 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -906,7 +906,6 @@ input[type="reset"].unstyled {
             flex-direction: row-reverse; }
   .o-media-figure--center {
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
         align-self: center; } }
 
 /* Autogrid object */
@@ -1319,7 +1318,7 @@ ul.unstyled {
 /* -------------------------- */
 /* large screens */
 /* ------------- */
-@media (min-width: 1201px) {
+@media (min-width: 1025px) {
   /* layouts for large screens */
   .large-hidden {
     display: none !important; }
@@ -1572,10 +1571,10 @@ ul.unstyled {
 
 /* Grid offsets */
 .push {
-  margin-left: auto; }
+  margin-left: auto !important; }
 
 .pull {
-  margin-right: auto; }
+  margin-right: auto !important; }
 
 /* Grid order */
 .grid-item-first {
@@ -1762,7 +1761,29 @@ ul.unstyled {
     .has-gutter-l .three-quarters {
       width: calc(100% / 4 * 3 - 2rem - .01px); }
     .has-gutter-xl .three-quarters {
-      width: calc(100% / 4 * 3 - 4rem - .01px); } }
+      width: calc(100% / 4 * 3 - 4rem - .01px); }
+  .one-sixth {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: calc(100% / 6 - .01px); }
+    .has-gutter .one-sixth {
+      width: calc(100% / 6 - 1rem - .01px); }
+    .has-gutter-l .one-sixth {
+      width: calc(100% / 6 - 2rem - .01px); }
+    .has-gutter-xl .one-sixth {
+      width: calc(100% / 6 - 4rem - .01px); }
+  .five-sixths {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: calc(100% / 6 * 5 - .01px); }
+    .has-gutter .five-sixths {
+      width: calc(100% / 6 * 5 - 1rem - .01px); }
+    .has-gutter-l .five-sixths {
+      width: calc(100% / 6 * 5 - 2rem - .01px); }
+    .has-gutter-xl .five-sixths {
+      width: calc(100% / 6 * 5 - 4rem - .01px); } }
 
 /* Responsive Small Breakpoint */
 @media (min-width: 545px) and (max-width: 768px) {

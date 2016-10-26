@@ -83,11 +83,11 @@ $grid-gutter-xl: $grid-gutter * 4;
 }
 /* Grid offsets */
 .push {
-  margin-left: auto;
+  margin-left: auto !important;
 }
 
 .pull {
-  margin-right: auto;
+  margin-right: auto !important;
 }
 /* Grid order */
 .grid-item-first {
@@ -258,6 +258,38 @@ $grid-gutter-xl: $grid-gutter * 4;
 
     .has-gutter-xl & {
       width: calc(100% / 4 * 3 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+  .one-sixth {
+    flex: 0 0 auto;
+    width: calc(100% / 6 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 6 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 6 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 6 - #{$grid-gutter-xl} - .01px);
+    }
+  }
+  .five-sixths {
+    flex: 0 0 auto;
+    width: calc(100% / 6 * 5 - .01px);
+
+    .has-gutter & {
+      width: calc(100% / 6 * 5 - #{$grid-gutter} - .01px);
+    }
+
+    .has-gutter-l & {
+      width: calc(100% / 6 * 5 - #{$grid-gutter-l} - .01px);
+    }
+
+    .has-gutter-xl & {
+      width: calc(100% / 6 * 5 - #{$grid-gutter-xl} - .01px);
     }
   }
 }
