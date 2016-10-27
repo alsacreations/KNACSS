@@ -13,7 +13,8 @@ $extra-large: 1440px !default;
 /* ---------------------------------- */
 /* Doc : http://grillade.knacss.com */
 // gutter values for grid layouts. Unit can be: %, px, em, rem
-$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem ); // IEfixing, see
+$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
+// IEfixing, see
 // https://github.com/alsacreations/KNACSS/issues/133;
 $iefix: 0.01px;
 @media (min-width: ($tiny + 1)) {
@@ -93,7 +94,7 @@ $iefix: 0.01px;
 .pull {
   margin-right: auto !important;
 }
-/* Grid order */
+// Grid order
 .grid-item-first {
   order: -1;
 }
