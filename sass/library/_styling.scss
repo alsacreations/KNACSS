@@ -50,6 +50,8 @@ blockquote {
 blockquote::before {
   content: "\201C";
   position: absolute;
+  height: 30px;
+  overflow: hidden;
   left: 0;
   top: 0;
   font-family: georgia, serif;

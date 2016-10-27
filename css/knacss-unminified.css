@@ -664,6 +664,8 @@ blockquote {
 blockquote::before {
   content: "\201C";
   position: absolute;
+  height: 30px;
+  overflow: hidden;
   left: 0;
   top: 0;
   font-family: georgia, serif;
@@ -906,6 +908,7 @@ input[type="reset"].unstyled {
             flex-direction: row-reverse; }
   .o-media-figure--center {
     -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center; } }
 
 /* Autogrid object */
@@ -1796,7 +1799,6 @@ ul.unstyled {
 .pull {
   margin-right: auto !important; }
 
-/* Grid order */
 .grid-item-first {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
