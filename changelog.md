@@ -1,3 +1,6 @@
+# changelog v6.0.2 (27 octobre 2016)
+- optimisation de la grille (de 8ko à 3ko pour la version Sass)
+
 # changelog v6.0.0 (26 septembre 2016)
 - refonte intégrale de la grille de mise en forme (adoption de [grillade.css](http://grillade.knacss.com))
 - suppression de include-media (cause de bugs d'encodage : cf. [#203](https://github.com/alsacreations/KNACSS/issues/203) / [#197](https://github.com/alsacreations/KNACSS/issues/197) , nécessite un temps d'apprentissage, et n'apporte pas grand chose au final).
