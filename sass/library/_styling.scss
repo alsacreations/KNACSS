@@ -45,18 +45,18 @@ sub {
 blockquote {
   position: relative;
   padding-left: 3em;
+  min-height: 2em;
 }
 
 blockquote::before {
   content: "\201C";
   position: absolute;
-  height: 30px;
-  overflow: hidden;
   left: 0;
   top: 0;
   font-family: georgia, serif;
   font-size: 5em;
-  line-height: 0.9;
+  height: .4em;
+  line-height: .9;
   color: rgba(0, 0, 0, .3);
 }
 
