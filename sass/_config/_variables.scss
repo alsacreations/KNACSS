@@ -1,7 +1,7 @@
 // Config file and project variables
 
 // font sizes
-$base-font-size : 1.6rem !default; // ex. 1.4rem would be "14px" equivalent
+$base-font-size : 1.6rem !default; // ex. 1.6rem would be "16px" equivalent
 $line-height    : 1.5 !default; // equiv line-height 1.5
 $h1-size        : 3.2rem !default; // equiv "32px"
 $h2-size        : 2.8rem !default; // equiv "28px"
@@ -16,20 +16,14 @@ $font-stack-headings  : sans-serif !default; // headings font
 $font-stack-monospace : consolas, courier, monospace !default; // monospace font
 
 // font colors
-$base-color             : #000 !default; // text color on body and content
-$alpha-color            : #000 !default; // text color on primary elements
-$beta-color             : #000 !default; // text color on secondary elements
-$headings-color         : #000 !default; // text color on headings
-$headings-1-color       : #000 !default; // text color on headings level 1
-$headings-2-color       : #000 !default; // text color on headings level 2
-$headings-3-color       : #000 !default; // text color on headings level 3
-$base-color-link        : #333 !default; // base links color
-$base-color-link-hover  : #000 !default; // base hovered/focused links color
-
-// backgrounds
-$base-background      : #fff !default; // body background color
-$alpha-background     : #fff !default; // primary elements background color
-$beta-background      : #fff !default; // secondary elements background color
+$base-color     : #000 !default; // text color on body and content
+$alpha-color    : #fff !default;
+$beta-color     : #333 !default;
+$gamma-color    : #000 !default;
+$delta-color    : #000 !default;
+$epsilon-color  : #000 !default;
+$zeta-color     : #333 !default;
+$theta-color    : #000 !default;
 
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem !default; // tiny value for margins / paddings
