@@ -1,3 +1,6 @@
+# changelog v6.0.3 (10 novembre 2016)
+- renommage `grid-item-*` en `item-*` pour éviter [les conflits](https://github.com/alsacreations/KNACSS/issues/222)
+
 # changelog v6.0.2 (27 octobre 2016)
 - optimisation de la grille (de 8ko à 3ko pour la version Sass)
 

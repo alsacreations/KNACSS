@@ -15,8 +15,8 @@ $font-stack-common    : sans-serif !default; // common font
 $font-stack-headings  : sans-serif !default; // headings font
 $font-stack-monospace : consolas, courier, monospace !default; // monospace font
 
-// font colors
-$base-color     : #000 !default; // text color on body and content
+// colors (content and/or backgrounds)
+$base-color     : #000 !default;
 $alpha-color    : #fff !default;
 $beta-color     : #333 !default;
 $gamma-color    : #000 !default;

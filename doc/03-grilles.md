@@ -18,7 +18,7 @@ Grillade a les caractéristiques globales suivantes :
 
 Spécificités techniques :
 
-- Grillade est basé sur CSS3 Flexbox, ce qui le rend incompatible avec les anciennes versions d'Internet Explorer (IE9 inclus) ainsi que certains anciens navigateurs (Android <4.4 par exemple)
+- Grillade est basé sur CSS3 Flexbox, ce qui le rend incompatible avec les anciennes versions d'Internet Explorer (IE9 inclus) ainsi que certains anciens navigateurs (Android &lt;4.4 par exemple)
 - Les préfixes CSS3 (`-webkit-`, `-moz-`, `-ms-`, …) sont pris en charge au sein de la version CSS de Grillade, mais pas dans sa version Sass. Il vous sera donc nécessaire de les ajouter, de préférence automatiquement grâce à l'excellent outil autoprefixer.
 - Les valeurs par défaut des points de rupture responsive (Breakpoints) de Grillade sont : `$tiny = 544px` et `$small = 768px`, vous pouvez modifier ou ajouter des valeurs dans la version Sass.
 
