@@ -14,7 +14,7 @@ KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateu
 
 ## Installation
 
-Selon votre profil (débutant, utilisateur de Sass, adepte de Bower / npm), l'installation est différente.
+Selon votre profil (débutant, utilisateur de Sass, adepte de Bower / npm / yarn), l'installation est différente.
 
 ### Vous êtes débutant ou pressé&nbsp;?
 
@@ -56,12 +56,13 @@ Vous pouvez également inclure ou non les fichiers partiels qui vous intéressen
 
 Téléchargez [KNACSS complet](https://github.com/alsacreations/KNACSS/archive/master.zip) pour bénéficier de toute l'architecture de l'outil, avec les fichiers Sass, package.json et gulpfile.js si nécessaires.
 
-### Installation via Bower ou npm
+### Installation via Bower, npm ou yarn
 
-- via [Bower](http://bower.io/) : ```bower install knacss```
-- via [npm](https://www.npmjs.com/) : ```npm install knacss```
+- via [Bower](http://bower.io/) : `bower install knacss`
+- via [npm](https://www.npmjs.com/) : `npm install knacss`
+- via [yarn](https://yarnpkg.com/) : `yarn install knacss` ou `yarn add knacss`
 
-**Attention**, si vous importez KNACSS automatiquement via Bower ou npm (par exemple dans un dossier `vendor` ou `node_modules`), le fichier de configuration (contenant les variables) risque d'être écrasé à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
+**Attention**, si vous importez KNACSS automatiquement via Bower, npm ou yarn (par exemple dans un dossier `vendor` ou `node_modules`), les fichiers de configuration (variables par exemple) risquent d'être écrasés à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
 
 
 ## Comment débuter&nbsp;?
