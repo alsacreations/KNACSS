@@ -45,6 +45,7 @@ sub {
 blockquote {
   position: relative;
   padding-left: 3em;
+  min-height: 2em;
 }
 
 blockquote::before {
@@ -54,7 +55,8 @@ blockquote::before {
   top: 0;
   font-family: georgia, serif;
   font-size: 5em;
-  line-height: 0.9;
+  height: .4em;
+  line-height: .9;
   color: rgba(0, 0, 0, .3);
 }
 
