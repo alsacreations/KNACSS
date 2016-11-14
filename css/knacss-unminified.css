@@ -908,6 +908,7 @@ input[type="reset"].unstyled {
             flex-direction: row-reverse; }
   .o-media-figure--center {
     -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center; } }
 
 /* Autogrid object */
@@ -1808,7 +1809,7 @@ ul.unstyled {
       -ms-flex-order: 1;
           order: 1; }
 
-[class*="--reverse"] {
+[class*="grid"][class*="--reverse"] {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
