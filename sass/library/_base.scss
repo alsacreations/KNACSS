@@ -21,16 +21,16 @@ html {
 
 body {
   font-size: $base-font-size;
-  background-color: $alpha-color;
+  background-color: $base-background;
   color: $base-color;
   font-family: $font-stack-common;
   line-height: $line-height;
 }
 
 a {
-  color: $zeta-color;
+  color: $link-color;
   &:hover, &:focus, &:active {
-    color: $base-color;
+    color: $link-hover-color;
   }
 }
 

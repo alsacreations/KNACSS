@@ -1,3 +1,6 @@
+# changelog v6.0.4 (22 novembre 2016)
+- renommage des variables
+
 # changelog v6.0.3 (10 novembre 2016)
 - renommage `grid-item-*` en `item-*` pour éviter [les conflits](https://github.com/alsacreations/KNACSS/issues/222)
 
