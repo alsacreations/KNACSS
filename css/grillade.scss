@@ -103,7 +103,7 @@ $iefix: 0.01px;
   order: 1;
 }
 
-[class*="--reverse"] {
+[class*="grid-"][class*="--reverse"] {
   flex-direction: row-reverse;
 }
 // sizing individual children
