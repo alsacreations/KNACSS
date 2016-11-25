@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V6.0.3 (31 octobre 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com V6.0.4 (22 novembre 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -1519,22 +1519,27 @@ ul.unstyled {
       min-height: 0; } }
 
 @media (min-width: 545px) {
-  .grid {
+  .grid,
+  .grid--reverse {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    .grid > * {
+    .grid > *,
+    .grid--reverse > * {
       -webkit-box-flex: 1;
-          -ms-flex: 1 1 0;
-              flex: 1 1 0;
+          -ms-flex: 1 1 0%;
+              flex: 1 1 0%;
       box-sizing: border-box;
       min-width: 0;
       min-height: 0; }
-    .grid.has-gutter > * + * {
+    .grid.has-gutter > * + *,
+    .grid--reverse.has-gutter > * + * {
       margin-left: calc(1rem - 0.01px); }
-    .grid.has-gutter-l > * + * {
+    .grid.has-gutter-l > * + *,
+    .grid--reverse.has-gutter-l > * + * {
       margin-left: calc(2rem - 0.01px); }
-    .grid.has-gutter-xl > * + * {
+    .grid.has-gutter-xl > * + *,
+    .grid--reverse.has-gutter-xl > * + * {
       margin-left: calc(4rem - 0.01px); } }
 
 @media (min-width: 545px) {

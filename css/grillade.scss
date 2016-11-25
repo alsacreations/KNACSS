@@ -62,11 +62,12 @@ $iefix: 0.01px;
 }
 // Mono-line grid constructor (.grid)
 @media (min-width: ($tiny + 1)) {
-  .grid {
+  .grid,
+  .grid--reverse {
     display: flex;
 
     & > * {
-      flex: 1 1 0;
+      flex: 1 1 0%;
       box-sizing: border-box;
       min-width: 0;
       min-height: 0;
