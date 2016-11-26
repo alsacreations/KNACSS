@@ -1813,7 +1813,7 @@ ul.unstyled {
       -ms-flex-order: 1;
           order: 1; }
 
-[class*="--reverse"] {
+[class*="grid-"][class*="--reverse"] {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
