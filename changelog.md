@@ -1,3 +1,6 @@
+# changelog v6.0.5 (1er décembre 2016)
+- redéfinition des variables de breakpoints, à présent calées sur [celles de Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints)
+
 # changelog v6.0.4 (22 novembre 2016)
 - renommage des variables
 

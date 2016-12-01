@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V6.0.4 (22 novembre 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com V6.0.5 (1er décembre 2016) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -737,7 +737,7 @@ th {
       overflow: visible;
       clip: auto; }
 
-@media (max-width: 544px) {
+@media (max-width: 543px) {
   /* you shall not pass */
   div,
   textarea,
@@ -752,7 +752,7 @@ th {
         -ms-hyphens: auto;
             hyphens: auto; } }
 
-@media (max-width: 544px) {
+@media (max-width: 543px) {
   .no-wrapping {
     word-wrap: normal;
     -webkit-hyphens: manual;
@@ -884,7 +884,7 @@ input[type="reset"].unstyled {
     outline: none; }
 
 /* Media object */
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   .o-media {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -900,7 +900,7 @@ input[type="reset"].unstyled {
     /* avoid min-width:auto */ } }
 
 /* Media variants */
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   .o-media--reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -911,7 +911,7 @@ input[type="reset"].unstyled {
         align-self: center; } }
 
 /* Autogrid object */
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   [class^="autogrid"],
   [class*=" autogrid"] {
     display: -webkit-box;
@@ -926,7 +926,7 @@ input[type="reset"].unstyled {
     /* avoid min-width:auto */ } }
 
 /* Autogrid variants */
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   .has-gutter > *:not(:first-child) {
     margin-left: 1rem; }
   [class*="--reverse"] {
@@ -1320,7 +1320,7 @@ ul.unstyled {
 /* -------------------------- */
 /* large screens */
 /* ------------- */
-@media (min-width: 1025px) {
+@media (min-width: 992px) {
   /* layouts for large screens */
   .large-hidden {
     display: none !important; }
@@ -1359,7 +1359,7 @@ ul.unstyled {
 
 /* medium screens */
 /* -------------- */
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   /* layouts for medium screens */
   .medium-hidden {
     display: none !important; }
@@ -1398,7 +1398,7 @@ ul.unstyled {
 
 /* small screens */
 /* ------------- */
-@media (min-width: 545px) and (max-width: 768px) {
+@media (min-width: 544px) and (max-width: 767px) {
   /* layouts for small screens */
   .small-hidden {
     display: none !important; }
@@ -1440,7 +1440,7 @@ ul.unstyled {
 
 /* tiny screens */
 /* ------------ */
-@media (max-width: 544px) {
+@media (max-width: 543px) {
   /* quick small resolution reset */
   .mod,
   .col,
@@ -1500,7 +1500,7 @@ ul.unstyled {
 /* ==Grillade : Simple Grid System    */
 /* ---------------------------------- */
 /* Doc : http://grillade.knacss.com */
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   [class*=" grid-"],
   [class^="grid-"] {
     display: -webkit-box;
@@ -1518,7 +1518,7 @@ ul.unstyled {
       min-width: 0;
       min-height: 0; } }
 
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   .grid,
   .grid--reverse {
     display: -webkit-box;
@@ -1542,7 +1542,7 @@ ul.unstyled {
     .grid--reverse.has-gutter-xl > * + * {
       margin-left: calc(4rem - 0.01px); } }
 
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   [class*="grid-2"] > * {
     width: calc(100% / 2 - 0.01px); }
   [class*="grid-2"].has-gutter {
@@ -1819,7 +1819,7 @@ ul.unstyled {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse; }
 
-@media (min-width: 545px) {
+@media (min-width: 544px) {
   .full {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -1921,7 +1921,7 @@ ul.unstyled {
     width: calc(100% / 6 * 5 - 4rem - 0.01px); } }
 
 /* Responsive Small Breakpoint */
-@media (min-width: 545px) and (max-width: 768px) {
+@media (min-width: 544px) and (max-width: 767px) {
   [class*="-small-1"] > * {
     width: calc(100% / 1 - 0.01px); }
   [class*="-small-1"].has-gutter > * {
