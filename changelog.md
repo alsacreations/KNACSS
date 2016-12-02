@@ -1,5 +1,5 @@
 # changelog v6.0.6 (2 décembre 2016)
-- Grillade : redéfinition du périmètre de `-small` : passe de `(min-width: ($tiny + 1)) and (max-width: $small)` à `(min-width: ($tiny + 1)) and (max-width: $medium)` (de 544px à 767px par défaut)
+- Grillade : redéfinition du périmètre de `-small` : passe de `(min-width: ($tiny + 1)) and (max-width: $small)` à `(min-width: ($tiny + 1)) and (max-width: $medium)` (de 544px à 991px par défaut)
 
 # changelog v6.0.5 (1er décembre 2016)
 - redéfinition des variables de breakpoints, à présent calées sur [celles de Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints)
