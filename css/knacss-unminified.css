@@ -1919,7 +1919,7 @@ ul.unstyled {
     width: calc(100% / 6 * 5 - 4rem - 0.01px); } }
 
 /* Responsive Small Breakpoint */
-@media (min-width: 544px) and (max-width: 767px) {
+@media (min-width: 544px) and (max-width: 991px) {
   [class*="-small-1"] > * {
     width: calc(100% / 1 - 0.01px); }
   [class*="-small-1"].has-gutter > * {

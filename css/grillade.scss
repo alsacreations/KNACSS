@@ -122,9 +122,9 @@ $iefix: 0.01px;
   }
 }
 /* Responsive Small Breakpoint */
-// -small-X suffix means "X columns on small screen"
-// example : .grid-4-small-2 will be 1 column (tiny and down) then 2 columns (until small) then 4 columns
-@media (min-width: ($tiny + 1)) and (max-width: $small) {
+// -small-X suffix means "X columns on small-medium screen"
+// example : .grid-4-small-2 will be 1 column (tiny and down) then 2 columns (until medium) then 4 columns
+@media (min-width: ($tiny + 1)) and (max-width: $medium) {
    @for $i from 1 through 4{
     [class*="-small-#{$i}"] {
       & > * {
