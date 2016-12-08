@@ -4,6 +4,7 @@
     display: flex;
     align-items: flex-start;
   }
+
   .o-media-content {
     flex: 1;
     min-width: 0; /* avoid min-width:auto */
@@ -15,6 +16,7 @@
   .o-media--reverse {
     flex-direction: row-reverse;
   }
+
   .o-media-figure--center {
     align-self: center;
   }

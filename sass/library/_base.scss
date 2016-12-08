@@ -29,7 +29,10 @@ body {
 
 a {
   color: $link-color;
-  &:hover, &:focus, &:active {
+
+  &:focus,
+  &:hover,
+  &:active {
     color: $link-hover-color;
   }
 }

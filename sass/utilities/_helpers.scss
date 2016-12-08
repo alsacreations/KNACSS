@@ -30,10 +30,12 @@
   filter: grayscale(1);
 }
 
-ul.is-unstyled,
-ul.unstyled {
-  list-style: none;
-  padding-left: 0;
+ul {
+  &.is-unstyled,
+  &.unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
 }
 
 /* Width Helpers */
