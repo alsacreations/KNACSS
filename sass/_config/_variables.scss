@@ -20,12 +20,14 @@ $color1    : #000 !default;
 $color2    : #fff !default;
 $color3    : #333 !default;
 $color4    : #000 !default;
+$color5    : #6FA939 !default;
 
-// colors used
+// colors used in project
 $base-color: $color1;
 $link-color: $color3;
 $base-background : $color2;
 $link-hover-color: $color4;
+$brand-primary: $color5;
 
 
 // spacings (choose unit you prefer)
