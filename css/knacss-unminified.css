@@ -415,7 +415,7 @@ body {
 
 a {
   color: #333; }
-  a:hover, a:focus, a:active {
+  a:focus, a:hover, a:active {
     color: #000; }
 
 ul,
@@ -624,7 +624,9 @@ img {
 /* ==Stylings (minor stylings)   */
 /* ----------------------------- */
 /* styling elements */
-code, kbd, mark {
+code,
+kbd,
+mark {
   border-radius: 2px; }
 
 kbd {
@@ -675,9 +677,8 @@ blockquote > footer {
   margin-top: .75em;
   font-size: 0.9em;
   color: rgba(0, 0, 0, 0.7); }
-
-blockquote > footer::before {
-  content: "\2014 \0020"; }
+  blockquote > footer::before {
+    content: "\2014 \0020"; }
 
 q {
   font-style: normal; }
@@ -685,10 +686,9 @@ q {
 q,
 .q {
   quotes: "“\00a0" "\00a0”"; }
-
-q:lang(fr),
-.q:lang(fr) {
-  quotes: "«\00a0" "\00a0»"; }
+  q:lang(fr),
+  .q:lang(fr) {
+    quotes: "«\00a0" "\00a0»"; }
 
 hr {
   display: block;
@@ -837,10 +837,7 @@ select {
 /* if select styling bugs on WebKit */
 /* select { -webkit-appearance: none; } */
 /* 'x' appears on right of search input when text is entered. This removes it */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
   display: none; }
 
 ::-webkit-input-placeholder {
@@ -906,6 +903,7 @@ input[type="reset"].unstyled {
             flex-direction: row-reverse; }
   .o-media-figure--center {
     -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center; } }
 
 /* Autogrid object */
@@ -1074,8 +1072,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   -webkit-filter: grayscale(1);
           filter: grayscale(1); }
 
-ul.is-unstyled,
-ul.unstyled {
+ul.is-unstyled, ul.unstyled {
   list-style: none;
   padding-left: 0; }
 

@@ -83,8 +83,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
 [class*="#{$kna-namespace}flex-container"],
-.#{$kna-namespace}flex-container{
-  display : flex;
+.#{$kna-namespace}flex-container {
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -103,17 +103,17 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 
 .#{$kna-namespace}flex-item-first,
 .#{$kna-namespace}item-first {
-  order : -1;
+  order: -1;
 }
 
 .#{$kna-namespace}flex-item-medium,
 .#{$kna-namespace}item-medium {
-  order : 0;
+  order: 0;
 }
 
 .#{$kna-namespace}flex-item-last,
 .#{$kna-namespace}item-last {
-  order : 1;
+  order: 1;
 }
 
 .#{$kna-namespace}flex-item-center,

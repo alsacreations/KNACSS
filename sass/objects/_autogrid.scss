@@ -4,6 +4,7 @@
   [class*=" autogrid"] {
     display: flex;
   }
+
   [class^="autogrid"] > *,
   [class*=" autogrid"] > * {
     flex: 1;
@@ -16,6 +17,7 @@
   .has-gutter > *:not(:first-child) {
     margin-left: 1rem;
   }
+
   [class*="--reverse"] {
     flex-direction: row-reverse;
   }

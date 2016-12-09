@@ -33,7 +33,7 @@ $iefix: 0.01px;
 }
 // Multi-line grid constructor
 // example : .grid-perso { @include grid(12, 3rem); }
-@mixin grid($grid-number:1, $own-gutter:0) {
+@mixin grid($grid-number: 1, $own-gutter: 0) {
   & > * {
     width: calc(100% / #{$grid-number} - #{$iefix});
   }
@@ -81,12 +81,13 @@ $iefix: 0.01px;
 }
 // Constructing grids : will be compiled in CSS
 @media (min-width: ($tiny + 1)) {
-   @for $i from 2 through 12{
+  @for $i from 2 through 12 {
     [class*="grid-#{$i}"] {
-      @include grid(#{$i},0);
+      @include grid(#{$i}, 0);
     }
   }
 }
+
 // Grid offsets
 .push {
   margin-left: auto !important;
@@ -95,6 +96,7 @@ $iefix: 0.01px;
 .pull {
   margin-right: auto !important;
 }
+
 // Grid order
 .item-first {
   order: -1;
@@ -109,7 +111,7 @@ $iefix: 0.01px;
 }
 // sizing individual children
 @media (min-width: ($tiny + 1)) {
-   @each $flow, $divider in ("full" "1"), ("one-half" "2"), ("one-third" "3"), ("one-quarter" "4"), ("one-fifth" "5"), ("one-sixth" "6"), ("two-thirds" "3 * 2"), ("three-quarters" "4 * 3"), ("five-sixths" "6 * 5"){
+  @each $flow, $divider in ("full" "1"), ("one-half" "2"), ("one-third" "3"), ("one-quarter" "4"), ("one-fifth" "5"), ("one-sixth" "6"), ("two-thirds" "3 * 2"), ("three-quarters" "4 * 3"), ("five-sixths" "6 * 5") {
     .#{$flow} {
       flex: 0 0 auto;
       width: calc(100% / #{$divider} - #{$iefix});
@@ -125,7 +127,7 @@ $iefix: 0.01px;
 // -small-X suffix means "X columns on small-medium screen"
 // example : .grid-4-small-2 will be 1 column (tiny and down) then 2 columns (until medium) then 4 columns
 @media (min-width: ($tiny + 1)) and (max-width: $medium) {
-   @for $i from 1 through 4{
+  @for $i from 1 through 4 {
     [class*="-small-#{$i}"] {
       & > * {
         width: calc(100% / #{$i} - #{$iefix});
