@@ -16,7 +16,6 @@
     "framework",
     "reset",
     "responsive",
-    "less",
     "sass",
     "rwd",
     "boilerplate",
@@ -31,7 +30,6 @@
   "devDependencies": {
     "gulp": "latest",
     "gulp-rename": "latest",
-    "gulp-less": "latest",
     "gulp-sass": "latest",
     "gulp-concat": "latest",
     "gulp-minify-css": "latest",
