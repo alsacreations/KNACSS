@@ -30,10 +30,14 @@ body {
 a {
   color: $link-color;
 
-  &:focus,
-  &:hover,
-  &:active {
-    color: $link-hover-color;
+  // No styling on focus/hover if there's no effect. Avoids to then have to
+  // override it countless times. See Issue #232
+  @if $link-hover-color != $link-color {
+    &:focus,
+    &:hover,
+    &:active {
+        color: $link-hover-color;
+    }
   }
 }
 
