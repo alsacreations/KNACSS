@@ -26,7 +26,7 @@ $color5    : #6FA939 !default;
 $base-color: $color1;
 $link-color: $color3;
 $base-background : $color2;
-$link-hover-color: $color4; // Make it equal to $link-color if you don't want
+$link-hover-color: $color4; // Make it equal to either $link-color or false if you don't want
                             // any effect on links when focused/hovered
 $brand-primary: $color5;
 
