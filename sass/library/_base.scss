@@ -32,11 +32,12 @@ a {
 
   // No styling on focus/hover if there's no effect. Avoids to then have to
   // override it countless times. See Issue #232
-  @if ($link-hover-color != $link-color and $link-hover-color != false) {
+  @if variable_exists(link-hover-color) and
+      ( null == index( ($link-color, null, false), $link-hover-color) ) {
     &:focus,
     &:hover,
     &:active {
-        color: $link-hover-color;
+      color: $link-hover-color;
     }
   }
 }
