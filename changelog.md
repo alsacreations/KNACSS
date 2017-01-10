@@ -1,3 +1,6 @@
+# changelog v6.0.8 (10 janvier 2017)
+- application de `$link-hover-color` uniquement si différent de `$link-color`
+
 # changelog v6.0.7 (7 décembre 2016)
 - application de `$font-stack-headings` uniquement si différent de `$font-stack-common`
 

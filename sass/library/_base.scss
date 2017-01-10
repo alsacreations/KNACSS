@@ -79,14 +79,14 @@ figure {
 
 h1, .#{$kna-namespace}h1-like {
   font-size: $h1-size;
-  @if $font-stack-headings != $font-stack-common {
+  @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
 }
 
 h2, .#{$kna-namespace}h2-like {
   font-size: $h2-size;
-  @if $font-stack-headings != $font-stack-common {
+  @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
 }
