@@ -6,11 +6,11 @@ Par défaut, KNACSS tient compte des valeurs de points de rupture suivants :
 
 ```
 // breakpoints (choose unit you prefer)
-$tiny: 544px !default; // or 'em' if you prefer, of course
-$small: 768px !default;
-$medium: 1024px !default;
-$large: 1200px !default;
-$extra-large: 1440px !default;
+$tiny: 543px !default; // or 'em' if you prefer, of course
+$small: 767px !default;
+$medium: 991px !default;
+$large: 1199px !default;
+$extra-large: 1439px !default;
 ```
 
 _Les valeurs des points de rupture peuvent être modifiées au sein du fichier de configuration LESS / Sass._
@@ -22,59 +22,80 @@ _Les valeurs des points de rupture peuvent être modifiées au sein du fichier d
 1. Choisir principalement des valeurs de breakpoints selon votre design, pas par rapport à des devices (se servir des variables de breakpoints fournies si l'on ne peut pas se baser sur son design)
 2. En plus de vos propres valeurs, il est possible d'employer :
   - les variables fournies (`$tiny`, `$small`, `$medium`, `$large`),
-  - mais aussi des alias qui représentent des intervalles et que l'on utilise sous forme de mixins: (`mobile`, `portrait`, `landscape`, `desktop`)
+  - mais aussi des alias qui représentent des intervalles et que l'on utilise sous forme de mixins (voi plus bas)
 3. Éviter de multiplier les valeurs. Un maximum de 5 ou 6 breakpoints devrait suffire dans la grande majorité des projets
-4. Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, adopter une convention pour définir la valeur d’un Breakpoint : `(max-width: $BP) and (min-width: ($BP + 1))`
+4. Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, adopter la convention suivante pour définir les intervalles : **`(max-width: $BP) and (min-width: ($BP + 1))`**
 
 Exemple :
 
 Non, pas bien :
 ```
-@media (min-width: 768px) {...}
-@media (max-width: 767px) {...}
+@media (min-width: 767px) {...}
+@media (max-width: 768px) {...}
 ```
 
 Oui, bien :
 ```
-@media (min-width: 769px) {...}
-@media (max-width: 768px) {...}
+@media (min-width: 768px) {...}
+@media (max-width: 767px) {...}
 @media (max-width: $small-screen) {...}
 @media (min-width: $small-screen + 1) and (max-width: $large-screen) {...}
 ```
 
 ## Mixins "Alias"
 
-En addition aux variables, des mixins de breakpoints "utilitaires" (des "alias" des valeurs précédentes) liées aux types de devices (forcément indicatifs, mais simples à retenir) sont prévues :
+En addition aux variables, des mixins de breakpoints "utilitaires" (des "alias" des valeurs précédentes) liées aux tailles de devices (forcément indicatifs, mais simples à retenir) sont prévues.
 
-**NOTE : je commence à avoir du mal avec les « large, medium, small » : en pratique, je ne sais jamais à quoi ça correspond et je dois systématiquement aller vérifier dans le fichier de variables.
-Au final, je me dis qu’un « mobile, tablet, desktop », même purement indicatif est bien plus parlant**
+Les mixins sont activés à l'aide de l'instruction `respond-to()`. Exemple d'usage :
+
+```
+// styles
+.when-tablet-up {
+  @include respond-to("small-up") {
+    background: green;
+    color: #fff;
+  }
+}
+.is-hidden-mobile {
+  @include respond-to("tiny") {
+    display: none;
+  }
+}
+```
 
 ```
 // Additionnal "utility" breakpoints aliases
+// ex. @include respond-to("medium-up") {...}
 @function breakpoint($bp) {
-  @if $bp == 'mobile' {
+  @if $bp == 'tiny' {
     @return '(max-width: #{$tiny})';
   }
-  @else if $bp == 'portrait' {
-    @return '(min-width: #{$tiny + 1}) and (max-width: #{$small})';
-  }
-  @else if $bp == 'landscape' {
-    @return '(min-width: #{$small + 1}) and (max-width: #{$medium})';
-  }
-  @else if $bp == 'desktop' {
-    @return '(min-width: #{$medium + 1})';
-  }
-  @else if $bp == 'portrait-down' {
+  @else if $bp == 'small' {
     @return '(max-width: #{$small})';
   }
-  @else if $bp == 'portrait-up' {
-    @return '(min-width: #{$tiny + 1})';
-  }
-  @else if $bp == 'landscape-down' {
+  @else if $bp == 'medium' {
     @return '(max-width: #{$medium})';
   }
-  @else if $bp == 'landscape-up' {
+  @else if $bp == 'large' {
+    @return '(max-width: #{$large})';
+  }
+  @else if $bp == 'extra-large' {
+    @return '(max-width: #{$extra-large})';
+  }
+  @else if $bp == 'tiny-up' {
+    @return '(min-width: #{$tiny + 1})';
+  }
+  @else if $bp == 'small-up' {
     @return '(min-width: #{$small + 1})';
+  }
+  @else if $bp == 'medium-up' {
+    @return '(min-width: #{$medium + 1})';
+  }
+  @else if $bp == 'large-up' {
+    @return '(min-width: #{$large + 1})';
+  }
+  @else if $bp == 'extra-large-up' {
+    @return '(min-width: #{$extra-large + 1})';
   }
   @else if $bp == 'retina' {
     @return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)';
@@ -90,22 +111,7 @@ Au final, je me dis qu’un « mobile, tablet, desktop », même purement indica
 ```
 
 
-Exemple d'usage :
 
-```
-// styles
-.when-portrait-up {
-  @include respond-to("portrait-up") {
-    background: green;
-    color: #fff;
-  }
-}
-.is-hidden-mobile {
-  @include respond-to("mobile") {
-    display: none;
-  }
-}
-```
 
 Voir le CodePen : http://codepen.io/raphaelgoetter/pen/EyRwAp/?editors=1100
 
