@@ -5,7 +5,7 @@ Il ne s'agit pas d'un "reset" mais bien d'une couche de design qu'il n'est bien 
 
 - les élements de code (`code`, `pre`)
 - le surlignement (`mark`)
-- les contenus en exposant ou en indice (`sup`, `sup`)
+- les contenus en exposant ou en indice (`sup`, `sub`)
 - les citations (`q`, `blockquote`)
 - les séparateurs (`hr`)
 - les tableaux de données
