@@ -1,5 +1,11 @@
+# changelog v6.1.0 (3 mars 2017)
+- passage à [Normalize 5.0.0](https://github.com/necolas/normalize.css/blob/5.0.0/CHANGELOG.md)
+- ajout de variables pour tailles de polices différentes sur petits et sur grands écrans (`$h1-size` et `$h1-size-l` par exemple). Par défaut, les tailles "mobile" sont appliquées, et les tailles "desktop" s'appliquent en min-width `$tiny +1`
+- convention de nommage des variables pour faciliter les recherches : `$base-color` devient `$color-base`, `$link-color` devient `$color-link`, etc.
+- typo fix
+
 # changelog v6.0.8 (10 janvier 2017)
-- application de `$link-hover-color` uniquement si différent de `$link-color`
+- application de `$color-link-hover` uniquement si différent de `$color-link`
 
 # changelog v6.0.7 (7 décembre 2016)
 - application de `$font-stack-headings` uniquement si différent de `$font-stack-common`

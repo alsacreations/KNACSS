@@ -117,7 +117,7 @@ $iefix: 0.01px;
       width: calc(100% / #{$divider} - #{$iefix});
     }
     @each $affix, $size in $grid-gutters {
-      .has-gutter#{$affix} .#{$flow} {
+      .has-gutter#{$affix} > .#{$flow} {
         width: calc(100% / #{$divider} - #{$size} - #{$iefix});
       }
     }
