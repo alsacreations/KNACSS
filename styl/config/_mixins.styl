@@ -2,32 +2,50 @@
 // ex. @include respond-to("medium-up") {...}
 breakpoint(bp)
   if bp == 'tiny'
-    return '(max-width: {tiny})'
+    return '(max-width: %s)' % tiny
   else if bp == 'small'
-    return '(max-width: {small})'
+    return '(max-width: %s)' % small
   else if bp == 'medium'
-    return '(max-width: {medium})'
+    return '(max-width: %s)' % medium
   else if bp == 'large'
-    return '(max-width: {large})'
+    return '(max-width: %s)' % large
   else if bp == 'extra-large'
-    return '(max-width: {extra-large})'
+    return '(max-width: %s)' % extra-large
   else if bp == 'tiny-up'
-    return '(min-width: {tiny + 1})'
+    return '(min-width: %s + 1)' % tiny
   else if bp == 'small-up'
-    return '(min-width: {small + 1})'
+    return '(min-width: %s + 1)' % small
   else if bp == 'medium-up'
-    return '(min-width: {medium + 1})'
+    return '(min-width: %s + 1)' % medium
   else if bp == 'large-up'
-    return '(min-width: {large + 1})'
+    return '(min-width: %s + 1)' % large
   else if bp == 'extra-large-up'
-    return '(min-width: {extra-large + 1})'
+    return '(min-width: %s + 1)' % extra-large
   else if bp == 'retina'
     return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)'
-
 
 /*
 respond-to(value)
   string = breakpoint(value)
-  @media screen and {string}
+  @media screen and string
     {block}
 */
+
+displayFlex()
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+
+box-orient()
+  -webkit-box-orient arguments
+
+box-direction()
+    -webkit-box-direction arguments
+
+flex-direction()
+  -ms-flex-direction arguments
+  flex-direction arguments
+
+flex-wrap()
+  -ms-flex-wrap arguments
+  flex-wrap arguments
