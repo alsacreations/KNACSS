@@ -1,0 +1,3 @@
+[submodule "styl/vendor/flexbox-stylus"]
+	path = styl/vendor/flexbox-stylus
+	url = git@github.com:psa-acariou/flexbox-stylus.git
