@@ -1,18 +1,13 @@
 /* ---------------------------------- */
 /* ==Grillade : Simple Grid System    */
 /* ---------------------------------- */
+@import '../vendor/flexbox-stylus/stylus/flexbox.styl'
 /* Doc : http://grillade.knacss.com */
 // gutter values for grid layouts. Unit can be: %, px, em, rem
 grid-gutters = { '': 1rem, '-l': 2rem, '-xl': 4rem }
 // IEfixing, see
 // https://github.com/alsacreations/KNACSS/issues/133;
 iefix = 0.01px
-
-tiny         = 543px
-small        = 767px
-medium       = 991px
-large        = 1199px
-extra-large  = 1439px
 
 @media (min-width: tiny + 1)
   [class*=" grid-"]
