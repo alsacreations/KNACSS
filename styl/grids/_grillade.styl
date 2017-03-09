@@ -25,7 +25,7 @@ iefix = 0.01px
 grid(grid-number = 1, own-gutter = 0)
   & > *
     width 'calc(100% / %s - %s)' % (grid-number iefix)
-   for key, size in grid-gutters
+  for key, size in grid-gutters
     &.has-gutter{key}
       margin-right -(size / 2)
       margin-left -(size / 2)
@@ -33,7 +33,7 @@ grid(grid-number = 1, own-gutter = 0)
         width 'calc(100% / %s - %s - %s)' % (grid-number size iefix)
         margin-right (size / 2)
         margin-left (size / 2)
-   if own-gutter != 0
+  if own-gutter != 0
     margin-right (own-gutter / 2)
     margin-left (own-gutter / 2)
 
@@ -41,9 +41,9 @@ grid(grid-number = 1, own-gutter = 0)
 @media (min-width: tiny + 1)
   .grid
   .grid--reverse
-    displayFlex()
+    flexbox(flex)
     & > *
-      flex 1 1 0%
+      flex(1 1 0%)
       box-sizing border-box
       min-width 0
       min-height 0
@@ -55,7 +55,7 @@ grid(grid-number = 1, own-gutter = 0)
 @media (min-width: tiny + 1)
   for i in 2..12
     grid-selector = 'grid-%s' % i
-    [class*={grid-selector}] > *
+    [class*=\"{grid-selector}\"]
       grid(i, 0)
 
 .push
@@ -81,17 +81,17 @@ grid(grid-number = 1, own-gutter = 0)
   flowToDivid = {'full': 1, 'one-half': 2, 'one-third': 3, 'one-quarter': 4, 'one-fifth': 5, 'one-sixth': 6, 'two-thirds': 3 * 2, 'three-quarters': 4 * 3, 'five-sixths': 6 * 5}
   for flow, divider  in flowToDivid
     .{flow}
-      flex 0 0 auto
+      flex(0 0 auto)
       width 'calc(100% / %s - %s)' % (divider iefix)
       for key, size in grid-gutters
         .has-gutter{key} .{flow}
           width 'calc(100% / %s - %s - %s)' % (divider size iefix)
 
 /* Responsive Small Breakpoint */
-@media (min-width: tiny + 1) and (max-width: small)
+@media (min-width: tiny + 1) and (max-width: medium)
   for i in 1..4
     index = '-small-%s' % i
-    [class*={index}]
+    [class*=\"{index}\"]
       & > *
         width: 'calc(100% / %s - %s)' % (i iefix)
         for key, size in grid-gutters

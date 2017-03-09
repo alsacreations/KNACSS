@@ -1,7 +1,7 @@
 /* ----------------------------- */
 /* ==Global Layout               */
 /* ----------------------------- */
-
+@import '../vendor/flexbox-stylus/stylus/flexbox.styl'
 /* module, gains superpower "BFC" Block Formating Context */
 .mod
 .bfc
@@ -66,16 +66,16 @@ img.{kna-namespace}fr
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
-[class*="{kna-namespace}flex-container"]
+[class*={kna-namespace}"flex-container"]
 .{kna-namespace}flex-container
-  display flex
-  flex-wrap wrap
+  flexbox(flex)
+  flex-wrap(wrap)
 
 .{kna-namespace}flex-container-h
-  flex-direction row
+  flex-direction(row)
 
 .{kna-namespace}flex-container-v
-  flex-direction column
+  flex-direction(column)
 
 .{kna-namespace}flex-item-fluid
   flex 1
