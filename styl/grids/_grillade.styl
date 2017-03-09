@@ -12,11 +12,9 @@ iefix = 0.01px
 @media (min-width: tiny + 1)
   [class*=" grid-"]
   [class^="grid-"]
-    displayFlex()
-    box-orient(horizontal)
-    -webkit-box-direction: normal
-    flex-direction: row
-    flex-wrap: wrap
+    flexbox(flex)
+    flex-direction(row)
+    flex-wrap(wrap)
     & > *
       box-sizing: border-box
       min-width: 0
@@ -77,9 +75,7 @@ grid(grid-number = 1, own-gutter = 0)
   order 1
 
 [class*="grid-"][class*="--reverse"]
-  -webkit-box-orient: horizontal
-  -webkit-box-direction: reverse
-  flex-direction row-reverse
+  flex-direction(row-reverse)
 
 @media (min-width: tiny + 1)
   flowToDivid = {'full': 1, 'one-half': 2, 'one-third': 3, 'one-quarter': 4, 'one-fifth': 5, 'one-sixth': 6, 'two-thirds': 3 * 2, 'three-quarters': 4 * 3, 'five-sixths': 6 * 5}
