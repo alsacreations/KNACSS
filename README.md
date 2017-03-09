@@ -56,6 +56,23 @@ Vous pouvez également inclure ou non les fichiers partiels qui vous intéressen
 
 Téléchargez [KNACSS complet](https://github.com/alsacreations/KNACSS/archive/master.zip) pour bénéficier de toute l'architecture de l'outil, avec les fichiers Sass, package.json et gulpfile.js si nécessaires.
 
+### Vous préférez Stylus&nbsp;?
+
+KNACSS possède une version adapté au préprocesseur Stylus.
+
+Les fichiers de configuration se trouvent dans le [dossier de configuration](https://github.com/alsacreations/KNACSS/tree/v6/styl/config).
+
+Pour compiler cette version vous devez lancer les commandes :
+```
+npm install && gulp styluscss
+```
+Ceci génèrera le fichier non compressé.
+Et
+ ```
+ npm install && gulp styluscssmin
+ ```
+ pour la version minifié, qui se trouverons dans le répertoire `./css/stylus/`
+
 ### Installation via Bower, npm ou yarn
 
 - via [Bower](http://bower.io/) : `bower install knacss`
