@@ -173,3 +173,6 @@ node_modules/
 # parce que certaines personnes utilisent de vrais IDEs
 .idea
 *.iml
+
+# Utilisation en sous-modules git
+.gitmodules
