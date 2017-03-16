@@ -1,0 +1,20 @@
+{
+  "brackets": false,
+  "colons": 'always',
+  "commentSpace": false,
+  "depthLimit": 4,
+  "exclude": ["node_modules/**/*"],
+  "globalDupe": true,
+  "groupOutputByFile": true,
+  "namingConvention": "lowercase-dash",
+  "noImportant": false,
+  "placeholders": "always",
+  "prefixVarsWithDollar": "always",
+  "quotePref": false,
+  "reporterOptions": {
+    "columns": ["lineData", "severity", "description", "rule"],
+    "columnSplitter": "  ",
+    "showHeaders": false,
+    "truncate": true
+  }
+}

@@ -268,7 +268,7 @@ details,
 figure {
   margin-top: 0.75em;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: line-height;
 }
 h1 .h1-like {
   font-size: 3.2rem;
@@ -443,9 +443,9 @@ code {
 }
 pre code {
   padding: 0;
+  border-radius: 0;
   background: none;
   color: inherit;
-  border-radius: 0;
 }
 mark {
   padding: 2px 4px;
@@ -466,7 +466,7 @@ blockquote {
   min-height: 2em;
 }
 blockquote::before {
-  content: "\201C";
+  content: '\201C';
   position: absolute;
   left: 0;
   top: 0;
@@ -488,11 +488,11 @@ q {
   font-style: normal;
 }
 q,
-.q {
+.kna-namespaceq {
   quotes: "“\00a0" "\00a0”";
 }
 q:lang(fr),
-.q:lang(fr) {
+.kna-namespaceq:lang(fr) {
   quotes: "«\00a0" "\00a0»";
 }
 hr {

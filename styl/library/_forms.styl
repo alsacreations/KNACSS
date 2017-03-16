@@ -7,7 +7,7 @@
 */
 
 /* buttons */
-.{kna-namespace}btn
+.{$kna-namespace}btn
   display inline-block
 
 /* forms items */
@@ -19,7 +19,7 @@ input
 button
 select
 label
-.{kna-namespace}btn
+.{$kna-namespace}btn
   font-family inherit
   font-size inherit
 
@@ -28,7 +28,7 @@ input
 optgroup
 select
 textarea
-  color base-color
+  color $base-color
 
 label
   vertical-align middle
@@ -66,7 +66,7 @@ input:-moz-placeholder
 textarea:-moz-placeholder
   color #777
 
-.{kna-namespace}btn
+.{$kna-namespace}btn
 input[type="button"]
 button
   &:focus
@@ -82,7 +82,7 @@ button
 input[type="button"]
 input[type="submit"]
 input[type="reset"]
-  &.{kna-namespace}unstyled
+  &.{$kna-namespace}unstyled
     padding 0
     border none
     line-height 1

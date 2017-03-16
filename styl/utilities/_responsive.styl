@@ -5,41 +5,41 @@
 /* large screens */
 /* ------------- */
 
-@media (min-width: (medium + 1))
+@media (min-width: ($medium + 1))
 
   /* layouts for large screens */
-  .{kna-namespace}large-hidden
+  .{$kna-namespace}large-hidden
     display none !important
 
-  .{kna-namespace}large-visible
+  .{$kna-namespace}large-visible
     display block !important
 
-  .{kna-namespace}large-no-float
+  .{$kna-namespace}large-no-float
     float none
 
-  .{kna-namespace}large-inbl
+  .{$kna-namespace}large-inbl
     display inline-block
     float none
     vertical-align top
 
   /* widths for large screens */
-  .{kna-namespace}large-w25
+  .{$kna-namespace}large-w25
     width 25% !important
 
-  .{kna-namespace}large-w33
+  .{$kna-namespace}large-w33
     width 33.333333% !important
 
-  .{kna-namespace}large-w50
+  .{$kna-namespace}large-w50
     width 50% !important
 
-  .{kna-namespace}large-w66
+  .{$kna-namespace}large-w66
     width 66.666666% !important
 
-  .{kna-namespace}large-w75
+  .{$kna-namespace}large-w75
     width 75% !important
 
-  .{kna-namespace}large-w100
-  .{kna-namespace}large-wauto
+  .{$kna-namespace}large-w100
+  .{$kna-namespace}large-wauto
     display block !important
     float none !important
     clear none !important
@@ -49,48 +49,48 @@
     border 0
 
   /* margins for large screens */
-  .{kna-namespace}large-man
-  .{kna-namespace}large-ma0
+  .{$kna-namespace}large-man
+  .{$kna-namespace}large-ma0
     margin 0 !important
 
 /* medium screens */
 /* -------------- */
 
-@media (min-width: (small + 1)) and (max-width: large)
+@media (min-width: ($small + 1)) and (max-width: $large)
 
   /* layouts for medium screens */
-  .{kna-namespace}medium-hidden
+  .{$kna-namespace}medium-hidden
     display none !important
 
-  .{kna-namespace}medium-visible
+  .{$kna-namespace}medium-visible
     display block !important
 
-  .{kna-namespace}medium-no-float
+  .{$kna-namespace}medium-no-float
     float none
 
-  .{kna-namespace}medium-inbl
+  .{$kna-namespace}medium-inbl
     display inline-block
     float none
     vertical-align top
 
   /* widths for medium screens */
-  .{kna-namespace}medium-w25
+  .{$kna-namespace}medium-w25
     width 25% !important
 
-  .{kna-namespace}medium-w33
+  .{$kna-namespace}medium-w33
     width 33.333333% !important
 
-  .{kna-namespace}medium-w50
+  .{$kna-namespace}medium-w50
     width 50% !important
 
-  .{kna-namespace}medium-w66
+  .{$kna-namespace}medium-w66
     width 66.666666% !important
 
-  .{kna-namespace}medium-w75
+  .{$kna-namespace}medium-w75
     width 75% !important
 
-  .{kna-namespace}medium-w100
-  .{kna-namespace}medium-wauto
+  .{$kna-namespace}medium-w100
+  .{$kna-namespace}medium-wauto
     display block !important
     float none !important
     clear none !important
@@ -100,48 +100,48 @@
     border 0
 
   /* margins for medium screens */
-  .{kna-namespace}medium-man
-  .{kna-namespace}medium-ma0
+  .{$kna-namespace}medium-man
+  .{$kna-namespace}medium-ma0
     margin 0 !important
 
 /* small screens */
 /* ------------- */
 
-@media (min-width: (tiny + 1)) and (max-width: small)
+@media (min-width: ($tiny + 1)) and (max-width: $small)
 
   /* layouts for small screens */
-  .{kna-namespace}small-hidden
+  .{$kna-namespace}small-hidden
     display none !important
 
-  .{kna-namespace}small-visible
+  .{$kna-namespace}small-visible
     display block !important
 
-  .{kna-namespace}small-no-float
+  .{$kna-namespace}small-no-float
     float none
 
-  .{kna-namespace}small-inbl
+  .{$kna-namespace}small-inbl
     display inline-block
     float none
     vertical-align top
 
   /* widths for small screens */
-  .{kna-namespace}small-w25
+  .{$kna-namespace}small-w25
     width 25% !important
 
-  .{kna-namespace}small-w33
+  .{$kna-namespace}small-w33
     width 33.333333% !important
 
-  .{kna-namespace}small-w50
+  .{$kna-namespace}small-w50
     width 50% !important
 
-  .{kna-namespace}small-w66
+  .{$kna-namespace}small-w66
     width 66.666666% !important
 
-  .{kna-namespace}small-w75
+  .{$kna-namespace}small-w75
     width 75% !important
 
-  .{kna-namespace}small-w100
-  .{kna-namespace}small-wauto
+  .{$kna-namespace}small-w100
+  .{$kna-namespace}small-wauto
     display block !important
     float none !important
     clear none !important
@@ -151,22 +151,22 @@
     border 0
 
   /* margins for small screens */
-  .{kna-namespace}small-man
-  .{kna-namespace}small-ma0
+  .{$kna-namespace}small-man
+  .{$kna-namespace}small-ma0
     margin 0 !important
 
-  .{kna-namespace}small-pan
-  .{kna-namespace}small-pa0
+  .{$kna-namespace}small-pan
+  .{$kna-namespace}small-pa0
     padding 0 !important
 
 /* tiny screens */
 /* ------------ */
 
-@media (max-width: tiny)
+@media (max-width: $tiny)
 
   /* quick small resolution reset */
-  .{kna-namespace}mod
-  .{kna-namespace}col
+  .{$kna-namespace}mod
+  .{$kna-namespace}col
   fieldset
     display block !important
     float none !important
@@ -176,42 +176,42 @@
     margin-right 0 !important
     border 0
 
-  .{kna-namespace}flex-container
+  .{$kna-namespace}flex-container
     flex-direction column
 
   /* layouts for tiny screens */
-  .{kna-namespace}tiny-hidden
+  .{$kna-namespace}tiny-hidden
     display none !important
 
-  .{kna-namespace}tiny-visible
+  .{$kna-namespace}tiny-visible
     display block !important
 
-  .{kna-namespace}tiny-no-float
+  .{$kna-namespace}tiny-no-float
     float none
 
-  .{kna-namespace}tiny-inbl
+  .{$kna-namespace}tiny-inbl
     display inline-block
     float none
     vertical-align top
 
   /* widths for tiny screens */
-  .{kna-namespace}tiny-w25
+  .{$kna-namespace}tiny-w25
     width 25% !important
 
-  .{kna-namespace}tiny-w33
+  .{$kna-namespace}tiny-w33
     width 33.333333% !important
 
-  .{kna-namespace}tiny-w50
+  .{$kna-namespace}tiny-w50
     width 50% !important
 
-  .{kna-namespace}tiny-w66
+  .{$kna-namespace}tiny-w66
     width 66.666666% !important
 
-  .{kna-namespace}tiny-w75
+  .{$kna-namespace}tiny-w75
     width 75% !important
 
-  .{kna-namespace}tiny-w100
-  .{kna-namespace}tiny-wauto
+  .{$kna-namespace}tiny-w100
+  .{$kna-namespace}tiny-wauto
     display block !important
     float none !important
     clear none !important
@@ -221,10 +221,10 @@
     border 0
 
   /* margins for tiny screens */
-  .{kna-namespace}tiny-man
-  .{kna-namespace}tiny-ma0
+  .{$kna-namespace}tiny-man
+  .{$kna-namespace}tiny-ma0
     margin 0 !important
 
-  .{kna-namespace}tiny-pan
-  .{kna-namespace}tiny-pa0
+  .{$kna-namespace}tiny-pan
+  .{$kna-namespace}tiny-pa0
     padding 0 !important

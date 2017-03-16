@@ -4,12 +4,12 @@
 @import '../vendor/flexbox-stylus/stylus/flexbox.styl'
 /* Doc : http://grillade.knacss.com */
 // gutter values for grid layouts. Unit can be: %, px, em, rem
-grid-gutters = { '': 1rem, '-l': 2rem, '-xl': 4rem }
+$grid-gutters = { '': 1rem, '-l': 2rem, '-xl': 4rem }
 // IEfixing, see
 // https://github.com/alsacreations/KNACSS/issues/133;
-iefix = 0.01px
+$iefix = 0.01px
 
-@media (min-width: tiny + 1)
+@media (min-width: $tiny + 1)
   [class*=" grid-"]
   [class^="grid-"]
     flexbox(flex)
@@ -22,23 +22,23 @@ iefix = 0.01px
 
 // Multi-line grid constructor
 // example : .grid-perso { @include grid(12, 3rem); }
-grid(grid-number = 1, own-gutter = 0)
+grid($grid-number = 1, $own-gutter = 0)
   & > *
-    width 'calc(100% / %s - %s)' % (grid-number iefix)
-  for key, size in grid-gutters
-    &.has-gutter{key}
-      margin-right -(size / 2)
-      margin-left -(size / 2)
+    width 'calc(100% / %s - %s)' % ($grid-number $iefix)
+  for $key, $size in $grid-gutters
+    &.has-gutter{$key}
+      margin-right -($size / 2)
+      margin-left -($size / 2)
       & > *
-        width 'calc(100% / %s - %s - %s)' % (grid-number size iefix)
-        margin-right (size / 2)
-        margin-left (size / 2)
-  if own-gutter != 0
-    margin-right (own-gutter / 2)
-    margin-left (own-gutter / 2)
+        width 'calc(100% / %s - %s - %s)' % ($grid-number $size $iefix)
+        margin-right ($size / 2)
+        margin-left ($size / 2)
+  if $own-gutter != 0
+    margin-right ($own-gutter / 2)
+    margin-left ($own-gutter / 2)
 
 // Mono-line grid constructor (.grid)
-@media (min-width: tiny + 1)
+@media (min-width: $tiny + 1)
   .grid
   .grid--reverse
     flexbox(flex)
@@ -47,16 +47,16 @@ grid(grid-number = 1, own-gutter = 0)
       box-sizing border-box
       min-width 0
       min-height 0
-    for key, size in grid-gutters
-      &.has-gutter{key} > * + *
-        margin-left 'calc(%s - %s)' % (size iefix)
+    for $key, $size in $grid-gutters
+      &.has-gutter{$key} > * + *
+        margin-left 'calc(%s - %s)' % ($size $iefix)
 
 // Constructing grids : will be compiled in CSS
-@media (min-width: tiny + 1)
-  for i in 2..12
-    grid-selector = 'grid-%s' % i
-    [class*=\"{grid-selector}\"]
-      grid(i, 0)
+@media (min-width: $tiny + 1)
+  for $i in 2..12
+    $grid-selector = 'grid-%s' % $i
+    [class*=\"{$grid-selector}\"]
+      grid($i, 0)
 
 .push
   margin-left auto !important
@@ -77,23 +77,23 @@ grid(grid-number = 1, own-gutter = 0)
 [class*="grid-"][class*="--reverse"]
   flex-direction(row-reverse)
 
-@media (min-width: tiny + 1)
-  flowToDivid = {'full': 1, 'one-half': 2, 'one-third': 3, 'one-quarter': 4, 'one-fifth': 5, 'one-sixth': 6, 'two-thirds': 3 * 2, 'three-quarters': 4 * 3, 'five-sixths': 6 * 5}
-  for flow, divider  in flowToDivid
-    .{flow}
+@media (min-width: $tiny + 1)
+  $flow-to-divid = {'full': 1, 'one-half': 2, 'one-third': 3, 'one-quarter': 4, 'one-fifth': 5, 'one-sixth': 6, 'two-thirds': 3 * 2, 'three-quarters': 4 * 3, 'five-sixths': 6 * 5}
+  for $flow, $divider  in $flow-to-divid
+    .{$flow}
       flex(0 0 auto)
-      width 'calc(100% / %s - %s)' % (divider iefix)
-      for key, size in grid-gutters
-        .has-gutter{key} .{flow}
-          width 'calc(100% / %s - %s - %s)' % (divider size iefix)
+      width 'calc(100% / %s - %s)' % ($divider $iefix)
+      for $key, $size in $grid-gutters
+        .has-gutter{$key} .{$flow}
+          width 'calc(100% / %s - %s - %s)' % ($divider $size $iefix)
 
 /* Responsive Small Breakpoint */
-@media (min-width: tiny + 1) and (max-width: medium)
-  for i in 1..4
-    index = '-small-%s' % i
-    [class*=\"{index}\"]
+@media (min-width: $tiny + 1) and (max-width: $medium)
+  for $i in 1..4
+    $index = '-small-%s' % $i
+    [class*=\"{$index}\"]
       & > *
-        width: 'calc(100% / %s - %s)' % (i iefix)
-        for key, size in grid-gutters
-          &.has-gutter{key} > *
-            width: 'calc(100% / %s - %s - %s)' % (i size iefix)
+        width: 'calc(100% / %s - %s)' % ($i $iefix)
+        for $key, $size in $grid-gutters
+          &.has-gutter{$key} > *
+            width: 'calc(100% / %s - %s - %s)' % ($i $size $iefix)

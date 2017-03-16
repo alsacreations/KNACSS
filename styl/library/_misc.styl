@@ -3,7 +3,7 @@
 /* ----------------------------- */
 
 /* styling skip links */
-.{kna-namespace}skip-links
+.{$kna-namespace}skip-links
   position absolute
 
   & a
@@ -21,7 +21,7 @@
       clip auto
 
 // hyphens on tiny screens
-@media (max-width: tiny)
+@media (max-width: $tiny)
   /* you shall not pass */
   div
   textarea
@@ -35,7 +35,7 @@
     hyphens auto
 
 // use .no-wrapping to disallow hyphens on tiny screens
-@media (max-width: tiny)
+@media (max-width: $tiny)
   .no-wrapping
     word-wrap normal
     hyphens manual
