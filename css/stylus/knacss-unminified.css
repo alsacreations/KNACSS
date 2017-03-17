@@ -268,7 +268,7 @@ details,
 figure {
   margin-top: 0.75em;
   margin-bottom: 0;
-  line-height: line-height;
+  line-height: 1.5;
 }
 h1 .h1-like {
   font-size: 3.2rem;
