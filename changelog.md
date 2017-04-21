@@ -1,3 +1,6 @@
+# changelog v6.1.1 (21 avril 2017)
+- amélioration du mixin "respond-to()"
+
 # changelog v6.1.0 (3 mars 2017)
 - passage à [Normalize 5.0.0](https://github.com/necolas/normalize.css/blob/5.0.0/CHANGELOG.md)
 - ajout de variables pour tailles de polices différentes sur petits et sur grands écrans (`$h1-size` et `$h1-size-l` par exemple). Par défaut, les tailles "mobile" sont appliquées, et les tailles "desktop" s'appliquent en min-width `$tiny +1`
