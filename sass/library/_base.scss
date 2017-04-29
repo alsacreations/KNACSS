@@ -142,7 +142,7 @@ h6, .#{$kna-namespace}h6-like {
   font-size: $h6-size;
   @if variable_exists(h6-size-l) and $h6-size-l != $h6-size {
     @include respond-to("tiny-up") {
-      font-size: $h1-size-l;
+      font-size: $h6-size-l;
     }
   }
 }
