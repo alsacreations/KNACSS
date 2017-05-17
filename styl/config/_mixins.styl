@@ -1,0 +1,32 @@
+// Additionnal "utility" breakpoints aliases
+// ex. @include respond-to("medium-up") {...}
+breakpoint($bp)
+  if $bp == 'tiny'
+    return '(max-width: %s)' % $tiny
+  else if $bp == 'small'
+    return '(max-width: %s)' % $small
+  else if $bp == 'medium'
+    return '(max-width: %s)' % $medium
+  else if $bp == 'large'
+    return '(max-width: %s)' % $large
+  else if $bp == 'extra-large'
+    return '(max-width: %s)' % $extra-large
+  else if $bp == 'tiny-up'
+    return '(min-width: %s + 1)' % $tiny
+  else if $bp == 'small-up'
+    return '(min-width: %s + 1)' % $small
+  else if $bp == 'medium-up'
+    return '(min-width: %s + 1)' % $medium
+  else if $bp == 'large-up'
+    return '(min-width: %s + 1)' % $large
+  else if $bp == 'extra-large-up'
+    return '(min-width: %s + 1)' % $extra-large
+  else if $bp == 'retina'
+    return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)'
+
+/*
+respond-to(value)
+  string = breakpoint(value)
+  @media screen and string
+    {block}
+*/

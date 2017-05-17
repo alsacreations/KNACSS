@@ -29,12 +29,13 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-minify-css": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-sourcemaps": "latest"
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-stylus": "^2.6.0"
   },
   "engines": {}
 }

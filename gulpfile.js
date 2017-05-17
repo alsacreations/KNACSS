@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var minifycss = require('gulp-minify-css');
 // var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var stylus = require('gulp-stylus');
 
 
 // tâche CSS = compile vers knacss.css et knacss-unminified.css
@@ -34,6 +35,22 @@ gulp.task('grillade', function() {
     .pipe(autoprefixer())
     .pipe(minifycss())
     .pipe(gulp.dest('./css/'));
+});
+
+gulp.task('styluscss', function () {
+  return gulp.src('./styl/knacss.styl')
+    .pipe(stylus())
+    .pipe(autoprefixer())
+    .pipe(rename('knacss-unminified.css'))
+    .pipe(gulp.dest('./css/stylus/'));
+});
+
+gulp.task('styluscssmin', function () {
+  return gulp.src('./styl/knacss.styl')
+    .pipe(stylus({compress: true}))
+    .pipe(gulp.dest('./css/stylus/'))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./css/stylus/'));
 });
 
 // Watcher
