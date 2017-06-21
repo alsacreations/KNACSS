@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com V6.0.5 (1er décembre 2016) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v6.1.2 (21 juin 2017) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -495,17 +495,17 @@ body {
   font-size: 1.4rem;
   background-color: #fff;
   color: #000;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.4;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   body {
     font-size: 1.6rem;
   }
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   body {
     line-height: 1.5;
   }
@@ -556,9 +556,10 @@ figure {
 
 h1, .h1-like {
   font-size: 2.8rem;
+  font-family: sans-serif;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h1, .h1-like {
     font-size: 3.2rem;
   }
@@ -566,9 +567,10 @@ h1, .h1-like {
 
 h2, .h2-like {
   font-size: 2.4rem;
+  font-family: sans-serif;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h2, .h2-like {
     font-size: 2.8rem;
   }
@@ -578,7 +580,7 @@ h3, .h3-like {
   font-size: 2rem;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h3, .h3-like {
     font-size: 2.4rem;
   }
@@ -588,7 +590,7 @@ h4, .h4-like {
   font-size: 1.8rem;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h4, .h4-like {
     font-size: 2rem;
   }
@@ -598,7 +600,7 @@ h5, .h5-like {
   font-size: 1.6rem;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h5, .h5-like {
     font-size: 1.8rem;
   }
@@ -608,9 +610,9 @@ h6, .h6-like {
   font-size: 1.4rem;
 }
 
-@media screen and (min-width: 544px) {
+@media (min-width: 480px) {
   h6, .h6-like {
-    font-size: 3.2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -804,6 +806,12 @@ kbd {
   border: 1px solid #999;
 }
 
+pre {
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
+}
+
 code {
   padding: 2px 4px;
   background: rgba(0, 0, 0, 0.04);
@@ -930,7 +938,7 @@ th {
   clip: auto;
 }
 
-@media (max-width: 543px) {
+@media (max-width: 575px) {
   /* you shall not pass */
   div,
   textarea,
@@ -947,7 +955,7 @@ th {
   }
 }
 
-@media (max-width: 543px) {
+@media (max-width: 575px) {
   .no-wrapping {
     word-wrap: normal;
     -webkit-hyphens: manual;
@@ -1100,7 +1108,7 @@ input[type="reset"].unstyled:focus {
 
 /* Media object */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .o-media {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1119,7 +1127,7 @@ input[type="reset"].unstyled:focus {
 }
 
 /* Media variants */
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .o-media--reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -1134,7 +1142,7 @@ input[type="reset"].unstyled:focus {
 
 /* Autogrid object */
 /* see http://codepen.io/raphaelgoetter/pen/KMgBJd */
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   [class^="autogrid"],
   [class*=" autogrid"] {
     display: -webkit-box;
@@ -1152,7 +1160,7 @@ input[type="reset"].unstyled:focus {
 }
 
 /* Autogrid variants */
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .has-gutter > *:not(:first-child) {
     margin-left: 1rem;
   }
@@ -1245,7 +1253,8 @@ img.fr {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 [class*="flex-container"],
-.flex-container {
+.flex-container,
+.d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1253,14 +1262,16 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
       flex-wrap: wrap;
 }
 
-.flex-container-h {
+.flex-container-h,
+.flex-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-.flex-container-v {
+.flex-container-v,
+.flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1296,7 +1307,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 .flex-item-center,
-.item-center {
+.item-center,
+.mr-auto {
   margin: auto;
 }
 
@@ -1703,7 +1715,7 @@ ul.is-unstyled, ul.unstyled {
 
 /* medium screens */
 /* -------------- */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 991px) {
   /* layouts for medium screens */
   .medium-hidden {
     display: none !important;
@@ -1754,7 +1766,7 @@ ul.is-unstyled, ul.unstyled {
 
 /* small screens */
 /* ------------- */
-@media (min-width: 544px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   /* layouts for small screens */
   .small-hidden {
     display: none !important;
@@ -1809,7 +1821,7 @@ ul.is-unstyled, ul.unstyled {
 
 /* tiny screens */
 /* ------------ */
-@media (max-width: 543px) {
+@media (max-width: 575px) {
   /* quick small resolution reset */
   .mod,
   .col,
@@ -1884,7 +1896,7 @@ ul.is-unstyled, ul.unstyled {
 /* ==Grillade : Simple Grid System    */
 /* ---------------------------------- */
 /* Doc : http://grillade.knacss.com */
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   [class*=" grid-"],
   [class^="grid-"] {
     display: -webkit-box;
@@ -1905,7 +1917,7 @@ ul.is-unstyled, ul.unstyled {
   }
 }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .grid,
   .grid--reverse {
     display: -webkit-box;
@@ -1935,7 +1947,7 @@ ul.is-unstyled, ul.unstyled {
   }
 }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   [class*="grid-2"] > * {
     width: calc(100% / 2 - 0.01px);
   }
@@ -2295,7 +2307,7 @@ ul.is-unstyled, ul.unstyled {
           flex-direction: row-reverse;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .full {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -2434,7 +2446,7 @@ ul.is-unstyled, ul.unstyled {
 }
 
 /* Responsive Small Breakpoint */
-@media (min-width: 544px) and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 767px) {
   [class*="-small-1"] > * {
     width: calc(100% / 1 - 0.01px);
   }

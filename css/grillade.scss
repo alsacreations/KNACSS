@@ -1,12 +1,13 @@
 // Responsive breakpoints variables
 
 // Warning : you should use your own values, regardless of the devices
-// Best practise : (max-width: $BP) and (min-width: ($BP + 1))
-$tiny: 543px !default; // or 'em' if you prefer, of course
-$small: 767px !default;
-$medium: 991px !default;
-$large: 1199px !default;
-$extra-large: 1439px !default;
+// Best practise : (max-width: ($BP - 1)) and (min-width: $BP)
+
+$tiny: 480px !default; // or 'em' if you prefer, of course
+$small: 576px !default;
+$medium: 768px !default;
+$large: 992px !default;
+$extra-large: 1200px !default;
 
 /* ---------------------------------- */
 /* ==Grillade : Simple Grid System    */
@@ -17,7 +18,7 @@ $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
 // IEfixing, see
 // https://github.com/alsacreations/KNACSS/issues/133;
 $iefix: 0.01px;
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   [class*=" grid-"],
   [class^="grid-"] {
     display: flex;
@@ -61,7 +62,7 @@ $iefix: 0.01px;
   }
 }
 // Mono-line grid constructor (.grid)
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   .grid,
   .grid--reverse {
     display: flex;
@@ -80,7 +81,7 @@ $iefix: 0.01px;
   }
 }
 // Constructing grids : will be compiled in CSS
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   @for $i from 2 through 12 {
     [class*="grid-#{$i}"] {
       @include grid(#{$i}, 0);
@@ -110,7 +111,7 @@ $iefix: 0.01px;
   flex-direction: row-reverse;
 }
 // sizing individual children
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   @each $flow, $divider in ("full" "1"), ("one-half" "2"), ("one-third" "3"), ("one-quarter" "4"), ("one-fifth" "5"), ("one-sixth" "6"), ("two-thirds" "3 * 2"), ("three-quarters" "4 * 3"), ("five-sixths" "6 * 5") {
     .#{$flow} {
       flex: 0 0 auto;
@@ -126,7 +127,7 @@ $iefix: 0.01px;
 /* Responsive Small Breakpoint */
 // -small-X suffix means "X columns on small-medium screen"
 // example : .grid-4-small-2 will be 1 column (tiny and down) then 2 columns (until medium) then 4 columns
-@media (min-width: ($tiny + 1)) and (max-width: $medium) {
+@media (min-width: $small) and (max-width: ($medium - 1)) {
   @for $i from 1 through 4 {
     [class*="-small-#{$i}"] {
       & > * {
