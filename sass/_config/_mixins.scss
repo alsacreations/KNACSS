@@ -1,16 +1,16 @@
 // Additionnal "utility" breakpoints aliases
 // ex. @include respond-to("medium-up") {...}
 $bp-aliases: (
-  'tiny'   : (max-width: #{$tiny}),
-  'small'  : (max-width: #{$small}),
-  'medium' : (max-width: #{$medium}),
-  'large' : (max-width: #{$large}),
-  'extra-large'  : (max-width: #{$extra-large}),
-  'tiny-up'   : (min-width: #{$tiny + 1}),
-  'small-up'  : (min-width: #{$small + 1}),
-  'medium-up' : (min-width: #{$medium + 1}),
-  'large-up' : (min-width: #{$large + 1}),
-  'extra-large-up' : (min-width: #{$extra-large + 1}),
+  'tiny'   : (max-width: #{$tiny - 1}),
+  'small'  : (max-width: #{$small - 1}),
+  'medium' : (max-width: #{$medium - 1}),
+  'large' : (max-width: #{$large - 1}),
+  'extra-large'  : (max-width: #{$extra-large - 1}),
+  'tiny-up'   : (min-width: #{$tiny}),
+  'small-up'  : (min-width: #{$small}),
+  'medium-up' : (min-width: #{$medium}),
+  'large-up' : (min-width: #{$large}),
+  'extra-large-up' : (min-width: #{$extra-large}),
   'retina' : (min-resolution: 2dppx)
 );
 

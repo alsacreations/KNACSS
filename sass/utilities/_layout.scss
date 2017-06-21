@@ -83,16 +83,19 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
 [class*="#{$kna-namespace}flex-container"],
-.#{$kna-namespace}flex-container {
+.#{$kna-namespace}flex-container,
+.d-flex {
   display: flex;
   flex-wrap: wrap;
 }
 
-.#{$kna-namespace}flex-container-h {
+.#{$kna-namespace}flex-container-h,
+.flex-row {
   flex-direction: row;
 }
 
-.#{$kna-namespace}flex-container-v {
+.#{$kna-namespace}flex-container-v,
+.flex-column {
   flex-direction: column;
 }
 
@@ -117,6 +120,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 .#{$kna-namespace}flex-item-center,
-.#{$kna-namespace}item-center {
+.#{$kna-namespace}item-center,
+.mr-auto {
   margin: auto;
 }

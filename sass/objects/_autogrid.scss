@@ -1,6 +1,6 @@
 /* Autogrid object */
 /* see http://codepen.io/raphaelgoetter/pen/KMgBJd */
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   [class^="autogrid"],
   [class*=" autogrid"] {
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 /* Autogrid variants */
-@media (min-width: ($tiny + 1)) {
+@media (min-width: $small) {
   .has-gutter > *:not(:first-child) {
     margin-left: 1rem;
   }

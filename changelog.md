@@ -1,3 +1,9 @@
+# changelog v6.1.2 (21 juin 2017)
+- alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)
+- alignement des breakpoints sur ceux de Bootstrap (576, 768, 992, 1200) et réorganisation des intervalles
+- `tab-size: 2;` sur les `<pre>`
+- passage en System Font Stack. cf. https://css-tricks.com/snippets/css/system-font-stack/
+
 # changelog v6.1.1 (21 avril 2017)
 - amélioration du mixin "respond-to()"
 

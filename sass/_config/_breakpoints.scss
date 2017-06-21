@@ -1,9 +1,10 @@
 // Responsive breakpoints variables
 
 // Warning : you should use your own values, regardless of the devices
-// Best practise : (max-width: $BP) and (min-width: ($BP + 1))
-$tiny: 543px !default; // or 'em' if you prefer, of course
-$small: 767px !default;
-$medium: 991px !default;
-$large: 1199px !default;
-$extra-large: 1439px !default;
+// Best practise : (max-width: ($BP - 1)) and (min-width: $BP)
+
+$tiny: 480px !default; // or 'em' if you prefer, of course
+$small: 576px !default;
+$medium: 768px !default;
+$large: 992px !default;
+$extra-large: 1200px !default;
