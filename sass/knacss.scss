@@ -24,7 +24,9 @@
   - Skip Links
   - Tables (data tables consistency)
   - Forms (forms consistency)
-  - Buttons (forms consistency)
+  - Buttons (buttons consistency)
+  - Badges (badges consistency)
+  - Alerts (alerts consistency)
   - Grillade (Grid System in Flexbox)
 */
 
@@ -52,9 +54,10 @@
 @import "components/autogrid.scss"; // media autogrid
 @import "components/skip-links.scss"; // skip links
 @import "components/tables.scss"; // data tables consistency
-@import "components/forms.scss"; // forms consistency
-@import "components/buttons.scss"; // buttons consistency
-@import "components/badges.scss"; // badges consistency
+@import "components/forms.scss"; // forms consistency and styles
+@import "components/buttons.scss"; // buttons styles
+@import "components/badges.scss"; // badges styls
+@import "components/alerts.scss"; // alerts styles
 @import "components/grillade.scss"; // grids
 
 

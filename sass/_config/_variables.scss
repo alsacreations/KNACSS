@@ -52,6 +52,18 @@ $color-link-hover: $color4;
 
 $brand-primary: $color5;
 
+// button, badges, alerts color variants list
+// name - background-color - color - border
+$variants-list: (
+  (primary,    $color-primary,    $color-light,    none),
+  (success,    $color-success,    $color-light,    none),
+  (info,       $color-info,       $color-light,    none),
+  (warning,    $color-warning,    $color-light,    none),
+  (danger,     $color-danger,     $color-light,    none),
+  (inverse,    $color-inverse,    $color-light,    none),
+  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
+);
+
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem ; // tiny value for margins / paddings
 $tiny-plus-value        : .7rem ; // tiny+ value for margins / paddings
@@ -71,15 +83,3 @@ $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
 
 // border-radius
 $border-radius: 0;
-
-// button and badges color variants list
-// name - background-color - color - border
-$variants-list: (
-  (primary,    $color-primary,    $color-light,    none),
-  (success,    $color-success,    $color-light,    none),
-  (info,       $color-info,       $color-light,    none),
-  (warning,    $color-warning,    $color-light,    none),
-  (danger,     $color-danger,     $color-light,    none),
-  (inverse,    $color-inverse,    $color-light,    none),
-  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
-);
