@@ -82,7 +82,7 @@ textarea {
 }
 
 /* 'x' appears on right of search input when text is entered. This removes it */
-input[type="search"] {
+[type="search"] {
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,

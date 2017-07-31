@@ -1856,7 +1856,7 @@ textarea {
 }
 
 /* 'x' appears on right of search input when text is entered. This removes it */
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
+[type="search"]::-webkit-search-decoration, [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-results-button, [type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -1882,7 +1882,8 @@ progress {
 .btn,
 .button,
 [type="button"],
-[type="submit"] button, .btn--primary,
+[type="submit"],
+button, .btn--primary,
 .button--primary, .btn--success,
 .button--success, .btn--info,
 .button--info, .btn--warning,
@@ -1917,7 +1918,8 @@ progress {
 .btn:focus,
 .button:focus,
 [type="button"]:focus,
-[type="submit"] button:focus {
+[type="submit"]:focus,
+button:focus {
   -webkit-tap-highlight-color: transparent;
 }
 
