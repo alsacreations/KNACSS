@@ -1815,6 +1815,8 @@ textarea {
   white-space: nowrap;
   font-family: inherit;
   font-size: inherit;
+  border: 0;
+  box-shadow: 0 0 0 1px #fff inset;
   color: #000;
   vertical-align: middle;
   padding: 0.5rem 1rem;
