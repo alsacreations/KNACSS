@@ -99,22 +99,3 @@ hr {
   color: #ccc;
   background-color: #ccc;
 }
-
-/* tables */
-table,
-.#{$kna-namespace}table {
-  border: 1px solid #ccc;
-}
-
-caption {
-  padding: $small-value;
-  color: #555;
-  font-style: italic;
-}
-
-td,
-th {
-  padding: 0.3em 0.8em;
-  border: 1px #aaa dotted;
-  text-align: left;
-}
