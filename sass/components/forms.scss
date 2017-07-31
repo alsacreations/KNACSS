@@ -33,6 +33,7 @@ label {
 [type="number"],
 [type="password"],
 [type="search"],
+[type="submit"],
 [type="tel"],
 [type="text"],
 [type="time"],
@@ -54,6 +55,11 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+[type="submit"] {
+  background-color: $color-border;
+  color: $color-light;
 }
 
 input[disabled] {

@@ -1806,6 +1806,7 @@ label {
 [type="number"],
 [type="password"],
 [type="search"],
+[type="submit"],
 [type="tel"],
 [type="text"],
 [type="time"],
@@ -1828,6 +1829,11 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+[type="submit"] {
+  background-color: #777;
+  color: #fff;
 }
 
 input[disabled] {
@@ -1882,7 +1888,6 @@ progress {
 .btn,
 .button,
 [type="button"],
-[type="submit"],
 button, .btn--primary,
 .button--primary, .btn--success,
 .button--success, .btn--info,
@@ -1918,7 +1923,6 @@ button, .btn--primary,
 .btn:focus,
 .button:focus,
 [type="button"]:focus,
-[type="submit"]:focus,
 button:focus {
   -webkit-tap-highlight-color: transparent;
 }
