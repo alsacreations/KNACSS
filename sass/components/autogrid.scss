@@ -1,28 +1,29 @@
 /* ----------------------------- */
 /* ==Autogrid object             */
 /* ----------------------------- */
-/* see http://codepen.io/raphaelgoetter/pen/KMgBJd */
+/* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 
-@media (min-width: $small) {
-  [class^="autogrid"],
-  [class*=" autogrid"] {
-    display: flex;
-  }
+.o-autogrid {
+  @media (min-width: $small) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-column: 1fr;
 
-  [class^="autogrid"] > *,
-  [class*=" autogrid"] > * {
-    flex: 1;
-    min-width: 0; /* avoid min-width:auto */
-  }
-}
+    // gutters
+    @if variable_exists(grid-gutters) {
+      $gutter: $grid-gutters !global;
 
-/* Autogrid variants */
-@media (min-width: $small) {
-  .has-gutter > *:not(:first-child) {
-    margin-left: 1rem;
-  }
+    } @else {
+      $gutter: ( '': 1rem, '-l': 2rem, '-xl': 4rem ) !global;
+    }
+    @each $affix, $size in $gutter {
+      &.has-gutter#{$affix} {
+        grid-column-gap: $size;
+      }
+    }
 
-  [class*="--reverse"] {
-    flex-direction: row-reverse;
+    & > * {
+      min-width: 0; /* avoid min-width: auto on children */
+    }
   }
 }

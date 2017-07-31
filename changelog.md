@@ -1,6 +1,7 @@
 # changelog v7.0.0beta (31 juillet 2017)
-- architecture globale revisitée (_vendor, _config, _library, components)
+- architecture globale revisitée (vendor, config, library, components)
 - normalize.css v7.0.0
+- autogrid object en Grid Layout
 
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)

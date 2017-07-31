@@ -57,5 +57,8 @@ $extra-large-plus-value : 12rem !default; // extra large value for margins / pad
 $ultra-large-value      : 16rem !default; // ultra large value for margins / paddings
 $ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
 
+// grid gutters (for .has-gutter-* classes)
+$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
+
 //kna-namespace (default : null)
 $kna-namespace: null !default;
