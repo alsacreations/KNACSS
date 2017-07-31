@@ -100,7 +100,7 @@ button {
   height: 2.4rem;
   width: 2.8rem;
   background-color: transparent;
-  background-image: linear-gradient(to right, currentColor, currentColor);
+  background-image: linear-gradient($color-burger, $color-burger);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 5px;
@@ -114,6 +114,10 @@ button {
   transition-property: transform;
   will-change: transform;
 
+  & > * {
+    @extend .visually-hidden;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -121,7 +125,7 @@ button {
     left: 0; right: 0;
     display: block;
     height: 5px;
-    background: currentColor;
+    background: $color-burger;
     transition: .25s;
     transition-property: transform, top;
     will-change: transform, top;
