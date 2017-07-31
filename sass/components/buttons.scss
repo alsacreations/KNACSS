@@ -38,6 +38,7 @@ button {
 }
 
 // button color variants
+// name - background-color - color - border
 $buttons-variants: (
   (primary,    $color-primary,    $color-light,    none),
   (success,    $color-success,    $color-light,    none),
