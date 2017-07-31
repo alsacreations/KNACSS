@@ -6,10 +6,6 @@
 * github.com/nathansmith/formalize and www.sitepen.com
 */
 
-/* buttons */
-.btn {
-  display: inline-block;
-}
 
 /* forms items */
 form,
@@ -18,15 +14,12 @@ fieldset {
 }
 
 input,
-button,
 select,
-label,
-.btn {
+label {
   font-family: inherit;
   font-size: inherit;
 }
 
-button,
 input,
 optgroup,
 select,
@@ -76,41 +69,4 @@ input[type="search"] {
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #777;
-}
-
-.btn,
-input[type="button"],
-button {
-  &:focus {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-}
-
-/* unstyled forms */
-
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-  &.unstyled {
-    padding: 0;
-    border: none;
-    line-height: 1;
-    text-align: left;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-  }
 }

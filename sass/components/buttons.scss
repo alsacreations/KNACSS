@@ -1,0 +1,117 @@
+/* ----------------------------- */
+/* ==Buttons                     */
+/* ----------------------------- */
+/* preferably use <button> for buttons !*/
+/* use .btn-- or .button-- classes for variants */
+
+%btn {
+  display: inline-block;
+  padding: $tiny-value $small-value;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: $color-base;
+  background-color: $color-muted;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition-property: box-shadow, background-color, color, border;
+}
+
+.btn,
+.button,
+[type="button"],
+button {
+  @extend %btn;
+
+  &:focus {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+// button color variants
+$buttons: (
+        primary: $color-primary,
+        success: $color-success,
+        info: $color-info,
+        warning: $color-warning,
+        danger: $color-danger,
+        inverse: $color-inverse
+        );
+
+.btn,
+.button {
+  @each $variant, $color in $buttons {
+    &--#{$variant} {
+      @extend %btn;
+      background-color: $color;
+      color: $color-light;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: darken( $color, 10% );
+      }
+    }
+  }
+}
+// button state variants
+.btn,
+.button {
+  &--small {
+    font-size: $base-font-size - 0.4rem;
+  }
+
+  &--big {
+    font-size: $base-font-size + 0.4rem;
+  }
+
+  &--block {
+    width: 100% !important;
+    display: block;
+  }
+}
+/* disabled buttons */
+.btn,
+.button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  &.disabled,
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+/* unstyled buttons */
+.btn,
+.button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  &.unstyled {
+    padding: 0;
+    border: none;
+    text-align: left;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}

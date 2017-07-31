@@ -1,6 +1,7 @@
 # changelog v7.0.0beta (31 juillet 2017)
 - architecture globale revisitée (vendor, config, library, components)
 - normalize.css v7.0.0
+- refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux
 - suppression du namespace "kna-", ne devrait pas être problématique dès lors que Grillade sera devenu inutile dans KNACSS

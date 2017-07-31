@@ -26,20 +26,29 @@ $font-stack-headings  : sans-serif !default; // headings font
 $font-stack-monospace : consolas, courier, monospace !default; // monospace font
 
 // color scheme
-$color1    : #000 !default;
-$color2    : #fff !default;
-$color3    : #333 !default;
-$color4    : #000 !default;
-$color5    : #6FA939 !default;
+$color1    : #000;
+$color2    : #fff;
+$color3    : #333;
+$color4    : #000;
+$color5    : #6FA939;
+$color6    : #ddd;
+$color-light    : #fff;
+$color-dark    : #000;
+$color-primary  : #0275D8;
+$color-success  : #5CB85C;
+$color-info     : #5BC0DE;
+$color-warning  : #F0AD4E;
+$color-danger   : #292B2C;
+$color-inverse  : #292B2C;
+$color-muted    : #F7F7F7;
 
 // colors used in project
 $color-base      : $color1;
-$color-link      : $color3;
 $background-base : $color2;
 
-// If you don't want any effect on focused/hovered links,
-// comment variable below or make it equal to either $color-link or false or null
+$color-link      : $color3;
 $color-link-hover: $color4;
+
 $brand-primary: $color5;
 
 
@@ -59,6 +68,3 @@ $ultra-large-plus-value : 20rem !default; // ultra large value for margins / pad
 
 // grid gutters (for .has-gutter-* classes)
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
-
-//kna-namespace (default : null)
-$kna-namespace: null !default;
