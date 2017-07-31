@@ -40,6 +40,7 @@ input[type="url"],
 input[type="week"],
 select,
 textarea {
+  white-space: nowrap;
   font-family: inherit;
   font-size: inherit;
   color: $color-base;
@@ -75,6 +76,7 @@ textarea {
   min-height: 5em;
   vertical-align: top;
   resize: vertical;
+  white-space: normal;
 }
 
 /* 'x' appears on right of search input when text is entered. This removes it */
