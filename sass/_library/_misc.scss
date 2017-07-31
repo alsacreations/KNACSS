@@ -1,27 +1,6 @@
 /* ----------------------------- */
-/* ==Misc (skip links, hyphens)  */
+/* ==Misc                        */
 /* ----------------------------- */
-
-/* styling skip links */
-.#{$kna-namespace}skip-links {
-  position: absolute;
-
-  & a {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0.5em;
-    background: black;
-    color: white;
-    text-decoration: none;
-
-    &:focus {
-      position: static;
-      overflow: visible;
-      clip: auto;
-    }
-  }
-}
 
 // hyphens on tiny screens
 @media (max-width: ($small - 1)) {

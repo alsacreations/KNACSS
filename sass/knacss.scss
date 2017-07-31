@@ -21,6 +21,7 @@
 3- Components :
   - Media object
   - Autogrid object
+  - Skip Links
   - Tables (data tables consistency)
   - Forms (forms consistency)
   - Grillade (Grid System in Flexbox)
@@ -48,6 +49,7 @@
 // Components
 @import "components/media.scss"; // media object
 @import "components/autogrid.scss"; // media autogrid
+@import "components/skip-links.scss"; // skip links
 @import "components/tables.scss"; // data tables consistency
 @import "components/forms.scss"; // forms consistency
 @import "components/grillade.scss"; // grids
