@@ -32,6 +32,7 @@ $color3         : #333;
 $color4         : #000;
 $color5         : #6FA939;
 $color6         : #ddd;
+$color7         : #777;
 $color-light    : #fff;
 $color-dark     : #000;
 $color-primary  : #0275D8;
@@ -51,6 +52,8 @@ $color-link      : $color3;
 $color-link-hover: $color4;
 
 $brand-primary: $color5;
+
+$color-border: $color7;
 
 // button, badges, alerts color variants list
 // name - background-color - color - border
