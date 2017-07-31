@@ -52,20 +52,34 @@ $color-link-hover: $color4;
 
 $brand-primary: $color5;
 
-
 // spacings (choose unit you prefer)
-$tiny-value             : .5rem !default; // tiny value for margins / paddings
-$tiny-plus-value        : .7rem !default; // tiny+ value for margins / paddings
-$small-value            : 1rem !default; // small value for margins / paddings
-$small-plus-value       : 1.5rem !default; // small+ value for margins / paddings
-$medium-value           : 2rem !default; // medium value for margins / paddings
-$medium-plus-value      : 3rem !default; // medium+ value for margins / paddings
-$large-value            : 4rem !default; // large value for margins / paddings
-$large-plus-value       : 6rem !default; // large value for margins / paddings
-$extra-large-value      : 8rem !default; // extra large value for margins / paddings
-$extra-large-plus-value : 12rem !default; // extra large value for margins / paddings
-$ultra-large-value      : 16rem !default; // ultra large value for margins / paddings
-$ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
+$tiny-value             : .5rem ; // tiny value for margins / paddings
+$tiny-plus-value        : .7rem ; // tiny+ value for margins / paddings
+$small-value            : 1rem ; // small value for margins / paddings
+$small-plus-value       : 1.5rem ; // small+ value for margins / paddings
+$medium-value           : 2rem ; // medium value for margins / paddings
+$medium-plus-value      : 3rem ; // medium+ value for margins / paddings
+$large-value            : 4rem ; // large value for margins / paddings
+$large-plus-value       : 6rem ; // large value for margins / paddings
+$extra-large-value      : 8rem ; // extra large value for margins / paddings
+$extra-large-plus-value : 12rem ; // extra large value for margins / paddings
+$ultra-large-value      : 16rem ; // ultra large value for margins / paddings
+$ultra-large-plus-value : 20rem ; // ultra large value for margins / paddings
 
 // grid gutters (for .has-gutter-* classes)
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
+
+// border-radius
+$border-radius: 0;
+
+// button and badges color variants list
+// name - background-color - color - border
+$variants-list: (
+  (primary,    $color-primary,    $color-light,    none),
+  (success,    $color-success,    $color-light,    none),
+  (info,       $color-info,       $color-light,    none),
+  (warning,    $color-warning,    $color-light,    none),
+  (danger,     $color-danger,     $color-light,    none),
+  (inverse,    $color-inverse,    $color-light,    none),
+  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
+);

@@ -24,6 +24,7 @@
   - Skip Links
   - Tables (data tables consistency)
   - Forms (forms consistency)
+  - Buttons (forms consistency)
   - Grillade (Grid System in Flexbox)
 */
 
@@ -52,6 +53,8 @@
 @import "components/skip-links.scss"; // skip links
 @import "components/tables.scss"; // data tables consistency
 @import "components/forms.scss"; // forms consistency
+@import "components/buttons.scss"; // buttons consistency
+@import "components/badges.scss"; // badges consistency
 @import "components/grillade.scss"; // grids
 
 

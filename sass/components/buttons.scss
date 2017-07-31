@@ -7,23 +7,24 @@
 %btn {
   display: inline-block;
   padding: $tiny-value $small-value;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 1;
-  vertical-align: middle;
-  white-space: nowrap;
-  color: $color-base;
-  background-color: $color-muted;
-  text-align: center;
-  text-decoration: none;
-  border: none;
   cursor: pointer;
-  transition: 0.25s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: 0.25s;
   transition-property: box-shadow, background-color, color, border;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  color: $color-base;
+  border: none;
+  border-radius: $border-radius;
+  background-color: $color-muted;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
 }
 
 .btn,
@@ -37,21 +38,9 @@ button {
   }
 }
 
-// button color variants
-// name - background-color - color - border
-$buttons-variants: (
-  (primary,    $color-primary,    $color-light,    none),
-  (success,    $color-success,    $color-light,    none),
-  (info,       $color-info,       $color-light,    none),
-  (warning,    $color-warning,    $color-light,    none),
-  (danger,     $color-danger,     $color-light,    none),
-  (inverse,    $color-inverse,    $color-light,    none),
-  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
-);
-
 .btn,
 .button {
-  @each $name, $background-color, $color, $border in $buttons-variants {
+  @each $name, $background-color, $color, $border in $variants-list {
     &--#{$name} {
       @extend %btn;
       background-color: $background-color;
@@ -82,30 +71,12 @@ $buttons-variants: (
     width: 100% !important;
     display: block;
   }
-}
-
-/* disabled buttons */
-.btn,
-.button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
   &.disabled,
-  &:disabled {
+  &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
-}
-
-/* unstyled buttons */
-.btn,
-.button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
-  &.unstyled {
+  &--unstyled {
     padding: 0;
     border: none;
     text-align: left;

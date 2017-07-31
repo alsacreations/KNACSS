@@ -1,3 +1,46 @@
 /* ----------------------------- */
 /* ==Badges                      */
 /* ----------------------------- */
+/* use .badge-- classes for variants */
+
+.badge {
+  display: inline-block;
+  padding: 3px $tiny-value;
+  vertical-align: baseline;
+  white-space: nowrap;
+  color: $color-base;
+  border-radius: $border-radius;
+  background-color: $color-muted;
+}
+
+.badge {
+  @each $name, $background-color, $color, $border in $variants-list {
+    &--#{$name} {
+      @extend .badge;
+      background-color: $background-color;
+      color: $color;
+      box-shadow: $border;
+    }
+  }
+}
+
+// badge state variants
+.badge {
+  &--small {
+    font-size: $base-font-size - 0.4rem;
+  }
+
+  &--big {
+    font-size: $base-font-size + 0.4rem;
+  }
+
+  &--block {
+    width: 100% !important;
+    display: block;
+  }
+  &.disabled,
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
