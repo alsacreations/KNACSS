@@ -63,11 +63,6 @@ textarea {
   cursor: pointer;
 }
 
-input[disabled] {
-  opacity: .5;
-  cursor: not-allowed;
-}
-
 input[readonly] {
   background-color: $color-muted;
 }

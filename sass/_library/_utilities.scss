@@ -25,7 +25,6 @@
 .is-disabled,
 [disabled] {
   opacity: 0.5;
-  pointer-events: none;
   cursor: not-allowed;
   filter: grayscale(1);
 }

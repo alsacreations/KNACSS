@@ -4,6 +4,7 @@
 - refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des alertes, avec possibilités de variantes (primary, success, warning, etc.)
+- ajout d'un bouton de navigation .button-burger
 - refonte des styles de formulaires
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux

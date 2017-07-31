@@ -71,11 +71,7 @@ button {
     width: 100% !important;
     display: block;
   }
-  &.disabled,
-  &--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+  
   &--unstyled {
     padding: 0;
     border: none;
@@ -95,6 +91,7 @@ button {
 }
 
 // burger button
+// active it with :focus, .is-active or .js-active
 .button-burger {
   position: relative;
   height: 2.4rem;
