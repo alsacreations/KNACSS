@@ -81,7 +81,7 @@ q {
 }
 
 q,
-.#{$kna-namespace}q {
+.q {
   quotes: "“\00a0" "\00a0”";
 
   &:lang(fr) {

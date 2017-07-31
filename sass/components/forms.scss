@@ -7,7 +7,7 @@
 */
 
 /* buttons */
-.#{$kna-namespace}btn {
+.btn {
   display: inline-block;
 }
 
@@ -21,7 +21,7 @@ input,
 button,
 select,
 label,
-.#{$kna-namespace}btn {
+.btn {
   font-family: inherit;
   font-size: inherit;
 }
@@ -78,7 +78,7 @@ textarea:-moz-placeholder {
   color: #777;
 }
 
-.#{$kna-namespace}btn,
+.btn,
 input[type="button"],
 button {
   &:focus {
@@ -96,7 +96,7 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  &.#{$kna-namespace}unstyled {
+  &.unstyled {
     padding: 0;
     border: none;
     line-height: 1;

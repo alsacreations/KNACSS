@@ -24,56 +24,56 @@
 }
 
 /* simple blocks alignment */
-.#{$kna-namespace}left {
+.left {
   margin-right: auto;
 }
 
-.#{$kna-namespace}right {
+.right {
   margin-left: auto;
 }
 
-.#{$kna-namespace}center {
+.center {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* text and contents alignment */
-.#{$kna-namespace}txtleft {
+.txtleft {
   text-align: left;
 }
 
-.#{$kna-namespace}txtright {
+.txtright {
   text-align: right;
 }
 
-.#{$kna-namespace}txtcenter {
+.txtcenter {
   text-align: center;
 }
 
 /* floating elements */
-.#{$kna-namespace}fl {
+.fl {
   float: left;
 }
 
-img.#{$kna-namespace}fl {
+img.fl {
   margin-right: $small-value;
 }
 
-.#{$kna-namespace}fr {
+.fr {
   float: right;
 }
 
-img.#{$kna-namespace}fr {
+img.fr {
   margin-left: $small-value;
 }
 
-img.#{$kna-namespace}fl,
-img.#{$kna-namespace}fr {
+img.fl,
+img.fr {
   margin-bottom: $tiny-value;
 }
 
 /* inline-block */
-.#{$kna-namespace}inbl {
+.inbl {
   display: inline-block;
   vertical-align: top;
 }
@@ -82,45 +82,45 @@ img.#{$kna-namespace}fr {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
-[class*="#{$kna-namespace}flex-container"],
-.#{$kna-namespace}flex-container,
+[class*="flex-container"],
+.flex-container,
 .d-flex {
   display: flex;
   flex-wrap: wrap;
 }
 
-.#{$kna-namespace}flex-container-h,
+.flex-container-h,
 .flex-row {
   flex-direction: row;
 }
 
-.#{$kna-namespace}flex-container-v,
+.flex-container-v,
 .flex-column {
   flex-direction: column;
 }
 
-.#{$kna-namespace}flex-item-fluid {
+.flex-item-fluid {
   flex: 1;
   min-width: 0;
 }
 
-.#{$kna-namespace}flex-item-first,
-.#{$kna-namespace}item-first {
+.flex-item-first,
+.item-first {
   order: -1;
 }
 
-.#{$kna-namespace}flex-item-medium,
-.#{$kna-namespace}item-medium {
+.flex-item-medium,
+.item-medium {
   order: 0;
 }
 
-.#{$kna-namespace}flex-item-last,
-.#{$kna-namespace}item-last {
+.flex-item-last,
+.item-last {
   order: 1;
 }
 
-.#{$kna-namespace}flex-item-center,
-.#{$kna-namespace}item-center,
+.flex-item-center,
+.item-center,
 .mr-auto {
   margin: auto;
 }

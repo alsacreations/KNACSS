@@ -3,6 +3,7 @@
 - normalize.css v7.0.0
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux
+- suppression du namespace "kna-", ne devrait pas être problématique dès lors que Grillade sera devenu inutile dans KNACSS
 
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)

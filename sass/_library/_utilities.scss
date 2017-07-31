@@ -42,318 +42,318 @@ ul {
 /* ------------- */
 
 /* blocks widths (percentage and pixels) */
-.#{$kna-namespace}w10 {
+.w10 {
   width: 10%;
 }
 
-.#{$kna-namespace}w20 {
+.w20 {
   width: 20%;
 }
 
-.#{$kna-namespace}w25 {
+.w25 {
   width: 25%;
 }
 
-.#{$kna-namespace}w30 {
+.w30 {
   width: 30%;
 }
 
-.#{$kna-namespace}w33 {
+.w33 {
   width: 33.3333%;
 }
 
-.#{$kna-namespace}w40 {
+.w40 {
   width: 40%;
 }
 
-.#{$kna-namespace}w50 {
+.w50 {
   width: 50%;
 }
 
-.#{$kna-namespace}w60 {
+.w60 {
   width: 60%;
 }
 
-.#{$kna-namespace}w66 {
+.w66 {
   width: 66.6666%;
 }
 
-.#{$kna-namespace}w70 {
+.w70 {
   width: 70%;
 }
 
-.#{$kna-namespace}w75 {
+.w75 {
   width: 75%;
 }
 
-.#{$kna-namespace}w80 {
+.w80 {
   width: 80%;
 }
 
-.#{$kna-namespace}w90 {
+.w90 {
   width: 90%;
 }
 
-.#{$kna-namespace}w100 {
+.w100 {
   width: 100%;
 }
 
-.#{$kna-namespace}w50p {
+.w50p {
   width: 50px;
 }
 
-.#{$kna-namespace}w100p {
+.w100p {
   width: 100px;
 }
 
-.#{$kna-namespace}w150p {
+.w150p {
   width: 150px;
 }
 
-.#{$kna-namespace}w200p {
+.w200p {
   width: 200px;
 }
 
-.#{$kna-namespace}w300p {
+.w300p {
   width: 300px;
 }
 
 @media (min-width: 401px) {
-  .#{$kna-namespace}w400p {
+  .w400p {
     width: 400px;
   }
 
-  .#{$kna-namespace}w500p {
+  .w500p {
     width: 500px;
   }
 
-  .#{$kna-namespace}w600p {
+  .w600p {
     width: 600px;
   }
 }
 
 @media (min-width: 701px) {
 
-  .#{$kna-namespace}w700p {
+  .w700p {
     width: 700px;
   }
 
-  .#{$kna-namespace}w800p {
+  .w800p {
     width: 800px;
   }
 }
 
 @media (min-width: 961px) {
-  .#{$kna-namespace}w960p {
+  .w960p {
     width: 960px;
   }
 
-  .#{$kna-namespace}mw960p {
+  .mw960p {
     max-width: 960px;
   }
 
-  .#{$kna-namespace}w1140p {
+  .w1140p {
     width: 1140px;
   }
 
-  .#{$kna-namespace}mw1140p {
+  .mw1140p {
     max-width: 1140px;
   }
 }
 
-.#{$kna-namespace}wauto {
+.wauto {
   width: auto;
 }
 
 /* Spacing Helpers */
 /* --------------- */
 
-.#{$kna-namespace}man,
-.#{$kna-namespace}ma0 {
+.man,
+.ma0 {
   margin: 0;
 }
 
-.#{$kna-namespace}pan,
-.#{$kna-namespace}pa0 {
+.pan,
+.pa0 {
   padding: 0;
 }
 
-.#{$kna-namespace}mas {
+.mas {
   margin: $small-value;
 }
 
-.#{$kna-namespace}mam {
+.mam {
   margin: $medium-value;
 }
 
-.#{$kna-namespace}mal {
+.mal {
   margin: $large-value;
 }
 
-.#{$kna-namespace}pas {
+.pas {
   padding: $small-value;
 }
 
-.#{$kna-namespace}pam {
+.pam {
   padding: $medium-value;
 }
 
-.#{$kna-namespace}pal {
+.pal {
   padding: $large-value;
 }
 
-.#{$kna-namespace}mtn,
-.#{$kna-namespace}mt0 {
+.mtn,
+.mt0 {
   margin-top: 0;
 }
 
-.#{$kna-namespace}mts {
+.mts {
   margin-top: $small-value;
 }
 
-.#{$kna-namespace}mtm {
+.mtm {
   margin-top: $medium-value;
 }
 
-.#{$kna-namespace}mtl {
+.mtl {
   margin-top: $large-value;
 }
 
-.#{$kna-namespace}mrn,
-.#{$kna-namespace}mr0 {
+.mrn,
+.mr0 {
   margin-right: 0;
 }
 
-.#{$kna-namespace}mrs {
+.mrs {
   margin-right: $small-value;
 }
 
-.#{$kna-namespace}mrm {
+.mrm {
   margin-right: $medium-value;
 }
 
-.#{$kna-namespace}mrl {
+.mrl {
   margin-right: $large-value;
 }
 
-.#{$kna-namespace}mbn,
-.#{$kna-namespace}mb0 {
+.mbn,
+.mb0 {
   margin-bottom: 0;
 }
 
-.#{$kna-namespace}mbs {
+.mbs {
   margin-bottom: $small-value;
 }
 
-.#{$kna-namespace}mbm {
+.mbm {
   margin-bottom: $medium-value;
 }
 
-.#{$kna-namespace}mbl {
+.mbl {
   margin-bottom: $large-value;
 }
 
-.#{$kna-namespace}mln,
-.#{$kna-namespace}ml0 {
+.mln,
+.ml0 {
   margin-left: 0;
 }
 
-.#{$kna-namespace}mls {
+.mls {
   margin-left: $small-value;
 }
 
-.#{$kna-namespace}mlm {
+.mlm {
   margin-left: $medium-value;
 }
 
-.#{$kna-namespace}mll {
+.mll {
   margin-left: $large-value;
 }
 
-.#{$kna-namespace}mauto {
+.mauto {
   margin: auto;
 }
 
-.#{$kna-namespace}mtauto {
+.mtauto {
   margin-top: auto;
 }
 
-.#{$kna-namespace}mrauto {
+.mrauto {
   margin-right: auto;
 }
 
-.#{$kna-namespace}mbauto {
+.mbauto {
   margin-bottom: auto;
 }
 
-.#{$kna-namespace}mlauto {
+.mlauto {
   margin-left: auto;
 }
 
-.#{$kna-namespace}ptn,
-.#{$kna-namespace}pt0 {
+.ptn,
+.pt0 {
   padding-top: 0;
 }
 
-.#{$kna-namespace}pts {
+.pts {
   padding-top: $small-value;
 }
 
-.#{$kna-namespace}ptm {
+.ptm {
   padding-top: $medium-value;
 }
 
-.#{$kna-namespace}ptl {
+.ptl {
   padding-top: $large-value;
 }
 
-.#{$kna-namespace}prn,
-.#{$kna-namespace}pr0 {
+.prn,
+.pr0 {
   padding-right: 0;
 }
 
-.#{$kna-namespace}prs {
+.prs {
   padding-right: $small-value;
 }
 
-.#{$kna-namespace}prm {
+.prm {
   padding-right: $medium-value;
 }
 
-.#{$kna-namespace}prl {
+.prl {
   padding-right: $large-value;
 }
 
-.#{$kna-namespace}pbn,
-.#{$kna-namespace}pb0 {
+.pbn,
+.pb0 {
   padding-bottom: 0;
 }
 
-.#{$kna-namespace}pbs {
+.pbs {
   padding-bottom: $small-value;
 }
 
-.#{$kna-namespace}pbm {
+.pbm {
   padding-bottom: $medium-value;
 }
 
-.#{$kna-namespace}pbl {
+.pbl {
   padding-bottom: $large-value;
 }
 
-.#{$kna-namespace}pln,
-.#{$kna-namespace}pl0 {
+.pln,
+.pl0 {
   padding-left: 0;
 }
 
-.#{$kna-namespace}pls {
+.pls {
   padding-left: $small-value;
 }
 
-.#{$kna-namespace}plm {
+.plm {
   padding-left: $medium-value;
 }
 
-.#{$kna-namespace}pll {
+.pll {
   padding-left: $large-value;
 }
