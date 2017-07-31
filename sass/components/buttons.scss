@@ -36,32 +36,36 @@ button {
     -webkit-tap-highlight-color: transparent;
   }
 }
+
 // button color variants
-$buttons: (
-        primary: $color-primary,
-        success: $color-success,
-        info: $color-info,
-        warning: $color-warning,
-        danger: $color-danger,
-        inverse: $color-inverse
-        );
+$buttons-variants: (
+  (primary,    $color-primary,    $color-light,    none),
+  (success,    $color-success,    $color-light,    none),
+  (info,       $color-info,       $color-light,    none),
+  (warning,    $color-warning,    $color-light,    none),
+  (danger,     $color-danger,     $color-light,    none),
+  (inverse,    $color-inverse,    $color-light,    none),
+  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
+);
 
 .btn,
 .button {
-  @each $variant, $color in $buttons {
-    &--#{$variant} {
+  @each $name, $background-color, $color, $border in $buttons-variants {
+    &--#{$name} {
       @extend %btn;
-      background-color: $color;
-      color: $color-light;
+      background-color: $background-color;
+      color: $color;
+      box-shadow: $border;
 
       &:active,
       &:focus,
       &:hover {
-        background-color: darken( $color, 10% );
+        background-color: darken( $background-color, 10% );
       }
     }
   }
 }
+
 // button state variants
 .btn,
 .button {
@@ -78,6 +82,7 @@ $buttons: (
     display: block;
   }
 }
+
 /* disabled buttons */
 .btn,
 .button,
@@ -91,6 +96,7 @@ button {
     cursor: not-allowed;
   }
 }
+
 /* unstyled buttons */
 .btn,
 .button,
