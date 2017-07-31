@@ -15,7 +15,6 @@ html {
   /* set base font-size to equiv "10px", which is adapted to rem unit */
   font-size: 62.5%;
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
-  /* thanks to @guardian, @victorbritopro and @eQRoeil */
   font-size: calc(1em * 0.625);
 }
 
@@ -37,11 +36,11 @@ body {
   }
 }
 
+/* Links */
 a {
   color: $color-link;
 
-  // No styling on focus/hover if there's no effect. Avoids to then have to
-  // override it countless times. See Issue #232
+  // No styling on focus/hover if there's no effect.
   @if variable_exists(color-link-hover) and
       ( null == index( ($color-link, null, false), $color-link-hover) ) {
     &:focus,
@@ -52,41 +51,7 @@ a {
   }
 }
 
-ul,
-ol {
-  padding-left: 2em;
-}
-
-img {
-  vertical-align: middle;
-}
-
-blockquote,
-figure {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* font-sizing for content */
-p,
-.p-like,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-td,
-th,
-label,
-textarea,
-caption,
-details,
-figure {
-  margin-top: 0.75em;
-  margin-bottom: 0;
-  line-height: $line-height;
-}
-
+/* Headings */
 h1, .h1-like {
   font-size: $h1-size;
   @if variable_exists(h1-size-l) and $h1-size-l != $h1-size {
@@ -147,48 +112,27 @@ h6, .h6-like {
   }
 }
 
-/* alternate font-sizing */
-.smaller {
-  font-size: 0.6em;
-}
-
-.small {
-  font-size: 0.8em;
-}
-
-.big {
-  font-size: 1.2em;
-}
-
-.bigger {
-  font-size: 1.5em;
-}
-
-.biggest {
-  font-size: 2em;
-}
-
-code,
+/* Vertical rythm for blocks */
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
 pre,
-samp,
-kbd {
-  /* IE fix */
-  white-space: pre-line;
-  white-space: pre-wrap;
-  font-family: $font-stack-monospace;
-  line-height: normal;
+td,
+th,
+label,
+textarea,
+caption,
+details,
+figure {
+  margin-top: 0.75em;
+  margin-bottom: 0;
+  line-height: $line-height;
 }
 
-em,
-.italic,
-address,
-cite,
-i,
-var {
-  font-style: italic;
-}
-
-/* avoid top margins on first content element */
+/* Avoid top margins on first content element */
 p,
 .p-like,
 ul,
@@ -213,7 +157,7 @@ h6,
   }
 }
 
-/* avoid margins on nested elements */
+/* Avoid margins on nested elements */
 li p,
 li .p-like,
 li ul,
@@ -222,7 +166,29 @@ li ol {
   margin-bottom: 0;
 }
 
-/* max values */
+
+/* Alternate font-sizing */
+.smaller {
+  font-size: 0.6em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+.bigger {
+  font-size: 1.5em;
+}
+
+.biggest {
+  font-size: 2em;
+}
+
+/* Max values */
 img,
 table,
 td,
@@ -238,4 +204,135 @@ svg {
 
 img {
   height: auto;
+}
+
+/* Styling elements */
+ul,
+ol {
+  padding-left: 2em;
+}
+
+img {
+  vertical-align: middle;
+}
+
+em,
+.italic,
+address,
+cite,
+i,
+var {
+  font-style: italic;
+}
+
+code,
+kbd,
+mark {
+  border-radius: 2px;
+}
+
+kbd {
+  padding: 0 2px;
+  border: 1px solid #999;
+}
+
+pre {
+  tab-size: 2;
+}
+
+code {
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #b11;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+
+mark {
+  padding: 2px 4px;
+}
+
+sup,
+sub {
+  vertical-align: 0;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+blockquote {
+  position: relative;
+  padding-left: 3em;
+  min-height: 2em;
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: georgia, serif;
+  font-size: 5em;
+  height: .4em;
+  line-height: .9;
+  color: rgba(0, 0, 0, .3);
+}
+
+blockquote > footer {
+  margin-top: .75em;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, .7);
+
+  &::before {
+    content: "\2014 \0020";
+  }
+}
+
+q {
+  font-style: normal;
+}
+
+q,
+.q {
+  quotes: "“\00a0" "\00a0”";
+
+  &:lang(fr) {
+    quotes: "«\00a0" "\00a0»";
+  }
+}
+
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
+}
+
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+code,
+pre,
+samp,
+kbd {
+  white-space: pre-wrap;
+  font-family: $font-stack-monospace;
+  line-height: normal;
 }

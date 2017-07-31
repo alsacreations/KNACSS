@@ -12,8 +12,7 @@
 2- Libraries  :
   - Base (basic global styles)
   - Print (basic print styles)
-  - Styling (minor stylings)
-  - Misc (skip links, hyphens)
+  - Misc (hyphens)
   - Layout (alignment, modules, positionning)
   - Utilities (width and spacers helpers)
   - Responsive (Responsive helpers)
@@ -42,7 +41,6 @@
 // Libraries
 @import "_library/_base.scss"; // basic styles
 @import "_library/_print.scss"; // print quick reset
-@import "_library/_styling.scss"; // minor stylings
 @import "_library/_misc.scss"; // skip links, hyphens
 @import "_library/_layout.scss"; // alignment, modules, positionning
 @import "_library/_utilities.scss"; // width and spacers helpers
