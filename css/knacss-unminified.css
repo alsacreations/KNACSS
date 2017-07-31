@@ -1811,7 +1811,8 @@ label {
 [type="text"],
 [type="time"],
 [type="url"],
-[type="week"] select,
+[type="week"],
+select,
 textarea {
   white-space: nowrap;
   font-family: inherit;
@@ -1834,6 +1835,7 @@ textarea {
 [type="submit"] {
   background-color: #777;
   color: #fff;
+  cursor: pointer;
 }
 
 input[disabled] {
@@ -2065,6 +2067,74 @@ button:focus {
 .button--unstyled:focus {
   box-shadow: none;
   outline: none;
+}
+
+.button-burger {
+  position: relative;
+  height: 2.4rem;
+  width: 2.8rem;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(left, currentColor, currentColor);
+  background-image: linear-gradient(to right, currentColor, currentColor);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 5px;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  color: #333;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: 0.25s cubic-bezier(0.17, 0.67, 0.89, 1.4);
+  transition: 0.25s cubic-bezier(0.17, 0.67, 0.89, 1.4);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  will-change: transform;
+}
+
+.button-burger::before, .button-burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 5px;
+  background: currentColor;
+  -webkit-transition: .25s;
+  transition: .25s;
+  -webkit-transition-property: top, -webkit-transform;
+  transition-property: top, -webkit-transform;
+  transition-property: transform, top;
+  transition-property: transform, top, -webkit-transform;
+  will-change: transform, top;
+}
+
+.button-burger::before {
+  top: 0;
+}
+
+.button-burger:after {
+  top: calc(100% - 4px);
+}
+
+.button-burger:focus, .button-burger.is-active, .button-burger.js-active {
+  background-image: none;
+}
+
+.button-burger:focus::before, .button-burger:focus::after, .button-burger.is-active::before, .button-burger.is-active::after, .button-burger.js-active::before, .button-burger.js-active::after {
+  top: 50%;
+}
+
+.button-burger:focus::before, .button-burger.is-active::before, .button-burger.js-active::before {
+  -webkit-transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 45deg);
+          transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 45deg);
+}
+
+.button-burger:focus::after, .button-burger.is-active::after, .button-burger.js-active::after {
+  -webkit-transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
+          transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
 }
 
 /* ----------------------------- */

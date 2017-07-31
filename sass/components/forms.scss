@@ -38,7 +38,7 @@ label {
 [type="text"],
 [type="time"],
 [type="url"],
-[type="week"]
+[type="week"],
 select,
 textarea {
   white-space: nowrap;
@@ -60,6 +60,7 @@ textarea {
 [type="submit"] {
   background-color: $color-border;
   color: $color-light;
+  cursor: pointer;
 }
 
 input[disabled] {

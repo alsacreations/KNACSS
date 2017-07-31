@@ -93,3 +93,62 @@ button {
     }
   }
 }
+
+// burger button
+.button-burger {
+  position: relative;
+  height: 2.4rem;
+  width: 2.8rem;
+  background-color: transparent;
+  background-image: linear-gradient(to right, currentColor, currentColor);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 5px;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  color: #333;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: .25s cubic-bezier(.17,.67,.89,1.4);
+  transition-property: transform;
+  will-change: transform;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    display: block;
+    height: 5px;
+    background: currentColor;
+    transition: .25s;
+    transition-property: transform, top;
+    will-change: transform, top;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &:after {
+    top: calc(100% - 4px);
+  }
+
+  &:focus,
+  &.is-active,
+  &.js-active {
+    background-image: none;
+
+    &::before,
+    &::after {
+       top: 50%;
+    }
+    &::before {
+      transform: translate3d(0,-50%,0) rotate3d(0,0,1,45deg);
+    }
+    &::after {
+      transform: translate3d(0,-50%,0) rotate3d(0,0,1,-45deg);
+    }
+  }
+}
