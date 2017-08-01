@@ -3,7 +3,7 @@
 /* ----------------------------- */
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 
-.o-autogrid {
+.autogrid {
   @media (min-width: $small) {
     display: grid;
     grid-auto-flow: column;

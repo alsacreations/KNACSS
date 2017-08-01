@@ -1732,7 +1732,7 @@ ul.is-unstyled, ul.unstyled {
 /* ----------------------------- */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 @media (min-width: 576px) {
-  .o-media {
+  .media {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1740,26 +1740,20 @@ ul.is-unstyled, ul.unstyled {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .o-media-content {
+  .media-media-content {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    min-width: 0;
-    /* avoid min-width:auto */
   }
-}
-
-/* Media variants */
-@media (min-width: 576px) {
-  .o-media--reverse {
+  .media-figure--center {
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  .media--reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-  }
-  .o-media-figure--center {
-    -ms-flex-item-align: center;
-        align-self: center;
   }
 }
 
@@ -1768,19 +1762,19 @@ ul.is-unstyled, ul.unstyled {
 /* ----------------------------- */
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 @media (min-width: 576px) {
-  .o-autogrid {
+  .autogrid {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: column;
     grid-auto-column: 1fr;
   }
-  .o-autogrid.has-gutter {
+  .autogrid.has-gutter {
     grid-column-gap: 1rem;
   }
-  .o-autogrid.has-gutter-l {
+  .autogrid.has-gutter-l {
     grid-column-gap: 2rem;
   }
-  .o-autogrid.has-gutter-xl {
+  .autogrid.has-gutter-xl {
     grid-column-gap: 4rem;
   }
 }
@@ -2109,12 +2103,14 @@ button:focus {
 
 .btn--small,
 .button--small {
-  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  font-size: .8em;
 }
 
 .btn--big,
 .button--big {
-  font-size: 1.8rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.4em;
 }
 
 .btn--block,

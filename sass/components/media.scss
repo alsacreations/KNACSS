@@ -4,24 +4,21 @@
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 
 @media (min-width: $small) {
-  .o-media {
+  .media {
     display: flex;
     align-items: flex-start;
-  }
 
-  .o-media-content {
-    flex: 1;
-    min-width: 0; /* avoid min-width:auto */
-  }
-}
+    &-media-content {
+      flex: 1;
+    }
 
-/* Media variants */
-@media (min-width: $small) {
-  .o-media--reverse {
-    flex-direction: row-reverse;
-  }
-
-  .o-media-figure--center {
-    align-self: center;
+    // vertical align image
+    &-figure--center {
+      align-self: center;
+    }
+    // reverse variant
+    &--reverse {
+      flex-direction: row-reverse;
+    }
   }
 }
