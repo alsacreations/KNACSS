@@ -2312,11 +2312,11 @@ button:focus {
   }
 }
 
-.tabs-menu-link:hover {
+.tabs-menu-link:hover, .tabs-menu-link:focus {
   color: #777;
 }
 
-.tabs-menu-link.is-active, .tabs-menu-link:focus {
+.tabs-menu-link.is-active {
   outline: 0;
   color: #fff;
   background-color: #777;
