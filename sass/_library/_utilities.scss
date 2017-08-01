@@ -23,9 +23,11 @@
 }
 
 .is-disabled,
-[disabled] {
+[disabled],
+.is-disabled ~ label,
+[disabled] ~ label {
   opacity: 0.5;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
   filter: grayscale(1);
 }
 
