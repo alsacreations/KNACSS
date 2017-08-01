@@ -2317,7 +2317,6 @@ button:focus {
 }
 
 .tabs-menu-link.is-active {
-  outline: 0;
   color: #fff;
   background-color: #777;
 }
