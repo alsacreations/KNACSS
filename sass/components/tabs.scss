@@ -25,12 +25,12 @@
     text-decoration: none;
     transition: .25s background-color;
 
-    &:focus, &:hover {
-      outline: 0;
+    &:hover {
       color: $color-forms;
     }
 
-    &.is-active {
+    &.is-active, &:focus {
+      outline: 0;
       color: #fff;
       background-color: $color-forms;
     }
