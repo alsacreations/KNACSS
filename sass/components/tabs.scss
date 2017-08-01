@@ -1,0 +1,51 @@
+/* ----------------------------- */
+/* ==Tabs                        */
+/* ----------------------------- */
+/* see example on https://knacss.com/styleguide.html#tabs */
+/* NOTE : tabs need JavaScript to be activated */
+
+.tabs-menu {
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 2px solid $color-forms;
+
+  &-item {
+    @media (min-width: $tiny) {
+      display: inline-block;
+    }
+    margin-bottom: -2px;
+  }
+
+  &-link {
+    display: block;
+    @media (min-width: $tiny) {
+      display: inline-block;
+    }
+    padding: $tiny-value $medium-plus-value;
+    text-decoration: none;
+    transition: .25s background-color;
+
+    &:focus, &:hover {
+      outline: 0;
+      color: $color-forms;
+    }
+
+    &.is-active {
+      color: #fff;
+      background-color: $color-forms;
+    }
+  }
+}
+
+.tabs-content-item {
+  padding-top: 10px;
+
+  &[aria-hidden="true"] {
+    visibility: hidden;
+    @extend .visually-hidden;
+  }
+
+  &[aria-hidden="false"] {
+    visibility: visible;
+  }
+}
