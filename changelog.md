@@ -1,5 +1,7 @@
 # changelog v7.0.0beta (1er août 2017)
 - architecture globale revisitée (vendor, config, library, components)
+- refonte complète du système de grille (dorénavant basé sur Grid Layout)
+- création d'un mixin de grille
 - normalize.css v7.0.0
 - refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
