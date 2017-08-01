@@ -19,7 +19,7 @@
       width: 1.1em; height: 1.1em;
       border: 0;
       background: #fff;
-      border-radius: 6px;
+      border-radius: $border-radius;
       box-shadow:  0 0 0 2px $color-forms inset;
       transition: .25s background-color;
     }

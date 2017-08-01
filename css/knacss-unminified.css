@@ -23,6 +23,7 @@
   - Tables (data tables consistency)
   - Forms (forms consistency)
   - Buttons (buttons consistency)
+  - Checkbox (checkbox styles)
   - Badges (badges consistency)
   - Alerts (alerts consistency)
   - Grillade (Grid System in Flexbox)
@@ -1015,6 +1016,16 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
           flex-direction: row;
 }
 
+.flex-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .flex-container-v,
 .flex-column {
   -webkit-box-orient: vertical;
@@ -1069,7 +1080,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden {
+.visually-hidden, .button-burger > *, .checkbox {
   position: absolute !important;
   border: 0 !important;
   height: 1px !important;
@@ -1080,10 +1091,11 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 .is-disabled,
-[disabled] {
+[disabled],
+.is-disabled ~ label,
+[disabled] ~ label {
   opacity: 0.5;
-  pointer-events: none;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
@@ -1794,7 +1806,6 @@ fieldset legend {
 
 label {
   display: inline-block;
-  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -1836,11 +1847,6 @@ textarea {
   background-color: #777;
   color: #fff;
   cursor: pointer;
-}
-
-input[disabled] {
-  opacity: .5;
-  cursor: not-allowed;
 }
 
 input[readonly] {
@@ -2043,13 +2049,6 @@ button:focus {
   display: block;
 }
 
-.btn.disabled, .btn--disabled,
-.button.disabled,
-.button--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .btn--unstyled,
 .button--unstyled {
   padding: 0;
@@ -2074,8 +2073,8 @@ button:focus {
   height: 2.4rem;
   width: 2.8rem;
   background-color: transparent;
-  background-image: -webkit-linear-gradient(left, currentColor, currentColor);
-  background-image: linear-gradient(to right, currentColor, currentColor);
+  background-image: -webkit-linear-gradient(#000, #000);
+  background-image: linear-gradient(#000, #000);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 5px;
@@ -2101,7 +2100,7 @@ button:focus {
   right: 0;
   display: block;
   height: 5px;
-  background: currentColor;
+  background: #000;
   -webkit-transition: .25s;
   transition: .25s;
   -webkit-transition-property: top, -webkit-transform;
@@ -2135,6 +2134,41 @@ button:focus {
 .button-burger:focus::after, .button-burger.is-active::after, .button-burger.js-active::after {
   -webkit-transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
           transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
+}
+
+/* ----------------------------- */
+/* ==Checkbox                    */
+/* ----------------------------- */
+/* use .checkbox class on input type=checkbox */
+/* recommanded HTML : <input type="checkbox" class="checkbox" id="test1"><label for="test1">click here</label> */
+.checkbox ~ label {
+  cursor: pointer;
+}
+
+.checkbox ~ label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: baseline;
+  -webkit-transform: translateY(0.2rem);
+          transform: translateY(0.2rem);
+  margin-right: .5rem;
+  width: 1.1em;
+  height: 1.1em;
+  border: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 0 0 2px #777 inset;
+  -webkit-transition: .25s background-color;
+  transition: .25s background-color;
+}
+
+.checkbox:checked ~ label:before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+  background-color: #777;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 /* ----------------------------- */
