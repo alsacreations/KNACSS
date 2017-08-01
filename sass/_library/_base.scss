@@ -9,6 +9,8 @@ html {
 
 * {
   box-sizing: inherit;
+  /* avoid min-width: auto on flex and grid children */
+  min-width: 0;
 }
 
 html {

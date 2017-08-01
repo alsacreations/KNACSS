@@ -21,9 +21,5 @@
         grid-column-gap: $size;
       }
     }
-
-    & > * {
-      min-width: 0; /* avoid min-width: auto on children */
-    }
   }
 }

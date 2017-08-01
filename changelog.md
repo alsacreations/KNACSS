@@ -11,6 +11,7 @@
 - regroupement des styles des tableaux
 - suppression du namespace "kna-", ne devrait pas être problématique dès lors que Grillade sera devenu inutile dans KNACSS
 - automatisation des classes utilitaires via Sass
+- ajout de `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
 
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)
