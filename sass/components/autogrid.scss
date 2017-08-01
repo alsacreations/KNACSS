@@ -4,7 +4,7 @@
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 
 .autogrid {
-  @media (min-width: $small) {
+  @media (min-width: $tiny) {
     display: grid;
     grid-auto-flow: column;
     grid-auto-column: 1fr;
