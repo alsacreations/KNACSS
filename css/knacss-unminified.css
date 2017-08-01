@@ -1979,7 +1979,7 @@ button, .btn--primary,
 .button--inverse, .btn--ghost,
 .button--ghost {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;

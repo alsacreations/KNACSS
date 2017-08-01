@@ -6,7 +6,7 @@
 
 %btn {
   display: inline-block;
-  padding: $tiny-value $small-value;
+  padding: $small-value $small-plus-value;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -71,7 +71,7 @@ button {
     width: 100% !important;
     display: block;
   }
-  
+
   &--unstyled {
     padding: 0;
     border: none;
