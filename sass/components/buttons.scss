@@ -60,11 +60,13 @@ button {
 .btn,
 .button {
   &--small {
-    font-size: $base-font-size - 0.4rem;
+    padding: $tiny-plus-value $small-value;
+    font-size: .8em;
   }
 
   &--big {
-    font-size: $base-font-size + 0.4rem;
+    padding: $small-plus-value $medium-value;
+    font-size: 1.4em;
   }
 
   &--block {
