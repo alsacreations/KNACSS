@@ -49,7 +49,7 @@
 /* intermediate breakpoint */
 // -small-X suffix means "X columns when < small screen"
 // example : .grid-4-small-2 will be 1 column (< tiny) then 2 columns (< small) then 4 columns
-@media (min-width: $tiny) and (max-width: ($small -1)) {
+@media (min-width: $tiny) and (max-width: ($medium - 1)) {
    @for $i from 1 through 4{
     [class*="grid-"][class*="-small-#{$i}"] {
       grid-template-columns: repeat(#{$i}, 1fr);

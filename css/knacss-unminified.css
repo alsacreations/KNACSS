@@ -2654,7 +2654,7 @@ button:focus {
 }
 
 /* intermediate breakpoint */
-@media (min-width: 480px) and (max-width: 576px -1) {
+@media (min-width: 480px) and (max-width: 767px) {
   [class*="grid-"][class*="-small-1"] {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
