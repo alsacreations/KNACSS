@@ -1,0 +1,34 @@
+/* ----------------------------- */
+/* ==Rdio                    */
+/* ----------------------------- */
+/* use .radio class on input type=radio */
+/* recommanded HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
+
+.radio {
+  @extend .visually-hidden;
+
+  & ~ label {
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: baseline;
+      transform: translateY(.2rem);
+      margin-right: .5rem;
+      width: 1.1em; height: 1.1em;
+      border: 0;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow:  0 0 0 2px $color-forms inset;
+      transition: .25s background;
+    }
+  }
+  &:checked ~ label:before {
+    background-image: radial-gradient(circle at center, #fff 30%, transparent 38%);
+    background-color: $color-forms;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+}

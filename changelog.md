@@ -1,11 +1,11 @@
-# changelog v7.0.0beta (31 juillet 2017)
+# changelog v7.0.0beta (1er août 2017)
 - architecture globale revisitée (vendor, config, library, components)
 - normalize.css v7.0.0
 - refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des alertes, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout d'un bouton de navigation .button-burger
-- ajout des checkbox stylés
+- ajout des checkbox et radio stylés
 - refonte des styles de formulaires
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux

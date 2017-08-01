@@ -2140,7 +2140,7 @@ button:focus {
 /* ==Checkbox                    */
 /* ----------------------------- */
 /* use .checkbox class on input type=checkbox */
-/* recommanded HTML : <input type="checkbox" class="checkbox" id="test1"><label for="test1">click here</label> */
+/* recommanded HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
 .checkbox ~ label {
   cursor: pointer;
 }
