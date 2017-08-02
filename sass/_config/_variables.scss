@@ -26,15 +26,12 @@ $font-stack-headings  : sans-serif; // headings font
 $font-stack-monospace : consolas, courier, monospace; // monospace font
 
 // color scheme
-$color1         : #000;
-$color2         : #fff;
-$color3         : #333;
-$color4         : #000;
-$color5         : #6FA939;
-$color6         : #ddd;
-$color7         : #777;
 $color-light    : #fff;
 $color-dark     : #000;
+$color-gray1    : #ddd;
+$color-gray2    : #777;
+$color-gray3    : #333;
+$color-brand    : #6FA939;
 $color-primary  : #0275D8;
 $color-success  : #5CB85C;
 $color-info     : #5BC0DE;
@@ -45,16 +42,14 @@ $color-ghost    : transparent;
 $color-muted    : #F7F7F7;
 
 // colors used in project
-$color-base      : $color1;
-$background-base : $color2;
+$color-base      : $color-dark;
+$background-base : $color-light;
 
-$color-link      : $color3;
-$color-link-hover: $color4;
+$color-link      : $color-gray3;
+$color-link-hover: $color-dark;
 
-$brand-primary: $color5;
-
-$color-forms: $color7;
-$color-burger: $color1;
+$color-forms     : $color-gray2;
+$color-burger    : $color-dark;
 
 // button, badges, alerts color variants list
 // name - background-color - color - border
