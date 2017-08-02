@@ -1039,7 +1039,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
           flex-direction: column;
 }
 
-.flex-item-fluid {
+.flex-item-fluid,
+.item-fluid {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
