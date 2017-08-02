@@ -28,9 +28,12 @@ $font-stack-monospace : consolas, courier, monospace; // monospace font
 // color scheme
 $color-light    : #fff;
 $color-dark     : #000;
-$color-gray1    : #ddd;
-$color-gray2    : #777;
-$color-gray3    : #333;
+$color-gray1    : #333;
+$color-gray2    : #454d5d;
+$color-gray3    : #727e96;
+$color-gray4    : #acb3c2;
+$color-gray5    : #e7e9ed;
+
 $color-brand    : #6FA939;
 $color-primary  : #0275D8;
 $color-success  : #5CB85C;
@@ -45,10 +48,10 @@ $color-muted    : #F7F7F7;
 $color-base      : $color-dark;
 $background-base : $color-light;
 
-$color-link      : $color-gray3;
+$color-link      : $color-gray1;
 $color-link-hover: $color-dark;
 
-$color-forms     : $color-gray2;
+$color-forms     : $color-gray3;
 $color-burger    : $color-dark;
 
 // button, badges, alerts color variants list

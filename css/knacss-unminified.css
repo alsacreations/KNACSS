@@ -1899,7 +1899,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  box-shadow: 0 0 0 1px #777 inset;
+  box-shadow: 0 0 0 1px #727e96 inset;
   color: #000;
   vertical-align: middle;
   padding: 0.5rem 1rem;
@@ -1914,7 +1914,7 @@ textarea {
 }
 
 [type="submit"] {
-  background-color: #777;
+  background-color: #727e96;
   color: #fff;
   cursor: pointer;
 }
@@ -2229,14 +2229,14 @@ button:focus {
   border: 0;
   background: #fff;
   border-radius: 0;
-  box-shadow: 0 0 0 2px #777 inset;
+  box-shadow: 0 0 0 2px #727e96 inset;
   -webkit-transition: .25s background-color;
   transition: .25s background-color;
 }
 
 .checkbox:checked ~ label:before {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
-  background-color: #777;
+  background-color: #727e96;
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
@@ -2264,7 +2264,7 @@ button:focus {
   border: 0;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #777 inset;
+  box-shadow: 0 0 0 2px #727e96 inset;
   -webkit-transition: .25s background;
   transition: .25s background;
 }
@@ -2272,7 +2272,7 @@ button:focus {
 .radio:checked ~ label:before {
   background-image: -webkit-radial-gradient(center circle, #fff 30%, transparent 38%);
   background-image: radial-gradient(circle at center, #fff 30%, transparent 38%);
-  background-color: #777;
+  background-color: #727e96;
   background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -2286,7 +2286,7 @@ button:focus {
 .tabs-menu {
   list-style: none;
   padding-left: 0;
-  border-bottom: 2px solid #777;
+  border-bottom: 2px solid #727e96;
 }
 
 .tabs-menu-item {
@@ -2314,12 +2314,12 @@ button:focus {
 }
 
 .tabs-menu-link:hover, .tabs-menu-link:focus {
-  color: #777;
+  color: #727e96;
 }
 
 .tabs-menu-link.is-active {
   color: #fff;
-  background-color: #777;
+  background-color: #727e96;
 }
 
 .tabs-content-item {
