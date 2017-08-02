@@ -2552,6 +2552,11 @@ button:focus {
   }
 }
 
+[class*="grid-1"] {
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+}
+
 [class*="grid-2"] {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
@@ -2605,6 +2610,18 @@ button:focus {
 [class*="grid-12"] {
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
+}
+
+[class*="col-1"] {
+  -ms-grid-column-span: 1;
+  -ms-grid-column: auto;
+      grid-column: auto/span 1;
+}
+
+[class*="row-1"] {
+  -ms-grid-row-span: 1;
+  -ms-grid-row: auto;
+      grid-row: auto/span 1;
 }
 
 [class*="col-2"] {
@@ -2776,6 +2793,9 @@ button:focus {
     -ms-grid-column-span: 4;
     -ms-grid-column: auto;
         grid-column: auto/span 4;
+  }
+  [class*="-small-all"] {
+    grid-column: 1 / -1;
   }
 }
 

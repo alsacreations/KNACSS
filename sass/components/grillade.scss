@@ -29,14 +29,14 @@
 }
 
 // grid constructor (.grid-2 to .grid-12)
-@for $i from 2 through 12 {
+@for $i from 1 through 12 {
   [class*="grid-#{$i}"] {
     grid-template-columns: repeat(#{$i}, 1fr);
   }
 }
 
-// grid items constructor (.col-2 to .col-12, .row-2 to .row-12)
-@for $i from 2 through 12 {
+// grid items constructor (.col-1 to .col-12, .row-1 to .row-12)
+@for $i from 1 through 12 {
   [class*="col-#{$i}"] {
     grid-column: auto / span #{$i};
   }
@@ -58,6 +58,9 @@
     [class*="col-"][class*="-small-#{$i}"] {
       grid-column: auto / span #{$i};
     }
+  }
+  [class*="-small-all"] {
+    grid-column: 1 / -1;
   }
 }
 
