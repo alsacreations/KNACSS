@@ -9,6 +9,7 @@
 - ajout d'un bouton de navigation .button-burger
 - ajout des checkbox et radio stylés
 - ajout des onglets (tabs)
+- ajout des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
 - refonte des styles de formulaires
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux
