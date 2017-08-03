@@ -1113,6 +1113,10 @@ ul.is-unstyled, ul.unstyled {
   padding-left: 0;
 }
 
+.color--inverse {
+  color: #fff;
+}
+
 /* Width Helpers */
 /* ------------- */
 /* blocks widths (percentage and pixels) */
