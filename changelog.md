@@ -1,7 +1,9 @@
-# changelog v7.0.0beta (1er août 2017)
+# changelog v7.0.0beta (août - ? 2017)
 - architecture globale revisitée (vendor, config, library, components)
 - refonte complète du système de grille (dorénavant basé sur Grid Layout)
 - création d'un mixin de grille
+- déplacement des variables de gouttières de grillade.scss vers variables.scss
+- déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
 - normalize.css v7.0.0
 - refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)

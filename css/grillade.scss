@@ -1,14 +1,3 @@
-// Responsive breakpoints variables
-
-// Warning : you should use your own values, regardless of the devices
-// Best practise is Mobile First: (max-width: ($BP - 1)) and (min-width: $BP)
-
-$tiny: 480px !default; // or 'em' if you prefer, of course
-$small: 576px !default;
-$medium: 768px !default;
-$large: 992px !default;
-$extra-large: 1200px !default;
-
 /* --------------------------------------- */
 /* ==Grillade : ultra light Grid System    */
 /* --------------------------------------- */
@@ -17,6 +6,13 @@ $extra-large: 1200px !default;
 // if you need complex Grid :
 //   1- use vanilla CSS Grid Layout spec (perfect for you)
 //   2- use Bootstrap (good luck)
+
+@if (not variable_exists(tiny)) or (not variable_exists(small))  or (not variable_exists(medium))
+  {
+  $tiny: 480px !global;
+  $small: 576px !global;
+  $medium: 768px !global;
+}
 
 [class*=" grid-"],
 [class^="grid-"] {

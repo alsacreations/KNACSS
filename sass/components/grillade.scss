@@ -7,6 +7,13 @@
 //   1- use vanilla CSS Grid Layout spec (perfect for you)
 //   2- use Bootstrap (good luck)
 
+@if (not variable_exists(tiny)) or (not variable_exists(small))  or (not variable_exists(medium))
+  {
+  $tiny: 480px !global;
+  $small: 576px !global;
+  $medium: 768px !global;
+}
+
 [class*=" grid-"],
 [class^="grid-"] {
   @media (min-width: $tiny) {
