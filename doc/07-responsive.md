@@ -6,11 +6,11 @@ Par défaut, KNACSS tient compte des valeurs de points de rupture suivants :
 
 ```
 // breakpoints (choose unit you prefer)
-$tiny: 543px !default; // or 'em' if you prefer, of course
-$small: 767px !default;
-$medium: 991px !default;
-$large: 1199px !default;
-$extra-large: 1439px !default;
+$tiny: 480px; // or 'em' if you prefer, of course
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;
 ```
 
 _Les valeurs des points de rupture peuvent être modifiées au sein du fichier de configuration LESS / Sass._
