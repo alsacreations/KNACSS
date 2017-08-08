@@ -25,7 +25,7 @@ _Les valeurs des points de rupture peuvent être modifiées au sein du fichier d
   - mais aussi des alias qui représentent des intervalles et que l'on utilise sous forme de mixins (voi plus bas)
 3. Éviter de multiplier les valeurs. Un maximum de 5 ou 6 breakpoints devrait suffire dans la grande majorité des projets
 4. **Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, adopter la convention suivante pour définir les intervalles :
-`(max-width: $BP) and (min-width: ($BP + 1))`**
+`(max-width: ($BP - 1)) and (min-width: $BP)`**
 
 Exemple :
 
