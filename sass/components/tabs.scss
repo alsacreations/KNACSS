@@ -25,6 +25,7 @@
 .tabs-menu-link:focus {
   border-bottom-color: $color-forms;
   color: $color-forms;
+  outline: 0;
 }
 
 @media (min-width: $small) {
