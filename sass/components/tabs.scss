@@ -5,46 +5,43 @@
 /* NOTE : tabs need JavaScript to be activated */
 
 .tabs-menu {
-  list-style: none;
-  padding-left: 0;
-  border-bottom: 2px solid $color-forms;
+  border-bottom: 2px solid #ddd;
+}
 
-  &-item {
-    @media (min-width: $tiny) {
-      display: inline-block;
-    }
-    margin-bottom: -2px;
-  }
+.tabs-menu-link {
+  display: block;
+  margin-bottom: -2px;
+  padding: $tiny-value $medium-plus-value;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  transition: .25s;
+  transition-property: color, border, background-color;
+}
 
-  &-link {
-    display: block;
-    @media (min-width: $tiny) {
-      display: inline-block;
-    }
-    padding: $tiny-value $medium-plus-value;
-    text-decoration: none;
-    transition: .25s background-color;
+.tabs-menu-link.is-active {
+  border-bottom-color: #ddd;;
+  outline: 0;
+}
+.tabs-menu-link:focus {
+  border-bottom-color: $color-forms;
+  color: $color-forms;
+}
 
-    &:hover, &:focus  {
-      color: $color-forms;
-    }
-
-    &.is-active {
-      color: #fff;
-      background-color: $color-forms;
-    }
+@media (min-width: $small) {
+  .tabs-menu-link {
+    display: inline-block;
   }
 }
 
 .tabs-content-item {
   padding-top: 10px;
+}
 
-  &[aria-hidden="true"] {
-    visibility: hidden;
-    @extend .visually-hidden;
-  }
+.tabs-content-item[aria-hidden="true"] {
+  visibility: hidden;
+  @extend .visually-hidden;
+}
 
-  &[aria-hidden="false"] {
-    visibility: visible;
-  }
+.tabs-content-item[aria-hidden="false"] {
+  visibility: visible;
 }

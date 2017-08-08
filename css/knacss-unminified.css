@@ -2288,42 +2288,35 @@ button:focus {
 /* see example on https://knacss.com/styleguide.html#tabs */
 /* NOTE : tabs need JavaScript to be activated */
 .tabs-menu {
-  list-style: none;
-  padding-left: 0;
-  border-bottom: 2px solid #727e96;
-}
-
-.tabs-menu-item {
-  margin-bottom: -2px;
-}
-
-@media (min-width: 480px) {
-  .tabs-menu-item {
-    display: inline-block;
-  }
+  border-bottom: 2px solid #ddd;
 }
 
 .tabs-menu-link {
   display: block;
+  margin-bottom: -2px;
   padding: 0.5rem 3rem;
+  border-bottom: 4px solid transparent;
   text-decoration: none;
-  -webkit-transition: .25s background-color;
-  transition: .25s background-color;
-}
-
-@media (min-width: 480px) {
-  .tabs-menu-link {
-    display: inline-block;
-  }
-}
-
-.tabs-menu-link:hover, .tabs-menu-link:focus {
-  color: #727e96;
+  -webkit-transition: .25s;
+  transition: .25s;
+  -webkit-transition-property: color, border, background-color;
+  transition-property: color, border, background-color;
 }
 
 .tabs-menu-link.is-active {
-  color: #fff;
-  background-color: #727e96;
+  border-bottom-color: #ddd;
+  outline: 0;
+}
+
+.tabs-menu-link:focus {
+  border-bottom-color: #727e96;
+  color: #727e96;
+}
+
+@media (min-width: 576px) {
+  .tabs-menu-link {
+    display: inline-block;
+  }
 }
 
 .tabs-content-item {
