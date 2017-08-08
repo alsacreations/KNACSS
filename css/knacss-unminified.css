@@ -2311,6 +2311,7 @@ button:focus {
 .tabs-menu-link:focus {
   border-bottom-color: #727e96;
   color: #727e96;
+  outline: 0;
 }
 
 @media (min-width: 576px) {
