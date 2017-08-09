@@ -102,7 +102,8 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -143,7 +144,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -339,7 +341,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -377,7 +380,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -469,11 +473,13 @@ template {
 /* ----------------------------- */
 /* switching to border-box model for all elements */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 * {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
   /* avoid min-width: auto on flex and grid children */
   min-width: 0;
 }
@@ -809,7 +815,8 @@ kbd {
 @media print {
   * {
     background: transparent !important;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
   body {
@@ -1753,6 +1760,7 @@ ul.is-unstyled, ul.unstyled {
   }
   .media-figure--center {
     -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
         align-self: center;
   }
   .media--reverse {
@@ -1903,15 +1911,18 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  box-shadow: 0 0 0 1px #727e96 inset;
+  -webkit-box-shadow: 0 0 0 1px #727e96 inset;
+          box-shadow: 0 0 0 1px #727e96 inset;
   color: #000;
   vertical-align: middle;
   padding: 0.5rem 1rem;
   margin: 0;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  -webkit-transition-property: box-shadow, background-color, color, border;
+  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
+  transition-property: background-color, color, border, -webkit-box-shadow;
   transition-property: box-shadow, background-color, color, border;
+  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1987,8 +1998,10 @@ button, .btn--primary,
   user-select: none;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  -webkit-transition-property: box-shadow, background-color, color, border;
+  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
+  transition-property: background-color, color, border, -webkit-box-shadow;
   transition-property: box-shadow, background-color, color, border;
+  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -2013,7 +2026,8 @@ button:focus {
 .button--primary {
   background-color: #0275D8;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--primary:active, .btn--primary:focus, .btn--primary:hover,
@@ -2027,7 +2041,8 @@ button:focus {
 .button--success {
   background-color: #5CB85C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--success:active, .btn--success:focus, .btn--success:hover,
@@ -2041,7 +2056,8 @@ button:focus {
 .button--info {
   background-color: #5BC0DE;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--info:active, .btn--info:focus, .btn--info:hover,
@@ -2055,7 +2071,8 @@ button:focus {
 .button--warning {
   background-color: #F0AD4E;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--warning:active, .btn--warning:focus, .btn--warning:hover,
@@ -2069,7 +2086,8 @@ button:focus {
 .button--danger {
   background-color: #D9534F;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--danger:active, .btn--danger:focus, .btn--danger:hover,
@@ -2083,7 +2101,8 @@ button:focus {
 .button--inverse {
   background-color: #292B2C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn--inverse:active, .btn--inverse:focus, .btn--inverse:hover,
@@ -2097,7 +2116,8 @@ button:focus {
 .button--ghost {
   background-color: transparent;
   color: #fff;
-  box-shadow: 0 0 0 1px #fff inset;
+  -webkit-box-shadow: 0 0 0 1px #fff inset;
+          box-shadow: 0 0 0 1px #fff inset;
 }
 
 .btn--ghost:active, .btn--ghost:focus, .btn--ghost:hover,
@@ -2132,7 +2152,8 @@ button:focus {
   text-align: left;
   background: none;
   border-radius: 0;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2140,7 +2161,8 @@ button:focus {
 
 .btn--unstyled:focus,
 .button--unstyled:focus {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   outline: none;
 }
 
@@ -2149,7 +2171,7 @@ button:focus {
   height: 2.4rem;
   width: 2.8rem;
   background-color: transparent;
-  background-image: -webkit-linear-gradient(#000, #000);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
   background-image: linear-gradient(#000, #000);
   background-position: center;
   background-repeat: no-repeat;
@@ -2233,7 +2255,8 @@ button:focus {
   border: 0;
   background: #fff;
   border-radius: 0;
-  box-shadow: 0 0 0 2px #727e96 inset;
+  -webkit-box-shadow: 0 0 0 2px #727e96 inset;
+          box-shadow: 0 0 0 2px #727e96 inset;
   -webkit-transition: .25s background-color;
   transition: .25s background-color;
 }
@@ -2268,13 +2291,13 @@ button:focus {
   border: 0;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #727e96 inset;
+  -webkit-box-shadow: 0 0 0 2px #727e96 inset;
+          box-shadow: 0 0 0 2px #727e96 inset;
   -webkit-transition: .25s background;
   transition: .25s background;
 }
 
 .radio:checked ~ label:before {
-  background-image: -webkit-radial-gradient(center circle, #fff 30%, transparent 38%);
   background-image: radial-gradient(circle at center, #fff 30%, transparent 38%);
   background-color: #727e96;
   background-position: center;
@@ -2382,43 +2405,50 @@ button:focus {
 .badge--primary {
   background-color: #0275D8;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--success {
   background-color: #5CB85C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--info {
   background-color: #5BC0DE;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--warning {
   background-color: #F0AD4E;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--danger {
   background-color: #D9534F;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--inverse {
   background-color: #292B2C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .badge--ghost {
   background-color: transparent;
   color: #fff;
-  box-shadow: 0 0 0 1px #fff inset;
+  -webkit-box-shadow: 0 0 0 1px #fff inset;
+          box-shadow: 0 0 0 1px #fff inset;
 }
 
 .badge--small {
@@ -2464,43 +2494,50 @@ button:focus {
 .alert--primary {
   background-color: #0275D8;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--success {
   background-color: #5CB85C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--info {
   background-color: #5BC0DE;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--warning {
   background-color: #F0AD4E;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--danger {
   background-color: #D9534F;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--inverse {
   background-color: #292B2C;
   color: #fff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .alert--ghost {
   background-color: transparent;
   color: #fff;
-  box-shadow: 0 0 0 1px #fff inset;
+  -webkit-box-shadow: 0 0 0 1px #fff inset;
+          box-shadow: 0 0 0 1px #fff inset;
 }
 
 .alert--small {
