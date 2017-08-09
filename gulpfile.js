@@ -16,7 +16,7 @@ gulp.task('css', function () {
     .pipe(sass({
       outputStyle: 'expanded' // CSS non minifiée plus lisible ('}' à la ligne)
     }))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ grid: true }))
     .pipe(rename('knacss-unminified.css'))
     .pipe(gulp.dest('./css/'))
     .pipe(rename('knacss.css'))
@@ -31,7 +31,7 @@ gulp.task('grillade', function() {
     .pipe(concat('grillade.scss'))
     .pipe(gulp.dest('./css/'))
     .pipe(sass())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ grid: true }))
     .pipe(minifycss())
     .pipe(gulp.dest('./css/'));
 });

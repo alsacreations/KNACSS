@@ -9,26 +9,26 @@
 /*
 1- Normalize (basic reset)
 2- Libraries  :
-  - Base (basic global styles)
-  - Print (basic print styles)
+  - Base
+  - Print
   - Misc (hyphens)
   - Layout (alignment, modules, positionning)
   - Utilities (width and spacers helpers)
-  - Responsive (Responsive helpers)
+  - Responsive helpers
   - WordPress reset (disabled by default)
 3- Components :
   - Media object
   - Autogrid object
-  - Skip Links
-  - Tables (data tables consistency)
-  - Forms (forms consistency)
-  - Buttons (buttons consistency)
-  - Checkbox (checkbox styles)
-  - Radio (radio styles)
-  - Tabs (tabs styles)
-  - Badges (badges consistency)
-  - Alerts (alerts consistency)
-  - Grillade (Grid System in Flexbox)
+  - Skip Links for accessibility
+  - Tables
+  - Forms
+  - Buttons
+  - Checkbox
+  - Radio
+  - Tabs
+  - Badges
+  - Alerts
+  - Grillade (Grid System)
 */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
