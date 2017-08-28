@@ -8,6 +8,7 @@
   @extend .visually-hidden;
 
   & ~ label {
+    display: flex;
     cursor: pointer;
 
     &:before {
