@@ -27,11 +27,19 @@ gulp.task('css', function () {
 });
 
 gulp.task('grillade', function() {
-  return gulp.src(['./sass/_config/_breakpoints.scss', './sass/components/grillade.scss'])
-    .pipe(concat('grillade.scss'))
+  return gulp.src('./sass/components/grillade.scss')
     .pipe(gulp.dest('./css/'))
     .pipe(sass())
     .pipe(autoprefixer({ grid: true }))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./css/'));
+});
+
+gulp.task('grillade-v6', function() {
+  return gulp.src('./sass/components/grillade-v6.scss')
+    .pipe(gulp.dest('./css/'))
+    .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(minifycss())
     .pipe(gulp.dest('./css/'));
 });

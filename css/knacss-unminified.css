@@ -2240,6 +2240,9 @@ button:focus {
 /* use .checkbox class on input type=checkbox */
 /* recommanded HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
 .checkbox ~ label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
 }
 
@@ -2276,6 +2279,9 @@ button:focus {
 /* use .radio class on input type=radio */
 /* recommanded HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
 .radio ~ label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
 }
 

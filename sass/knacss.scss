@@ -62,7 +62,9 @@
 @import "components/arrows.scss"; // arrows styles
 @import "components/badges.scss"; // badges styles
 @import "components/alerts.scss"; // alerts styles
-@import "components/grillade.scss"; // grids
+
+// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "components/grillade-v6.scss"
+@import "components/grillade.scss"; // grid system
 
 
 
