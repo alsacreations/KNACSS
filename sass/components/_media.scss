@@ -1,6 +1,7 @@
 /* ----------------------------- */
 /* ==Media object                */
 /* ----------------------------- */
+/* recommanded HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 
 @media (min-width: $tiny) {
@@ -8,7 +9,7 @@
     display: flex;
     align-items: flex-start;
 
-    &-media-content {
+    &-content {
       flex: 1;
     }
 

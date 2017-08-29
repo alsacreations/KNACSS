@@ -1051,7 +1051,6 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  min-width: 0;
 }
 
 .flex-item-first,
@@ -1743,6 +1742,7 @@ ul.is-unstyled, ul.unstyled {
 /* ----------------------------- */
 /* ==Media object                */
 /* ----------------------------- */
+/* recommanded HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 @media (min-width: 480px) {
   .media {
@@ -1753,7 +1753,7 @@ ul.is-unstyled, ul.unstyled {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .media-media-content {
+  .media-content {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -1774,6 +1774,7 @@ ul.is-unstyled, ul.unstyled {
 /* ----------------------------- */
 /* ==Autogrid object             */
 /* ----------------------------- */
+/* recommanded HTML : <div class="autogrid">... some elements ...</div> */
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 @media (min-width: 480px) {
   .autogrid {
