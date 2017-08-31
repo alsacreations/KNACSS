@@ -64,6 +64,7 @@ h1, .h1-like {
   @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
+  font-weight: bold;
 }
 
 h2, .h2-like {
@@ -76,6 +77,7 @@ h2, .h2-like {
   @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
+  font-weight: bold;
 }
 
 h3, .h3-like {
@@ -85,6 +87,7 @@ h3, .h3-like {
       font-size: $h3-size-l;
     }
   }
+  font-weight: bold;
 }
 
 h4, .h4-like {
@@ -94,6 +97,7 @@ h4, .h4-like {
       font-size: $h4-size-l;
     }
   }
+  font-weight: bold;
 }
 
 h5, .h5-like {
@@ -103,6 +107,7 @@ h5, .h5-like {
       font-size: $h5-size-l;
     }
   }
+  font-weight: bold;
 }
 
 h6, .h6-like {
@@ -112,6 +117,7 @@ h6, .h6-like {
       font-size: $h6-size-l;
     }
   }
+  font-weight: bold;
 }
 
 /* Vertical rythm for blocks */
