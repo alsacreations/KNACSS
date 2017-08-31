@@ -524,6 +524,7 @@ a:focus, a:hover, a:active {
 h1, .h1-like {
   font-size: 2.8rem;
   font-family: sans-serif;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -535,6 +536,7 @@ h1, .h1-like {
 h2, .h2-like {
   font-size: 2.4rem;
   font-family: sans-serif;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -545,6 +547,7 @@ h2, .h2-like {
 
 h3, .h3-like {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -555,6 +558,7 @@ h3, .h3-like {
 
 h4, .h4-like {
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -565,6 +569,7 @@ h4, .h4-like {
 
 h5, .h5-like {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -575,6 +580,7 @@ h5, .h5-like {
 
 h6, .h6-like {
   font-size: 1.4rem;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
