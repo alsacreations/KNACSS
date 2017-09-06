@@ -91,17 +91,20 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 
 .flex-container-h,
 .flex-row {
+  display: flex;
   flex-direction: row;
-}
-
-.flex-row-reverse {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
 }
 
 .flex-container-v,
 .flex-column {
+  display: flex;
   flex-direction: column;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .flex-item-fluid,
