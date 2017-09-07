@@ -92,11 +92,11 @@ button {
   }
 }
 
-// burger button
+// nav "burger" button
 // active it with a JS toggle-class to .is-active
-// recommanded HTML : <button class="button-burger" type="button" role="button" aria-label="open/close navigation"><i></i></button>
+// recommanded HTML : <button class="nav-button" type="button" role="button" aria-label="open/close navigation"><i></i></button>
 // see doc : https://knacss.com/styleguide.html#buttons
-.button-burger {
+.nav-button {
   padding: 0;
   background-color: transparent;
   outline: 0;

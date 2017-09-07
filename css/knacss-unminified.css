@@ -2182,7 +2182,7 @@ button:focus {
   outline: none;
 }
 
-.button-burger {
+.nav-button {
   padding: 0;
   background-color: transparent;
   outline: 0;
@@ -2191,7 +2191,7 @@ button:focus {
   -webkit-tap-highlight-color: transparent;
 }
 
-.button-burger > * {
+.nav-button > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2224,7 +2224,7 @@ button:focus {
   will-change: transform, background;
 }
 
-.button-burger > *::before, .button-burger > *::after {
+.nav-button > *::before, .nav-button > *::after {
   content: "";
   height: 5px;
   background: #333;
@@ -2237,23 +2237,23 @@ button:focus {
   will-change: transform, top;
 }
 
-.button-burger:hover > * {
+.nav-button:hover > * {
   background-color: transparent;
 }
 
-.button-burger.is-active > * {
+.nav-button.is-active > * {
   background-image: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.button-burger.is-active > *::before {
+.nav-button.is-active > *::before {
   -webkit-transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
           transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
 }
 
-.button-burger.is-active > *::after {
+.nav-button.is-active > *::after {
   -webkit-transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
           transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
 }
