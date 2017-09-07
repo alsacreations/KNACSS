@@ -52,7 +52,6 @@ $color-link      : $color-gray1;
 $color-link-hover: $color-dark;
 
 $color-forms     : $color-gray3;
-$color-burger    : $color-dark;
 
 // buttons, badges, alerts color variants list
 // name - background-color - color - border
@@ -65,6 +64,15 @@ $variants-list: (
   (inverse,    $color-inverse,    $color-light,    none),
   (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
 );
+
+// tabs
+$border-tabs            : $color-gray5;
+$border-tabs-active     : $color-gray3;
+$color-tabs             : $color-base;
+$color-tabs-active      : $color-gray3;
+$background-tabs        : transparent;
+$background-tabs-active : transparent;
+$border-radius-tabs     : 0;
 
 // burger button
 $color-burger             : $color-gray1;

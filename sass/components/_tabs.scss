@@ -4,45 +4,50 @@
 /* see example on https://knacss.com/styleguide.html#tabs */
 /* NOTE : tabs need JavaScript to be activated */
 
+
 .tabs-menu {
-  border-bottom: 2px solid #ddd;
-}
+  border-bottom: 2px solid $border-tabs;
 
-.tabs-menu-link {
-  display: block;
-  margin-bottom: -2px;
-  padding: $tiny-value $medium-plus-value;
-  border-bottom: 4px solid transparent;
-  text-decoration: none;
-  transition: .25s;
-  transition-property: color, border, background-color;
-}
+  &-link {
+    display: block;
+    margin-bottom: -2px;
+    padding: $tiny-value $medium-plus-value;
+    border-bottom: 4px solid transparent;
+    color: $color-tabs;
+    background: $background-tabs;
+    text-decoration: none;
+    border-radius: $border-radius-tabs $border-radius-tabs 0 0;
+    transition: .25s;
+    transition-property: color, border, background-color;
 
-.tabs-menu-link.is-active {
-  border-bottom-color: #ddd;;
-  outline: 0;
-}
-.tabs-menu-link:focus {
-  border-bottom-color: $color-forms;
-  color: $color-forms;
-  outline: 0;
-}
+    &.is-active {
+      border-bottom-color: $border-tabs-active;
+      color: $color-tabs-active;
+      background: $background-tabs-active;
+      outline: 0;
+    }
 
-@media (min-width: $small) {
-  .tabs-menu-link {
-    display: inline-block;
+    &:focus {
+      border-bottom-color: $border-tabs-active;
+      color: $color-tabs-active;
+      outline: 0;
+    }
+
+    @media (min-width: $small) {
+      display: inline-block;
+    }
   }
 }
 
 .tabs-content-item {
-  padding-top: 10px;
-}
+  padding-top: $small-value;
 
-.tabs-content-item[aria-hidden="true"] {
-  visibility: hidden;
-  @extend .visually-hidden;
-}
+  &[aria-hidden="true"] {
+    visibility: hidden;
+    @extend .visually-hidden;
+  }
 
-.tabs-content-item[aria-hidden="false"] {
-  visibility: visible;
+  &[aria-hidden="false"] {
+    visibility: visible;
+  }
 }

@@ -2341,7 +2341,7 @@ button:focus {
 /* see example on https://knacss.com/styleguide.html#tabs */
 /* NOTE : tabs need JavaScript to be activated */
 .tabs-menu {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #e7e9ed;
 }
 
 .tabs-menu-link {
@@ -2349,7 +2349,10 @@ button:focus {
   margin-bottom: -2px;
   padding: 0.5rem 3rem;
   border-bottom: 4px solid transparent;
+  color: #000;
+  background: transparent;
   text-decoration: none;
+  border-radius: 0 0 0 0;
   -webkit-transition: .25s;
   transition: .25s;
   -webkit-transition-property: color, border, background-color;
@@ -2357,7 +2360,9 @@ button:focus {
 }
 
 .tabs-menu-link.is-active {
-  border-bottom-color: #ddd;
+  border-bottom-color: #727e96;
+  color: #727e96;
+  background: transparent;
   outline: 0;
 }
 
@@ -2374,7 +2379,7 @@ button:focus {
 }
 
 .tabs-content-item {
-  padding-top: 10px;
+  padding-top: 1rem;
 }
 
 .tabs-content-item[aria-hidden="true"] {
