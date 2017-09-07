@@ -2214,7 +2214,7 @@ button:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
-  background-size: 100% calc(2.4rem * (16 / 100));
+  background-size: 100% calc(2.4rem * (18 / 100));
   -webkit-transition: .25s;
   transition: .25s;
   -webkit-transition-property: background, -webkit-transform;
@@ -2226,7 +2226,7 @@ button:focus {
 
 .button-burger > *::before, .button-burger > *::after {
   content: "";
-  height: calc(2.4rem * (16 / 100));
+  height: calc(2.4rem * (18 / 100));
   background: #333;
   -webkit-transition: .25s;
   transition: .25s;
