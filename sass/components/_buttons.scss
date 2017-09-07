@@ -117,7 +117,7 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     background-origin: content-box;
-    background-size: 100% calc(#{$size-burger} * (#{$weight-burger} / 100));
+    background-size: 100% $weight-burger;
     transition: .25s;
     transition-property: transform, background;
     will-change: transform, background;
@@ -125,7 +125,7 @@ button {
     &::before,
     &::after {
       content: "";
-      height: calc(#{$size-burger} * (#{$weight-burger} / 100));
+      height: $weight-burger;
       background: $color-burger;
       transition: .25s;
       transition-property: transform, top;
