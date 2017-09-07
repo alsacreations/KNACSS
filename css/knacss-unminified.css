@@ -2241,19 +2241,19 @@ button:focus {
   background-color: transparent;
 }
 
-.button-burger:focus > *, .button-burger.is-active > *, .button-burger.js-active > * {
+.button-burger.is-active > * {
   background-image: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.button-burger:focus > *::before, .button-burger.is-active > *::before, .button-burger.js-active > *::before {
+.button-burger.is-active > *::before {
   -webkit-transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
           transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
 }
 
-.button-burger:focus > *::after, .button-burger.is-active > *::after, .button-burger.js-active > *::after {
+.button-burger.is-active > *::after {
   -webkit-transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
           transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
 }

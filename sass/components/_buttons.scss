@@ -93,8 +93,9 @@ button {
 }
 
 // burger button
-// active it with :focus, .is-active or .js-active
+// active it with a JS toggle-class to .is-active
 // recommanded HTML : <button class="button-burger" type="button" role="button" aria-label="open/close navigation"><i></i></button>
+// see doc : https://knacss.com/styleguide.html#buttons
 .button-burger {
   padding: 0;
   background-color: transparent;
@@ -138,9 +139,7 @@ button {
     }
   }
 
-  &:focus,
-  &.is-active,
-  &.js-active {
+  &.is-active {
 
     & > * {
       background-image: none;
