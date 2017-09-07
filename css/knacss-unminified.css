@@ -1108,7 +1108,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden, .button-burger > *, .checkbox, .radio, .tabs-content-item[aria-hidden="true"] {
+.visually-hidden, .checkbox, .radio, .tabs-content-item[aria-hidden="true"] {
   position: absolute !important;
   border: 0 !important;
   height: 1px !important;
@@ -2183,38 +2183,51 @@ button:focus {
 }
 
 .button-burger {
-  position: relative;
-  height: 2.4rem;
-  width: 2.8rem;
-  background-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
-  background-image: linear-gradient(#000, #000);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 5px;
   padding: 0;
+  background-color: transparent;
   outline: 0;
   border: 0;
-  color: #333;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: 0.25s cubic-bezier(0.17, 0.67, 0.89, 1.4);
-  transition: 0.25s cubic-bezier(0.17, 0.67, 0.89, 1.4);
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  will-change: transform;
 }
 
-.button-burger::before, .button-burger::after {
+.button-burger > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 0;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#333));
+  background-image: linear-gradient(#333, #333);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% calc(2.4rem * (16 / 100));
+  -webkit-transition: .25s;
+  transition: .25s;
+  -webkit-transition-property: background, -webkit-transform;
+  transition-property: background, -webkit-transform;
+  transition-property: transform, background;
+  transition-property: transform, background, -webkit-transform;
+  will-change: transform, background;
+}
+
+.button-burger > *::before, .button-burger > *::after {
   content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 5px;
-  background: #000;
+  height: calc(2.4rem * (16 / 100));
+  background: #333;
   -webkit-transition: .25s;
   transition: .25s;
   -webkit-transition-property: top, -webkit-transform;
@@ -2224,30 +2237,25 @@ button:focus {
   will-change: transform, top;
 }
 
-.button-burger::before {
-  top: 0;
+.button-burger:hover > * {
+  background-color: transparent;
 }
 
-.button-burger:after {
-  top: calc(100% - 4px);
-}
-
-.button-burger:focus, .button-burger.is-active, .button-burger.js-active {
+.button-burger:focus > *, .button-burger.is-active > *, .button-burger.js-active > * {
   background-image: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.button-burger:focus::before, .button-burger:focus::after, .button-burger.is-active::before, .button-burger.is-active::after, .button-burger.js-active::before, .button-burger.js-active::after {
-  top: 50%;
+.button-burger:focus > *::before, .button-burger.is-active > *::before, .button-burger.js-active > *::before {
+  -webkit-transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
+          transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
 }
 
-.button-burger:focus::before, .button-burger.is-active::before, .button-burger.js-active::before {
-  -webkit-transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 45deg);
-          transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 45deg);
-}
-
-.button-burger:focus::after, .button-burger.is-active::after, .button-burger.js-active::after {
-  -webkit-transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
-          transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -45deg);
+.button-burger:focus > *::after, .button-burger.is-active > *::after, .button-burger.js-active > *::after {
+  -webkit-transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
+          transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
 }
 
 /* ----------------------------- */

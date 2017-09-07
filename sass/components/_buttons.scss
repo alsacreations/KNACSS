@@ -94,64 +94,64 @@ button {
 
 // burger button
 // active it with :focus, .is-active or .js-active
+// recommanded HTML : <button class="button-burger" type="button" role="button" aria-label="open/close navigation"><i></i></button>
 .button-burger {
-  position: relative;
-  height: 2.4rem;
-  width: 2.8rem;
-  background-color: transparent;
-  background-image: linear-gradient($color-burger, $color-burger);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 5px;
   padding: 0;
+  background-color: transparent;
   outline: 0;
   border: 0;
-  color: #333;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: .25s cubic-bezier(.17,.67,.89,1.4);
-  transition-property: transform;
-  will-change: transform;
 
   & > * {
-    @extend .visually-hidden;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0;
-    display: block;
-    height: 5px;
-    background: $color-burger;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: $size-burger;
+    width: $size-burger;
+    padding: $padding-burger;
+    background-color: $background-burger;
+    background-image: linear-gradient($color-burger, $color-burger);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: 100% calc(#{$size-burger} * (#{$weight-burger} / 100));
     transition: .25s;
-    transition-property: transform, top;
-    will-change: transform, top;
+    transition-property: transform, background;
+    will-change: transform, background;
+
+    &::before,
+    &::after {
+      content: "";
+      height: calc(#{$size-burger} * (#{$weight-burger} / 100));
+      background: $color-burger;
+      transition: .25s;
+      transition-property: transform, top;
+      will-change: transform, top;
+    }
   }
 
-  &::before {
-    top: 0;
-  }
-
-  &:after {
-    top: calc(100% - 4px);
+  &:hover {
+    & > * {
+      background-color: $background-burger-hover;
+    }
   }
 
   &:focus,
   &.is-active,
   &.js-active {
-    background-image: none;
 
-    &::before,
-    &::after {
-       top: 50%;
-    }
-    &::before {
-      transform: translate3d(0,-50%,0) rotate3d(0,0,1,45deg);
-    }
-    &::after {
-      transform: translate3d(0,-50%,0) rotate3d(0,0,1,-45deg);
+    & > * {
+      background-image: none;
+      justify-content: center;
+
+      &::before {
+        transform: translateY(50%) rotate3d(0,0,1,45deg);
+      }
+      &::after {
+        transform: translateY(-50%) rotate3d(0,0,1,-45deg);
+      }
     }
   }
 }

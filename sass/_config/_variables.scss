@@ -54,7 +54,7 @@ $color-link-hover: $color-dark;
 $color-forms     : $color-gray3;
 $color-burger    : $color-dark;
 
-// button, badges, alerts color variants list
+// buttons, badges, alerts color variants list
 // name - background-color - color - border
 $variants-list: (
   (primary,    $color-primary,    $color-light,    none),
@@ -65,6 +65,14 @@ $variants-list: (
   (inverse,    $color-inverse,    $color-light,    none),
   (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
 );
+
+// burger button
+$color-burger             : $color-gray1;
+$background-burger        : transparent;
+$background-burger-hover  : transparent;
+$size-burger              : 2.4rem;
+$weight-burger            : 16; // sort of percentage
+$padding-burger           : 0;
 
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem ; // tiny value for margins / paddings
