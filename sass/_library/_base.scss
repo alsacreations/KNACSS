@@ -294,7 +294,7 @@ blockquote::before {
   font-size: 5em;
   height: .4em;
   line-height: .9;
-  color: rgba(0, 0, 0, .3);
+  color: $color-quote;
 }
 
 blockquote > footer {
