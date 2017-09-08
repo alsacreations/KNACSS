@@ -21,13 +21,13 @@
       border: 0;
       background: #fff;
       border-radius: 50%;
-      box-shadow:  0 0 0 2px $color-forms inset;
+      box-shadow:  0 0 0 2px $color-checkbox inset;
       transition: .25s background;
     }
   }
   &:checked ~ label:before {
     background-image: radial-gradient(circle at center, #fff 30%, transparent 38%);
-    background-color: $color-forms;
+    background-color: $color-checkbox;
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
