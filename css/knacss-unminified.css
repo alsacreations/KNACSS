@@ -1064,8 +1064,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .flex-item-fluid,
 .item-fluid {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
 }
 
 .flex-item-first,
@@ -1770,8 +1770,8 @@ ul.is-unstyled, ul.unstyled {
   }
   .media-content {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
   }
   .media-figure--center {
     -ms-flex-item-align: center;
