@@ -2830,7 +2830,7 @@ button:focus {
       grid-row: auto/span 12;
 }
 
-/* intermediate breakpoint */
+/* intermediate breakpoints */
 @media (min-width: 480px) and (max-width: 767px) {
   [class*="grid-"][class*="-small-1"] {
     -ms-grid-columns: (1fr)[1];
