@@ -13,6 +13,7 @@
 - ajout des onglets (tabs)
 - ajout des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
 - refonte des styles de formulaires
+- refonte des styles des tableaux
 - autogrid object en Grid Layout
 - regroupement des styles des tableaux
 - suppression du namespace "kna-", ne devrait pas être problématique dès lors que Grillade sera devenu inutile dans KNACSS

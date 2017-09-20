@@ -1849,37 +1849,39 @@ table,
 
 .table {
   display: table;
+  border: 1px solid #acb3c2;
+  background: transparent;
 }
 
-#recaptcha_table,
-.table-auto {
-  table-layout: auto;
+.table--zebra tbody tr:nth-child(odd) {
+  background: #e7e9ed;
 }
 
-td,
-th {
-  vertical-align: top;
+.table caption {
+  caption-side: bottom;
+  padding: 1rem;
+  color: #727e96;
+  font-style: italic;
+  text-align: right;
+}
+
+.table td,
+.table th {
+  padding: 0.3rem 0.6rem;
   min-width: 2rem;
+  vertical-align: top;
+  border: 1px #acb3c2 dotted;
+  text-align: left;
   cursor: default;
 }
 
-/* deco */
-table,
-.table {
-  border: 1px solid #ccc;
+.table thead {
+  color: #000;
+  background: transparent;
 }
 
-caption {
-  padding: 1rem;
-  color: #555;
-  font-style: italic;
-}
-
-td,
-th {
-  padding: 0.3em 0.8em;
-  border: 1px #aaa dotted;
-  text-align: left;
+.table--auto {
+  table-layout: auto;
 }
 
 /* ----------------------------- */

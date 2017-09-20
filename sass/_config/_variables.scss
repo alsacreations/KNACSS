@@ -60,6 +60,13 @@ $color-arrow     : $color-dark;
 // checkboxes, radios
 $color-checkbox  : $color-gray3;
 
+// tables
+$border-table             : $color-gray4;
+$color-table-caption      : $color-gray3;
+$color-table-head         : $color-base;
+$background-table         : transparent;
+$background-table-head    : transparent;
+
 // buttons, badges, alerts color variants list
 // name - background-color - color - border
 $variants-list: (

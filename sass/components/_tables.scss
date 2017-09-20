@@ -14,35 +14,38 @@ table,
 
 .table {
   display: table;
+  border: 1px solid $border-table;
+  background: $background-table;
+
+  &--zebra {
+    & tbody tr:nth-child(odd) {
+      background: $color-gray5;
+    }
+  }
+
+  & caption {
+    caption-side: bottom;
+    padding: $small-value;
+    color: $color-table-caption;
+    font-style: italic;
+    text-align: right;
+  }
+
+  & td,
+  & th {
+    padding: 0.3rem 0.6rem;
+    min-width: $medium-value;
+    vertical-align: top;
+    border: 1px $border-table dotted;
+    text-align: left;
+    cursor: default;
+  }
+  & thead {
+    color: $color-table-head;
+    background: $background-table-head;
+  }
 }
 
-#recaptcha_table,
-.table-auto {
+.table--auto {
   table-layout: auto;
-}
-
-td,
-th {
-  vertical-align: top;
-  min-width: $medium-value;
-  cursor: default;
-}
-
-/* deco */
-table,
-.table {
-  border: 1px solid #ccc;
-}
-
-caption {
-  padding: $small-value;
-  color: #555;
-  font-style: italic;
-}
-
-td,
-th {
-  padding: 0.3em 0.8em;
-  border: 1px #aaa dotted;
-  text-align: left;
 }
