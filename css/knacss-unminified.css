@@ -1965,6 +1965,11 @@ select {
   background-size: 1.2rem;
 }
 
+/* hiding IE11 arrow */
+select::-ms-expand {
+  display: none;
+}
+
 textarea {
   min-height: 5em;
   vertical-align: top;
