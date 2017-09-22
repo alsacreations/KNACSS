@@ -1943,6 +1943,7 @@ textarea {
   transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
 }
 
