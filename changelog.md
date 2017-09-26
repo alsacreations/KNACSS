@@ -9,7 +9,7 @@
 - ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
 - ajout des alertes, avec possibilités de variantes (primary, success, warning, etc.)
 - ajout d'un bouton de navigation .button-burger
-- ajout des checkbox et radio stylés
+- ajout des checkbox, radio et bouton "switch" stylés
 - ajout des onglets (tabs)
 - ajout des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
 - refonte des styles de formulaires
@@ -20,6 +20,7 @@
 - automatisation des classes utilitaires via Sass
 - ajout de `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
 - renommage des variables couleur de projets
+- renommage des variables de composants
 
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)
@@ -33,11 +34,11 @@
 # changelog v6.1.0 (3 mars 2017)
 - passage à [Normalize 5.0.0](https://github.com/necolas/normalize.css/blob/5.0.0/CHANGELOG.md)
 - ajout de variables pour tailles de polices différentes sur petits et sur grands écrans (`$h1-size` et `$h1-size-l` par exemple). Par défaut, les tailles "mobile" sont appliquées, et les tailles "desktop" s'appliquent en min-width `$tiny +1`
-- convention de nommage des variables pour faciliter les recherches : `$base-color` devient `$color-base`, `$link-color` devient `$color-link`, etc.
+- convention de nommage des variables pour faciliter les recherches : `$base-color` devient `$color-base`, `$link-color` devient `$link-color`, etc.
 - typo fix
 
 # changelog v6.0.8 (10 janvier 2017)
-- application de `$color-link-hover` uniquement si différent de `$color-link`
+- application de `$link-color-hover` uniquement si différent de `$link-color`
 
 # changelog v6.0.7 (7 décembre 2016)
 - application de `$font-stack-headings` uniquement si différent de `$font-stack-common`

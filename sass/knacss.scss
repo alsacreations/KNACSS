@@ -25,7 +25,6 @@
   - Forms
   - Buttons
   - Checkbox
-  - Radio
   - Tabs
   - Badges
   - Alerts
@@ -56,8 +55,7 @@
 @import "components/_tables.scss"; // data tables consistency
 @import "components/_forms.scss"; // forms consistency and styles
 @import "components/_buttons.scss"; // buttons styles
-@import "components/_checkbox.scss"; // checkbox styles
-@import "components/_radio.scss"; // radio styles
+@import "components/_checkbox.scss"; // checkbox, radio, switch styles
 @import "components/_tabs.scss"; // tabs styles
 @import "components/_arrows.scss"; // arrows styles
 @import "components/_badges.scss"; // badges styles

@@ -40,15 +40,15 @@ body {
 
 /* Links */
 a {
-  color: $color-link;
+  color: $link-color;
 
   // No styling on focus/hover if there's no effect.
   @if variable_exists(color-link-hover) and
-      ( null == index( ($color-link, null, false), $color-link-hover) ) {
+      ( null == index( ($link-color, null, false), $link-color-hover) ) {
     &:focus,
     &:hover,
     &:active {
-      color: $color-link-hover;
+      color: $link-color-hover;
     }
   }
 }
@@ -294,7 +294,7 @@ blockquote::before {
   font-size: 5em;
   height: .4em;
   line-height: .9;
-  color: $color-quote;
+  color: $quote-color;
 }
 
 blockquote > footer {

@@ -109,15 +109,15 @@ button {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    height: $size-burger;
-    width: $size-burger;
-    padding: $padding-burger;
-    background-color: $background-burger;
-    background-image: linear-gradient($color-burger, $color-burger);
+    height: $burger-size;
+    width: $burger-size;
+    padding: $burger-padding;
+    background-color: $burger-background;
+    background-image: linear-gradient($burger-color, $burger-color);
     background-position: center;
     background-repeat: no-repeat;
     background-origin: content-box;
-    background-size: 100% $weight-burger;
+    background-size: 100% $burger-weight;
     transition: .25s;
     transition-property: transform, background;
     will-change: transform, background;
@@ -125,8 +125,8 @@ button {
     &::before,
     &::after {
       content: "";
-      height: $weight-burger;
-      background: $color-burger;
+      height: $burger-weight;
+      background: $burger-color;
       transition: .25s;
       transition-property: transform, top;
       will-change: transform, top;
@@ -135,7 +135,7 @@ button {
 
   &:hover {
     & > * {
-      background-color: $background-burger-hover;
+      background-color: $burger-hover-background;
     }
   }
 

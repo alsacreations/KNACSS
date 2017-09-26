@@ -14,8 +14,8 @@ table,
 
 .table {
   display: table;
-  border: 1px solid $border-table;
-  background: $background-table;
+  border: 1px solid $table-border;
+  background: $table-background;
 
   &--zebra {
     & tbody tr:nth-child(odd) {
@@ -26,7 +26,7 @@ table,
   & caption {
     caption-side: bottom;
     padding: $small-value;
-    color: $color-table-caption;
+    color: $table-caption-color;
     font-style: italic;
     text-align: right;
   }
@@ -36,13 +36,13 @@ table,
     padding: 0.3rem 0.6rem;
     min-width: $medium-value;
     vertical-align: top;
-    border: 1px $border-table dotted;
+    border: 1px $table-border dotted;
     text-align: left;
     cursor: default;
   }
   & thead {
-    color: $color-table-head;
-    background: $background-table-head;
+    color: $table-head-color;
+    background: $table-head-background;
   }
 }
 

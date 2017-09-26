@@ -44,7 +44,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  box-shadow: 0 0 0 1px $color-forms inset;
+  box-shadow: 0 0 0 1px $forms-color inset;
   color: $color-base;
   vertical-align: middle;
   padding: $tiny-value $small-value;
@@ -58,7 +58,7 @@ textarea {
 }
 
 [type="submit"] {
-  background-color: $color-forms;
+  background-color: $forms-color;
   color: $color-light;
   cursor: pointer;
 }

@@ -6,30 +6,30 @@
 
 
 .tabs-menu {
-  border-bottom: 2px solid $border-tabs;
+  border-bottom: 2px solid $tabs-border;
 
   &-link {
     display: block;
     margin-bottom: -2px;
     padding: $tiny-value $medium-plus-value;
     border-bottom: 4px solid transparent;
-    color: $color-tabs;
-    background: $background-tabs;
+    color: $tabs-color;
+    background: $tabs-background;
     text-decoration: none;
-    border-radius: $border-radius-tabs $border-radius-tabs 0 0;
+    border-radius: $tabs-border-radius $tabs-border-radius 0 0;
     transition: .25s;
     transition-property: color, border, background-color;
 
     &.is-active {
-      border-bottom-color: $border-tabs-active;
-      color: $color-tabs-active;
-      background: $background-tabs-active;
+      border-bottom-color: $tabs-active-border;
+      color: $tabs-active-color;
+      background: $tabs-active-background;
       outline: 0;
     }
 
     &:focus {
-      border-bottom-color: $border-tabs-active;
-      color: $color-tabs-active;
+      border-bottom-color: $tabs-active-border;
+      color: $tabs-active-color;
       outline: 0;
     }
 

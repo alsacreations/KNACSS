@@ -24,7 +24,6 @@
   - Forms
   - Buttons
   - Checkbox
-  - Radio
   - Tabs
   - Badges
   - Alerts
@@ -514,10 +513,6 @@ body {
 /* Links */
 a {
   color: #333;
-}
-
-a:focus, a:hover, a:active {
-  color: #000;
 }
 
 /* Headings */
@@ -1108,7 +1103,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden, .checkbox, .radio, .tabs-content-item[aria-hidden="true"] {
+.visually-hidden, .tabs-content-item[aria-hidden="true"] {
   position: absolute !important;
   border: 0 !important;
   height: 1px !important;
@@ -2267,80 +2262,107 @@ button:focus {
 }
 
 /* ----------------------------- */
-/* ==Checkbox                    */
+/* ==Checkbox, radio, switch     */
 /* ----------------------------- */
 /* use .checkbox class on input type=checkbox */
 /* recommanded HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
-.checkbox ~ label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+/* use .radio class on input type=radio */
+/* recommanded HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
+/* use .switch class on input type=checkbox */
+.switch,
+.checkbox,
+.radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  outline: 0;
   cursor: pointer;
-}
-
-.checkbox ~ label:before {
-  content: "";
-  display: inline-block;
-  vertical-align: baseline;
-  -webkit-transform: translateY(0.2rem);
-          transform: translateY(0.2rem);
-  margin-right: .5rem;
-  width: 1.1em;
-  height: 1.1em;
-  border: 0;
+  -webkit-box-shadow: inset 0 0 0 1px #727e96;
+          box-shadow: inset 0 0 0 1px #727e96;
+  border-radius: 3em;
   background: #fff;
-  border-radius: 0;
-  -webkit-box-shadow: 0 0 0 2px #727e96 inset;
-          box-shadow: 0 0 0 2px #727e96 inset;
-  -webkit-transition: .25s background-color;
-  transition: .25s background-color;
 }
 
-.checkbox:checked ~ label:before {
+.switch ~ label,
+.checkbox ~ label,
+.radio ~ label {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.switch::-ms-check,
+.checkbox::-ms-check,
+.radio::-ms-check {
+  display: none;
+}
+
+.switch {
+  width: 6rem;
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 60%;
+  -webkit-box-shadow: inset -3rem 0 0 #727e96, inset 0 0 0 1px #727e96;
+          box-shadow: inset -3rem 0 0 #727e96, inset 0 0 0 1px #727e96;
+  -webkit-transition: -webkit-box-shadow .15s;
+  transition: -webkit-box-shadow .15s;
+  transition: box-shadow .15s;
+  transition: box-shadow .15s, -webkit-box-shadow .15s;
+}
+
+.switch::before, .switch::after {
+  color: #fff;
+}
+
+.switch::before {
+  content: "off";
+  float: right;
+}
+
+.switch:checked {
+  -webkit-box-shadow: inset 3rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
+          box-shadow: inset 3rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
+}
+
+.switch:checked::before {
+  content: "on";
+  float: left;
+}
+
+.checkbox {
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: background-color .15s;
+  transition: background-color .15s;
+}
+
+.checkbox:checked {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
-  background-color: #727e96;
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-/* ----------------------------- */
-/* ==Rdio                    */
-/* ----------------------------- */
-/* use .radio class on input type=radio */
-/* recommanded HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
-.radio ~ label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-}
-
-.radio ~ label:before {
-  content: "";
-  display: inline-block;
-  vertical-align: baseline;
-  -webkit-transform: translateY(0.2rem);
-          transform: translateY(0.2rem);
-  margin-right: .5rem;
-  width: 1.1em;
-  height: 1.1em;
-  border: 0;
-  background: #fff;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 2px #727e96 inset;
-          box-shadow: 0 0 0 2px #727e96 inset;
-  -webkit-transition: .25s background;
-  transition: .25s background;
-}
-
-.radio:checked ~ label:before {
-  background-image: radial-gradient(circle at center, #fff 30%, transparent 38%);
   background-color: #727e96;
+}
+
+.radio {
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: background-color .15s;
+  transition: background-color .15s;
+}
+
+.radio:checked {
+  background-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%2240%22%20height%3D%2240%22%0AviewBox%3D%220%200%2080%2080%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2224%22%20style%3D%22fill%3A%23ffffff%22/%3E%3C/svg%3E);
+  background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
-  pointer-events: none;
+  background-color: #727e96;
 }
 
 /* ----------------------------- */

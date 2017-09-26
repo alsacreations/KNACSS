@@ -47,25 +47,27 @@ $color-muted    : #F7F7F7;
 // colors used in project
 $color-base      : $color-dark;
 $background-base : $color-light;
-$color-link      : $color-gray1;
-$color-link-hover: $color-dark;
-$color-forms     : $color-gray3;
+$link-color      : $color-gray1;
+$link-color-hover: $color-dark;
+$forms-color     : $color-gray3;
 
 // quotes
-$color-quote     : $color-gray5;
+$quote-color     : $color-gray5;
 
 // arrows
-$color-arrow     : $color-dark;
+$arrow-color     : $color-dark;
 
 // checkboxes, radios
-$color-checkbox  : $color-gray3;
+$checkbox-color  : $color-gray3;
+$checkbox-size: 3rem;
+$checkbox-border-radius: 3em;
 
 // tables
-$border-table             : $color-gray4;
-$color-table-caption      : $color-gray3;
-$color-table-head         : $color-base;
-$background-table         : transparent;
-$background-table-head    : transparent;
+$table-border             : $color-gray4;
+$table-caption-color      : $color-gray3;
+$table-head-color         : $color-base;
+$table-background         : transparent;
+$table-head-background    : transparent;
 
 // buttons, badges, alerts color variants list
 // name - background-color - color - border
@@ -80,21 +82,21 @@ $variants-list: (
 );
 
 // tabs
-$border-tabs            : $color-gray5;
-$border-tabs-active     : $color-gray3;
-$color-tabs             : $color-base;
-$color-tabs-active      : $color-gray3;
-$background-tabs        : transparent;
-$background-tabs-active : transparent;
-$border-radius-tabs     : 0;
+$tabs-border            : $color-gray5;
+$tabs-active-border     : $color-gray3;
+$tabs-color             : $color-base;
+$tabs-active-color      : $color-gray3;
+$tabs-background        : transparent;
+$tabs-active-background : transparent;
+$tabs-border-radius     : 0;
 
 // nav burger button
-$color-burger             : $color-gray1;
-$background-burger        : transparent;
-$background-burger-hover  : transparent;
-$size-burger              : 2.6rem;
-$weight-burger            : 5px; // size of stripes
-$padding-burger           : 0;
+$burger-color             : $color-gray1;
+$burger-background        : transparent;
+$burger-hover-background  : transparent;
+$burger-size              : 2.6rem;
+$burger-weight            : 5px; // size of stripes
+$burger-padding           : 0;
 
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem ; // tiny value for margins / paddings
@@ -113,7 +115,7 @@ $ultra-large-plus-value : 20rem ; // ultra large value for margins / paddings
 // grid gutters (for .has-gutter-* classes)
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
 
-// border-radius
+// global border-radius
 $border-radius: 0;
 
 // Responsive breakpoints variables
