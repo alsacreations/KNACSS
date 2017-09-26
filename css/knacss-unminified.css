@@ -2302,14 +2302,14 @@ button:focus {
 }
 
 .switch {
-  width: 6rem;
-  height: 3rem;
-  line-height: 3rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  width: 4rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-size: 60%;
-  -webkit-box-shadow: inset -3rem 0 0 #727e96, inset 0 0 0 1px #727e96;
-          box-shadow: inset -3rem 0 0 #727e96, inset 0 0 0 1px #727e96;
+  -webkit-box-shadow: inset -2rem 0 0 #727e96, inset 0 0 0 1px #727e96;
+          box-shadow: inset -2rem 0 0 #727e96, inset 0 0 0 1px #727e96;
   -webkit-transition: -webkit-box-shadow .15s;
   transition: -webkit-box-shadow .15s;
   transition: box-shadow .15s;
@@ -2326,8 +2326,8 @@ button:focus {
 }
 
 .switch:checked {
-  -webkit-box-shadow: inset 3rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
-          box-shadow: inset 3rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
+  -webkit-box-shadow: inset 2rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
+          box-shadow: inset 2rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
 }
 
 .switch:checked::before {
@@ -2336,8 +2336,8 @@ button:focus {
 }
 
 .checkbox {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   -webkit-transition: background-color .15s;
   transition: background-color .15s;
 }
@@ -2351,8 +2351,8 @@ button:focus {
 }
 
 .radio {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   -webkit-transition: background-color .15s;
   transition: background-color .15s;
 }
