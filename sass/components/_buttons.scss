@@ -8,9 +8,6 @@
   display: inline-block;
   padding: $small-value $small-plus-value;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   transition: 0.25s;
   transition-property: box-shadow, background-color, color, border;

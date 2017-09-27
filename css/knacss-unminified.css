@@ -1937,9 +1937,8 @@ textarea {
   transition-property: box-shadow, background-color, color, border;
   transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 [type="submit"] {
@@ -2012,9 +2011,9 @@ button, .btn--primary,
   padding: 1rem 1.5rem;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
@@ -2273,9 +2272,8 @@ button:focus {
 .checkbox,
 .radio {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   vertical-align: text-bottom;
   outline: 0;
   cursor: pointer;
