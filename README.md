@@ -8,61 +8,29 @@ KNACSS prend en charge les styles de base, mais également la typographie, les m
 
 Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
 
+## Documentation
+
+- [**Documentation et Guide de styles**](https://knacss.com/styleguide.html)
+- [**Pense-bête en PDF**](http://knacss.com/KNACSS-cheatsheet.pdf)
+- Site web de présentation de KNACSS : http://knacss.com
+
+## Fonctionnalités
+
+- reset
+- typographie
+- Responsive
+- grille de mise en forme
+- composants (formulaires, tableaux, boutons, flèches, onglets, checkbox, radio et bouton "switch" stylés)
+- variables et mixin Sass
+
 ## Compatibilité
 
-KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs desktop et mobiles à partir d'IE10 inclus.
+KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateurs desktop et mobiles à partir d'IE10 inclus. Pour les détails, se référer à la documentation.
 
 ## Installation
 
 Selon votre profil (débutant, utilisateur de Sass, adepte de Bower / npm / yarn), l'installation est différente.
 
-### Vous êtes débutant ou pressé&nbsp;?
-
-La version courte est "il n'y a rien à installer".
-
-KNACSS n'est constitué que d'un seul fichier CSS (minifié ou non selon vos goûts)&nbsp;:
-
-- en version [CSS classique et lisible](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss-unminified.css)
-- ou en [version minifiée](https://raw.githubusercontent.com/raphaelgoetter/KNACSS/master/css/knacss.css)
-
-Si vous ne comptez pas décortiquer le fichier CSS, il est préférable d'opter pour la version minifiée, plus légère.
-Il vous suffit ensuite de l'insérer à votre page HTML, avant votre propre feuille de style, bien entendu&nbsp;:
-
-```HTML
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Vive les knacks!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/knacss.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-</body>
-</html>
-```
-
-### Vous préférez Sass&nbsp;?
-
-KNACSS est conçu et pensé pour être adapté au préprocesseur Sass. Nos fichiers de travail sont donc par défaut plutôt des `.scss` et non des `.css`.
-
-Si, comme nous, vous intégrez à l'aide de préprocesseurs, KNACSS va vous faciliter la vie dès le début du projet puisqu'un [dossier de configuration](https://github.com/alsacreations/KNACSS/tree/v6/sass/_config) contenant toutes les variables du projet, les breakpoints et les mixins est intégré.
-Libre à vous de modifier ces fichiers selon les contraintes de votre projet.
-
-La version Sass, à compiler par vos soins, sera bien évidemment plus malléable grâce à l'apport de variables et fonctions.
-Vous pouvez également inclure ou non les fichiers partiels qui vous intéressent (tableaux, formulaires, grilles, WordPress, classes utilitaires, etc.).
-
-Téléchargez [KNACSS complet](https://github.com/alsacreations/KNACSS/archive/master.zip) pour bénéficier de toute l'architecture de l'outil, avec les fichiers Sass, package.json et gulpfile.js si nécessaires.
-
-### Installation via Bower, npm ou yarn
-
-- via [Bower](http://bower.io/) : `bower install knacss`
-- via [npm](https://www.npmjs.com/) : `npm install knacss`
-- via [yarn](https://yarnpkg.com/) : `yarn install knacss` ou `yarn add knacss`
-
-**Attention**, si vous importez KNACSS automatiquement via Bower, npm ou yarn (par exemple dans un dossier `vendor` ou `node_modules`), les fichiers de configuration (variables par exemple) risquent d'être écrasés à chaque mise à jour de KNACSS. **Nous vous invitons à en faire une copie dans votre dossier de travail et à commenter l'appel au fichier de config de `vendor`**.
 
 
 ## Comment débuter&nbsp;?
@@ -76,16 +44,6 @@ Dans le cas d'un usage via Sass, vos deux fichiers de travail principaux seront&
 - le fichier `sass/knacss.scss` qui importe tous les autres fichiers que vous risquez d'employer dans votre projet.
 
 En phase d'intégration, il vous suffit de compiler le fichier `sass/knacss.scss` pour obtenir votre fichier CSS final.
-
-
-
-### Préfixes navigateurs
-
-Certaines fonctionnalités avancées de KNACSS nécessitent d'employer toute une panoplie de préfixes CSS (`-webkit-`, `-moz-`, `-ms-`, &hellip;) pour être certain que les propriétés CSS fonctionneront partout.
-
-Au sein de la version classique CSS de KNACSS, l'ensemble des préfixes est présent, **vous n'avez donc pas à vous en soucier** (Autoprefixer réglé à "last 2 versions").
-
-**Par contre, dans la version Sass de KNACSS, les préfixes n'apparaissent pas** pour ne pas polluer la lecture du fichier de travail. **Il vous sera donc nécessaire de les ajouter**, de préférence automatiquement grâce à un plugin ou à l'excellent outil qu'est [autoprefixer](https://github.com/postcss/autoprefixer).
 
 ### Mise à jour depuis une version précédente de KNACSS ?
 
@@ -115,15 +73,3 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 - Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
 - Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage :
 `.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last`
-
-### Utilisateur de SPIP ?
-
-Le CMS SPIP impose une classe générique `.fr` sur l'élément `<html>`, or cette classe est également employée pour les positionnements flottants dans KNACSS.
-
-Si vous êtes un utilisateur de SPIP, nous vous conseillons de modifier les fichiers CSS de KNACSS et de remplacer les classes `.fr` et `.fl` par `:not(html) .fr` et `:not(html) .fl`
-
-## Liens utiles
-
-* Site web de KNACSS : http://knacss.com
-* [**Documentation détaillée**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc)
-* Sur Alsacreations.com : ["découverte du framework KNACSS"](http://www.alsacreations.com/tuto/lire/1577-decouverte-du-framework-css-KNACSS.html)
