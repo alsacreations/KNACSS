@@ -31,20 +31,20 @@ KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateu
 
 Voir la documentation.
 
-### Mise à jour depuis une version précédente de KNACSS ?
+## Mise à jour depuis une version précédente de KNACSS ?
 
 La version `6.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `5.*.*`.
 
 Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 6 de KNACSS&nbsp;:
 
-#### Modifications majeures depuis la `5.*.*`
+### Modifications majeures depuis la `5.*.*`
 
 - le grille de mise en forme a été entièrement modifiée. Détails de modifications: https://github.com/alsacreations/KNACSS/issues/207
 - les positionnements tabulaires. `.row`, `.col` et `.line`, devenus inutiles et confusants depuis Flexbox, ont été supprimés
 - de nouvelles valeurs de breakpoints ont été définies. Détails: https://github.com/alsacreations/KNACSS/issues/210
 - suppression de l'outils *include-media* (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final)
 
-#### Modifications majeures depuis la `4.*.*`
+### Modifications majeures depuis la `4.*.*`
 
 - suppression de la version LESS (à partir de la version KNACSS 5.0, seul le préprocesseur Sass est encore pris en charge)
 - suppression des fallbacks pour IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
@@ -53,7 +53,7 @@ Voici les principales modifications dont il faudra tenir compte lors d'une bascu
 - ajout de la library include-media (http://include-media.com/)
 - grille "grillade" à présent en mobile first
 
-#### Modifications majeures depuis la `3.*.*`
+### Modifications majeures depuis la `3.*.*`
 
 - La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;: `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche;  `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite; `.start` et `.end` n'existent plus
 - Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
