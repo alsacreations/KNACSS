@@ -29,21 +29,7 @@ KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateu
 
 ## Installation
 
-Selon votre profil (débutant, utilisateur de Sass, adepte de Bower / npm / yarn), l'installation est différente.
-
-
-
-## Comment débuter&nbsp;?
-
-Que vous ayez opté pour la version CSS simple ou la version Sass, il est vivement conseillé de parcourir la [**documentation**](https://github.com/raphaelgoetter/KNACSS/tree/master/doc) détaillée et illustrée avant de vous jeter sur KNACSS.
-
-Sachez qu'un [**Pense-bête en PDF**](http://knacss.com/KNACSS-cheatsheet.pdf) et un [**Guide de styles**](http://codepen.io/raphaelgoetter/full/LNwOjz/) sont également disponibles pour vous souvenir des classes utiles de KNACSS.
-
-Dans le cas d'un usage via Sass, vos deux fichiers de travail principaux seront&nbsp;:
-- le fichier `sass/_config/_variables.scss` contenant toutes les variables du projet à définir une fois pour toute au départ
-- le fichier `sass/knacss.scss` qui importe tous les autres fichiers que vous risquez d'employer dans votre projet.
-
-En phase d'intégration, il vous suffit de compiler le fichier `sass/knacss.scss` pour obtenir votre fichier CSS final.
+Voir la documentation.
 
 ### Mise à jour depuis une version précédente de KNACSS ?
 
