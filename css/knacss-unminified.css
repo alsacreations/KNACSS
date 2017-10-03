@@ -2550,7 +2550,7 @@ button:focus {
   line-height: 1;
 }
 
-.badge ::before, .badge--primary ::before, .badge--success ::before, .badge--info ::before, .badge--warning ::before, .badge--danger ::before, .badge--inverse ::before, .badge--ghost ::before {
+.badge::before, .badge--primary::before, .badge--success::before, .badge--info::before, .badge--warning::before, .badge--danger::before, .badge--inverse::before, .badge--ghost::before {
   content: "";
   display: inline-block;
   vertical-align: middle;

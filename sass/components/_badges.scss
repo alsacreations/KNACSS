@@ -11,7 +11,7 @@
   background-color: $color-muted;
   line-height: 1;
 
-  ::before{
+  &::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
