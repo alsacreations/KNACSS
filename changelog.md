@@ -1,26 +1,29 @@
 # changelog v7.0.0beta (août - ? 2017)
-- architecture globale revisitée (vendor, config, library, components)
-- refonte complète du système de grille (dorénavant basé sur Grid Layout)
-- création d'un mixin de grille
-- déplacement des variables de gouttières de grillade.scss vers variables.scss
-- déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
-- normalize.css v7.0.0
-- refonte complète des boutons, avec possibilités de variantes (primary, success, warning, etc.)
-- ajout des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
-- ajout des alertes, avec possibilités de variantes (primary, success, warning, etc.)
-- ajout d'un bouton de navigation .button-burger
-- ajout des checkbox, radio et bouton "switch" stylés
-- ajout des onglets (tabs)
-- ajout des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
-- refonte des styles de formulaires
-- refonte des styles des tableaux
-- autogrid object en Grid Layout
-- regroupement des styles des tableaux
-- suppression du namespace "kna-", ne devrait pas être problématique dès lors que Grillade sera devenu inutile dans KNACSS
-- automatisation des classes utilitaires via Sass
-- ajout de `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
-- renommage des variables couleur de projets
-- renommage des variables de composants
+- modifications, mises à jour :
+  - architecture globale revisitée (vendor, config, library, components)
+  - normalize.css v7.0.0
+  - déplacement des variables de gouttières de grillade.scss vers variables.scss
+  - déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
+  - regroupement des styles des tableaux
+  - renommage des variables couleur de projets
+  - renommage des variables de composants
+  - automatisation des classes utilitaires via Sass
+  - suppression du namespace "kna-"
+- refonte :
+  - système de grille (dorénavant basé sur Grid Layout)
+  - boutons, avec possibilités de variantes (primary, success, warning, etc.)
+  - styles de formulaires
+  - styles des tableaux
+  - l'objet autogrid passe en Grid Layout
+- ajouts :
+  - des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
+  - des alertes, avec possibilités de variantes (primary, success, warning, etc.)
+  - d'un bouton de navigation .button-burger
+  - des checkbox, radio et bouton "switch" stylés
+  - des onglets (tabs)
+  - des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
+  - création d'un mixin de grille
+  - `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
 
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)

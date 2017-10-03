@@ -2,11 +2,9 @@
 
 http://www.knacss.com
 
-KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign).
+KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign, grille de mise en forme).
 
-KNACSS prend en charge les styles de base, mais également la typographie, les modèles de boîte, les alignements et positionnements d'éléments, les grilles de mise en page, dans l'esprit d'être adapté à toutes les tailles d'écran (reponsive). Le tout automatiquement&nbsp;!
-
-Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projets web quel que soit son type ou son envergure.
+Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projet web quel que soit son type ou son envergure.
 
 ## Documentation
 
@@ -33,16 +31,26 @@ Voir la documentation.
 
 ## Mise à jour depuis une version précédente de KNACSS ?
 
-La version `6.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes `5.*.*`.
+La version `7.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes.
 
-Voici les principales modifications dont il faudra tenir compte lors d'une bascule vers la version 6 de KNACSS&nbsp;:
+Voici les principales modifications dont il faudra tenir compte lors d'une mise à jour&nbsp;:
+
+### Modifications majeures entre la v7 et la v6
+
+- architecture globale revisitée (vendor, config, library, components)
+- variables de projet modifiées et renommées
+- refonte complète du système de grille (dorénavant basé sur Grid Layout)
+- déplacement des variables de gouttières de grillade.scss vers variables.scss
+- déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
+
+Pour tous détails, voir le fichier Changelog.
 
 ### Modifications majeures entre la v6 et la v5
 
 - le grille de mise en forme a été entièrement modifiée. Détails de modifications: https://github.com/alsacreations/KNACSS/issues/207
 - les positionnements tabulaires. `.row`, `.col` et `.line`, devenus inutiles et confusants depuis Flexbox, ont été supprimés
 - de nouvelles valeurs de breakpoints ont été définies. Détails: https://github.com/alsacreations/KNACSS/issues/210
-- suppression de l'outils *include-media* (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final)
+- suppression de l'outil *include-media* (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final)
 
 ### Modifications majeures entre la v5 et la v4
 
