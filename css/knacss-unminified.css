@@ -25,6 +25,7 @@
   - Buttons
   - Checkbox
   - Tabs
+  - Tags
   - Badges
   - Alerts
   - Grillade (Grid System)
@@ -2448,6 +2449,92 @@ button:focus {
 .icon-arrow-left::after {
   -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
           mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* ----------------------------- */
+/* ==Tags                      */
+/* ----------------------------- */
+/* use .tag-- classes for variants */
+.tag, .tag--primary, .tag--success, .tag--info, .tag--warning, .tag--danger, .tag--inverse, .tag--ghost {
+  display: inline-block;
+  padding: 3px 0.5rem;
+  vertical-align: baseline;
+  white-space: nowrap;
+  color: #000;
+  border-radius: 0;
+  background-color: #F7F7F7;
+  line-height: 1;
+}
+
+.tag--primary {
+  background-color: #0275D8;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--success {
+  background-color: #5CB85C;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--info {
+  background-color: #5BC0DE;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--warning {
+  background-color: #F0AD4E;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--danger {
+  background-color: #D9534F;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--inverse {
+  background-color: #292B2C;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tag--ghost {
+  background-color: transparent;
+  color: #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff inset;
+          box-shadow: 0 0 0 1px #fff inset;
+}
+
+.tag--small {
+  font-size: 1rem;
+}
+
+.tag--big {
+  font-size: 1.8rem;
+}
+
+.tag--block {
+  width: 100% !important;
+  display: block;
+}
+
+.tag.disabled, .disabled.tag--primary, .disabled.tag--success, .disabled.tag--info, .disabled.tag--warning, .disabled.tag--danger, .disabled.tag--inverse, .disabled.tag--ghost, .tag--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tag:empty, .tag--primary:empty, .tag--success:empty, .tag--info:empty, .tag--warning:empty, .tag--danger:empty, .tag--inverse:empty, .tag--ghost:empty {
+  display: none;
 }
 
 /* ----------------------------- */

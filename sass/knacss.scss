@@ -26,6 +26,7 @@
   - Buttons
   - Checkbox
   - Tabs
+  - Tags
   - Badges
   - Alerts
   - Grillade (Grid System)
@@ -58,6 +59,7 @@
 @import "components/_checkbox.scss"; // checkbox, radio, switch styles
 @import "components/_tabs.scss"; // tabs styles
 @import "components/_arrows.scss"; // arrows styles
+@import "components/tags.scss"; // tags styles
 @import "components/_badges.scss"; // badges styles
 @import "components/_alerts.scss"; // alerts styles
 
