@@ -18,7 +18,7 @@
 - ajouts :
   - des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
   - des alertes, avec possibilités de variantes (primary, success, warning, etc.)
-  - d'un bouton de navigation .button-burger
+  - d'un bouton de navigation `.nav-button`
   - des checkbox, radio et bouton "switch" stylés
   - des onglets (tabs)
   - des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
