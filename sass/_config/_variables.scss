@@ -1,5 +1,14 @@
 // Config file and project variables
 
+// breakpoints values
+// warning : you should use your own values, regardless of the devices
+// best practise is Mobile First: (min-width: $breakpoint)
+$tiny: 480px !default; // or 'em' if you prefer, of course
+$small: 576px !default;
+$medium: 768px !default;
+$large: 992px !default;
+$extra-large: 1200px !default;
+
 // tiny font sizes (mobile first)
 $base-font-size : 1.4rem; // ex. 1.4rem would be "14px" equivalent
 $line-height    : 1.4;
@@ -24,6 +33,26 @@ $h6-size-l        : 1.6rem; // equiv "16px"
 $font-stack-common    : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; // system font stack
 $font-stack-headings  : sans-serif; // headings font
 $font-stack-monospace : consolas, courier, monospace; // monospace font
+
+// grid gutters (for .has-gutter-* classes)
+$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
+
+// global border-radius
+$border-radius: 0 !default;
+
+// spacings (choose unit you prefer)
+$tiny-value             : .5rem  !default;
+$tiny-plus-value        : .7rem !default;
+$small-value            : 1rem !default;
+$small-plus-value       : 1.5rem !default;
+$medium-value           : 2rem !default;
+$medium-plus-value      : 3rem !default;
+$large-value            : 4rem !default;
+$large-plus-value       : 6rem !default;
+$extra-large-value      : 8rem !default;
+$extra-large-plus-value : 12rem !default;
+$ultra-large-value      : 16rem !default;
+$ultra-large-plus-value : 20rem !default;
 
 // color names
 $white    : #fff !default;
@@ -107,33 +136,3 @@ $burger-hover-background  : transparent;
 $burger-size              : 2.6rem;
 $burger-weight            : 5px; // size of stripes
 $burger-padding           : 0;
-
-// spacings (choose unit you prefer)
-$tiny-value             : .5rem  !default; // tiny value for margins / paddings
-$tiny-plus-value        : .7rem !default ; // tiny+ value for margins / paddings
-$small-value            : 1rem !default ; // small value for margins / paddings
-$small-plus-value       : 1.5rem !default ; // small+ value for margins / paddings
-$medium-value           : 2rem !default ; // medium value for margins / paddings
-$medium-plus-value      : 3rem !default ; // medium+ value for margins / paddings
-$large-value            : 4rem !default ; // large value for margins / paddings
-$large-plus-value       : 6rem !default ; // large value for margins / paddings
-$extra-large-value      : 8rem !default ; // extra large value for margins / paddings
-$extra-large-plus-value : 12rem !default ; // extra large value for margins / paddings
-$ultra-large-value      : 16rem !default ; // ultra large value for margins / paddings
-$ultra-large-plus-value : 20rem !default ; // ultra large value for margins / paddings
-
-// grid gutters (for .has-gutter-* classes)
-$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
-
-// global border-radius
-$border-radius: 0 !default;
-
-// Responsive breakpoints variables
-// Warning : you should use your own values, regardless of the devices
-// Best practise is Mobile First: (min-width: $breakpoint)
-
-$tiny: 480px !default; // or 'em' if you prefer, of course
-$small: 576px !default;
-$medium: 768px !default;
-$large: 992px !default;
-$extra-large: 1200px !default;
