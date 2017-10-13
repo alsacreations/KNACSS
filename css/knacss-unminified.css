@@ -1856,7 +1856,7 @@ table,
 .table caption {
   caption-side: bottom;
   padding: 1rem;
-  color: #727e96;
+  color: #333;
   font-style: italic;
   text-align: right;
 }
@@ -1925,8 +1925,8 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  -webkit-box-shadow: 0 0 0 1px #727e96 inset;
-          box-shadow: 0 0 0 1px #727e96 inset;
+  -webkit-box-shadow: 0 0 0 1px #333 inset;
+          box-shadow: 0 0 0 1px #333 inset;
   color: #000;
   vertical-align: middle;
   padding: 0.5rem 1rem;
@@ -1943,13 +1943,13 @@ textarea {
 }
 
 [type="submit"] {
-  background-color: #727e96;
+  background-color: #333;
   color: #fff;
   cursor: pointer;
 }
 
 input[readonly] {
-  background-color: #F7F7F7;
+  background-color: #e7e9ed;
 }
 
 select {
@@ -2028,7 +2028,7 @@ button, .btn--primary,
   color: #000;
   border: none;
   border-radius: 0;
-  background-color: #F7F7F7;
+  background-color: #e7e9ed;
   font-family: inherit;
   font-size: inherit;
   line-height: 1;
@@ -2118,7 +2118,7 @@ button:focus {
 
 .btn--inverse,
 .button--inverse {
-  background-color: #292B2C;
+  background-color: #333;
   color: #fff;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2128,7 +2128,7 @@ button:focus {
 .button--inverse:active,
 .button--inverse:focus,
 .button--inverse:hover {
-  background-color: #101112;
+  background-color: #1a1a1a;
 }
 
 .btn--ghost,
@@ -2278,8 +2278,8 @@ button:focus {
   vertical-align: text-bottom;
   outline: 0;
   cursor: pointer;
-  -webkit-box-shadow: inset 0 0 0 1px #727e96;
-          box-shadow: inset 0 0 0 1px #727e96;
+  -webkit-box-shadow: inset 0 0 0 1px #333;
+          box-shadow: inset 0 0 0 1px #333;
   border-radius: 3em;
   background: #fff;
 }
@@ -2303,8 +2303,8 @@ button:focus {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-size: 60%;
-  -webkit-box-shadow: inset -2rem 0 0 #727e96, inset 0 0 0 1px #727e96;
-          box-shadow: inset -2rem 0 0 #727e96, inset 0 0 0 1px #727e96;
+  -webkit-box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
+          box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
   -webkit-transition: -webkit-box-shadow .15s;
   transition: -webkit-box-shadow .15s;
   transition: box-shadow .15s;
@@ -2342,7 +2342,7 @@ button:focus {
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #727e96;
+  background-color: #333;
 }
 
 .radio {
@@ -2357,7 +2357,7 @@ button:focus {
   background-size: 80% 80%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #727e96;
+  background-color: #333;
 }
 
 /* ----------------------------- */
@@ -2385,15 +2385,15 @@ button:focus {
 }
 
 .tabs-menu-link.is-active {
-  border-bottom-color: #727e96;
-  color: #727e96;
+  border-bottom-color: #333;
+  color: #333;
   background: transparent;
   outline: 0;
 }
 
 .tabs-menu-link:focus {
-  border-bottom-color: #727e96;
-  color: #727e96;
+  border-bottom-color: #333;
+  color: #333;
   outline: 0;
 }
 
@@ -2462,7 +2462,7 @@ button:focus {
   white-space: nowrap;
   color: #000;
   border-radius: 0;
-  background-color: #F7F7F7;
+  background-color: #e7e9ed;
   line-height: 1;
 }
 
@@ -2502,7 +2502,7 @@ button:focus {
 }
 
 .tag--inverse {
-  background-color: #292B2C;
+  background-color: #333;
   color: #fff;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2546,7 +2546,7 @@ button:focus {
   padding: 0.5rem;
   border-radius: 50%;
   color: #000;
-  background-color: #F7F7F7;
+  background-color: #e7e9ed;
   line-height: 1;
 }
 
@@ -2583,7 +2583,7 @@ button:focus {
 }
 
 .badge--inverse {
-  background-color: #292B2C;
+  background-color: #333;
   color: #fff;
 }
 
@@ -2619,7 +2619,7 @@ button:focus {
   margin-bottom: 0;
   color: #000;
   border-radius: 0;
-  background-color: #F7F7F7;
+  background-color: #e7e9ed;
 }
 
 .alert a, .alert--primary a, .alert--success a, .alert--info a, .alert--warning a, .alert--danger a, .alert--inverse a, .alert--ghost a {
@@ -2663,7 +2663,7 @@ button:focus {
 }
 
 .alert--inverse {
-  background-color: #292B2C;
+  background-color: #333;
   color: #fff;
   -webkit-box-shadow: none;
           box-shadow: none;

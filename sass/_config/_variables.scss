@@ -25,73 +25,83 @@ $font-stack-common    : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxyge
 $font-stack-headings  : sans-serif; // headings font
 $font-stack-monospace : consolas, courier, monospace; // monospace font
 
-// color scheme
-$color-light    : #fff;
-$color-dark     : #000;
-$color-gray1    : #333;
-$color-gray2    : #454d5d;
-$color-gray3    : #727e96;
-$color-gray4    : #acb3c2;
-$color-gray5    : #e7e9ed;
+// color names
+$white    : #fff !default;
+$gray-100 : #f8f9fa !default;
+$gray-200 : #e7e9ed !default;
+$gray-300 : #dee2e6 !default;
+$gray-400 : #ced4da !default;
+$gray-500 : #acb3c2 !default;
+$gray-600 : #727e96 !default;
+$gray-700 : #454d5d !default;
+$gray-800 : #333 !default;
+$gray-900 : #212529 !default;
+$black    : #000 !default;
 
-$color-brand    : #6FA939;
-$color-primary  : #0275D8;
-$color-success  : #5CB85C;
-$color-info     : #5BC0DE;
-$color-warning  : #F0AD4E;
-$color-danger   : #D9534F;
-$color-inverse  : #292B2C;
+$blue-300   : #5BC0DE !default;
+$blue-500   : #0275D8 !default;
+$green-500  : #5CB85C !default;
+$orange-500 : #F0AD4E !default;
+$red-500    : #D9534F !default;
+
+// semantic color scheme
+$color-brand    : $green-500;
+$color-primary  : $blue-500;
+$color-success  : $green-500;
+$color-info     : $blue-300;
+$color-warning  : $orange-500;
+$color-danger   : $red-500;
+$color-inverse  : $gray-800;
 $color-ghost    : transparent;
-$color-muted    : #F7F7F7;
+$color-muted    : $gray-200;
 
-// colors used in project
-$color-base      : $color-dark;
-$background-base : $color-light;
-$link-color      : $color-gray1;
-$link-color-hover: $color-dark;
-$forms-color     : $color-gray3;
+$color-base      : $black;
+$background-base : $white;
+$link-color      : $gray-800;
+$link-color-hover: $black;
+$forms-color     : $gray-800;
 
-// quotes
-$quote-color     : $color-gray5;
+// component: quotes
+$quote-color     : $gray-200;
 
-// arrows
-$arrow-color     : $color-dark;
+// component: arrows
+$arrow-color     : $black;
 
-// checkboxes, radios
-$checkbox-color  : $color-gray3;
+// component: checkboxes, radios
+$checkbox-color  : $gray-800;
 $checkbox-size: 2rem;
 $checkbox-border-radius: 3em;
 
-// tables
-$table-border             : $color-gray4;
-$table-caption-color      : $color-gray3;
+// component: tables
+$table-border             : $gray-500;
+$table-caption-color      : $gray-800;
 $table-head-color         : $color-base;
 $table-background         : transparent;
 $table-head-background    : transparent;
 
-// buttons, badges, alerts color variants list
+// component: buttons, badges, alerts color variants list
 // name - background-color - color - border
 $variants-list: (
-  (primary,    $color-primary,    $color-light,    none),
-  (success,    $color-success,    $color-light,    none),
-  (info,       $color-info,       $color-light,    none),
-  (warning,    $color-warning,    $color-light,    none),
-  (danger,     $color-danger,     $color-light,    none),
-  (inverse,    $color-inverse,    $color-light,    none),
-  (ghost,      $color-ghost,      $color-light,    0 0 0 1px $color-light inset)
+  (primary,    $color-primary,    $white,    none),
+  (success,    $color-success,    $white,    none),
+  (info,       $color-info,       $white,    none),
+  (warning,    $color-warning,    $white,    none),
+  (danger,     $color-danger,     $white,    none),
+  (inverse,    $color-inverse,    $white,    none),
+  (ghost,      $color-ghost,      $white,    0 0 0 1px $white inset)
 );
 
-// tabs
-$tabs-border            : $color-gray5;
-$tabs-active-border     : $color-gray3;
+// component: tabs
+$tabs-border            : $gray-200;
+$tabs-active-border     : $gray-800;
 $tabs-color             : $color-base;
-$tabs-active-color      : $color-gray3;
+$tabs-active-color      : $gray-800;
 $tabs-background        : transparent;
 $tabs-active-background : transparent;
 $tabs-border-radius     : 0;
 
-// nav burger button
-$burger-color             : $color-gray1;
+// component: nav burger button
+$burger-color             : $gray-800;
 $burger-background        : transparent;
 $burger-hover-background  : transparent;
 $burger-size              : 2.6rem;
@@ -99,24 +109,24 @@ $burger-weight            : 5px; // size of stripes
 $burger-padding           : 0;
 
 // spacings (choose unit you prefer)
-$tiny-value             : .5rem ; // tiny value for margins / paddings
-$tiny-plus-value        : .7rem ; // tiny+ value for margins / paddings
-$small-value            : 1rem ; // small value for margins / paddings
-$small-plus-value       : 1.5rem ; // small+ value for margins / paddings
-$medium-value           : 2rem ; // medium value for margins / paddings
-$medium-plus-value      : 3rem ; // medium+ value for margins / paddings
-$large-value            : 4rem ; // large value for margins / paddings
-$large-plus-value       : 6rem ; // large value for margins / paddings
-$extra-large-value      : 8rem ; // extra large value for margins / paddings
-$extra-large-plus-value : 12rem ; // extra large value for margins / paddings
-$ultra-large-value      : 16rem ; // ultra large value for margins / paddings
-$ultra-large-plus-value : 20rem ; // ultra large value for margins / paddings
+$tiny-value             : .5rem  !default; // tiny value for margins / paddings
+$tiny-plus-value        : .7rem !default ; // tiny+ value for margins / paddings
+$small-value            : 1rem !default ; // small value for margins / paddings
+$small-plus-value       : 1.5rem !default ; // small+ value for margins / paddings
+$medium-value           : 2rem !default ; // medium value for margins / paddings
+$medium-plus-value      : 3rem !default ; // medium+ value for margins / paddings
+$large-value            : 4rem !default ; // large value for margins / paddings
+$large-plus-value       : 6rem !default ; // large value for margins / paddings
+$extra-large-value      : 8rem !default ; // extra large value for margins / paddings
+$extra-large-plus-value : 12rem !default ; // extra large value for margins / paddings
+$ultra-large-value      : 16rem !default ; // ultra large value for margins / paddings
+$ultra-large-plus-value : 20rem !default ; // ultra large value for margins / paddings
 
 // grid gutters (for .has-gutter-* classes)
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
 
 // global border-radius
-$border-radius: 0;
+$border-radius: 0 !default;
 
 // Responsive breakpoints variables
 // Warning : you should use your own values, regardless of the devices
