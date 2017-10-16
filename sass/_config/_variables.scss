@@ -44,7 +44,6 @@ $weight-regular : 400; // default
 $weight-medium  : 500;
 $weight-bold    : 700;
 
-
 // grid gutters (for .has-gutter-* classes)
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );
 
@@ -64,6 +63,15 @@ $extra-large-value      : 8rem !default;
 $extra-large-plus-value : 12rem !default;
 $ultra-large-value      : 16rem !default;
 $ultra-large-plus-value : 20rem !default;
+
+// z-indexes
+$zindex-navigation:    1000 !default;
+$zindex-dropdown:      2000 !default;
+$zindex-popover:       3000 !default;
+$zindex-tooltip:       4000 !default;
+$zindex-modal:         5000 !default;
+$zindex-notification:  6000 !default;
+$zindex-debug:         7000 !default;
 
 // color names
 $white    : #fff !default;
