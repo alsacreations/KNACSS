@@ -1012,8 +1012,10 @@ img.fr {
 /* flexbox layout
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
-[class*="flex-container"],
-.flex-container,
+.flex-container, .flex-container--row,
+.flex-row, .flex-container--column, .flex-container--row-reverse,
+.flex-row-reverse, .flex-container--column-reverse,
+.flex-column-reverse,
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1022,36 +1024,39 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
       flex-wrap: wrap;
 }
 
-.flex-container-h,
+.flex-container--row,
 .flex-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-.flex-container-v,
-.flex-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.flex-container--column,
+.flex-row {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
+.flex-container--row-reverse,
 .flex-row-reverse {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex-container--column-reverse,
+.flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -1692,7 +1697,10 @@ ul.is-unstyled, ul.unstyled {
     margin-right: 0 !important;
     border: 0;
   }
-  .flex-container {
+  .flex-container, .flex-container--row,
+  .flex-row, .flex-container--column, .flex-container--row-reverse,
+  .flex-row-reverse, .flex-container--column-reverse,
+  .flex-column-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

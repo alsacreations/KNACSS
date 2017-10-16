@@ -82,28 +82,35 @@ img.fr {
 http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 */
 
-[class*="flex-container"],
 .flex-container,
 .d-flex {
   display: flex;
   flex-wrap: wrap;
 }
 
-.flex-container-h,
+.flex-container--row,
 .flex-row {
-  display: flex;
+  @extend .flex-container;
   flex-direction: row;
 }
 
-.flex-container-v,
-.flex-column {
-  display: flex;
+.flex-container--column,
+.flex-row {
+  @extend .flex-container;
   flex-direction: column;
 }
 
+.flex-container--row-reverse,
 .flex-row-reverse {
-  display: flex;
+  @extend .flex-container;
   flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.flex-container--column-reverse,
+.flex-column-reverse {
+  @extend .flex-container;
+  flex-direction: column-reverse;
   justify-content: flex-end;
 }
 
