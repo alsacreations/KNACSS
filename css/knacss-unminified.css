@@ -496,7 +496,7 @@ body {
   background-color: #fff;
   color: #000;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 @media (min-width: 480px) {
@@ -602,7 +602,7 @@ details,
 figure {
   margin-top: 0.75em;
   margin-bottom: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* Avoid top margins on first content element */
@@ -2319,8 +2319,8 @@ button:focus {
   width: 4rem;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.66667rem;
+  padding-right: 0.66667rem;
   font-size: 60%;
   -webkit-box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
           box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
@@ -2331,11 +2331,12 @@ button:focus {
 }
 
 .switch::before, .switch::after {
+  font-weight: bold;
   color: #fff;
 }
 
 .switch::before {
-  content: "off";
+  content: "✕";
   float: right;
 }
 
@@ -2345,7 +2346,7 @@ button:focus {
 }
 
 .switch:checked::before {
-  content: "on";
+  content: "✓";
   float: left;
 }
 

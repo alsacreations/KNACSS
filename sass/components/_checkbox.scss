@@ -12,9 +12,11 @@
 .checkbox {
   border-radius: $checkbox-border-radius;
 }
+
 .switch {
   border-radius: $switch-border-radius;
 }
+
 .radio {
   border-radius: 50%;
 }
@@ -43,22 +45,23 @@
   width: $checkbox-size *2;
   height: $checkbox-size;
   line-height: $checkbox-size;
-  padding-left: $checkbox-size /4;
-  padding-right: $checkbox-size /4;
+  padding-left: $checkbox-size /3;
+  padding-right: $checkbox-size /3;
   font-size: 60%;
   box-shadow: inset -#{$checkbox-size} 0 0 $checkbox-color, inset 0 0 0 1px $checkbox-color;
   transition: box-shadow .15s;
   &::before, &::after {
+    font-weight: bold;
     color: #fff;
   }
   &::before {
-    content: "off";
+    content: "✕";
     float: right;
     }
   &:checked {
     box-shadow: inset #{$checkbox-size} 0 0 $color-success, inset 0 0 0 1px $color-success;
     &::before {
-      content: "on";
+      content: "✓";
       float: left;
     }
   }
