@@ -103,11 +103,13 @@ $checkbox-border-radius: 4px;
 $switch-border-radius: 3em;
 
 // component: tables
-$table-border             : $gray-500;
-$table-caption-color      : $gray-800;
-$table-head-color         : $color-base;
-$table-background         : transparent;
-$table-head-background    : transparent;
+$table-border               : $gray-500;
+$table-caption-color        : $gray-800;
+$table-background           : transparent;
+$table-head-color           : $color-base;
+$table-head-background      : transparent;
+$table-footer-color         : $color-base;
+$table-footer-background    : transparent;
 
 // component: buttons, badges, alerts color variants list
 // name - background-color - color - border
