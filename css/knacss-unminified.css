@@ -492,97 +492,55 @@ html {
 }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background-color: #fff;
-  color: #000;
+  color: #212529;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.3;
-}
-
-@media (min-width: 480px) {
-  body {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 480px) {
-  body {
-    line-height: 1.5;
-  }
+  line-height: 1.5;
 }
 
 /* Links */
 a {
   color: #333;
+  text-decoration: none;
+}
+
+a:focus, a:hover, a:active {
+  color: #0d0d0d;
+  text-decoration: underline;
 }
 
 /* Headings */
 h1, .h1-like {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-family: sans-serif;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h1, .h1-like {
-    font-size: 3.2rem;
-  }
+  font-weight: 500;
 }
 
 h2, .h2-like {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-family: sans-serif;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h2, .h2-like {
-    font-size: 2.8rem;
-  }
+  font-weight: 500;
 }
 
 h3, .h3-like {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h3, .h3-like {
-    font-size: 2.4rem;
-  }
+  font-size: 2.4rem;
+  font-weight: 500;
 }
 
 h4, .h4-like {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h4, .h4-like {
-    font-size: 2rem;
-  }
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 h5, .h5-like {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h5, .h5-like {
-    font-size: 1.8rem;
-  }
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 h6, .h6-like {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-@media (min-width: 480px) {
-  h6, .h6-like {
-    font-size: 1.6rem;
-  }
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 /* Vertical rythm for blocks */
@@ -602,7 +560,7 @@ details,
 figure {
   margin-top: 0.75em;
   margin-bottom: 0;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 /* Avoid top margins on first content element */
@@ -1880,7 +1838,7 @@ table,
 }
 
 .table thead {
-  color: #000;
+  color: #212529;
   background: transparent;
 }
 
@@ -1935,7 +1893,7 @@ textarea {
   border: 0;
   -webkit-box-shadow: 0 0 0 1px #333 inset;
           box-shadow: 0 0 0 1px #333 inset;
-  color: #000;
+  color: #212529;
   vertical-align: middle;
   padding: 0.5rem 1rem;
   margin: 0;
@@ -2033,7 +1991,7 @@ button, .btn--primary,
   vertical-align: middle;
   white-space: nowrap;
   text-decoration: none;
-  color: #000;
+  color: #212529;
   border: none;
   border-radius: 0;
   background-color: #e7e9ed;
@@ -2394,7 +2352,7 @@ button:focus {
   margin-bottom: -2px;
   padding: 0.5rem 3rem;
   border-bottom: 4px solid transparent;
-  color: #000;
+  color: #212529;
   background: transparent;
   text-decoration: none;
   border-radius: 0 0 0 0;
@@ -2480,7 +2438,7 @@ button:focus {
   padding: 3px 0.5rem;
   vertical-align: baseline;
   white-space: nowrap;
-  color: #000;
+  color: #212529;
   border-radius: 0;
   background-color: #e7e9ed;
   line-height: 1;
@@ -2536,11 +2494,11 @@ button:focus {
 }
 
 .tag--small {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .tag--big {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .tag--block {
@@ -2565,7 +2523,7 @@ button:focus {
   display: inline-block;
   padding: 0.5rem;
   border-radius: 50%;
-  color: #000;
+  color: #212529;
   background-color: #e7e9ed;
   line-height: 1;
 }
@@ -2613,11 +2571,11 @@ button:focus {
 }
 
 .badge--small {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .badge--big {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .badge.disabled, .disabled.badge--primary, .disabled.badge--success, .disabled.badge--info, .disabled.badge--warning, .disabled.badge--danger, .disabled.badge--inverse, .disabled.badge--ghost, .badge--disabled {
@@ -2637,7 +2595,7 @@ button:focus {
   padding: 1rem 1rem;
   margin-top: 0.75em;
   margin-bottom: 0;
-  color: #000;
+  color: #212529;
   border-radius: 0;
   background-color: #e7e9ed;
 }
@@ -2697,11 +2655,11 @@ button:focus {
 }
 
 .alert--small {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .alert--big {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .alert--block {

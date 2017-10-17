@@ -44,7 +44,7 @@
 - application de `$link-color-hover` uniquement si différent de `$link-color`
 
 # changelog v6.0.7 (7 décembre 2016)
-- application de `$font-stack-headings` uniquement si différent de `$font-stack-common`
+- application de `$font-family-headings` uniquement si différent de `$font-stack-base`
 
 # changelog v6.0.6 (2 décembre 2016)
 - Grillade : redéfinition du périmètre de `-small` : passe de `(min-width: ($tiny + 1)) and (max-width: $small)` à `(min-width: ($tiny + 1)) and (max-width: $medium)` (de 544px à 991px par défaut)

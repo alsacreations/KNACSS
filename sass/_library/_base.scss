@@ -22,103 +22,61 @@ html {
 }
 
 body {
-  font-size: $base-font-size;
-  @if variable_exists(base-font-size-l) and $base-font-size-l != $base-font-size {
-    @include respond-to("tiny-up") {
-      font-size: $base-font-size-l;
-    }
-  }
+  font-size: $font-size-base;
   background-color: $background-base;
   color: $color-base;
-  font-family: $font-stack-common;
-  line-height: $line-height;
-  @if variable_exists(line-height-l) and $line-height-l != $line-height {
-    @include respond-to("tiny-up") {
-      line-height: $line-height-l;
-    }
-  }
+  font-family: $font-family-base;
+  line-height: $line-height-base;
 }
 
 /* Links */
 a {
   color: $link-color;
+  text-decoration: $link-decoration;
 
-  // No styling on focus/hover if there's no effect.
-  @if variable_exists(color-link-hover) and
-      ( null == index( ($link-color, null, false), $link-color-hover) ) {
-    &:focus,
-    &:hover,
-    &:active {
-      color: $link-color-hover;
-    }
+  &:focus,
+  &:hover,
+  &:active {
+    color: $link-color-hover;
+    text-decoration: $link-decoration-hover;
   }
 }
 
 /* Headings */
 h1, .h1-like {
   font-size: $h1-size;
-  @if variable_exists(h1-size-l) and $h1-size-l != $h1-size {
-    @include respond-to("tiny-up") {
-      font-size: $h1-size-l;
-    }
+  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
+    font-family: $font-family-headings;
   }
-  @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
-    font-family: $font-stack-headings;
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 h2, .h2-like {
   font-size: $h2-size;
-  @if variable_exists(h2-size-l) and $h2-size-l != $h2-size {
-    @include respond-to("tiny-up") {
-      font-size: $h2-size-l;
-    }
+  @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
+    font-family: $font-family-headings;
   }
-  @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
-    font-family: $font-stack-headings;
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 h3, .h3-like {
   font-size: $h3-size;
-  @if variable_exists(h3-size-l) and $h3-size-l != $h3-size {
-    @include respond-to("tiny-up") {
-      font-size: $h3-size-l;
-    }
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 h4, .h4-like {
   font-size: $h4-size;
-  @if variable_exists(h4-size-l) and $h4-size-l != $h4-size {
-    @include respond-to("tiny-up") {
-      font-size: $h4-size-l;
-    }
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 h5, .h5-like {
   font-size: $h5-size;
-  @if variable_exists(h5-size-l) and $h5-size-l != $h5-size {
-    @include respond-to("tiny-up") {
-      font-size: $h5-size-l;
-    }
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 h6, .h6-like {
   font-size: $h6-size;
-  @if variable_exists(h6-size-l) and $h6-size-l != $h6-size {
-    @include respond-to("tiny-up") {
-      font-size: $h6-size-l;
-    }
-  }
-  font-weight: bold;
+  font-weight: $weight-medium;
 }
 
 /* Vertical rythm for blocks */
@@ -138,7 +96,7 @@ details,
 figure {
   margin-top: 0.75em;
   margin-bottom: 0;
-  line-height: $line-height;
+  line-height: $line-height-base;
 }
 
 /* Avoid top margins on first content element */
@@ -343,6 +301,6 @@ pre,
 samp,
 kbd {
   white-space: pre-wrap;
-  font-family: $font-stack-monospace;
+  font-family: $font-family-monospace;
   line-height: normal;
 }

@@ -31,11 +31,11 @@
 // alert state variants
 .alert {
   &--small {
-    font-size: $base-font-size - 0.4rem;
+    font-size: $font-size-base - 0.4rem;
   }
 
   &--big {
-    font-size: $base-font-size + 0.4rem;
+    font-size: $font-size-base + 0.4rem;
   }
 
   &--block {
