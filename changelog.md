@@ -1,7 +1,7 @@
 # changelog v7.0.0beta (août - ? 2017)
 - modifications, mises à jour :
   - architecture globale revisitée (vendor, config, library, components)
-  - normalize.css v7.0.0
+  - remplacement de normalize.css par Bootstrap reboot.css
   - déplacement des variables de gouttières de grillade.scss vers variables.scss
   - déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
   - regroupement des styles des tableaux
