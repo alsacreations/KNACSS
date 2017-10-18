@@ -80,61 +80,40 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
-/* Vertical rythm for blocks */
-p,
-.p-like,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-td,
-th,
-label,
-textarea,
-caption,
-details,
-figure {
-  margin-top: 0.75em;
-  margin-bottom: 0;
-  line-height: $line-height-base;
+/* Vertical rythm */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dd {
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
 }
 
-/* Avoid top margins on first content element */
 p,
-.p-like,
-ul,
+address,
 ol,
+ul,
 dl,
+li,
 blockquote,
-label,
-pre,
-h1,
-.h1-like,
-h2,
-.h2-like,
-h3,
-.h3-like,
-h4,
-.h4-like,
-h5,
-.h5-like,
-h6,
-.h6-like {
-  &:first-child {
-    margin-top: 0;
-  }
+pre {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 /* Avoid margins on nested elements */
 li p,
 li .p-like,
 li ul,
-li ol {
+li ol,
+ol ol,
+ul ul {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 
 /* Alternate font-sizing */
 .smaller {

@@ -443,55 +443,37 @@ h6, .h6-like {
   font-weight: 500;
 }
 
-/* Vertical rythm for blocks */
-p,
-.p-like,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-td,
-th,
-label,
-textarea,
-caption,
-details,
-figure {
-  margin-top: 0.75em;
-  margin-bottom: 0;
-  line-height: 1.5;
+/* Vertical rythm */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dd {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-/* Avoid top margins on first content element */
-p:first-child,
-.p-like:first-child,
-ul:first-child,
-ol:first-child,
-dl:first-child,
-blockquote:first-child,
-label:first-child,
-pre:first-child,
-h1:first-child,
-.h1-like:first-child,
-h2:first-child,
-.h2-like:first-child,
-h3:first-child,
-.h3-like:first-child,
-h4:first-child,
-.h4-like:first-child,
-h5:first-child,
-.h5-like:first-child,
-h6:first-child,
-.h6-like:first-child {
+p,
+address,
+ol,
+ul,
+dl,
+li,
+blockquote,
+pre {
   margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 /* Avoid margins on nested elements */
 li p,
 li .p-like,
 li ul,
-li ol {
+li ol,
+ol ol,
+ul ul {
   margin-top: 0;
   margin-bottom: 0;
 }
