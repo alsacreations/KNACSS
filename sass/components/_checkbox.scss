@@ -45,8 +45,6 @@
   width: $switch-size *2;
   height: $switch-size;
   line-height: $switch-size;
-  padding-left: $switch-size /3;
-  padding-right: $switch-size /3;
   font-size: 60%;
   box-shadow: inset -#{$switch-size} 0 0 $switch-color, inset 0 0 0 1px $switch-color;
   transition: box-shadow .15s;
@@ -57,12 +55,14 @@
   &::before {
     content: "✕";
     float: right;
+    margin-right: $switch-size /3;
     }
   &:checked {
     box-shadow: inset #{$switch-size} 0 0 $color-success, inset 0 0 0 1px $color-success;
     &::before {
       content: "✓";
       float: left;
+      margin-left: $switch-size /3;
     }
   }
 }

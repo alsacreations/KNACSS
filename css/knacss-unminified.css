@@ -2159,8 +2159,6 @@ button:focus {
   width: 4rem;
   height: 2rem;
   line-height: 2rem;
-  padding-left: 0.66667rem;
-  padding-right: 0.66667rem;
   font-size: 60%;
   -webkit-box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
           box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
@@ -2178,6 +2176,7 @@ button:focus {
 .switch::before {
   content: "✕";
   float: right;
+  margin-right: 0.66667rem;
 }
 
 .switch:checked {
@@ -2188,6 +2187,7 @@ button:focus {
 .switch:checked::before {
   content: "✓";
   float: left;
+  margin-left: 0.66667rem;
 }
 
 .checkbox {
