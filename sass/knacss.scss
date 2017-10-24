@@ -63,8 +63,9 @@
 @import "components/_badges.scss"; // badges styles
 @import "components/_alerts.scss"; // alerts styles
 
-// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "components/_grillade-flex.scss"
-@import "components/_grillade-grid.scss"; // grid system with Grid Layout
+// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "components/grillade-flex.scss"
+// Note that none of these file is prefixed by an underscore, in order to compile them.
+@import "components/grillade-grid.scss"; // grid system with Grid Layout
 
 
 

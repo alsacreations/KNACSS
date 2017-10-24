@@ -1,17 +1,17 @@
 /* --------------------------------------- */
 /* ==Grillade : ultra light Grid System    */
 /* --------------------------------------- */
-/* Doc : @TODO */
 // WARNING: THIS IS NOT A COMPLETE GRID FRAMEWORK, just ultra light Grid System
 // if you need complex Grid :
 //   1- use vanilla CSS Grid Layout spec (perfect for you)
 //   2- use Bootstrap (good luck)
 
-@if (not variable_exists(tiny)) or (not variable_exists(small))  or (not variable_exists(medium))
+@if (not variable_exists(tiny)) or (not variable_exists(small)) or (not variable_exists(medium)) or (not variable_exists(large))
   {
   $tiny: 480px !global;
   $small: 576px !global;
   $medium: 768px !global;
+  $large: 992px !global;
 }
 
 [class*=" grid-"],
@@ -53,9 +53,9 @@
   }
 }
 
-/* intermediate breakpoint */
-// -small-X suffix means "X columns when < small screen"
-// example : .grid-4-small-2 will be 1 column (< tiny) then 2 columns (< small) then 4 columns
+/* intermediate breakpoints */
+// -small-X suffix means "X columns when < medium screen"
+// example : .grid-4-small-2 will be 1 column (< tiny) then 2 columns (< medium) then 4 columns
 @media (min-width: $tiny) and (max-width: ($medium - 1)) {
    @for $i from 1 through 4{
     [class*="grid-"][class*="-small-#{$i}"] {

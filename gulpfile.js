@@ -5,8 +5,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var minifycss = require('gulp-minify-css');
-// var sourcemaps = require('gulp-sourcemaps');
+var minifycss = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 
 
@@ -16,28 +15,24 @@ gulp.task('css', function () {
     .pipe(sass({
       outputStyle: 'expanded' // CSS non minifiée plus lisible ('}' à la ligne)
     }))
-    .pipe(autoprefixer({ grid: true }))
+    .pipe(autoprefixer())
     .pipe(rename('knacss-unminified.css'))
     .pipe(gulp.dest('./css/'))
     .pipe(rename('knacss.css'))
-    //.pipe(sourcemaps.init())
     .pipe(minifycss())
-    //.pipe(sourcemaps.write('.', {includeContent: false}))
     .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('grillade', function() {
-  return gulp.src('./sass/components/_grillade.scss')
-    .pipe(gulp.dest('./css/'))
+  return gulp.src('./sass/components/grillade-grid.scss')
     .pipe(sass())
-    .pipe(autoprefixer({ grid: true }))
+    .pipe(autoprefixer())
     .pipe(minifycss())
     .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('grillade-v6', function() {
-  return gulp.src('./sass/components/_grillade-v6.scss')
-    .pipe(gulp.dest('./css/'))
+gulp.task('grillade-flex', function() {
+  return gulp.src('./sass/components/grillade-flex.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifycss())

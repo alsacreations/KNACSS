@@ -1619,7 +1619,6 @@ ul.is-unstyled, ul.unstyled {
   }
   .media-figure--center {
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
         align-self: center;
   }
   .media--reverse {
@@ -1637,7 +1636,6 @@ ul.is-unstyled, ul.unstyled {
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 @media (min-width: 480px) {
   .autogrid {
-    display: -ms-grid;
     display: grid;
     grid-auto-flow: column;
     grid-auto-column: 1fr;
@@ -2561,11 +2559,9 @@ button:focus {
 /* --------------------------------------- */
 /* ==Grillade : ultra light Grid System    */
 /* --------------------------------------- */
-/* Doc : @TODO */
 @media (min-width: 480px) {
   [class*=" grid-"],
   [class^="grid-"] {
-    display: -ms-grid;
     display: grid;
     grid-auto-flow: dense;
   }
@@ -2584,246 +2580,174 @@ button:focus {
 }
 
 [class*="grid-1"] {
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
 [class*="grid-2"] {
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 [class*="grid-3"] {
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 [class*="grid-4"] {
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 [class*="grid-5"] {
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 [class*="grid-6"] {
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 [class*="grid-7"] {
-  -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 [class*="grid-8"] {
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
 [class*="grid-9"] {
-  -ms-grid-columns: (1fr)[9];
-      grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
 }
 
 [class*="grid-10"] {
-  -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 }
 
 [class*="grid-11"] {
-  -ms-grid-columns: (1fr)[11];
-      grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(11, 1fr);
 }
 
 [class*="grid-12"] {
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
 
 [class*="col-1"] {
-  -ms-grid-column-span: 1;
-  -ms-grid-column: auto;
-      grid-column: auto/span 1;
+  grid-column: auto/span 1;
 }
 
 [class*="row-1"] {
-  -ms-grid-row-span: 1;
-  -ms-grid-row: auto;
-      grid-row: auto/span 1;
+  grid-row: auto/span 1;
 }
 
 [class*="col-2"] {
-  -ms-grid-column-span: 2;
-  -ms-grid-column: auto;
-      grid-column: auto/span 2;
+  grid-column: auto/span 2;
 }
 
 [class*="row-2"] {
-  -ms-grid-row-span: 2;
-  -ms-grid-row: auto;
-      grid-row: auto/span 2;
+  grid-row: auto/span 2;
 }
 
 [class*="col-3"] {
-  -ms-grid-column-span: 3;
-  -ms-grid-column: auto;
-      grid-column: auto/span 3;
+  grid-column: auto/span 3;
 }
 
 [class*="row-3"] {
-  -ms-grid-row-span: 3;
-  -ms-grid-row: auto;
-      grid-row: auto/span 3;
+  grid-row: auto/span 3;
 }
 
 [class*="col-4"] {
-  -ms-grid-column-span: 4;
-  -ms-grid-column: auto;
-      grid-column: auto/span 4;
+  grid-column: auto/span 4;
 }
 
 [class*="row-4"] {
-  -ms-grid-row-span: 4;
-  -ms-grid-row: auto;
-      grid-row: auto/span 4;
+  grid-row: auto/span 4;
 }
 
 [class*="col-5"] {
-  -ms-grid-column-span: 5;
-  -ms-grid-column: auto;
-      grid-column: auto/span 5;
+  grid-column: auto/span 5;
 }
 
 [class*="row-5"] {
-  -ms-grid-row-span: 5;
-  -ms-grid-row: auto;
-      grid-row: auto/span 5;
+  grid-row: auto/span 5;
 }
 
 [class*="col-6"] {
-  -ms-grid-column-span: 6;
-  -ms-grid-column: auto;
-      grid-column: auto/span 6;
+  grid-column: auto/span 6;
 }
 
 [class*="row-6"] {
-  -ms-grid-row-span: 6;
-  -ms-grid-row: auto;
-      grid-row: auto/span 6;
+  grid-row: auto/span 6;
 }
 
 [class*="col-7"] {
-  -ms-grid-column-span: 7;
-  -ms-grid-column: auto;
-      grid-column: auto/span 7;
+  grid-column: auto/span 7;
 }
 
 [class*="row-7"] {
-  -ms-grid-row-span: 7;
-  -ms-grid-row: auto;
-      grid-row: auto/span 7;
+  grid-row: auto/span 7;
 }
 
 [class*="col-8"] {
-  -ms-grid-column-span: 8;
-  -ms-grid-column: auto;
-      grid-column: auto/span 8;
+  grid-column: auto/span 8;
 }
 
 [class*="row-8"] {
-  -ms-grid-row-span: 8;
-  -ms-grid-row: auto;
-      grid-row: auto/span 8;
+  grid-row: auto/span 8;
 }
 
 [class*="col-9"] {
-  -ms-grid-column-span: 9;
-  -ms-grid-column: auto;
-      grid-column: auto/span 9;
+  grid-column: auto/span 9;
 }
 
 [class*="row-9"] {
-  -ms-grid-row-span: 9;
-  -ms-grid-row: auto;
-      grid-row: auto/span 9;
+  grid-row: auto/span 9;
 }
 
 [class*="col-10"] {
-  -ms-grid-column-span: 10;
-  -ms-grid-column: auto;
-      grid-column: auto/span 10;
+  grid-column: auto/span 10;
 }
 
 [class*="row-10"] {
-  -ms-grid-row-span: 10;
-  -ms-grid-row: auto;
-      grid-row: auto/span 10;
+  grid-row: auto/span 10;
 }
 
 [class*="col-11"] {
-  -ms-grid-column-span: 11;
-  -ms-grid-column: auto;
-      grid-column: auto/span 11;
+  grid-column: auto/span 11;
 }
 
 [class*="row-11"] {
-  -ms-grid-row-span: 11;
-  -ms-grid-row: auto;
-      grid-row: auto/span 11;
+  grid-row: auto/span 11;
 }
 
 [class*="col-12"] {
-  -ms-grid-column-span: 12;
-  -ms-grid-column: auto;
-      grid-column: auto/span 12;
+  grid-column: auto/span 12;
 }
 
 [class*="row-12"] {
-  -ms-grid-row-span: 12;
-  -ms-grid-row: auto;
-      grid-row: auto/span 12;
+  grid-row: auto/span 12;
 }
 
 /* intermediate breakpoints */
 @media (min-width: 480px) and (max-width: 767px) {
   [class*="grid-"][class*="-small-1"] {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   [class*="col-"][class*="-small-1"] {
-    -ms-grid-column-span: 1;
-    -ms-grid-column: auto;
-        grid-column: auto/span 1;
+    grid-column: auto/span 1;
   }
   [class*="grid-"][class*="-small-2"] {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   [class*="col-"][class*="-small-2"] {
-    -ms-grid-column-span: 2;
-    -ms-grid-column: auto;
-        grid-column: auto/span 2;
+    grid-column: auto/span 2;
   }
   [class*="grid-"][class*="-small-3"] {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   [class*="col-"][class*="-small-3"] {
-    -ms-grid-column-span: 3;
-    -ms-grid-column: auto;
-        grid-column: auto/span 3;
+    grid-column: auto/span 3;
   }
   [class*="grid-"][class*="-small-4"] {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   [class*="col-"][class*="-small-4"] {
-    -ms-grid-column-span: 4;
-    -ms-grid-column: auto;
-        grid-column: auto/span 4;
+    grid-column: auto/span 4;
   }
   [class*="-small-all"] {
     grid-column: 1 / -1;
