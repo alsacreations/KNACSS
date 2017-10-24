@@ -2277,6 +2277,10 @@ button:focus {
 /* ==Arrows                      */
 /* ----------------------------- */
 /* see https://knacss.com/styleguide.html#arrows */
+[class*="icon-arrow-"] {
+  vertical-align: middle;
+}
+
 [class*="icon-arrow-"]::after {
   content: "";
   display: inline-block;
@@ -2286,7 +2290,6 @@ button:focus {
           mask-size: cover;
   background-color: #000;
   line-height: 1;
-  vertical-align: baseline;
 }
 
 .icon-arrow-down::after {
