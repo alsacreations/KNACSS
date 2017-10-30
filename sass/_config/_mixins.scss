@@ -1,29 +1,13 @@
 // font-size Mixin
-// compiles to font-size-s + font-size-base on small-plus devices
+// compiles to font-size mobile + font-size desktop on small-plus devices
 // ex. h2 { @include font-size(h2);}
-$font-sizes: (
-  base-size  : $font-size-base,
-  base-size-s: $font-size-s,
-  h1-size    : $h1-size,
-  h1-size-s  : $h1-size-s,
-  h2-size    : $h2-size,
-  h2-size-s  : $h2-size-s,
-  h3-size    : $h3-size,
-  h3-size-s  : $h3-size-s,
-  h4-size    : $h4-size,
-  h4-size-s  : $h4-size-s,
-  h5-size    : $h5-size,
-  h5-size-s  : $h5-size-s,
-  h6-size    : $h6-size,
-  h6-size-s  : $h6-size-s
-) !default;
-
 @mixin font-size($elem) {
-  $base-size: #{$elem}-size;
-  $small-size: #{$elem}-size-s;
-  font-size: map-get($font-sizes, $small-size);
+  $q: map-get($font-sizes, $elem);
+  $mob: map-get($q, "mobile");
+  $desk: map-get($q, "desktop");
+  font-size: $mob;
   @include respond-to("small-up") {
-    font-size: map-get($font-sizes, $base-size);
+    font-size: $desk;
   }
 }
 
