@@ -1,4 +1,4 @@
-# changelog v7.0.0beta (août - ? 2017)
+# changelog v7.0.0beta (août - novembre 2017)
 - modifications, mises à jour :
   - architecture globale revisitée (vendor, config, library, components)
   - remplacement de normalize.css par Bootstrap reboot.css
@@ -23,6 +23,7 @@
   - des onglets (tabs)
   - des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
   - création d'un mixin de grille
+  - création d'un mixin de tailles de polices (responsive)
   - `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
 
 # changelog v6.1.2 (21 juin 2017)

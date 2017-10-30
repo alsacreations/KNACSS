@@ -23,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  font-size: $font-size-base;
+  @include font-size(base);
   background-color: $background-base;
   color: $color-base;
   font-family: $font-family-base;
@@ -45,7 +45,7 @@ a {
 
 /* Headings */
 h1, .h1-like {
-  font-size: $h1-size;
+  @include font-size(h1);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
   }
@@ -53,7 +53,7 @@ h1, .h1-like {
 }
 
 h2, .h2-like {
-  font-size: $h2-size;
+  @include font-size(h2);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
   }
@@ -61,22 +61,22 @@ h2, .h2-like {
 }
 
 h3, .h3-like {
-  font-size: $h3-size;
+  @include font-size(h3);
   font-weight: $weight-medium;
 }
 
 h4, .h4-like {
-  font-size: $h4-size;
+  @include font-size(h4);
   font-weight: $weight-medium;
 }
 
 h5, .h5-like {
-  font-size: $h5-size;
+  @include font-size(h5);
   font-weight: $weight-medium;
 }
 
 h6, .h6-like {
-  font-size: $h6-size;
+  @include font-size(h6);
   font-weight: $weight-medium;
 }
 

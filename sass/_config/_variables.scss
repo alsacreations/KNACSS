@@ -14,8 +14,8 @@ $font-family-base     : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, O
 $font-family-headings  : sans-serif; // font for h1, h2.. h6
 $font-family-monospace : consolas, courier, monospace; // font for code and samples
 
-// font sizes
-$font-size-base      : 1.6rem !default; // 1.6rem value is "16px" equivalent
+// font sizes (1.6rem value is "16px" equivalent)
+$font-size-base      : 1.6rem !default;
 $h1-size             : 3.2rem !default;
 $h2-size             : 2.8rem !default;
 $h3-size             : 2.4rem !default;
@@ -50,7 +50,11 @@ $weight-medium  : 500 !default;
 $weight-bold    : 700 !default;
 
 // grid gutters (for .has-gutter-* classes)
-$grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem ) !default;
+$grid-gutters: (
+  '': 1rem,
+  '-l': 2rem,
+  '-xl': 4rem )
+!default;
 
 // global border-radius
 $border-radius: 0 !default;
