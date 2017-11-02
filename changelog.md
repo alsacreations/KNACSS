@@ -7,6 +7,7 @@
   - regroupement des styles des tableaux
   - renommage des variables couleur de projets
   - renommage des variables de composants
+  - renommage des variables d'espacement (`$tiny-value` -> `$spacer-tiny`)
   - automatisation des classes utilitaires via Sass
   - suppression du namespace "kna-"
 - refonte :

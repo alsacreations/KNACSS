@@ -56,7 +56,7 @@
 }
 
 img.fl {
-  margin-right: $small-value;
+  margin-right: $spacer-small;
 }
 
 .fr {
@@ -64,12 +64,12 @@ img.fl {
 }
 
 img.fr {
-  margin-left: $small-value;
+  margin-left: $spacer-small;
 }
 
 img.fl,
 img.fr {
-  margin-bottom: $tiny-value;
+  margin-bottom: $spacer-tiny;
 }
 
 /* inline-block */

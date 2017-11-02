@@ -84,18 +84,18 @@ $grid-gutters: (
 ) !default;
 
 // spacings
-$tiny-value             : .5rem  !default;
-$tiny-plus-value        : .7rem !default;
-$small-value            : 1rem !default;
-$small-plus-value       : 1.5rem !default;
-$medium-value           : 2rem !default;
-$medium-plus-value      : 3rem !default;
-$large-value            : 4rem !default;
-$large-plus-value       : 6rem !default;
-$extra-large-value      : 8rem !default;
-$extra-large-plus-value : 12rem !default;
-$ultra-large-value      : 16rem !default;
-$ultra-large-plus-value : 20rem !default;
+$spacer-tiny             : .5rem  !default;
+$spacer-tiny-plus        : .7rem !default;
+$spacer-small            : 1rem !default;
+$spacer-small-plus       : 1.5rem !default;
+$spacer-medium           : 2rem !default;
+$spacer-medium-plus      : 3rem !default;
+$spacer-large            : 4rem !default;
+$spacer-large-plus       : 6rem !default;
+$spacer-extra-large      : 8rem !default;
+$spacer-extra-large-plus : 12rem !default;
+$spacer-ultra-large      : 16rem !default;
+$spacer-ultra-large-plus : 20rem !default;
 
 // z-indexes
 $zindex-navigation:    1000 !default;

@@ -6,7 +6,7 @@
 
 %btn {
   display: inline-block;
-  padding: $small-value $small-plus-value;
+  padding: $spacer-small $spacer-small-plus;
   cursor: pointer;
   user-select: none;
   transition: 0.25s;
@@ -57,12 +57,12 @@ button {
 .btn,
 .button {
   &--small {
-    padding: $tiny-plus-value $small-value;
+    padding: $spacer-tiny-plus $spacer-small;
     font-size: .8em;
   }
 
   &--big {
-    padding: $small-plus-value $medium-value;
+    padding: $spacer-small-plus $spacer-medium;
     font-size: 1.4em;
   }
 

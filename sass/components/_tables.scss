@@ -9,7 +9,7 @@ table,
   table-layout: fixed;
   border-collapse: collapse;
   vertical-align: top;
-  margin-bottom: $medium-value;
+  margin-bottom: $spacer-medium;
 }
 
 .table {
@@ -25,7 +25,7 @@ table,
 
   & caption {
     caption-side: bottom;
-    padding: $small-value;
+    padding: $spacer-small;
     color: $table-caption-color;
     font-style: italic;
     text-align: right;
@@ -34,7 +34,7 @@ table,
   & td,
   & th {
     padding: 0.3rem 0.6rem;
-    min-width: $medium-value;
+    min-width: $spacer-medium;
     vertical-align: top;
     border: 1px $table-border dotted;
     text-align: left;

@@ -11,7 +11,7 @@
   &-link {
     display: block;
     margin-bottom: -2px;
-    padding: $tiny-value $medium-plus-value;
+    padding: $spacer-tiny $spacer-medium-plus;
     border-bottom: 4px solid transparent;
     color: $tabs-color;
     background: $tabs-background;
@@ -40,7 +40,7 @@
 }
 
 .tabs-content-item {
-  padding-top: $small-value;
+  padding-top: $spacer-small;
 
   &[aria-hidden="true"] {
     visibility: hidden;

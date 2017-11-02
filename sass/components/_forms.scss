@@ -10,10 +10,10 @@ fieldset {
 }
 
 fieldset {
-  padding: $medium-value;
+  padding: $spacer-medium;
 
   & legend {
-    padding: 0 $tiny-value;
+    padding: 0 $spacer-tiny;
     border: 0;
     white-space: normal;
   }
@@ -47,7 +47,7 @@ textarea {
   box-shadow: 0 0 0 1px $forms-color inset;
   color: $color-base;
   vertical-align: middle;
-  padding: $tiny-value $small-value;
+  padding: $spacer-tiny $spacer-small;
   margin: 0;
   transition: 0.25s;
   transition-property: box-shadow, background-color, color, border;
