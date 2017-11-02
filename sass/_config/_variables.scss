@@ -98,13 +98,13 @@ $spacer-ultra-large      : 16rem !default;
 $spacer-ultra-large-plus : 20rem !default;
 
 // z-indexes
-$zindex-navigation:    1000 !default;
-$zindex-dropdown:      2000 !default;
-$zindex-popover:       3000 !default;
-$zindex-tooltip:       4000 !default;
-$zindex-modal:         5000 !default;
-$zindex-notification:  6000 !default;
-$zindex-debug:         7000 !default;
+$zindex-navigation   : 1000 !default;
+$zindex-dropdown     : 2000 !default;
+$zindex-popover      : 3000 !default;
+$zindex-tooltip      : 4000 !default;
+$zindex-modal        : 5000 !default;
+$zindex-notification : 6000 !default;
+$zindex-debug        : 7000 !default;
 
 // ----------
 // color zone
@@ -129,7 +129,7 @@ $green-500  : #5CB85C !default;
 $orange-500 : #F0AD4E !default;
 $red-500    : #D9534F !default;
 
-// semantic color scheme
+// semantic colors
 $color-brand    : $green-500;
 $color-primary  : $blue-500;
 $color-success  : $green-500;
