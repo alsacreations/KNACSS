@@ -519,27 +519,6 @@ ul ul {
   margin-bottom: 0;
 }
 
-/* Alternate font-sizing */
-.smaller {
-  font-size: 0.6em;
-}
-
-.small {
-  font-size: 0.8em;
-}
-
-.big {
-  font-size: 1.2em;
-}
-
-.bigger {
-  font-size: 1.5em;
-}
-
-.biggest {
-  font-size: 2em;
-}
-
 /* Max values */
 img,
 table,
@@ -980,6 +959,49 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 /* ---------------------------------- */
 /* ==Helpers                          */
 /* ---------------------------------- */
+/* Typo Helpers  */
+/* ------------- */
+.u-bold {
+  font-weight: 700;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+.u-smaller {
+  font-size: 0.6em;
+}
+
+.u-small {
+  font-size: 0.8em;
+}
+
+.u-big {
+  font-size: 1.2em;
+}
+
+.u-bigger {
+  font-size: 1.5em;
+}
+
+.u-biggest {
+  font-size: 2em;
+}
+
 /* State Helpers */
 /* ------------- */
 /* invisible for all */
@@ -2825,8 +2847,3 @@ button:focus {
 .row-all {
   grid-row: 1 / -1;
 }
-
-/* ----------------------------- */
-/* ==Own stylesheet              */
-/* ----------------------------- */
-/* Here should go your own CSS styles */

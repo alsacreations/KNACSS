@@ -2,6 +2,50 @@
 /* ==Helpers                          */
 /* ---------------------------------- */
 
+/* Typo Helpers  */
+/* ------------- */
+
+.u-bold {
+  font-weight: $weight-bold;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+.u-smaller {
+  font-size: 0.6em;
+}
+
+.u-small {
+  font-size: 0.8em;
+}
+
+.u-big {
+  font-size: 1.2em;
+}
+
+.u-bigger {
+  font-size: 1.5em;
+}
+
+.u-biggest {
+  font-size: 2em;
+}
+
 /* State Helpers */
 /* ------------- */
 
