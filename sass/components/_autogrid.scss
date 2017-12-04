@@ -4,7 +4,8 @@
 /* recommanded HTML : <div class="autogrid">... some elements ...</div> */
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 
-.autogrid {
+.autogrid,
+.grid {
   @media (min-width: $tiny) {
     display: grid;
     grid-auto-flow: column;

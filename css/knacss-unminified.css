@@ -1698,18 +1698,22 @@ ul.is-unstyled, ul.unstyled {
 /* recommanded HTML : <div class="autogrid">... some elements ...</div> */
 /* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
 @media (min-width: 480px) {
-  .autogrid {
+  .autogrid,
+  .grid {
     display: grid;
     grid-auto-flow: column;
     grid-auto-column: 1fr;
   }
-  .autogrid.has-gutter {
+  .autogrid.has-gutter,
+  .grid.has-gutter {
     grid-column-gap: 1rem;
   }
-  .autogrid.has-gutter-l {
+  .autogrid.has-gutter-l,
+  .grid.has-gutter-l {
     grid-column-gap: 2rem;
   }
-  .autogrid.has-gutter-xl {
+  .autogrid.has-gutter-xl,
+  .grid.has-gutter-xl {
     grid-column-gap: 4rem;
   }
 }
