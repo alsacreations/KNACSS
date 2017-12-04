@@ -6,13 +6,13 @@
 //   1- use vanilla CSS Grid Layout spec (perfect for you)
 //   2- use Bootstrap (good luck)
 
-@if (not variable_exists(tiny)) or (not variable_exists(small)) or (not variable_exists(medium)) or (not variable_exists(large))
-  {
-  $tiny: 480px !global;
-  $small: 576px !global;
-  $medium: 768px !global;
-  $large: 992px !global;
-}
+// use these variables only for a standalone Grillade
+// in KNACSS, you shall modify variables file instead?
+$tiny: 480px !default;
+$small: 576px !default;
+$medium: 768px !default;
+$large: 992px !default;
+
 
 [class*=" grid-"],
 [class^="grid-"] {
