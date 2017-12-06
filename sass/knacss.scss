@@ -17,6 +17,7 @@
   - Utilities (width and spacers helpers)
   - Responsive helpers
   - WordPress reset (disabled by default)
+  - Grillade (Grid System)
 3- Components :
   - Media object
   - Autogrid object
@@ -29,7 +30,6 @@
   - Tags
   - Badges
   - Alerts
-  - Grillade (Grid System)
 */
 
 @import "_vendor/_reboot"; // Bootstrap reboot (basic reset)
@@ -40,29 +40,29 @@
 
 @import "_config/_mixins.scss";
 
-// Libraries
-@import "_library/_base.scss"; // basic styles
-@import "_library/_print.scss"; // print quick reset
-@import "_library/_misc.scss"; // skip links, hyphens
-@import "_library/_layout.scss"; // alignment, modules, positionning
-@import "_library/_utilities.scss"; // width and spacers helpers
-@import "_library/_responsive.scss"; // Responsive Web Design helpers
+// Core Libraries
+@import "_library/_base.scss";         // basic styles
+@import "_library/_print.scss";        // print quick reset
+@import "_library/_misc.scss";         // skip links, hyphens
+@import "_library/_layout.scss";       // alignment, modules, positionning
+@import "_library/_utilities.scss";    // width and spacers helpers
+@import "_library/_responsive.scss";   // Responsive Web Design helpers
 // @import "_library/_wordpress.scss"; // WordPress reset and basic styles
 
-// Components
-@import "components/_media.scss"; // media object
-@import "components/_autogrid.scss"; // media autogrid
-@import "components/_skip-links.scss"; // skip links
-@import "components/_tables.scss"; // data tables consistency
-@import "components/_forms.scss"; // forms consistency and styles
-@import "components/_buttons.scss"; // buttons styles
-@import "components/_checkbox.scss"; // checkbox, radio, switch styles
-@import "components/_tabs.scss"; // tabs styles
-@import "components/_arrows.scss"; // arrows styles
-@import "components/tags.scss"; // tags styles
-@import "components/_badges.scss"; // badges styles
-@import "components/_alerts.scss"; // alerts styles
-
-// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "components/grillade-flex.scss"
+// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "_library/grillade-flex.scss"
 // Note that none of these file is prefixed by an underscore, in order to compile them.
-@import "components/grillade-grid.scss"; // grid system with Grid Layout
+@import "_library/grillade-grid.scss"; // grid system with Grid Layout
+
+// Components
+@import "components/_media.scss";      // media object
+@import "components/_autogrid.scss";   // media autogrid
+@import "components/_skip-links.scss"; // skip links
+@import "components/_tables.scss";     // data tables consistency
+@import "components/_forms.scss";      // forms consistency and styles
+@import "components/_buttons.scss";    // buttons styles
+@import "components/_checkbox.scss";   // checkbox, radio, switch styles
+@import "components/_tabs.scss";       // tabs styles
+@import "components/_arrows.scss";     // arrows styles
+@import "components/tags.scss";        // tags styles
+@import "components/_badges.scss";     // badges styles
+@import "components/_alerts.scss";     // alerts styles
