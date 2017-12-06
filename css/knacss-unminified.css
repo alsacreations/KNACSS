@@ -376,11 +376,14 @@ html {
           box-sizing: border-box;
 }
 
-* {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   /* avoid min-width: auto on flex and grid children */
   min-width: 0;
+  min-height: 0;
 }
 
 html {
