@@ -143,16 +143,17 @@ $color-muted    : $gray-200;
 $color-base      : $gray-900;
 $background-base : $white;
 
-$link-color            : $gray-800;
-$link-color-hover      : darken($link-color, 15%);
-$link-decoration       : none;
-$link-decoration-hover : underline;
-
 $forms-color     : $gray-800;
 
 // ---------------
 // Components zone
 // ---------------
+
+// Component: links
+$link-color            : $gray-800;
+$link-color-hover      : darken($link-color, 15%);
+$link-decoration       : none;
+$link-decoration-hover : underline;
 
 // Global border-radius
 $border-radius: 0 !default;

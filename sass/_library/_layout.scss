@@ -95,7 +95,7 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 .flex-container--column,
-.flex-row {
+.flex-column {
   @extend .flex-container;
   flex-direction: column;
 }
