@@ -1,3 +1,32 @@
+# changelog v7.0.0beta (août - novembre 2017)
+- modifications, mises à jour :
+  - architecture globale revisitée (vendor, config, library, components)
+  - remplacement de normalize.css par Bootstrap reboot.css
+  - déplacement des variables de gouttières de grillade.scss vers variables.scss
+  - déplacement des variables de breakpoints de breakpoints.scss vers variables.scss
+  - regroupement des styles des tableaux
+  - renommage des variables couleur de projets
+  - renommage des variables de composants
+  - renommage des variables d'espacement (`$tiny-value` -> `$spacer-tiny`)
+  - automatisation des classes utilitaires via Sass
+  - suppression du namespace "kna-"
+- refonte :
+  - système de grille (dorénavant basé sur Grid Layout)
+  - boutons, avec possibilités de variantes (primary, success, warning, etc.)
+  - styles de formulaires
+  - styles des tableaux
+  - l'objet autogrid passe en Grid Layout
+- ajouts :
+  - des badges (tags), avec possibilités de variantes (primary, success, warning, etc.)
+  - des alertes, avec possibilités de variantes (primary, success, warning, etc.)
+  - d'un bouton de navigation `.nav-button`
+  - des checkbox, radio et bouton "switch" stylés
+  - des onglets (tabs)
+  - des flèches courantes (haut, droit, bas, gauche) en SVG data-URI
+  - création d'un mixin de grille
+  - création d'un mixin de tailles de polices (responsive)
+  - `* {min-width: 0}` pour éviter la valeur `auto` sur les flex-items et grid-items
+
 # changelog v6.1.2 (21 juin 2017)
 - alignement des helpers flexbox sur ceux de Bootstrap (`.d-flex`, `.flex-row`, `.flex-column`, `.mr-auto`)
 - alignement des breakpoints sur ceux de Bootstrap (576, 768, 992, 1200) et réorganisation des intervalles
@@ -10,14 +39,14 @@
 # changelog v6.1.0 (3 mars 2017)
 - passage à [Normalize 5.0.0](https://github.com/necolas/normalize.css/blob/5.0.0/CHANGELOG.md)
 - ajout de variables pour tailles de polices différentes sur petits et sur grands écrans (`$h1-size` et `$h1-size-l` par exemple). Par défaut, les tailles "mobile" sont appliquées, et les tailles "desktop" s'appliquent en min-width `$tiny +1`
-- convention de nommage des variables pour faciliter les recherches : `$base-color` devient `$color-base`, `$link-color` devient `$color-link`, etc.
+- convention de nommage des variables pour faciliter les recherches : `$base-color` devient `$color-base`, `$link-color` devient `$link-color`, etc.
 - typo fix
 
 # changelog v6.0.8 (10 janvier 2017)
-- application de `$color-link-hover` uniquement si différent de `$color-link`
+- application de `$link-color-hover` uniquement si différent de `$link-color`
 
 # changelog v6.0.7 (7 décembre 2016)
-- application de `$font-stack-headings` uniquement si différent de `$font-stack-common`
+- application de `$font-family-headings` uniquement si différent de `$font-stack-base`
 
 # changelog v6.0.6 (2 décembre 2016)
 - Grillade : redéfinition du périmètre de `-small` : passe de `(min-width: ($tiny + 1)) and (max-width: $small)` à `(min-width: ($tiny + 1)) and (max-width: $medium)` (de 544px à 991px par défaut)

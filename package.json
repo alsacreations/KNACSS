@@ -32,9 +32,8 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-concat": "latest",
-    "gulp-minify-css": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-sourcemaps": "latest"
+    "gulp-clean-css": "latest",
+    "gulp-autoprefixer": "latest"
   },
   "engines": {}
 }

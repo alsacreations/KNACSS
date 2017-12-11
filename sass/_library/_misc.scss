@@ -1,0 +1,34 @@
+/* ----------------------------- */
+/* ==Misc                        */
+/* ----------------------------- */
+
+// hyphens on tiny screens
+@media (max-width: ($small - 1)) {
+  /* you shall not pass */
+  div,
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+// use .no-wrapping to disallow hyphens on tiny screens
+@media (max-width: ($small - 1)) {
+  .no-wrapping {
+    word-wrap: normal;
+    hyphens: manual;
+  }
+}
+
+// SVG width IE fix
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}

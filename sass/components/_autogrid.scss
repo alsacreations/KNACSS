@@ -1,0 +1,27 @@
+/* ----------------------------- */
+/* ==Autogrid object             */
+/* ----------------------------- */
+/* recommanded HTML : <div class="autogrid">... some elements ...</div> */
+/* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
+
+.autogrid,
+.grid {
+  @media (min-width: $tiny) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-column: 1fr;
+
+    // gutters
+    @if variable_exists(grid-gutters) {
+      $gutter: $grid-gutters !global;
+
+    } @else {
+      $gutter: ( '': 1rem, '-l': 2rem, '-xl': 4rem ) !global;
+    }
+    @each $affix, $size in $gutter {
+      &.has-gutter#{$affix} {
+        grid-column-gap: $size;
+      }
+    }
+  }
+}
