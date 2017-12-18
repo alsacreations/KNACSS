@@ -36,7 +36,7 @@ $large: 992px !default;
 }
 
 // grid constructor (.grid-2 to .grid-12)
-@for $i from 1 through 12 {
+@for $i from 2 through 12 {
   [class*="grid-#{$i}"] {
     grid-template-columns: repeat(#{$i}, 1fr);
   }
