@@ -411,7 +411,7 @@ body {
 /* Links */
 a {
   color: #333;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:focus, a:hover, a:active {
@@ -1689,10 +1689,6 @@ ul.is-unstyled, ul.unstyled {
   }
 }
 
-[class*="grid-1"] {
-  grid-template-columns: repeat(1, 1fr);
-}
-
 [class*="grid-2"] {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -2214,7 +2210,7 @@ button:focus {
 .btn--info,
 .button--info {
   background-color: #5BC0DE;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -2229,7 +2225,7 @@ button:focus {
 .btn--warning,
 .button--warning {
   background-color: #F0AD4E;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -2641,14 +2637,14 @@ button:focus {
 
 .tag--info {
   background-color: #5BC0DE;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .tag--warning {
   background-color: #F0AD4E;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -2728,12 +2724,12 @@ button:focus {
 
 .badge--info {
   background-color: #5BC0DE;
-  color: #fff;
+  color: #000;
 }
 
 .badge--warning {
   background-color: #F0AD4E;
-  color: #fff;
+  color: #000;
 }
 
 .badge--danger {
@@ -2802,14 +2798,14 @@ button:focus {
 
 .alert--info {
   background-color: #5BC0DE;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .alert--warning {
   background-color: #F0AD4E;
-  color: #fff;
+  color: #000;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

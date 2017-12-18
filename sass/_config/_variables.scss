@@ -152,7 +152,7 @@ $forms-color     : $gray-800;
 // Component: links
 $link-color            : $gray-800;
 $link-color-hover      : darken($link-color, 15%);
-$link-decoration       : none;
+$link-decoration       : underline;
 $link-decoration-hover : underline;
 
 // Global border-radius
@@ -186,8 +186,8 @@ $table-footer-background    : transparent;
 $variants-list: (
   (primary,    $color-primary,    $white,    none),
   (success,    $color-success,    $white,    none),
-  (info,       $color-info,       $white,    none),
-  (warning,    $color-warning,    $white,    none),
+  (info,       $color-info,       $black,    none),
+  (warning,    $color-warning,    $black,    none),
   (danger,     $color-danger,     $white,    none),
   (inverse,    $color-inverse,    $white,    none),
   (ghost,      $color-ghost,      $white,    0 0 0 1px $white inset)
