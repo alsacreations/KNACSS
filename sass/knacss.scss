@@ -32,37 +32,37 @@
   - Alerts
 */
 
-@import "_vendor/_reboot"; // Bootstrap reboot (basic reset)
+@import "_vendor/reboot"; // Bootstrap reboot (basic reset)
 
 // WARNING : you should comment the following @import (variables)
 // and move variables file from knacss folder to your own project folder!
-@import "_config/_variables.scss";
+@import "_config/variables";
 
-@import "_config/_mixins.scss";
+@import "_config/mixins";
 
 // Core Libraries
-@import "_library/_base.scss";         // basic styles
-@import "_library/_print.scss";        // print quick reset
-@import "_library/_misc.scss";         // skip links, hyphens
-@import "_library/_layout.scss";       // alignment, modules, positionning
-@import "_library/_utilities.scss";    // width and spacers helpers
-@import "_library/_responsive.scss";   // Responsive Web Design helpers
-// @import "_library/_wordpress.scss"; // WordPress reset and basic styles
+@import "_library/base";         // basic styles
+@import "_library/print";        // print quick reset
+@import "_library/misc";         // skip links, hyphens
+@import "_library/layout";       // alignment, modules, positionning
+@import "_library/utilities";    // width and spacers helpers
+@import "_library/responsive";   // Responsive Web Design helpers
+// @import "_library/wordpress"; // WordPress reset and basic styles
 
-// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "_library/grillade-flex.scss"
+// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "_library/grillade-flex"
 // Note that none of these file is prefixed by an underscore, in order to compile them.
-@import "_library/grillade-grid.scss"; // grid system with Grid Layout
+@import "_library/grillade-grid"; // grid system with Grid Layout
 
 // Components
-@import "components/_media.scss";      // media object
-@import "components/_autogrid.scss";   // media autogrid
-@import "components/_skip-links.scss"; // skip links
-@import "components/_tables.scss";     // data tables consistency
-@import "components/_forms.scss";      // forms consistency and styles
-@import "components/_buttons.scss";    // buttons styles
-@import "components/_checkbox.scss";   // checkbox, radio, switch styles
-@import "components/_tabs.scss";       // tabs styles
-@import "components/_arrows.scss";     // arrows styles
-@import "components/tags.scss";        // tags styles
-@import "components/_badges.scss";     // badges styles
-@import "components/_alerts.scss";     // alerts styles
+@import "components/media";      // media object
+@import "components/autogrid";   // media autogrid
+@import "components/skip-links"; // skip links
+@import "components/tables";     // data tables consistency
+@import "components/forms";      // forms consistency and styles
+@import "components/buttons";    // buttons styles
+@import "components/checkbox";   // checkbox, radio, switch styles
+@import "components/tabs";       // tabs styles
+@import "components/arrows";     // arrows styles
+@import "components/tags";        // tags styles
+@import "components/badges";     // badges styles
+@import "components/alerts";     // alerts styles
