@@ -26,9 +26,9 @@
   }
 }
 
-// SVG width IE fix
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  img[src$=".svg"] {
-    width: 100%;
-  }
-}
+// SVG width IE fix. WARNING: use only if you have SVG problems on IE.
+// @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+//   img[src$=".svg"] {
+//     width: 100%;
+//   }
+// }
