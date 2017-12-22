@@ -1,4 +1,8 @@
-# changelog v7.0.0beta (août - novembre 2017)
+# changelog v7.0.1 (22 décembre 2017)
+- meilleure gestion des hyphens
+- mise en commentaire du fix SVG our IE11
+
+# changelog v7.0.0 (août - novembre 2017)
 - modifications, mises à jour :
   - architecture globale revisitée (vendor, config, library, components)
   - remplacement de normalize.css par Bootstrap reboot.css
