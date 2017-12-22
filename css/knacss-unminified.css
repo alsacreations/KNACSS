@@ -761,41 +761,6 @@ kbd {
 }
 
 /* ----------------------------- */
-/* ==Misc                        */
-/* ----------------------------- */
-@media (max-width: 575px) {
-  /* you shall not pass */
-  div,
-  textarea,
-  table,
-  td,
-  th,
-  code,
-  pre,
-  samp {
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
-  }
-}
-
-@media (max-width: 575px) {
-  .no-wrapping {
-    word-wrap: normal;
-    -webkit-hyphens: manual;
-        -ms-hyphens: manual;
-            hyphens: manual;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  img[src$=".svg"] {
-    width: 100%;
-  }
-}
-
-/* ----------------------------- */
 /* ==Global Micro Layout         */
 /* ----------------------------- */
 /* module, gains superpower "BFC" Block Formating Context */
@@ -1004,6 +969,19 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 
 .u-biggest {
   font-size: 2em;
+}
+
+.u-txt-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.u-txt-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* State Helpers */

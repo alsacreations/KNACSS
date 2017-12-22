@@ -72,6 +72,9 @@ $weight-regular : 400 !default;
 $weight-medium  : 500 !default;
 $weight-bold    : 700 !default;
 
+// Activate hyphenation on small screens
+$hyphens: false !default;
+
 // ------------
 // Spacing zone
 // ------------

@@ -46,6 +46,34 @@
   font-size: 2em;
 }
 
+.u-txt-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.u-txt-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@if variable-exists(hyphens) and $hyphens==true {
+  @media (max-width: ($small - 1)) {
+    div,
+    textarea,
+    table,
+    td,
+    th,
+    code,
+    pre,
+    samp {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+  }
+}
+
 /* State Helpers */
 /* ------------- */
 
