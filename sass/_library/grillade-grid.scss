@@ -11,7 +11,7 @@
 $tiny: 480px !default;
 $medium: 768px !default;
 
-
+// classic Grid
 [class*=" grid-"],
 [class^="grid-"] {
   @media (min-width: $tiny) {
@@ -28,6 +28,29 @@ $medium: 768px !default;
     @each $affix, $size in $gutter {
       &.has-gutter#{$affix} {
         grid-gap: $size;
+      }
+    }
+  }
+}
+
+// autogrid
+.autogrid,
+.grid {
+  @media (min-width: $tiny) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+    // gutters
+    @if variable_exists(grid-gutters) {
+      $gutter: $grid-gutters !global;
+
+    } @else {
+      $gutter: ( '': 1rem, '-l': 2rem, '-xl': 4rem ) !global;
+    }
+    @each $affix, $size in $gutter {
+      &.has-gutter#{$affix} {
+        grid-column-gap: $size;
       }
     }
   }

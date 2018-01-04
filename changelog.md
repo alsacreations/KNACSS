@@ -1,3 +1,6 @@
+# changelog v7.0.2 (04 janvier 2018)
+- intégration de (auto)grid dans Grillade
+
 # changelog v7.0.1 (22 décembre 2017)
 - meilleure gestion des hyphens
 - mise en commentaire du fix SVG our IE11

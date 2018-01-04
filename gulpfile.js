@@ -24,7 +24,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('grillade', function() {
-  return gulp.src('./sass/components/grillade-grid.scss')
+  return gulp.src('./sass/_library/grillade-grid.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifycss())
@@ -32,7 +32,7 @@ gulp.task('grillade', function() {
 });
 
 gulp.task('grillade-flex', function() {
-  return gulp.src('./sass/components/grillade-flex.scss')
+  return gulp.src('./sass/_library/grillade-flex.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifycss())

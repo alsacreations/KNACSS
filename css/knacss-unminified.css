@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.0.1 (december,22 2017) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.0.2 (januar, 4 2017) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -1667,6 +1667,27 @@ ul.is-unstyled, ul.unstyled {
   }
 }
 
+@media (min-width: 480px) {
+  .autogrid,
+  .grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  .autogrid.has-gutter,
+  .grid.has-gutter {
+    grid-column-gap: 1rem;
+  }
+  .autogrid.has-gutter-l,
+  .grid.has-gutter-l {
+    grid-column-gap: 2rem;
+  }
+  .autogrid.has-gutter-xl,
+  .grid.has-gutter-xl {
+    grid-column-gap: 4rem;
+  }
+}
+
 [class*="grid-2"] {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -1890,32 +1911,6 @@ ul.is-unstyled, ul.unstyled {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-  }
-}
-
-/* ----------------------------- */
-/* ==Autogrid object             */
-/* ----------------------------- */
-/* recommanded HTML : <div class="autogrid">... some elements ...</div> */
-/* see https://codepen.io/raphaelgoetter/pen/zzwxEE */
-@media (min-width: 480px) {
-  .autogrid,
-  .grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
-  .autogrid.has-gutter,
-  .grid.has-gutter {
-    grid-column-gap: 1rem;
-  }
-  .autogrid.has-gutter-l,
-  .grid.has-gutter-l {
-    grid-column-gap: 2rem;
-  }
-  .autogrid.has-gutter-xl,
-  .grid.has-gutter-xl {
-    grid-column-gap: 4rem;
   }
 }
 
