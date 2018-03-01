@@ -1,3 +1,6 @@
+# changelog v7.0.3 (01 mars 2018)
+- suppression de commentaires inutiles
+
 # changelog v7.0.2 (04 janvier 2018)
 - intégration de (auto)grid dans Grillade
 

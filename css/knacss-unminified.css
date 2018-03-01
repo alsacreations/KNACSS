@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.0.2 (januar, 4 2017) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.0.3 (march, 1 2018) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -11,7 +11,6 @@
 2- Libraries  :
   - Base
   - Print
-  - Misc (hyphens)
   - Layout (alignment, modules, positionning)
   - Utilities (width and spacers helpers)
   - Responsive helpers
@@ -19,7 +18,6 @@
   - Grillade (Grid System)
 3- Components :
   - Media object
-  - Autogrid object
   - Skip Links for accessibility
   - Tables
   - Forms
@@ -33,8 +31,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -70,8 +67,7 @@ body {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -220,7 +216,6 @@ label,
 select,
 summary,
 textarea {
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
@@ -292,8 +287,7 @@ button::-moz-focus-inner,
 
 input[type="radio"],
 input[type="checkbox"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -372,15 +366,13 @@ template {
 /* ----------------------------- */
 /* switching to border-box model for all elements */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   /* avoid min-width: auto on flex and grid children */
   min-width: 0;
   min-height: 0;
@@ -680,8 +672,7 @@ kbd {
 @media print {
   * {
     background: transparent !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
   body {
@@ -846,77 +837,50 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 .flex-row-reverse, .flex-container--column-reverse,
 .flex-column-reverse,
 .d-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .flex-container--row,
 .flex-row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .flex-container--column,
 .flex-column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-container--row-reverse,
 .flex-row-reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .flex-container--column-reverse,
 .flex-column-reverse {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 .flex-item-fluid,
 .item-fluid {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0%;
-          flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 
 .flex-item-first,
 .item-first {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  order: -1;
 }
 
 .flex-item-medium,
 .item-medium {
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
+  order: 0;
 }
 
 .flex-item-last,
 .item-last {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .flex-item-center,
@@ -1587,10 +1551,7 @@ ul.is-unstyled, ul.unstyled {
   .flex-column, .flex-container--row-reverse,
   .flex-row-reverse, .flex-container--column-reverse,
   .flex-column-reverse {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   /* layouts for tiny screens */
   .tiny-hidden {
@@ -1860,15 +1821,11 @@ ul.is-unstyled, ul.unstyled {
 }
 
 .item-first {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  order: -1;
 }
 
 .item-last {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .grid-offset {
@@ -1890,27 +1847,17 @@ ul.is-unstyled, ul.unstyled {
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 @media (min-width: 480px) {
   .media {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    align-items: flex-start;
   }
   .media-content {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%;
+    flex: 1 1 0%;
   }
   .media-figure--center {
-    -ms-flex-item-align: center;
-        align-self: center;
+    align-self: center;
   }
   .media--reverse {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
 }
 
@@ -2034,18 +1981,13 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  -webkit-box-shadow: 0 0 0 1px #333 inset;
-          box-shadow: 0 0 0 1px #333 inset;
+  box-shadow: 0 0 0 1px #333 inset;
   color: #212529;
   vertical-align: middle;
   padding: 0.5rem 1rem;
   margin: 0;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
-  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
-  transition-property: background-color, color, border, -webkit-box-shadow;
   transition-property: box-shadow, background-color, color, border;
-  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2124,12 +2066,8 @@ button, .btn--primary,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
-  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
-  transition-property: background-color, color, border, -webkit-box-shadow;
   transition-property: box-shadow, background-color, color, border;
-  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -2154,8 +2092,7 @@ button:focus {
 .button--primary {
   background-color: #0275D8;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--primary:active, .btn--primary:focus, .btn--primary:hover,
@@ -2169,8 +2106,7 @@ button:focus {
 .button--success {
   background-color: #5CB85C;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--success:active, .btn--success:focus, .btn--success:hover,
@@ -2184,8 +2120,7 @@ button:focus {
 .button--info {
   background-color: #5BC0DE;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--info:active, .btn--info:focus, .btn--info:hover,
@@ -2199,8 +2134,7 @@ button:focus {
 .button--warning {
   background-color: #F0AD4E;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--warning:active, .btn--warning:focus, .btn--warning:hover,
@@ -2214,8 +2148,7 @@ button:focus {
 .button--danger {
   background-color: #D9534F;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--danger:active, .btn--danger:focus, .btn--danger:hover,
@@ -2229,8 +2162,7 @@ button:focus {
 .button--inverse {
   background-color: #333;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--inverse:active, .btn--inverse:focus, .btn--inverse:hover,
@@ -2244,8 +2176,7 @@ button:focus {
 .button--ghost {
   background-color: transparent;
   color: #fff;
-  -webkit-box-shadow: 0 0 0 1px #fff inset;
-          box-shadow: 0 0 0 1px #fff inset;
+  box-shadow: 0 0 0 1px #fff inset;
 }
 
 .btn--ghost:active, .btn--ghost:focus, .btn--ghost:hover,
@@ -2280,8 +2211,7 @@ button:focus {
   text-align: left;
   background: none;
   border-radius: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2289,8 +2219,7 @@ button:focus {
 
 .btn--unstyled:focus,
 .button--unstyled:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   outline: none;
 }
 
@@ -2304,32 +2233,20 @@ button:focus {
 }
 
 .nav-button > * {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   height: 2.6rem;
   width: 2.6rem;
   padding: 0;
   background-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#333));
   background-image: linear-gradient(#333, #333);
   background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
   background-size: 100% 5px;
-  -webkit-transition: .25s;
   transition: .25s;
-  -webkit-transition-property: background, -webkit-transform;
   transition-property: background, -webkit-transform;
   transition-property: transform, background;
   transition-property: transform, background, -webkit-transform;
@@ -2340,9 +2257,7 @@ button:focus {
   content: "";
   height: 5px;
   background: #333;
-  -webkit-transition: .25s;
   transition: .25s;
-  -webkit-transition-property: top, -webkit-transform;
   transition-property: top, -webkit-transform;
   transition-property: transform, top;
   transition-property: transform, top, -webkit-transform;
@@ -2359,9 +2274,7 @@ button:focus {
 
 .nav-button.is-active > * {
   background-image: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .nav-button.is-active > *::before {
@@ -2403,8 +2316,7 @@ button:focus {
   vertical-align: text-bottom;
   outline: 0;
   cursor: pointer;
-  -webkit-box-shadow: inset 0 0 0 1px #333;
-          box-shadow: inset 0 0 0 1px #333;
+  box-shadow: inset 0 0 0 1px #333;
   background: #fff;
 }
 
@@ -2425,12 +2337,8 @@ button:focus {
   height: 2rem;
   line-height: 2rem;
   font-size: 60%;
-  -webkit-box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
-          box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
-  -webkit-transition: -webkit-box-shadow .15s;
-  transition: -webkit-box-shadow .15s;
+  box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
   transition: box-shadow .15s;
-  transition: box-shadow .15s, -webkit-box-shadow .15s;
 }
 
 .switch::before, .switch::after {
@@ -2445,8 +2353,7 @@ button:focus {
 }
 
 .switch:checked {
-  -webkit-box-shadow: inset 2rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
-          box-shadow: inset 2rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
+  box-shadow: inset 2rem 0 0 #5CB85C, inset 0 0 0 1px #5CB85C;
 }
 
 .switch:checked::before {
@@ -2458,7 +2365,6 @@ button:focus {
 .checkbox {
   width: 2rem;
   height: 2rem;
-  -webkit-transition: background-color .15s;
   transition: background-color .15s;
 }
 
@@ -2473,7 +2379,6 @@ button:focus {
 .radio {
   width: 2rem;
   height: 2rem;
-  -webkit-transition: background-color .15s;
   transition: background-color .15s;
 }
 
@@ -2503,9 +2408,7 @@ button:focus {
   background: transparent;
   text-decoration: none;
   border-radius: 0 0 0 0;
-  -webkit-transition: .25s;
   transition: .25s;
-  -webkit-transition-property: color, border, background-color;
   transition-property: color, border, background-color;
 }
 
@@ -2597,50 +2500,43 @@ button:focus {
 .tag--primary {
   background-color: #0275D8;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--success {
   background-color: #5CB85C;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--info {
   background-color: #5BC0DE;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--warning {
   background-color: #F0AD4E;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--danger {
   background-color: #D9534F;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--inverse {
   background-color: #333;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tag--ghost {
   background-color: transparent;
   color: #fff;
-  -webkit-box-shadow: 0 0 0 1px #fff inset;
-          box-shadow: 0 0 0 1px #fff inset;
+  box-shadow: 0 0 0 1px #fff inset;
 }
 
 .tag--small {
@@ -2758,50 +2654,43 @@ button:focus {
 .alert--primary {
   background-color: #0275D8;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--success {
   background-color: #5CB85C;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--info {
   background-color: #5BC0DE;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--warning {
   background-color: #F0AD4E;
   color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--danger {
   background-color: #D9534F;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--inverse {
   background-color: #333;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .alert--ghost {
   background-color: transparent;
   color: #fff;
-  -webkit-box-shadow: 0 0 0 1px #fff inset;
-          box-shadow: 0 0 0 1px #fff inset;
+  box-shadow: 0 0 0 1px #fff inset;
 }
 
 .alert--small {
