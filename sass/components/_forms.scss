@@ -104,6 +104,11 @@ textarea:-moz-placeholder {
   color: #777;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
 progress {
   width: 100%;
   vertical-align: middle;

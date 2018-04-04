@@ -1,3 +1,6 @@
+# changelog v7.0.4 (04 avril 2018)
+- ajout de `::placeholder` cf. issue #276
+
 # changelog v7.0.3 (01 mars 2018)
 - suppression de commentaires inutiles
 
