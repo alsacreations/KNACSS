@@ -90,8 +90,8 @@ button {
 }
 
 // nav "burger" button
-// active it with a JS toggle-class to .is-active
-// recommanded HTML : <button class="nav-button" type="button" role="button" aria-label="open/close navigation"><i></i></button>
+// activate it with a JS toggle-class to .is-active
+// recommended HTML : <button class="nav-button" type="button" role="button" aria-label="open/close navigation"><i></i></button>
 // see doc : https://knacss.com/styleguide.html#buttons
 .nav-button {
   padding: 0;
@@ -141,7 +141,6 @@ button {
   }
 
   &.is-active {
-
     & > * {
       background-image: none;
       justify-content: center;
@@ -149,6 +148,7 @@ button {
       &::before {
         transform: translateY(50%) rotate3d(0,0,1,45deg);
       }
+
       &::after {
         transform: translateY(-50%) rotate3d(0,0,1,-45deg);
       }
