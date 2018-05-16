@@ -1,7 +1,7 @@
 /* ----------------------------- */
 /* ==Media object                */
 /* ----------------------------- */
-/* recommanded HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
+/* recommended HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 
 @media (min-width: $tiny) {
@@ -17,6 +17,7 @@
     &-figure--center {
       align-self: center;
     }
+
     // reverse variant
     &--reverse {
       flex-direction: row-reverse;

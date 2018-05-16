@@ -87,6 +87,7 @@ $medium: 768px !default;
       grid-column: auto / span #{$i};
     }
   }
+
   [class*="-small-all"] {
     grid-column: 1 / -1;
   }

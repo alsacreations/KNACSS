@@ -42,11 +42,13 @@
     width: 100% !important;
     display: block;
   }
+
   &.disabled,
   &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
+
   &:empty {
     display: none;
   }
