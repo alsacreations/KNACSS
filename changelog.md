@@ -1,3 +1,6 @@
+# changelog v7.0.5 (25 mai 2018)
+- mise à jour des styles, SVG, et variables des checkbox, radio et switches
+
 # changelog v7.0.4 (04 avril 2018)
 - ajout de `::placeholder` cf. issue #276
 

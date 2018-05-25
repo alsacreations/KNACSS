@@ -168,12 +168,16 @@ $quote-color     : $gray-200;
 $arrow-color     : $black;
 
 // Components: checkboxes, radios, switches
-$checkbox-color         : $gray-800;
-$checkbox-size          : 2rem;
-$checkbox-border-radius : 4px;
-$switch-color           : $gray-800;
-$switch-size            : 2rem;
-$switch-border-radius   : 3em;
+$checkbox-color: $white;
+$checkbox-background: $gray-800;
+$checkbox-size: 2rem;
+$checkbox-border-radius: 4px;
+$radio-color: $gray-800;
+$radio-background: $white;
+$switch-color: $white;
+$switch-background: $gray-800;
+$switch-size: 2rem;
+$switch-border-radius: 3em;
 
 // Component: tables
 $table-border               : $gray-500;

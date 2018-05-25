@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.0.4 (april, 4 2018) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.0.5 (mai, 25 2018) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -760,7 +760,7 @@ kbd {
   overflow: hidden;
 }
 
-/* blocks that needs to be placed under floats */
+/* blocks that need to be placed under floats */
 .clear {
   clear: both;
 }
@@ -1843,7 +1843,7 @@ ul.is-unstyled, ul.unstyled {
 /* ----------------------------- */
 /* ==Media object                */
 /* ----------------------------- */
-/* recommanded HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
+/* recommended HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
 /* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
 @media (min-width: 480px) {
   .media {
@@ -2306,9 +2306,9 @@ button:focus {
 /* ==Checkbox, radio, switch     */
 /* ----------------------------- */
 /* use .checkbox class on input type=checkbox */
-/* recommanded HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
+/* recommended HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
 /* use .radio class on input type=radio */
-/* recommanded HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
+/* recommended HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
 /* use .switch class on input type=checkbox */
 .checkbox {
   border-radius: 4px;
@@ -2331,8 +2331,6 @@ button:focus {
   vertical-align: text-bottom;
   outline: 0;
   cursor: pointer;
-  box-shadow: inset 0 0 0 1px #333;
-  background: #fff;
 }
 
 .switch ~ label,
@@ -2351,9 +2349,10 @@ button:focus {
   width: 4rem;
   height: 2rem;
   line-height: 2rem;
-  font-size: 60%;
+  font-size: 70%;
   box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
   transition: box-shadow .15s;
+  background-color: #fff;
 }
 
 .switch::before, .switch::after {
@@ -2380,11 +2379,14 @@ button:focus {
 .checkbox {
   width: 2rem;
   height: 2rem;
+  box-shadow: inset 0 0 0 1px #333;
+  background-color: #fff;
   transition: background-color .15s;
 }
 
 .checkbox:checked {
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=");
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%208%208%22%20enable-background%3D%22new%200%200%208%208%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M6.4%2C1L5.7%2C1.7L2.9%2C4.5L2.1%2C3.7L1.4%2C3L0%2C4.4l0.7%2C0.7l1.5%2C1.5l0.7%2C0.7l0.7-0.7l3.5-3.5l0.7-0.7L6.4%2C1L6.4%2C1z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%208%208%22%20enable-background%3D%22new%200%200%208%208%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M6.4%2C1L5.7%2C1.7L2.9%2C4.5L2.1%2C3.7L1.4%2C3L0%2C4.4l0.7%2C0.7l1.5%2C1.5l0.7%2C0.7l0.7-0.7l3.5-3.5l0.7-0.7L6.4%2C1L6.4%2C1z%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
@@ -2394,15 +2396,18 @@ button:focus {
 .radio {
   width: 2rem;
   height: 2rem;
-  transition: background-color .15s;
+  background-size: 0% 0%;
+  transition: background-size .15s;
+  box-shadow: inset 0 0 0 1px #333;
+  background-color: #fff;
 }
 
 .radio:checked {
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%2240%22%20height%3D%2240%22%0AviewBox%3D%220%200%2080%2080%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2224%22%20style%3D%22fill%3A%23ffffff%22/%3E%3C/svg%3E");
-  background-size: 80% 80%;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%22100%22%20height%3D%22100%22%0AviewBox%3D%220%200%2080%2080%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2224%22%20style%3D%22fill%3A%23333333%22/%3E%3C/svg%3E");
+  background-size: 90% 90%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #333;
+  background-color: #fff;
 }
 
 /* ----------------------------- */
