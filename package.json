@@ -30,10 +30,10 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "latest",
-    "gulp-clean-css": "^3.9.2",
+    "gulp-clean-css": "^3.9.4",
     "gulp-concat": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest"
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1"
   },
   "engines": {}
 }
