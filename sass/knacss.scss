@@ -30,7 +30,7 @@
   - Alerts
 */
 
-@import "_vendor/reboot"; // Bootstrap reboot (basic reset)
+@import "_vendor/reboot"; // Bootstrap reboot (basic reset) (CSS file renamed and imported as if it was a partial because of libsass)
 
 // WARNING : you should comment the following @import (variables)
 // and move variables file from knacss folder to your own project folder!
