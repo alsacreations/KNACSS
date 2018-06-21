@@ -8,7 +8,7 @@ Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé po
 
 ## Documentation
 
-- [**Documentation et Guide de styles**](https://knacss.com/styleguide.html)
+- [**Documentation et Guide de styles**](https://www.knacss.com/doc.html)
 - [**Pense-bête en PDF**](http://knacss.com/knacss7-cheatsheet.pdf)
 - Site web de présentation de KNACSS : http://knacss.com
 
