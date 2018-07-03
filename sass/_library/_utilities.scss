@@ -57,6 +57,23 @@
   text-overflow: ellipsis;
 }
 
+/* text and contents alignment */
+
+.txtleft,
+.u-txt-left {
+  text-align: left;
+}
+
+.txtright,
+.u-txt-right {
+  text-align: right;
+}
+
+.txtcenter,
+.u-txt-center {
+  text-align: center;
+}
+
 @if variable-exists(hyphens) and $hyphens==true {
   @media (max-width: ($small - 1)) {
     div,
@@ -72,6 +89,92 @@
       hyphens: auto;
     }
   }
+}
+
+/* blocks that need to be placed under floats */
+
+.clear,
+.u-clear {
+  clear: both;
+}
+
+/* blocks that must contain floats */
+
+.clearfix,
+.u-clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+    border-collapse: collapse;
+  }
+}
+
+/* simple blocks alignment */
+
+.left
+.u-left {
+  margin-right: auto;
+}
+
+.right,
+.u-right {
+  margin-left: auto;
+}
+
+.center,
+.u-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Global Micro Layout */
+/* ------------------- */
+
+/* module, gains superpower "BFC" Block Formating Context */
+
+.mod,
+.u-mod,
+.bfc,
+.u-bfc {
+  overflow: hidden;
+}
+
+/* floating elements */
+
+.fl,
+.u-fl {
+  float: left;
+}
+
+img.fl,
+img.u-fl {
+  margin-right: $spacer-small;
+}
+
+.fr,
+.u-fr {
+  float: right;
+}
+
+img.fr,
+img.u-fr {
+  margin-left: $spacer-small;
+}
+
+img.fl,
+img.fr,
+img.u-fl,
+img.u-fr {
+  margin-bottom: $spacer-tiny;
+}
+
+/* inline-block */
+
+.inbl,
+.u-inbl {
+  display: inline-block;
+  vertical-align: top;
 }
 
 /* State Helpers */

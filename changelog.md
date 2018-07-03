@@ -1,3 +1,6 @@
+# changelog v7.0.7 (3 juillet 2018)
+- cohérence de renommage pour les classes utilitaires (ajout du préfixe `.u-` uniformément)
+
 # changelog v7.0.5 (25 mai 2018)
 - mise à jour des styles, SVG, et variables des checkbox, radio et switches
 
