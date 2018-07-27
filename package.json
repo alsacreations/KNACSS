@@ -3,9 +3,7 @@
   "version": "7.0.7",
   "homepage": "http://www.knacss.com/",
   "bugs": "https://github.com/alsacreations/KNACSS/issues",
-  "author": [
-    "Raphaël GOETTER, Alsacreations (https://www.alsacreations.fr)"
-  ],
+  "author": "Raphaël GOETTER, Alsacreations",
   "contributors": [
     "Raphaël GOETTER, Alsacreations"
   ],
