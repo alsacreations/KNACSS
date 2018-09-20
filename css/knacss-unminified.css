@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.0.7 (july, 3 2018) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.0.8 (september, 20 2018) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -361,6 +361,7 @@ template {
 [hidden] {
   display: none !important;
 }
+
 /* ----------------------------- */
 /* ==Base (basic styles)         */
 /* ----------------------------- */
@@ -1995,7 +1996,6 @@ label {
 [type="week"],
 select,
 textarea {
-  white-space: nowrap;
   font-family: inherit;
   font-size: inherit;
   border: 0;

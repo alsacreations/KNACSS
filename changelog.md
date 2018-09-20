@@ -1,3 +1,6 @@
+# changelog v7.0.8 (20 septembre 2018)
+- suppression de `white-space: nowrap` sur les éléments de formulaire
+
 # changelog v7.0.7 (3 juillet 2018)
 - cohérence de renommage pour les classes utilitaires (ajout du préfixe `.u-` uniformément)
 
