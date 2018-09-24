@@ -79,6 +79,9 @@ $hyphens: false !default;
 // Spacing zone
 // ------------
 
+// Number of grid-columns
+$cols: 12;
+
 // Grid gutters (for .has-gutter-* classes)
 $grid-gutters: (
   '': 1rem,
