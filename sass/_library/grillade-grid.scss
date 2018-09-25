@@ -56,15 +56,15 @@ $medium: 768px !default;
   }
 }
 
-// grid constructor (.grid-2 to .grid-12)
-@for $i from 2 through 12 {
+// grid constructor (.grid-2 to .grid-$cols)
+@for $i from 2 through $cols {
   [class*="grid-#{$i}"] {
     grid-template-columns: repeat(#{$i}, 1fr);
   }
 }
 
-// grid items constructor (.col-1 to .col-12, .row-1 to .row-12)
-@for $i from 1 through 12 {
+// grid items constructor (.col-1 to .col-$cols, .row-1 to .row-$cols)
+@for $i from 1 through $cols {
   [class*="col-#{$i}"] {
     grid-column: auto / span #{$i};
   }

@@ -84,7 +84,7 @@ $iefix: 0.01px;
 }
 // Constructing grids : will be compiled in CSS
 @media (min-width: $small) {
-  @for $i from 2 through 12 {
+  @for $i from 2 through $cols {
     [class*="grid-#{$i}"] {
       @include grid(#{$i}, 0);
     }
