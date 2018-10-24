@@ -1,3 +1,6 @@
+# changelog v7.0.9 (24 octobre 2018)
+- correction d'alignement vertical de `.nav-button`
+
 # changelog v7.0.8 (20 septembre 2018)
 - suppression de `white-space: nowrap` sur les éléments de formulaire
 
