@@ -14,6 +14,7 @@ $small: 576px !default;
 $medium: 768px !default;
 $large: 992px !default;
 $extra-large: 1200px !default;
+$cols: 12 !default;
 
 // gutter values for grid layouts. Unit can be: %, px, em, rem
 $grid-gutters: ( '': 1rem, '-l': 2rem, '-xl': 4rem );

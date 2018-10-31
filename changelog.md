@@ -1,3 +1,12 @@
+# changelog v7.1.0 (31 octobre 2018)
+- mise à jour et meilleure intégration de gulp / postCSS : 
+  - autoprefixer version postCSS (avec browserslist officielle),
+  - unprefix : pour supprimer les vieux préfixes inutiles
+  - flexbox-fixes : pour corriger les erreurs connues sur IE
+  - gap-properties : polyfill de gap -> grid-gap
+  - minification CSS avec CSSnano
+- application de `white-space: pre-rap` sur les textarea
+
 # changelog v7.0.9 (24 octobre 2018)
 - correction d'alignement vertical de `.nav-button`
 
