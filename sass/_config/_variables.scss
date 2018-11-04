@@ -80,7 +80,7 @@ $hyphens: false !default;
 // ------------
 
 // Number of grid-columns
-$cols: 12;
+$cols: 12 !default;
 
 // Grid gutters (for .has-gutter-* classes)
 $grid-gutters: (
@@ -136,60 +136,60 @@ $orange-500 : #F0AD4E !default;
 $red-500    : #D9534F !default;
 
 // Semantic colors
-$color-brand    : $green-500;
-$color-primary  : $blue-500;
-$color-success  : $green-500;
-$color-info     : $blue-300;
-$color-warning  : $orange-500;
-$color-danger   : $red-500;
-$color-inverse  : $gray-800;
-$color-ghost    : transparent;
-$color-muted    : $gray-200;
+$color-brand    : $green-500 !default;
+$color-primary  : $blue-500 !default;
+$color-success  : $green-500 !default;
+$color-info     : $blue-300 !default;
+$color-warning  : $orange-500 !default;
+$color-danger   : $red-500 !default;
+$color-inverse  : $gray-800 !default;
+$color-ghost    : transparent !default;
+$color-muted    : $gray-200 !default;
 
-$color-base      : $gray-900;
-$background-base : $white;
+$color-base      : $gray-900 !default;
+$background-base : $white !default;
 
-$forms-color     : $gray-800;
+$forms-color     : $gray-800 !default;
 
 // ---------------
 // Components zone
 // ---------------
 
 // Component: links
-$link-color            : $gray-800;
-$link-color-hover      : darken($link-color, 15%);
-$link-decoration       : underline;
-$link-decoration-hover : underline;
+$link-color            : $gray-800 !default;
+$link-color-hover      : darken($link-color, 15%) !default;
+$link-decoration       : underline !default;
+$link-decoration-hover : underline !default;
 
 // Global border-radius
 $border-radius: 0 !default;
 
 // Component: quotes
-$quote-color     : $gray-200;
+$quote-color     : $gray-200 !default;
 
 // Component: arrows
-$arrow-color     : $black;
+$arrow-color     : $black !default;
 
 // Components: checkboxes, radios, switches
-$checkbox-color: $white;
-$checkbox-background: $gray-800;
-$checkbox-size: 2rem;
-$checkbox-border-radius: 4px;
-$radio-color: $gray-800;
-$radio-background: $white;
-$switch-color: $white;
-$switch-background: $gray-800;
-$switch-size: 2rem;
-$switch-border-radius: 3em;
+$checkbox-color: $white !default;
+$checkbox-background: $gray-800 !default;
+$checkbox-size: 2rem !default;
+$checkbox-border-radius: 4px !default;
+$radio-color: $gray-800 !default;
+$radio-background: $white !default;
+$switch-color: $white !default;
+$switch-background: $gray-800 !default;
+$switch-size: 2rem !default;
+$switch-border-radius: 3em !default;
 
 // Component: tables
-$table-border               : $gray-500;
-$table-caption-color        : $gray-800;
-$table-background           : transparent;
-$table-head-color           : $color-base;
-$table-head-background      : transparent;
-$table-footer-color         : $color-base;
-$table-footer-background    : transparent;
+$table-border               : $gray-500 !default;
+$table-caption-color        : $gray-800 !default;
+$table-background           : transparent !default;
+$table-head-color           : $color-base !default;
+$table-head-background      : transparent !default;
+$table-footer-color         : $color-base !default;
+$table-footer-background    : transparent !default;
 
 // Components: buttons, badges, alerts color variants list
 // Convention is: name - background-color - color - border
@@ -204,18 +204,18 @@ $variants-list: (
 ) !default;
 
 // Component: tabs
-$tabs-border            : $gray-200;
-$tabs-active-border     : $gray-800;
-$tabs-color             : $color-base;
-$tabs-active-color      : $gray-800;
-$tabs-background        : transparent;
-$tabs-active-background : transparent;
-$tabs-border-radius     : 0;
+$tabs-border            : $gray-200 !default;
+$tabs-active-border     : $gray-800 !default;
+$tabs-color             : $color-base !default;
+$tabs-active-color      : $gray-800 !default;
+$tabs-background        : transparent !default;
+$tabs-active-background : transparent !default;
+$tabs-border-radius     : 0 !default;
 
 // Component: nav burger button
-$burger-color             : $gray-800;
-$burger-background        : transparent;
-$burger-hover-background  : transparent;
-$burger-size              : 2.6rem;
-$burger-weight            : 5px; // size of stripes
-$burger-padding           : 0;
+$burger-color             : $gray-800 !default;
+$burger-background        : transparent !default;
+$burger-hover-background  : transparent !default;
+$burger-size              : 2.6rem !default;
+$burger-weight            : 5px !default; // size of stripes
+$burger-padding           : 0 !default;
