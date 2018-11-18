@@ -2,6 +2,14 @@
 /* ==Tables                      */
 /* ----------------------------- */
 
+$table-border               : $gray-500 !default;
+$table-caption-color        : $gray-800 !default;
+$table-background           : transparent !default;
+$table-head-color           : $color-base !default;
+$table-head-background      : transparent !default;
+$table-footer-color         : $color-base !default;
+$table-footer-background    : transparent !default;
+
 table,
 .table {
   width: 100%;

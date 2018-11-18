@@ -4,6 +4,13 @@
 /* preferably use <button> for buttons !*/
 /* use .btn-- or .button-- classes for variants */
 
+$burger-color             : $gray-800 !default;
+$burger-background        : transparent !default;
+$burger-hover-background  : transparent !default;
+$burger-size              : 2.6rem !default;
+$burger-weight            : 5px !default; // size of stripes
+$burger-padding           : 0 !default;
+
 %btn {
   display: inline-block;
   padding: $spacer-small $spacer-small-plus;
