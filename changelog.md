@@ -1,3 +1,6 @@
+# changelog v7.1.1 (10 decembre 2018)
+- patch correctif de gulpfile
+
 # changelog v7.1.0 (31 octobre 2018)
 - mise à jour et meilleure intégration de gulp / postCSS : 
   - autoprefixer version postCSS (avec browserslist officielle),

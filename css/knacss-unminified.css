@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.1.0 (october, 31 2018) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.1.1 (december, 10 2018) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -1725,57 +1725,57 @@ ul.is-unstyled, ul.unstyled {
 
 [class*="grid-2"] {
   -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 [class*="grid-3"] {
   -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 [class*="grid-4"] {
   -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 [class*="grid-5"] {
   -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 [class*="grid-6"] {
   -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 [class*="grid-7"] {
   -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 [class*="grid-8"] {
   -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
 [class*="grid-9"] {
   -ms-grid-columns: (1fr)[9];
-      grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
 }
 
 [class*="grid-10"] {
   -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 }
 
 [class*="grid-11"] {
   -ms-grid-columns: (1fr)[11];
-      grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(11, 1fr);
 }
 
 [class*="grid-12"] {
   -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
 
 [class*="col-1"] {
@@ -1878,28 +1878,28 @@ ul.is-unstyled, ul.unstyled {
 @media (min-width: 480px) and (max-width: 767px) {
   [class*="grid-"][class*="-small-1"] {
     -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   [class*="col-"][class*="-small-1"] {
     grid-column: auto/span 1;
   }
   [class*="grid-"][class*="-small-2"] {
     -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   [class*="col-"][class*="-small-2"] {
     grid-column: auto/span 2;
   }
   [class*="grid-"][class*="-small-3"] {
     -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   [class*="col-"][class*="-small-3"] {
     grid-column: auto/span 3;
   }
   [class*="grid-"][class*="-small-4"] {
     -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   [class*="col-"][class*="-small-4"] {
     grid-column: auto/span 4;
