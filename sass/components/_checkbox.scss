@@ -8,6 +8,19 @@
 /* use .switch class on input type=checkbox */
 // <input type="checkbox" class="switch" id="switch"><label for="switch" class="label">slide to unlock</label>
 
+$checkbox-color: $white !default;
+$checkbox-background: $gray-800 !default;
+$checkbox-size: 2rem !default;
+$checkbox-border-radius: 4px !default;
+
+$radio-color: $gray-800 !default;
+$radio-background: $white !default;
+
+$switch-color: $white !default;
+$switch-background: $gray-800 !default;
+$switch-size: 2rem !default;
+$switch-border-radius: 3em !default;
+
 // common styles
 .checkbox {
   border-radius: $checkbox-border-radius;

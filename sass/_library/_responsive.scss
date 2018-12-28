@@ -2,6 +2,14 @@
 /* ==Responsive helpers       */
 /* -------------------------- */
 
+// Warning: you should use your own values, regardless of the devices
+// Best practice is Mobile First: (min-width: $breakpoint)
+$tiny        : 480px !default; // or 'em' if you prefer, of course
+$small       : 576px !default;
+$medium      : 768px !default;
+$large       : 992px !default;
+$extra-large : 1200px !default;
+
 /* large screens */
 /* ------------- */
 

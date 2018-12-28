@@ -3,6 +3,8 @@
 /* ----------------------------- */
 /* see https://knacss.com/styleguide.html#arrows */
 
+$arrow-color     : $black !default;
+
 [class*="icon-arrow--"] {
   vertical-align: middle;
 

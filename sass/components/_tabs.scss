@@ -4,6 +4,14 @@
 /* see example on https://knacss.com/styleguide.html#tabs */
 /* NOTE : tabs need JavaScript to be activated */
 
+$tabs-border            : $gray-200 !default;
+$tabs-active-border     : $gray-800 !default;
+$tabs-color             : $color-base !default;
+$tabs-active-color      : $gray-800 !default;
+$tabs-background        : transparent !default;
+$tabs-active-background : transparent !default;
+$tabs-border-radius     : 0 !default;
+
 .tabs-menu {
   border-bottom: 2px solid $tabs-border;
 
