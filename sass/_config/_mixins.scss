@@ -15,10 +15,12 @@
 // arguments are : columns number, gutter, min-breakpoint
 // ex. .ingrid { @include grid(4, 1rem, 640px); }
 @mixin grid($number:1, $gutter:0, $breakpoint:0) {
-  @media (min-width: $breakpoint) {
-    display: grid;
-    grid-template-columns: repeat($number, 1fr);
-    grid-gap: $gutter;
+  @supports (display: grid) {
+    @media (min-width: $breakpoint) {
+      display: grid;
+      grid-template-columns: repeat($number, 1fr);
+      grid-gap: $gutter;
+    }
   }
 }
 
