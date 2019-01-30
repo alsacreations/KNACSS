@@ -45,21 +45,6 @@ var pluginsProd = [
     cssnano()
 ];
 
-
-// tâche CSS = compile vers knacss.css et knacss-unminified.css
-// gulp.task('css', function () {
-//   return gulp.src('./sass/knacss.scss')
-//     .pipe(sass({
-//       outputStyle: 'expanded' // CSS non minifiée plus lisible ('}' à la ligne)
-//     }))
-//     .pipe(postcss(plugins))
-//     .pipe(rename('knacss-unminified.css'))
-//     .pipe(gulp.dest('./css/'))
-//     .pipe(rename('knacss.css'))
-//     //.pipe(postcss(cssnano()))
-//     .pipe(gulp.dest('./css/'));
-// });
-
 // tâche cssDev = compile vers knacss-unminified.css
 gulp.task('cssDev', function () {
   return gulp.src('./sass/knacss.scss')

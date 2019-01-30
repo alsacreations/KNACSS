@@ -1,3 +1,6 @@
+# changelog v7.1.2 (30 janvier 2019)
+- ajout de la règle `@media (prefers-reduced-motion: reduce)`
+
 # changelog v7.1.1 (10 decembre 2018)
 - patch correctif de gulpfile
 

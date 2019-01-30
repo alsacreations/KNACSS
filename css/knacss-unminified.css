@@ -385,6 +385,16 @@ template {
 /* ----------------------------- */
 /* ==Base (basic styles)         */
 /* ----------------------------- */
+/* disable animations styles when reduced rotion is enabled */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
 /* switching to border-box model for all elements */
 html {
   -webkit-box-sizing: border-box;

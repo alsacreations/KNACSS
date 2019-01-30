@@ -2,6 +2,14 @@
 /* ==Base (basic styles)         */
 /* ----------------------------- */
 
+/* disable animations styles when reduced rotion is enabled */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* switching to border-box model for all elements */
 html {
   box-sizing: border-box;
