@@ -1,6 +1,6 @@
 # KNACSS
 
-http://www.knacss.com
+<http://www.knacss.com>
 
 KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign, grille de mise en forme).
 
@@ -10,7 +10,7 @@ Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé po
 
 - [**Documentation et Guide de styles**](https://www.knacss.com/doc.html)
 - [**Pense-bête en PDF**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
-- Site web de présentation de KNACSS : http://knacss.com
+- Site web de présentation de KNACSS : <http://knacss.com>
 
 ## Fonctionnalités
 
@@ -29,7 +29,7 @@ KNACSS est - dans sa grande majorité - compatible avec l'ensemble des navigateu
 
 Voir la documentation.
 
-## Mise à jour depuis une version précédente de KNACSS ?
+## Mise à jour depuis une version précédente de KNACSS
 
 La version `7.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes.
 
@@ -47,9 +47,9 @@ Pour tous détails, voir le fichier Changelog.
 
 ### Modifications majeures entre la v6 et la v5
 
-- la grille de mise en forme a été entièrement modifiée. Détails de modifications: https://github.com/alsacreations/KNACSS/issues/207
+- la grille de mise en forme a été entièrement modifiée. Détails de modifications: <https://github.com/alsacreations/KNACSS/issues/207>
 - les positionnements tabulaires. `.row`, `.col` et `.line`, devenus inutiles et confusants depuis Flexbox, ont été supprimés
-- de nouvelles valeurs de breakpoints ont été définies. Détails: https://github.com/alsacreations/KNACSS/issues/210
+- de nouvelles valeurs de breakpoints ont été définies. Détails: <https://github.com/alsacreations/KNACSS/issues/210>
 - suppression de l'outil *include-media* (crée des bugs d'encodage, nécessite un temps d'apprentissage, et n'apporte pas grand chose au final)
 
 ### Modifications majeures entre la v5 et la v4
@@ -58,12 +58,11 @@ Pour tous détails, voir le fichier Changelog.
 - suppression des fallbacks pour IE8-IE9 (à partir de la version KNACSS 5.0, seul IE10 et supérieurs sont pris en charge)
 - restructuration / renommage des fichiers avec préfixes `_config-`, `_layout-`, `_library-`, `_object-`, `_override-`
 - renommage des éléments de grilles : `.flex-item-double` --> `.grid-item-double` (plus cohérent)
-- ajout de la library include-media (http://include-media.com/)
+- ajout de la library include-media (<http://include-media.com/>)
 - grille "grillade" à présent en mobile first
 
 ### Modifications majeures entre la v4 et la v3
 
 - La rétrocompatibilité n'est pas préservée pour certains noms de classes ( `.left`, `.start`, `.fl`, `.table-`, `.flex-start`, `.flex-end`)&nbsp;: `.left` ne correspond plus à un `float: left` mais à un `margin-right: auto`, il faut dorénavant employer `.fl` pour obtenir un flottant à gauche;  `.right` ne correspond plus à un `float: right` mais à un `margin-left: auto`, il faut dorénavant employer `.fr` pour obtenir un flottant à droite; `.start` et `.end` n'existent plus
 - Les noms des conteneurs de grille ont changé et nécessitent systématiquement un trait d'union : ancien nommage : `.grid2`, `.grid1-3`;  nouveau nommage : `.grid-2`, `.grid-1-3`
-- Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage :
-`.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last`
+- Les classes relatives à flexbox ont été renommées pour ne pas entrer en conflit avec des outils tels que Modernizer (qui ajoutent aux-aussi ce genre de classes). Nouveau nommage : `.flex-container, .flex-container-h`, `.flex-container-v`, `.flex-item-fluid`, `.flex-item-center`, `.flex-item-first, .flex-item-medium, .flex-item-last`
