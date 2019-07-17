@@ -26,13 +26,12 @@ html {
 
 html {
   /* set base font-size to equiv "10px", which is adapted to rem unit */
-  font-size: 62.5%;
-  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   font-size: calc(1em * 0.625);
 }
 
 body {
   margin: 0;
+  padding: 0;
   @include font-size(base);
   background-color: $background-base;
   color: $color-base;
