@@ -1,8 +1,12 @@
 /* ----------------------------- */
-/* ==Base (basic styles)         */
+/* ==Reset                       */
 /* ----------------------------- */
 
-/* disable animations styles when reduced motion is enabled */
+
+/**
+ * disable animations styles when reduced motion is enabled
+ */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -10,28 +14,34 @@
   }
 }
 
-/* switching to border-box model for all elements */
-html {
-  box-sizing: border-box;
-}
+/**
+ * 1. switch to border-box model for all elements
+ * 2. avoid min-width: auto and min-height: auto on flex and grid children
+ */
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  /* avoid min-width: auto on flex and grid children */
-  min-width: 0;
-  min-height: 0;
+  box-sizing: border-box; /* 1 */
+  min-width: 0; /* 2 */
+  min-height: 0; /* 2 */
 }
+
+/**
+ * 1. remove the grey highlight on links in iOS 
+ * 2. prevent orientation font changes in iOS
+ * 3. set base font-size to equiv "10px", which is adapted to rem unit
+ */
 
 html {
-  /* set base font-size to equiv "10px", which is adapted to rem unit */
-  font-size: calc(1em * 0.625);
+  -webkit-tap-highlight-color: transparent; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  font-size: calc(1em * 0.625); /* 3 */
 }
 
+/* Body */
 body {
   margin: 0;
-  padding: 0;
   @include font-size(base);
   background-color: $background-base;
   color: $color-base;
@@ -123,7 +133,23 @@ ul ul {
   margin-bottom: 0;
 }
 
-/* Max values */
+/* Styling elements */
+a,
+area,
+button,
+[role="button"],
+.btn,
+.button,
+[type="button"]
+input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
 img,
 table,
 td,
@@ -139,16 +165,22 @@ svg {
 
 img {
   height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
-/* Styling elements */
+svg:not(:root) {
+  overflow: hidden;
+}
+
 ul,
 ol {
   padding-left: 2em;
 }
 
-img {
-  vertical-align: middle;
+b,
+strong {
+  font-weight: bolder;
 }
 
 em,
@@ -160,6 +192,22 @@ var {
   font-style: italic;
 }
 
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+  white-space: pre-wrap;
+  line-height: normal;
+}
+
+pre {
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+  tab-size: 2;
+}
+
 code,
 kbd,
 mark {
@@ -169,10 +217,6 @@ mark {
 kbd {
   padding: 0 2px;
   border: 1px solid #999;
-}
-
-pre {
-  tab-size: 2;
 }
 
 code {
@@ -261,13 +305,4 @@ blockquote,
 figure {
   margin-left: 0;
   margin-right: 0;
-}
-
-code,
-pre,
-samp,
-kbd {
-  white-space: pre-wrap;
-  font-family: $font-family-monospace;
-  line-height: normal;
 }
