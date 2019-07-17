@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.1.1 (december, 10 2018) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.1.2 (january, 30 2019) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -8,8 +8,8 @@
 /* ----------------------------- */
 /*
 1- Reboot (basic reset)
-2- Libraries  :
-  - Base
+2- Base  :
+  - Reset
   - Print
   - Layout (alignment, modules, positionning)
   - Utilities (width and spacers helpers)
@@ -28,364 +28,12 @@
   - Badges
   - Alerts
 */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
-  overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
-  width: device-width;
-}
-
-@viewport {
-  width: device-width;
-}
-
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
-}
-
-[tabindex="-1"]:focus {
-  outline: none !important;
-}
-
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  cursor: help;
-  border-bottom: 0;
-}
-
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit;
-}
-
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
-}
-
-dt {
-  font-weight: 700;
-}
-
-dd {
-  margin-bottom: .5rem;
-  margin-left: 0;
-}
-
-blockquote {
-  margin: 0 0 1rem;
-}
-
-dfn {
-  font-style: italic;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-a:not([href]):not([tabindex]) {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):focus {
-  outline: 0;
-}
-
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
-}
-
-figure {
-  margin: 0 0 1rem;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-a,
-area,
-button,
-[role="button"],
-input:not([type="range"]),
-label,
-select,
-summary,
-textarea {
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #868e96;
-  text-align: left;
-  caption-side: bottom;
-}
-
-th {
-  text-align: inherit;
-}
-
-label {
-  display: inline-block;
-  margin-bottom: .5rem;
-}
-
-button {
-  border-radius: 0;
-}
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-button,
-input {
-  overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-     -moz-appearance: button;
-          appearance: button;
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
-     -moz-appearance: listbox;
-          appearance: listbox;
-}
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-legend {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin-bottom: .5rem;
-  font-size: 1.5rem;
-  line-height: inherit;
-  color: inherit;
-  white-space: normal;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
-          appearance: button;
-}
-
-output {
-  display: inline-block;
-}
-
-summary {
-  display: list-item;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none !important;
-}
-
 /* ----------------------------- */
-/* ==Base (basic styles)         */
+/* ==Reset (global)              */
 /* ----------------------------- */
-/* disable animations styles when reduced rotion is enabled */
+/**
+ * disable animations styles when reduced motion is enabled
+ */
 @media (prefers-reduced-motion: reduce) {
   * {
     -webkit-animation: none !important;
@@ -395,27 +43,37 @@ template {
   }
 }
 
-/* switching to border-box model for all elements */
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
+/**
+ * 1. switch to border-box model for all elements
+ * 2. avoid min-width: auto and min-height: auto on flex and grid children
+ */
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  /* avoid min-width: auto on flex and grid children */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
   min-width: 0;
+  /* 2 */
   min-height: 0;
+  /* 2 */
 }
 
+/**
+ * 1. remove the grey highlight on links in iOS 
+ * 2. prevent orientation font changes in iOS
+ * 3. set base font-size to equiv "10px", which is adapted to rem unit
+ */
 html {
-  /* set base font-size to equiv "10px", which is adapted to rem unit */
-  font-size: 62.5%;
-  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  -webkit-tap-highlight-color: transparent;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  /* 2 */
   font-size: calc(1em * 0.625);
+  /* 3 */
 }
 
 body {
@@ -433,7 +91,9 @@ body {
   }
 }
 
-/* Links */
+/**
+ * links
+ */
 a {
   color: #333;
   text-decoration: underline;
@@ -444,7 +104,9 @@ a:focus, a:hover, a:active {
   text-decoration: underline;
 }
 
-/* Headings */
+/**
+ * headings
+ */
 h1, .h1-like {
   font-size: 2.8rem;
   font-family: sans-serif;
@@ -513,7 +175,9 @@ h6, .h6-like {
   }
 }
 
-/* Vertical rythm */
+/**
+ * vertical rythm
+ */
 h1,
 h2,
 h3,
@@ -536,7 +200,9 @@ pre {
   margin-bottom: 1rem;
 }
 
-/* Avoid margins on nested elements */
+/**
+ * avoid margin on nested elements
+ */
 li p,
 li .p-like,
 li ul,
@@ -547,7 +213,24 @@ ul ul {
   margin-bottom: 0;
 }
 
-/* Max values */
+/* ----------------------------- */
+/* ==Reset (common styling)      */
+/* ----------------------------- */
+a,
+area,
+button,
+[role="button"],
+.btn,
+.button,
+[type="button"] input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
 img,
 table,
 td,
@@ -563,16 +246,25 @@ svg {
 
 img {
   height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
-/* Styling elements */
+/**
+ * fill color matching to text color
+ */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
 ul,
 ol {
   padding-left: 2em;
 }
 
-img {
-  vertical-align: middle;
+b,
+strong {
+  font-weight: bolder;
 }
 
 em,
@@ -584,6 +276,170 @@ var {
   font-style: italic;
 }
 
+/* ----------------------------- */
+/* ==Reset (buttons)             */
+/* ----------------------------- */
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/**
+* 1. show overflow in IE/Edge
+*/
+button,
+input {
+  overflow: visible;
+  /* 1 */
+}
+
+/**
+* 1. remove the inheritance of text transform in Firefox
+*/
+button,
+select {
+  text-transform: none;
+  /* 1 */
+}
+
+/**
+ * 1. correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  /* 1 */
+}
+
+/**
+ * 1. remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  /* 1 */
+  padding: 0;
+}
+
+/**
+ * 1. restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+  /* 1 */
+}
+
+/* ----------------------------- */
+/* ==Reset (forms)               */
+/* ----------------------------- */
+form,
+fieldset {
+  border: none;
+}
+
+fieldset {
+  padding: 2rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  border: 0;
+  white-space: normal;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  min-height: 5em;
+  vertical-align: top;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+progress {
+  display: inline-block;
+  width: 100%;
+  vertical-align: baseline;
+}
+
+/* ----------------------------- */
+/* ==Reset (inputs)              */
+/* ----------------------------- */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+::-webkit-search-cancel-button,
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+          appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+/* ----------------------------- */
+/* ==Reset (misc styling)        */
+/* ----------------------------- */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+  white-space: pre-wrap;
+  line-height: normal;
+}
+
+pre {
+  overflow: auto;
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
+}
+
 code,
 kbd,
 mark {
@@ -593,12 +449,6 @@ mark {
 kbd {
   padding: 0 2px;
   border: 1px solid #999;
-}
-
-pre {
-  -moz-tab-size: 2;
-    -o-tab-size: 2;
-       tab-size: 2;
 }
 
 code {
@@ -631,6 +481,9 @@ sub {
   top: 0.5ex;
 }
 
+/**
+ * quotes, blockquote and hr styling
+ */
 blockquote {
   position: relative;
   padding-left: 3em;
@@ -690,13 +543,28 @@ figure {
   margin-right: 0;
 }
 
-code,
-pre,
-samp,
-kbd {
-  white-space: pre-wrap;
-  font-family: consolas, courier, monospace;
-  line-height: normal;
+/* ----------------------------- */
+/* ==Reset (IE rules)            */
+/* ----------------------------- */
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+/**
+  * hide overflow in IE
+  */
+svg:not(:root) {
+  overflow: hidden;
 }
 
 /* ----------------------------- */
@@ -1944,261 +1812,207 @@ ul.is-unstyled, ul.unstyled {
 }
 
 /* ----------------------------- */
-/* ==Media object                */
+/* ==Alerts                      */
 /* ----------------------------- */
-/* recommended HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
-/* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
-@media (min-width: 480px) {
-  .media {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .media-content {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0%;
-            flex: 1 1;
-  }
-  .media-figure--center {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-  }
-  .media--reverse {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
-}
-
-/* ----------------------------- */
-/* ==skip links                  */
-/* ----------------------------- */
-/* see https://www.alsacreations.com/article/lire/572-Les-liens-d-evitement.html */
-/* styling skip links */
-.skip-links {
-  position: absolute;
-}
-
-.skip-links a {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0.5em;
-  background: black;
-  color: white;
-  text-decoration: none;
-}
-
-.skip-links a:focus {
-  position: static;
-  overflow: visible;
-  clip: auto;
-}
-
-/* ----------------------------- */
-/* ==Tables                      */
-/* ----------------------------- */
-table,
-.table {
-  width: 100%;
-  max-width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  vertical-align: top;
-  margin-bottom: 2rem;
-}
-
-.table {
-  display: table;
-  border: 1px solid #acb3c2;
-  background: transparent;
-}
-
-.table--zebra tbody tr:nth-child(odd) {
-  background: #e7e9ed;
-}
-
-.table caption {
-  caption-side: bottom;
-  padding: 1rem;
-  color: #333;
-  font-style: italic;
-  text-align: right;
-}
-
-.table td,
-.table th {
-  padding: 0.3rem 0.6rem;
-  min-width: 2rem;
-  vertical-align: top;
-  border: 1px #acb3c2 dotted;
-  text-align: left;
-  cursor: default;
-}
-
-.table thead {
+/* use .alert-- classes for variants */
+.alert, .alert--primary, .alert--success, .alert--info, .alert--warning, .alert--danger, .alert--inverse, .alert--ghost {
+  padding: 1rem 1rem;
+  margin-top: 0.75em;
+  margin-bottom: 0;
   color: #212529;
-  background: transparent;
-}
-
-.table--auto {
-  table-layout: auto;
-}
-
-/* ----------------------------- */
-/* ==Forms                       */
-/* ----------------------------- */
-/* thanks to HTML5boilerplate and https://shoelace.style/ */
-/* forms items */
-form,
-fieldset {
-  border: none;
-}
-
-fieldset {
-  padding: 2rem;
-}
-
-fieldset legend {
-  padding: 0 0.5rem;
-  border: 0;
-  white-space: normal;
-}
-
-label {
-  display: inline-block;
-  cursor: pointer;
-}
-
-[type="color"],
-[type="date"],
-[type="datetime-local"],
-[type="email"],
-[type="month"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="submit"],
-[type="tel"],
-[type="text"],
-[type="time"],
-[type="url"],
-[type="week"],
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  border: 0;
-  -webkit-box-shadow: 0 0 0 1px #333 inset;
-          box-shadow: 0 0 0 1px #333 inset;
-  color: #212529;
-  vertical-align: middle;
-  padding: 0.5rem 1rem;
-  margin: 0;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
-  transition-property: background-color, color, border, -webkit-box-shadow;
-  transition-property: box-shadow, background-color, color, border;
-  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-[type="submit"] {
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-}
-
-input[readonly] {
+  border-radius: 0;
   background-color: #e7e9ed;
 }
 
-select {
-  padding-right: 2rem;
-  border-radius: 0;
-  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-  background-position: right .6rem center;
-  background-repeat: no-repeat;
-  background-size: 1.2rem;
+.alert a, .alert--primary a, .alert--success a, .alert--info a, .alert--warning a, .alert--danger a, .alert--inverse a, .alert--ghost a {
+  color: inherit;
+  text-decoration: underline;
 }
 
-/* hiding IE11 arrow */
-select::-ms-expand {
+.alert--primary {
+  background-color: #0275D8;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--success {
+  background-color: #5CB85C;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--info {
+  background-color: #5BC0DE;
+  color: #000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--warning {
+  background-color: #F0AD4E;
+  color: #000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--danger {
+  background-color: #D9534F;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--inverse {
+  background-color: #333;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.alert--ghost {
+  background-color: transparent;
+  color: #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff inset;
+          box-shadow: 0 0 0 1px #fff inset;
+}
+
+.alert--small {
+  font-size: 1.2rem;
+}
+
+.alert--big {
+  font-size: 2rem;
+}
+
+.alert--block {
+  width: 100% !important;
+  display: block;
+}
+
+.alert.disabled, .disabled.alert--primary, .disabled.alert--success, .disabled.alert--info, .disabled.alert--warning, .disabled.alert--danger, .disabled.alert--inverse, .disabled.alert--ghost, .alert--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alert:empty, .alert--primary:empty, .alert--success:empty, .alert--info:empty, .alert--warning:empty, .alert--danger:empty, .alert--inverse:empty, .alert--ghost:empty {
   display: none;
-}
-
-textarea {
-  min-height: 5em;
-  vertical-align: top;
-  resize: vertical;
-  white-space: pre-wrap;
-}
-
-/* 'x' appears on right of search input when text is entered. This removes it */
-[type="search"]::-webkit-search-decoration, [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-results-button, [type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-::-webkit-input-placeholder {
-  color: #777;
-}
-
-::-moz-placeholder {
-  color: #777;
-}
-
-:-ms-input-placeholder {
-  color: #777;
-}
-
-::-ms-input-placeholder {
-  color: #777;
-}
-
-::placeholder {
-  color: #777;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #777;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #777;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #777;
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  color: #777;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #777;
-}
-
-progress {
-  width: 100%;
-  vertical-align: middle;
 }
 
 /* ----------------------------- */
-/* ==Buttons                     */
+/* ==Arrows                      */
+/* ----------------------------- */
+/* see https://knacss.com/styleguide.html#arrows */
+[class*="icon-arrow--"] {
+  vertical-align: middle;
+}
+
+[class*="icon-arrow--"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  background-color: #000;
+  line-height: 1;
+}
+
+.icon-arrow--down::after {
+  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+.icon-arrow--up::after {
+  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%208.596%20L%203.523%2014.973%20C%202.464%2015.935%200.495%2013.72%201.505%2012.791%20L%201.505%2012.791%20L%208.494%205.799%20C%209.138%205.212%2010.655%205.193%2011.29%205.799%20L%2011.29%205.799%20L%2018.49%2012.791%20C%2019.557%2013.809%2017.364%2015.882%2016.262%2014.837%20L%2016.262%2014.837%20L%209.96%208.596%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%208.596%20L%203.523%2014.973%20C%202.464%2015.935%200.495%2013.72%201.505%2012.791%20L%201.505%2012.791%20L%208.494%205.799%20C%209.138%205.212%2010.655%205.193%2011.29%205.799%20L%2011.29%205.799%20L%2018.49%2012.791%20C%2019.557%2013.809%2017.364%2015.882%2016.262%2014.837%20L%2016.262%2014.837%20L%209.96%208.596%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+.icon-arrow--right::after {
+  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%2011.685%2010.321%20L%205.308%2016.758%20C%204.346%2017.817%206.561%2019.786%207.49%2018.776%20L%207.49%2018.776%20L%2014.482%2011.787%20C%2015.069%2011.142%2015.088%209.626%2014.482%208.991%20L%2014.482%208.991%20L%207.49%201.791%20C%206.472%200.724%204.399%202.916%205.444%204.019%20L%205.444%204.019%20L%2011.685%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%2011.685%2010.321%20L%205.308%2016.758%20C%204.346%2017.817%206.561%2019.786%207.49%2018.776%20L%207.49%2018.776%20L%2014.482%2011.787%20C%2015.069%2011.142%2015.088%209.626%2014.482%208.991%20L%2014.482%208.991%20L%207.49%201.791%20C%206.472%200.724%204.399%202.916%205.444%204.019%20L%205.444%204.019%20L%2011.685%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+.icon-arrow--left::after {
+  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* ----------------------------- */
+/* ==Badges                      */
+/* ----------------------------- */
+/* use .badge-- classes for variants */
+.badge, .badge--primary, .badge--success, .badge--info, .badge--warning, .badge--danger, .badge--inverse, .badge--ghost {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #212529;
+  background-color: #e7e9ed;
+  line-height: 1;
+}
+
+.badge::before, .badge--primary::before, .badge--success::before, .badge--info::before, .badge--warning::before, .badge--danger::before, .badge--inverse::before, .badge--ghost::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 100%;
+}
+
+.badge--primary {
+  background-color: #0275D8;
+  color: #fff;
+}
+
+.badge--success {
+  background-color: #5CB85C;
+  color: #fff;
+}
+
+.badge--info {
+  background-color: #5BC0DE;
+  color: #000;
+}
+
+.badge--warning {
+  background-color: #F0AD4E;
+  color: #000;
+}
+
+.badge--danger {
+  background-color: #D9534F;
+  color: #fff;
+}
+
+.badge--inverse {
+  background-color: #333;
+  color: #fff;
+}
+
+.badge--ghost {
+  background-color: transparent;
+  color: #fff;
+}
+
+.badge--small {
+  font-size: 1.2rem;
+}
+
+.badge--big {
+  font-size: 2rem;
+}
+
+.badge.disabled, .disabled.badge--primary, .disabled.badge--success, .disabled.badge--info, .disabled.badge--warning, .disabled.badge--danger, .disabled.badge--inverse, .disabled.badge--ghost, .badge--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.badge:empty, .badge--primary:empty, .badge--success:empty, .badge--info:empty, .badge--warning:empty, .badge--danger:empty, .badge--inverse:empty, .badge--ghost:empty {
+  display: none;
+}
+
+/* ----------------------------- */
+/* ==Buttons styling             */
 /* ----------------------------- */
 /* preferably use <button> for buttons !*/
 /* use .btn-- or .button-- classes for variants */
@@ -2234,9 +2048,6 @@ button, .btn--primary,
   border: none;
   border-radius: 0;
   background-color: #e7e9ed;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 1;
 }
 
 .btn:focus,
@@ -2588,6 +2399,233 @@ button:focus {
 }
 
 /* ----------------------------- */
+/* ==Forms styling               */
+/* ----------------------------- */
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="submit"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  -webkit-box-shadow: 0 0 0 1px #333 inset;
+          box-shadow: 0 0 0 1px #333 inset;
+  color: #212529;
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-transition-property: background-color, color, border, -webkit-box-shadow;
+  transition-property: background-color, color, border, -webkit-box-shadow;
+  transition-property: box-shadow, background-color, color, border;
+  transition-property: box-shadow, background-color, color, border, -webkit-box-shadow;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[readonly] {
+  background-color: #e7e9ed;
+}
+
+select {
+  padding-right: 2rem;
+  border-radius: 0;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+  background-position: right .6rem center;
+  background-repeat: no-repeat;
+  background-size: 1.2rem;
+}
+
+/* hiding IE11 arrow */
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  min-height: 5em;
+  vertical-align: top;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+/* 'x' appears on right of search input when text is entered. This removes it */
+[type="search"]::-webkit-search-decoration, [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-results-button, [type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  color: #777;
+}
+
+::-moz-placeholder {
+  color: #777;
+}
+
+:-ms-input-placeholder {
+  color: #777;
+}
+
+::-ms-input-placeholder {
+  color: #777;
+}
+
+::placeholder {
+  color: #777;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #777;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #777;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #777;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #777;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+/* ----------------------------- */
+/* ==Media object                */
+/* ----------------------------- */
+/* recommended HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
+/* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
+@media (min-width: 480px) {
+  .media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .media-content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0%;
+            flex: 1 1;
+  }
+  .media-figure--center {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .media--reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+/* ----------------------------- */
+/* ==skip links                  */
+/* ----------------------------- */
+/* see https://www.alsacreations.com/article/lire/572-Les-liens-d-evitement.html */
+/* styling skip links */
+.skip-links {
+  position: absolute;
+}
+
+.skip-links a {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0.5em;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+
+.skip-links a:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+}
+
+/* ----------------------------- */
+/* ==Tables                      */
+/* ----------------------------- */
+table,
+.table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+  margin-bottom: 2rem;
+}
+
+.table {
+  display: table;
+  border: 1px solid #acb3c2;
+  background: transparent;
+}
+
+.table--zebra tbody tr:nth-child(odd) {
+  background: #e7e9ed;
+}
+
+.table caption {
+  caption-side: bottom;
+  padding: 1rem;
+  color: #333;
+  font-style: italic;
+  text-align: right;
+}
+
+.table td,
+.table th {
+  padding: 0.3rem 0.6rem;
+  min-width: 2rem;
+  vertical-align: top;
+  border: 1px #acb3c2 dotted;
+  text-align: left;
+  cursor: default;
+}
+
+.table thead {
+  color: #212529;
+  background: transparent;
+}
+
+.table--auto {
+  table-layout: auto;
+}
+
+/* ----------------------------- */
 /* ==Tabs                        */
 /* ----------------------------- */
 /* see example on https://knacss.com/styleguide.html#tabs */
@@ -2640,45 +2678,6 @@ button:focus {
 
 .tabs-content-item[aria-hidden="false"] {
   visibility: visible;
-}
-
-/* ----------------------------- */
-/* ==Arrows                      */
-/* ----------------------------- */
-/* see https://knacss.com/styleguide.html#arrows */
-[class*="icon-arrow--"] {
-  vertical-align: middle;
-}
-
-[class*="icon-arrow--"]::after {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  -webkit-mask-size: cover;
-          mask-size: cover;
-  background-color: #000;
-  line-height: 1;
-}
-
-.icon-arrow--down::after {
-  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-}
-
-.icon-arrow--up::after {
-  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%208.596%20L%203.523%2014.973%20C%202.464%2015.935%200.495%2013.72%201.505%2012.791%20L%201.505%2012.791%20L%208.494%205.799%20C%209.138%205.212%2010.655%205.193%2011.29%205.799%20L%2011.29%205.799%20L%2018.49%2012.791%20C%2019.557%2013.809%2017.364%2015.882%2016.262%2014.837%20L%2016.262%2014.837%20L%209.96%208.596%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%208.596%20L%203.523%2014.973%20C%202.464%2015.935%200.495%2013.72%201.505%2012.791%20L%201.505%2012.791%20L%208.494%205.799%20C%209.138%205.212%2010.655%205.193%2011.29%205.799%20L%2011.29%205.799%20L%2018.49%2012.791%20C%2019.557%2013.809%2017.364%2015.882%2016.262%2014.837%20L%2016.262%2014.837%20L%209.96%208.596%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-}
-
-.icon-arrow--right::after {
-  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%2011.685%2010.321%20L%205.308%2016.758%20C%204.346%2017.817%206.561%2019.786%207.49%2018.776%20L%207.49%2018.776%20L%2014.482%2011.787%20C%2015.069%2011.142%2015.088%209.626%2014.482%208.991%20L%2014.482%208.991%20L%207.49%201.791%20C%206.472%200.724%204.399%202.916%205.444%204.019%20L%205.444%204.019%20L%2011.685%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%2011.685%2010.321%20L%205.308%2016.758%20C%204.346%2017.817%206.561%2019.786%207.49%2018.776%20L%207.49%2018.776%20L%2014.482%2011.787%20C%2015.069%2011.142%2015.088%209.626%2014.482%208.991%20L%2014.482%208.991%20L%207.49%201.791%20C%206.472%200.724%204.399%202.916%205.444%204.019%20L%205.444%204.019%20L%2011.685%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-}
-
-.icon-arrow--left::after {
-  -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
 }
 
 /* ----------------------------- */
@@ -2764,166 +2763,5 @@ button:focus {
 }
 
 .tag:empty, .tag--primary:empty, .tag--success:empty, .tag--info:empty, .tag--warning:empty, .tag--danger:empty, .tag--inverse:empty, .tag--ghost:empty {
-  display: none;
-}
-
-/* ----------------------------- */
-/* ==Badges                      */
-/* ----------------------------- */
-/* use .badge-- classes for variants */
-.badge, .badge--primary, .badge--success, .badge--info, .badge--warning, .badge--danger, .badge--inverse, .badge--ghost {
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 50%;
-  color: #212529;
-  background-color: #e7e9ed;
-  line-height: 1;
-}
-
-.badge::before, .badge--primary::before, .badge--success::before, .badge--info::before, .badge--warning::before, .badge--danger::before, .badge--inverse::before, .badge--ghost::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  padding-top: 100%;
-}
-
-.badge--primary {
-  background-color: #0275D8;
-  color: #fff;
-}
-
-.badge--success {
-  background-color: #5CB85C;
-  color: #fff;
-}
-
-.badge--info {
-  background-color: #5BC0DE;
-  color: #000;
-}
-
-.badge--warning {
-  background-color: #F0AD4E;
-  color: #000;
-}
-
-.badge--danger {
-  background-color: #D9534F;
-  color: #fff;
-}
-
-.badge--inverse {
-  background-color: #333;
-  color: #fff;
-}
-
-.badge--ghost {
-  background-color: transparent;
-  color: #fff;
-}
-
-.badge--small {
-  font-size: 1.2rem;
-}
-
-.badge--big {
-  font-size: 2rem;
-}
-
-.badge.disabled, .disabled.badge--primary, .disabled.badge--success, .disabled.badge--info, .disabled.badge--warning, .disabled.badge--danger, .disabled.badge--inverse, .disabled.badge--ghost, .badge--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.badge:empty, .badge--primary:empty, .badge--success:empty, .badge--info:empty, .badge--warning:empty, .badge--danger:empty, .badge--inverse:empty, .badge--ghost:empty {
-  display: none;
-}
-
-/* ----------------------------- */
-/* ==Alerts                      */
-/* ----------------------------- */
-/* use .alert-- classes for variants */
-.alert, .alert--primary, .alert--success, .alert--info, .alert--warning, .alert--danger, .alert--inverse, .alert--ghost {
-  padding: 1rem 1rem;
-  margin-top: 0.75em;
-  margin-bottom: 0;
-  color: #212529;
-  border-radius: 0;
-  background-color: #e7e9ed;
-}
-
-.alert a, .alert--primary a, .alert--success a, .alert--info a, .alert--warning a, .alert--danger a, .alert--inverse a, .alert--ghost a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.alert--primary {
-  background-color: #0275D8;
-  color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--success {
-  background-color: #5CB85C;
-  color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--info {
-  background-color: #5BC0DE;
-  color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--warning {
-  background-color: #F0AD4E;
-  color: #000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--danger {
-  background-color: #D9534F;
-  color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--inverse {
-  background-color: #333;
-  color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.alert--ghost {
-  background-color: transparent;
-  color: #fff;
-  -webkit-box-shadow: 0 0 0 1px #fff inset;
-          box-shadow: 0 0 0 1px #fff inset;
-}
-
-.alert--small {
-  font-size: 1.2rem;
-}
-
-.alert--big {
-  font-size: 2rem;
-}
-
-.alert--block {
-  width: 100% !important;
-  display: block;
-}
-
-.alert.disabled, .disabled.alert--primary, .disabled.alert--success, .disabled.alert--info, .disabled.alert--warning, .disabled.alert--danger, .disabled.alert--inverse, .disabled.alert--ghost, .alert--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.alert:empty, .alert--primary:empty, .alert--success:empty, .alert--info:empty, .alert--warning:empty, .alert--danger:empty, .alert--inverse:empty, .alert--ghost:empty {
   display: none;
 }

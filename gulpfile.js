@@ -1,3 +1,5 @@
+// Note : this gulpfile works with gulp 3.9.1. Won't work with gulp 4
+
 // Requires
 var gulp = require('gulp');
 
