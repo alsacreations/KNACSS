@@ -16,33 +16,33 @@ var gaps = require('postcss-gap-properties'); // gaps polyfill
 var browsersList = [
   '> 1%',
   'last 2 versions',
-  'IE >= 10', 'Edge >= 16',
+  'IE >= 11', 'Edge >= 16',
   'Chrome >= 60',
   'Firefox >= 50', 'Firefox ESR',
   'Safari >= 10',
   'ios_saf >= 10',
-  'Android >= 5'
+  'Android >= 6'
 ];
 
 var plugins = [
   unprefix(),
-    autoprefixer({
-      grid: true,
-      browsers: browsersList
-    }),
-    flexbugs(),
-    gaps()
+  autoprefixer({
+    grid: true,
+    browsers: browsersList
+  }),
+  flexbugs(),
+  gaps()
 ];
 
 var pluginsProd = [
   unprefix(),
-    autoprefixer({
-      grid: true,
-      browsers: browsersList
-    }),
-    flexbugs(),
-    gaps(),
-    cssnano()
+  autoprefixer({
+    grid: true,
+    browsers: browsersList
+  }),
+  flexbugs(),
+  gaps(),
+  cssnano()
 ];
 
 // tâche cssDev = compile vers knacss-unminified.css
@@ -64,14 +64,14 @@ gulp.task('cssProd', function () {
     .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('grillade', function() {
+gulp.task('grillade', function () {
   return gulp.src('./sass/_library/grillade-grid.scss')
     .pipe(sass())
     .pipe(postcss(pluginsProd))
     .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('grillade-flex', function() {
+gulp.task('grillade-flex', function () {
   return gulp.src('./sass/_library/grillade-flex.scss')
     .pipe(sass())
     .pipe(postcss(pluginsProd))
@@ -79,7 +79,7 @@ gulp.task('grillade-flex', function() {
 });
 
 // Watcher
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch(['./sass/*.scss'], ['cssDev']);
 });
 

@@ -3,6 +3,7 @@
 ## Changelog v8.0.0 (xxx 2019)
 
 - corrections typo
+- support passé de IE10 à IE11 (browserlist)
 
 ## Changelog v7.1.2 (30 janvier 2019)
 
