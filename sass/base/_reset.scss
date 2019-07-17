@@ -1,7 +1,6 @@
 /* ----------------------------- */
-/* ==Reset                       */
+/* ==Reset (global)              */
 /* ----------------------------- */
-
 
 /**
  * disable animations styles when reduced motion is enabled
@@ -144,9 +143,9 @@ ul ul {
   margin-bottom: 0;
 }
 
-/**
- * common elements styling
- */
+/* ----------------------------- */
+/* ==Reset (common styling)      */
+/* ----------------------------- */
 
 a,
 area,
@@ -191,15 +190,6 @@ svg:not([fill]) {
   fill: currentColor;
 }
 
-
-/**
- * hide overflow in IE
- */
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
 ul,
 ol {
   padding-left: 2em;
@@ -219,10 +209,150 @@ var {
   font-style: italic;
 }
 
+/* ----------------------------- */
+/* ==Reset (buttons)             */
+/* ----------------------------- */
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 
 /**
- * monospace tags and mark tag styling
+* 1. show overflow in IE/Edge
+*/
+
+button,
+input {
+  overflow: visible; /* 1 */
+}
+
+/**
+* 1. remove the inheritance of text transform in Firefox
+*/
+
+button,
+select {
+  text-transform: none; /* 1 */
+}
+
+/**
+ * 1. correct the inability to style clickable types in iOS and Safari.
  */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 1 */
+}
+
+/**
+ * 1. remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none; /* 1 */
+  padding: 0;
+}
+
+/**
+ * 1. restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; /* 1 */
+}
+
+/* ----------------------------- */
+/* ==Reset (forms)               */
+/* ----------------------------- */
+
+form,
+fieldset {
+  border: none;
+}
+
+fieldset {
+  padding: $spacer-medium;
+}
+
+legend {
+  padding: 0 $spacer-tiny;
+  border: 0;
+  white-space: normal;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  min-height: 5em;
+  vertical-align: top;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+progress {
+  display: inline-block;
+  width: 100%;
+  vertical-align: baseline;
+}
+
+/* ----------------------------- */
+/* ==Reset (inputs)              */
+/* ----------------------------- */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+::-webkit-search-cancel-button,
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+/* ----------------------------- */
+/* ==Reset (misc styling)        */
+/* ----------------------------- */
 
 pre,
 code,
@@ -342,3 +472,29 @@ figure {
   margin-left: 0;
   margin-right: 0;
 }
+
+
+@if variable-exists(ie) and $ie==true {
+  
+  /* ----------------------------- */
+  /* ==Reset (IE rules)            */
+  /* ----------------------------- */
+
+  @-ms-viewport {
+    width: device-width;
+  }
+
+  article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+  }
+
+  /**
+  * hide overflow in IE
+  */
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+}
+
