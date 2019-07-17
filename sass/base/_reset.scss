@@ -39,7 +39,6 @@ html {
   font-size: calc(1em * 0.625); /* 3 */
 }
 
-/* Body */
 body {
   margin: 0;
   @include font-size(base);
@@ -49,7 +48,10 @@ body {
   line-height: $line-height-base;
 }
 
-/* Links */
+/**
+ * links
+ */
+
 a {
   color: $link-color;
   text-decoration: $link-decoration;
@@ -62,7 +64,10 @@ a {
   }
 }
 
-/* Headings */
+/**
+ * headings
+ */
+
 h1, .h1-like {
   @include font-size(h1);
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
@@ -99,7 +104,10 @@ h6, .h6-like {
   font-weight: $weight-medium;
 }
 
-/* Vertical rythm */
+/**
+ * vertical rythm
+ */
+
 h1,
 h2,
 h3,
@@ -122,7 +130,10 @@ pre {
   margin-bottom: $paragraph-margin-bottom;
 }
 
-/* Avoid margins on nested elements */
+/**
+ * avoid margin on nested elements
+ */
+
 li p,
 li .p-like,
 li ul,
@@ -133,7 +144,10 @@ ul ul {
   margin-bottom: 0;
 }
 
-/* Styling elements */
+/**
+ * common elements styling
+ */
+
 a,
 area,
 button,
@@ -169,6 +183,19 @@ img {
   border-style: none;
 }
 
+/**
+ * fill color matching to text color
+ */
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+
+/**
+ * hide overflow in IE
+ */
+
 svg:not(:root) {
   overflow: hidden;
 }
@@ -191,6 +218,11 @@ i,
 var {
   font-style: italic;
 }
+
+
+/**
+ * monospace tags and mark tag styling
+ */
 
 pre,
 code,
@@ -248,6 +280,10 @@ sup {
 sub {
   top: 0.5ex;
 }
+
+/**
+ * quotes, blockquote and hr styling
+ */
 
 blockquote {
   position: relative;
