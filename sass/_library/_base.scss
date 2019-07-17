@@ -2,7 +2,7 @@
 /* ==Base (basic styles)         */
 /* ----------------------------- */
 
-/* disable animations styles when reduced rotion is enabled */
+/* disable animations styles when reduced motion is enabled */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

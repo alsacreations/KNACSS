@@ -1,5 +1,9 @@
 # Changelog
 
+## Changelog v8.0.0 (xxx 2019)
+
+- corrections typo
+
 ## Changelog v7.1.2 (30 janvier 2019)
 
 - ajout de la règle `@media (prefers-reduced-motion: reduce)`
