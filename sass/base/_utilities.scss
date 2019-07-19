@@ -74,23 +74,6 @@
   text-align: center;
 }
 
-@if variable-exists(hyphens) and $hyphens==true {
-  @media (max-width: ($small - 1)) {
-    div,
-    textarea,
-    table,
-    td,
-    th,
-    code,
-    pre,
-    samp {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-    }
-  }
-}
-
 /* blocks that need to be placed under floats */
 
 .clear,

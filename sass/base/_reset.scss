@@ -473,6 +473,23 @@ figure {
   margin-right: 0;
 }
 
+@if variable-exists(hyphens) and $hyphens==true {
+  @media (max-width: ($small - 1)) {
+    body,
+    div,
+    textarea,
+    table,
+    td,
+    th,
+    code,
+    pre,
+    samp {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
 
 @if variable-exists(ie) and $ie==true {
   

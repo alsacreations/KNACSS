@@ -8,7 +8,7 @@
 /* ----------------------------- */
 
 /*
-1- Reboot (basic reset)
+1- Abstracts (variables and mixins)
 2- Base  :
   - Reset
   - Print
@@ -40,8 +40,12 @@
 @import "base/reset";        // basic styles
 @import "base/print";        // print quick reset
 @import "base/layout";       // alignment, modules, positionning
-@import "base/utilities";    // width and spacer helpers
 @import "base/responsive";   // Responsive Web Design helpers
+
+// Utilities (loaded if $utilities variable is true). 
+@if variable-exists(utilities) and $utilities==true {
+  @import "base/utilities";    // width and spacer helpers
+}
 
 // WordPress reset and basics (loaded if $wordpress variable is true). 
 @if variable-exists(wordpress) and $wordpress==true {
