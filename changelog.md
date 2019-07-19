@@ -7,9 +7,10 @@
 - ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. Activation de Grid Layout ou flexbox selon cette variable
 - ajout d'une variable pour supporter ou non les classes utilitaires : `$utilities: true !default;`.
 - ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. Activation de reset et styles WordPress selon cette variable
-- corrections typo
+- renommage les classes `grid-` en `grillade-` pour éviter tout conflit 
 - renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
 - Browserslist devenu `.browserslistrc`
+- corrections typo
 
 ## Changelog v7.1.2 (30 janvier 2019)
 
