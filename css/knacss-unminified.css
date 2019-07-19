@@ -543,6 +543,21 @@ figure {
   margin-right: 0;
 }
 
+@media (max-width: 575px) {
+  body,
+  div,
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 /* ----------------------------- */
 /* ==Reset (IE rules)            */
 /* ----------------------------- */
@@ -1559,99 +1574,99 @@ ul.is-unstyled, ul.unstyled {
 /* ==Grillade : ultra light Grid System    */
 /* --------------------------------------- */
 @media (min-width: 480px) {
-  [class*=" grid-"],
-  [class^="grid-"] {
+  [class*=" grillade-"],
+  [class^="grillade-"] {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: dense;
   }
-  [class*=" grid-"].has-gutter,
-  [class^="grid-"].has-gutter {
+  [class*=" grillade-"].has-gutter,
+  [class^="grillade-"].has-gutter {
     grid-gap: 1rem;
   }
-  [class*=" grid-"].has-gutter-l,
-  [class^="grid-"].has-gutter-l {
+  [class*=" grillade-"].has-gutter-l,
+  [class^="grillade-"].has-gutter-l {
     grid-gap: 2rem;
   }
-  [class*=" grid-"].has-gutter-xl,
-  [class^="grid-"].has-gutter-xl {
+  [class*=" grillade-"].has-gutter-xl,
+  [class^="grillade-"].has-gutter-xl {
     grid-gap: 4rem;
   }
 }
 
 @media (min-width: 480px) {
-  .autogrid,
-  .grid {
+  .autogrillade,
+  .grillade {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
-  .autogrid.has-gutter,
-  .grid.has-gutter {
+  .autogrillade.has-gutter,
+  .grillade.has-gutter {
     grid-column-gap: 1rem;
   }
-  .autogrid.has-gutter-l,
-  .grid.has-gutter-l {
+  .autogrillade.has-gutter-l,
+  .grillade.has-gutter-l {
     grid-column-gap: 2rem;
   }
-  .autogrid.has-gutter-xl,
-  .grid.has-gutter-xl {
+  .autogrillade.has-gutter-xl,
+  .grillade.has-gutter-xl {
     grid-column-gap: 4rem;
   }
 }
 
-[class*="grid-2"] {
+[class*="grillade-2"] {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
 }
 
-[class*="grid-3"] {
+[class*="grillade-3"] {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 }
 
-[class*="grid-4"] {
+[class*="grillade-4"] {
   -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
 }
 
-[class*="grid-5"] {
+[class*="grillade-5"] {
   -ms-grid-columns: (1fr)[5];
   grid-template-columns: repeat(5, 1fr);
 }
 
-[class*="grid-6"] {
+[class*="grillade-6"] {
   -ms-grid-columns: (1fr)[6];
   grid-template-columns: repeat(6, 1fr);
 }
 
-[class*="grid-7"] {
+[class*="grillade-7"] {
   -ms-grid-columns: (1fr)[7];
   grid-template-columns: repeat(7, 1fr);
 }
 
-[class*="grid-8"] {
+[class*="grillade-8"] {
   -ms-grid-columns: (1fr)[8];
   grid-template-columns: repeat(8, 1fr);
 }
 
-[class*="grid-9"] {
+[class*="grillade-9"] {
   -ms-grid-columns: (1fr)[9];
   grid-template-columns: repeat(9, 1fr);
 }
 
-[class*="grid-10"] {
+[class*="grillade-10"] {
   -ms-grid-columns: (1fr)[10];
   grid-template-columns: repeat(10, 1fr);
 }
 
-[class*="grid-11"] {
+[class*="grillade-11"] {
   -ms-grid-columns: (1fr)[11];
   grid-template-columns: repeat(11, 1fr);
 }
 
-[class*="grid-12"] {
+[class*="grillade-12"] {
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
 }
@@ -1754,28 +1769,28 @@ ul.is-unstyled, ul.unstyled {
 
 /* intermediate breakpoints */
 @media (min-width: 480px) and (max-width: 767px) {
-  [class*="grid-"][class*="-small-1"] {
+  [class*="grillade-"][class*="-small-1"] {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
   }
   [class*="col-"][class*="-small-1"] {
     grid-column: auto/span 1;
   }
-  [class*="grid-"][class*="-small-2"] {
+  [class*="grillade-"][class*="-small-2"] {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
   [class*="col-"][class*="-small-2"] {
     grid-column: auto/span 2;
   }
-  [class*="grid-"][class*="-small-3"] {
+  [class*="grillade-"][class*="-small-3"] {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
   [class*="col-"][class*="-small-3"] {
     grid-column: auto/span 3;
   }
-  [class*="grid-"][class*="-small-4"] {
+  [class*="grillade-"][class*="-small-4"] {
     -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
   }

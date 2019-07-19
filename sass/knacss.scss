@@ -8,7 +8,7 @@
 /* ----------------------------- */
 
 /*
-1- Abstracts (variables and mixins)
+1- Reboot (basic reset)
 2- Base  :
   - Reset
   - Print
@@ -40,25 +40,13 @@
 @import "base/reset";        // basic styles
 @import "base/print";        // print quick reset
 @import "base/layout";       // alignment, modules, positionning
+@import "base/utilities";    // width and spacer helpers
 @import "base/responsive";   // Responsive Web Design helpers
+// @import "base/wordpress"; // WordPress reset and basic styles
 
-// Utilities (loaded if $utilities variable is true). 
-@if variable-exists(utilities) and $utilities==true {
-  @import "base/utilities";    // width and spacer helpers
-}
-
-// WordPress reset and basics (loaded if $wordpress variable is true). 
-@if variable-exists(wordpress) and $wordpress==true {
-  @import "base/wordpress"; // WordPress reset and basic styles
-}
-
-// Grid System (Grid Layout chosen if $ie variable is true). 
-@if variable-exists(ie) and $ie==true {
-  @import "base/grillade-flex"; // grid system with Flexbox (old version)
-
-} @else {
-  @import "base/grillade-grid"; // grid system with Grid Layout
-}
+// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "base/grillade-flex"
+// Note that none of these files are prefixed by an underscore, in order to compile them.
+@import "base/grillade-grid"; // grid system with Grid Layout
 
 // Components
 @import "components/alerts";     // alerts styles
