@@ -75,7 +75,10 @@ $weight-bold    : 700 !default;
 // Activate hyphenation on small screens
 $hyphens: false !default;
 
-// Activate IE10-IE11 fixes
+// Activate WordPress reset and styles
+$wordpress: false !default;
+
+// Activate IE10-IE11 fixes and old grid system
 $ie: true !default;
 
 // ------------

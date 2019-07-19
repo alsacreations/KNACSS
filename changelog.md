@@ -3,9 +3,10 @@
 ## Changelog v8.0.0 (xxx 2019)
 
 - mise à jour du reset, suppression des reset vendors (reboot)
-- ajout d'une variable pour supporter ou non IE10/IE11 : `$ie: true !default;`
-- corrections typo
 - support passé de IE10 à IE11 (browserlist)
+- ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. Activation de Grid Layout ou flexbox selon cette variable
+- ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. Activation de reset et styles WordPress selon cette variable
+- corrections typo
 - renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
 - Browserslist devenu `.browserslistrc`
 
