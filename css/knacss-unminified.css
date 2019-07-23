@@ -850,7 +850,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 /* simple blocks alignment */
-.left .u-left {
+.left,
+.u-left {
   margin-right: auto;
 }
 
