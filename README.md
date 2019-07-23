@@ -31,9 +31,13 @@ Voir la documentation.
 
 ## Mise à jour depuis une version précédente de KNACSS
 
-La version `7.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes.
+La version `8.*.*` de KNACSS est une version majeure, ce qui implique que certaines fonctionnalités ne sont plus forcément rétro-compatibles avec les versions précédentes.
 
 Voici les principales modifications dont il faudra tenir compte lors d'une mise à jour&nbsp;:
+
+### Modifications majeures entre la v8 et la v7
+
+*En cours&nbsp;!* Voir [#307](https://github.com/alsacreations/KNACSS/issues/307).
 
 ### Modifications majeures entre la v7 et la v6
 
