@@ -13,22 +13,10 @@ var unprefix = require('postcss-unprefix'); // deletes old prefixes
 var flexbugs = require('postcss-flexbugs-fixes'); // flexbox fixes for IE
 var gaps = require('postcss-gap-properties'); // gaps polyfill
 
-var browsersList = [
-  '> 1%',
-  'last 2 versions',
-  'IE >= 10', 'Edge >= 16',
-  'Chrome >= 60',
-  'Firefox >= 50', 'Firefox ESR',
-  'Safari >= 10',
-  'ios_saf >= 10',
-  'Android >= 5'
-];
-
 var plugins = [
   unprefix(),
   autoprefixer({
-    grid: true,
-    browsers: browsersList
+    grid: true
   }),
   flexbugs(),
   gaps()
@@ -37,8 +25,7 @@ var plugins = [
 var pluginsProd = [
   unprefix(),
   autoprefixer({
-    grid: true,
-    browsers: browsersList
+    grid: true
   }),
   flexbugs(),
   gaps(),
