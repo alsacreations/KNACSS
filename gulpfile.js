@@ -26,23 +26,23 @@ var browsersList = [
 
 var plugins = [
   unprefix(),
-    autoprefixer({
-      grid: true,
-      browsers: browsersList
-    }),
-    flexbugs(),
-    gaps()
+  autoprefixer({
+    grid: true,
+    browsers: browsersList
+  }),
+  flexbugs(),
+  gaps()
 ];
 
 var pluginsProd = [
   unprefix(),
-    autoprefixer({
-      grid: true,
-      browsers: browsersList
-    }),
-    flexbugs(),
-    gaps(),
-    cssnano()
+  autoprefixer({
+    grid: true,
+    browsers: browsersList
+  }),
+  flexbugs(),
+  gaps(),
+  cssnano()
 ];
 
 // tâche cssDev = compile vers knacss-unminified.css
@@ -65,14 +65,14 @@ gulp.task('cssProd', () => {
 });
 
 gulp.task('grillade', () => {
-  return gulp.src('./sass/_library/grillade-grid.scss')
+  return gulp.src('./sass/base/grillade-grid.scss')
     .pipe(sass())
     .pipe(postcss(pluginsProd))
     .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('grillade-flex', () => {
-  return gulp.src('./sass/_library/grillade-flex.scss')
+  return gulp.src('./sass/base/grillade-flex.scss')
     .pipe(sass())
     .pipe(postcss(pluginsProd))
     .pipe(gulp.dest('./css/'));
