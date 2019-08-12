@@ -4,13 +4,17 @@
 
 KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign, grille de mise en forme).
 
-Conçu par l'agence web [Alsacreations.fr](http://alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projet web quel que soit son type ou son envergure.
+Conçu par l'agence web [Alsacreations.fr](https://www.alsacreations.fr) et pensé pour être couplé avec des préprocesseurs tel que Sass, le micro-framework KNACSS est employé quotidiennement sur toute sorte de projet web quel que soit son type ou son envergure.
 
 ## Documentation
 
 - [**Documentation et Guide de styles**](https://www.knacss.com/doc.html)
 - [**Pense-bête en PDF**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
 - Site web de présentation de KNACSS : <http://knacss.com>
+
+## Gulp
+
+Si au lancement de la tâche `gulp` vous obtenez une erreur de type `TypeError: Cannot read property 'apply' of undefined`, mettez à jour votre installation `npm i -g gulp-cli`.
 
 ## Fonctionnalités
 
