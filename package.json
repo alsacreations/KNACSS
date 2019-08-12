@@ -28,7 +28,7 @@
   "devDependencies": {
     "autoprefixer": "latest",
     "cssnano": "latest",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-postcss": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
