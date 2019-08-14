@@ -1,3 +1,15 @@
+// Visually-hidden mixin
+@mixin visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+
 // font-size Mixin
 // compiles to font-size mobile + font-size desktop on small-plus devices
 // ex. h2 { @include font-size(h2);}

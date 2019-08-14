@@ -11,6 +11,7 @@
 - modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
 - ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
 - ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
+- `visually-hidden` devient un mixin
 - corrections typo
 
 ## Changelog v7.1.2 (30 janvier 2019)
