@@ -26,15 +26,15 @@
   "license": "WTFPL",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "latest",
-    "cssnano": "latest",
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
-    "gulp-postcss": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "postcss-flexbugs-fixes": "latest",
     "postcss-gap-properties": "latest",
-    "postcss-unprefix": "latest"
+    "postcss-unprefix": "^2.1.4"
   },
   "engines": {}
 }

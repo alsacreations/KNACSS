@@ -2,9 +2,10 @@
 
 ## Changelog v8.0.0 (xxx 2019)
 
-- mise à jour du reset, suppression des reset vendors (reboot)
+- mise à jour du reset, suppression des reset vendors (Reboot de Boostrap)
 - support passé de IE10 à IE11 (browserlist)
 - Browserslist devenu `.browserslistrc`
+- versions exactes des dépendances dans package.json (pour éviter "latest")
 - renommage des classes `grid-` en `grillade-` pour éviter tout conflit 
 - renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
 - fichier gulpfils.js dorénavant compatible Gulp 4
