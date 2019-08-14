@@ -4,11 +4,13 @@
 
 - mise à jour du reset, suppression des reset vendors (reboot)
 - support passé de IE10 à IE11 (browserlist)
-- ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
-- ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
+- Browserslist devenu `.browserslistrc`
 - renommage des classes `grid-` en `grillade-` pour éviter tout conflit 
 - renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
-- Browserslist devenu `.browserslistrc`
+- fichier gulpfils.js dorénavant compatible Gulp 4
+- modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
+- ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
+- ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
 - corrections typo
 
 ## Changelog v7.1.2 (30 janvier 2019)

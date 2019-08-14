@@ -31,7 +31,7 @@
 */
 
 // WARNING : you should comment the following @import (variables)
-// and move variables file from knacss folder to your own project folder!
+// and move variables file from KNACSS folder to your own project folder!
 @import "abstracts/variables";
 
 @import "abstracts/mixins";
@@ -40,11 +40,9 @@
 @import "base/reset";        // basic styles
 @import "base/print";        // print quick reset
 @import "base/layout";       // alignment, modules, positionning
-@import "base/utilities";    // width and spacer helpers
-@import "base/responsive";   // Responsive Web Design helpers
-// @import "base/wordpress"; // WordPress reset and basic styles
 
-// New Grid System by default (Grid Layout). If you prefer old "Flexbox" Grid System, replace file with "base/grillade-flex"
+// New Grid System by default (Grid Layout). 
+// If you prefer old "Flexbox" Grid System, replace file with "base/grillade-flex"
 // Note that none of these files are prefixed by an underscore, in order to compile them.
 @import "base/grillade-grid"; // grid system with Grid Layout
 
@@ -60,3 +58,8 @@
 @import "components/tables";     // data tables consistency
 @import "components/tabs";       // tabs styles
 @import "components/tags";       // tags styles
+
+// Utilities
+@import "base/utilities";    // width and spacer helpers
+@import "base/responsive";   // Responsive Web Design helpers
+// @import "base/wordpress"; // WordPress reset and basic styles
