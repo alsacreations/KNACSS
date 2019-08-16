@@ -4,11 +4,12 @@
 
 - mise à jour du reset, suppression des reset vendors (Reboot de Boostrap)
 - support passé de IE10 à IE11 (browserlist)
-- Browserslist devenu `.browserslistrc`
+- Browserslist devenu `.browserslistrc` et mise à jour du support à `>0.25%
+not op_mini all`
 - versions exactes des dépendances dans package.json (pour éviter "latest")
 - renommage des classes `grid-` en `grillade-` pour éviter tout conflit 
 - renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
-- fichier gulpfils.js dorénavant compatible Gulp 4
+- fichier gulpfile.js dorénavant compatible Gulp 4
 - modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
 - ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
 - ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
