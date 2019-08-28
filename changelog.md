@@ -2,19 +2,21 @@
 
 ## Changelog v8.0.0 (xxx 2019)
 
-- mise à jour du reset, suppression des reset vendors (Reboot de Boostrap)
-- support passé de IE10 à IE11 (browserlist)
-- Browserslist devenu `.browserslistrc` et mise à jour du support à `>0.25%
+- Architecture : mise à jour du reset, suppression des reset vendors (Reboot de Boostrap)
+- Architecture : renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
+- Architecture : modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
+- Compatibilité : support passé de IE10 à IE11 (browserlist)
+- Compatibilité : Browserslist devenu `.browserslistrc` et mise à jour du support à `>0.25%
 not op_mini all`
-- versions exactes des dépendances dans package.json (pour éviter "latest")
-- renommage des classes `grid-` en `grillade-` pour éviter tout conflit 
-- renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
-- fichier gulpfile.js dorénavant compatible Gulp 4
-- modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
-- ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
-- ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
-- `visually-hidden` devient un mixin
-- corrections typo
+- Compatibilité : fichier gulpfile.js dorénavant compatible Gulp 4
+- Compatibilité : versions exactes des dépendances dans package.json (pour éviter "latest")
+- Grillade :renommage des classes `grid-` en `grillade-` pour éviter tout conflit 
+- Grillade : ajout du constructeur `medium-X` en plus de `small-X`
+- Grillade : ajout des constructeus `-start`, `-end`, `-center`, `-space-between`, `-space-around`, `-space-evenly` pour l'alignement général de la grille
+- Divers : ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`. 
+- Divers :ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`. 
+- Divers :`visually-hidden` devient un mixin
+- Divers :corrections typo
 
 ## Changelog v7.1.2 (30 janvier 2019)
 
