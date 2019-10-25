@@ -50,7 +50,7 @@
 ## Changelog v7.0.1 (22 décembre 2017)
 
 - meilleure gestion des hyphens
-- mise en commentaire du fix SVG our IE11
+- mise en commentaire du fix SVG pour IE11
 
 ## Changelog v7.0.0 (août - novembre 2017)
 
