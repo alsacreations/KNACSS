@@ -82,6 +82,9 @@ $hyphens: false !default;
 // Number of grid-columns
 $cols: 12 !default;
 
+// Gutter
+$gutter: null;
+
 // Grid gutters (for .has-gutter-* classes)
 $grid-gutters: (
   '': 1rem,
