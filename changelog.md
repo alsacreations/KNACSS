@@ -1,5 +1,12 @@
 # Changelog
 
+## Changelog v7.1.3 (12 février 2020)
+
+- correctif :
+  - ce présent tag `7.1.3` corrige le tag précédent
+  - tag erroné : `7.1.2` (correspondant partiellement à la branche `v8` en développement) = ne pas utiliser !
+  - précédent tag correct : `7.1.0`
+
 ## Changelog v7.1.2 (30 janvier 2019)
 
 - ajout de la règle `@media (prefers-reduced-motion: reduce)`

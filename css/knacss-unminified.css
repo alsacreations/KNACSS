@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* www.KNACSS.com v7.1.1 (december, 10 2018) @author: Alsacreations, Raphael Goetter
+* www.KNACSS.com v7.1.3 (february, 12 2020) @author: Alsacreations, Raphael Goetter
 * Licence WTFPL http://www.wtfpl.net/
 */
 /* ----------------------------- */
@@ -42,7 +42,7 @@ html {
      -moz-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
-  overflow-style: scrollbar;
+  -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -967,7 +967,8 @@ http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
 }
 
 /* simple blocks alignment */
-.left .u-left {
+.left,
+.u-left {
   margin-right: auto;
 }
 
@@ -2167,23 +2168,19 @@ textarea {
   color: #777;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #777;
 }
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #777;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #777;
 }
 
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: #777;
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "knacss",
-  "version": "7.1.1",
+  "version": "7.1.3",
   "homepage": "http://www.knacss.com/",
   "bugs": "https://github.com/alsacreations/KNACSS/issues",
   "author": "Raphaël GOETTER, Alsacreations",
@@ -26,15 +26,15 @@
   "license": "WTFPL",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cssnano": "latest",
     "gulp": "^3.x",
     "gulp-postcss": "latest",
-    "autoprefixer": "latest",
-    "postcss-unprefix": "latest",
-    "postcss-flexbugs-fixes": "latest",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "latest",
+    "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-gap-properties": "latest",
-    "cssnano": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest"
+    "postcss-unprefix": "latest"
   },
   "engines": {}
 }
