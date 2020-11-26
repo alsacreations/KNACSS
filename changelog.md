@@ -1,11 +1,25 @@
 # Changelog
 
-## Changelog v7.1.3 (12 février 2020)
+## Changelog 2020/11
 
-- correctif :
-  - ce présent tag `7.1.3` corrige le tag précédent
-  - tag erroné : `7.1.2` (correspondant partiellement à la branche `v8` en développement) = ne pas utiliser !
-  - précédent tag correct : `7.1.0`
+Né en 2012 et après près de 10 années de bons et loyaux services, le projet initial « KNACSS » d'Alsacréations laisse place à une toute nouvelle version, totalement remaniée : KNACSS Reborn.
+
+## Changelog v8.0.0 (xxx 2019)
+
+- Architecture : mise à jour du reset, suppression des reset vendors (Reboot de Boostrap)
+- Architecture : renommage de dossiers à la "7-1 pattern": `_config` > `abstracts`, `_library` > `base`, et du fichier `_base.scss` en `_reset.scss`
+- Architecture : modification de l'ordre d'import des fichiers : les utilitaires sont importées à la fin à présent
+- Compatibilité : support passé de IE10 à IE11 (browserlist)
+- Compatibilité : Browserslist devenu `.browserslistrc` et mise à jour du support à `>0.25% not op_mini all`
+- Compatibilité : fichier gulpfile.js dorénavant compatible Gulp 4
+- Compatibilité : versions exactes des dépendances dans package.json (pour éviter "latest")
+- Grillade :renommage des classes `grid-` en `grillade-` pour éviter tout conflit
+- Grillade : ajout du constructeur `medium-X` en plus de `small-X`
+- Grillade : ajout des constructeus `-start`, `-end`, `-center`, `-space-between`, `-space-around`, `-space-evenly` pour l'alignement général de la grille
+- Divers : ajout d'une variable pour supporter ou non IE11 : `$ie: true !default;`.
+- Divers :ajout d'une variable pour supporter ou non WordPress : `$wordpress: false !default;`.
+- Divers :`visually-hidden` devient un mixin
+- Divers :corrections typo
 
 ## Changelog v7.1.2 (30 janvier 2019)
 
@@ -57,7 +71,7 @@
 ## Changelog v7.0.1 (22 décembre 2017)
 
 - meilleure gestion des hyphens
-- mise en commentaire du fix SVG pour IE11
+- mise en commentaire du fix SVG our IE11
 
 ## Changelog v7.0.0 (août - novembre 2017)
 
@@ -185,7 +199,7 @@
 ## Changelog v4.4.2 (24 décembre 2015)
 
 - correction d'un bug responsive des classes `.flex-item-double`
-- création de la feuille de style dédiée aux grilles : *grillade.css* pour ceux qui souhaitent se contenter des grilles de KNACSS
+- création de la feuille de style dédiée aux grilles : _grillade.css_ pour ceux qui souhaitent se contenter des grilles de KNACSS
 
 ## Changelog v4.4.0 (12 décembre 2015)
 
@@ -295,7 +309,7 @@ Nouveaux noms :
 
 ## Vite fait
 
-- grosse remise à jour, orientée vers les technos modernes (flexbox, rem, calc,  ...) et moins de "bidouille"
+- grosse remise à jour, orientée vers les technos modernes (flexbox, rem, calc, ...) et moins de "bidouille"
 - fin du support d'IE6-IE8 Si vous souhaitez utiliser KNACSS sur d'anciens navigateurs, préférez la [Version 3](https://github.com/raphaelgoetter/KNACSS/tree/3.1.0)
 - ajout du reset [normalize.css](http://necolas.github.io/normalize.css/)
 - un grand merci à @7studio pour ses conseils et observations sur la version beta de KNACSS 4.0
