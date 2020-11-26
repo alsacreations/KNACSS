@@ -10,6 +10,6 @@ KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui perme
 
 ## Documentation
 
+- Site web de présentation de KNACSS Reborn : <http://knacss.com>
 - [**Documentation KNACSS Reborn**](https://www.knacss.com/doc.html)
-- [**Pense-bête en PDF**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
-- Site web de présentation de KNACSS : <http://knacss.com> (ancien)
+- [**Pense-bête en PDF**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf) (ancien)
