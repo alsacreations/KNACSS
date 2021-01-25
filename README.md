@@ -15,3 +15,35 @@ KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui perme
 
 - [**Documentation KNACSS v7**](https://www.knacss.com/doc-old.html)
 - [**Pense-bête PDF version 7**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
+
+## Modulaire
+
+Principe de briques modulaires :
+
+- KNACSS Reborn est constitué uniquement des fichiers "Core".
+- Les fichiers "Utils" seront des briques optionnelles (= les `@import` seront commentés par défaut).
+
+```scss
+// CORE
+@import "abstracts/variables-sass";
+
+@import "base/reset-base";
+@import "base/reset-accessibility";
+@import "base/reset-forms";
+@import "base/reset-print";
+@import "base/layout";
+
+@import "abstracts/mixins-sass";
+
+// UTILITY CLASSES
+// @import "utils/utils-global";
+// @import "utils/utils-spacers";
+// @import "utils/grillade";
+
+// COMPONENTS (add them only if you need)
+// @import "components/button";
+// @import "components/burger";
+// @import "components/checkbox";
+// @import "components/radio";
+// @import "components/quote";
+```
