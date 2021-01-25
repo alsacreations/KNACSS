@@ -89,10 +89,8 @@
   }
   */
 
-  a[href^="javascript:"],
-  a[href^="#"] {
-    &::after {
-      content: "";
-    }
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after {
+    content: "";
   }
 }

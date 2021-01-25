@@ -1,74 +1,56 @@
-// Requires
-var gulp = require('gulp');
-
-// Include plugins
-var postcss = require('gulp-postcss');
+const gulp = require('gulp');
 var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var CombineMQ = require('postcss-combine-media-query');
+var autoprefixer = require('autoprefixer');
+var CSSnano = require('cssnano');
 var rename = require('gulp-rename');
 
-var cssnano = require('cssnano'); // minifies CSS
-var autoprefixer = require('autoprefixer');
-
-var unprefix = require('postcss-unprefix'); // deletes old prefixes
-var flexbugs = require('postcss-flexbugs-fixes'); // flexbox fixes for IE
-var gaps = require('postcss-gap-properties'); // gaps polyfill
-
-var plugins = [
-  unprefix(),
-  autoprefixer({
-    grid: true
-  }),
-  flexbugs(),
-  gaps()
-];
-
-var pluginsProd = [
-  unprefix(),
-  autoprefixer({
-    grid: true
-  }),
-  flexbugs(),
-  gaps(),
-  cssnano()
-];
-
-// tâche cssDev = compile vers knacss-unminified.css
-gulp.task('cssDev', () => {
-  return gulp.src('./sass/knacss.scss')
-    .pipe(sass({
-      outputStyle: 'expanded' // CSS non minifiée plus lisible ('}' à la ligne)
-    }))
-    .pipe(postcss(plugins))
-    .pipe(rename('knacss-unminified.css'))
-    .pipe(gulp.dest('./css/'));
+gulp.task('css:full', () => {
+  return gulp.src('sass/knacss.scss')
+    .pipe(sass(
+      {
+      outputStyle: 'expanded'
+      }))
+    .pipe(
+      postcss([
+        autoprefixer, // ajoute les préfixes vendeurs
+      ]))
+    .pipe(gulp.dest('css/knacss-full'));
 });
 
-// tâche cssProd = compile vers knacss.css minifié
-gulp.task('cssProd', () => {
-  return gulp.src('./sass/knacss.scss')
-    .pipe(sass())
-    .pipe(postcss(pluginsProd))
-    .pipe(gulp.dest('./css/'));
+gulp.task('css:mini', () => {
+  return gulp.src('sass/knacss.scss')
+    .pipe(sass(
+      {
+      outputStyle: 'compact'
+      }))
+    .pipe(
+      postcss([
+        CombineMQ, // rassemble les Media Queries (parfait pour les classes utilitaires)
+        autoprefixer, // ajoute les préfixes vendeurs
+        CSSnano // minification 
+      ]))
+    .pipe(gulp.dest('css/knacss-mini'));
 });
 
-gulp.task('grillade', () => {
-  return gulp.src('./sass/base/grillade-grid.scss')
-    .pipe(sass())
-    .pipe(postcss(pluginsProd))
-    .pipe(gulp.dest('./css/'));
+gulp.task('css:grillade', () => {
+  return gulp.src('sass/utils/grillade.scss')
+    .pipe(sass(
+      {
+      outputStyle: 'compact'
+      }))
+    .pipe(
+      postcss([
+        CombineMQ, // rassemble les Media Queries (parfait pour les classes utilitaires)
+        autoprefixer, // ajoute les préfixes vendeurs
+        CSSnano // minification 
+      ]))
+    .pipe(gulp.dest('css/grillade'));
 });
 
-gulp.task('grillade-flex', () => {
-  return gulp.src('./sass/base/grillade-flex.scss')
-    .pipe(sass())
-    .pipe(postcss(pluginsProd))
-    .pipe(gulp.dest('./css/'));
-});
-
-// Watcher
-gulp.task('watch', () => {
-  gulp.watch(['./sass/*.scss'], gulp.series('cssDev'));
-});
+// Tâche BUILD : tapez "gulp" ou "gulp build"
+gulp.task('build', gulp.series('css:full', 'css:mini', 'css:grillade'));
 
 // Tâche par défaut
-gulp.task('default', gulp.series('cssDev', 'cssProd', 'grillade', 'grillade-flex'));
+gulp.task('default', gulp.series('build'));

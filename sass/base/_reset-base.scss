@@ -1,0 +1,250 @@
+/* ----------------------------- */
+/* ==Reset (base)                */
+/* ----------------------------- */
+
+/*
+ * 1. Switch to border-box model for all elements
+ * 2. Avoid min-width: auto and min-height: auto on flex and grid children
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 1 */
+  min-width: 0; /* 2 */
+  min-height: 0; /* 2 */
+}
+
+/*
+ * 1. Remove the grey highlight on links in iOS 
+ * 2. Prevent orientation font changes in iOS
+ * 3. Breaks words to prevent overflow in all browsers
+ */
+
+html {
+  font-size: $font-size-html;
+  -webkit-tap-highlight-color: transparent; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  overflow-wrap: break-word; /* 3 */
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  background-color: $white;
+  color: $color-gamma;
+}
+
+/*
+ * Headings
+ */
+
+h1,
+.h1-like,
+h2,
+.h2-like,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like {
+  color: $color-gamma;
+}
+
+/*
+ * Links
+ */
+
+a {
+  color: $color-beta;
+  text-decoration: $link-decoration;
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: $color-gamma;
+  text-decoration: $link-decoration-hover;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/*
+ * Vertical rythm
+ */
+
+h1,
+.h1-like,
+h2,
+.h2-like {
+  margin-top: 0;
+  margin-bottom: $spacer-medium;
+}
+
+p,
+address,
+ol,
+ul,
+dl,
+blockquote,
+pre,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like,
+dt,
+dd {
+  margin-top: 0;
+  margin-bottom: $spacer-small;
+}
+
+/*
+ * Nested elements
+ */
+
+ol ol,
+ol ul,
+ul ol,
+ul ul,
+li ul,
+li ol,
+nav ul,
+nav ol,
+li p,
+li .p-like {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*
+ * Lists
+ */
+
+ul,
+ol {
+  padding-left: $spacer-medium;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+ * Embed content
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img,
+table,
+td,
+blockquote,
+pre,
+code,
+input,
+textarea,
+select,
+video,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+iframe,
+img,
+input,
+select,
+textarea {
+  height: auto;
+}
+
+img {
+  border-style: none;
+}
+
+/**
+ * Remove the border on iframes in all browsers
+ */
+
+iframe {
+  border-style: none;
+}
+
+/*
+ * Fill color matching to text color
+ */
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/*
+ * Hide the overflow in IE
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+ * Tables
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+/*
+ * Rulers
+ */
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid;
+  margin: $spacer-medium 0;
+  clear: both;
+  color: inherit;
+}
+
+/*
+ * table styles
+ */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+  margin-bottom: $spacer-medium;
+}

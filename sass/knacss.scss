@@ -1,65 +1,31 @@
 /*!
-* www.KNACSS.com v7.1.3 (february, 12 2020) @author: Alsacreations, Raphael Goetter
+* KNACSS Reborn: Just keep it simple!
+* @author: Alsacreations
+* v1.0.0 2020/11
 * Licence WTFPL http://www.wtfpl.net/
 */
 
-/* ----------------------------- */
-/* ==Table Of Content            */
-/* ----------------------------- */
+// WARNING : Only Core and Utilities are imported by default. Just add other files if you need them.
 
-/*
-1- Reboot (basic reset)
-2- Base  :
-  - Reset
-  - Print
-  - Layout (alignment, modules, positionning)
-  - Utilities (width and spacers helpers)
-  - Responsive helpers
-  - WordPress reset (disabled by default)
-  - Grillade (Grid System)
-3- Components :
-  - Media object
-  - Skip Links for accessibility
-  - Tables
-  - Forms
-  - Buttons
-  - Checkbox
-  - Tabs
-  - Tags
-  - Badges
-  - Alerts
-*/
+// CORE
+@import "abstracts/variables-sass";
+@import "abstracts/mixins-sass";
 
-// WARNING : you should comment the following @import (variables)
-// and move variables file from KNACSS folder to your own project folder!
-@import "abstracts/variables";
+@import "base/reset-base";
+@import "base/reset-accessibility";
+@import "base/reset-forms";
+@import "base/reset-print";
+@import "base/layout";
 
-@import "abstracts/mixins";
+// UTILITY CLASSES
+// @import "utils/utils-global";
+// @import "utils/utils-spacers";
+// @import "utils/grillade";
 
-// Core Libraries
-@import "base/reset";        // basic styles
-@import "base/print";        // print quick reset
-@import "base/layout";       // alignment, modules, positionning
-
-// New Grid System by default (Grid Layout). 
-// If you prefer old "Flexbox" Grid System, replace file with "base/grillade-flex"
-// Note that none of these files are prefixed by an underscore, in order to compile them.
-@import "base/grillade-grid"; // grid system with Grid Layout
-
-// Components
-@import "components/alerts";     // alerts styles
-@import "components/arrows";     // arrows styles
-@import "components/badges";     // badges styles
-@import "components/buttons";    // buttons styles
-@import "components/checkbox";   // checkbox, radio, switch styles
-@import "components/forms";      // forms consistency and styles
-@import "components/media";      // media object
-@import "components/skip-links"; // skip links
-@import "components/tables";     // data tables consistency
-@import "components/tabs";       // tabs styles
-@import "components/tags";       // tags styles
-
-// Utilities
-@import "base/utilities";    // width and spacer helpers
-@import "base/responsive";   // Responsive Web Design helpers
-// @import "base/wordpress"; // WordPress reset and basic styles
+// COMPONENTS (add them only if you need)
+// @import "components/button";
+// @import "components/burger";
+// @import "components/checkbox";
+// @import "components/radio";
+// @import "components/select";
+// @import "components/quote";

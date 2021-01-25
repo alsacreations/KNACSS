@@ -1,0 +1,60 @@
+/*
+ * component quote
+ */
+/*
+ * HTML template example:
+ * <blockquote>
+ *   <p>Lorem Elsass Ipsum mitt picon bière</p>
+ * </blockquote>
+ */
+
+/*
+ * quotes variables (you can change them)
+ */
+
+$blockquote-color: #454d5d;
+
+/*
+ * quotes styles
+ */
+
+blockquote {
+  position: relative;
+  padding-left: 3em;
+  min-height: 2em;
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: georgia, serif;
+  font-size: 5em;
+  height: .4em;
+  line-height: .9;
+  color: $blockquote-color;
+}
+
+blockquote > footer {
+  margin-top: .75em;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, .7);
+
+  &::before {
+    content: "\2014 \0020";
+  }
+}
+
+q {
+  font-style: normal;
+}
+
+q,
+.q {
+  quotes: "“" "”" "‘" "’";
+
+  &:lang(fr) {
+    quotes: "«\00a0" "\00a0»" "“" "”";
+  }
+}
