@@ -8,13 +8,13 @@ KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui perme
 
 ## Documentation version actuelle (v8 = Reborn)
 
-- Site web de présentation de KNACSS Reborn : <http://knacss.com>
+- Site web de présentation de KNACSS Reborn : <https://www.knacss.com/>
 - [**Documentation KNACSS Reborn**](https://www.knacss.com/doc.html)
 
 ## Documentation anciennes versions (v7)
 
 - [**Documentation KNACSS v7**](https://www.knacss.com/doc-old.html)
-- [**Pense-bête PDF version 7**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
+- [**Pense-bête PDF KNACSS v7**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
 
 ## Modulaire
 
