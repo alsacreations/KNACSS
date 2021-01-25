@@ -1,6 +1,6 @@
 # KNACSS
 
-<http://www.knacss.com>
+<https://www.knacss.com/>
 
 KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui permet de commencer un projet à partir de zéro tout en tenant compte de bonnes pratiques générales (accessibilité, performance, responsive webdesign, grille de mise en forme).
 
