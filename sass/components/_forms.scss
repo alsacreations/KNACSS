@@ -1,28 +1,6 @@
 /* ----------------------------- */
-/* ==Forms                       */
+/* ==Forms styling               */
 /* ----------------------------- */
-/* thanks to HTML5boilerplate and https://shoelace.style/ */
-
-/* forms items */
-form,
-fieldset {
-  border: none;
-}
-
-fieldset {
-  padding: $spacer-medium;
-
-  & legend {
-    padding: 0 $spacer-tiny;
-    border: 0;
-    white-space: normal;
-  }
-}
-
-label {
-  display: inline-block;
-  cursor: pointer;
-}
 
 [type="color"],
 [type="date"],
@@ -106,9 +84,4 @@ textarea:-moz-placeholder {
 input::placeholder,
 textarea::placeholder {
   color: #777;
-}
-
-progress {
-  width: 100%;
-  vertical-align: middle;
 }

@@ -74,23 +74,6 @@
   text-align: center;
 }
 
-@if variable-exists(hyphens) and $hyphens==true {
-  @media (max-width: ($small - 1)) {
-    div,
-    textarea,
-    table,
-    td,
-    th,
-    code,
-    pre,
-    samp {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-    }
-  }
-}
-
 /* blocks that need to be placed under floats */
 
 .clear,
@@ -131,10 +114,8 @@
 /* Global Micro Layout */
 /* ------------------- */
 
-/* module, gains superpower "BFC" Block Formating Context */
+/* "BFC" Block Formating Context */
 
-.mod,
-.u-mod,
 .bfc,
 .u-bfc {
   overflow: hidden;
@@ -188,14 +169,14 @@ img.u-fr {
 }
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
+// mixin in `abstracts/_mixins.scss`
 .visually-hidden {
-  position: absolute !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
+  @include visually-hidden;
+}
+@include respond-to("small") {
+  .small-visually-hidden {
+    @include visually-hidden;
+  }
 }
 
 .is-disabled,
@@ -216,9 +197,6 @@ ul {
   }
 }
 
-.color--inverse {
-  color: $white;
-}
 
 /* Width Helpers */
 /* ------------- */

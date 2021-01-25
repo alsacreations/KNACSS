@@ -1,6 +1,7 @@
 /* ----------------------------- */
-/* ==Buttons                     */
+/* ==Buttons styling             */
 /* ----------------------------- */
+
 /* preferably use <button> for buttons !*/
 /* use .btn-- or .button-- classes for variants */
 
@@ -19,9 +20,6 @@
   border: none;
   border-radius: $border-radius;
   background-color: $color-muted;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 1;
 }
 
 .btn,

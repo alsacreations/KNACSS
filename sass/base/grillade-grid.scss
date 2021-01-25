@@ -8,16 +8,16 @@
 
 // use these variables only for a standalone Grillade
 // in KNACSS, you shall modify variables file instead
-$tiny: 480px !default;
-$medium: 768px !default;
-$cols: 12 !default;
+$tiny    : 480px !default;
+$medium  : 768px !default;
+$large   : 992px !default;
+$cols    : 12 !default;
 
 // classic Grid
-[class*=" grid-"],
-[class^="grid-"] {
+[class*=" grillade-"],
+[class^="grillade-"] {
   @media (min-width: $tiny) {
     display: grid;
-    grid-auto-flow: dense;
 
     // gutters
     @if variable_exists(grid-gutters) {
@@ -35,8 +35,8 @@ $cols: 12 !default;
 }
 
 // autogrid
-.autogrid,
-.grid {
+.autogrillade,
+.grillade {
   @media (min-width: $tiny) {
     display: grid;
     grid-auto-flow: column;
@@ -57,9 +57,9 @@ $cols: 12 !default;
   }
 }
 
-// grid constructor (.grid-2 to .grid-$cols)
+// grid constructor (.grillade-2 to .grillade-$cols)
 @for $i from 2 through $cols {
-  [class*="grid-#{$i}"] {
+  [class*="grillade-#{$i}"] {
     grid-template-columns: repeat(#{$i}, 1fr);
   }
 }
@@ -75,12 +75,31 @@ $cols: 12 !default;
   }
 }
 
-/* intermediate breakpoints */
+/* medium intermediate breakpoints */
+// -medium-X suffix means "X columns when < large screen"
+// example : .grillade-4-medium-2 will be 1 column (< tiny) then 2 columns (< large) then 4 columns
+@media (min-width: $tiny) and (max-width: ($large - 1)) {
+  @for $i from 1 through 4 {
+    [class*="grillade-"][class*="-medium-#{$i}"] {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+
+    [class*="col-"][class*="-medium-#{$i}"] {
+      grid-column: auto / span #{$i};
+    }
+  }
+
+  [class*="-medium-all"] {
+    grid-column: 1 / -1;
+  }
+}
+
+/* small intermediate breakpoints */
 // -small-X suffix means "X columns when < medium screen"
-// example : .grid-4-small-2 will be 1 column (< tiny) then 2 columns (< medium) then 4 columns
+// example : .grillade-4-small-2 will be 1 column (< tiny) then 2 columns (< medium) then 4 columns
 @media (min-width: $tiny) and (max-width: ($medium - 1)) {
-   @for $i from 1 through 4{
-    [class*="grid-"][class*="-small-#{$i}"] {
+  @for $i from 1 through 4 {
+    [class*="grillade-"][class*="-small-#{$i}"] {
       grid-template-columns: repeat(#{$i}, 1fr);
     }
 
@@ -92,6 +111,31 @@ $cols: 12 !default;
   [class*="-small-all"] {
     grid-column: 1 / -1;
   }
+}
+
+// grid overall alignment
+[class*="-start"] {
+  justify-content: start;
+}
+
+[class*="-end"] {
+  justify-content: end;
+}
+
+[class*="-center"] {
+  justify-content: center;
+}
+
+[class*="-space-between"] {
+  justify-content: space-between;
+}
+
+[class*="-space-around"] {
+  justify-content: space-around;
+}
+
+[class*="-space-evenly"] {
+  justify-content: space-evenly;
 }
 
 // grid order
