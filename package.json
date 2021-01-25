@@ -1,6 +1,31 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
+  "name": "knacss",
+  "version": "8.0.1",
+  "homepage": "http://www.knacss.com/",
+  "bugs": "https://github.com/alsacreations/KNACSS/issues",
+  "author": [
+    "Raphaël GOETTER, Alsacreations (http://www.alsacreations.fr)"
+  ],
+  "contributors": [
+    "Raphaël GOETTER, Alsacreations"
+  ],
+  "description": "KNACSS is a minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects. It relies on common best practices and experience on the topic.",
+  "main": "https://github.com/alsacreations/KNACSS/tree/master/css",
+  "keywords": [
+    "css",
+    "framework",
+    "reset",
+    "responsive",
+    "sass",
+    "rwd",
+    "boilerplate",
+    "workflow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alsacreations/KNACSS"
+  },
+  "license": "WTFPL",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
