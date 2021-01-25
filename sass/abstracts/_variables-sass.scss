@@ -1,0 +1,197 @@
+// ----------------
+// Sass Config and variables
+// ----------------
+
+// ----------------
+// Breakpoints values
+// ----------------
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1330px,
+) !default;
+
+$small: map-get($breakpoints, sm) !default;
+$medium: map-get($breakpoints, md) !default;
+$large: map-get($breakpoints, lg) !default;
+$extra-large: map-get($breakpoints, xl) !default;
+
+// ----------------
+// Spacers values
+// ----------------
+
+$spacers: (
+  "0": 0,
+  "1": 0.5rem,
+  // tiny
+  "2": 0.75rem,
+  // tiny-plus
+  "3": 1rem,
+  // small
+  "4": 1.5rem,
+  // small-plus
+  "5": 2rem,
+  // medium
+  "6": 3rem,
+  // medium-plus
+  "7": 5rem,
+  // large
+  "auto": auto,
+) !default;
+
+$spacer-none: map-get($spacers, "0") !default;
+$spacer-tiny: map-get($spacers, "1") !default;
+$spacer-tiny-plus: map-get($spacers, "2") !default;
+$spacer-small: map-get($spacers, "3") !default;
+$spacer-small-plus: map-get($spacers, "4") !default;
+$spacer-medium: map-get($spacers, "5") !default;
+$spacer-medium-plus: map-get($spacers, "6") !default;
+$spacer-large: map-get($spacers, "7") !default;
+
+// ----------------
+// Grid layout values
+// ----------------
+
+$grid-columns: 6 !default;
+
+// ----------------
+// Fonts values
+// ----------------
+
+// Font families
+$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-headings: sans-serif;
+$font-family-monospace: consolas, courier, monospace;
+$line-height-base: 1.5;
+
+// Font sizes
+$font-size-html: 62.5%;
+$font-size-base: 1.6rem;
+
+// Font weights
+$weight-light: 200;
+$weight-book: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-bold: 700;
+
+// ----------------
+// Color values
+// ----------------
+
+// Color palette (don't use as variables except $white and $black)
+$white: #ffffff;
+$black: #000000;
+
+$color-gray-1: #f7fafc;
+$color-gray-2: #abc3c2;
+$color-gray-3: #454d5d;
+$color-gray-4: #212529;
+
+$color-blue-1: #0275d8;
+$color-blue-2: #04527b;
+$color-blue-3: #033651;
+
+// Non agnostic colors (should be used as variables)
+
+$color-alpha: $color-gray-1; // most used colors
+$color-beta: $color-gray-3;
+$color-gamma: $color-gray-4;
+
+$color-delta: $color-blue-1;
+$color-epsilon: $color-blue-2;
+
+$color-gradient-alpha: linear-gradient(
+  to left bottom,
+  $color-alpha,
+  $color-beta
+);
+
+$color-alternate-1: #5cb85c; // less used colors
+$color-alternate-1b: #4d9c4d;
+$color-alternate-2: #5bc0de;
+$color-alternate-2b: #4fa8c4;
+$color-alternate-3: #f0ad4e;
+$color-alternate-3b: #d19644;
+$color-alternate-4: #d9534f;
+$color-alternate-4b: #be4945;
+
+// Links
+$link-decoration: underline;
+$link-decoration-hover: underline;
+
+// Border radius
+$radius-none: 0;
+$radius-small: 0.5rem;
+$radius-medium: 1rem;
+$radius-large: 2rem;
+$radius-circle: 50%;
+
+// ----------------
+// Utils properties list (note that display: grid is in Grillade)
+// ----------------
+$utils: (
+  (hidden, display, none),
+  (block, display, block),
+  (inline, display, inline),
+  (inline-block, display, inline-block),
+  (flex, display, flex),
+  (flex-row, flex-direction, row),
+  (flex-col, flex-direction, column),
+  (flex-wrap, flex-wrap, wrap),
+  (flex-no-wrap, flex-wrap, nowrap),
+  (flex-shrink, flex-shrink, 1),
+  (flex-no-shrink, flex-shrink, 0),
+  (flex-grow, flex-grow, 1),
+  (flex-no-grow, flex-grow, 0),
+  (float-left, float, left),
+  (float-right, float, right),
+  (float-none, float, none),
+  (text-bold, font-weight, bold),
+  (text-italic, font-style, italic),
+  (text-uppercase, text-transform, uppercase),
+  (text-lowercase, text-transform, lowercase),
+  (text-smaller, font-size, smaller),
+  (text-bigger, font-size, bigger),
+  (text-left, text-align, left),
+  (text-center, text-align, center),
+  (text-right, text-align, right),
+  (text-justify, text-align, justify),
+  (text-wrap, overflow-wrap, break-word),
+  (justify-start, justify-content, flex-start),
+  (justify-end, justify-content, flex-end),
+  (justify-center, justify-content, center),
+  (justify-between, justify-content, space-between),
+  (justify-around, justify-content, space-around),
+  (justify-evenly, justify-content, space-evenly),
+  (justify-items-start, justify-items, start),
+  (justify-items-end, justify-items, end),
+  (justify-items-center, justify-items, center),
+  (align-start, align-content, start),
+  (align-end, align-content, end),
+  (align-center, align-content, center),
+  (align-between, align-content, space-between),
+  (align-around, align-content, space-around),
+  (align-evenly, align-content, space-evenly),
+  (align-items-start, align-items, flex-start),
+  (align-items-end, align-items, flex-end),
+  (align-items-center, align-items, center),
+  (place-center, place-content, center),
+  (justify-self-auto, justify-self, auto),
+  (justify-self-start, justify-self, start),
+  (justify-self-end, justify-self, end),
+  (justify-self-center, justify-self, center),
+  (justify-self-stretch, justify-self, stretch),
+  (align-self-auto, align-self, auto),
+  (align-self-start, align-self, flex-start),
+  (align-self-end, align-self, flex-end),
+  (align-self-center, align-self, center),
+  (align-self-stretch, align-self, stretch),
+  (align-top, vertical-align, top),
+  (align-bottom, vertical-align, bottom),
+  (align-middle, vertical-align, middle),
+  (item-first, order, -100),
+  (item-last, order, 100)
+) !default;

@@ -1,65 +1,41 @@
+/* ----------------------------  */
+/* ==Layout classes              */
 /* ----------------------------- */
-/* ==Global Micro Layout         */
-/* ----------------------------- */
 
-/* Flexbox layout is KNACSS choice
-http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
-*/
+/* Global container */
+.layout-maxed {
+  display: grid;
 
-.flex-container,
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
+  @each $key,
+  $value in $breakpoints {
+    @media (min-width: #{$value}) {
+      grid-template-columns:
+        minmax($spacer-small, 1fr)
+        minmax(auto, $value)
+        minmax($spacer-small, 1fr);
+    }
+  }
 }
 
-.flex-container--row,
-.flex-row {
-  @extend .flex-container;
-  flex-direction: row;
+/* Center all children */
+.layout-maxed > * {
+  grid-column: 2;
 }
 
-.flex-container--column,
-.flex-column {
-  @extend .flex-container;
-  flex-direction: column;
+/* Hero box  */
+.layout-hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: inherit;
 }
 
-.flex-container--row-reverse,
-.flex-row-reverse {
-  @extend .flex-container;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+.layout-hero > * {
+  grid-column: 2;
 }
 
-.flex-container--column-reverse,
-.flex-column-reverse {
-  @extend .flex-container;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-}
-
-.flex-item-fluid,
-.item-fluid {
-  flex: 1 1 0%;
-}
-
-.flex-item-first,
-.item-first {
-  order: -1;
-}
-
-.flex-item-medium,
-.item-medium {
-  order: 0;
-}
-
-.flex-item-last,
-.item-last {
-  order: 1;
-}
-
-.flex-item-center,
-.item-center,
-.mr-auto {
-  margin: auto;
+/* Hero image */
+.layout-hero-img {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 100%;
 }
