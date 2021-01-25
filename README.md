@@ -6,10 +6,14 @@ KNACSS, c'est une sorte de feuille de style CSS "reset" sur-vitaminée qui perme
 
 **Né en 2012 et après près de 10 années de bons et loyaux services, le projet initial « KNACSS » d'Alsacréations laisse place à une toute nouvelle version, totalement remaniée : KNACSS Reborn.**
 
-**Ce repo n'est plus maintenu est est dorénavant remplacé par celui de KNACSS Reborn : <https://github.com/raphaelgoetter/knacss-reborn>**
+**Cette version n'est plus maintenue et n'est pas compatible avec les versions récentes. Ne changez pas de version sans nécessité, vous prendriez le risque de casser la compatibilité avec vos projets en cours.**
 
-## Documentation
+## Documentation version actuelle
 
 - Site web de présentation de KNACSS Reborn : <http://knacss.com>
 - [**Documentation KNACSS Reborn**](https://www.knacss.com/doc.html)
-- [**Pense-bête en PDF**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf) (ancien)
+
+## Documentation anciennes versions (v7)
+
+- [**Documentation KNACSS v7**](https://www.knacss.com/doc-old.html)
+- [**Pense-bête PDF version 7**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
