@@ -6,16 +6,17 @@
   .#{$class} {
     #{$prop}: #{$value};
   }
-  
-  // loop for each breakpoint
+}
+
+// loop for each breakpoint
+@each $class, $prop, $value in $utils {
   @each $bp, $bpv in $breakpoints {
-      @media (min-width: #{$bpv}) {
+    @media (min-width: #{$bpv}) {
       .#{$bp}\:#{$class} {
         #{$prop}: #{$value};
       }
     }
   }
-  
 }
 
 // multi-properties utils
@@ -37,7 +38,7 @@
 
 // loop for each breakpoint
 @each $bp, $bpv in $breakpoints {
-    @media (min-width: #{$bpv}) {
+  @media (min-width: #{$bpv}) {
     .#{$bp}\:visually-hidden {
       position: absolute !important;
       border: 0 !important;

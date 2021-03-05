@@ -36,9 +36,9 @@ Principe de briques modulaires :
 @import "abstracts/mixins-sass";
 
 // UTILITY CLASSES
-// @import "utils/utils-global";
-// @import "utils/utils-spacers";
-// @import "utils/grillade";
+@import "utils/utils-global";
+@import "utils/utils-spacers";
+@import "utils/grillade";
 
 // COMPONENTS (add them only if you need)
 // @import "components/button";
