@@ -1,24 +1,24 @@
 // ----------------
-// Sass Config and variables
+// Config Sass et variables
 // ----------------
 
 // ----------------
-// Breakpoints values
+// Valeurs de Breakpoints
 // ----------------
+
+// Hypothèse : smartphone portrait/paysage < 576px < gros smartphone paysage + tablette portrait < 992px < tablette paysage < 1330px < laptop et plus
 $breakpoints: (
   sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1330px,
+  md: 992px,
+  lg: 1330px,
 ) !default;
 
 $small: map-get($breakpoints, sm) !default;
 $medium: map-get($breakpoints, md) !default;
 $large: map-get($breakpoints, lg) !default;
-$extra-large: map-get($breakpoints, xl) !default;
 
 // ----------------
-// Spacers values
+// Spacers
 // ----------------
 
 $spacers: (
@@ -50,13 +50,13 @@ $spacer-medium-plus: map-get($spacers, "6") !default;
 $spacer-large: map-get($spacers, "7") !default;
 
 // ----------------
-// Grid layout values
+// Grid layout
 // ----------------
 
 $grid-columns: 6 !default;
 
 // ----------------
-// Fonts values
+// Fonts
 // ----------------
 
 // Font families
@@ -93,10 +93,10 @@ $weight-medium: 500;
 $weight-bold: 700;
 
 // ----------------
-// Color values
+// Couleurs
 // ----------------
 
-// Color palette (don't use as variables except $white and $black)
+// Palette de couleur (à ne pas utiliser en variables sauf $white and $black)
 $white: #ffffff;
 $black: #000000;
 
@@ -109,9 +109,9 @@ $color-blue-1: #0275d8;
 $color-blue-2: #04527b;
 $color-blue-3: #033651;
 
-// Non agnostic colors (should be used as variables)
+// Palette non agnostic (à utiliser en variables)
 
-$color-alpha: $color-gray-1; // most used colors
+$color-alpha: $color-gray-1; // couleurs fréquentes
 $color-beta: $color-gray-3;
 $color-gamma: $color-gray-4;
 
@@ -124,7 +124,7 @@ $color-gradient-alpha: linear-gradient(
   $color-beta
 );
 
-$color-alternate-1: #5cb85c; // less used colors
+$color-alternate-1: #5cb85c; // couleurs moins fréquentes
 $color-alternate-1b: #4d9c4d;
 $color-alternate-2: #5bc0de;
 $color-alternate-2b: #4fa8c4;
@@ -145,7 +145,7 @@ $radius-large: 2rem;
 $radius-circle: 50%;
 
 // ----------------
-// Utils properties list (note that display: grid is in Grillade)
+// Liste des propriétés utilitaires (note display: grid se trouve dans Grillade)
 // ----------------
 $utils: (
   (hidden, display, none),

@@ -628,15 +628,9 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .layout-maxed {
-    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 768px) minmax(1rem, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .layout-maxed {
-    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1024px) minmax(1rem, 1fr);
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 992px) minmax(1rem, 1fr);
   }
 }
 
@@ -922,20 +916,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:hidden {
     display: none;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:hidden {
-    display: none;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:hidden {
+  .lg\:hidden {
     display: none;
   }
 }
@@ -946,20 +934,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:block {
     display: block;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:block {
-    display: block;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:block {
+  .lg\:block {
     display: block;
   }
 }
@@ -970,20 +952,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:inline {
     display: inline;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:inline {
-    display: inline;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:inline {
+  .lg\:inline {
     display: inline;
   }
 }
@@ -994,20 +970,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:inline-block {
     display: inline-block;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:inline-block {
-    display: inline-block;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:inline-block {
+  .lg\:inline-block {
     display: inline-block;
   }
 }
@@ -1018,20 +988,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex {
     display: flex;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex {
-    display: flex;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex {
+  .lg\:flex {
     display: flex;
   }
 }
@@ -1042,20 +1006,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-row {
     flex-direction: row;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-row {
+  .lg\:flex-row {
     flex-direction: row;
   }
 }
@@ -1066,20 +1024,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-col {
     flex-direction: column;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-col {
-    flex-direction: column;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-col {
+  .lg\:flex-col {
     flex-direction: column;
   }
 }
@@ -1090,20 +1042,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-wrap {
     flex-wrap: wrap;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-wrap {
-    flex-wrap: wrap;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-wrap {
+  .lg\:flex-wrap {
     flex-wrap: wrap;
   }
 }
@@ -1114,20 +1060,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-no-wrap {
     flex-wrap: nowrap;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-no-wrap {
-    flex-wrap: nowrap;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-no-wrap {
+  .lg\:flex-no-wrap {
     flex-wrap: nowrap;
   }
 }
@@ -1138,20 +1078,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-shrink {
     flex-shrink: 1;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-shrink {
-    flex-shrink: 1;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-shrink {
+  .lg\:flex-shrink {
     flex-shrink: 1;
   }
 }
@@ -1162,20 +1096,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-no-shrink {
     flex-shrink: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-no-shrink {
-    flex-shrink: 0;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-no-shrink {
+  .lg\:flex-no-shrink {
     flex-shrink: 0;
   }
 }
@@ -1186,20 +1114,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-grow {
     flex-grow: 1;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-grow {
-    flex-grow: 1;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-grow {
+  .lg\:flex-grow {
     flex-grow: 1;
   }
 }
@@ -1210,20 +1132,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:flex-no-grow {
     flex-grow: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex-no-grow {
-    flex-grow: 0;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:flex-no-grow {
+  .lg\:flex-no-grow {
     flex-grow: 0;
   }
 }
@@ -1234,20 +1150,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:float-left {
     float: left;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:float-left {
-    float: left;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:float-left {
+  .lg\:float-left {
     float: left;
   }
 }
@@ -1258,20 +1168,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:float-right {
     float: right;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:float-right {
-    float: right;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:float-right {
+  .lg\:float-right {
     float: right;
   }
 }
@@ -1282,20 +1186,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:float-none {
     float: none;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:float-none {
-    float: none;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:float-none {
+  .lg\:float-none {
     float: none;
   }
 }
@@ -1306,20 +1204,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-bold {
     font-weight: bold;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-bold {
-    font-weight: bold;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-bold {
+  .lg\:text-bold {
     font-weight: bold;
   }
 }
@@ -1330,20 +1222,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-italic {
     font-style: italic;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-italic {
-    font-style: italic;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-italic {
+  .lg\:text-italic {
     font-style: italic;
   }
 }
@@ -1354,20 +1240,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-uppercase {
     text-transform: uppercase;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-uppercase {
-    text-transform: uppercase;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-uppercase {
+  .lg\:text-uppercase {
     text-transform: uppercase;
   }
 }
@@ -1378,20 +1258,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-lowercase {
     text-transform: lowercase;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-lowercase {
-    text-transform: lowercase;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-lowercase {
+  .lg\:text-lowercase {
     text-transform: lowercase;
   }
 }
@@ -1402,20 +1276,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-smaller {
     font-size: smaller;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-smaller {
-    font-size: smaller;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-smaller {
+  .lg\:text-smaller {
     font-size: smaller;
   }
 }
@@ -1426,20 +1294,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-bigger {
     font-size: bigger;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-bigger {
-    font-size: bigger;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-bigger {
+  .lg\:text-bigger {
     font-size: bigger;
   }
 }
@@ -1450,20 +1312,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-left {
     text-align: left;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-left {
-    text-align: left;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-left {
+  .lg\:text-left {
     text-align: left;
   }
 }
@@ -1474,20 +1330,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-center {
     text-align: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-center {
-    text-align: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-center {
+  .lg\:text-center {
     text-align: center;
   }
 }
@@ -1498,20 +1348,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-right {
     text-align: right;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-right {
-    text-align: right;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-right {
+  .lg\:text-right {
     text-align: right;
   }
 }
@@ -1522,20 +1366,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-justify {
     text-align: justify;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-justify {
-    text-align: justify;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-justify {
+  .lg\:text-justify {
     text-align: justify;
   }
 }
@@ -1546,20 +1384,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-wrap {
     overflow-wrap: break-word;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-wrap {
-    overflow-wrap: break-word;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-wrap {
+  .lg\:text-wrap {
     overflow-wrap: break-word;
   }
 }
@@ -1570,20 +1402,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-start {
     justify-content: flex-start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-start {
-    justify-content: flex-start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-start {
+  .lg\:justify-start {
     justify-content: flex-start;
   }
 }
@@ -1594,20 +1420,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-end {
     justify-content: flex-end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-end {
-    justify-content: flex-end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-end {
+  .lg\:justify-end {
     justify-content: flex-end;
   }
 }
@@ -1618,20 +1438,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-center {
     justify-content: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-center {
-    justify-content: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-center {
+  .lg\:justify-center {
     justify-content: center;
   }
 }
@@ -1642,20 +1456,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-between {
     justify-content: space-between;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-between {
-    justify-content: space-between;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-between {
+  .lg\:justify-between {
     justify-content: space-between;
   }
 }
@@ -1666,20 +1474,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-around {
     justify-content: space-around;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-around {
-    justify-content: space-around;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-around {
+  .lg\:justify-around {
     justify-content: space-around;
   }
 }
@@ -1690,20 +1492,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-evenly {
     justify-content: space-evenly;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-evenly {
-    justify-content: space-evenly;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-evenly {
+  .lg\:justify-evenly {
     justify-content: space-evenly;
   }
 }
@@ -1714,20 +1510,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-items-start {
     justify-items: start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-items-start {
-    justify-items: start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-items-start {
+  .lg\:justify-items-start {
     justify-items: start;
   }
 }
@@ -1738,20 +1528,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-items-end {
     justify-items: end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-items-end {
-    justify-items: end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-items-end {
+  .lg\:justify-items-end {
     justify-items: end;
   }
 }
@@ -1762,20 +1546,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-items-center {
     justify-items: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-items-center {
-    justify-items: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-items-center {
+  .lg\:justify-items-center {
     justify-items: center;
   }
 }
@@ -1786,20 +1564,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-start {
     align-content: start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-start {
-    align-content: start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-start {
+  .lg\:align-start {
     align-content: start;
   }
 }
@@ -1810,20 +1582,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-end {
     align-content: end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-end {
-    align-content: end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-end {
+  .lg\:align-end {
     align-content: end;
   }
 }
@@ -1834,20 +1600,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-center {
     align-content: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-center {
-    align-content: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-center {
+  .lg\:align-center {
     align-content: center;
   }
 }
@@ -1858,20 +1618,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-between {
     align-content: space-between;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-between {
-    align-content: space-between;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-between {
+  .lg\:align-between {
     align-content: space-between;
   }
 }
@@ -1882,20 +1636,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-around {
     align-content: space-around;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-around {
-    align-content: space-around;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-around {
+  .lg\:align-around {
     align-content: space-around;
   }
 }
@@ -1906,20 +1654,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-evenly {
     align-content: space-evenly;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-evenly {
-    align-content: space-evenly;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-evenly {
+  .lg\:align-evenly {
     align-content: space-evenly;
   }
 }
@@ -1930,20 +1672,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-items-start {
     align-items: flex-start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-items-start {
-    align-items: flex-start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-items-start {
+  .lg\:align-items-start {
     align-items: flex-start;
   }
 }
@@ -1954,20 +1690,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-items-end {
     align-items: flex-end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-items-end {
-    align-items: flex-end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-items-end {
+  .lg\:align-items-end {
     align-items: flex-end;
   }
 }
@@ -1978,20 +1708,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-items-center {
     align-items: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-items-center {
-    align-items: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-items-center {
+  .lg\:align-items-center {
     align-items: center;
   }
 }
@@ -2002,20 +1726,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:place-center {
     place-content: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:place-center {
-    place-content: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:place-center {
+  .lg\:place-center {
     place-content: center;
   }
 }
@@ -2026,20 +1744,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-self-auto {
     justify-self: auto;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-self-auto {
-    justify-self: auto;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-self-auto {
+  .lg\:justify-self-auto {
     justify-self: auto;
   }
 }
@@ -2050,20 +1762,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-self-start {
     justify-self: start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-self-start {
-    justify-self: start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-self-start {
+  .lg\:justify-self-start {
     justify-self: start;
   }
 }
@@ -2074,20 +1780,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-self-end {
     justify-self: end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-self-end {
-    justify-self: end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-self-end {
+  .lg\:justify-self-end {
     justify-self: end;
   }
 }
@@ -2098,20 +1798,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-self-center {
     justify-self: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-self-center {
-    justify-self: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-self-center {
+  .lg\:justify-self-center {
     justify-self: center;
   }
 }
@@ -2122,20 +1816,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:justify-self-stretch {
     justify-self: stretch;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:justify-self-stretch {
-    justify-self: stretch;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:justify-self-stretch {
+  .lg\:justify-self-stretch {
     justify-self: stretch;
   }
 }
@@ -2146,20 +1834,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-self-auto {
     align-self: auto;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-self-auto {
-    align-self: auto;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-self-auto {
+  .lg\:align-self-auto {
     align-self: auto;
   }
 }
@@ -2170,20 +1852,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-self-start {
     align-self: flex-start;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-self-start {
-    align-self: flex-start;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-self-start {
+  .lg\:align-self-start {
     align-self: flex-start;
   }
 }
@@ -2194,20 +1870,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-self-end {
     align-self: flex-end;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-self-end {
-    align-self: flex-end;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-self-end {
+  .lg\:align-self-end {
     align-self: flex-end;
   }
 }
@@ -2218,20 +1888,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-self-center {
     align-self: center;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-self-center {
-    align-self: center;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-self-center {
+  .lg\:align-self-center {
     align-self: center;
   }
 }
@@ -2242,20 +1906,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-self-stretch {
     align-self: stretch;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-self-stretch {
-    align-self: stretch;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-self-stretch {
+  .lg\:align-self-stretch {
     align-self: stretch;
   }
 }
@@ -2266,20 +1924,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-top {
     vertical-align: top;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-top {
-    vertical-align: top;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-top {
+  .lg\:align-top {
     vertical-align: top;
   }
 }
@@ -2290,20 +1942,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-bottom {
     vertical-align: bottom;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-bottom {
-    vertical-align: bottom;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-bottom {
+  .lg\:align-bottom {
     vertical-align: bottom;
   }
 }
@@ -2314,20 +1960,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:align-middle {
     vertical-align: middle;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:align-middle {
-    vertical-align: middle;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:align-middle {
+  .lg\:align-middle {
     vertical-align: middle;
   }
 }
@@ -2338,20 +1978,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:item-first {
     order: -100;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:item-first {
-    order: -100;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:item-first {
+  .lg\:item-first {
     order: -100;
   }
 }
@@ -2362,20 +1996,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:item-last {
     order: 100;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:item-last {
-    order: 100;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:item-last {
+  .lg\:item-last {
     order: 100;
   }
 }
@@ -2424,7 +2052,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:visually-hidden {
     position: absolute !important;
     border: 0 !important;
@@ -2450,7 +2078,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:visually-hidden {
     position: absolute !important;
     border: 0 !important;
@@ -2470,32 +2098,6 @@ template {
     filter: grayscale(1);
   }
   .lg\:text-normal {
-    font-weight: normal;
-    font-style: normal;
-    text-transform: none;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:visually-hidden {
-    position: absolute !important;
-    border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-  }
-  .xl\:is-unstyled {
-    list-style: none;
-    padding-left: 0;
-  }
-  .xl\:is-disabled {
-    opacity: 0.6;
-    cursor: not-allowed !important;
-    filter: grayscale(1);
-  }
-  .xl\:text-normal {
     font-weight: normal;
     font-style: normal;
     text-transform: none;
@@ -2557,20 +2159,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-10 {
     font-size: 0.625rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-10 {
-    font-size: 0.625rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-10 {
+  .lg\:text-10 {
     font-size: 0.625rem;
   }
 }
@@ -2581,20 +2177,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-11 {
     font-size: 0.6875rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-11 {
-    font-size: 0.6875rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-11 {
+  .lg\:text-11 {
     font-size: 0.6875rem;
   }
 }
@@ -2605,20 +2195,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-12 {
     font-size: 0.75rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-12 {
-    font-size: 0.75rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-12 {
+  .lg\:text-12 {
     font-size: 0.75rem;
   }
 }
@@ -2629,20 +2213,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-14 {
     font-size: 0.875rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-14 {
-    font-size: 0.875rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-14 {
+  .lg\:text-14 {
     font-size: 0.875rem;
   }
 }
@@ -2653,20 +2231,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-16 {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-16 {
-    font-size: 1rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-16 {
+  .lg\:text-16 {
     font-size: 1rem;
   }
 }
@@ -2677,20 +2249,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-18 {
     font-size: 1.125rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-18 {
-    font-size: 1.125rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-18 {
+  .lg\:text-18 {
     font-size: 1.125rem;
   }
 }
@@ -2701,20 +2267,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-20 {
     font-size: 1.25rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-20 {
-    font-size: 1.25rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-20 {
+  .lg\:text-20 {
     font-size: 1.25rem;
   }
 }
@@ -2725,20 +2285,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-24 {
     font-size: 1.5rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-24 {
-    font-size: 1.5rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-24 {
+  .lg\:text-24 {
     font-size: 1.5rem;
   }
 }
@@ -2749,20 +2303,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-30 {
     font-size: 1.875rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-30 {
-    font-size: 1.875rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-30 {
+  .lg\:text-30 {
     font-size: 1.875rem;
   }
 }
@@ -2773,20 +2321,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-36 {
     font-size: 2.25rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-36 {
-    font-size: 2.25rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-36 {
+  .lg\:text-36 {
     font-size: 2.25rem;
   }
 }
@@ -2797,20 +2339,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-base {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-base {
-    font-size: 1rem;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-base {
+  .lg\:text-base {
     font-size: 1rem;
   }
 }
@@ -2821,20 +2357,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:text-inherit {
     font-size: "inherit";
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:text-inherit {
-    font-size: "inherit";
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:text-inherit {
+  .lg\:text-inherit {
     font-size: "inherit";
   }
 }
@@ -2949,7 +2479,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-0 {
     padding: 0;
   }
@@ -2998,7 +2528,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-0 {
     padding: 0;
   }
@@ -3042,55 +2572,6 @@ template {
     margin-right: 0;
   }
   .lg\:my-0 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-0 {
-    padding: 0;
-  }
-  .xl\:pt-0 {
-    padding-top: 0;
-  }
-  .xl\:pr-0 {
-    padding-right: 0;
-  }
-  .xl\:pb-0 {
-    padding-bottom: 0;
-  }
-  .xl\:pl-0 {
-    padding-left: 0;
-  }
-  .xl\:px-0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .xl\:py-0 {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .xl\:m-0 {
-    margin: 0;
-  }
-  .xl\:mt-0 {
-    margin-top: 0;
-  }
-  .xl\:mr-0 {
-    margin-right: 0;
-  }
-  .xl\:mb-0 {
-    margin-bottom: 0;
-  }
-  .xl\:ml-0 {
-    margin-left: 0;
-  }
-  .xl\:mx-0 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .xl\:my-0 {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -3205,7 +2686,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-1 {
     padding: 0.5rem;
   }
@@ -3254,7 +2735,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-1 {
     padding: 0.5rem;
   }
@@ -3298,55 +2779,6 @@ template {
     margin-right: 0.5rem;
   }
   .lg\:my-1 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-1 {
-    padding: 0.5rem;
-  }
-  .xl\:pt-1 {
-    padding-top: 0.5rem;
-  }
-  .xl\:pr-1 {
-    padding-right: 0.5rem;
-  }
-  .xl\:pb-1 {
-    padding-bottom: 0.5rem;
-  }
-  .xl\:pl-1 {
-    padding-left: 0.5rem;
-  }
-  .xl\:px-1 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .xl\:py-1 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  .xl\:m-1 {
-    margin: 0.5rem;
-  }
-  .xl\:mt-1 {
-    margin-top: 0.5rem;
-  }
-  .xl\:mr-1 {
-    margin-right: 0.5rem;
-  }
-  .xl\:mb-1 {
-    margin-bottom: 0.5rem;
-  }
-  .xl\:ml-1 {
-    margin-left: 0.5rem;
-  }
-  .xl\:mx-1 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-  .xl\:my-1 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -3461,7 +2893,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-2 {
     padding: 0.75rem;
   }
@@ -3510,7 +2942,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-2 {
     padding: 0.75rem;
   }
@@ -3554,55 +2986,6 @@ template {
     margin-right: 0.75rem;
   }
   .lg\:my-2 {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-2 {
-    padding: 0.75rem;
-  }
-  .xl\:pt-2 {
-    padding-top: 0.75rem;
-  }
-  .xl\:pr-2 {
-    padding-right: 0.75rem;
-  }
-  .xl\:pb-2 {
-    padding-bottom: 0.75rem;
-  }
-  .xl\:pl-2 {
-    padding-left: 0.75rem;
-  }
-  .xl\:px-2 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  .xl\:py-2 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-  .xl\:m-2 {
-    margin: 0.75rem;
-  }
-  .xl\:mt-2 {
-    margin-top: 0.75rem;
-  }
-  .xl\:mr-2 {
-    margin-right: 0.75rem;
-  }
-  .xl\:mb-2 {
-    margin-bottom: 0.75rem;
-  }
-  .xl\:ml-2 {
-    margin-left: 0.75rem;
-  }
-  .xl\:mx-2 {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-  .xl\:my-2 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
   }
@@ -3717,7 +3100,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-3 {
     padding: 1rem;
   }
@@ -3766,7 +3149,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-3 {
     padding: 1rem;
   }
@@ -3810,55 +3193,6 @@ template {
     margin-right: 1rem;
   }
   .lg\:my-3 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-3 {
-    padding: 1rem;
-  }
-  .xl\:pt-3 {
-    padding-top: 1rem;
-  }
-  .xl\:pr-3 {
-    padding-right: 1rem;
-  }
-  .xl\:pb-3 {
-    padding-bottom: 1rem;
-  }
-  .xl\:pl-3 {
-    padding-left: 1rem;
-  }
-  .xl\:px-3 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .xl\:py-3 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  .xl\:m-3 {
-    margin: 1rem;
-  }
-  .xl\:mt-3 {
-    margin-top: 1rem;
-  }
-  .xl\:mr-3 {
-    margin-right: 1rem;
-  }
-  .xl\:mb-3 {
-    margin-bottom: 1rem;
-  }
-  .xl\:ml-3 {
-    margin-left: 1rem;
-  }
-  .xl\:mx-3 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  .xl\:my-3 {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -3973,7 +3307,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-4 {
     padding: 1.5rem;
   }
@@ -4022,7 +3356,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-4 {
     padding: 1.5rem;
   }
@@ -4066,55 +3400,6 @@ template {
     margin-right: 1.5rem;
   }
   .lg\:my-4 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-4 {
-    padding: 1.5rem;
-  }
-  .xl\:pt-4 {
-    padding-top: 1.5rem;
-  }
-  .xl\:pr-4 {
-    padding-right: 1.5rem;
-  }
-  .xl\:pb-4 {
-    padding-bottom: 1.5rem;
-  }
-  .xl\:pl-4 {
-    padding-left: 1.5rem;
-  }
-  .xl\:px-4 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  .xl\:py-4 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  .xl\:m-4 {
-    margin: 1.5rem;
-  }
-  .xl\:mt-4 {
-    margin-top: 1.5rem;
-  }
-  .xl\:mr-4 {
-    margin-right: 1.5rem;
-  }
-  .xl\:mb-4 {
-    margin-bottom: 1.5rem;
-  }
-  .xl\:ml-4 {
-    margin-left: 1.5rem;
-  }
-  .xl\:mx-4 {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  .xl\:my-4 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -4229,7 +3514,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-5 {
     padding: 2rem;
   }
@@ -4278,7 +3563,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-5 {
     padding: 2rem;
   }
@@ -4322,55 +3607,6 @@ template {
     margin-right: 2rem;
   }
   .lg\:my-5 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-5 {
-    padding: 2rem;
-  }
-  .xl\:pt-5 {
-    padding-top: 2rem;
-  }
-  .xl\:pr-5 {
-    padding-right: 2rem;
-  }
-  .xl\:pb-5 {
-    padding-bottom: 2rem;
-  }
-  .xl\:pl-5 {
-    padding-left: 2rem;
-  }
-  .xl\:px-5 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .xl\:py-5 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .xl\:m-5 {
-    margin: 2rem;
-  }
-  .xl\:mt-5 {
-    margin-top: 2rem;
-  }
-  .xl\:mr-5 {
-    margin-right: 2rem;
-  }
-  .xl\:mb-5 {
-    margin-bottom: 2rem;
-  }
-  .xl\:ml-5 {
-    margin-left: 2rem;
-  }
-  .xl\:mx-5 {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-  .xl\:my-5 {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -4485,7 +3721,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-6 {
     padding: 3rem;
   }
@@ -4534,7 +3770,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-6 {
     padding: 3rem;
   }
@@ -4578,55 +3814,6 @@ template {
     margin-right: 3rem;
   }
   .lg\:my-6 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-6 {
-    padding: 3rem;
-  }
-  .xl\:pt-6 {
-    padding-top: 3rem;
-  }
-  .xl\:pr-6 {
-    padding-right: 3rem;
-  }
-  .xl\:pb-6 {
-    padding-bottom: 3rem;
-  }
-  .xl\:pl-6 {
-    padding-left: 3rem;
-  }
-  .xl\:px-6 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-  .xl\:py-6 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  .xl\:m-6 {
-    margin: 3rem;
-  }
-  .xl\:mt-6 {
-    margin-top: 3rem;
-  }
-  .xl\:mr-6 {
-    margin-right: 3rem;
-  }
-  .xl\:mb-6 {
-    margin-bottom: 3rem;
-  }
-  .xl\:ml-6 {
-    margin-left: 3rem;
-  }
-  .xl\:mx-6 {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  .xl\:my-6 {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
@@ -4741,7 +3928,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-7 {
     padding: 5rem;
   }
@@ -4790,7 +3977,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-7 {
     padding: 5rem;
   }
@@ -4834,55 +4021,6 @@ template {
     margin-right: 5rem;
   }
   .lg\:my-7 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:p-7 {
-    padding: 5rem;
-  }
-  .xl\:pt-7 {
-    padding-top: 5rem;
-  }
-  .xl\:pr-7 {
-    padding-right: 5rem;
-  }
-  .xl\:pb-7 {
-    padding-bottom: 5rem;
-  }
-  .xl\:pl-7 {
-    padding-left: 5rem;
-  }
-  .xl\:px-7 {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-  .xl\:py-7 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  .xl\:m-7 {
-    margin: 5rem;
-  }
-  .xl\:mt-7 {
-    margin-top: 5rem;
-  }
-  .xl\:mr-7 {
-    margin-right: 5rem;
-  }
-  .xl\:mb-7 {
-    margin-bottom: 5rem;
-  }
-  .xl\:ml-7 {
-    margin-left: 5rem;
-  }
-  .xl\:mx-7 {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-  .xl\:my-7 {
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
@@ -4997,7 +4135,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:p-auto {
     padding: auto;
   }
@@ -5046,7 +4184,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:p-auto {
     padding: auto;
   }
@@ -5095,55 +4233,6 @@ template {
   }
 }
 
-@media (min-width: 1330px) {
-  .xl\:p-auto {
-    padding: auto;
-  }
-  .xl\:pt-auto {
-    padding-top: auto;
-  }
-  .xl\:pr-auto {
-    padding-right: auto;
-  }
-  .xl\:pb-auto {
-    padding-bottom: auto;
-  }
-  .xl\:pl-auto {
-    padding-left: auto;
-  }
-  .xl\:px-auto {
-    padding-left: auto;
-    padding-right: auto;
-  }
-  .xl\:py-auto {
-    padding-top: auto;
-    padding-bottom: auto;
-  }
-  .xl\:m-auto {
-    margin: auto;
-  }
-  .xl\:mt-auto {
-    margin-top: auto;
-  }
-  .xl\:mr-auto {
-    margin-right: auto;
-  }
-  .xl\:mb-auto {
-    margin-bottom: auto;
-  }
-  .xl\:ml-auto {
-    margin-left: auto;
-  }
-  .xl\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .xl\:my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-}
-
 /* --------------------------------------- */
 /* ==Grillade : ultra light Grid Layout    */
 /* --------------------------------------- */
@@ -5157,20 +4246,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid {
     display: grid;
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid {
-    display: grid;
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid {
+  .lg\:grid {
     display: grid;
   }
 }
@@ -5186,20 +4269,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-1 {
+  .lg\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
@@ -5214,20 +4291,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-2 {
+  .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -5242,20 +4313,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-3 {
+  .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -5270,20 +4335,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-4 {
+  .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
@@ -5298,20 +4357,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-5 {
+  .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
@@ -5326,20 +4379,14 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 1330px) {
-  .xl\:grid-cols-6 {
+  .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
@@ -5369,7 +4416,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-0 {
     gap: 0;
   }
@@ -5381,7 +4428,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-0 {
     gap: 0;
   }
@@ -5389,18 +4436,6 @@ template {
     column-gap: 0;
   }
   .lg\:gap-y-0 {
-    row-gap: 0;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-0 {
-    gap: 0;
-  }
-  .xl\:gap-x-0 {
-    column-gap: 0;
-  }
-  .xl\:gap-y-0 {
     row-gap: 0;
   }
 }
@@ -5429,7 +4464,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-1 {
     gap: 0.5rem;
   }
@@ -5441,7 +4476,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-1 {
     gap: 0.5rem;
   }
@@ -5449,18 +4484,6 @@ template {
     column-gap: 0.5rem;
   }
   .lg\:gap-y-1 {
-    row-gap: 0.5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-1 {
-    gap: 0.5rem;
-  }
-  .xl\:gap-x-1 {
-    column-gap: 0.5rem;
-  }
-  .xl\:gap-y-1 {
     row-gap: 0.5rem;
   }
 }
@@ -5489,7 +4512,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-2 {
     gap: 0.75rem;
   }
@@ -5501,7 +4524,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-2 {
     gap: 0.75rem;
   }
@@ -5509,18 +4532,6 @@ template {
     column-gap: 0.75rem;
   }
   .lg\:gap-y-2 {
-    row-gap: 0.75rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-2 {
-    gap: 0.75rem;
-  }
-  .xl\:gap-x-2 {
-    column-gap: 0.75rem;
-  }
-  .xl\:gap-y-2 {
     row-gap: 0.75rem;
   }
 }
@@ -5549,7 +4560,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-3 {
     gap: 1rem;
   }
@@ -5561,7 +4572,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-3 {
     gap: 1rem;
   }
@@ -5569,18 +4580,6 @@ template {
     column-gap: 1rem;
   }
   .lg\:gap-y-3 {
-    row-gap: 1rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-3 {
-    gap: 1rem;
-  }
-  .xl\:gap-x-3 {
-    column-gap: 1rem;
-  }
-  .xl\:gap-y-3 {
     row-gap: 1rem;
   }
 }
@@ -5609,7 +4608,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-4 {
     gap: 1.5rem;
   }
@@ -5621,7 +4620,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-4 {
     gap: 1.5rem;
   }
@@ -5629,18 +4628,6 @@ template {
     column-gap: 1.5rem;
   }
   .lg\:gap-y-4 {
-    row-gap: 1.5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-4 {
-    gap: 1.5rem;
-  }
-  .xl\:gap-x-4 {
-    column-gap: 1.5rem;
-  }
-  .xl\:gap-y-4 {
     row-gap: 1.5rem;
   }
 }
@@ -5669,7 +4656,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-5 {
     gap: 2rem;
   }
@@ -5681,7 +4668,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-5 {
     gap: 2rem;
   }
@@ -5689,18 +4676,6 @@ template {
     column-gap: 2rem;
   }
   .lg\:gap-y-5 {
-    row-gap: 2rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-5 {
-    gap: 2rem;
-  }
-  .xl\:gap-x-5 {
-    column-gap: 2rem;
-  }
-  .xl\:gap-y-5 {
     row-gap: 2rem;
   }
 }
@@ -5729,7 +4704,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-6 {
     gap: 3rem;
   }
@@ -5741,7 +4716,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-6 {
     gap: 3rem;
   }
@@ -5749,18 +4724,6 @@ template {
     column-gap: 3rem;
   }
   .lg\:gap-y-6 {
-    row-gap: 3rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-6 {
-    gap: 3rem;
-  }
-  .xl\:gap-x-6 {
-    column-gap: 3rem;
-  }
-  .xl\:gap-y-6 {
     row-gap: 3rem;
   }
 }
@@ -5789,7 +4752,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-7 {
     gap: 5rem;
   }
@@ -5801,7 +4764,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-7 {
     gap: 5rem;
   }
@@ -5809,18 +4772,6 @@ template {
     column-gap: 5rem;
   }
   .lg\:gap-y-7 {
-    row-gap: 5rem;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-7 {
-    gap: 5rem;
-  }
-  .xl\:gap-x-7 {
-    column-gap: 5rem;
-  }
-  .xl\:gap-y-7 {
     row-gap: 5rem;
   }
 }
@@ -5849,7 +4800,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:gap-auto {
     gap: auto;
   }
@@ -5861,7 +4812,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:gap-auto {
     gap: auto;
   }
@@ -5869,18 +4820,6 @@ template {
     column-gap: auto;
   }
   .lg\:gap-y-auto {
-    row-gap: auto;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:gap-auto {
-    gap: auto;
-  }
-  .xl\:gap-x-auto {
-    column-gap: auto;
-  }
-  .xl\:gap-y-auto {
     row-gap: auto;
   }
 }
@@ -5938,7 +4877,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-1 {
     grid-column-start: 1;
   }
@@ -5962,7 +4901,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-1 {
     grid-column-start: 1;
   }
@@ -5982,30 +4921,6 @@ template {
     grid-row-end: 1;
   }
   .lg\:row-span-1 {
-    grid-row: span 1 / span 1;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-1 {
-    grid-column-start: 1;
-  }
-  .xl\:col-end-1 {
-    grid-column-end: 1;
-  }
-  .xl\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-1 {
-    grid-row-start: 1;
-  }
-  .xl\:row-end-1 {
-    grid-row-end: 1;
-  }
-  .xl\:row-span-1 {
     grid-row: span 1 / span 1;
   }
 }
@@ -6062,7 +4977,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-2 {
     grid-column-start: 2;
   }
@@ -6086,7 +5001,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-2 {
     grid-column-start: 2;
   }
@@ -6106,30 +5021,6 @@ template {
     grid-row-end: 2;
   }
   .lg\:row-span-2 {
-    grid-row: span 2 / span 2;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-2 {
-    grid-column-start: 2;
-  }
-  .xl\:col-end-2 {
-    grid-column-end: 2;
-  }
-  .xl\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-2 {
-    grid-row-start: 2;
-  }
-  .xl\:row-end-2 {
-    grid-row-end: 2;
-  }
-  .xl\:row-span-2 {
     grid-row: span 2 / span 2;
   }
 }
@@ -6186,7 +5077,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-3 {
     grid-column-start: 3;
   }
@@ -6210,7 +5101,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-3 {
     grid-column-start: 3;
   }
@@ -6230,30 +5121,6 @@ template {
     grid-row-end: 3;
   }
   .lg\:row-span-3 {
-    grid-row: span 3 / span 3;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-3 {
-    grid-column-start: 3;
-  }
-  .xl\:col-end-3 {
-    grid-column-end: 3;
-  }
-  .xl\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-3 {
-    grid-row-start: 3;
-  }
-  .xl\:row-end-3 {
-    grid-row-end: 3;
-  }
-  .xl\:row-span-3 {
     grid-row: span 3 / span 3;
   }
 }
@@ -6310,7 +5177,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-4 {
     grid-column-start: 4;
   }
@@ -6334,7 +5201,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-4 {
     grid-column-start: 4;
   }
@@ -6354,30 +5221,6 @@ template {
     grid-row-end: 4;
   }
   .lg\:row-span-4 {
-    grid-row: span 4 / span 4;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-4 {
-    grid-column-start: 4;
-  }
-  .xl\:col-end-4 {
-    grid-column-end: 4;
-  }
-  .xl\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-4 {
-    grid-row-start: 4;
-  }
-  .xl\:row-end-4 {
-    grid-row-end: 4;
-  }
-  .xl\:row-span-4 {
     grid-row: span 4 / span 4;
   }
 }
@@ -6434,7 +5277,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-5 {
     grid-column-start: 5;
   }
@@ -6458,7 +5301,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-5 {
     grid-column-start: 5;
   }
@@ -6478,30 +5321,6 @@ template {
     grid-row-end: 5;
   }
   .lg\:row-span-5 {
-    grid-row: span 5 / span 5;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-5 {
-    grid-column-start: 5;
-  }
-  .xl\:col-end-5 {
-    grid-column-end: 5;
-  }
-  .xl\:col-span-5 {
-    grid-column: span 5 / span 5;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-5 {
-    grid-row-start: 5;
-  }
-  .xl\:row-end-5 {
-    grid-row-end: 5;
-  }
-  .xl\:row-span-5 {
     grid-row: span 5 / span 5;
   }
 }
@@ -6558,7 +5377,7 @@ template {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .md\:col-start-6 {
     grid-column-start: 6;
   }
@@ -6582,7 +5401,7 @@ template {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1330px) {
   .lg\:col-start-6 {
     grid-column-start: 6;
   }
@@ -6602,30 +5421,6 @@ template {
     grid-row-end: 6;
   }
   .lg\:row-span-6 {
-    grid-row: span 6 / span 6;
-  }
-}
-
-@media (min-width: 1330px) {
-  .xl\:col-start-6 {
-    grid-column-start: 6;
-  }
-  .xl\:col-end-6 {
-    grid-column-end: 6;
-  }
-  .xl\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-  .xl\:col-span-full {
-    grid-column: 1 / -1;
-  }
-  .xl\:row-start-6 {
-    grid-row-start: 6;
-  }
-  .xl\:row-end-6 {
-    grid-row-end: 6;
-  }
-  .xl\:row-span-6 {
     grid-row: span 6 / span 6;
   }
 }
