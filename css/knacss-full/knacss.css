@@ -2502,6 +2502,343 @@ template {
   }
 }
 
+/* Font sizes utility classes */
+.text-10 {
+  font-size: 0.625rem;
+}
+
+.text-11 {
+  font-size: 0.6875rem;
+}
+
+.text-12 {
+  font-size: 0.75rem;
+}
+
+.text-14 {
+  font-size: 0.875rem;
+}
+
+.text-16 {
+  font-size: 1rem;
+}
+
+.text-18 {
+  font-size: 1.125rem;
+}
+
+.text-20 {
+  font-size: 1.25rem;
+}
+
+.text-24 {
+  font-size: 1.5rem;
+}
+
+.text-30 {
+  font-size: 1.875rem;
+}
+
+.text-36 {
+  font-size: 2.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-inherit {
+  font-size: "inherit";
+}
+
+@media (min-width: 576px) {
+  .sm\:text-10 {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-10 {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-10 {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-10 {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-11 {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-11 {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-11 {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-11 {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-12 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-12 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-12 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-12 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-14 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-14 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-14 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-14 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-16 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-16 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-16 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-16 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-18 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-18 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-18 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-18 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-20 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-20 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-20 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-20 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-24 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-24 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-24 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-24 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-30 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-30 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-30 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-30 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-36 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-36 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-36 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-36 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-base {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-base {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-base {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-base {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sm\:text-inherit {
+    font-size: "inherit";
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-inherit {
+    font-size: "inherit";
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-inherit {
+    font-size: "inherit";
+  }
+}
+
+@media (min-width: 1330px) {
+  .xl\:text-inherit {
+    font-size: "inherit";
+  }
+}
+
 /* Spacers utility classes */
 .p-0 {
   padding: 0;

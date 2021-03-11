@@ -1,0 +1,19 @@
+/* Font sizes utility classes */
+
+// loop for each font-size
+@each $key, $value in $font-size {
+  .text-#{$key} {
+    font-size: $value;
+  }
+}
+
+// loop for each breakpoint
+@each $key, $value in $font-size {
+  @each $bp, $bpv in $breakpoints {
+    @media (min-width: #{$bpv}) {
+      .#{$bp}\:text-#{$key} {
+        font-size: $value;
+      }
+    }
+  }
+}
