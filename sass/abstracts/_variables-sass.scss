@@ -23,37 +23,50 @@ $large: map-get($breakpoints, lg) !default;
 
 $spacers: (
   "0": 0,
-  "1": 0.5rem,
+  // none
+  "2": 0.125rem,
   // tiny
-  "2": 0.75rem,
+  "5": 0.313rem,
   // tiny-plus
-  "3": 1rem,
+  "8": 0.5rem,
   // small
-  "4": 1.5rem,
+  "10": 0.625rem,
   // small-plus
-  "5": 2rem,
+  "16": 1rem,
   // medium
-  "6": 3rem,
+  "20": 1.25rem,
   // medium-plus
-  "7": 5rem,
+  "24": 1.5rem,
   // large
+  "36": 2.25rem,
+  // large-plus
   "auto": auto,
 ) !default;
 
 $spacer-none: map-get($spacers, "0") !default;
-$spacer-tiny: map-get($spacers, "1") !default;
-$spacer-tiny-plus: map-get($spacers, "2") !default;
-$spacer-small: map-get($spacers, "3") !default;
-$spacer-small-plus: map-get($spacers, "4") !default;
-$spacer-medium: map-get($spacers, "5") !default;
-$spacer-medium-plus: map-get($spacers, "6") !default;
-$spacer-large: map-get($spacers, "7") !default;
+$spacer-tiny: map-get($spacers, "2") !default;
+$spacer-tiny-plus: map-get($spacers, "5") !default;
+$spacer-small: map-get($spacers, "8") !default;
+$spacer-small-plus: map-get($spacers, "10") !default;
+$spacer-medium: map-get($spacers, "16") !default;
+$spacer-medium-plus: map-get($spacers, "20") !default;
+$spacer-large: map-get($spacers, "24") !default;
+$spacer-large-plus: map-get($spacers, "36") !default;
 
 // ----------------
 // Grid layout
 // ----------------
 
 $grid-columns: 6 !default;
+
+$gaps: (
+  "0": 0,
+  "5": 0.313rem,
+  "10": 0.625rem,
+  "16": 1rem,
+  "20": 1.25rem,
+  "36": 2.25rem,
+) !default;
 
 // ----------------
 // Fonts
@@ -82,8 +95,8 @@ $font-size: (
   "inherit": "inherit",
 );
 
-$font-size-html: 62.5%;
-$font-size-base: 1.6rem;
+$font-size-html: 100%;
+$font-size-base: 1rem;
 
 // Font weights
 $weight-light: 200;

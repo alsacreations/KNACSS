@@ -1,13 +1,13 @@
 /*!
 * KNACSS Reborn: Just keep it simple!
 * @author: Alsacreations
-* v8.0.3 2021/05
+* v8.0.4 2021/04
 * Licence WTFPL http://www.wtfpl.net/
 */
 
-// WARNING : Only Core and Utilities are imported by default. Just add other files if you need them.
+// IMPORTANT : Seuls les fichiers "Noyau" et "Utilitaires" sont importés par défaut. Ajoutez les fichiers de composants si nécessaires dans votre projet.
 
-// CORE
+// NOYAU
 @import "abstracts/variables-sass";
 @import "abstracts/mixins-sass";
 
@@ -17,13 +17,13 @@
 @import "base/reset-print";
 @import "base/layout";
 
-// UTILITY CLASSES
+// UTILITAIRES
 @import "utils/utils-global";
 @import "utils/utils-font-sizes";
 @import "utils/utils-spacers";
 @import "utils/grillade";
 
-// COMPONENTS (add them only if you need)
+// COMPOSANTS (à ajouter au besoin)
 // @import "components/button";
 // @import "components/burger";
 // @import "components/checkbox";

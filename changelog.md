@@ -1,6 +1,7 @@
 # Changelog
 
-- 5 mars : les classes utilitaires font à présent partie du Core
+- 26 avril 2021 : taille de base 100% (et non plus 62.5%) et corrections Grillade
+- 5 mars 2021 : les classes utilitaires font à présent partie du Core
 - 26 novembre 2020 : Documentation + V1.0.0
 - 22 octobre 2020 : grosse remise à jour. V0.9.0
 - 12 octobre 2020 : début de refonte classes utilitaires
