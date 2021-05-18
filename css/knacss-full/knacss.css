@@ -2151,7 +2151,7 @@ template {
 }
 
 .text-inherit {
-  font-size: "inherit";
+  font-size: inherit;
 }
 
 @media (min-width: 576px) {
@@ -2354,19 +2354,19 @@ template {
 
 @media (min-width: 576px) {
   .sm\:text-inherit {
-    font-size: "inherit";
+    font-size: inherit;
   }
 }
 
 @media (min-width: 992px) {
   .md\:text-inherit {
-    font-size: "inherit";
+    font-size: inherit;
   }
 }
 
 @media (min-width: 1330px) {
   .lg\:text-inherit {
-    font-size: "inherit";
+    font-size: inherit;
   }
 }
 
