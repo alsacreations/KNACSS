@@ -10,7 +10,7 @@
 /* ----------------------------- */
 /*
  * 1. Switch to border-box model for all elements
- * 2. Avoid min-width: auto and min-height: auto on flex and grid children
+ * 2. Avoid min-width: auto on flex and grid items
  */
 *,
 *::before,
@@ -18,8 +18,6 @@
   box-sizing: border-box;
   /* 1 */
   min-width: 0;
-  /* 2 */
-  min-height: 0;
   /* 2 */
 }
 

@@ -1,5 +1,6 @@
 # Changelog
 
+- 9 juillet 2021 ("8.0.5") : suppression min-height: 0 par défaut
 - 26 avril 2021 : taille de base 100% (et non plus 62.5%) et corrections Grillade
 - 5 mars 2021 : les classes utilitaires font à présent partie du Core
 - 26 novembre 2020 : Documentation + V1.0.0
