@@ -7,10 +7,9 @@
 // ----------------
 
 // Hypothèse : smartphone portrait/paysage < 576px < gros smartphone paysage + tablette portrait < 992px < tablette paysage < 1330px < laptop et plus
-$breakpoints: (
-  sm: 576px,
+$breakpoints: (sm: 576px,
   md: 992px,
-  lg: 1330px,
+  lg: 1400px,
 ) !default;
 
 $small: map-get($breakpoints, sm) !default;
@@ -21,8 +20,7 @@ $large: map-get($breakpoints, lg) !default;
 // Spacers
 // ----------------
 
-$spacers: (
-  "0": 0,
+$spacers: ("0": 0,
   // none
   "2": 0.125rem,
   // tiny
@@ -59,8 +57,7 @@ $spacer-large-plus: map-get($spacers, "36") !default;
 
 $grid-columns: 6 !default;
 
-$gaps: (
-  "0": 0,
+$gaps: ("0": 0,
   "5": 0.313rem,
   "10": 0.625rem,
   "16": 1rem,
@@ -72,16 +69,25 @@ $gaps: (
 // Fonts
 // ----------------
 
-// Font families
-$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+// Familles de fonts
+$font-family-base: system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif;
 $font-family-headings: sans-serif;
-$font-family-monospace: consolas, courier, monospace;
+$font-family-monospace: consolas,
+courier,
+monospace;
 $line-height-base: 1.5;
 
 // Font sizes
-$font-size: (
-  "10": 0.625rem,
+$font-size: ("10": 0.625rem,
   "11": 0.6875rem,
   "12": 0.75rem,
   "14": 0.875rem,
@@ -98,7 +104,7 @@ $font-size: (
 $font-size-html: 100%;
 $font-size-base: 1rem;
 
-// Font weights
+// Graisses des Fonts
 $weight-light: 200;
 $weight-book: 300;
 $weight-regular: 400;
@@ -109,42 +115,56 @@ $weight-bold: 700;
 // Couleurs
 // ----------------
 
-// Palette de couleur (à ne pas utiliser en variables sauf $white and $black)
-$white: #ffffff;
-$black: #000000;
+// Variables niveaux de gris
 
-$color-gray-1: #f7fafc;
-$color-gray-2: #abc3c2;
-$color-gray-3: #454d5d;
-$color-gray-4: #212529;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$white: #FFFFFF;
+$black: #0F0F0F;
 
-$color-blue-1: #0275d8;
-$color-blue-2: #04527b;
-$color-blue-3: #033651;
 
-// Palette non agnostic (à utiliser en variables)
+// Variables couleurs globales
 
-$color-alpha: $color-gray-1; // couleurs fréquentes
-$color-beta: $color-gray-3;
-$color-gamma: $color-gray-4;
+$body-color: $gray-900;
+$body-bg: $white;
 
-$color-delta: $color-blue-1;
-$color-epsilon: $color-blue-2;
+$primary: #6fa939; // Couleur dominante. Elle peut s'appliquer à la fois à des surfaces ou à des contenus.
+$primary-accent: #4e920f; // Modifieur de couleur dominante (survol, bordure)
+$on-primary: $white; // Contenus (texte, lien, icône) affichés par-dessus une couche $primary
 
-$color-gradient-alpha: linear-gradient(
-  to left bottom,
-  $color-alpha,
-  $color-beta
-);
+$secondary: #008cba; // Couleur d'accentuation. Elle s'applique généralement aux liens, mais peut s'appliquer à la fois à des surfaces ou à des contenus.
+$secondary-accent: #027da7; // Modifieur de couleur d'accentuation (survol, bordure)
+$on-secondary: $white; // Contenus affichés par-dessus une couche $secondary
 
-$color-alternate-1: #5cb85c; // couleurs moins fréquentes
-$color-alternate-1b: #4d9c4d;
-$color-alternate-2: #5bc0de;
-$color-alternate-2b: #4fa8c4;
-$color-alternate-3: #f0ad4e;
-$color-alternate-3b: #d19644;
-$color-alternate-4: #d9534f;
-$color-alternate-4b: #be4945;
+// Variables couleurs statuts
+
+$success: #dff0d9;
+$success-border: #d6e9c6;
+$on-success: #28a745; // contenu sur couche success
+$on-success-accent: #4d9c4d; // lien sur couche success
+
+$info: #d9edf7;
+$info-border: #bce8f1;
+$on-info: #17a2b8;
+$on-info-accent: #4fa8c4;
+
+$warning: #fcf8e3;
+$warning-border: #faebcc;
+$on-warning: #ffc107;
+$on-warning-accent: #d19644;
+
+$error: #fff2f2;
+$error-border: #ebccd1;
+$on-error: #d9534f;
+$on-error-accent: #be4945;
+
 
 // Links
 $link-decoration: underline;
@@ -160,8 +180,7 @@ $radius-circle: 50%;
 // ----------------
 // Liste des propriétés utilitaires (note display: grid se trouve dans Grillade)
 // ----------------
-$utils: (
-  (hidden, display, none),
+$utils: ((hidden, display, none),
   (block, display, block),
   (inline, display, inline),
   (inline-block, display, inline-block),
@@ -221,5 +240,4 @@ $utils: (
   (align-bottom, vertical-align, bottom),
   (align-middle, vertical-align, middle),
   (item-first, order, -100),
-  (item-last, order, 100)
-) !default;
+  (item-last, order, 100)) !default;

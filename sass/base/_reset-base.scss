@@ -10,8 +10,10 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* 1 */
-  min-width: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  min-width: 0;
+  /* 2 */
 }
 
 /*
@@ -22,9 +24,12 @@
 
 html {
   font-size: $font-size-html;
-  -webkit-tap-highlight-color: transparent; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  overflow-wrap: break-word; /* 3 */
+  -webkit-tap-highlight-color: transparent;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  overflow-wrap: break-word;
+  /* 3 */
 }
 
 body {
@@ -32,8 +37,8 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  background-color: $white;
-  color: $color-gamma;
+  background-color: $body-bg;
+  color: $body-color;
 }
 
 /*
@@ -52,7 +57,7 @@ h5,
 .h5-like,
 h6,
 .h6-like {
-  color: $color-gamma;
+  color: $gray-900;
 }
 
 /*
@@ -60,14 +65,14 @@ h6,
  */
 
 a {
-  color: $color-beta;
+  color: $gray-600;
   text-decoration: $link-decoration;
 }
 
 a:focus,
 a:hover,
 a:active {
-  color: $color-gamma;
+  color: $gray-900;
   text-decoration: $link-decoration-hover;
 }
 
@@ -77,9 +82,12 @@ a:active {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /*

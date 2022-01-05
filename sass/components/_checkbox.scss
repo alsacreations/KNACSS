@@ -12,7 +12,7 @@
  */
 
 $checkbox-color: $white;
-$checkbox-background: $color-alpha;
+$checkbox-background: $primary;
 $checkbox-size: 2rem;
 $checkbox-border-radius: 4px;
 
@@ -31,13 +31,13 @@ $checkbox-border-radius: 4px;
   height: $checkbox-size;
   vertical-align: text-bottom;
   outline: 0;
-  box-shadow: inset 0 0 0 1px $color-alpha;
+  box-shadow: inset 0 0 0 1px $primary;
   background-color: $checkbox-color;
   transition: background-color 0.15s;
   cursor: pointer;
 }
 
-.checkbox + label {
+.checkbox+label {
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@ $checkbox-border-radius: 4px;
   opacity: 0.6;
 }
 
-.checkbox:disabled + label {
+.checkbox:disabled+label {
   opacity: 0.6;
   cursor: not-allowed;
 }
