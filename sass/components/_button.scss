@@ -15,7 +15,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: $spacer-small $spacer-small-plus;
+  padding: $spacer-small $spacer-medium;
   cursor: pointer;
   user-select: none;
   transition: 0.25s;
@@ -38,12 +38,12 @@
 .btn,
 .button {
   &--small {
-    padding: $spacer-tiny-plus $spacer-small;
+    padding: $spacer-micro-plus $spacer-small;
     font-size: .8em;
   }
 
   &--big {
-    padding: $spacer-small-plus $spacer-medium;
+    padding: $spacer-medium $spacer-medium;
     font-size: 1.4em;
   }
 

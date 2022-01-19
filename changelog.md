@@ -1,5 +1,6 @@
 # Changelog
 
+- 19 janvier 2022 (8.2) : refonte des variables d'espacement
 - 5 janvier 2022 (8.1) : refonte des variables de couleur
 - 9 juillet 2021 (8.0.5) : suppression min-height: 0 par défaut
 - 26 avril 2021 : taille de base 100% (et non plus 62.5%) et corrections Grillade
@@ -95,7 +96,7 @@ Né en 2012 et après près de 10 années de bons et loyaux services, le projet 
   - regroupement des styles des tableaux
   - renommage des variables couleur de projets
   - renommage des variables de composants
-  - renommage des variables d'espacement (`$tiny-value` -> `$spacer-tiny`)
+  - renommage des variables d'espacement (`$tiny-value` -> `$spacer-micro`)
   - automatisation des classes utilitaires via Sass
   - suppression du namespace "kna-"
 - refonte :

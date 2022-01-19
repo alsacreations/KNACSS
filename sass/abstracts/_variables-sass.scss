@@ -7,7 +7,8 @@
 // ----------------
 
 // Hypothèse : smartphone portrait/paysage < 576px < gros smartphone paysage + tablette portrait < 992px < tablette paysage < 1330px < laptop et plus
-$breakpoints: (sm: 576px,
+$breakpoints: (
+  sm: 576px,
   md: 992px,
   lg: 1400px,
 ) !default;
@@ -20,36 +21,31 @@ $large: map-get($breakpoints, lg) !default;
 // Spacers
 // ----------------
 
-$spacers: ("0": 0,
-  // none
-  "2": 0.125rem,
-  // tiny
-  "5": 0.313rem,
-  // tiny-plus
-  "8": 0.5rem,
-  // small
-  "10": 0.625rem,
-  // small-plus
-  "16": 1rem,
-  // medium
-  "20": 1.25rem,
-  // medium-plus
-  "24": 1.5rem,
-  // large
-  "36": 2.25rem,
-  // large-plus
+$spacer: 1rem;
+$spacers: (
+  "0": 0, // none
+  "1": 1px, // mono
+  "2": 0.125rem, // nano
+  "4": 0.25rem, // micro
+  "8": 0.5rem, // mini
+  "12": 0.75rem, // small
+  "16": 1rem, // medium
+  "20": 1.25rem, // large
+  "24": 1.5rem, // wide
+  "36": 2.25rem, // ultra
   "auto": auto,
-) !default;
+);
 
-$spacer-none: map-get($spacers, "0") !default;
-$spacer-tiny: map-get($spacers, "2") !default;
-$spacer-tiny-plus: map-get($spacers, "5") !default;
-$spacer-small: map-get($spacers, "8") !default;
-$spacer-small-plus: map-get($spacers, "10") !default;
-$spacer-medium: map-get($spacers, "16") !default;
-$spacer-medium-plus: map-get($spacers, "20") !default;
-$spacer-large: map-get($spacers, "24") !default;
-$spacer-large-plus: map-get($spacers, "36") !default;
+$spacer-none: map-get($spacers, "0");
+$spacer-mono: map-get($spacers, "1");
+$spacer-nano: map-get($spacers, "2");
+$spacer-micro: map-get($spacers, "4");
+$spacer-mini: map-get($spacers, "8");
+$spacer-small: map-get($spacers, "12");
+$spacer-medium: map-get($spacers, "16");
+$spacer-large: map-get($spacers, "20");
+$spacer-wide: map-get($spacers, "24");
+$spacer-ultra: map-get($spacers, "36");
 
 // ----------------
 // Grid layout
@@ -57,7 +53,8 @@ $spacer-large-plus: map-get($spacers, "36") !default;
 
 $grid-columns: 6 !default;
 
-$gaps: ("0": 0,
+$gaps: (
+  "0": 0,
   "5": 0.313rem,
   "10": 0.625rem,
   "16": 1rem,
@@ -70,24 +67,14 @@ $gaps: ("0": 0,
 // ----------------
 
 // Familles de fonts
-$font-family-base: system-ui,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-Oxygen-Sans,
-Ubuntu,
-Cantarell,
-"Helvetica Neue",
-sans-serif;
-$font-family-headings: sans-serif;
-$font-family-monospace: consolas,
-courier,
-monospace;
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-headings: $font-family-base;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 $line-height-base: 1.5;
 
 // Font sizes
-$font-size: ("10": 0.625rem,
+$font-size: (
+  "10": 0.625rem,
   "11": 0.6875rem,
   "12": 0.75rem,
   "14": 0.875rem,
@@ -145,25 +132,25 @@ $on-secondary: $white; // Contenus affichés par-dessus une couche $secondary
 
 // Variables couleurs statuts
 
-$success: #dff0d9;
+$success-bg: #dff0d9;
 $success-border: #d6e9c6;
-$on-success: #28a745; // contenu sur couche success
-$on-success-accent: #4d9c4d; // lien sur couche success
+$success: #3c763d;
+$success-hover: #275c28;
 
-$info: #d9edf7;
+$info-bg: #d9edf7;
 $info-border: #bce8f1;
-$on-info: #17a2b8;
-$on-info-accent: #4fa8c4;
+$info: #0d7192;
+$info-hover: #005e7d;
 
-$warning: #fcf8e3;
+$warning-bg: #fcf8e3;
 $warning-border: #faebcc;
-$on-warning: #ffc107;
-$on-warning-accent: #d19644;
+$warning: #8a6d3b;
+$warning-hover: #654f29;
 
-$error: #fff2f2;
+$error-bg: #fff2f2;
 $error-border: #ebccd1;
-$on-error: #d9534f;
-$on-error-accent: #be4945;
+$error: #e3224a;
+$error-hover: #a00d10;
 
 
 // Links
@@ -174,7 +161,7 @@ $link-decoration-hover: underline;
 $radius-none: 0;
 $radius-small: 0.5rem;
 $radius-medium: 1rem;
-$radius-large: 2rem;
+$radius-large: 20rem;
 $radius-circle: 50%;
 
 // ----------------
