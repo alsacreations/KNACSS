@@ -30,14 +30,13 @@ $radio-border-radius: 50%;
   width: $radio-size;
   height: $radio-size;
   vertical-align: text-bottom;
-  outline: 0;
   box-shadow: inset 0 0 0 1px $primary;
   background-color: $radio-background;
   transition: background-size 0.15s;
   cursor: pointer;
 }
 
-.radio+label {
+.radio + label {
   cursor: pointer;
 }
 
@@ -45,7 +44,7 @@ $radio-border-radius: 50%;
   opacity: 0.6;
 }
 
-.radio:disabled+label {
+.radio:disabled + label {
   opacity: 0.6;
   cursor: not-allowed;
 }

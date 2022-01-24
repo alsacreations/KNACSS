@@ -1,5 +1,6 @@
 # Changelog
 
+- 24 janvier 2022 (8.2.1) : corrections des radio / checkbox
 - 19 janvier 2022 (8.2) : refonte des variables d'espacement
 - 5 janvier 2022 (8.1) : refonte des variables de couleur
 - 9 juillet 2021 (8.0.5) : suppression min-height: 0 par défaut
