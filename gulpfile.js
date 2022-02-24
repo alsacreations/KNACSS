@@ -4,7 +4,6 @@ var postcss = require('gulp-postcss');
 var CombineMQ = require('postcss-combine-media-query');
 var autoprefixer = require('autoprefixer');
 var CSSnano = require('cssnano');
-var rename = require('gulp-rename');
 
 gulp.task('css:full', () => {
   return gulp.src('sass/knacss.scss')
