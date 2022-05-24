@@ -749,8 +749,8 @@ template {
   font-size: smaller;
 }
 
-.text-bigger {
-  font-size: bigger;
+.text-larger {
+  font-size: larger;
 }
 
 .text-left {
@@ -1288,20 +1288,20 @@ template {
 }
 
 @media (min-width: 576px) {
-  .sm\:text-bigger {
-    font-size: bigger;
+  .sm\:text-larger {
+    font-size: larger;
   }
 }
 
 @media (min-width: 992px) {
-  .md\:text-bigger {
-    font-size: bigger;
+  .md\:text-larger {
+    font-size: larger;
   }
 }
 
 @media (min-width: 1400px) {
-  .lg\:text-bigger {
-    font-size: bigger;
+  .lg\:text-larger {
+    font-size: larger;
   }
 }
 
