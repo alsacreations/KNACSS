@@ -1,0 +1,60 @@
+:root {
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 96rem; /* 1536px */
+  --spacing-0: 0;
+  --spacing-1: 1px;
+  --spacing-2: 0.125rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --spacing-80: 5rem;
+  --spacing-128: 8rem;
+  --spacing-160: 10rem;
+  --spacing-180: 11.25rem;
+  --spacing-260: 16.25rem;
+  --font-base: system-ui, sans-serif;
+  --font-poppins: poppins, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-14: 0.875rem;
+  --text-16: 1rem;
+  --text-18: 1.125rem;
+  --text-20: 1.25rem;
+  --text-24: 1.5rem;
+  --text-30: 1.875rem;
+  --text-36: 2.25rem;
+  --text-48: 3rem;
+  --text-60: 3.75rem;
+  --text-80: 5rem;
+  --leading-20: 1.25rem;
+  --leading-24: 1.5rem;
+  --leading-28: 1.75rem;
+  --leading-32: 2rem;
+  --leading-36: 2.25rem;
+  --leading-40: 2.5rem;
+  --leading-48: 3rem;
+  --leading-56: 3.5rem;
+  --leading-80: 5rem;
+  --leading-100: 6.25rem;
+  --radius-none: 0;
+  --radius-lg: 0.5rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --transition-duration: 0.3s;
+  --z-under-page-level: -1;
+  --z-above-page-level: 1;
+  --z-header-level: 1000;
+  --z-above-header-level: 2000;
+  --z-above-all-level: 3000;
+}
