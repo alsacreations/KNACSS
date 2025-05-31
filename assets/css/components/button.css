@@ -1,0 +1,80 @@
+:where(button, input:where([type="button"], [type="reset"], [type="submit"])) {
+  --background-color: var(--form-control-background, ButtonFace);
+
+  /* prettier-ignore */
+  --background-color-hover: color-mix(in oklab,var(--background-color),#000000 10%);
+
+  /* prettier-ignore */
+  --background-color-active: color-mix(in oklab,var(--background-color),#000000 20%);
+  --border-color: var(--form-control-border-color, ButtonBorder);
+  --border-color-hover: var(--border-color);
+  --border-color-active: var(--border-color);
+  --border-radius: var(--form-control-border-radius, 0);
+  --border-width: var(--form-control-border-width, 1px);
+  --text-color: var(--on-primary, ButtonText);
+  --text-color-hover: var(--text-color);
+  --text-color-active: var(--text-color);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--form-control-spacing, 12px 16px);
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.3s);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  font: inherit;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* stylelint-disable-next-line */
+:where(button, input:where([type="button"], [type="reset"], [type="submit"])) {
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  /* Interaction */
+  &:where(:not(:disabled, [disabled])) {
+    &:hover {
+      border-color: var(--border-color-hover);
+      background-color: var(--background-color-hover);
+      color: var(--text-color-hover);
+    }
+
+    &:active {
+      border-color: var(--border-color-active);
+      background-color: var(--background-color-active);
+      color: var(--text-color-active);
+    }
+  }
+
+  /* States */
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: var(--focus-ring-color, #008000) solid var(--focus-ring-width, 2px);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  &:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+
+    & * {
+      pointer-events: none;
+    }
+  }
+
+  /* Keep it last so Safari doesn't stop parsing this block */
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
