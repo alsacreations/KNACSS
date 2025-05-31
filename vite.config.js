@@ -3,6 +3,7 @@
 
 import { defineConfig } from "vite"
 import { resolve } from "path"
+import handlebars from "vite-plugin-handlebars"
 
 // Correction pour __dirname en ES Module
 const __dirname = new URL(".", import.meta.url).pathname
@@ -13,7 +14,11 @@ export default defineConfig(({ command }) => {
     // config options
     base: base, // Défini dynamiquement
     appType: "mpa",
-    plugins: [],
+    plugins: [
+      handlebars({
+        partialDirectory: resolve(__dirname, "components"),
+      }),
+    ],
     build: {
       rollupOptions: {
         input: {
