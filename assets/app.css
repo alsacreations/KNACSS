@@ -1,9 +1,9 @@
 @layer reset, theme, components, utilities;
 
-@import "/assets/css/bretzel-reset.css" layer(reset);
-@import "/assets/css/bretzel-print.css" layer(reset);
-@import "/assets/css/bretzel-layouts.css" layer(reset);
-@import "/assets/css/theme.css" layer(theme);
-@import "/assets/css/styles.css" layer(components);
-@import "/assets/css/components/button.css" layer(components);
-@import "/assets/css/bretzel-utilities.css" layer(utilities);
+@import "css/bretzel-reset.css" layer(reset);
+@import "css/bretzel-print.css" layer(reset);
+@import "css/bretzel-layouts.css" layer(reset);
+@import "css/theme.css" layer(theme);
+@import "css/styles.css" layer(components);
+@import "css/components/button.css" layer(components);
+@import "css/bretzel-utilities.css" layer(utilities);
