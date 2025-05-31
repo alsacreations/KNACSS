@@ -1,1 +1,1 @@
-import "app.css"
+import "assets/app.css"
