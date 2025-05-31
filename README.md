@@ -1,14 +1,9 @@
-# KNACSS
+# KNACSS Phoenix
 
-**Né en 2012 et après plus de 10 années de bons et loyaux services, le projet initial « KNACSS » d'Alsacréations est officiellement obsolète, n'est plus maintenu et ne sera plus mis à jour.**
+On reprend à zéro le projet KNACSS Phoenix, qui est une refonte complète de KNACSS.
 
-## Documentation version v8 (v8 = Reborn)
+Framework de début de projet, via un workflow Vite :
 
-- Site web de présentation de KNACSS Reborn : <https://www.knacss.com/>
-- [**Documentation KNACSS Reborn**](https://www.knacss.com/doc.html)
-
-## Documentation anciennes versions (v7)
-
-- [**Documentation KNACSS v7**](https://www.knacss.com/doc-old.html)
-- [**Pense-bête PDF KNACSS v7**](https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf)
-
+1. Un bloc "Foundations" (constitué de nos resets CSS + layouts CSS + Tokens). Les Tokens seraient nos valeurs de spacing, font-size, colors, etc. L'outil Palette serait intégré pour générer les palettes de couleurs ainsi que les tokens de couleurs
+2. Un bloc de "Composants natifs" HTML : buttons, inputs, checkbox, radio, details, etc. (très inspiré des [styles natifs de webawesome](https://backers.webawesome.com/docs/native/))
+3. Un "Styleguide" interactif présenterait les layouts et composants (valeurs modifiables pour les espaces, arrondis, couleurs, etc.)
