@@ -5,3 +5,4 @@
 @import "/assets/css/bretzel-layouts.css" layer(reset);
 @import "/assets/css/theme.css" layer(theme);
 @import "/assets/css/styles.css" layer(components);
+@import "/assets/css/bretzel-utilities.css" layer(utilities);

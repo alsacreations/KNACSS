@@ -5,6 +5,7 @@
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
+    "walnuts1018.oklch-vscode",
     "phoenisx.cssvar"
   ]
 }
