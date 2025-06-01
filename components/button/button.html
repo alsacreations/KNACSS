@@ -1,124 +1,39 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/images/favicon.svg" />
-    <title>Styleguide - Boutons</title>
-    <link
-      rel="stylesheet"
-      href="/assets/css/styleguide.css" />
-    <link
-      rel="stylesheet"
-      href="button.css" />
-  </head>
-  <body>
-    <header class="styleguide-header">
-      <h1>Styleguide : Boutons</h1>
-      <nav>
-        <ul>
-          <li><a href="../../">Accueil du projet</a></li>
-        </ul>
-      </nav>
-    </header>
+<section class="styleguide-section">
+  <h2>Boutons (button)</h2>
 
-    <main class="styleguide-main">
-      <section class="styleguide-section">
-        <h2>Boutons (button)</h2>
-
-        <article class="styleguide-component">
-          <div class="styleguide-component-preview">
-            <button
-              type="button"
-              class="btn btn-primary">
-              Bouton Primaire
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary">
-              Bouton Secondaire
-            </button>
-            <button
-              type="button"
-              class="btn"
-              disabled>
-              Bouton Disabled
-            </button>
-          </div>
-          <div class="styleguide-component-actions">
-            <button
-              type="button"
-              class="js-show-code"
-              aria-expanded="false"
-              aria-controls="code-btn-variations">
-              Afficher le code
-            </button>
-          </div>
-          <div
-            class="styleguide-component-code"
-            id="code-btn-variations"
-            hidden>
-            <pre><code class="language-html"></code></pre>
-          </div>
-        </article>
-      </section>
-
-      <section class="styleguide-section">
-        <h2>Inputs (type button, reset, submit)</h2>
-
-        <article class="styleguide-component">
-          <div class="styleguide-component-preview">
-            <input
-              type="button"
-              class="btn"
-              value="Input Button" />
-            <input
-              type="reset"
-              class="btn"
-              value="Input Reset" />
-            <input
-              type="submit"
-              class="btn"
-              value="Input Submit" />
-            <input
-              type="button"
-              class="btn"
-              value="Input Disabled"
-              disabled />
-          </div>
-          <div class="styleguide-component-actions">
-            <button
-              type="button"
-              class="js-show-code"
-              aria-expanded="false"
-              aria-controls="code-input-variations">
-              Afficher le code
-            </button>
-          </div>
-          <div
-            class="styleguide-component-code"
-            id="code-input-variations"
-            hidden>
-            <pre><code class="language-html"></code></pre>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <footer class="styleguide-footer">
-      <p>&copy; 2025 KNACSS Styleguide</p>
-    </footer>
-
-    <script
-      type="module"
-      src="/assets/js/styleguide.js"></script>
-    <script
-      type="module"
-      src="/assets/main.js"></script>
-  </body>
-</html>
+  <article class="styleguide-component">
+    <div class="styleguide-component-preview">
+      <button
+        type="button"
+        class="btn">
+        Bouton
+      </button>
+      <button
+        type="button"
+        class="btn"
+        disabled>
+        Disabled
+      </button>
+      <input
+        type="button"
+        value="Input Button"
+        class="btn" />
+    </div>
+    <div class="styleguide-component-actions">
+      <button
+        type="button"
+        class="js-show-code"
+        aria-expanded="false"
+        aria-controls="code-btn-variations">
+        Afficher le code
+      </button>
+    </div>
+    <div
+      class="styleguide-component-code"
+      id="code-btn-variations"
+      hidden>
+      <pre><code class="language-html"></code></pre>
+      <!-- Contenu initial vidé -->
+    </div>
+  </article>
+</section>
