@@ -23,6 +23,7 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
+          styleguide: resolve(__dirname, "components/styleguide.html"), // Ajout de styleguide.html
           button: resolve(__dirname, "components/button/button.html"),
         },
       },
