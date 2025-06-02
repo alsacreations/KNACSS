@@ -19,60 +19,48 @@ document.addEventListener("DOMContentLoaded", () => {
    * Attache les écouteurs d'événements aux boutons .js-show-code.
    */
   function initializeShowCodeButtons() {
-    const componentContainer = document.querySelector(".styleguide-component")
-    if (!componentContainer) return
+    // Le bouton est maintenant directement dans styleguide.html, pas dans le contenu injecté
+    const showCodeButton = document.querySelector(".js-show-code")
+    const componentPreviewContainer = document.querySelector(
+      ".styleguide-component-preview",
+    ) // Conteneur où le HTML du composant est injecté
 
-    const showCodeButtons = componentContainer.querySelectorAll(".js-show-code")
+    if (!showCodeButton || !componentPreviewContainer) {
+      console.warn(
+        "Bouton 'Afficher le code' ou conteneur de prévisualisation non trouvé.",
+      )
+      return
+    }
 
-    showCodeButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const codeBlockId = button.getAttribute("aria-controls")
-        const codeBlock = document.getElementById(codeBlockId)
+    showCodeButton.addEventListener("click", () => {
+      const codeBlockId = showCodeButton.getAttribute("aria-controls")
+      const codeBlock = document.getElementById(codeBlockId)
 
-        if (codeBlock) {
-          codeBlock.hidden = !codeBlock.hidden
-          button.setAttribute("aria-expanded", (!codeBlock.hidden).toString())
-          button.textContent = !codeBlock.hidden
-            ? "Masquer le code"
-            : "Afficher le code"
+      if (codeBlock) {
+        codeBlock.hidden = !codeBlock.hidden
+        showCodeButton.setAttribute(
+          "aria-expanded",
+          (!codeBlock.hidden).toString(),
+        )
+        showCodeButton.textContent = !codeBlock.hidden
+          ? "Masquer le code"
+          : "Afficher le code"
 
-          if (!codeBlock.hidden) {
-            const articleComponent = button.closest(
-              "article.styleguide-component",
-            )
-            let componentPreview = null
-            if (articleComponent) {
-              componentPreview = articleComponent.querySelector(
-                ".styleguide-component-preview",
-              )
-            }
+        if (!codeBlock.hidden) {
+          // Le contenu à afficher est celui de .styleguide-component-preview
+          const componentHtmlContent = componentPreviewContainer.innerHTML
 
-            if (componentPreview) {
-              let combinedHtml = ""
-              componentPreview.childNodes.forEach((node) => {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                  const elementToCopy = node.cloneNode(true)
-                  if (elementToCopy.id) {
-                    elementToCopy.removeAttribute("id")
-                  }
-                  combinedHtml += elementToCopy.outerHTML + "\n" // Utiliser \n au lieu de \\n
-                }
-              })
-
-              const codeElement = codeBlock.querySelector("code.language-html")
-              if (codeElement) {
-                const formattedHtml = formatHtml(combinedHtml.trim())
-                codeElement.textContent = formattedHtml
-              }
-            } else {
-              console.warn(
-                "Élément .styleguide-component-preview non trouvé pour le bouton :",
-                button,
-              )
-            }
+          const codeElement = codeBlock.querySelector("code.language-html")
+          if (codeElement) {
+            const formattedHtml = formatHtml(componentHtmlContent.trim())
+            codeElement.textContent = formattedHtml
           }
+        } else {
+          // Optionnel : vider le contenu du code lorsque masqué pour économiser des ressources
+          // const codeElement = codeBlock.querySelector("code.language-html");
+          // if (codeElement) codeElement.textContent = "";
         }
-      })
+      }
     })
   }
 
@@ -119,12 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.
-  const componentContainer = document.querySelector(".styleguide-component")
+  const componentPreviewContainer = document.querySelector(
+    ".styleguide-component-preview",
+  ) // Modifié pour cibler le conteneur de prévisualisation
 
   // Si le conteneur n'existe pas, arrête le script pour éviter des erreurs.
-  if (!componentContainer) {
+  if (!componentPreviewContainer) {
     console.error(
-      "Erreur : Le conteneur .styleguide-component est introuvable.",
+      "Erreur : Le conteneur .styleguide-component-preview est introuvable.",
     )
     return
   }
@@ -146,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Vérifie si le contenu HTML du composant a été trouvé.
     if (componentHtmlContent === undefined) {
       const errorMessage = `<p style="color: var(--color-error, red);">Impossible de charger le contenu HTML pour le composant : ${componentName}.<br>Vérifiez que le fichier ${htmlModuleKey} existe et est inclus par Vite.<br>Vérifiez la console pour plus de détails.</p>`
-      componentContainer.innerHTML = errorMessage
+      componentPreviewContainer.innerHTML = errorMessage // Injecte l'erreur dans le conteneur de prévisualisation
       console.error(
         `Contenu HTML non trouvé pour le composant "${componentName}" via import.meta.glob. Clé tentée : ${htmlModuleKey}. Modules HTML disponibles :`,
         Object.keys(htmlComponentModules),
@@ -186,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Injecte le contenu HTML récupéré dans le conteneur du composant.
     // Plus besoin de fetch, car componentHtmlContent est déjà le contenu du fichier.
-    componentContainer.innerHTML = componentHtmlContent
+    componentPreviewContainer.innerHTML = componentHtmlContent // Modifié pour cibler le conteneur de prévisualisation
 
     // Met à jour les titres de la page et de la section.
     const readableComponentName = componentName
@@ -195,10 +185,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/-/g, " ")
       .replace(/\b\w/g, (l) => l.toUpperCase())
     const mainTitle = document.querySelector(".styleguide-header h1")
+    const componentTitle = document.querySelector(".styleguide-component-title") // Sélection du nouveau titre h2
     const pageTitle = document.querySelector("title")
 
     if (mainTitle)
       mainTitle.textContent = `Styleguide : ${readableComponentName}`
+    if (componentTitle)
+      // Mise à jour du titre du composant
+      componentTitle.textContent = readableComponentName
     if (pageTitle)
       pageTitle.textContent = `Styleguide : ${readableComponentName}`
 
@@ -207,13 +201,15 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     // Si le paramètre 'component' est manquant, affiche un message d'erreur.
     const errorMessage = `<p>Aucun composant spécifié. Veuillez ajouter un paramètre "?component=nom-du-composant" à l'URL (par exemple, ?component=button/button).</p>`
-    componentContainer.innerHTML = errorMessage
+    componentPreviewContainer.innerHTML = errorMessage // Injecte l'erreur dans le conteneur de prévisualisation
     console.warn(errorMessage.replace(/<[^>]+>/g, "")) // Affiche aussi dans la console sans les balises HTML
 
     // Cache les titres par défaut si aucun composant n'est chargé
     const mainTitle = document.querySelector(".styleguide-header h1")
-    const sectionTitle = document.querySelector(".styleguide-section h2")
+    const componentTitle = document.querySelector(".styleguide-component-title")
+    // const sectionTitle = document.querySelector(".styleguide-section h2") // Ancienne référence, peut être supprimée ou ajustée
     if (mainTitle) mainTitle.textContent = "Styleguide"
-    if (sectionTitle) sectionTitle.textContent = "Erreur"
+    if (componentTitle) componentTitle.textContent = "Erreur" // Met à jour le titre du composant en cas d'erreur
+    // if (sectionTitle) sectionTitle.textContent = "Erreur"
   }
 })

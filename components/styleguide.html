@@ -20,8 +20,27 @@
 
     <main class="styleguide-main">
       <section class="styleguide-section">
-        <article class="styleguide-component">
-          <!-- Le contenu sera injecté ici par JavaScript -->
+        <h2 class="styleguide-component-title">Composant</h2>
+        <!-- Titre ajouté, sera mis à jour par JS -->
+        <article class="styleguide-component-wrapper">
+          <div class="styleguide-component-preview">
+            <!-- Le contenu du composant (ex: button.html) sera injecté ici par JavaScript -->
+          </div>
+          <div class="styleguide-component-actions">
+            <button
+              type="button"
+              class="js-show-code"
+              aria-expanded="false"
+              aria-controls="code-component-block">
+              Afficher le code
+            </button>
+          </div>
+          <div
+            class="styleguide-component-code"
+            id="code-component-block"
+            hidden>
+            <pre><code class="language-html"></code></pre>
+          </div>
         </article>
       </section>
     </main>

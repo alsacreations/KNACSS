@@ -1,3 +1,7 @@
+/* ---------------------/*
+ * Button native Styles
+ /* ------------------ */
+
 :where(button, input:where([type="button"], [type="reset"], [type="submit"])) {
   --background-color: var(--form-control-background, ButtonFace);
 
