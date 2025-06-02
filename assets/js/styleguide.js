@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   if (elementToCopy.id) {
                     elementToCopy.removeAttribute("id")
                   }
-                  combinedHtml += elementToCopy.outerHTML + "\\n"
+                  combinedHtml += elementToCopy.outerHTML + "\n" // Utiliser \n au lieu de \\n
                 }
               })
 
@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
    * @returns {string} La chaîne HTML formattée.
    */
   function formatHtml(htmlString) {
-    let formatted = htmlString.replace(/>\\s*</g, ">\\n<")
+    let formatted = htmlString.replace(/>\s*</g, ">\n<") // Utiliser \n
     let indentLevel = 0
-    const lines = formatted.split("\\n")
+    const lines = formatted.split("\n") // Utiliser \n
     const indentChar = "  "
     return lines
       .map((line) => {
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return indentedLine
       })
-      .join("\\n")
+      .join("\n") // Utiliser \n
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.
