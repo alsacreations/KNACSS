@@ -1,6 +1,19 @@
 // Script pour le guide de style
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Importe les modules des composants HTML comme texte brut et les CSS comme URL.
+  // Vite traitera ces imports lors du build pour inclure les fichiers.
+  const htmlComponentModules = import.meta.glob("/components/**/*.html", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })
+  const cssComponentModules = import.meta.glob("/components/**/*.css", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  })
+
   /**
    * Initialise les boutons "Afficher/Masquer le code".
    * Attache les écouteurs d'événements aux boutons .js-show-code.
@@ -17,16 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const codeBlock = document.getElementById(codeBlockId)
 
         if (codeBlock) {
-          // Basculer la visibilité du bloc de code
           codeBlock.hidden = !codeBlock.hidden
-
-          // Mettre à jour les attributs ARIA et le texte du bouton en fonction du nouvel état
           button.setAttribute("aria-expanded", (!codeBlock.hidden).toString())
           button.textContent = !codeBlock.hidden
             ? "Masquer le code"
             : "Afficher le code"
 
-          // Si le bloc de code est maintenant visible, on peuple son contenu
           if (!codeBlock.hidden) {
             const articleComponent = button.closest(
               "article.styleguide-component",
@@ -46,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   if (elementToCopy.id) {
                     elementToCopy.removeAttribute("id")
                   }
-                  combinedHtml += elementToCopy.outerHTML + "\n"
+                  combinedHtml += elementToCopy.outerHTML + "\\n"
                 }
               })
 
@@ -73,22 +82,17 @@ document.addEventListener("DOMContentLoaded", () => {
    * @returns {string} La chaîne HTML formattée.
    */
   function formatHtml(htmlString) {
-    let formatted = htmlString.replace(/>\s*</g, ">\n<")
+    let formatted = htmlString.replace(/>\\s*</g, ">\\n<")
     let indentLevel = 0
-    const lines = formatted.split("\n")
+    const lines = formatted.split("\\n")
     const indentChar = "  "
     return lines
       .map((line) => {
         line = line.trim()
-
         if (line.startsWith("</")) {
           indentLevel = Math.max(0, indentLevel - 1)
         }
-
         const indentedLine = indentChar.repeat(indentLevel) + line
-
-        // Augmente l'indentation pour les balises ouvrantes qui ne sont pas auto-fermantes
-        // et ne sont pas des éléments vides typiques.
         if (
           line.startsWith("<") &&
           !line.startsWith("</") &&
@@ -97,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
             line.startsWith("<" + tag),
           )
         ) {
-          // Vérifie si la balise ne se ferme pas sur la même ligne
           const tagNameMatch = line.match(/^<([a-z0-9]+)/i)
           if (tagNameMatch) {
             const tagName = tagNameMatch[1]
@@ -112,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return indentedLine
       })
-      .join("\n")
+      .join("\\n")
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.
@@ -133,71 +136,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si le paramètre 'component' est présent dans l'URL.
   if (componentName) {
-    // Construit le chemin vers le fichier HTML du composant.
-    // Le chemin est relatif à la racine du site.
-    const componentHtmlPath = `/components/${componentName}.html`
-    // Construit le chemin vers le fichier CSS du composant.
-    const componentCssPath = `/components/${componentName}.css`
+    // Construit les clés pour accéder aux modules importés par Vite.
+    const htmlModuleKey = `/components/${componentName}.html`
+    const cssModuleKey = `/components/${componentName}.css`
 
-    // Met à jour le lien CSS existant pour le composant.
-    // On cible le lien avec l'ID 'component-styles'.
-    const componentCssLink = document.getElementById("component-styles")
-    if (componentCssLink) {
-      componentCssLink.href = componentCssPath
-    } else {
-      // Si aucun lien avec cet ID n'est trouvé, on en crée un nouveau (mesure de sécurité).
-      console.warn(
-        "Aucun lien CSS avec l'ID 'component-styles' trouvé, un nouveau lien a été ajouté.",
+    const componentHtmlContent = htmlComponentModules[htmlModuleKey]
+    const componentCssPath = cssComponentModules[cssModuleKey]
+
+    // Vérifie si le contenu HTML du composant a été trouvé.
+    if (componentHtmlContent === undefined) {
+      const errorMessage = `<p style="color: var(--color-error, red);">Impossible de charger le contenu HTML pour le composant : ${componentName}.<br>Vérifiez que le fichier ${htmlModuleKey} existe et est inclus par Vite.<br>Vérifiez la console pour plus de détails.</p>`
+      componentContainer.innerHTML = errorMessage
+      console.error(
+        `Contenu HTML non trouvé pour le composant "${componentName}" via import.meta.glob. Clé tentée : ${htmlModuleKey}. Modules HTML disponibles :`,
+        Object.keys(htmlComponentModules),
       )
-      const newLink = document.createElement("link")
-      newLink.rel = "stylesheet"
-      newLink.id = "component-styles" // Assigne l'ID pour les futures références
-      newLink.href = componentCssPath
-      document.head.appendChild(newLink)
+      // Cache les titres si le composant n'est pas chargé
+      const mainTitle = document.querySelector(".styleguide-header h1")
+      const pageTitle = document.querySelector("title")
+      if (mainTitle) mainTitle.textContent = "Styleguide : Erreur"
+      if (pageTitle) pageTitle.textContent = "Styleguide : Erreur"
+      return
     }
 
-    // Utilise fetch pour charger le contenu du fichier HTML du composant.
-    fetch(componentHtmlPath)
-      .then((response) => {
-        // Vérifie si la requête a réussi (statut HTTP 200-299).
-        if (!response.ok) {
-          // Si la requête échoue, lance une erreur avec le statut.
-          throw new Error(
-            `Erreur HTTP : ${response.status} pour ${componentHtmlPath}`,
-          )
-        }
-        // Retourne le contenu de la réponse sous forme de texte.
-        return response.text()
-      })
-      .then((html) => {
-        // Injecte le contenu HTML récupéré dans le conteneur du composant.
-        componentContainer.innerHTML = html
-
-        // Met à jour les titres de la page et de la section.
-        const readableComponentName = componentName
-          .split("/")
-          .pop()
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (l) => l.toUpperCase())
-        const mainTitle = document.querySelector(".styleguide-header h1")
-        const pageTitle = document.querySelector("title")
-
-        if (mainTitle)
-          mainTitle.textContent = `Styleguide : ${readableComponentName}`
-        if (pageTitle)
-          pageTitle.textContent = `Styleguide : ${readableComponentName}`
-
-        // Maintenant que le HTML du composant est injecté, initialiser les boutons "Afficher le code".
-        initializeShowCodeButtons()
-      })
-      .catch((error) => {
-        // Affiche une erreur dans la console et dans la page si le chargement échoue.
-        console.error(
-          `Impossible de charger le composant "${componentName}":`,
-          error,
+    // Met à jour le lien CSS pour le composant.
+    if (componentCssPath) {
+      let componentCssLink = document.getElementById("component-styles")
+      if (componentCssLink) {
+        componentCssLink.href = componentCssPath
+      } else {
+        console.warn(
+          "Aucun lien CSS avec l'ID 'component-styles' trouvé, un nouveau lien a été ajouté.",
         )
-        componentContainer.innerHTML = `<p style="color: var(--color-error, red);">Impossible de charger le composant : ${componentName}.<br>Chemin tenté : ${componentHtmlPath}.<br>Vérifiez la console pour plus de détails.</p>`
-      })
+        const newLink = document.createElement("link")
+        newLink.rel = "stylesheet"
+        newLink.id = "component-styles"
+        newLink.href = componentCssPath
+        document.head.appendChild(newLink)
+      }
+    } else {
+      console.warn(
+        `Chemin CSS non trouvé pour le composant "${componentName}" via import.meta.glob. Clé tentée : ${cssModuleKey}. Il n'y aura pas de style spécifique pour ce composant. Modules CSS disponibles :`,
+        Object.keys(cssComponentModules),
+      )
+      // Optionnel : supprimer un ancien lien CSS si le nouveau n'est pas trouvé
+      const oldCssLink = document.getElementById("component-styles")
+      if (oldCssLink) oldCssLink.removeAttribute("href")
+    }
+
+    // Injecte le contenu HTML récupéré dans le conteneur du composant.
+    // Plus besoin de fetch, car componentHtmlContent est déjà le contenu du fichier.
+    componentContainer.innerHTML = componentHtmlContent
+
+    // Met à jour les titres de la page et de la section.
+    const readableComponentName = componentName
+      .split("/")
+      .pop()
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase())
+    const mainTitle = document.querySelector(".styleguide-header h1")
+    const pageTitle = document.querySelector("title")
+
+    if (mainTitle)
+      mainTitle.textContent = `Styleguide : ${readableComponentName}`
+    if (pageTitle)
+      pageTitle.textContent = `Styleguide : ${readableComponentName}`
+
+    // Maintenant que le HTML du composant est injecté, initialiser les boutons "Afficher le code".
+    initializeShowCodeButtons()
   } else {
     // Si le paramètre 'component' est manquant, affiche un message d'erreur.
     const errorMessage = `<p>Aucun composant spécifié. Veuillez ajouter un paramètre "?component=nom-du-composant" à l'URL (par exemple, ?component=button/button).</p>`
