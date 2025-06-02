@@ -185,14 +185,13 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/-/g, " ")
       .replace(/\b\w/g, (l) => l.toUpperCase())
     const mainTitle = document.querySelector(".styleguide-header h1")
-    const componentTitle = document.querySelector(".styleguide-component-title") // Sélection du nouveau titre h2
+    // const componentTitle = document.querySelector(".styleguide-component-title") // Sélection du nouveau titre h2
     const pageTitle = document.querySelector("title")
 
     if (mainTitle)
       mainTitle.textContent = `Styleguide : ${readableComponentName}`
-    if (componentTitle)
-      // Mise à jour du titre du composant
-      componentTitle.textContent = readableComponentName
+    // if (componentTitle) // Mise à jour du titre du composant
+    //   componentTitle.textContent = readableComponentName;
     if (pageTitle)
       pageTitle.textContent = `Styleguide : ${readableComponentName}`
 
@@ -206,10 +205,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cache les titres par défaut si aucun composant n'est chargé
     const mainTitle = document.querySelector(".styleguide-header h1")
-    const componentTitle = document.querySelector(".styleguide-component-title")
+    // const componentTitle = document.querySelector(".styleguide-component-title")
     // const sectionTitle = document.querySelector(".styleguide-section h2") // Ancienne référence, peut être supprimée ou ajustée
     if (mainTitle) mainTitle.textContent = "Styleguide"
-    if (componentTitle) componentTitle.textContent = "Erreur" // Met à jour le titre du composant en cas d'erreur
+    // if (componentTitle) componentTitle.textContent = "Erreur" // Met à jour le titre du composant en cas d'erreur
     // if (sectionTitle) sectionTitle.textContent = "Erreur"
   }
 })
