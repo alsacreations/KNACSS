@@ -61,8 +61,7 @@
 }
 
 .styleguide-component-preview {
-  display: flex; /* Pour aligner les éléments si nécessaire */
-  flex-wrap: wrap; /* Pour que les éléments passent à la ligne si besoin */
+  display: grid;
   align-items: center;
   padding: var(--spacing-24);
   gap: var(--spacing-16);

@@ -70,40 +70,74 @@ document.addEventListener("DOMContentLoaded", () => {
    * @returns {string} La chaîne HTML formattée.
    */
   function formatHtml(htmlString) {
-    let formatted = htmlString.replace(/>\s*</g, ">\n<") // Utiliser \n
+    let cleanHtml = htmlString.trim()
+    // Normaliser les attributs booléens (ex: checked="" -> checked)
+    cleanHtml = cleanHtml.replace(/(\s\w+)=["']{2}/g, "$1")
+
+    // Séparer les balises et le texte pour une meilleure granularité des lignes
+    // 1. Ajouter un saut de ligne après chaque '>'
+    cleanHtml = cleanHtml.replace(/>/g, ">\n")
+    // 2. Ajouter un saut de ligne avant chaque '<'
+    cleanHtml = cleanHtml.replace(/</g, "\n<")
+    // 3. Supprimer les sauts de ligne multiples et les espaces autour des sauts de ligne
+    cleanHtml = cleanHtml.replace(/\s*\n\s*/g, "\n")
+    // 4. Supprimer les sauts de ligne au début et à la fin après le nettoyage
+    cleanHtml = cleanHtml.trim()
+
     let indentLevel = 0
-    const lines = formatted.split("\n") // Utiliser \n
+    const lines = cleanHtml.split("\n")
     const indentChar = "  "
-    return lines
-      .map((line) => {
-        line = line.trim()
-        if (line.startsWith("</")) {
-          indentLevel = Math.max(0, indentLevel - 1)
-        }
-        const indentedLine = indentChar.repeat(indentLevel) + line
-        if (
-          line.startsWith("<") &&
-          !line.startsWith("</") &&
-          !line.endsWith("/>") &&
-          !["input", "img", "meta", "link"].some((tag) =>
-            line.startsWith("<" + tag),
-          )
-        ) {
-          const tagNameMatch = line.match(/^<([a-z0-9]+)/i)
-          if (tagNameMatch) {
-            const tagName = tagNameMatch[1]
-            const selfClosingOrSameLineCloseRegex = new RegExp(
-              `^<${tagName}[^>]*>.*</${tagName}>$`,
-              "i",
-            )
-            if (!selfClosingOrSameLineCloseRegex.test(line)) {
-              indentLevel++
-            }
+    const voidElements = new Set([
+      "area",
+      "base",
+      "br",
+      "col",
+      "embed",
+      "hr",
+      "img",
+      "input",
+      "link",
+      "meta",
+      "param",
+      "source",
+      "track",
+      "wbr",
+    ])
+
+    let resultLines = []
+
+    for (const rawLine of lines) {
+      const line = rawLine.trim()
+      if (!line) continue // Ignorer les lignes vides après trim
+
+      let currentIndent = indentLevel
+
+      // Si la ligne est une balise fermante, décrémenter le niveau pour cette ligne.
+      if (line.startsWith("</")) {
+        currentIndent = Math.max(0, indentLevel - 1)
+      }
+
+      resultLines.push(indentChar.repeat(currentIndent) + line)
+
+      // Mettre à jour indentLevel pour la PROCHAINE ligne.
+      if (line.startsWith("</")) {
+        // Balise fermante
+        indentLevel = Math.max(0, indentLevel - 1)
+      } else if (line.startsWith("<") && !line.endsWith("/>")) {
+        // Balise ouvrante (pas auto-fermante style XML)
+        const tagNameMatch = line.match(/^<([a-zA-Z0-9]+)/)
+        if (tagNameMatch) {
+          const tagName = tagNameMatch[1].toLowerCase()
+          // N'incrémente pas si c'est une balise void.
+          // La vérification de la fermeture sur la même ligne n'est plus nécessaire ici
+          // car la tokenisation a déjà séparé les balises.
+          if (!voidElements.has(tagName)) {
+            indentLevel++
           }
         }
-        return indentedLine
-      })
-      .join("\n") // Utiliser \n
+      }
+    }
+    return resultLines.join("\n")
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.
