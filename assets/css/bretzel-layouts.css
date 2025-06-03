@@ -2,7 +2,7 @@
  * Layouts CSS "Bretzel"
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
- * Consignes : à placer dans un layer entre `reset` et `components`
+ * Consignes : à placer dans un layer au-dessus de `reset`
  /* ---------------------- */
 
 /* Layout-small */
@@ -35,8 +35,8 @@
 /* Splash et autres enfants de Liquid */
 .splash {
   display: grid;
-  grid-template-columns: inherit;
   grid-column: liquid;
+  grid-template-columns: inherit;
 
   :where(& > *) {
     grid-column: content;
@@ -45,8 +45,8 @@
 
 .splash-start {
   display: grid;
-  grid-template-columns: subgrid;
   grid-column: liquid-start / content-end;
+  grid-template-columns: subgrid;
 
   :where(& > *) {
     grid-column: content;
@@ -55,8 +55,8 @@
 
 .splash-end {
   display: grid;
-  grid-template-columns: subgrid;
   grid-column: content-start / liquid-end;
+  grid-template-columns: subgrid;
 
   :where(& > *) {
     grid-column: content;
@@ -65,8 +65,8 @@
 
 .splash-half-start {
   display: grid;
-  grid-template-columns: subgrid;
   grid-column: liquid-start / half;
+  grid-template-columns: subgrid;
 
   :where(& > *) {
     grid-column: content-start / half;
@@ -75,8 +75,8 @@
 
 .splash-half-end {
   display: grid;
-  grid-template-columns: subgrid;
   grid-column: half / liquid-end;
+  grid-template-columns: subgrid;
 
   :where(& > *) {
     grid-column: half / content-end;
@@ -154,8 +154,8 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: var(--repel-gutter);
 
   /* Attribut pour alignement vertical */
@@ -184,8 +184,8 @@
   -webkit-overflow-scrolling: touch;
 
   :where(& > *) {
-    flex-shrink: 0;
     flex-basis: var(--item-size);
+    flex-shrink: 0;
   }
 }
 
