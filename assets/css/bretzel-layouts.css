@@ -85,7 +85,7 @@
 
 /* Autogrid */
 .autogrid {
-  --autogrid-gutter: 1rem; /* gouttière */
+  --autogrid-gap: 1rem; /* gouttière */
   --col-min-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
 
@@ -94,7 +94,7 @@
     var(--grid-fill),
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
-  gap: var(--autogrid-gutter);
+  gap: var(--autogrid-gap);
 
   /* Attribut pour alignement vertical */
   &[data-align="start"] {
@@ -105,10 +105,10 @@
 
 /* Switcher */
 .switcher {
-  --switcher-gutter: 1rem;
+  --switcher-gap: 1rem;
 
   display: grid;
-  gap: var(--switcher-gutter);
+  gap: var(--switcher-gap);
 
   /* Attribut pour alignement vertical */
   &[data-align="start"] {
@@ -125,11 +125,11 @@
 
 /* Cluster */
 .cluster {
-  --cluster-gutter: 1rem; /* gouttière */
+  --cluster-gap: 1rem; /* gouttière */
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--cluster-gutter);
+  gap: var(--cluster-gap);
   align-items: center;
 
   /* Attribut pour alignement horizontal */
@@ -150,13 +150,13 @@
 
 /* Repel */
 .repel {
-  --repel-gutter: 1rem; /* gouttière */
+  --repel-gap: 1rem; /* gouttière */
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--repel-gutter);
+  gap: var(--repel-gap);
 
   /* Attribut pour alignement vertical */
   &[data-align-v="start"] {
@@ -171,7 +171,7 @@
 
 /* Reel */
 .reel {
-  --reel-gutter: 1rem; /* gouttière */
+  --reel-gap: 1rem; /* gouttière */
   --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
   display: flex;
@@ -179,7 +179,7 @@
   height: auto;
   margin-inline: auto; /* reel est centré horizontalement */
   overflow-x: auto;
-  gap: var(--reel-gutter);
+  gap: var(--reel-gap);
   scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
   -webkit-overflow-scrolling: touch;
 
@@ -211,10 +211,10 @@
 
 /* TwoPanes */
 .twopanes {
-  --twopanes-gutter: 1rem;
+  --twopanes-gap: 1rem;
 
   display: grid;
-  gap: var(--twopanes-gutter);
+  gap: var(--twopanes-gap);
 
   /* Deux colonnes si >768px */
   @media (width >= 48rem) {

@@ -19,7 +19,7 @@
   --border-color-active: var(--border-color);
   --border-radius: var(--form-control-border-radius, 0);
   --border-width: var(--form-control-border-width, 1px);
-  --text-color: var(--on-primary, ButtonText);
+  --text-color: var(--on-form-control, ButtonText);
   --text-color-hover: var(--text-color);
   --text-color-active: var(--text-color);
 

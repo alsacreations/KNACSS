@@ -62,7 +62,11 @@
   --spacing-l: clamp(var(--spacing-32),1.6522rem + 1.7391vw,var(--spacing-48));
 
   /* Forms Tokens */
-  --form-control-background: var(--color-gray-200);
+  --form-control-background: light-dark(
+    var(--color-slate-400),
+    var(--color-slate-800)
+  );
+  --on-form-control: light-dark(var(--color-gray-900), var(--color-gray-100));
   --form-control-spacing: var(--spacing-12) var(--spacing-16);
   --form-control-border-width: 1px;
   --form-control-border-color: var(--color-gray-400);
@@ -95,4 +99,13 @@ body {
 /* Couleur de sélection */
 *::selection {
   background: var(--selection);
+}
+
+/* ----------------------------------
+ * Layouts adaptations
+ * ----------------------------------
+ */
+
+.cluster {
+  --cluster-gap: var(--spacing-8);
 }
