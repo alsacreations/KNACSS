@@ -10,10 +10,10 @@
   --background-color: var(--form-control-background, ButtonFace);
 
   /* prettier-ignore */
-  --background-color-hover: color-mix(in oklab, var(--background-color), #000000 10%);
+  --background-color-hover: oklch(from var(--background-color) calc(l * 0.9) c h);
 
   /* prettier-ignore */
-  --background-color-active: color-mix(in oklab,var(--background-color),#000000 20%);
+  --background-color-active: oklch(from var(--background-color) calc(l * 0.8) c h);
   --border-color: var(--form-control-border-color, ButtonBorder);
   --border-color-hover: var(--border-color);
   --border-color-active: var(--border-color);
