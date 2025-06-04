@@ -183,29 +183,30 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
-    // Met à jour le lien CSS pour le composant.
+    // Met à jour le CSS pour le composant dans le layer components.
     if (componentCssPath) {
-      let componentCssLink = document.getElementById("component-styles")
-      if (componentCssLink) {
-        componentCssLink.href = componentCssPath
+      let componentStyleElement = document.getElementById("component-styles")
+      if (componentStyleElement) {
+        // Met à jour le contenu de l'élément style existant
+        componentStyleElement.textContent = `@import url("${componentCssPath}") layer(components);`
       } else {
         console.warn(
-          "Aucun lien CSS avec l'ID 'component-styles' trouvé, un nouveau lien a été ajouté.",
+          "Aucun élément style avec l'ID 'component-styles' trouvé, un nouveau a été ajouté.",
         )
-        const newLink = document.createElement("link")
-        newLink.rel = "stylesheet"
-        newLink.id = "component-styles"
-        newLink.href = componentCssPath
-        document.head.appendChild(newLink)
+        // Crée un élément <style> avec @import layer() pour charger le CSS dans le layer components
+        const newStyleElement = document.createElement("style")
+        newStyleElement.id = "component-styles"
+        newStyleElement.textContent = `@import url("${componentCssPath}") layer(components);`
+        document.head.appendChild(newStyleElement)
       }
     } else {
       console.warn(
         `Chemin CSS non trouvé pour le composant "${componentName}" via import.meta.glob. Clé tentée : ${cssModuleKey}. Il n'y aura pas de style spécifique pour ce composant. Modules CSS disponibles :`,
         Object.keys(cssComponentModules),
       )
-      // Optionnel : supprimer un ancien lien CSS si le nouveau n'est pas trouvé
-      const oldCssLink = document.getElementById("component-styles")
-      if (oldCssLink) oldCssLink.removeAttribute("href")
+      // Optionnel : supprimer un ancien élément style si le nouveau n'est pas trouvé
+      const oldStyleElement = document.getElementById("component-styles")
+      if (oldStyleElement) oldStyleElement.remove()
     }
 
     // Injecte le contenu HTML récupéré dans le conteneur du composant.

@@ -4,6 +4,6 @@
 @import "css/bretzel-print.css" layer(reset);
 @import "css/bretzel-layouts.css" layer(reset);
 @import "css/theme.css" layer(theme);
+@import "css/theme-tokens.css" layer(theme);
 @import "css/styles.css" layer(components);
-@import "../components/button/button.css" layer(components);
 @import "css/bretzel-utilities.css" layer(utilities);
