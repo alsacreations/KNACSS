@@ -71,7 +71,7 @@
   --form-control-border-width: 1px;
   --form-control-border-color: var(--color-gray-400);
   --form-control-border-radius: var(--radius-md);
-  --checkables-border-color: var(--color-gray-800);
+  --checkables-border-color: var(--color-gray-400);
   --checkable-icon-color: var(--color-white);
   --checkable-size: 1.4lh;
 
