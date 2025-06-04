@@ -15,6 +15,31 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   /**
+   * Charge tous les CSS des composants dans le layer components
+   * pour que tous les styles soient disponibles dans le styleguide
+   */
+  function loadAllComponentStyles() {
+    // Crée un élément style pour importer tous les CSS des composants
+    const allComponentsStyleElement = document.createElement("style")
+    allComponentsStyleElement.id = "all-components-styles"
+
+    // Construit les imports pour tous les fichiers CSS des composants
+    const imports = Object.values(cssComponentModules)
+      .map((cssPath) => `@import url("${cssPath}") layer(components);`)
+      .join("\n")
+
+    allComponentsStyleElement.textContent = imports
+    document.head.appendChild(allComponentsStyleElement)
+
+    console.log(
+      `Chargement de ${Object.keys(cssComponentModules).length} feuilles de styles de composants dans le layer components`,
+    )
+  }
+
+  // Charge immédiatement tous les styles des composants
+  loadAllComponentStyles()
+
+  /**
    * Initialise les boutons "Afficher/Masquer le code".
    * Attache les écouteurs d'événements aux boutons .js-show-code.
    */
@@ -160,12 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si le paramètre 'component' est présent dans l'URL.
   if (componentName) {
-    // Construit les clés pour accéder aux modules importés par Vite.
+    // Construit la clé pour accéder au module HTML importé par Vite.
     const htmlModuleKey = `/components/${componentName}.html`
-    const cssModuleKey = `/components/${componentName}.css`
 
     const componentHtmlContent = htmlComponentModules[htmlModuleKey]
-    const componentCssPath = cssComponentModules[cssModuleKey]
 
     // Vérifie si le contenu HTML du composant a été trouvé.
     if (componentHtmlContent === undefined) {
@@ -181,32 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (mainTitle) mainTitle.textContent = "Styleguide : Erreur"
       if (pageTitle) pageTitle.textContent = "Styleguide : Erreur"
       return
-    }
-
-    // Met à jour le CSS pour le composant dans le layer components.
-    if (componentCssPath) {
-      let componentStyleElement = document.getElementById("component-styles")
-      if (componentStyleElement) {
-        // Met à jour le contenu de l'élément style existant
-        componentStyleElement.textContent = `@import url("${componentCssPath}") layer(components);`
-      } else {
-        console.warn(
-          "Aucun élément style avec l'ID 'component-styles' trouvé, un nouveau a été ajouté.",
-        )
-        // Crée un élément <style> avec @import layer() pour charger le CSS dans le layer components
-        const newStyleElement = document.createElement("style")
-        newStyleElement.id = "component-styles"
-        newStyleElement.textContent = `@import url("${componentCssPath}") layer(components);`
-        document.head.appendChild(newStyleElement)
-      }
-    } else {
-      console.warn(
-        `Chemin CSS non trouvé pour le composant "${componentName}" via import.meta.glob. Clé tentée : ${cssModuleKey}. Il n'y aura pas de style spécifique pour ce composant. Modules CSS disponibles :`,
-        Object.keys(cssComponentModules),
-      )
-      // Optionnel : supprimer un ancien élément style si le nouveau n'est pas trouvé
-      const oldStyleElement = document.getElementById("component-styles")
-      if (oldStyleElement) oldStyleElement.remove()
     }
 
     // Injecte le contenu HTML récupéré dans le conteneur du composant.
