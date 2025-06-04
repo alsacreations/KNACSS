@@ -72,7 +72,6 @@
   --form-control-border-color: var(--color-gray-400);
   --form-control-border-radius: var(--radius-md);
   --checkables-border-color: var(--color-gray-400);
-  --checkable-icon-color: var(--color-white, #ffffff);
   --checkable-size: 1.25em;
 
   /* States Tokens */

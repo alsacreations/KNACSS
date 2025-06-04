@@ -40,9 +40,9 @@
 
   /* States */
   &:is(:checked, :indeterminate) {
-    background-color: var(--background-color-checked);
-    box-shadow: inset 0 0 0 var(--border-width) var(--border-color-checked);
-    color: var(--checkable-icon-color, #ffffff);
+    background-color: var(--primary);
+    box-shadow: inset 0 0 0 var(--border-width) transparent;
+    color: var(--color-white, #ffffff);
   }
 
   &:checked::after {
