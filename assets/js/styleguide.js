@@ -17,22 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Charge tous les CSS des composants dans le layer components
    * pour que tous les styles soient disponibles dans le styleguide
+   * Exclut button.css car il est déjà chargé via app.css
    */
   function loadAllComponentStyles() {
     // Crée un élément style pour importer tous les CSS des composants
     const allComponentsStyleElement = document.createElement("style")
     allComponentsStyleElement.id = "all-components-styles"
 
-    // Construit les imports pour tous les fichiers CSS des composants
-    const imports = Object.values(cssComponentModules)
-      .map((cssPath) => `@import url("${cssPath}") layer(components);`)
+    // Construit les imports pour tous les fichiers CSS des composants, sauf button.css
+    const imports = Object.entries(cssComponentModules)
+      .filter(([path]) => !path.includes("/button/button.css")) // Exclut button.css
+      .map(([, cssPath]) => `@import url("${cssPath}") layer(components);`)
       .join("\n")
 
     allComponentsStyleElement.textContent = imports
     document.head.appendChild(allComponentsStyleElement)
 
     console.log(
-      `Chargement de ${Object.keys(cssComponentModules).length} feuilles de styles de composants dans le layer components`,
+      `Chargement de ${Object.keys(cssComponentModules).length - 1} feuilles de styles de composants dans le layer components (button.css exclu car déjà chargé)`,
     )
   }
 
