@@ -123,6 +123,14 @@
   }
 }
 
+/* Stack */
+.stack {
+  --stack-gap: 1em; /* gouttière */
+
+  display: grid;
+  row-gap: var(--stack-gap);
+}
+
 /* Cluster */
 .cluster {
   --cluster-gap: 1rem; /* gouttière */

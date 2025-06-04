@@ -61,10 +61,7 @@
 }
 
 .styleguide-component-preview {
-  display: grid;
-  align-items: center;
   padding: var(--spacing-24);
-  gap: var(--spacing-16);
 }
 
 .styleguide-component-actions {
