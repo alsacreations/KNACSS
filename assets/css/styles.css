@@ -20,8 +20,6 @@
  */
 
 body {
-  max-width: 80rem; /* 1280px */
-  margin-inline: auto;
   background-color: var(--surface);
   color: var(--on-surface);
   font-family: var(--font-poppins);
@@ -35,6 +33,158 @@ body {
 }
 
 /* ----------------------------------
+ * Variables spécifiques
+ * ----------------------------------
+ */
+:root {
+  --font-mono:
+    "SF Mono", monaco, "Cascadia Code", "Roboto Mono", consolas, "Courier New",
+    monospace;
+}
+
+/* ----------------------------------
+ * Styles pour la page d'accueil
+ * ----------------------------------
+ */
+
+.homepage-header {
+  padding: var(--spacing-32);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.homepage-header h1 {
+  margin: 0 0 var(--spacing-8) 0;
+  color: var(--on-surface);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.homepage-header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-l);
+}
+
+.homepage-section {
+  padding: var(--spacing-32);
+  border: 1px solid var(--neutral);
+  border-radius: var(--radius-md);
+  background: var(--surface-dim);
+}
+
+.homepage-section h2 {
+  margin: 0 0 var(--spacing-24) 0;
+  padding-bottom: var(--spacing-8);
+  border-bottom: 2px solid var(--neutral);
+  color: var(--on-surface);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.homepage-section p {
+  margin: 0 0 var(--spacing-24) 0;
+  color: var(--text-muted);
+}
+
+.homepage-pre {
+  padding: var(--spacing-24);
+  overflow-x: auto;
+  border: 1px solid var(--neutral);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-14);
+  line-height: var(--leading-20);
+}
+
+.homepage-code {
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--neutral-dim);
+  color: var(--on-neutral);
+  font-family: var(--font-mono);
+  font-size: var(--text-14);
+}
+
+.homepage-pre .homepage-code {
+  padding: 0;
+  background: none;
+}
+
+.homepage-nav ul {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  gap: var(--spacing-8);
+}
+
+.homepage-nav a {
+  display: block;
+  padding: var(--spacing-16);
+  transition: all var(--transition-duration) ease;
+  border: 1px solid var(--neutral);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--on-surface);
+  text-decoration: none;
+}
+
+.homepage-nav a:hover {
+  border-color: var(--primary);
+  background: var(--neutral-dim);
+}
+
+.dependency-category {
+  padding: var(--spacing-24);
+  border: 1px solid var(--neutral);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.dependency-category h4 {
+  margin: 0 0 var(--spacing-16) 0;
+  color: var(--on-surface);
+  font-size: var(--text-16);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dependency-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: var(--spacing-8);
+}
+
+.dependency-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-8);
+  border-radius: var(--radius-md);
+  background: var(--surface-dim);
+  color: var(--on-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-14);
+}
+
+.dependency-version {
+  color: var(--text-muted);
+  font-size: var(--text-14);
+}
+
+.homepage-footer {
+  margin-top: var(--spacing-32);
+  padding: var(--spacing-32);
+  border-top: 1px solid var(--neutral);
+  color: var(--text-muted);
+  font-size: var(--text-14);
+  text-align: center;
+}
+
+/* ----------------------------------
  * Layouts adaptations
  * ----------------------------------
  */
@@ -45,4 +195,14 @@ body {
 
 .stack {
   --stack-gap: var(--spacing-8);
+}
+
+/* Classes spécifiques pour la homepage */
+.homepage-main {
+  --col-min-size: 20rem;
+  --autogrid-gap: var(--spacing-32);
+}
+
+.dependency-grid {
+  --stack-gap: var(--spacing-16);
 }

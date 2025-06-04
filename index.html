@@ -12,26 +12,150 @@
     <meta
       name="author"
       content="Alsacreations" />
+    <meta
+      name="description"
+      content="KNACSS - Framework CSS moderne et accessible pour le développement web" />
     <link
       rel="preload"
       as="font"
       href="/fonts/Poppins-Variable-opti.woff2"
       type="font/woff2"
       crossorigin />
-    <title>KNACSS</title>
+    <title>KNACSS - Framework CSS moderne et accessible</title>
+    <link
+      rel="stylesheet"
+      href="/assets/css/styles.css" />
   </head>
-  <body>
-    <header>
+  <body class="liquid">
+    <a
+      href="#main-content"
+      class="visually-hidden"
+      tabindex="1"
+      >Aller au contenu principal</a
+    >
+
+    <header
+      class="homepage-header"
+      role="banner">
       <h1>KNACSS</h1>
       <p>Framework CSS moderne et accessible</p>
     </header>
 
-    <main>
+    <main
+      class="autogrid homepage-main"
+      role="main"
+      id="main-content">
+      <!-- Section Dépendances -->
+      <aside
+        class="homepage-section"
+        aria-labelledby="deps-heading"
+        role="complementary">
+        <h2 id="deps-heading">Dépendances</h2>
+        <p>Dépendances de développement du projet&#8239;:</p>
+        <div
+          class="stack dependency-grid"
+          role="group"
+          aria-labelledby="deps-heading">
+          <div class="dependency-category">
+            <h4 id="build-tools">🔧 Outils de build</h4>
+            <ul
+              class="dependency-list"
+              role="list"
+              aria-labelledby="build-tools">
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>vite</span>
+                <span class="dependency-version">^6.3.5</span>
+              </li>
+            </ul>
+          </div>
+          <div class="dependency-category">
+            <h4 id="code-quality">✅ Qualité de code</h4>
+            <ul
+              class="dependency-list"
+              role="list"
+              aria-labelledby="code-quality">
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>eslint</span>
+                <span class="dependency-version">^9.28.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>@eslint/js</span>
+                <span class="dependency-version">^9.28.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>eslint-plugin-vue</span>
+                <span class="dependency-version">^10.1.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>prettier</span>
+                <span class="dependency-version">^3.5.3</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>globals</span>
+                <span class="dependency-version">^16.2.0</span>
+              </li>
+            </ul>
+          </div>
+          <div class="dependency-category">
+            <h4 id="css-linting">🎨 Linting CSS</h4>
+            <ul
+              class="dependency-list"
+              role="list"
+              aria-labelledby="css-linting">
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>stylelint</span>
+                <span class="dependency-version">^16.20.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>stylelint-config-standard</span>
+                <span class="dependency-version">^38.0.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>stylelint-config-html</span>
+                <span class="dependency-version">^1.1.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>stylelint-order</span>
+                <span class="dependency-version">^7.0.0</span>
+              </li>
+              <li
+                class="dependency-item"
+                role="listitem">
+                <span>stylelint-config-property-sort-order-smacss</span>
+                <span class="dependency-version">^10.0.0</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
       <!-- Section Architecture -->
-      <section>
-        <h2>Architecture</h2>
-        <p>Structure simplifiée du projet :</p>
-        <pre><code>KNACSS/
+      <section
+        class="homepage-section"
+        aria-labelledby="arch-heading">
+        <h2 id="arch-heading">Architecture</h2>
+        <p>Structure simplifiée du projet&#8239;:</p>
+        <pre class="homepage-pre"><code class="homepage-code">KNACSS/
 ├── assets/
 │   ├── app.css
 │   ├── main.js
@@ -57,33 +181,48 @@
       </section>
 
       <!-- Section Styles -->
-      <section>
-        <h2>Styles</h2>
-        <p>Fichiers de styles chargés dans l'ordre des layers CSS :</p>
+      <section
+        class="homepage-section"
+        aria-labelledby="styles-heading">
+        <h2 id="styles-heading">Styles</h2>
+        <p>Fichiers de styles chargés dans l'ordre des layers CSS&#8239;:</p>
         <ol>
           <li>
-            <strong>Layer reset :</strong>
+            <strong>Layer reset&#8239;:</strong>
             <ul>
-              <li><code>bretzel-reset.css</code> - Reset CSS moderne</li>
-              <li><code>bretzel-print.css</code> - Styles d'impression</li>
               <li>
-                <code>bretzel-layouts.css</code> - Utilitaires de mise en page
+                <code class="homepage-code">bretzel-reset.css</code> - Reset CSS
+                moderne
+              </li>
+              <li>
+                <code class="homepage-code">bretzel-print.css</code> - Styles
+                d'impression
+              </li>
+              <li>
+                <code class="homepage-code">bretzel-layouts.css</code> -
+                Utilitaires de mise en page
               </li>
             </ul>
           </li>
           <li>
-            <strong>Layer theme :</strong>
+            <strong>Layer theme&#8239;:</strong>
             <ul>
-              <li><code>theme.css</code> - Thème principal</li>
               <li>
-                <code>theme-tokens.css</code> - Variables CSS du design system
+                <code class="homepage-code">theme.css</code> - Thème principal
+              </li>
+              <li>
+                <code class="homepage-code">theme-tokens.css</code> - Variables
+                CSS du design system
               </li>
             </ul>
           </li>
           <li>
-            <strong>Layer components :</strong>
+            <strong>Layer components&#8239;:</strong>
             <ul>
-              <li><code>styles.css</code> - Styles de base des composants</li>
+              <li>
+                <code class="homepage-code">styles.css</code> - Styles de base
+                des composants
+              </li>
               <li>
                 <em
                   >+ tous les fichiers CSS des composants (chargés
@@ -93,42 +232,48 @@
             </ul>
           </li>
           <li>
-            <strong>Layer utilities :</strong>
+            <strong>Layer utilities&#8239;:</strong>
             <ul>
-              <li><code>bretzel-utilities.css</code> - Classes utilitaires</li>
+              <li>
+                <code class="homepage-code">bretzel-utilities.css</code> -
+                Classes utilitaires
+              </li>
             </ul>
           </li>
         </ol>
       </section>
 
       <!-- Section Styleguide -->
-      <section>
-        <h2>Styleguide</h2>
-        <p>Guide des composants disponibles :</p>
-        <nav>
-          <ul>
-            <li>
-              <a href="components/styleguide.html?component=button/button"
-                >Boutons</a
-              >
-            </li>
-            <li>
-              <a href="components/styleguide.html?component=checkbox/checkbox"
-                >Cases à cocher</a
-              >
-            </li>
-            <li>
-              <a href="components/styleguide.html?component=radio/radio"
-                >Boutons radio</a
-              >
-            </li>
-            <!-- D'autres composants pourront être ajoutés ici -->
-          </ul>
-        </nav>
-      </section>
+      <nav
+        class="homepage-section"
+        aria-labelledby="styleguide-heading"
+        role="navigation">
+        <h2 id="styleguide-heading">Styleguide</h2>
+        <p>Guide des éléments HTML natifs disponibles&#8239;:</p>
+        <ul
+          class="homepage-nav stack"
+          aria-label="Navigation du styleguide">
+          <li>
+            <a href="components/styleguide.html?component=button/button"
+              >Bouton</a
+            >
+          </li>
+          <li>
+            <a href="components/styleguide.html?component=checkbox/checkbox"
+              >Checkbox</a
+            >
+          </li>
+          <li>
+            <a href="components/styleguide.html?component=radio/radio">Radio</a>
+          </li>
+          <!-- D'autres composants pourront être ajoutés ici -->
+        </ul>
+      </nav>
     </main>
 
-    <footer>
+    <footer
+      class="homepage-footer"
+      role="contentinfo">
       <p>&copy; 2025 KNACSS - Framework CSS moderne et accessible</p>
     </footer>
 

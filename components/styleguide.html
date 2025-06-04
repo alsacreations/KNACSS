@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -8,35 +9,47 @@
       rel="icon"
       type="image/svg+xml"
       href="/images/favicon.svg" />
-    <title>Styleguide</title>
+    <meta
+      name="description"
+      content="Styleguide KNACSS - Guide des composants et éléments HTML disponibles" />
+    <title>Styleguide - KNACSS</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link
       rel="stylesheet"
       href="/assets/css/styleguide.css" />
   </head>
   <body>
-    <header class="styleguide-header">
-      <h1>Styleguide</h1>
-      <a href="../index.html" class="btn btn-back-home">Retour à l'accueil</a>
+    <a href="#main-content" class="visually-hidden" tabindex="1">Aller au contenu principal</a>
+
+    <header class="styleguide-header" role="banner">
+      <h1 id="styleguide-title">Styleguide</h1>
+      <nav role="navigation" aria-label="Navigation principale">
+        <a href="../index.html" class="btn btn-back-home" aria-label="Retourner à la page d'accueil de KNACSS">Retour à l'accueil</a>
+      </nav>
     </header>
 
-    <main class="styleguide-main">
-      <section class="styleguide-section">
-        <article class="styleguide-component-wrapper">
-          <div class="styleguide-component-preview stack">
+    <main class="styleguide-main" role="main" aria-labelledby="styleguide-title">
+      <section class="styleguide-section" aria-labelledby="component-title">
+        <h2 id="component-title" class="visually-hidden">Composant en cours de visualisation</h2>
+        <article class="styleguide-component-wrapper" role="region" aria-labelledby="component-title">
+          <div class="styleguide-component-preview stack" role="group" aria-label="Aperçu du composant">
             <!-- Le contenu du composant (ex: button.html) sera injecté ici par JavaScript -->
           </div>
-          <div class="styleguide-component-actions">
+          <div class="styleguide-component-actions" role="toolbar" aria-label="Actions pour le composant">
             <button
               type="button"
               class="js-show-code"
               aria-expanded="false"
-              aria-controls="code-component-block">
+              aria-controls="code-component-block"
+              aria-label="Afficher ou masquer le code source du composant">
               Afficher le code
             </button>
           </div>
           <div
             class="styleguide-component-code"
             id="code-component-block"
+            role="region"
+            aria-label="Code source du composant"
             hidden>
             <pre><code class="language-html"></code></pre>
           </div>
@@ -44,7 +57,7 @@
       </section>
     </main>
 
-    <footer class="styleguide-footer">
+    <footer class="styleguide-footer" role="contentinfo">
       <p>&copy; 2025 KNACSS Styleguide</p>
     </footer>
 
