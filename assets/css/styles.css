@@ -1,4 +1,10 @@
 /* ----------------------------------
+ * Import des composants
+ * ----------------------------------
+ */
+@import "../../components/button/button.css" layer(components);
+
+/* ----------------------------------
  * Polices
  * ----------------------------------
  */
@@ -13,12 +19,6 @@
     url("/fonts/Poppins-Variable-opti.woff2") format("woff2-variations");
   /* stylelint-enable */
 }
-
-/* ----------------------------------
- * Import des composants
- * ----------------------------------
- */
-@import "/components/button/button.css" layer(components);
 
 /* ----------------------------------
  * Base
