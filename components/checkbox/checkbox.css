@@ -6,13 +6,12 @@
   --background-color: var(--form-control-background, ButtonFace);
 
   /* prettier-ignore */
-  --background-color-checked: color-mix(in oklab,var(--background-color),#000000 20%);
+  --background-color-checked: oklch(from var(--background-color) calc(l * 0.8) c h);
   --border-color: var(--checkables-border-color, ButtonBorder);
   --border-color-checked: var(--border-color);
   --border-radius: var(--form-control-border-radius, 0);
   --border-width: var(--form-control-border-width, 1px);
   --box-shadow: none;
-  --checkable-icon-color: var(--checkable-icon-color, #ffffff);
   --text-color: var(--on-primary, ButtonText);
 }
 
@@ -43,7 +42,7 @@
   &:is(:checked, :indeterminate) {
     background-color: var(--background-color-checked);
     box-shadow: inset 0 0 0 var(--border-width) var(--border-color-checked);
-    color: var(--checkable-icon-color);
+    color: var(--checkable-icon-color, #ffffff);
   }
 
   &:checked::after {
