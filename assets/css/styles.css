@@ -15,6 +15,12 @@
 }
 
 /* ----------------------------------
+ * Import des composants
+ * ----------------------------------
+ */
+@import "/components/button/button.css" layer(components);
+
+/* ----------------------------------
  * Base
  * ----------------------------------
  */
@@ -111,29 +117,6 @@ body {
 .homepage-pre .homepage-code {
   padding: 0;
   background: none;
-}
-
-.homepage-nav ul {
-  display: grid;
-  padding: 0;
-  list-style: none;
-  gap: var(--spacing-8);
-}
-
-.homepage-nav a {
-  display: block;
-  padding: var(--spacing-16);
-  transition: all var(--transition-duration) ease;
-  border: 1px solid var(--neutral);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  color: var(--on-surface);
-  text-decoration: none;
-}
-
-.homepage-nav a:hover {
-  border-color: var(--primary);
-  background: var(--neutral-dim);
 }
 
 .dependency-category {
