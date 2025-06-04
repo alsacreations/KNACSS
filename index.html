@@ -21,29 +21,117 @@
     <title>KNACSS</title>
   </head>
   <body>
-    <h1>KNACSS</h1>
-    <h2>Styleguide</h2>
-    <nav>
-      <ul>
-        <li>
-          <a href="components/styleguide.html?component=button/button"
-            >Boutons</a
-          >
-        </li>
-        <li>
-          <a href="components/styleguide.html?component=checkbox/checkbox"
-            >Cases à cocher</a
-          >
-        </li>
-        <!-- Ajout du lien vers le composant radio -->
-        <li>
-          <a href="components/styleguide.html?component=radio/radio"
-            >Boutons radio</a
-          >
-        </li>
-        <!-- D'autres composants pourront être ajoutés ici -->
-      </ul>
-    </nav>
+    <header>
+      <h1>KNACSS</h1>
+      <p>Framework CSS moderne et accessible</p>
+    </header>
+
+    <main>
+      <!-- Section Architecture -->
+      <section>
+        <h2>Architecture</h2>
+        <p>Structure simplifiée du projet :</p>
+        <pre><code>KNACSS/
+├── assets/
+│   ├── app.css
+│   ├── main.js
+│   ├── css/
+│   │   ├── bretzel-reset.css
+│   │   ├── bretzel-print.css
+│   │   ├── bretzel-layouts.css
+│   │   ├── theme.css
+│   │   ├── theme-tokens.css
+│   │   ├── styles.css
+│   │   ├── styleguide.css
+│   │   └── bretzel-utilities.css
+│   └── js/
+│       └── styleguide.js
+├── components/
+│   ├── styleguide.html
+│   ├── button/
+│   ├── checkbox/
+│   └── radio/
+└── public/
+    ├── fonts/
+    └── images/</code></pre>
+      </section>
+
+      <!-- Section Styles -->
+      <section>
+        <h2>Styles</h2>
+        <p>Fichiers de styles chargés dans l'ordre des layers CSS :</p>
+        <ol>
+          <li>
+            <strong>Layer reset :</strong>
+            <ul>
+              <li><code>bretzel-reset.css</code> - Reset CSS moderne</li>
+              <li><code>bretzel-print.css</code> - Styles d'impression</li>
+              <li>
+                <code>bretzel-layouts.css</code> - Utilitaires de mise en page
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer theme :</strong>
+            <ul>
+              <li><code>theme.css</code> - Thème principal</li>
+              <li>
+                <code>theme-tokens.css</code> - Variables CSS du design system
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer components :</strong>
+            <ul>
+              <li><code>styles.css</code> - Styles de base des composants</li>
+              <li>
+                <em
+                  >+ tous les fichiers CSS des composants (chargés
+                  dynamiquement)</em
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer utilities :</strong>
+            <ul>
+              <li><code>bretzel-utilities.css</code> - Classes utilitaires</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section Styleguide -->
+      <section>
+        <h2>Styleguide</h2>
+        <p>Guide des composants disponibles :</p>
+        <nav>
+          <ul>
+            <li>
+              <a href="components/styleguide.html?component=button/button"
+                >Boutons</a
+              >
+            </li>
+            <li>
+              <a href="components/styleguide.html?component=checkbox/checkbox"
+                >Cases à cocher</a
+              >
+            </li>
+            <li>
+              <a href="components/styleguide.html?component=radio/radio"
+                >Boutons radio</a
+              >
+            </li>
+            <!-- D'autres composants pourront être ajoutés ici -->
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 KNACSS - Framework CSS moderne et accessible</p>
+    </footer>
+
     <script
       type="module"
       src="/assets/main.js"></script>
