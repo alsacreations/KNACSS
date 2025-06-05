@@ -62,21 +62,21 @@ body {
 
 .homepage-header p {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--on-surface-secondary);
   font-size: var(--text-l);
 }
 
 .homepage-section {
   padding: var(--spacing-32);
-  border: 1px solid var(--neutral);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
-  background: var(--surface-dim);
+  background: var(--layer-1);
 }
 
 .homepage-section h2 {
   margin: 0 0 var(--spacing-24) 0;
   padding-bottom: var(--spacing-8);
-  border-bottom: 2px solid var(--neutral);
+  border-bottom: 2px solid var(--border-medium);
   color: var(--on-surface);
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-semibold);
@@ -84,13 +84,13 @@ body {
 
 .homepage-section p {
   margin: 0 0 var(--spacing-24) 0;
-  color: var(--text-muted);
+  color: var(--on-surface-secondary);
 }
 
 .homepage-pre {
   padding: var(--spacing-24);
   overflow-x: auto;
-  border: 1px solid var(--neutral);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
   background: var(--surface);
   color: var(--on-surface);
@@ -102,8 +102,8 @@ body {
 .homepage-code {
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius-md);
-  background: var(--neutral-dim);
-  color: var(--on-neutral);
+  background: var(--layer-3);
+  color: var(--on-surface);
   font-family: var(--font-mono);
   font-size: var(--text-14);
 }
@@ -115,7 +115,7 @@ body {
 
 .dependency-category {
   padding: var(--spacing-24);
-  border: 1px solid var(--neutral);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
   background: var(--surface);
 }
@@ -141,22 +141,22 @@ body {
   justify-content: space-between;
   padding: var(--spacing-8);
   border-radius: var(--radius-md);
-  background: var(--surface-dim);
+  background: var(--layer-1);
   color: var(--on-surface);
   font-family: var(--font-mono);
   font-size: var(--text-14);
 }
 
 .dependency-version {
-  color: var(--text-muted);
+  color: var(--on-surface-secondary);
   font-size: var(--text-14);
 }
 
 .homepage-footer {
   margin-top: var(--spacing-32);
   padding: var(--spacing-32);
-  border-top: 1px solid var(--neutral);
-  color: var(--text-muted);
+  border-top: 1px solid var(--border-medium);
+  color: var(--on-surface-secondary);
   font-size: var(--text-14);
   text-align: center;
 }

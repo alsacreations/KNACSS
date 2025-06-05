@@ -2,8 +2,8 @@
 
 .styleguide-header {
   padding: var(--spacing-m) var(--spacing-l);
-  border-bottom: 1px solid var(--border-neutral);
-  background-color: var(--surface-dim);
+  border-bottom: 1px solid var(--border-medium);
+  background-color: var(--layer-1);
 
   & h1 {
     margin-bottom: var(--spacing-16);
@@ -41,14 +41,14 @@
   & > h2 {
     margin-bottom: var(--spacing-24);
     padding-bottom: var(--spacing-8);
-    border-bottom: 1px solid var(--border-neutral);
+    border-bottom: 1px solid var(--border-medium);
     font-size: var(--text-xl);
   }
 }
 
 .styleguide-component {
   margin-bottom: var(--spacing-32);
-  border: 1px solid var(--border-neutral);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   background-color: var(--surface);
 }
@@ -56,7 +56,7 @@
 .styleguide-component-title {
   margin: 0;
   padding: var(--spacing-12) var(--spacing-16);
-  border-bottom: 1px solid var(--border-neutral);
+  border-bottom: 1px solid var(--border-medium);
   font-size: var(--text-l);
 }
 
@@ -66,16 +66,16 @@
 
 .styleguide-component-actions {
   padding: var(--spacing-8) var(--spacing-16);
-  border-top: 1px solid var(--border-neutral);
-  background-color: var(--surface-dim);
+  border-top: 1px solid var(--border-medium);
+  background-color: var(--layer-1);
   text-align: right;
 }
 
 .styleguide-component-code {
-  --code-bg: var(--layer); /* Réutilisation du token existant --layer */
+  --code-bg: var(--layer-2); /* Réutilisation du token existant --layer */
 
   padding: var(--spacing-16);
-  border-top: 1px solid var(--border-neutral);
+  border-top: 1px solid var(--border-medium);
   border-bottom-right-radius: var(--radius-lg);
   border-bottom-left-radius: var(--radius-lg);
   background-color: var(--code-bg);
@@ -95,7 +95,7 @@
 .styleguide-footer {
   margin-top: var(--spacing-48);
   padding: var(--spacing-24) var(--spacing-16);
-  border-top: 1px solid var(--border-neutral);
-  color: var(--text-muted);
+  border-top: 1px solid var(--border-medium);
+  color: var(--on-surface-secondary);
   text-align: center;
 }

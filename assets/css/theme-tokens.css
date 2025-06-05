@@ -9,22 +9,26 @@
   /* Color Tokens */
   color-scheme: light dark;
 
+  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
+  --on-primary: light-dark(var(--color-white), var(--color-black));
   --surface: light-dark(var(--color-white), var(--color-gray-800));
-  --surface-dim: light-dark(var(--color-gray-50), var(--color-gray-900));
-  --layer: light-dark(var(--color-gray-100), var(--color-gray-700));
   --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
+  --on-surface-secondary: light-dark(
+    var(--color-gray-600),
+    var(--color-gray-300)
+  );
+  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
+  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
+  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
   --color-link: light-dark(var(--color-green-500), var(--color-orange-300));
   --color-link-hover: light-dark(
     var(--color-green-500),
     var(--color-orange-300)
   );
   --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
-  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
-  --on-primary: light-dark(var(--color-white), var(--color-black));
-  --neutral: light-dark(var(--color-gray-300), var(--color-gray-500));
-  --neutral-dim: light-dark(var(--color-gray-200), var(--color-gray-700));
-  --on-neutral: light-dark(var(--color-gray-800), var(--color-gray-100));
-  --text-muted: light-dark(var(--color-gray-500), var(--color-gray-400));
+  --border-light: var(--color-gray-200);
+  --border-medium: var(--color-gray-400);
+  --border-dark: var(--color-gray-600);
 
   &[data-theme="light"] {
     color-scheme: light;
