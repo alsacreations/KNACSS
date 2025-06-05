@@ -20,11 +20,8 @@
   --layer-1: light-dark(var(--color-gray-50), var(--color-gray-900));
   --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
   --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
-  --color-link: light-dark(var(--color-green-500), var(--color-orange-300));
-  --color-link-hover: light-dark(
-    var(--color-green-500),
-    var(--color-orange-300)
-  );
+  --link: light-dark(var(--color-green-500), var(--color-orange-300));
+  --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
   --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
   --border-light: var(--color-gray-200);
   --border-medium: var(--color-gray-400);

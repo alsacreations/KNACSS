@@ -19,7 +19,7 @@
   }
 
   & nav a {
-    color: var(--color-link);
+    color: var(--link);
     text-decoration: none;
 
     &:hover,
