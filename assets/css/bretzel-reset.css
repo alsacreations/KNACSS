@@ -79,7 +79,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+blockquote {
   text-wrap: balance;
 }
 
@@ -87,6 +88,10 @@ p,
 li,
 figcaption {
   text-wrap: pretty;
+}
+
+q {
+  quotes: "«\00A0" "\00A0»";
 }
 
 /* On préserve le ratio d'affichage */
