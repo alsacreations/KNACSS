@@ -9,8 +9,8 @@
   /* Color Tokens */
   color-scheme: light dark;
 
-  --primary: light-dark(var(--color-blue-500), var(--color-blue-300));
-  --on-primary: light-dark(var(--color-white), var(--color-black));
+  --primary: var(--color-blue-500);
+  --on-primary: var(--color-white);
   --surface: light-dark(var(--color-white), var(--color-gray-800));
   --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
   --on-surface-secondary: light-dark(
