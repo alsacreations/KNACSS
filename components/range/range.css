@@ -1,0 +1,69 @@
+/* --------------------
+ * Range native styles
+ * Made par Alsacréations
+ * -------------------- */
+
+:where([type="range"]) {
+  --background-color: var(--form-control-background, Field);
+  --border-color: var(--form-control-border-color, ButtonBorder);
+  --border-radius: var(--form-control-border-radius, 4px);
+  --text-color: var(--on-form-control, FieldText);
+  --range-line: 4px;
+  --range-thumb-color: var(--primary, #cccccc);
+  --range-thumb-size: 1.5rem;
+}
+
+.range {
+  position: relative;
+}
+
+[type="range"] {
+  width: 100%;
+  height: var(--range-line);
+  border: 0;
+  border-radius: var(--border-radius);
+  background-color: var(--border-color);
+  accent-color: var(--range-thumb-color);
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: var(--focus-ring-color, #008000) solid var(--focus-ring-width, 2px);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+
+  &::-webkit-slider-thumb {
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border-radius: 50%;
+    background-color: var(--range-thumb-color);
+    cursor: pointer;
+    appearance: none;
+    anchor-name: --thumb; /* Anchor point for position-anchor */
+  }
+}
+
+.range-value {
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: var(--form-control-border-radius, 4px);
+  background-color: var(--form-control-background, Field);
+  font-size: var(--text-14, 0.875rem);
+  translate: 0 1.4rem;
+}
+
+@supports (position-anchor: initial) {
+  .range-value {
+    position-anchor: --thumb;
+    position-area: bottom;
+    translate: 0 0.5rem;
+  }
+}
