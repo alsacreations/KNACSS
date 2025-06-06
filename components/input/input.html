@@ -1,45 +1,41 @@
 <div class="form-group stack">
-  <label for="input_text">Champ de texte</label>
-  <input type="text" id="input_text" name="input_text">
+  <label for="input_text">Votre nom (champ texte)</label>
+  <input type="text" id="input_text" name="input_text" autocomplete="name" aria-describedby="input_text_help">
+  <small id="input_text_help" class="form-group-info">Exemple&#8239;: Helmut Schneck</small>
 </div>
 
 <div class="form-group stack">
   <label for="input_required">Champ obligatoire *</label>
-  <input type="text" id="input_required" name="input_required" required>
+  <input type="text" id="input_required" name="input_required" required autocomplete="off">
 </div>
 
 <div class="form-group stack">
   <label for="input_disabled">Champ désactivé</label>
-  <input type="text" id="input_disabled" name="input_disabled" disabled>
+  <input type="text" id="input_disabled" name="input_disabled" disabled autocomplete="off">
 </div>
 
 <div class="form-group stack">
-  <label for="input_readonly">Champ en lecture seule</label>
-  <input type="text" id="input_readonly" name="input_readonly" value="Valeur en lecture seule" readonly>
-</div>
-
-<div class="form-group stack">
-  <label for="input_email">Adresse email</label>
+  <label for="input_email">Votre e-mail (champ e-mail)</label>
   <input type="email" id="input_email" name="input_email" autocomplete="email" aria-describedby="input_email_help">
-  <small id="input_email_help" class="form-group-info">Format attendu&#8239;: nom@exemple.fr</small>
+  <small id="input_email_help" class="form-group-info">Exemple&#8239;: helmut.schneck@alsacreations.com</small>
 </div>
 
 <div class="form-group stack">
-  <label for="input_tel">Numéro de téléphone</label>
+  <label for="input_tel">Votre téléphone (champ tel)</label>
   <input type="tel" id="input_tel" name="input_tel" autocomplete="tel" aria-describedby="input_tel_help">
-  <small id="input_tel_help" class="form-group-info">Format attendu&#8239;: 01 23 45 67 89</small>
+  <small id="input_tel_help" class="form-group-info">Exemple&#8239;: 01 23 45 67 89</small>
 </div>
 
 <div class="form-group stack">
-  <label for="input_url">URL</label>
+  <label for="input_url">Votre site web (champ URL)</label>
   <input type="url" id="input_url" name="input_url" autocomplete="url" aria-describedby="input_url_help">
-  <small id="input_url_help" class="form-group-info">Format attendu&#8239;: https://exemple.fr</small>
+  <small id="input_url_help" class="form-group-info">Exemple&#8239;: https://monsite.fr</small>
 </div>
 
 <div class="form-group stack">
-  <label for="input_number">Nombre</label>
-  <input type="number" id="input_number" name="input_number" min="0" max="999" step="1" aria-describedby="input_number_help">
-  <small id="input_number_help" class="form-group-info">Valeur entre 0 et 999</small>
+  <label for="input_number">Votre code postal (champ nombre)</label>
+  <input type="number" id="input_number" name="input_number" min="0" max="99999" step="1" autocomplete="postal-code" aria-describedby="input_number_help">
+  <small id="input_number_help" class="form-group-info">Exemple&#8239;: 67117</small>
 </div>
 
 <div class="form-group stack">
@@ -49,37 +45,18 @@
 
 <div class="form-group stack">
   <label for="input_search">Recherche</label>
-  <input type="search" id="input_search" name="input_search">
+  <input type="search" id="input_search" name="input_search" autocomplete="off">
 </div>
 
 <div class="form-group stack">
-  <label for="input_date">Date</label>
-  <input type="date" id="input_date" name="input_date">
+  <label for="input_date">Votre date de naissance (champ date)</label>
+  <input type="date" id="input_date" name="input_date" autocomplete="bday" aria-describedby="input_date_help">
+  <small id="input_date_help" class="form-group-info">Exemple&#8239;: 15/03/1990</small>
 </div>
 
-<div class="form-group stack">
-  <label for="input_time">Heure</label>
-  <input type="time" id="input_time" name="input_time">
-</div>
 
 <div class="form-group stack">
-  <label for="input_datetime">Date et heure</label>
-  <input type="datetime-local" id="input_datetime" name="input_datetime">
-</div>
-
-<div class="form-group stack">
-  <label for="input_color">Couleur</label>
-  <input type="color" id="input_color" name="input_color" value="#3366cc">
-</div>
-
-<div class="form-group stack">
-  <label for="input_range">Plage de valeurs</label>
-  <input type="range" id="input_range" name="input_range" min="0" max="100" value="50" step="1" aria-describedby="input_range_output">
-  <output for="input_range" id="input_range_output">50</output>
-</div>
-
-<div class="form-group stack">
-  <label for="input_file">Fichier</label>
-  <input type="file" id="input_file" name="input_file" accept="image/*,.pdf,.doc,.docx" aria-describedby="input_file_help">
+  <label for="input_file">Un fichier à nous transmettre&#8239;?</label>
+  <input type="file" id="input_file" name="input_file" accept="image/*,.pdf,.doc,.docx" autocomplete="off" aria-describedby="input_file_help">
   <small id="input_file_help" class="form-group-info">Formats acceptés&#8239;: images, PDF, documents Word</small>
 </div>
