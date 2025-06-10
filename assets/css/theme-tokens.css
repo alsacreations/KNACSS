@@ -23,6 +23,7 @@
   --link: light-dark(var(--color-green-500), var(--color-orange-300));
   --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
   --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
+  --accent: light-dark(var(--color-blue-300), var(--primary));
   --error: light-dark(var(--color-red-300), var(--color-red-500));
   --success: light-dark(var(--color-green-300), var(--color-green-500));
   --border-light: var(--color-gray-200);
@@ -64,7 +65,7 @@
   --checkable-size: 1.25em;
 
   /* States Tokens */
-  --focus-ring-color: var(--primary);
+  --focus-ring-color: var(--accent);
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
 }

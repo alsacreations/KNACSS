@@ -4,9 +4,9 @@
 
 :where([type="radio"]) {
   --background-color: var(--form-control-background, ButtonFace);
-
-  /* prettier-ignore */
-  --background-color-checked: oklch(from var(--background-color) calc(l * 0.8) c h);
+  --background-color-checked: oklch(
+    from var(--background-color) calc(l * 0.8) c h
+  );
   --border-color: var(--checkables-border-color, ButtonBorder);
   --border-color-checked: var(--border-color);
   --border-radius: var(--radius-full);
