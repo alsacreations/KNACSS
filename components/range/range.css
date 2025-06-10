@@ -9,7 +9,7 @@
   --text-color: var(--on-form-control, FieldText);
   --track-size: 3px;
   --track-color: var(--on-surface, #eeeeee);
-  --thumb-color: var(--accent, #cccccc);
+  --thumb-color: var(--accent-invert, #cccccc);
   --thumb-color-checked: oklch(from var(--thumb-color) calc(l * 1.2) c h);
   --thumb-size: 1rem;
 }
