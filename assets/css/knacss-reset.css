@@ -1,15 +1,20 @@
-/* -------------------/*
+/* ==========================================
  * KNACSS Reset CSS
  * Made par Alsacréations
  * Consignes : à placer dans un layer `reset` sous les autres layers
- /* ------------------ */
+ * Mise à jour : 2025-06-14
+ * ========================================== */
 
-/* On adopte les couleurs système afin de s'adapter automatiquement en dark et light mode */
+/* ==========================================
+ * 1. CONFIGURATION GLOBALE
+ * ========================================== */
+
+/* Couleurs système pour adaptation automatique dark/light mode */
 :root {
   color-scheme: light dark;
 }
 
-/* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
+/* Modèle de boîte uniforme et prévention des débordements flex/grid */
 *,
 *::before,
 *::after {
@@ -17,19 +22,18 @@
   min-width: 0;
 }
 
-/* On prévoit une petite marge au-dessus des ancres ciblées */
-:target {
-  scroll-margin-block: 1rem;
-}
+/* ==========================================
+ * 2. ÉLÉMENTS DE BASE (HTML/BODY)
+ * ========================================== */
 
-/* On évite les débordements de page et autorise les transitions avec mots clés */
+/* Configuration globale de la page */
 html {
   interpolate-size: allow-keywords;
   overflow-wrap: break-word;
   text-size-adjust: none;
 }
 
-/* On donne à body toute la hauteur + styles divers */
+/* Styles de base du document */
 body {
   min-height: 100dvh;
   margin: 0;
@@ -38,33 +42,25 @@ body {
   text-rendering: optimizespeed;
 }
 
-/* On supprime les styles des listes ayant une class (version accessible) */
-:where(ol, ul)[class] {
-  padding-left: 0;
+/* ==========================================
+ * 3. NAVIGATION ET ANCRES
+ * ========================================== */
 
-  & > li::marker {
-    content: "";
-  }
+/* Marge au-dessus des ancres ciblées */
+:target {
+  scroll-margin-block: 1rem;
 }
 
-/* On évite les débordements d'éléments */
-img,
-picture,
-table,
-td,
-blockquote,
-pre,
-code,
-input,
-textarea,
-select,
-video,
-svg,
-iframe {
-  max-width: 100%;
+/* Liens sans classe */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-/* On réduit de la hauteur de ligne sur certains éléments */
+/* ==========================================
+ * 4. TYPOGRAPHIE
+ * ========================================== */
+
+/* Hauteur de ligne réduite sur les éléments de titre */
 h1,
 h2,
 h3,
@@ -75,7 +71,7 @@ label {
   line-height: 1.1;
 }
 
-/* On améliore la typographie */
+/* Amélioration de la typographie avec text-wrap */
 h1,
 h2,
 h3,
@@ -92,33 +88,48 @@ figcaption {
   text-wrap: pretty;
 }
 
+/* Guillemets français */
 q {
   quotes: "«\00A0" "\00A0»";
 }
 
-/* On préserve le ratio d'affichage */
-:where(img, picture):where(:not([src$=".svg"])) {
-  height: auto;
+/* ==========================================
+ * 5. LISTES
+ * ========================================== */
+
+/* Suppression des styles des listes avec classe (version accessible) */
+:where(ol, ul)[class] {
+  padding-left: 0;
+
+  & > li::marker {
+    content: "";
+  }
 }
 
-/* On facilite l'affichage des images */
+/* ==========================================
+ * 6. ÉLÉMENTS MÉDIA ET CONTENU
+ * ========================================== */
+
+/* Prévention des débordements */
 img,
-picture {
-  display: block;
+picture,
+table,
+td,
+blockquote,
+pre,
+code,
+input,
+textarea,
+select,
+video,
+svg,
+iframe {
+  max-width: 100%;
 }
 
-/* On stylise par défaut des liens */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* On supprime les marges */
-figure {
-  margin: 0;
-}
-
-/* On change ces éléments en block */
+/* Affichage en bloc pour les éléments média */
 img,
+picture,
 svg,
 video,
 canvas,
@@ -129,7 +140,21 @@ object {
   display: block;
 }
 
-/* On stylise les formulaires */
+/* Préservation du ratio d'affichage */
+:where(img, picture):where(:not([src$=".svg"])) {
+  height: auto;
+}
+
+/* Suppression des marges par défaut */
+figure {
+  margin: 0;
+}
+
+/* ==========================================
+ * 7. FORMULAIRES
+ * ========================================== */
+
+/* Normalisation des éléments de formulaire */
 input,
 button,
 textarea,
@@ -144,6 +169,7 @@ select {
   vertical-align: middle;
 }
 
+/* Conteneurs de formulaire */
 form,
 fieldset {
   border: none;
@@ -161,6 +187,7 @@ legend {
   white-space: normal;
 }
 
+/* Éléments interactifs */
 label {
   display: inline-block;
   cursor: pointer;
@@ -172,6 +199,7 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Configuration spécifique textarea */
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -179,7 +207,11 @@ textarea {
   resize: vertical;
 }
 
-/* On stylise les éléments préformatés */
+/* ==========================================
+ * 8. ÉLÉMENTS PRÉFORMATÉS
+ * ========================================== */
+
+/* Famille de polices et taille pour le code */
 pre,
 code,
 kbd,
@@ -188,6 +220,7 @@ samp {
   font-size: 1em;
 }
 
+/* Configuration spécifique pre */
 pre {
   overflow: auto;
   line-height: normal;
@@ -195,11 +228,16 @@ pre {
   tab-size: 2;
 }
 
-/* On stylise les SVG */
+/* ==========================================
+ * 9. SVG
+ * ========================================== */
+
+/* Couleur par défaut des SVG */
 svg:not([fill]) {
   fill: currentcolor;
 }
 
+/* Configuration d'affichage des SVG */
 svg {
   overflow: visible;
 }
@@ -208,11 +246,16 @@ svg * {
   transform-box: fill-box;
 }
 
+/* Masquage des SVG contenant des symboles */
 svg:has(symbol) {
   display: none;
 }
 
-/* On corrige des styles ARIA */
+/* ==========================================
+ * 10. ACCESSIBILITÉ (ARIA)
+ * ========================================== */
+
+/* États ARIA avec curseurs appropriés */
 [aria-busy="true"] {
   cursor: progress;
 }
@@ -226,6 +269,7 @@ svg:has(symbol) {
   cursor: not-allowed;
 }
 
+/* Gestion des éléments cachés mais accessibles */
 [aria-hidden="false"][hidden] {
   display: revert;
 }
@@ -235,7 +279,11 @@ svg:has(symbol) {
   clip: rect(0, 0, 0, 0);
 }
 
-/* On désactive les animations selon les préférences utilisateur */
+/* ==========================================
+ * 11. PRÉFÉRENCES UTILISATEUR
+ * ========================================== */
+
+/* Désactivation des animations pour les utilisateurs sensibles */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
