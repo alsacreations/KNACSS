@@ -22,8 +22,9 @@
   scroll-margin-block: 1rem;
 }
 
-/* On évite les débordements de page et les zooms non désirés en landscape */
+/* On évite les débordements de page et autorise les transitions avec mots clés */
 html {
+  interpolate-size: allow-keywords;
   overflow-wrap: break-word;
   text-size-adjust: none;
 }
@@ -48,6 +49,7 @@ body {
 
 /* On évite les débordements d'éléments */
 img,
+picture,
 table,
 td,
 blockquote,
@@ -95,12 +97,14 @@ q {
 }
 
 /* On préserve le ratio d'affichage */
-iframe,
-img,
-input,
-select,
-textarea {
+:where(img, picture):where(:not([src$=".svg"])) {
   height: auto;
+}
+
+/* On facilite l'affichage des images */
+img,
+picture {
+  display: block;
 }
 
 /* On stylise par défaut des liens */
