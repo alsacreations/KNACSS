@@ -2,11 +2,11 @@
  * KNACSS Reset CSS
  * Made par Alsacréations
  * Consignes : à placer dans un layer `reset` sous les autres layers
- * Mise à jour : 2025-06-14
+ * Mise à jour : 2025-06-16
  * ========================================== */
 
 /* ==========================================
- * 1. CONFIGURATION GLOBALE
+ * CONFIGURATION GLOBALE
  * ========================================== */
 
 /* Couleurs système pour adaptation automatique dark/light mode */
@@ -23,7 +23,7 @@
 }
 
 /* ==========================================
- * 2. ÉLÉMENTS DE BASE (HTML/BODY)
+ * ÉLÉMENTS DE BASE (HTML/BODY)
  * ========================================== */
 
 /* Configuration globale de la page */
@@ -43,8 +43,26 @@ body {
 }
 
 /* ==========================================
- * 3. NAVIGATION ET ANCRES
+ * NAVIGATION ET FOCUS
  * ========================================== */
+
+/* Masquage de l'outline pour les interactions à la souris/touch */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Outline uniquement pour la navigation au clavier */
+:focus-visible {
+  outline: 2px solid light-dark(#4285f4, #8ab4f8);
+  outline-offset: 2px;
+}
+
+/* Moderne: utilisation de la couleur d'accent système */
+@supports (outline-color: AccentColor) {
+  :focus-visible {
+    outline-color: AccentColor;
+  }
+}
 
 /* Marge au-dessus des ancres ciblées */
 :target {
@@ -57,7 +75,7 @@ a:not([class]) {
 }
 
 /* ==========================================
- * 4. TYPOGRAPHIE
+ * TYPOGRAPHIE
  * ========================================== */
 
 /* Hauteur de ligne réduite sur les éléments de titre */
@@ -94,20 +112,16 @@ q {
 }
 
 /* ==========================================
- * 5. LISTES
+ * LISTES
  * ========================================== */
 
 /* Suppression des styles des listes avec classe (version accessible) */
-:where(ol, ul)[class] {
-  padding-left: 0;
-
-  & > li::marker {
-    content: "";
-  }
+:where(ul[role="list"], ol[role="list"]) {
+  list-style: none;
 }
 
 /* ==========================================
- * 6. ÉLÉMENTS MÉDIA ET CONTENU
+ * ÉLÉMENTS MÉDIA ET CONTENU
  * ========================================== */
 
 /* Prévention des débordements */
@@ -151,7 +165,7 @@ figure {
 }
 
 /* ==========================================
- * 7. FORMULAIRES
+ * FORMULAIRES
  * ========================================== */
 
 /* Normalisation des éléments de formulaire */
@@ -208,7 +222,7 @@ textarea {
 }
 
 /* ==========================================
- * 8. ÉLÉMENTS PRÉFORMATÉS
+ * ÉLÉMENTS PRÉFORMATÉS
  * ========================================== */
 
 /* Famille de polices et taille pour le code */
@@ -229,7 +243,7 @@ pre {
 }
 
 /* ==========================================
- * 9. SVG
+ * SVG
  * ========================================== */
 
 /* Couleur par défaut des SVG */
@@ -252,7 +266,7 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * 10. ACCESSIBILITÉ (ARIA)
+ * ACCESSIBILITÉ (ARIA)
  * ========================================== */
 
 /* États ARIA avec curseurs appropriés */
@@ -280,7 +294,7 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * 11. PRÉFÉRENCES UTILISATEUR
+ * PRÉFÉRENCES UTILISATEUR
  * ========================================== */
 
 /* Désactivation des animations pour les utilisateurs sensibles */
