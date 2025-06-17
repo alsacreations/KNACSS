@@ -40,16 +40,6 @@ input:not(
   font: inherit;
   line-height: 1.5;
 
-  /* États de focus */
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: var(--focus-ring-color, #008000) solid var(--focus-ring-width, 2px);
-    outline-offset: var(--focus-ring-offset, 2px);
-  }
-
   /* État désactivé */
   &:disabled {
     opacity: 50%;

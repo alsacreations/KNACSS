@@ -187,3 +187,8 @@ body {
 .dependency-grid {
   --stack-gap: var(--spacing-16);
 }
+
+.homepage-nav {
+  margin: 0;
+  padding: 0;
+}
