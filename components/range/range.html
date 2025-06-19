@@ -1,13 +1,18 @@
-<div class="range">
-  <input
-    type="range"
-    id="range_demo"
-    name="range_demo"
-    min="0"
-    max="100"
-    step="1"
-    value="75"
-    oninput="this.nextElementSibling.textContent = this.value + '%'"
-  />
-  <output class="range-value" for="range_demo">75%</output>
+<div class="form-group stack">
+  <label for="range_demo">Niveau de satisfaction</label>
+  <div class="range">
+    <input
+      type="range"
+      id="range_demo"
+      name="range_demo"
+      min="0"
+      max="100"
+      step="1"
+      value="75"
+      oninput="this.nextElementSibling.textContent = this.value + '%'"
+      aria-describedby="range_demo_help"
+    />
+    <output class="range-value" for="range_demo">75%</output>
+  </div>
+  <small id="range_demo_help" class="form-group-info">Utilisez le curseur pour sélectionner votre niveau (0% à 100%)</small>
 </div>
