@@ -12,11 +12,11 @@
       [type="radio"]
     )
 ) {
-  --background-color: var(--form-control-background, Field);
+  --background-color: var(--form-control-background, ButtonFace);
   --border-color: var(--form-control-border-color, ButtonBorder);
   --border-radius: var(--form-control-border-radius, 0);
   --border-width: var(--form-control-border-width, 1px);
-  --text-color: var(--on-form-control, FieldText);
+  --text-color: var(--on-form-control, ButtonText);
 }
 
 input:not(

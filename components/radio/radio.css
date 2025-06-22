@@ -4,15 +4,11 @@
 
 :where([type="radio"]) {
   --background-color: var(--form-control-background, ButtonFace);
-  --background-color-checked: oklch(
-    from var(--background-color) calc(l * 0.8) c h
-  );
   --border-color: var(--checkables-border-color, ButtonBorder);
-  --border-color-checked: var(--border-color);
   --border-radius: var(--radius-full);
   --border-width: var(--form-control-border-width, 1px);
   --box-shadow: none;
-  --text-color: var(--on-primary, ButtonText);
+  --radio-color: var(--accent, Field);
 }
 
 [type="radio"] {
@@ -27,7 +23,6 @@
   border-radius: var(--border-radius);
   background-color: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  color: var(--text-color);
   cursor: pointer;
   appearance: none;
   place-content: center;
@@ -39,7 +34,7 @@
     transition-property: scale;
     transition-duration: var(--transition-duration);
     border-radius: var(--radius-full);
-    background-color: var(--accent, #cccccc);
+    background-color: var(--radio-color);
     scale: 0;
   }
 

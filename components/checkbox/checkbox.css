@@ -6,13 +6,11 @@
   --background-color: var(--form-control-background, ButtonFace);
 
   /* prettier-ignore */
-  --background-color-checked: oklch(from var(--background-color) calc(l * 0.8) c h);
+  --background-color-checked: var(--primary, Field);
   --border-color: var(--checkables-border-color, ButtonBorder);
-  --border-color-checked: var(--border-color);
   --border-radius: var(--form-control-border-radius, 0);
   --border-width: var(--form-control-border-width, 1px);
   --box-shadow: none;
-  --text-color: var(--on-primary, ButtonText);
 }
 
 [type="checkbox"] {
@@ -30,7 +28,6 @@
   border-radius: var(--border-radius);
   background-color: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  color: var(--text-color);
   font: inherit;
   line-height: 1;
   cursor: pointer;
@@ -40,9 +37,8 @@
 
   /* States */
   &:is(:checked, :indeterminate) {
-    background-color: var(--primary);
+    background-color: var(--background-color-checked);
     box-shadow: inset 0 0 0 var(--border-width) transparent;
-    color: var(--color-white, #ffffff);
   }
 
   &:checked::after {
