@@ -44,9 +44,140 @@
     </header>
 
     <main
-      class="autogrid homepage-main"
+      class="homepage-main"
       role="main"
       id="main-content">
+      <!-- Section Styleguide -->
+      <nav
+        class="homepage-section homepage-styleguide"
+        aria-labelledby="styleguide-heading"
+        role="navigation">
+        <h2 id="styleguide-heading">Styleguide</h2>
+        <p>Guide des éléments HTML natifs disponibles&#8239;:</p>
+        <ul
+          role="list"
+          class="homepage-nav cluster"
+          aria-label="Navigation du styleguide">
+          <li>
+            <a
+              href="components/styleguide.html?component=button/button"
+              class="btn"
+              >Bouton</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=checkbox/checkbox"
+              class="btn"
+              >Checkbox</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=radio/radio"
+              class="btn"
+              >Radio</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=select/select"
+              class="btn"
+              >Select</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=switch/switch"
+              class="btn"
+              >Switch</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=input/input"
+              class="btn"
+              >Input</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=textarea/textarea"
+              class="btn"
+              >Textarea</a
+            >
+          </li>
+          <li>
+            <a
+              href="components/styleguide.html?component=range/range"
+              class="btn"
+              >Range</a
+            >
+          </li>
+          <!-- D'autres composants pourront être ajoutés ici -->
+        </ul>
+      </nav>
+
+      <!-- Section Styles -->
+      <section
+        class="homepage-section"
+        aria-labelledby="styles-heading">
+        <h2 id="styles-heading">Styles</h2>
+        <p>Fichiers de styles chargés dans l'ordre des layers CSS&#8239;:</p>
+        <ol>
+          <li>
+            <strong>Layer reset&#8239;:</strong>
+            <ul>
+              <li>
+                <code class="homepage-code">knacss-reset.css</code> - Reset CSS
+                moderne
+              </li>
+              <li>
+                <code class="homepage-code">knacss-print.css</code> - Styles
+                d'impression
+              </li>
+              <li>
+                <code class="homepage-code">knacss-layouts.css</code> -
+                Utilitaires de mise en page
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer theme&#8239;:</strong>
+            <ul>
+              <li>
+                <code class="homepage-code">theme.css</code> - Thème principal
+              </li>
+              <li>
+                <code class="homepage-code">theme-tokens.css</code> - Variables
+                CSS du design system
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer components&#8239;:</strong>
+            <ul>
+              <li>
+                <code class="homepage-code">styles.css</code> - Styles de base
+                des composants
+              </li>
+              <li>
+                <em>+ tous les fichiers CSS des composants</em>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer utilities&#8239;:</strong>
+            <ul>
+              <li>
+                <code class="homepage-code">knacss-utilities.css</code> -
+                Classes utilitaires
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
       <!-- Section Dépendances -->
       <aside
         class="homepage-section"
@@ -150,171 +281,6 @@
           </div>
         </div>
       </aside>
-
-      <!-- Section Architecture -->
-      <section
-        class="homepage-section"
-        aria-labelledby="arch-heading">
-        <h2 id="arch-heading">Architecture</h2>
-        <p>Structure simplifiée du projet&#8239;:</p>
-        <pre class="homepage-pre"><code class="homepage-code">KNACSS/
-├── assets/
-│   ├── app.css
-│   ├── main.js
-│   ├── css/
-│   │   ├── knacss-reset.css
-│   │   ├── knacss-print.css
-│   │   ├── knacss-layouts.css
-│   │   ├── theme.css
-│   │   ├── theme-tokens.css
-│   │   ├── styles.css
-│   │   ├── styleguide.css
-│   │   └── knacss-utilities.css
-│   └── js/
-│       └── styleguide.js
-├── components/
-│   ├── styleguide.html
-│   ├── button/
-│   ├── checkbox/
-│   ├── input/
-│   ├── radio/
-│   ├── range/
-│   └── select/
-└── public/
-    ├── fonts/
-    └── images/</code></pre>
-      </section>
-
-      <!-- Section Styles -->
-      <section
-        class="homepage-section"
-        aria-labelledby="styles-heading">
-        <h2 id="styles-heading">Styles</h2>
-        <p>Fichiers de styles chargés dans l'ordre des layers CSS&#8239;:</p>
-        <ol>
-          <li>
-            <strong>Layer reset&#8239;:</strong>
-            <ul>
-              <li>
-                <code class="homepage-code">knacss-reset.css</code> - Reset CSS
-                moderne
-              </li>
-              <li>
-                <code class="homepage-code">knacss-print.css</code> - Styles
-                d'impression
-              </li>
-              <li>
-                <code class="homepage-code">knacss-layouts.css</code> -
-                Utilitaires de mise en page
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Layer theme&#8239;:</strong>
-            <ul>
-              <li>
-                <code class="homepage-code">theme.css</code> - Thème principal
-              </li>
-              <li>
-                <code class="homepage-code">theme-tokens.css</code> - Variables
-                CSS du design system
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Layer components&#8239;:</strong>
-            <ul>
-              <li>
-                <code class="homepage-code">styles.css</code> - Styles de base
-                des composants
-              </li>
-              <li>
-                <em>+ tous les fichiers CSS des composants</em>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Layer utilities&#8239;:</strong>
-            <ul>
-              <li>
-                <code class="homepage-code">knacss-utilities.css</code> -
-                Classes utilitaires
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Section Styleguide -->
-      <nav
-        class="homepage-section"
-        aria-labelledby="styleguide-heading"
-        role="navigation">
-        <h2 id="styleguide-heading">Styleguide</h2>
-        <p>Guide des éléments HTML natifs disponibles&#8239;:</p>
-        <ul
-          role="list"
-          class="homepage-nav stack"
-          aria-label="Navigation du styleguide">
-          <li>
-            <a
-              href="components/styleguide.html?component=button/button"
-              class="btn"
-              >Bouton</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=checkbox/checkbox"
-              class="btn"
-              >Checkbox</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=radio/radio"
-              class="btn"
-              >Radio</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=select/select"
-              class="btn"
-              >Select</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=switch/switch"
-              class="btn"
-              >Switch</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=input/input"
-              class="btn"
-              >Input</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=textarea/textarea"
-              class="btn"
-              >Textarea</a
-            >
-          </li>
-          <li>
-            <a
-              href="components/styleguide.html?component=range/range"
-              class="btn"
-              >Range</a
-            >
-          </li>
-          <!-- D'autres composants pourront être ajoutés ici -->
-        </ul>
-      </nav>
     </main>
 
     <footer

@@ -180,8 +180,16 @@ body {
 
 /* Classes spécifiques pour la homepage */
 .homepage-main {
-  --col-min-size: 20rem;
-  --autogrid-gap: var(--spacing-32);
+  display: grid;
+  gap: var(--spacing-32);
+
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & > .homepage-styleguide {
+      grid-column: span 2;
+    }
+  }
 }
 
 .dependency-grid {
