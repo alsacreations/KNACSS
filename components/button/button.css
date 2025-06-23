@@ -30,7 +30,7 @@
   width: fit-content;
   padding: var(--form-control-spacing, 12px 16px);
   transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.3s);
+  transition-duration: var(--transition-duration, 0.25s);
   border: 0;
   border-radius: var(--button-border-radius);
   background-color: var(--button-background-color);

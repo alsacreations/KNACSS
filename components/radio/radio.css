@@ -17,7 +17,7 @@
   margin: 0;
   padding: 0;
   transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.3s);
+  transition-duration: var(--transition-duration, 0.25s);
   border: 0;
   border-radius: var(--radio-border-radius);
   background-color: var(--radio-background-color);
@@ -31,7 +31,7 @@
     width: calc(var(--checkable-size, 1.25em) / 1.8);
     height: calc(var(--checkable-size, 1.25em) / 1.8);
     transition-property: scale;
-    transition-duration: var(--transition-duration);
+    transition-duration: var(--transition-duration, 0.25s);
     border-radius: var(--radius-full);
     background-color: var(--radio-thumb-color);
     scale: 0;

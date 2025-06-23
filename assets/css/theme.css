@@ -70,7 +70,7 @@
   --radius-full: 9999px;
 
   /* Misc */
-  --transition-duration: 0.3s;
+  --transition-duration: 0.25s;
   --z-under-page-level: -1;
   --z-above-page-level: 1;
   --z-header-level: 1000;

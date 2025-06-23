@@ -6,49 +6,67 @@
 :where([role="switch"]) {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
-  --switch-thumb-size: calc(var(--switch-height) - 4px);
-  --switch-track-color: var(--color-gray-300, #d1d5db);
-  --switch-track-color-checked: var(--primary, #3b82f6);
+  --switch-track-color: var(--form-control-background, ButtonFace);
+  --switch-track-color-checked: var(--success, #ffffff);
+  --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: var(--color-white, #ffffff);
+  --switch-thumb-color-checked: var(--success, #ffffff);
   --switch-border-radius: var(--radius-full, 9999px);
+  --switch-border-color: var(--switch-track-color);
+  --switch-border-width: 1px;
 }
 
 [role="switch"] {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
   width: var(--switch-width);
   height: var(--switch-height);
   margin: 0;
   padding: 0;
-  transition:
-    background-color 0.3s,
-    border-color 0.3s;
-  border: 2px solid var(--switch-track-color);
+  transition-property: background;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: var(--switch-border-color) solid var(--switch-border-width);
   border-radius: var(--switch-border-radius);
   background-color: var(--switch-track-color);
   cursor: pointer;
   appearance: none;
 
+  &::before {
+    content: "";
+    transition-property: flex-grow;
+    transition-duration: var(--transition-duration, 0.25s);
+  }
+
   /* Indicateur du switch */
   &::after {
     content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
+    flex-shrink: 0;
     width: var(--switch-thumb-size);
     height: var(--switch-thumb-size);
-    transition: translate 0.3s;
+    transition-property: background, scale;
+    transition-duration: var(--transition-duration, 0.25s);
     border-radius: var(--switch-border-radius);
     background-color: var(--switch-thumb-color);
-    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    scale: 0.7;
   }
 
   /* État activé */
   &:checked {
     border-color: var(--switch-track-color-checked);
-    background-color: var(--switch-track-color-checked);
+    background-color: var(--switch-thumb-color-checked);
+
+    &::before {
+      flex-grow: 1;
+    }
 
     &::after {
-      translate: calc(var(--switch-width) - var(--switch-height)) 0;
+      scale: 1;
+      background-color: var(--on-primary, #ffffff);
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path fill="green" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
     }
   }
 
