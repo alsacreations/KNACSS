@@ -12,11 +12,11 @@
       [type="radio"]
     )
 ) {
-  --background-color: var(--form-control-background, ButtonFace);
-  --border-color: var(--form-control-border-color, ButtonBorder);
-  --border-radius: var(--form-control-border-radius, 0);
-  --border-width: var(--form-control-border-width, 1px);
-  --text-color: var(--on-form-control, ButtonText);
+  --input-background-color: var(--form-control-background, ButtonFace);
+  --input-border-color: var(--form-control-border-color, ButtonBorder);
+  --input-border-radius: var(--form-control-border-radius, 0);
+  --input-border-width: var(--form-control-border-width, 1px);
+  --input-text-color: var(--on-form-control, ButtonText);
 }
 
 input:not(
@@ -33,10 +33,10 @@ input:not(
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.3s);
   border: 0;
-  border-radius: var(--border-radius);
-  background-color: var(--background-color);
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  color: var(--text-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  box-shadow: inset 0 0 0 var(--input-border-width) var(--input-border-color);
+  color: var(--input-text-color);
   font: inherit;
   line-height: 1.5;
 
@@ -48,20 +48,20 @@ input:not(
 
   /* État en lecture seule */
   &:read-only {
-    background-color: var(--layer-1, var(--background-color));
+    background-color: var(--layer-1, var(--input-background-color));
     cursor: default;
   }
 
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    --border-color: var(--error);
-    --border-width: 2px;
+    --input-border-color: var(--error);
+    --input-border-width: 2px;
   }
 
   /* État valide après interaction utilisateur */
   &:user-valid {
-    --border-color: var(--success);
-    --border-width: 2px;
+    --input-border-color: var(--success);
+    --input-border-width: 2px;
   }
 
   /* Placeholder */
@@ -125,7 +125,7 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.3s);
     border: 0;
-    border-radius: var(--border-radius);
+    border-radius: var(--input-border-radius);
     background-color: var(--primary, #3366cc);
     color: var(--on-primary, #ffffff);
     font: inherit;
@@ -142,7 +142,7 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.3s);
     border: 0;
-    border-radius: var(--border-radius);
+    border-radius: var(--input-border-radius);
     background-color: var(--primary, #3366cc);
     color: var(--on-primary, #ffffff);
     font: inherit;

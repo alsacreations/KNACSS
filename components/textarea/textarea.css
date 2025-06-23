@@ -4,11 +4,11 @@
  * -------------------- */
 
 :where(textarea) {
-  --background-color: var(--form-control-background, ButtonFace);
-  --border-color: var(--form-control-border-color, ButtonBorder);
-  --border-radius: var(--form-control-border-radius, 0);
-  --border-width: var(--form-control-border-width, 1px);
-  --text-color: var(--on-form-control, ButtonText);
+  --textarea-background-color: var(--form-control-background, ButtonFace);
+  --textarea-border-color: var(--form-control-border-color, ButtonBorder);
+  --textarea-border-radius: var(--form-control-border-radius, 0);
+  --textarea-border-width: var(--form-control-border-width, 1px);
+  --textarea-text-color: var(--on-form-control, ButtonText);
 }
 
 textarea {
@@ -19,10 +19,11 @@ textarea {
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.3s);
   border: 0;
-  border-radius: var(--border-radius);
-  background-color: var(--background-color);
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  color: var(--text-color);
+  border-radius: var(--textarea-border-radius);
+  background-color: var(--textarea-background-color);
+  box-shadow: inset 0 0 0 var(--textarea-border-width)
+    var(--textarea-border-color);
+  color: var(--textarea-text-color);
   font: inherit;
   line-height: 1.5;
   resize: vertical;
@@ -37,15 +38,15 @@ textarea {
 
   /* État en lecture seule */
   &:read-only {
-    background-color: var(--layer-1, var(--background-color));
+    background-color: var(--layer-1, var(--textarea-background-color));
     resize: none;
     cursor: default;
   }
 
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    --border-color: var(--error);
-    --border-width: 2px;
+    --textarea-border-color: var(--error);
+    --textarea-border-width: 2px;
   }
 
   /* Placeholder */

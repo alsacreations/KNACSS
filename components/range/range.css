@@ -4,14 +4,16 @@
  * -------------------- */
 
 :where([type="range"]) {
-  --background-color: var(--form-control-background, Field);
-  --border-radius: var(--form-control-border-radius, 4px);
-  --text-color: var(--on-form-control, FieldText);
-  --track-size: 3px;
-  --track-color: var(--on-surface, #eeeeee);
-  --thumb-color: var(--accent-invert, #cccccc);
-  --thumb-color-checked: oklch(from var(--thumb-color) calc(l * 1.2) c h);
-  --thumb-size: 1rem;
+  --range-background-color: var(--form-control-background, Field);
+  --range-border-radius: var(--form-control-border-radius, 4px);
+  --range-text-color: var(--on-form-control, FieldText);
+  --range-track-size: 3px;
+  --range-track-color: var(--on-surface, #eeeeee);
+  --range-thumb-color: var(--accent-invert, #cccccc);
+  --range-thumb-color-checked: oklch(
+    from var(--range-thumb-color) calc(l * 1.2) c h
+  );
+  --range-thumb-size: 1rem;
 }
 
 .range {
@@ -20,11 +22,11 @@
 
 [type="range"] {
   width: 100%;
-  height: var(--track-size);
+  height: var(--range-track-size);
   border: 0;
-  border-radius: var(--border-radius);
-  background-color: var(--track-color);
-  accent-color: var(--thumb-color);
+  border-radius: var(--range-border-radius);
+  background-color: var(--range-track-color);
+  accent-color: var(--range-thumb-color);
   appearance: none;
 
   &:is(:disabled, [disabled]) {
@@ -34,35 +36,35 @@
 
   &::-webkit-slider-thumb {
     box-sizing: content-box;
-    width: var(--thumb-size);
-    height: var(--thumb-size);
-    border: var(--track-size) solid var(--track-color);
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border: var(--range-track-size) solid var(--range-track-color);
     border-radius: 50%;
-    background-color: var(--thumb-color);
+    background-color: var(--range-thumb-color);
     cursor: pointer;
     appearance: none;
     anchor-name: --thumb; /* Anchor point for position-anchor */
   }
 
   &:active::-webkit-slider-thumb {
-    background-color: var(--thumb-color-checked);
+    background-color: var(--range-thumb-color-checked);
     cursor: grabbing;
   }
 
   &::-moz-range-thumb {
     box-sizing: content-box;
-    width: var(--thumb-size);
-    height: var(--thumb-size);
-    border: var(--track-size) solid var(--track-color);
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border: var(--range-track-size) solid var(--range-track-color);
     border-radius: 50%;
-    background-color: var(--thumb-color);
+    background-color: var(--range-thumb-color);
     cursor: pointer;
     appearance: none;
     anchor-name: --thumb; /* Anchor point for position-anchor */
   }
 
   &:active::-moz-range-thumb {
-    background-color: var(--thumb-color-checked);
+    background-color: var(--range-thumb-color-checked);
     cursor: grabbing;
   }
 }
