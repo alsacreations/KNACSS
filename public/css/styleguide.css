@@ -1,0 +1,100 @@
+/* Styles spécifiques pour le guide de style */
+
+.styleguide-header {
+  padding: var(--spacing-m) var(--spacing-l);
+  border-bottom: 1px solid var(--border-medium);
+  background-color: var(--layer-1);
+
+  & h1 {
+    margin-bottom: var(--spacing-16);
+    font-size: var(--text-2xl);
+  }
+
+  & nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: var(--spacing-16);
+  }
+
+  & nav a {
+    color: var(--link);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.styleguide-main {
+  max-width: 80rem; /* 1280px */
+  margin-inline: auto;
+  padding: var(--spacing-24) var(--spacing-16);
+}
+
+.styleguide-section {
+  margin-bottom: var(--spacing-48);
+
+  & > h2 {
+    margin-bottom: var(--spacing-24);
+    padding-bottom: var(--spacing-8);
+    border-bottom: 1px solid var(--border-medium);
+    font-size: var(--text-xl);
+  }
+}
+
+.styleguide-component {
+  margin-bottom: var(--spacing-32);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+}
+
+.styleguide-component-title {
+  margin: 0;
+  padding: var(--spacing-12) var(--spacing-16);
+  border-bottom: 1px solid var(--border-medium);
+  font-size: var(--text-l);
+}
+
+.styleguide-component-preview {
+  padding: var(--spacing-24);
+}
+
+.styleguide-component-actions {
+  padding: var(--spacing-16);
+  border-top: 1px solid var(--border-medium);
+  text-align: right;
+}
+
+.styleguide-component-code {
+  --code-bg: var(--layer-2); /* Réutilisation du token existant --layer */
+
+  padding: var(--spacing-16);
+  border-top: 1px solid var(--border-medium);
+  border-bottom-right-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-lg);
+  background-color: var(--code-bg);
+  font-size: var(--text-14);
+
+  & pre {
+    margin: 0;
+    word-break: break-all; /* Pour couper les mots longs si nécessaire */
+    white-space: pre-wrap; /* Pour que le code ne dépasse pas */
+  }
+
+  & code {
+    font-family: monospace;
+  }
+}
+
+.styleguide-footer {
+  margin-top: var(--spacing-48);
+  padding: var(--spacing-24) var(--spacing-16);
+  border-top: 1px solid var(--border-medium);
+  color: var(--on-surface-secondary);
+  text-align: center;
+}

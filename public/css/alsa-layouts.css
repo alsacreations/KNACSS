@@ -1,0 +1,299 @@
+/* -----------------------/*
+ * Alsa Layouts CSS
+ * Made par Alsacréations
+ * Ressources et documentation : http://bretzel.alsacreations.com/
+ * Consignes : à placer dans un layer au-dessus de `reset`
+ * Mise à jour : 2025-06-25
+ /* ---------------------- */
+
+/* Layout-small */
+.layout-small {
+  --spacing-xl: 96rem; /* largeur max du layout */
+
+  width: 100%;
+  max-width: var(--spacing-xl, 80rem);
+  margin-inline: auto;
+}
+
+/* Liquid */
+.liquid {
+  --liquid-min-margin: var(--spacing-16, 1rem);
+  --liquid-content: var(--spacing-2xl, 98rem);
+
+  display: grid;
+  grid-template-columns:
+    [liquid-start] minmax(var(--liquid-min-margin), 1fr)
+    [content-start] minmax(0, calc(var(--liquid-content) / 2))
+    [half] minmax(0, calc(var(--liquid-content) / 2))
+    [content-end] minmax(var(--liquid-min-margin), 1fr)
+    [liquid-end];
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+/* Splash et autres enfants de Liquid */
+.splash {
+  display: grid;
+  grid-column: liquid;
+  grid-template-columns: inherit;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-start {
+  display: grid;
+  grid-column: liquid-start / content-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-end {
+  display: grid;
+  grid-column: content-start / liquid-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-half-start {
+  display: grid;
+  grid-column: liquid-start / half;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content-start / half;
+  }
+}
+
+.splash-half-end {
+  display: grid;
+  grid-column: half / liquid-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: half / content-end;
+  }
+}
+
+/* Autogrid */
+.autogrid {
+  --autogrid-gap: 1rem; /* espace entre chaque enfant */
+  --col-min-size: 20rem; /* taille mini de chaque colonne */
+  --grid-fill: auto-fit; /* mode de remplissage */
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-fill),
+    minmax(min(var(--col-min-size), 100%), 1fr)
+  );
+  gap: var(--autogrid-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--autogrid-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--autogrid-gap) * 3);
+  }
+
+  /* Attribut pour alignement vertical */
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+}
+
+/* Switcher */
+.switcher {
+  --switcher-gap: 1rem;
+
+  display: grid;
+  gap: var(--switcher-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--switcher-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--switcher-gap) * 3);
+  }
+
+  /* Attribut pour alignement vertical */
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+
+  /* Multi colonnes si >768px */
+  @media (width >= 48rem) {
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+}
+
+/* Stack */
+.stack {
+  --stack-gap: 1rem; /* espace entre chaque enfant */
+
+  display: grid;
+  row-gap: var(--stack-gap);
+
+  &[data-gap="l"] {
+    row-gap: calc(var(--stack-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    row-gap: calc(var(--stack-gap) * 3);
+  }
+}
+
+/* Cluster */
+.cluster {
+  --cluster-gap: 1rem; /* espace entre chaque enfant */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap);
+  align-items: center;
+
+  &[data-gap="l"] {
+    gap: calc(var(--cluster-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--cluster-gap) * 3);
+  }
+
+  &[data-align-h="end"] {
+    justify-content: flex-end;
+  }
+
+  &[data-align-v="start"] {
+    align-items: flex-start;
+  }
+
+  &[data-align-v="stretch"] {
+    align-items: stretch;
+  }
+}
+
+/* Repel */
+.repel {
+  --repel-gap: 1rem; /* gouttière */
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--repel-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--switcher-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--switcher-gap) * 3);
+  }
+
+  /* Attribut pour alignement vertical */
+  &[data-align-v="start"] {
+    align-items: flex-start;
+  }
+
+  /* Attribut pour alignement vertical */
+  &[data-align-v="stretch"] {
+    align-items: stretch;
+  }
+}
+
+/* Reel */
+.reel {
+  --reel-gap: 1rem; /* gouttière */
+  --item-size: 35%; /* largeur des enfants (% du conteneur) */
+
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto; /* reel est centré horizontalement */
+  overflow-x: auto;
+  gap: var(--reel-gap);
+  scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
+  -webkit-overflow-scrolling: touch;
+
+  &[data-gap="l"] {
+    gap: calc(var(--reel-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--reel-gap) * 3);
+  }
+
+  :where(& > *) {
+    flex-basis: var(--item-size);
+    flex-shrink: 0;
+  }
+}
+
+[data-scroll="start"] > * {
+  scroll-snap-align: start; /* je cale à gauche */
+}
+
+[data-scroll="center"] > * {
+  scroll-snap-align: center; /* je cale au centre */
+}
+
+[data-scroll="end"] > * {
+  scroll-snap-align: end; /* je cale à droite */
+}
+
+[data-scrollbar="hidden"] {
+  scrollbar-width: none; /* je masque l'ascenseur */
+
+  &::-webkit-scrollbar {
+    display: none; /* je masque l'ascenseur sur webkit */
+  }
+}
+
+/* TwoPanes */
+.twopanes {
+  --twopanes-gap: 1rem;
+
+  display: grid;
+  gap: var(--twopanes-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--twopanes-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--twopanes-gap) * 3);
+  }
+
+  /* Deux colonnes si >768px */
+  @media (width >= 48rem) {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+
+    /* Attribut pour permettre au 1er enfant de conserver sa taille naturelle */
+    &[data-size="auto"] {
+      grid-template-columns: 1fr auto;
+    }
+
+    /* Attribut pour inverser les rapports */
+    &[data-direction="rtl"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+
+      &[data-size="auto"] {
+        grid-template-columns: auto 1fr;
+      }
+    }
+  }
+}

@@ -1,0 +1,475 @@
+/* ==========================================
+ * Alsa Reset CSS et print
+ * Made par Alsacréations
+ * Consignes : à placer dans un layer `reset` sous les autres layers
+ * Mise à jour : 2025-06-25
+ * ========================================== */
+
+/* ==========================================
+ * CONFIGURATION GLOBALE
+ * ========================================== */
+
+/* Couleurs système pour adaptation automatique dark/light mode */
+:root {
+  color-scheme: light dark;
+}
+
+/* Modèle de boîte uniforme et prévention des débordements flex/grid */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* ==========================================
+ * ÉLÉMENTS DE BASE (HTML/BODY)
+ * ========================================== */
+
+/* Configuration globale de la page */
+html {
+  interpolate-size: allow-keywords;
+  overflow-wrap: break-word;
+  text-size-adjust: none;
+}
+
+/* Styles de base du document */
+body {
+  min-height: 100dvh;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
+}
+
+/* ==========================================
+ * NAVIGATION ET FOCUS
+ * ========================================== */
+
+/* Masquage de l'outline pour les interactions à la souris/touch */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Outline uniquement pour la navigation au clavier */
+:focus-visible {
+  outline: 2px solid light-dark(#4285f4, #8ab4f8);
+  outline-offset: 2px;
+}
+
+/* Moderne: utilisation de la couleur d'accent système */
+@supports (outline-color: AccentColor) {
+  :focus-visible {
+    outline-color: AccentColor;
+  }
+}
+
+/* Marge au-dessus des ancres ciblées */
+:target {
+  scroll-margin-block: 1rem;
+}
+
+/* Liens sans classe */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* ==========================================
+ * TYPOGRAPHIE
+ * ========================================== */
+
+/* Hauteur de ligne réduite sur les éléments de titre */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Amélioration de la typographie avec text-wrap */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+}
+
+/* Guillemets français */
+q {
+  quotes: "«\00A0" "\00A0»";
+}
+
+/* ==========================================
+ * LISTES
+ * ========================================== */
+
+/* Suppression des styles des listes avec classe (version accessible) */
+:where(ul[role="list"], ol[role="list"]) {
+  list-style: none;
+}
+
+/* ==========================================
+ * ÉLÉMENTS MÉDIA ET CONTENU
+ * ========================================== */
+
+/* Prévention des débordements */
+img,
+picture,
+table,
+td,
+blockquote,
+pre,
+code,
+input,
+textarea,
+select,
+video,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+/* Affichage en bloc pour les éléments média */
+img,
+picture,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+/* Préservation du ratio d'affichage */
+:where(img, picture):where(:not([src$=".svg"])) {
+  height: auto;
+}
+
+/* Suppression des marges par défaut */
+figure {
+  margin: 0;
+}
+
+/* ==========================================
+ * FORMULAIRES
+ * ========================================== */
+
+/* Normalisation des éléments de formulaire */
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+}
+
+/* Conteneurs de formulaire */
+form,
+fieldset {
+  border: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 1em;
+}
+
+legend {
+  max-width: 100%;
+  border: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+/* Éléments interactifs */
+label {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Configuration spécifique textarea */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  white-space: pre-wrap;
+  resize: vertical;
+}
+
+/* ==========================================
+ * ÉLÉMENTS PRÉFORMATÉS
+ * ========================================== */
+
+/* Famille de polices et taille pour le code */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Configuration spécifique pre */
+pre {
+  overflow: auto;
+  line-height: normal;
+  white-space: pre-wrap;
+  tab-size: 2;
+}
+
+/* ==========================================
+ * SVG
+ * ========================================== */
+
+/* Couleur par défaut des SVG */
+svg:not([fill]) {
+  fill: currentcolor;
+}
+
+/* Configuration d'affichage des SVG */
+svg {
+  overflow: visible;
+}
+
+svg * {
+  transform-box: fill-box;
+}
+
+/* Masquage des SVG contenant des symboles */
+svg:has(symbol) {
+  display: none;
+}
+
+/* ==========================================
+ * ACCESSIBILITÉ (ARIA)
+ * ========================================== */
+
+/* États ARIA avec curseurs appropriés */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/* Gestion des éléments cachés mais accessibles */
+[aria-hidden="false"][hidden] {
+  display: revert;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* ==========================================
+ * MASQUAGE ACCESSIBLE
+ * ========================================== */
+
+/* Masquage du contenu visuellement tout en le gardant accessible aux technologies d'assistance. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+}
+
+/* ==========================================
+ * PRÉFÉRENCES UTILISATEUR ANIMATIONS
+ * ========================================== */
+
+/* Désactivation des animations pour les utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================
+ * RESET PRINT
+ * ========================================== */
+
+@media print {
+  /* Dimension et marges de page */
+  @page {
+    size: a4 portrait;
+    margin: 2cm 1.5cm;
+  }
+
+  /* Reset général */
+  * {
+    display: revert;
+    box-sizing: border-box;
+    all: unset;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    all: revert;
+  }
+
+  /* On redéfinit les styles globaux (12pt = 16px) */
+  body {
+    width: auto;
+    margin: 0;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: serif;
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Espacements typographiques (15pt = 20px) */
+  p,
+  blockquote,
+  label,
+  ul,
+  ol {
+    margin-block: 0 15pt;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Titrages (24pt = 32px) */
+  h1 {
+    margin-block: 0 24pt;
+    font-size: 18pt;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h2 {
+    margin-block: 0 18pt;
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h3 {
+    margin-block: 0 15pt;
+    font-size: 14pt;
+    font-weight: 700;
+  }
+
+  h4 {
+    margin-block: 0 12pt;
+    font-size: 12pt;
+    font-weight: 700;
+  }
+
+  /* Classes dédiées print / no-print */
+  .print {
+    display: revert;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  /* Pas de veuves ou orphelines (3 lignes minimum) */
+  p,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Pas de saut de page au sein de ces éléments */
+  blockquote,
+  ul,
+  ol,
+  figure,
+  table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Pas de saut de page après ces éléments */
+  h1,
+  h2,
+  h3,
+  h4,
+  caption {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Styles des liens */
+  a,
+  a:link,
+  a:visited {
+    background: transparent !important;
+    color: unset;
+    font-weight: 700;
+    text-decoration: underline !important;
+  }
+
+  /* On affiche l'URL des liens externes */
+  a[href^="http"]::after,
+  a[href^="https"]::after {
+    content: " (" attr(href) ")";
+  }
+
+  /* On masque les vidéos */
+  video,
+  object,
+  iframe {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/* ==========================================
+ * FIN DU RESET CSS
+ * ========================================== */
