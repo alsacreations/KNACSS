@@ -42,6 +42,33 @@ document.addEventListener("DOMContentLoaded", () => {
   loadAllComponentStyles()
 
   /**
+   * Réinitialise les modules de composants spécifiques après injection du HTML
+   * @param {string} componentName - Le nom du composant (ex: "dialog/dialog")
+   */
+  function reinitializeComponentModules(componentName) {
+    // Réinitialise le module Dialog si c'est le composant Dialog
+    if (componentName === "dialog/dialog") {
+      // Importe et réinitialise le module Dialog
+      import("/components/dialog/dialog.js")
+        .then((dialogModule) => {
+          if (dialogModule.initDialogs) {
+            console.log("🔄 Réinitialisation du module Dialog")
+            dialogModule.initDialogs()
+          }
+        })
+        .catch((error) => {
+          console.warn(
+            "⚠️ Impossible de réinitialiser le module Dialog:",
+            error,
+          )
+        })
+    }
+
+    // D'autres composants peuvent être ajoutés ici selon le besoin
+    // if (componentName === "textarea/textarea") { ... }
+  }
+
+  /**
    * Initialise les boutons "Afficher/Masquer le code".
    * Attache les écouteurs d'événements aux boutons .js-show-code.
    */
@@ -231,6 +258,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Maintenant que le HTML du composant est injecté, initialiser les boutons "Afficher le code".
     initializeShowCodeButtons()
+
+    // Réinitialise les modules de composants après injection du HTML
+    reinitializeComponentModules(componentName)
   } else {
     // Si le paramètre 'component' est manquant, affiche un message d'erreur.
     const errorMessage = `<p>Aucun composant spécifié. Veuillez ajouter un paramètre "?component=nom-du-composant" à l'URL (par exemple, ?component=button/button).</p>`

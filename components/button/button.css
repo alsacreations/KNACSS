@@ -77,6 +77,13 @@
     --button-text-color: var(--primary);
   }
 
+  /* Reset button */
+  &.btn-reset:where(:not(:disabled, [disabled])) {
+    --button-background-color: transparent;
+    --button-border-color: transparent;
+    --button-text-color: currentcolor;
+  }
+
   /* States */
   &:is(:disabled, [disabled]) {
     opacity: 50%;

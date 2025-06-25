@@ -25,6 +25,11 @@ body {
   font-family: var(--font-poppins);
   font-size: var(--text-m);
   font-weight: var(--font-weight-regular);
+
+  /* Désactivation du scroll pour les modales */
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 /* Couleur de sélection */

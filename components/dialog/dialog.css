@@ -1,0 +1,176 @@
+/* --------------------
+ * Dialog native styles
+ * Made par Alsacréations
+ * -------------------- */
+
+:where(dialog) {
+  --dialog-background-color: var(--surface, #ffffff);
+  --dialog-text-color: var(--on-surface, #000000);
+  --dialog-border-color: var(--form-control-border-color, ButtonBorder);
+  --dialog-border-radius: var(--form-control-border-radius, 0);
+  --dialog-border-width: var(--form-control-border-width, 1px);
+  --dialog-backdrop-color: oklch(0% 0 0 / 50%);
+  --dialog-padding: var(--spacing-24, 1.5rem);
+  --dialog-header-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  --dialog-footer-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  --dialog-max-width: 32rem;
+  --dialog-max-height: calc(100vh - var(--spacing-32, 2rem));
+}
+
+/* Élément dialog natif */
+dialog {
+  max-width: var(--dialog-max-width);
+  max-height: var(--dialog-max-height);
+  padding: 0;
+  overflow: visible;
+  border: none;
+  border-radius: var(--dialog-border-radius);
+  background: transparent;
+  color: var(--dialog-text-color);
+
+  /* État fermé par défaut */
+  &:not([open]) {
+    display: none;
+  }
+
+  /* Backdrop (arrière-plan) */
+  &::backdrop {
+    background-color: var(--dialog-backdrop-color);
+    backdrop-filter: blur(3px);
+  }
+
+  /* Animation d'ouverture */
+  &[open] {
+    animation: dialog-show var(--transition-duration, 0.25s) ease-out;
+  }
+
+  /* Variante petite modale */
+  &.dialog-sm {
+    --dialog-max-width: 24rem;
+  }
+
+  /* Variante grande modale */
+  &.dialog-lg {
+    --dialog-max-width: 48rem;
+  }
+
+  /* Variante pleine largeur */
+  &.dialog-fullwidth {
+    --dialog-max-width: calc(100vw - var(--spacing-32, 2rem));
+  }
+}
+
+/* Contenu principal de la modale */
+.dialog-content {
+  display: grid;
+  width: 100%;
+  max-height: inherit;
+  overflow: hidden;
+  border: var(--dialog-border-width) solid var(--dialog-border-color);
+  border-radius: var(--dialog-border-radius);
+  background-color: var(--dialog-background-color);
+}
+
+/* En-tête de la modale */
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-16, 1rem);
+  padding: var(--dialog-header-padding);
+  border-bottom: 1px solid var(--dialog-border-color);
+  background: var(--layer-1, #f9fafb);
+}
+
+.dialog-title {
+  margin: 0;
+  color: var(--dialog-text-color);
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Bouton de fermeture */
+.dialog-close {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-content: center;
+  place-self: center;
+  width: 2rem;
+  height: 2rem;
+  padding: var(--spacing-8, 0.5rem);
+  transition: background-color var(--transition-duration, 0.25s);
+  border-radius: var(--radius-full, 50%);
+  font-size: var(--text-xl, 1.25rem);
+  aspect-ratio: 1;
+
+  &:hover {
+    background-color: var(--layer-2, #f3f4f6);
+  }
+}
+
+/* Corps de la modale */
+.dialog-body {
+  padding: var(--dialog-padding);
+  overflow-y: auto;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Pied de la modale */
+.dialog-footer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-12, 0.75rem);
+  padding: var(--dialog-footer-padding);
+  border-top: 1px solid var(--dialog-border-color);
+  background: var(--layer-1, #f9fafb);
+}
+
+/* Animations */
+@keyframes dialog-show {
+  from {
+    scale: 0.95;
+    opacity: 0%;
+  }
+
+  to {
+    scale: 1;
+    opacity: 100%;
+  }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  dialog {
+    animation: none;
+
+    &::backdrop {
+      animation: none;
+    }
+  }
+}
+
+/* Responsive */
+@media (width <= 48rem) {
+  dialog {
+    --dialog-max-width: calc(100vw - var(--spacing-16, 1rem));
+    --dialog-max-height: calc(100vh - var(--spacing-16, 1rem));
+  }
+
+  .dialog-header,
+  .dialog-footer {
+    padding: var(--spacing-16, 1rem);
+  }
+
+  .dialog-body {
+    padding: var(--spacing-16, 1rem);
+  }
+}

@@ -1,0 +1,32 @@
+<!-- Bouton pour ouvrir la modale -->
+<button type="button" class="btn btn-primary js-dialog-trigger" data-dialog="example-dialog">
+  Ouvrir la modale
+</button>
+
+<!-- Dialog/Modale -->
+<dialog class="dialog" id="example-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+  <div class="dialog-content">
+    <header class="dialog-header">
+      <h2 id="dialog-title" class="dialog-title">Titre de la modale</h2>
+      <button type="button" class="dialog-close btn-reset js-dialog-close" aria-label="Fermer la modale">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </header>
+
+    <div class="dialog-body">
+      <p id="dialog-description">
+        Voici le contenu principal de la modale. Cette modale utilise l'élément HTML natif
+        <code>&lt;dialog&gt;</code> pour une meilleure accessibilité.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <footer class="dialog-footer">
+      <button type="button" class="btn btn-secondary js-dialog-close">Annuler</button>
+      <button type="button" class="btn btn-primary">Confirmer</button>
+    </footer>
+  </div>
+</dialog>
