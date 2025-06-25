@@ -3,6 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
+ * Mise à jour : 2025-06-25
  /* ---------------------- */
 
 /* Layout-small */
@@ -85,7 +86,7 @@
 
 /* Autogrid */
 .autogrid {
-  --autogrid-gap: 1rem; /* gouttière */
+  --autogrid-gap: 1rem; /* espace entre chaque enfant */
   --col-min-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
 
@@ -95,6 +96,14 @@
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
   gap: var(--autogrid-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--autogrid-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--autogrid-gap) * 3);
+  }
 
   /* Attribut pour alignement vertical */
   &[data-align="start"] {
@@ -109,6 +118,14 @@
 
   display: grid;
   gap: var(--switcher-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--switcher-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--switcher-gap) * 3);
+  }
 
   /* Attribut pour alignement vertical */
   &[data-align="start"] {
@@ -125,32 +142,45 @@
 
 /* Stack */
 .stack {
-  --stack-gap: 1em; /* gouttière */
+  --stack-gap: 1rem; /* espace entre chaque enfant */
 
   display: grid;
   row-gap: var(--stack-gap);
+
+  &[data-gap="l"] {
+    row-gap: calc(var(--stack-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    row-gap: calc(var(--stack-gap) * 3);
+  }
 }
 
 /* Cluster */
 .cluster {
-  --cluster-gap: 1rem; /* gouttière */
+  --cluster-gap: 1rem; /* espace entre chaque enfant */
 
   display: flex;
   flex-wrap: wrap;
   gap: var(--cluster-gap);
   align-items: center;
 
-  /* Attribut pour alignement horizontal */
+  &[data-gap="l"] {
+    gap: calc(var(--cluster-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--cluster-gap) * 3);
+  }
+
   &[data-align-h="end"] {
     justify-content: flex-end;
   }
 
-  /* Attribut pour alignement vertical */
   &[data-align-v="start"] {
     align-items: flex-start;
   }
 
-  /* Attribut pour alignement vertical */
   &[data-align-v="stretch"] {
     align-items: stretch;
   }
@@ -165,6 +195,14 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--repel-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--switcher-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--switcher-gap) * 3);
+  }
 
   /* Attribut pour alignement vertical */
   &[data-align-v="start"] {
@@ -190,6 +228,14 @@
   gap: var(--reel-gap);
   scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
   -webkit-overflow-scrolling: touch;
+
+  &[data-gap="l"] {
+    gap: calc(var(--reel-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--reel-gap) * 3);
+  }
 
   :where(& > *) {
     flex-basis: var(--item-size);
@@ -223,6 +269,14 @@
 
   display: grid;
   gap: var(--twopanes-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--twopanes-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--twopanes-gap) * 3);
+  }
 
   /* Deux colonnes si >768px */
   @media (width >= 48rem) {
