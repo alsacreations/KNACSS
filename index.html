@@ -126,7 +126,10 @@
         class="homepage-section"
         aria-labelledby="styles-heading">
         <h2 id="styles-heading">Styles</h2>
-        <p>Fichiers de styles chargés dans l'ordre des layers CSS&#8239;:</p>
+        <p>
+          Le fichier <code class="homepage-code">app.css</code> charge toutes
+          les feuilles de styles dans l'ordre des layers CSS&#8239;:
+        </p>
         <ol>
           <li>
             <strong>Layer reset&#8239;:</strong>
@@ -141,7 +144,7 @@
               </li>
               <li>
                 <code class="homepage-code">knacss-layouts.css</code> -
-                Utilitaires de mise en page
+                Utilitaires de disposition des composants
               </li>
             </ul>
           </li>
@@ -150,10 +153,11 @@
             <ul>
               <li>
                 <code class="homepage-code">theme.css</code> - Thème principal
+                (valeurs primitives)
               </li>
               <li>
                 <code class="homepage-code">theme-tokens.css</code> - Variables
-                CSS du design system
+                sous forme de tokens
               </li>
             </ul>
           </li>
@@ -161,10 +165,14 @@
             <strong>Layer components&#8239;:</strong>
             <ul>
               <li>
-                <code class="homepage-code">styles.css</code> - Styles du projet
+                <code class="homepage-code">styles.css</code> - Styles globaux
+                du projet (gabarits, typographie, etc.)
               </li>
               <li>
-                <em>+ tous les fichiers CSS des composants</em>
+                <em
+                  >+ tous les fichiers CSS des composants (bouton, input,
+                  etc.)</em
+                >
               </li>
             </ul>
           </li>
@@ -173,7 +181,7 @@
             <ul>
               <li>
                 <code class="homepage-code">knacss-utilities.css</code> -
-                Classes utilitaires
+                Classes utilitaires (accessibilité, alignement, etc.)
               </li>
             </ul>
           </li>
