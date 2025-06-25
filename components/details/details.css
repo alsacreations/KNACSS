@@ -1,0 +1,127 @@
+/* --------------------
+ * Details native styles
+ * Made par Alsacréations
+ * -------------------- */
+
+:where(details) {
+  --details-padding: var(--spacing-16, 1rem);
+  --details-border-color: var(--form-control-border-color, ButtonBorder);
+  --details-border-radius: var(--form-control-border-radius, 0);
+  --details-border-width: var(--form-control-border-width, 1px);
+  --details-summary-background-color: var(--form-control-background, Field);
+  --details-summary-background-hover: oklch(
+    from var(--details-summary-background-color) calc(l * 0.9) c h
+  );
+  --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
+  --details-content-background-color: var(--layer-1, #f9fafb);
+  --details-text-color: var(--on-form-control, FieldText);
+}
+
+details {
+  overflow: hidden;
+  border: var(--details-border-width) solid var(--details-border-color);
+  border-radius: var(--details-border-radius);
+
+  /* Summary (titre cliquable) */
+  & .details-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--details-summary-padding);
+    transition: background-color;
+    transition-duration: var(--transition-duration, 0.25s);
+    background-color: var(--details-summary-background-color);
+    color: var(--details-text-color, currentcolor);
+    font-weight: var(--font-weight-semibold, 600);
+    line-height: 1.3;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+
+    /* Suppression du triangle par défaut */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Icône personnalisée (SVG background) */
+    &::after {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      transition: rotate var(--transition-duration);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      rotate: 0deg;
+    }
+
+    /* États d'interaction */
+    &:hover {
+      background-color: var(--details-summary-background-hover);
+    }
+  }
+
+  /* État ouvert */
+  &[open] {
+    & .details-title::after {
+      rotate: 180deg;
+    }
+  }
+
+  /* Support des modes sombres pour l'icône */
+  @media (prefers-color-scheme: dark) {
+    & .details-title::after {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
+  }
+
+  /* Contenu du details */
+  & .details-content {
+    padding: var(--details-padding);
+    border-top: none;
+    background-color: var(--details-content-background-color);
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Support moderne pour les transitions fluides */
+@supports (interpolate-size: allow-keywords) {
+  .details-content {
+    /* État de fin de transition */
+    display: none;
+    height: 0;
+    transition: var(--transition-duration) allow-discrete;
+    transition-property: opacity, height, display;
+    interpolate-size: allow-keywords;
+  }
+
+  details[open] .details-content {
+    display: grid;
+    height: auto;
+
+    @starting-style {
+      height: 0;
+    }
+  }
+}
+
+/* Accessibilité améliorée */
+@media (prefers-reduced-motion: reduce) {
+  details {
+    & .details-title::after {
+      transition: none;
+    }
+
+    & .details-content {
+      transition: none;
+    }
+  }
+}

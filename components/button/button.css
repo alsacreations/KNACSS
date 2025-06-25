@@ -8,12 +8,12 @@
   input:where([type="button"], [type="reset"], [type="submit"])
 ) {
   --button-background-color: var(--form-control-background, ButtonFace);
-
-  /* prettier-ignore */
-  --button-background-color-hover: oklch(from var(--button-background-color) calc(l * 0.9) c h);
-
-  /* prettier-ignore */
-  --button-background-color-active: oklch(from var(--button-background-color) calc(l * 0.8) c h);
+  --button-background-color-hover: oklch(
+    from var(--button-background-color) calc(l * 0.9) c h
+  );
+  --button-background-color-active: oklch(
+    from var(--button-background-color) calc(l * 0.8) c h
+  );
   --button-border-color: var(--form-control-border-color, ButtonBorder);
   --button-border-color-hover: var(--button-border-color);
   --button-border-color-active: var(--button-border-color);
