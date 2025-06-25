@@ -1,8 +1,8 @@
 /* ==========================================
- * KNACSS Reset CSS
+ * Alsa Reset CSS
  * Made par Alsacréations
  * Consignes : à placer dans un layer `reset` sous les autres layers
- * Mise à jour : 2025-06-16
+ * Mise à jour : 2025-06-25
  * ========================================== */
 
 /* ==========================================
@@ -294,7 +294,22 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * PRÉFÉRENCES UTILISATEUR
+ * MASQUAGE ACCESSIBLE
+ * ========================================== */
+
+/* Masquage du contenu visuellement tout en le gardant accessible aux technologies d'assistance. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+}
+
+/* ==========================================
+ * PRÉFÉRENCES UTILISATEUR ANIMATIONS
  * ========================================== */
 
 /* Désactivation des animations pour les utilisateurs sensibles */
