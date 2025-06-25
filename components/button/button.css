@@ -22,7 +22,7 @@
   --button-text-color: var(--on-form-control, ButtonText);
   --button-text-color-hover: var(--button-text-color);
   --button-text-color-active: var(--button-text-color);
-  --button-font-weight: var(--button-font-weight-regular, 400);
+  --button-font-weight: var(--font-weight-regular, 400);
 
   display: inline-flex;
   align-items: center;
@@ -75,7 +75,6 @@
     --button-background-color: var(--color-slate-300);
     --button-border-color: transparent;
     --button-text-color: var(--primary);
-    --button-font-weight: var(--button-font-weight-semibold);
   }
 
   /* States */
