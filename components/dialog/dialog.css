@@ -20,11 +20,9 @@
 /* Élément dialog natif */
 dialog {
   max-width: var(--dialog-max-width);
-  max-height: var(--dialog-max-height);
   padding: 0;
   overflow: visible;
   border: none;
-  border-radius: var(--dialog-border-radius);
   background: transparent;
   color: var(--dialog-text-color);
 
@@ -63,9 +61,6 @@ dialog {
 /* Contenu principal de la modale */
 .dialog-content {
   display: grid;
-  width: 100%;
-  max-height: inherit;
-  overflow: hidden;
   border: var(--dialog-border-width) solid var(--dialog-border-color);
   border-radius: var(--dialog-border-radius);
   background-color: var(--dialog-background-color);
@@ -76,10 +71,11 @@ dialog {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-16, 1rem);
   padding: var(--dialog-header-padding);
   border-bottom: 1px solid var(--dialog-border-color);
+  border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
   background: var(--layer-1, #f9fafb);
+  gap: var(--spacing-16, 1rem);
 }
 
 .dialog-title {
@@ -92,15 +88,16 @@ dialog {
 /* Bouton de fermeture */
 .dialog-close {
   display: inline-grid;
+  box-sizing: content-box;
   flex-shrink: 0;
-  place-content: center;
-  place-self: center;
   width: 2rem;
   height: 2rem;
-  padding: var(--spacing-8, 0.5rem);
+  padding: 2px;
   transition: background-color var(--transition-duration, 0.25s);
   border-radius: var(--radius-full, 50%);
-  font-size: var(--text-xl, 1.25rem);
+  font-size: 2rem;
+  place-content: center;
+  place-self: center;
   aspect-ratio: 1;
 
   &:hover {
@@ -128,10 +125,11 @@ dialog {
   flex-shrink: 0;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--spacing-12, 0.75rem);
   padding: var(--dialog-footer-padding);
   border-top: 1px solid var(--dialog-border-color);
+  border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
   background: var(--layer-1, #f9fafb);
+  gap: var(--spacing-12, 0.75rem);
 }
 
 /* Animations */
