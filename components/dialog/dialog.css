@@ -121,15 +121,10 @@ dialog {
 
 /* Pied de la modale */
 .dialog-footer {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: flex-end;
   padding: var(--dialog-footer-padding);
   border-top: 1px solid var(--dialog-border-color);
   border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
   background: var(--layer-1, #f9fafb);
-  gap: var(--spacing-12, 0.75rem);
 }
 
 /* Animations */
