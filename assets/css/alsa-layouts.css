@@ -278,21 +278,21 @@
     gap: calc(var(--twopanes-gap) * 3);
   }
 
-  /* Deux colonnes si >768px */
+  /* Deux colonnes si >=768px */
   @media (width >= 48rem) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 
-    /* Attribut pour permettre au 1er enfant de conserver sa taille naturelle */
+    /* L'attribut data-size="auto" permet au 1er enfant de conserver sa taille initiale */
     &[data-size="auto"] {
-      grid-template-columns: 1fr auto;
+      grid-template-columns: auto 1fr;
     }
 
-    /* Attribut pour inverser les rapports */
+    /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
     &[data-direction="rtl"] {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 
       &[data-size="auto"] {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr auto;
       }
     }
   }
