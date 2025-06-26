@@ -1,23 +1,6 @@
 /* --------------------
  * Input native styles
- * Made par Alsacréations
  * -------------------- */
-
-:where(
-  input:not(
-      [type="button"],
-      [type="reset"],
-      [type="submit"],
-      [type="checkbox"],
-      [type="radio"]
-    )
-) {
-  --input-background-color: var(--form-control-background, ButtonFace);
-  --input-border-color: var(--form-control-border-color, ButtonBorder);
-  --input-border-radius: var(--form-control-border-radius, 0);
-  --input-border-width: var(--form-control-border-width, 1px);
-  --input-text-color: var(--on-form-control, ButtonText);
-}
 
 input:not(
     [type="button"],
@@ -27,6 +10,12 @@ input:not(
     [type="radio"],
     [type="range"]
   ) {
+  --input-background-color: var(--form-control-background, ButtonFace);
+  --input-border-color: var(--form-control-border-color, ButtonBorder);
+  --input-border-radius: var(--form-control-border-radius, 0);
+  --input-border-width: var(--form-control-border-width, 1px);
+  --input-text-color: var(--on-form-control, ButtonText);
+
   display: block;
   width: 100%;
   padding: var(--form-control-spacing, 12px 16px);

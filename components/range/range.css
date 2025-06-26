@@ -1,9 +1,12 @@
 /* --------------------
  * Range native styles
- * Made par Alsacréations
  * -------------------- */
 
-:where([type="range"]) {
+.range {
+  position: relative;
+}
+
+[type="range"] {
   --range-background-color: var(--form-control-background, Field);
   --range-border-radius: var(--form-control-border-radius, 4px);
   --range-text-color: var(--on-form-control, FieldText);
@@ -14,13 +17,7 @@
     from var(--range-thumb-color) calc(l * 1.2) c h
   );
   --range-thumb-size: 1rem;
-}
 
-.range {
-  position: relative;
-}
-
-[type="range"] {
   width: 100%;
   height: var(--range-track-size);
   border: 0;

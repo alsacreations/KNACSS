@@ -1,9 +1,8 @@
 /* --------------------
  * Dialog native styles
- * Made par Alsacréations
  * -------------------- */
 
-:where(dialog) {
+dialog {
   --dialog-background-color: var(--surface, #ffffff);
   --dialog-text-color: var(--on-surface, #000000);
   --dialog-border-color: var(--form-control-border-color, ButtonBorder);
@@ -15,10 +14,7 @@
   --dialog-footer-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
   --dialog-max-width: 32rem;
   --dialog-max-height: calc(100vh - var(--spacing-32, 2rem));
-}
 
-/* Élément dialog natif */
-dialog {
   max-width: var(--dialog-max-width);
   padding: 0;
   overflow: visible;

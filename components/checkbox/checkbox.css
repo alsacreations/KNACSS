@@ -2,17 +2,13 @@
  * Checkbox native Styles
  /* ------------------ */
 
-:where([type="checkbox"]:not([role="switch"])) {
+[type="checkbox"]:not([role="switch"]) {
   --checkbox-background-color: var(--form-control-background, ButtonFace);
-
-  /* prettier-ignore */
   --checkbox-background-color-checked: var(--primary, Field);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
-}
 
-[type="checkbox"]:not([role="switch"]) {
   display: inline-flex;
   position: relative;
   flex: 0 0 auto;

@@ -2,15 +2,13 @@
  * Select native styles
  * -------------------- */
 
-:where(select) {
+select {
   --select-background-color: var(--form-control-background, Field);
   --select-border-color: var(--form-control-border-color, ButtonBorder);
   --select-border-radius: var(--form-control-border-radius, 0);
   --select-border-width: var(--form-control-border-width, 1px);
   --select-text-color: var(--on-form-control, FieldText);
-}
 
-select {
   display: block;
   width: 100%;
   padding: var(--form-control-spacing, 12px 16px);

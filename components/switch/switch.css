@@ -1,9 +1,8 @@
 /* --------------------
  * Switch native styles
- * Made par Alsacréations
  * -------------------- */
 
-:where([role="switch"]) {
+[role="switch"] {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
   --switch-track-color: var(--form-control-background, ButtonFace);
@@ -14,9 +13,7 @@
   --switch-border-radius: var(--radius-full, 9999px);
   --switch-border-color: var(--checkables-border-color, ButtonBorder);
   --switch-border-width: 1px;
-}
 
-[role="switch"] {
   display: inline-flex;
   align-items: center;
   justify-content: start;

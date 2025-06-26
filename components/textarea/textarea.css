@@ -1,17 +1,14 @@
 /* --------------------
  * Textarea native styles
- * Made par Alsacréations
  * -------------------- */
 
-:where(textarea) {
+textarea {
   --textarea-background-color: var(--form-control-background, ButtonFace);
   --textarea-border-color: var(--form-control-border-color, ButtonBorder);
   --textarea-border-radius: var(--form-control-border-radius, 0);
   --textarea-border-width: var(--form-control-border-width, 1px);
   --textarea-text-color: var(--on-form-control, ButtonText);
-}
 
-textarea {
   display: block;
   width: 100%;
   min-height: 5lh;

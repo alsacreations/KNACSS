@@ -2,11 +2,9 @@
  * Button native Styles
  /* ------------------ */
 
-:where(
-  button,
-  .btn,
-  input:where([type="button"], [type="reset"], [type="submit"])
-) {
+button,
+.btn,
+input:where([type="button"], [type="reset"], [type="submit"]) {
   --button-background-color: var(--form-control-background, ButtonFace);
   --button-background-color-hover: oklch(
     from var(--button-background-color) calc(l * 0.9) c h

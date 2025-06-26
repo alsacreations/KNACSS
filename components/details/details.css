@@ -1,9 +1,8 @@
 /* --------------------
  * Details native styles
- * Made par Alsacréations
  * -------------------- */
 
-:where(details) {
+details {
   --details-padding: var(--spacing-16, 1rem);
   --details-border-color: var(--form-control-border-color, ButtonBorder);
   --details-border-radius: var(--form-control-border-radius, 0);
@@ -15,9 +14,7 @@
   --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
   --details-content-background-color: var(--layer-1, #f9fafb);
   --details-text-color: var(--on-form-control, FieldText);
-}
 
-details {
   overflow: hidden;
   border: var(--details-border-width) solid var(--details-border-color);
   border-radius: var(--details-border-radius);
