@@ -135,8 +135,7 @@
 
   /* Multi colonnes si >768px */
   @media (width >= 48rem) {
-    grid-auto-columns: minmax(0, 1fr);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   }
 }
 
