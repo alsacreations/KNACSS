@@ -262,19 +262,19 @@
   }
 }
 
-/* TwoPanes */
-.twopanes {
-  --twopanes-gap: 1rem;
+/* Duo */
+.duo {
+  --duo-gap: 1rem;
 
   display: grid;
-  gap: var(--twopanes-gap);
+  gap: var(--duo-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--twopanes-gap) * 2);
+    gap: calc(var(--duo-gap) * 2);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--twopanes-gap) * 3);
+    gap: calc(var(--duo-gap) * 3);
   }
 
   /* Deux colonnes si >=768px */
