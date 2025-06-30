@@ -1,0 +1,331 @@
+/* -----------------------/*
+ * Layouts CSS utilitaires
+ * Made par Alsacréations
+ * Ressources et documentation : http://bretzel.alsacreations.com/
+ * Consignes : à placer dans un layer au-dessus de `reset`
+ * Mise à jour : 2025-06-28
+ /* ---------------------- */
+
+/* Stack */
+.stack {
+  --stack-gap: 1rem; /* espace entre chaque enfant */
+
+  display: grid;
+  row-gap: var(--stack-gap);
+
+  &[data-gap="l"] {
+    row-gap: calc(var(--stack-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    row-gap: calc(var(--stack-gap) * 3);
+  }
+}
+
+/* Cluster */
+.cluster {
+  --cluster-gap: 1rem; /* gouttière */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap);
+  align-items: start;
+
+  &[data-gap="l"] {
+    gap: calc(var(--cluster-gap) * 2);
+  }
+
+  &[gap="xl"] {
+    gap: calc(var(--cluster-gap) * 3);
+  }
+
+  &[data-justify="end"] {
+    justify-content: end;
+  }
+
+  &[data-align="start"] {
+    align-items: start;
+  }
+
+  &[data-align="center"] {
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-items: stretch;
+  }
+}
+
+/* Autogrid */
+.autogrid {
+  --autogrid-gap: 1rem; /* espace entre chaque enfant */
+  --col-min-size: 20rem; /* taille mini de chaque colonne */
+  --grid-fill: auto-fit; /* mode de remplissage */
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-fill),
+    minmax(min(var(--col-min-size), 100%), 1fr)
+  );
+  gap: var(--autogrid-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--autogrid-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--autogrid-gap) * 3);
+  }
+
+  /* Alignement vertical */
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+}
+
+/* Switcher */
+.switcher {
+  --switcher-gap: 1rem;
+
+  display: grid;
+  gap: var(--switcher-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--switcher-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--switcher-gap) * 3);
+  }
+
+  /* Alignement vertical */
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+
+  /* Multi colonnes si >768px */
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+}
+
+/* Repel */
+.repel {
+  --repel-gap: 1rem; /* gouttière */
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--repel-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--repel-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--repel-gap) * 3);
+  }
+
+  &[data-align="start"] {
+    align-items: start;
+  }
+
+  &[data-align="center"] {
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-items: stretch;
+  }
+}
+
+/* Reel */
+.reel {
+  --reel-gap: 1rem; /* gouttière */
+  --item-size: 35%; /* largeur des enfants (% du conteneur) */
+
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto; /* reel est centré horizontalement */
+  overflow-x: auto;
+  gap: var(--reel-gap);
+  scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
+  -webkit-overflow-scrolling: touch;
+
+  &[data-gap="l"] {
+    gap: calc(var(--reel-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--reel-gap) * 3);
+  }
+
+  :where(& > *) {
+    flex-basis: var(--item-size);
+    flex-shrink: 0;
+  }
+
+  &[data-scroll="start"] > * {
+    scroll-snap-align: start; /* je cale à gauche */
+  }
+
+  &[data-scroll="center"] > * {
+    scroll-snap-align: center; /* je cale au centre */
+  }
+
+  &[data-scroll="end"] > * {
+    scroll-snap-align: end; /* je cale à droite */
+  }
+
+  &[data-scrollbar="hidden"] {
+    scrollbar-width: none; /* je masque l'ascenseur */
+
+    &::-webkit-scrollbar {
+      display: none; /* je masque l'ascenseur sur webkit */
+    }
+  }
+}
+
+/* Duo */
+.duo {
+  --duo-gap: 1rem;
+
+  display: grid;
+  align-content: start;
+  gap: var(--duo-gap);
+
+  &[data-gap="l"] {
+    gap: calc(var(--duo-gap) * 2);
+  }
+
+  &[data-gap="xl"] {
+    gap: calc(var(--duo-gap) * 3);
+  }
+
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+
+  &[data-align="center"] {
+    align-content: center;
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-content: stretch;
+  }
+
+  /* Deux colonnes si >=768px */
+  @media (width >= 48rem) {
+    /* modèle par défaut = 2/3 1/3 */
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+
+    &[data-model="1-2"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+
+    &[data-model="3-1"] {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+
+    &[data-model="1-3"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+
+    /* "auto" = taille initiale conservée */
+    &[data-model="auto-1"] {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    &[data-model="1-auto"] {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+}
+
+/* Boxed */
+.boxed {
+  --boxed-max: 80rem; /* Largeur max (1280px) */
+
+  width: 100%;
+  max-width: var(--boxed-max, 80rem);
+  margin-inline: auto;
+
+  &[data-boxed="small"] {
+    --boxed-max: 64rem; /* 1024px */
+  }
+}
+
+/* Liquid */
+.liquid {
+  --liquid-min-margin: var(--spacing-16, 1rem);
+  --liquid-content: var(--spacing-2xl, 98rem);
+
+  display: grid;
+  grid-template-columns:
+    [liquid-start] minmax(var(--liquid-min-margin), 1fr)
+    [content-start] minmax(0, calc(var(--liquid-content) / 2))
+    [half] minmax(0, calc(var(--liquid-content) / 2))
+    [content-end] minmax(var(--liquid-min-margin), 1fr)
+    [liquid-end];
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+/* Splash et autres enfants de Liquid */
+.splash {
+  display: grid;
+  grid-column: liquid;
+  grid-template-columns: inherit;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-start {
+  display: grid;
+  grid-column: liquid-start / content-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-end {
+  display: grid;
+  grid-column: content-start / liquid-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content;
+  }
+}
+
+.splash-half-start {
+  display: grid;
+  grid-column: liquid-start / half;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: content-start / half;
+  }
+}
+
+.splash-half-end {
+  display: grid;
+  grid-column: half / liquid-end;
+  grid-template-columns: subgrid;
+
+  :where(& > *) {
+    grid-column: half / content-end;
+  }
+}

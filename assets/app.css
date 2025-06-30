@@ -1,7 +1,7 @@
 @layer reset, theme, components, utilities;
 
-@import "css/alsa-reset.css" layer(reset);
-@import "css/alsa-layouts.css" layer(reset);
+@import "css/reset.css" layer(reset);
+@import "css/layouts.css" layer(reset);
 @import "css/theme.css" layer(theme);
 @import "css/theme-tokens.css" layer(theme);
 @import "css/styles.css" layer(components);
