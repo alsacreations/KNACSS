@@ -85,7 +85,7 @@ textarea {
 }
 
 /* Responsive : compteur sur nouvelle ligne sur petits écrans */
-@media (width < 30rem) {
+@media (--until-sm) {
   .form-group-footer {
     flex-direction: column;
     align-items: stretch;
