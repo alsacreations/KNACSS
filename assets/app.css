@@ -1,8 +1,13 @@
-@layer reset, theme, components, utilities;
+@layer config, base, components, utilities;
 
-@import "css/reset.css" layer(reset);
-@import "css/layouts.css" layer(reset);
-@import "css/theme.css" layer(theme);
-@import "css/theme-tokens.css" layer(theme);
-@import "css/styles.css" layer(components);
+/* Config (reset, polices, themes, layouts) */
+@import "css/reset.css" layer(config);
+@import "css/theme.css" layer(config);
+@import "css/theme-tokens.css" layer(config);
+@import "css/layouts.css" layer(config);
+
+/* Base */
+@import "css/styles.css" layer(base);
+
+/* Components */
 @import "../components/button/button.css" layer(components);
