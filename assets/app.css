@@ -8,6 +8,6 @@
 
 /* Base */
 @import "css/styles.css" layer(base);
+@import "css/natives.css" layer(base);
 
 /* Components */
-@import "../components/button/button.css" layer(components);

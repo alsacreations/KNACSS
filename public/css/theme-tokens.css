@@ -9,6 +9,14 @@
   /* Color Tokens */
   color-scheme: light dark;
 
+  &[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  &[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
   --primary: var(--color-blue-500);
   --on-primary: var(--color-white);
   --surface: light-dark(var(--color-white), var(--color-gray-800));
@@ -31,14 +39,6 @@
   --border-light: var(--color-gray-200);
   --border-medium: var(--color-gray-400);
   --border-dark: var(--color-gray-600);
-
-  &[data-theme="light"] {
-    color-scheme: light;
-  }
-
-  &[data-theme="dark"] {
-    color-scheme: dark;
-  }
 
   /* Spacing Tokens */
   --text-m: clamp(var(--text-16), 0.9565rem + 0.2174vw, var(--text-18));

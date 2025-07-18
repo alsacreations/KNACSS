@@ -65,70 +65,70 @@
           aria-label="Navigation du styleguide">
           <li>
             <a
-              href="components/styleguide.html?component=button/button"
+              href="natives/styleguide.html?component=button/button"
               class="btn"
               >Bouton</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=checkbox/checkbox"
+              href="natives/styleguide.html?component=checkbox/checkbox"
               class="btn"
               >Checkbox</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=radio/radio"
+              href="natives/styleguide.html?component=radio/radio"
               class="btn"
               >Radio</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=select/select"
+              href="natives/styleguide.html?component=select/select"
               class="btn"
               >Select</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=switch/switch"
+              href="natives/styleguide.html?component=switch/switch"
               class="btn"
               >Switch</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=input/input"
+              href="natives/styleguide.html?component=input/input"
               class="btn"
               >Input</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=textarea/textarea"
+              href="natives/styleguide.html?component=textarea/textarea"
               class="btn"
               >Textarea</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=range/range"
+              href="natives/styleguide.html?component=range/range"
               class="btn"
               >Range</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=details/details"
+              href="natives/styleguide.html?component=details/details"
               class="btn"
               >Details</a
             >
           </li>
           <li>
             <a
-              href="components/styleguide.html?component=dialog/dialog"
+              href="natives/styleguide.html?component=dialog/dialog"
               class="btn"
               >Dialog</a
             >
@@ -150,7 +150,9 @@
           class="stack"
           data-gap="l">
           <li>
-            <strong>Layer reset&#8239;:</strong>
+            <strong
+              >Layer config (reset, polices, themes, layouts)&#8239;:</strong
+            >
             <ul>
               <li>
                 <code class="homepage-code"
@@ -158,17 +160,6 @@
                 >
                 - Reset CSS moderne (et reset print)
               </li>
-              <li>
-                <code class="homepage-code"
-                  ><a href="css/layouts.css">layouts.css</a></code
-                >
-                - Utilitaires de disposition des composants
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Layer theme&#8239;:</strong>
-            <ul>
               <li>
                 <code class="homepage-code"
                   ><a href="css/theme.css">theme.css</a></code
@@ -179,12 +170,18 @@
                 <code class="homepage-code"
                   ><a href="css/theme-tokens.css">theme-tokens.css</a></code
                 >
-                - Variables sous forme de tokens
+                - Design tokens
+              </li>
+              <li>
+                <code class="homepage-code"
+                  ><a href="css/layouts.css">layouts.css</a></code
+                >
+                - Utilitaires de disposition des composants
               </li>
             </ul>
           </li>
           <li>
-            <strong>Layer components&#8239;:</strong>
+            <strong>Layer base&#8239;:</strong>
             <ul>
               <li>
                 <code class="homepage-code"
@@ -193,10 +190,18 @@
                 - Styles globaux du projet (gabarits, typographie, etc.)
               </li>
               <li>
-                <em
-                  >+ tous les fichiers CSS des composants (bouton, input,
-                  etc.)</em
+                <code class="homepage-code"
+                  ><a href="css/natives.css">natives.css</a></code
                 >
+                - Styles natifs des éléments HTML (radio, input, button, etc.)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Layer components&#8239;:</strong>
+            <ul>
+              <li>
+                <em>Les fichiers CSS des composants du projet</em>
               </li>
             </ul>
           </li>

@@ -1,45 +1,13 @@
 // Script pour le guide de style
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Importe les modules des composants HTML comme texte brut et les CSS comme URL.
+  // Importe les modules des composants HTML comme texte brut.
   // Vite traitera ces imports lors du build pour inclure les fichiers.
-  const htmlComponentModules = import.meta.glob("/components/**/*.html", {
+  const htmlComponentModules = import.meta.glob("/natives/**/*.html", {
     eager: true,
     query: "?raw",
     import: "default",
   })
-  const cssComponentModules = import.meta.glob("/components/**/*.css", {
-    eager: true,
-    query: "?url",
-    import: "default",
-  })
-
-  /**
-   * Charge tous les CSS des composants dans le layer components
-   * pour que tous les styles soient disponibles dans le styleguide
-   * Exclut button.css car il est déjà chargé via app.css
-   */
-  function loadAllComponentStyles() {
-    // Crée un élément style pour importer tous les CSS des composants
-    const allComponentsStyleElement = document.createElement("style")
-    allComponentsStyleElement.id = "all-components-styles"
-
-    // Construit les imports pour tous les fichiers CSS des composants, sauf button.css
-    const imports = Object.entries(cssComponentModules)
-      .filter(([path]) => !path.includes("/button/button.css")) // Exclut button.css
-      .map(([, cssPath]) => `@import url("${cssPath}") layer(components);`)
-      .join("\n")
-
-    allComponentsStyleElement.textContent = imports
-    document.head.appendChild(allComponentsStyleElement)
-
-    console.log(
-      `Chargement de ${Object.keys(cssComponentModules).length - 1} feuilles de styles de composants dans le layer components (button.css exclu car déjà chargé)`,
-    )
-  }
-
-  // Charge immédiatement tous les styles des composants
-  loadAllComponentStyles()
 
   /**
    * Réinitialise les modules de composants spécifiques après injection du HTML
@@ -49,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Réinitialise le module Dialog si c'est le composant Dialog
     if (componentName === "dialog/dialog") {
       // Importe et réinitialise le module Dialog
-      import("/components/dialog/dialog.js")
+      import("/natives/dialog/dialog.js")
         .then((dialogModule) => {
           if (dialogModule.initDialogs) {
             console.log("🔄 Réinitialisation du module Dialog")
@@ -215,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Si le paramètre 'component' est présent dans l'URL.
   if (componentName) {
     // Construit la clé pour accéder au module HTML importé par Vite.
-    const htmlModuleKey = `/components/${componentName}.html`
+    const htmlModuleKey = `/natives/${componentName}.html`
 
     const componentHtmlContent = htmlComponentModules[htmlModuleKey]
 

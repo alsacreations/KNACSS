@@ -1,2 +1,2 @@
-# Ignore all components HTML files:
-components/**/*.html
+# Ignore all natives HTML files:
+natives/**/*.html

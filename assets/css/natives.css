@@ -1,0 +1,1001 @@
+/* ============================
+ * KNACSS Natives Components
+ * Styles natifs pour tous les composants
+ * ============================ */
+
+/* ---------------------
+ * Button native Styles
+ * -------------------- */
+
+button,
+.btn,
+input:where([type="button"], [type="reset"], [type="submit"]) {
+  --button-background-color: var(--form-control-background, ButtonFace);
+  --button-background-color-hover: oklch(
+    from var(--button-background-color) calc(l * 0.9) c h
+  );
+  --button-background-color-active: oklch(
+    from var(--button-background-color) calc(l * 0.8) c h
+  );
+  --button-border-color: var(--form-control-border-color, ButtonBorder);
+  --button-border-color-hover: var(--button-border-color);
+  --button-border-color-active: var(--button-border-color);
+  --button-border-radius: var(--form-control-border-radius, 0);
+  --button-border-width: var(--form-control-border-width, 1px);
+  --button-text-color: var(--on-form-control, ButtonText);
+  --button-text-color-hover: var(--button-text-color);
+  --button-text-color-active: var(--button-text-color);
+  --button-font-weight: var(--font-weight-regular, 400);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: var(--form-control-spacing, 12px 16px);
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background-color);
+  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color);
+  color: var(--button-text-color);
+  font: inherit;
+  font-weight: var(--button-font-weight);
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* Base button */
+  &:is(:not(:disabled, [disabled])) {
+    &:hover {
+      background-color: var(--button-background-color-hover);
+      box-shadow: inset 0 0 0 var(--button-border-width)
+        var(--button-border-color-hover);
+      color: var(--button-text-color-hover);
+    }
+
+    &:active {
+      background-color: var(--button-background-color-active);
+      box-shadow: inset 0 0 0 var(--button-border-width)
+        var(--button-border-color-active);
+      color: var(--button-text-color-active);
+    }
+  }
+
+  /* Primary button */
+  &.btn-primary:where(:not(:disabled, [disabled])) {
+    --button-background-color: var(--primary);
+    --button-border-color: transparent;
+    --button-text-color: var(--on-primary);
+  }
+
+  /* Secondary button */
+  &.btn-secondary:where(:not(:disabled, [disabled])) {
+    --button-background-color: var(--color-slate-300);
+    --button-border-color: transparent;
+    --button-text-color: var(--primary);
+  }
+
+  /* Reset button */
+  &.btn-reset:where(:not(:disabled, [disabled])) {
+    --button-background-color: transparent;
+    --button-border-color: transparent;
+    --button-text-color: currentcolor;
+  }
+
+  /* States */
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+
+    & * {
+      pointer-events: none;
+    }
+  }
+}
+
+/* ---------------------
+ * Checkbox native Styles
+ * -------------------- */
+
+[type="checkbox"]:not([role="switch"]) {
+  --checkbox-background-color: var(--form-control-background, ButtonFace);
+  --checkbox-background-color-checked: var(--primary, Field);
+  --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
+  --checkbox-border-radius: var(--form-control-border-radius, 0);
+  --checkbox-border-width: var(--form-control-border-width, 1px);
+
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--checkable-size, 1lh);
+  height: var(--checkable-size, 1lh);
+  margin: 0;
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.3s);
+  border: 0;
+  border-radius: var(--checkbox-border-radius);
+  background-color: var(--checkbox-background-color);
+  box-shadow: inset 0 0 0 var(--checkbox-border-width)
+    var(--checkbox-border-color);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  appearance: none;
+
+  /* States */
+  &:is(:checked, :indeterminate) {
+    background-color: var(--checkbox-background-color-checked);
+    box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
+  }
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--on-primary, #ffffff);
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>')
+      center no-repeat;
+  }
+
+  &:indeterminate::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: currentcolor;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M431 256c0 17.7-14.3 32-32 32H49c-17.7 0-32-14.3-32-32s14.3-32 32-32h350c17.7 0 32 14.3 32 32z"/></svg>')
+      center no-repeat;
+  }
+
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+}
+
+.form-group:has([type="checkbox"]:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* --------------------
+ * Details native styles
+ * -------------------- */
+
+details {
+  --details-padding: var(--spacing-16, 1rem);
+  --details-border-color: var(--form-control-border-color, ButtonBorder);
+  --details-border-radius: var(--form-control-border-radius, 0);
+  --details-border-width: var(--form-control-border-width, 1px);
+  --details-summary-background-color: var(--form-control-background, Field);
+  --details-summary-background-hover: oklch(
+    from var(--details-summary-background-color) calc(l * 0.9) c h
+  );
+  --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
+  --details-content-background-color: var(--layer-1, #f9fafb);
+  --details-text-color: var(--on-form-control, FieldText);
+
+  overflow: hidden;
+  border: var(--details-border-width) solid var(--details-border-color);
+  border-radius: var(--details-border-radius);
+
+  /* Summary (titre cliquable) */
+  & .details-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--details-summary-padding);
+    transition: background-color;
+    transition-duration: var(--transition-duration, 0.25s);
+    background-color: var(--details-summary-background-color);
+    color: var(--details-text-color, currentcolor);
+    font-weight: var(--font-weight-semibold, 600);
+    line-height: 1.3;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+
+    /* Suppression du triangle par défaut */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Icône personnalisée (SVG background) */
+    &::after {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      transition: rotate var(--transition-duration);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      rotate: 0deg;
+    }
+
+    /* États d'interaction */
+    &:hover {
+      background-color: var(--details-summary-background-hover);
+    }
+  }
+
+  /* État ouvert */
+  &[open] {
+    & .details-title::after {
+      rotate: 180deg;
+    }
+  }
+
+  /* Support des modes sombres pour l'icône */
+  @media (prefers-color-scheme: dark) {
+    & .details-title::after {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
+  }
+
+  /* Contenu du details */
+  & .details-content {
+    padding: var(--details-padding);
+    border-top: none;
+    background-color: var(--details-content-background-color);
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Support moderne pour les transitions fluides */
+@supports (interpolate-size: allow-keywords) {
+  .details-content {
+    /* État de fin de transition */
+    display: none;
+    height: 0;
+    transition: var(--transition-duration) allow-discrete;
+    transition-property: opacity, height, display;
+    interpolate-size: allow-keywords;
+  }
+
+  details[open] .details-content {
+    display: grid;
+    height: auto;
+
+    @starting-style {
+      height: 0;
+    }
+  }
+}
+
+/* Accessibilité améliorée */
+@media (prefers-reduced-motion: reduce) {
+  details {
+    & .details-title::after {
+      transition: none;
+    }
+
+    & .details-content {
+      transition: none;
+    }
+  }
+}
+
+/* --------------------
+ * Dialog native styles
+ * -------------------- */
+
+dialog {
+  --dialog-background-color: var(--surface, #ffffff);
+  --dialog-text-color: var(--on-surface, #000000);
+  --dialog-border-color: var(--form-control-border-color, ButtonBorder);
+  --dialog-border-radius: var(--form-control-border-radius, 0);
+  --dialog-border-width: var(--form-control-border-width, 1px);
+  --dialog-backdrop-color: oklch(0% 0 0 / 50%);
+  --dialog-padding: var(--spacing-24, 1.5rem);
+  --dialog-header-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  --dialog-footer-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  --dialog-max-width: 32rem;
+  --dialog-max-height: calc(100vh - var(--spacing-32, 2rem));
+
+  max-width: var(--dialog-max-width);
+  padding: 0;
+  overflow: visible;
+  border: none;
+  background: transparent;
+  color: var(--dialog-text-color);
+
+  /* État fermé par défaut */
+  &:not([open]) {
+    display: none;
+  }
+
+  /* Backdrop (arrière-plan) */
+  &::backdrop {
+    background-color: var(--dialog-backdrop-color);
+    backdrop-filter: blur(3px);
+  }
+
+  /* Animation d'ouverture */
+  &[open] {
+    animation: dialog-show var(--transition-duration, 0.25s) ease-out;
+  }
+
+  /* Variante petite modale */
+  &.dialog-sm {
+    --dialog-max-width: 24rem;
+  }
+
+  /* Variante grande modale */
+  &.dialog-lg {
+    --dialog-max-width: 48rem;
+  }
+
+  /* Variante pleine largeur */
+  &.dialog-fullwidth {
+    --dialog-max-width: calc(100vw - var(--spacing-32, 2rem));
+  }
+}
+
+/* Contenu principal de la modale */
+.dialog-content {
+  display: grid;
+  border: var(--dialog-border-width) solid var(--dialog-border-color);
+  border-radius: var(--dialog-border-radius);
+  background-color: var(--dialog-background-color);
+}
+
+/* En-tête de la modale */
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--dialog-header-padding);
+  border-bottom: 1px solid var(--dialog-border-color);
+  border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
+  background: var(--layer-1, #f9fafb);
+  gap: var(--spacing-16, 1rem);
+}
+
+.dialog-title {
+  margin: 0;
+  color: var(--dialog-text-color);
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Bouton de fermeture */
+.dialog-close {
+  display: inline-grid;
+  box-sizing: content-box;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: 2px;
+  transition: background-color var(--transition-duration, 0.25s);
+  border-radius: var(--radius-full, 50%);
+  font-size: 2rem;
+  place-content: center;
+  place-self: center;
+  aspect-ratio: 1;
+
+  &:hover {
+    background-color: var(--layer-2, #f3f4f6);
+  }
+}
+
+/* Corps de la modale */
+.dialog-body {
+  padding: var(--dialog-padding);
+  overflow-y: auto;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Pied de la modale */
+.dialog-footer {
+  padding: var(--dialog-footer-padding);
+  border-top: 1px solid var(--dialog-border-color);
+  border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
+  background: var(--layer-1, #f9fafb);
+}
+
+/* Animations */
+@keyframes dialog-show {
+  from {
+    scale: 0.95;
+    opacity: 0%;
+  }
+
+  to {
+    scale: 1;
+    opacity: 100%;
+  }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  dialog {
+    animation: none;
+
+    &::backdrop {
+      animation: none;
+    }
+  }
+}
+
+/* Responsive */
+@media (--until-sm) {
+  dialog {
+    --dialog-max-width: calc(100vw - var(--spacing-16, 1rem));
+    --dialog-max-height: calc(100vh - var(--spacing-16, 1rem));
+  }
+
+  .dialog-header,
+  .dialog-footer {
+    padding: var(--spacing-16, 1rem);
+  }
+
+  .dialog-body {
+    padding: var(--spacing-16, 1rem);
+  }
+}
+
+/* --------------------
+ * Input native styles
+ * -------------------- */
+
+input:not(
+    [type="button"],
+    [type="reset"],
+    [type="submit"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"]
+  ) {
+  --input-background-color: var(--form-control-background, ButtonFace);
+  --input-border-color: var(--form-control-border-color, ButtonBorder);
+  --input-border-radius: var(--form-control-border-radius, 0);
+  --input-border-width: var(--form-control-border-width, 1px);
+  --input-text-color: var(--on-form-control, ButtonText);
+
+  display: block;
+  width: 100%;
+  padding: var(--form-control-spacing, 12px 16px);
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  box-shadow: inset 0 0 0 var(--input-border-width) var(--input-border-color);
+  color: var(--input-text-color);
+  font: inherit;
+  line-height: 1.5;
+
+  /* État désactivé */
+  &:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+
+  /* État en lecture seule */
+  &:read-only {
+    background-color: var(--layer-1, var(--input-background-color));
+    cursor: default;
+  }
+
+  /* État invalide après interaction utilisateur */
+  &:user-invalid {
+    --input-border-color: var(--error);
+    --input-border-width: 2px;
+  }
+
+  /* État valide après interaction utilisateur */
+  &:user-valid {
+    --input-border-color: var(--success);
+    --input-border-width: 2px;
+  }
+
+  /* Placeholder */
+  &::placeholder {
+    opacity: 100%;
+    color: var(--on-surface-secondary, #6b7280);
+  }
+}
+
+/* Styles spécifiques pour les types de champs */
+
+/* Champ de recherche */
+:where(input[type="search"]) {
+  /* Suppression du style de recherche WebKit */
+  appearance: textfield;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+  }
+}
+
+/* Champs numériques */
+:where(input[type="number"]) {
+  /* Masquer les spinners pour Chrome/Safari/Edge */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  /* Masquer les spinners pour Firefox */
+  appearance: textfield;
+}
+
+/* Champ de date et heure */
+:where(input[type="date"], input[type="time"], input[type="datetime-local"]) {
+  cursor: pointer;
+
+  /* Styles pour WebKit */
+  &::-webkit-calendar-picker-indicator {
+    transition: opacity var(--transition-duration, 0.25s);
+    opacity: 60%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
+}
+
+/* Champ de fichier */
+:where(input[type="file"]) {
+  padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
+  cursor: pointer;
+
+  &::file-selector-button {
+    margin-right: var(--spacing-12, 0.75rem);
+    padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
+    transition: background-color var(--transition-duration, 0.25s);
+    border: 0;
+    border-radius: var(--input-border-radius);
+    background-color: var(--primary, #3366cc);
+    color: var(--on-primary, #ffffff);
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background-color: oklch(from var(--primary, #3366cc) calc(l * 0.9) c h);
+    }
+  }
+
+  /* Support WebKit */
+  &::-webkit-file-upload-button {
+    margin-right: var(--spacing-12, 0.75rem);
+    padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
+    transition: background-color var(--transition-duration, 0.25s);
+    border: 0;
+    border-radius: var(--input-border-radius);
+    background-color: var(--primary, #3366cc);
+    color: var(--on-primary, #ffffff);
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background-color: oklch(from var(--primary, #3366cc) calc(l * 0.9) c h);
+    }
+  }
+}
+
+/* Support pour les labels associés aux champs désactivés */
+.form-group:has(input:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* ---------------------
+ * Radio native Styles
+ * -------------------- */
+
+[type="radio"] {
+  --radio-background-color: var(--form-control-background, ButtonFace);
+  --radio-border-color: var(--checkables-border-color, ButtonBorder);
+  --radio-border-radius: var(--radius-full);
+  --radio-border-width: var(--form-control-border-width, 1px);
+  --radio-thumb-color: var(--accent, Field);
+
+  display: grid;
+  width: var(--checkable-size, 1.25em);
+  height: var(--checkable-size, 1.25em);
+  margin: 0;
+  padding: 0;
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--radio-border-radius);
+  background-color: var(--radio-background-color);
+  box-shadow: inset 0 0 0 var(--radio-border-width) var(--radio-border-color);
+  cursor: pointer;
+  appearance: none;
+  place-content: center;
+
+  &::before {
+    content: "";
+    width: calc(var(--checkable-size, 1.25em) / 1.8);
+    height: calc(var(--checkable-size, 1.25em) / 1.8);
+    transition-property: scale;
+    transition-duration: var(--transition-duration, 0.25s);
+    border-radius: var(--radius-full);
+    background-color: var(--radio-thumb-color);
+    scale: 0;
+  }
+
+  &:checked {
+    &::before {
+      scale: 1;
+    }
+  }
+
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+}
+
+.form-group:has([type="radio"]:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* --------------------
+ * Range native styles
+ * -------------------- */
+
+.range {
+  position: relative;
+}
+
+[type="range"] {
+  --range-background-color: var(--form-control-background, Field);
+  --range-border-radius: var(--form-control-border-radius, 4px);
+  --range-text-color: var(--on-form-control, FieldText);
+  --range-track-size: 3px;
+  --range-track-color: var(--on-surface, #eeeeee);
+  --range-thumb-color: var(--accent-invert, #cccccc);
+  --range-thumb-color-checked: oklch(
+    from var(--range-thumb-color) calc(l * 1.2) c h
+  );
+  --range-thumb-size: 1rem;
+
+  width: 100%;
+  height: var(--range-track-size);
+  border: 0;
+  border-radius: var(--range-border-radius);
+  background-color: var(--range-track-color);
+  accent-color: var(--range-thumb-color);
+  appearance: none;
+
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+
+  &::-webkit-slider-thumb {
+    box-sizing: content-box;
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border: var(--range-track-size) solid var(--range-track-color);
+    border-radius: 50%;
+    background-color: var(--range-thumb-color);
+    cursor: pointer;
+    appearance: none;
+    anchor-name: --thumb; /* Anchor point for position-anchor */
+  }
+
+  &:active::-webkit-slider-thumb {
+    background-color: var(--range-thumb-color-checked);
+    cursor: grabbing;
+  }
+
+  &::-moz-range-thumb {
+    box-sizing: content-box;
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border: var(--range-track-size) solid var(--range-track-color);
+    border-radius: 50%;
+    background-color: var(--range-thumb-color);
+    cursor: pointer;
+    appearance: none;
+    anchor-name: --thumb; /* Anchor point for position-anchor */
+  }
+
+  &:active::-moz-range-thumb {
+    background-color: var(--range-thumb-color-checked);
+    cursor: grabbing;
+  }
+}
+
+.range-value {
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: var(--form-control-border-radius, 4px);
+  background-color: var(--form-control-background, Field);
+  font-size: var(--text-14, 0.875rem);
+  translate: 0 1.4rem;
+}
+
+@supports (position-anchor: initial) {
+  .range-value {
+    position-anchor: --thumb;
+    position-area: bottom;
+    translate: 0 0.5rem;
+  }
+}
+
+/* --------------------
+ * Select native styles
+ * -------------------- */
+
+select {
+  --select-background-color: var(--form-control-background, Field);
+  --select-border-color: var(--form-control-border-color, ButtonBorder);
+  --select-border-radius: var(--form-control-border-radius, 0);
+  --select-border-width: var(--form-control-border-width, 1px);
+  --select-text-color: var(--on-form-control, FieldText);
+
+  display: block;
+  width: 100%;
+  padding: var(--form-control-spacing, 12px 16px);
+  padding-right: calc(var(--spacing-32, 2rem) + var(--spacing-12, 0.75rem));
+  transition-property: background-color, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--select-border-radius);
+  background-color: var(--select-background-color);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-12, 0.75rem) center;
+  background-size: 1rem;
+  box-shadow: inset 0 0 0 var(--select-border-width) var(--select-border-color);
+  color: var(--select-text-color);
+  font: inherit;
+  line-height: 1.5;
+  cursor: pointer;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* État désactivé */
+  &:disabled {
+    opacity: 50%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    cursor: not-allowed;
+  }
+
+  /* Support des modes sombres pour les flèches */
+  @media (prefers-color-scheme: dark) {
+    &:not(:disabled) {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
+
+    &:disabled {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23777777' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
+  }
+
+  /* Sélection multiple */
+  &[multiple] {
+    padding-right: var(--spacing-16, 1rem);
+    background-image: none;
+    cursor: default;
+  }
+}
+
+/* Styles pour les optgroups */
+:where(optgroup) {
+  color: var(--on-surface-secondary, inherit);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+/* --------------------
+ * Switch native styles
+ * -------------------- */
+
+[role="switch"] {
+  --switch-width: 2.5rem;
+  --switch-height: 1.5rem;
+  --switch-track-color: var(--form-control-background, ButtonFace);
+  --switch-track-color-checked: var(--success, #ffffff);
+  --switch-thumb-size: var(--switch-height);
+  --switch-thumb-color: ButtonBorder;
+  --switch-thumb-color-checked: var(--success, #ffffff);
+  --switch-border-radius: var(--radius-full, 9999px);
+  --switch-border-color: var(--checkables-border-color, ButtonBorder);
+  --switch-border-width: 1px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  margin: 0;
+  padding: 0;
+  transition-property: background;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: var(--switch-border-color) solid var(--switch-border-width);
+  border-radius: var(--switch-border-radius);
+  background-color: var(--switch-track-color);
+  cursor: pointer;
+  appearance: none;
+
+  &::before {
+    content: "";
+    transition-property: flex-grow;
+    transition-duration: var(--transition-duration, 0.25s);
+  }
+
+  /* Indicateur du switch */
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: var(--switch-thumb-size);
+    height: var(--switch-thumb-size);
+    transition-property: background, scale;
+    transition-duration: var(--transition-duration, 0.25s);
+    border-radius: var(--switch-border-radius);
+    background-color: var(--switch-thumb-color);
+    scale: 0.6;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path fill="green" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0%;
+  }
+
+  /* État activé */
+  &:checked {
+    border-color: var(--switch-track-color-checked);
+    background-color: var(--switch-thumb-color-checked);
+
+    &::before {
+      flex-grow: 1;
+    }
+
+    &::after {
+      scale: 0.9;
+      background-color: var(--on-primary, #ffffff);
+      background-size: 70%;
+    }
+  }
+
+  /* État désactivé */
+  &:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+
+    &::after {
+      box-shadow: none;
+    }
+  }
+}
+
+/* Support pour les labels des switches désactivés */
+.form-group:has([type="checkbox"][role="switch"]:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* --------------------
+ * Textarea native styles
+ * -------------------- */
+
+textarea {
+  --textarea-background-color: var(--form-control-background, ButtonFace);
+  --textarea-border-color: var(--form-control-border-color, ButtonBorder);
+  --textarea-border-radius: var(--form-control-border-radius, 0);
+  --textarea-border-width: var(--form-control-border-width, 1px);
+  --textarea-text-color: var(--on-form-control, ButtonText);
+
+  display: block;
+  width: 100%;
+  min-height: 5lh;
+  padding: var(--form-control-spacing, 12px 16px);
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--textarea-border-radius);
+  background-color: var(--textarea-background-color);
+  box-shadow: inset 0 0 0 var(--textarea-border-width)
+    var(--textarea-border-color);
+  color: var(--textarea-text-color);
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+  field-sizing: content;
+
+  /* État désactivé */
+  &:disabled {
+    opacity: 50%;
+    resize: none;
+    cursor: not-allowed;
+  }
+
+  /* État en lecture seule */
+  &:read-only {
+    background-color: var(--layer-1, var(--textarea-background-color));
+    resize: none;
+    cursor: default;
+  }
+
+  /* État invalide après interaction utilisateur */
+  &:user-invalid {
+    --textarea-border-color: var(--error);
+    --textarea-border-width: 2px;
+  }
+
+  /* Placeholder */
+  &::placeholder {
+    opacity: 100%;
+    color: var(--on-surface);
+  }
+}
+
+/* Support pour les labels associés aux textarea désactivés */
+.form-group:has(textarea:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* Support pour les labels associés aux textarea en lecture seule */
+.form-group:has(textarea:read-only) label {
+  cursor: default;
+}
+
+/* Compteur de caractères */
+.character-counter {
+  min-width: max-content;
+  margin-left: auto;
+  color: var(--on-surface-secondary, #6b7280);
+  font-size: var(--text-14, 0.875rem);
+  font-weight: var(--font-weight-medium, 500);
+  text-align: right;
+
+  /* États du compteur selon le pourcentage restant */
+  &.warning {
+    color: var(--warning, #f97316);
+  }
+
+  &.danger {
+    color: var(--error, #ef4444);
+    font-weight: var(--font-weight-semibold, 600);
+  }
+}
+
+/* Responsive : compteur sur nouvelle ligne sur petits écrans */
+@media (--until-sm) {
+  .form-group-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .character-counter {
+    margin-left: 0;
+    text-align: left;
+  }
+}

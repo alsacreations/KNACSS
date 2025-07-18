@@ -13,29 +13,63 @@
       name="description"
       content="Styleguide KNACSS - Guide des composants et éléments HTML disponibles" />
     <title>Styleguide - KNACSS</title>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/app.css" />
     <link
       rel="stylesheet"
       href="/assets/css/styleguide.css" />
   </head>
   <body>
-    <a href="#main-content" class="visually-hidden" tabindex="1">Aller au contenu principal</a>
+    <a
+      href="#main-content"
+      class="visually-hidden"
+      tabindex="1"
+      >Aller au contenu principal</a
+    >
 
-    <header class="styleguide-header" role="banner">
+    <header
+      class="styleguide-header"
+      role="banner">
       <h1 id="styleguide-title">Styleguide</h1>
-      <nav role="navigation" aria-label="Navigation principale">
-        <a href="../index.html" class="btn btn-back-home" aria-label="Retourner à la page d'accueil de KNACSS">Retour à l'accueil</a>
+      <nav
+        role="navigation"
+        aria-label="Navigation principale">
+        <a
+          href="../index.html"
+          class="btn btn-back-home"
+          aria-label="Retourner à la page d'accueil de KNACSS"
+          >Retour à l'accueil</a
+        >
       </nav>
     </header>
 
-    <main class="styleguide-main" role="main" aria-labelledby="styleguide-title">
-      <section class="styleguide-section" aria-labelledby="component-title">
-        <h2 id="component-title" class="visually-hidden">Composant en cours de visualisation</h2>
-        <article class="styleguide-component-wrapper" role="region" aria-labelledby="component-title">
-          <div class="styleguide-component-preview stack" role="group" aria-label="Aperçu du composant">
+    <main
+      class="styleguide-main"
+      role="main"
+      aria-labelledby="styleguide-title">
+      <section
+        class="styleguide-section"
+        aria-labelledby="component-title">
+        <h2
+          id="component-title"
+          class="visually-hidden">
+          Composant en cours de visualisation
+        </h2>
+        <article
+          class="styleguide-component-wrapper"
+          role="region"
+          aria-labelledby="component-title">
+          <div
+            class="styleguide-component-preview stack"
+            role="group"
+            aria-label="Aperçu du composant">
             <!-- Le contenu du composant (ex: button.html) sera injecté ici par JavaScript -->
           </div>
-          <div class="styleguide-component-actions" role="toolbar" aria-label="Actions pour le composant">
+          <div
+            class="styleguide-component-actions"
+            role="toolbar"
+            aria-label="Actions pour le composant">
             <button
               type="button"
               class="js-show-code"
@@ -57,7 +91,9 @@
       </section>
     </main>
 
-    <footer class="styleguide-footer" role="contentinfo">
+    <footer
+      class="styleguide-footer"
+      role="contentinfo">
       <p>&copy; 2025 KNACSS Styleguide</p>
     </footer>
 
@@ -69,9 +105,9 @@
       src="/assets/main.js"></script>
     <script
       type="module"
-      src="/components/textarea/textarea.js"></script>
+      src="/natives/textarea/textarea.js"></script>
     <script
       type="module"
-      src="/components/dialog/dialog.js"></script>
+      src="/natives/dialog/dialog.js"></script>
   </body>
 </html>
