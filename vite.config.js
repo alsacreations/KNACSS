@@ -17,7 +17,7 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
-          styleguide: resolve(__dirname, "components/styleguide.html"),
+          styleguide: resolve(__dirname, "natives/styleguide.html"),
         },
       },
     },
