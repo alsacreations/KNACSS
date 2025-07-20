@@ -869,7 +869,12 @@ select {
   }
 
   /* État activé */
-  &:checked {
+  &:checked::before {
+    flex-grow: 1;
+  }
+
+  /* État activé (variante) */
+  &[data-variant="check"]:checked {
     border-color: var(--switch-track-color-checked);
     background-color: var(--switch-thumb-color-checked);
 
