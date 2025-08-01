@@ -112,6 +112,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   display: inline-flex;
   position: relative;
   flex: 0 0 auto;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: var(--checkable-size, 1lh);
@@ -622,6 +623,7 @@ input:not(
   --radio-thumb-color: var(--accent, Field);
 
   display: grid;
+  flex-shrink: 0;
   width: var(--checkable-size, 1.25em);
   height: var(--checkable-size, 1.25em);
   margin: 0;
@@ -899,6 +901,7 @@ select {
   --switch-border-width: 1px;
 
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: start;
   width: var(--switch-width);
