@@ -5,9 +5,9 @@
 @import "css/theme.css" layer(config);
 @import "css/theme-tokens.css" layer(config);
 @import "css/layouts.css" layer(config);
+@import "css/natives.css" layer(config);
 
 /* Base */
 @import "css/styles.css" layer(base);
-@import "css/natives.css" layer(base);
 
 /* Components */
