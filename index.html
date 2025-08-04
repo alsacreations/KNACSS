@@ -28,7 +28,7 @@
       rel="stylesheet"
       href="/assets/css/styles.css" />
   </head>
-  <body class="liquid">
+  <body data-layout="liquid">
     <a
       href="#main-content"
       class="visually-hidden"
@@ -61,7 +61,8 @@
         </p>
         <ul
           role="list"
-          class="homepage-nav cluster"
+          class="homepage-nav"
+          data-layout="cluster"
           aria-label="Navigation du styleguide">
           <li>
             <a
@@ -147,7 +148,7 @@
           les feuilles de styles dans l'ordre des layers CSS&#8239;:
         </p>
         <ol
-          class="stack"
+          data-layout="stack"
           data-gap="l">
           <li>
             <strong
@@ -225,7 +226,8 @@
         <h2 id="deps-heading">Dépendances</h2>
         <p>Dépendances de développement du projet&#8239;:</p>
         <div
-          class="stack dependency-grid"
+          class="dependency-grid"
+          data-layout="stack"
           role="group"
           aria-labelledby="deps-heading">
           <div class="dependency-category">

@@ -1,42 +1,46 @@
 /* -----------------------/*
  * Layouts CSS utilitaires
  * Made par Alsacréations
- * Ressources et documentation : http://bretzel.alsacreations.com/
+ * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-06-28
+ * Mise à jour : 2025-07-03
  /* ---------------------- */
 
 /* Stack */
-.stack {
-  --stack-gap: 1rem; /* espace entre chaque enfant */
-
+[data-layout*="stack"] {
   display: grid;
-  row-gap: var(--stack-gap);
+  row-gap: var(--gap-m, 1rem);
 
   &[data-gap="l"] {
-    row-gap: calc(var(--stack-gap) * 2);
+    row-gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    row-gap: calc(var(--stack-gap) * 3);
+    row-gap: var(--gap-xl, 3rem);
+  }
+
+  &[data-gap="none"] {
+    row-gap: 0;
   }
 }
 
 /* Cluster */
-.cluster {
-  --cluster-gap: 1rem; /* gouttière */
-
+[data-layout*="cluster"] {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--cluster-gap);
+  gap: var(--gap-m, 1rem);
   align-items: start;
 
   &[data-gap="l"] {
-    gap: calc(var(--cluster-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[gap="xl"] {
-    gap: calc(var(--cluster-gap) * 3);
+    gap: var(--gap-xl, 3rem);
+  }
+
+  &[data-gap="none"] {
+    gap: 0;
   }
 
   &[data-justify="end"] {
@@ -57,8 +61,7 @@
 }
 
 /* Autogrid */
-.autogrid {
-  --autogrid-gap: 1rem; /* espace entre chaque enfant */
+[data-layout*="autogrid"] {
   --col-min-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
 
@@ -67,17 +70,20 @@
     var(--grid-fill),
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
-  gap: var(--autogrid-gap);
+  gap: var(--gap-m, 1rem);
 
   &[data-gap="l"] {
-    gap: calc(var(--autogrid-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--autogrid-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
-  /* Alignement vertical */
+  &[data-gap="none"] {
+    gap: 0;
+  }
+
   &[data-align="start"] {
     align-content: start;
     align-items: start;
@@ -85,21 +91,22 @@
 }
 
 /* Switcher */
-.switcher {
-  --switcher-gap: 1rem;
-
+[data-layout*="switcher"] {
   display: grid;
-  gap: var(--switcher-gap);
+  gap: var(--gap-m, 1rem);
 
   &[data-gap="l"] {
-    gap: calc(var(--switcher-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--switcher-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
-  /* Alignement vertical */
+  &[data-gap="none"] {
+    gap: 0;
+  }
+
   &[data-align="start"] {
     align-content: start;
     align-items: start;
@@ -112,21 +119,23 @@
 }
 
 /* Repel */
-.repel {
-  --repel-gap: 1rem; /* gouttière */
-
+[data-layout*="repel"] {
   display: flex;
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
-  gap: var(--repel-gap);
+  gap: var(--gap-m, 1rem);
 
   &[data-gap="l"] {
-    gap: calc(var(--repel-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--repel-gap) * 3);
+    gap: var(--gap-xl, 3rem);
+  }
+
+  &[data-gap="none"] {
+    gap: 0;
   }
 
   &[data-align="start"] {
@@ -143,8 +152,7 @@
 }
 
 /* Reel */
-.reel {
-  --reel-gap: 1rem; /* gouttière */
+[data-layout*="reel"] {
   --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
   display: flex;
@@ -152,16 +160,20 @@
   height: auto;
   margin-inline: auto; /* reel est centré horizontalement */
   overflow-x: auto;
-  gap: var(--reel-gap);
+  gap: var(--gap-m, 1rem);
   scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
   -webkit-overflow-scrolling: touch;
 
   &[data-gap="l"] {
-    gap: calc(var(--reel-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--reel-gap) * 3);
+    gap: var(--gap-xl, 3rem);
+  }
+
+  &[data-gap="none"] {
+    gap: 0;
   }
 
   :where(& > *) {
@@ -191,19 +203,21 @@
 }
 
 /* Duo */
-.duo {
-  --duo-gap: 1rem;
-
+[data-layout*="duo"] {
   display: grid;
   align-content: start;
-  gap: var(--duo-gap);
+  gap: var(--gap-m, 1rem);
 
   &[data-gap="l"] {
-    gap: calc(var(--duo-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--duo-gap) * 3);
+    gap: var(--gap-xl, 3rem);
+  }
+
+  &[data-gap="none"] {
+    gap: 0;
   }
 
   &[data-align="start"] {
@@ -249,7 +263,7 @@
 }
 
 /* Boxed */
-.boxed {
+[data-layout*="boxed"] {
   --boxed-max: 80rem; /* Largeur max (1280px) */
 
   width: 100%;
@@ -262,7 +276,7 @@
 }
 
 /* Liquid */
-.liquid {
+[data-layout*="liquid"] {
   --liquid-min-margin: var(--spacing-16, 1rem);
   --liquid-content: var(--spacing-2xl, 98rem);
 
@@ -280,7 +294,7 @@
 }
 
 /* Splash et autres enfants de Liquid */
-.splash {
+[data-layout*="splash"] {
   display: grid;
   grid-column: liquid;
   grid-template-columns: inherit;
@@ -290,7 +304,7 @@
   }
 }
 
-.splash-start {
+[data-layout*="splash-start"] {
   display: grid;
   grid-column: liquid-start / content-end;
   grid-template-columns: subgrid;
@@ -300,7 +314,7 @@
   }
 }
 
-.splash-end {
+[data-layout*="splash-end"] {
   display: grid;
   grid-column: content-start / liquid-end;
   grid-template-columns: subgrid;
@@ -310,7 +324,7 @@
   }
 }
 
-.splash-half-start {
+[data-layout*="splash-half-start"] {
   display: grid;
   grid-column: liquid-start / half;
   grid-template-columns: subgrid;
@@ -320,7 +334,7 @@
   }
 }
 
-.splash-half-end {
+[data-layout*="splash-half-end"] {
   display: grid;
   grid-column: half / liquid-end;
   grid-template-columns: subgrid;
