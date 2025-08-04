@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-07-03
+ * Mise à jour : 2025-08-04
  /* ---------------------- */
 
 /* Stack */
@@ -236,8 +236,12 @@
 
   /* Deux colonnes si >=768px */
   @media (width >= 48rem) {
-    /* modèle par défaut = 2/3 1/3 */
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    /* modèle par défaut = 1/2 1/2 */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    &[data-model="2-1"] {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
 
     &[data-model="1-2"] {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
