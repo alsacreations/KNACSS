@@ -171,10 +171,6 @@ body {
  * ----------------------------------
  */
 
-[data-layout="cluster"] {
-  --cluster-gap: var(--spacing-8);
-}
-
 [data-layout="stack"] {
   --stack-gap: var(--spacing-8);
 }

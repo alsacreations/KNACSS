@@ -1,20 +1,19 @@
 /* ----------------------------------
- * Variables CSS primaires
- * Made par Alsacréations
+ * Theme du projet (valeurs primitives)
  * ----------------------------------
  */
 
-/* Breakpoints */
+/* Breakpoints (si custom Media Queries) */
 @custom-media --sm (width >= 48rem); /* 768px */
 @custom-media --until-sm (width < 48rem); /* 768px */
 @custom-media --lg (width >= 64rem); /* 1024px */
 
 :root {
-  /* Breakpoints */
+  /* Breakpoints (en dur) */
   --breakpoint-md: 48rem; /* 768px */
   --breakpoint-lg: 64rem; /* 1024px */
 
-  /* Spacings */
+  /* Espacements */
   --spacing-0: 0;
   --spacing-1: 1px;
   --spacing-2: 0.125rem;
@@ -35,7 +34,7 @@
   --spacing-180: 11.25rem;
   --spacing-260: 16.25rem;
 
-  /* Fonts */
+  /* Typographie */
   --font-base: system-ui, sans-serif;
   --font-poppins: poppins, sans-serif;
   --font-weight-light: 300;
@@ -67,12 +66,12 @@
 
   /* Border radius */
   --radius-none: 0;
-  --radius-md: 4px;
+  --radius-md: 0.25rem;
   --radius-lg: 0.5rem;
-  --radius-2xl: 1.5rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Misc */
+  /* Divers */
   --transition-duration: 0.25s;
   --z-under-page-level: -1;
   --z-above-page-level: 1;
@@ -80,7 +79,7 @@
   --z-above-header-level: 2000;
   --z-above-all-level: 3000;
 
-  /* Colors (raw) */
+  /* Couleurs (globales) */
   --color-gray-50: oklch(97% 0 0);
   --color-gray-100: oklch(92.2% 0 0);
   --color-gray-200: oklch(87% 0 0);
@@ -113,6 +112,10 @@
   --color-blue-500: oklch(51.33% 0.18 256.37);
   --color-blue-700: oklch(36.33% 0.18 256.37);
   --color-blue-900: oklch(21.33% 0.11 256.37);
+
+  /* Couleurs (Theme) */
+
+  /* Ici les palettes spécifiques au projet */
   --color-slate-50: oklch(100% 0.01 257.32);
   --color-slate-100: oklch(98% 0.01 257.32);
   --color-slate-200: oklch(94.5% 0.02 257.32);

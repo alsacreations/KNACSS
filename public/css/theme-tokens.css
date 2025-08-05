@@ -40,18 +40,34 @@
   --border-medium: var(--color-gray-400);
   --border-dark: var(--color-gray-600);
 
-  /* Spacing Tokens */
+  /* Typo Tokens */
   --text-m: clamp(var(--text-16), 0.9565rem + 0.2174vw, var(--text-18));
   --text-l: clamp(var(--text-18), 1.0761rem + 0.2174vw, var(--text-20));
   --text-xl: clamp(var(--text-20), 1.0054rem + 1.087vw, var(--text-30));
   --text-2xl: clamp(var(--text-24), 1.2065rem + 1.3043vw, var(--text-36));
   --text-3xl: clamp(var(--text-30), 1.4348rem + 1.9565vw, var(--text-48));
 
-  /* prettier-ignore */
-  --spacing-m: clamp(var(--spacing-16), 0.6522rem + 1.7391vw, var(--spacing-32));
-
-  /* prettier-ignore */
-  --spacing-l: clamp(var(--spacing-32),1.6522rem + 1.7391vw,var(--spacing-48));
+  /* Spacing Tokens */
+  --gap-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
+  --gap-m: clamp(var(--spacing-16), 0.5909rem + 1.8182vw, var(--spacing-32));
+  --gap-l: clamp(var(--spacing-28), 1.2386rem + 2.2727vw, var(--spacing-48));
+  --gap-xl: clamp(var(--spacing-32), 0.7727rem + 5.4545vw, var(--spacing-80));
+  --spacing-s: clamp(var(--spacing-8), 0.2955rem + 0.9091vw, var(--spacing-16));
+  --spacing-m: clamp(
+    var(--spacing-16),
+    0.5909rem + 1.8182vw,
+    var(--spacing-32)
+  );
+  --spacing-l: clamp(
+    var(--spacing-28),
+    1.2386rem + 2.2727vw,
+    var(--spacing-48)
+  );
+  --spacing-xl: clamp(
+    var(--spacing-32),
+    0.7727rem + 5.4545vw,
+    var(--spacing-80)
+  );
 
   /* Forms Tokens */
   --form-control-background: light-dark(
