@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-08-04
+ * Mise à jour : 2025-08-05
  /* ---------------------- */
 
 /* Stack */
@@ -43,12 +43,20 @@
     gap: 0;
   }
 
+  &[data-justify="start"] {
+    justify-content: start;
+  }
+
   &[data-justify="end"] {
     justify-content: end;
   }
 
   &[data-align="start"] {
     align-items: start;
+  }
+
+  &[data-align="end"] {
+    align-items: end;
   }
 
   &[data-align="center"] {
@@ -88,6 +96,21 @@
     align-content: start;
     align-items: start;
   }
+
+  &[data-align="end"] {
+    align-content: end;
+    align-items: end;
+  }
+
+  &[data-align="center"] {
+    align-content: center;
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-content: stretch;
+    align-items: stretch;
+  }
 }
 
 /* Switcher */
@@ -110,6 +133,21 @@
   &[data-align="start"] {
     align-content: start;
     align-items: start;
+  }
+
+  &[data-align="end"] {
+    align-content: end;
+    align-items: end;
+  }
+
+  &[data-align="center"] {
+    align-content: center;
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-content: stretch;
+    align-items: stretch;
   }
 
   /* Multi colonnes si >768px */
@@ -140,6 +178,10 @@
 
   &[data-align="start"] {
     align-items: start;
+  }
+
+  &[data-align="end"] {
+    align-items: end;
   }
 
   &[data-align="center"] {
@@ -225,6 +267,11 @@
     align-items: start;
   }
 
+  &[data-align="end"] {
+    align-content: end;
+    align-items: end;
+  }
+
   &[data-align="center"] {
     align-content: center;
     align-items: center;
@@ -232,6 +279,7 @@
 
   &[data-align="stretch"] {
     align-content: stretch;
+    align-items: stretch;
   }
 
   /* Deux colonnes si >=768px */
