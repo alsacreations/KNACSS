@@ -171,12 +171,16 @@ body {
  * ----------------------------------
  */
 
+[data-layout="cluster"] {
+  gap: var(--gap-s);
+}
+
 [data-layout="stack"] {
-  --stack-gap: var(--spacing-8);
+  gap: var(--gap-s);
 }
 
 .styleguide-component-preview[data-layout="stack"] {
-  --stack-gap: var(--spacing-24);
+  gap: var(--gap-m);
 }
 
 /* Classes spécifiques pour la homepage */
