@@ -617,7 +617,7 @@ input:not(
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
-  --radio-thumb-color: var(--accent, ButtonText);
+  --radio-thumb-color: var(--accent, accentcolor);
 
   display: inline-grid;
   width: var(--checkable-size, 1.25em);
