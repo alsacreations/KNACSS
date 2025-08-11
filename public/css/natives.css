@@ -68,16 +68,16 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Primary button */
   &.btn-primary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--primary);
+    --button-background-color: var(--primary, Field);
     --button-border-color: transparent;
-    --button-text-color: var(--on-primary);
+    --button-text-color: var(--on-primary, ButtonText);
   }
 
   /* Secondary button */
   &.btn-secondary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--color-slate-300);
+    --button-background-color: var(--color-slate-300, Field);
     --button-border-color: transparent;
-    --button-text-color: var(--primary);
+    --button-text-color: var(--primary, ButtonText);
   }
 
   /* Reset button */
@@ -182,7 +182,7 @@ details {
     from var(--details-summary-background-color) calc(l * 0.9) c h
   );
   --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
-  --details-content-background-color: var(--layer-1, #f9fafb);
+  --details-content-background-color: var(--layer-1, Field);
   --details-text-color: var(--on-form-control, FieldText);
 
   overflow: hidden;
@@ -619,7 +619,7 @@ input:not(
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
-  --radio-thumb-color: var(--accent, Field);
+  --radio-thumb-color: var(--accent, ButtonText);
 
   display: inline-grid;
   width: var(--checkable-size, 1.25em);
@@ -643,7 +643,7 @@ input:not(
     transition-property: scale;
     transition-duration: var(--transition-duration, 0.25s);
     border-radius: var(--radius-full, 9999px);
-    background-color: var(--radio-thumb-color, ButtonText);
+    background-color: var(--radio-thumb-color);
     scale: 0;
   }
 
@@ -893,7 +893,7 @@ select {
   --switch-track-color-checked: var(--success, ButtonFace);
   --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: ButtonBorder;
-  --switch-thumb-color-checked: var(--success, #ffffff);
+  --switch-thumb-color-checked: var(--success, Field);
   --switch-border-radius: var(--radius-full, 9999px);
   --switch-border-color: var(--checkables-border-color, ButtonBorder);
   --switch-border-width: 1px;
@@ -1009,13 +1009,6 @@ textarea {
     cursor: not-allowed;
   }
 
-  /* État en lecture seule */
-  &:read-only {
-    background-color: var(--layer-1, var(--textarea-background-color));
-    resize: none;
-    cursor: default;
-  }
-
   /* État invalide après interaction utilisateur */
   &:user-invalid {
     --textarea-border-color: var(--error);
@@ -1033,11 +1026,6 @@ textarea {
 .form-group:has(textarea:disabled) label {
   opacity: 50%;
   cursor: not-allowed;
-}
-
-/* Support pour les labels associés aux textarea en lecture seule */
-.form-group:has(textarea:read-only) label {
-  cursor: default;
 }
 
 /* Compteur de caractères */
