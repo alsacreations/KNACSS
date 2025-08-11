@@ -185,7 +185,6 @@ details {
   --details-content-background-color: var(--layer-1, Field);
   --details-text-color: var(--on-form-control, FieldText);
 
-  overflow: hidden;
   border: var(--details-border-width) solid var(--details-border-color);
   border-radius: var(--details-border-radius);
 
