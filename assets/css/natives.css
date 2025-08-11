@@ -8,7 +8,7 @@
  * -------------------- */
 
 button,
-.btn,
+a:where(.btn),
 input:where([type="button"], [type="reset"], [type="submit"]) {
   --button-background-color: var(--form-control-background, ButtonFace);
   --button-background-color-hover: oklch(
@@ -443,7 +443,7 @@ dialog {
 }
 
 /* Responsive */
-@media (--until-sm) {
+@media (width < 48rem) {
   dialog {
     --dialog-max-width: calc(100vw - var(--spacing-16, 1rem));
     --dialog-max-height: calc(100vh - var(--spacing-16, 1rem));
@@ -1061,7 +1061,7 @@ textarea {
 }
 
 /* Responsive : compteur sur nouvelle ligne sur petits écrans */
-@media (--until-sm) {
+@media (width < 48rem) {
   .form-group-footer {
     flex-direction: column;
     align-items: stretch;
@@ -1070,5 +1070,49 @@ textarea {
   .character-counter {
     margin-left: 0;
     text-align: left;
+  }
+}
+
+/* --------------------
+ * Hr (separator) native styles
+ * -------------------- */
+
+hr {
+  /* Couleur et épaisseur par défaut alignées sur les contrôles de formulaire */
+  --hr-border-color: var(--form-control-border-color, ButtonBorder);
+  --hr-border-width: var(--form-control-border-width, 1px);
+
+  margin-block: var(--spacing-16, 1rem);
+  border: 0;
+  border-top: var(--hr-border-width) solid var(--hr-border-color);
+
+  /* Variante couleur primaire */
+  &.hr-primary {
+    --hr-border-color: var(--primary);
+  }
+
+  /* Variante épaisseur moyenne (x2) */
+  &.hr-medium {
+    --hr-border-width: calc(var(--form-control-border-width, 1px) * 2);
+  }
+
+  /* Variante trait en vague */
+  &.hr-wavy {
+    /* Harmonisation avec les variables ci-dessus */
+    --hr-wave-length: 16px; /* longueur d'une vague */
+    --hr-wave-height: 8px; /* hauteur totale du motif */
+
+    height: var(--hr-wave-height);
+    margin-block: var(--spacing-16, 1rem);
+    border: 0;
+
+    /* La couleur vient de --hr-border-color, modifiable via .hr-primary */
+    background-color: var(--hr-border-color, currentcolor);
+
+    /* Masque SVG répétable pour obtenir un trait ondulé, coloré via background-color */
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      left center / var(--hr-wave-length) 100% repeat-x;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      left center / var(--hr-wave-length) 100% repeat-x;
   }
 }
