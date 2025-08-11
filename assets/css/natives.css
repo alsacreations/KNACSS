@@ -68,7 +68,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Primary button */
   &.btn-primary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--primary, Field);
+    --button-background-color: var(--primary, accentcolor);
     --button-border-color: transparent;
     --button-text-color: var(--on-primary, ButtonText);
   }
@@ -77,7 +77,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   &.btn-secondary:where(:not(:disabled, [disabled])) {
     --button-background-color: var(--color-slate-300, Field);
     --button-border-color: transparent;
-    --button-text-color: var(--primary, ButtonText);
+    --button-text-color: var(--primary, accentcolor);
   }
 
   /* Reset button */
@@ -104,7 +104,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
 [type="checkbox"]:not([role="switch"]) {
   --checkbox-background-color: var(--form-control-background, Field);
-  --checkbox-background-color-checked: var(--primary, Field);
+  --checkbox-background-color-checked: var(--primary, accentcolor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
@@ -496,12 +496,6 @@ input:not(
     cursor: not-allowed;
   }
 
-  /* État en lecture seule */
-  &:read-only {
-    background-color: var(--layer-1, var(--input-background-color));
-    cursor: default;
-  }
-
   /* État invalide après interaction utilisateur */
   &:user-invalid {
     --input-border-color: var(--error);
@@ -576,13 +570,15 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, #3366cc);
+    background-color: var(--primary, accentcolor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
 
     &:hover {
-      background-color: oklch(from var(--primary, #3366cc) calc(l * 0.9) c h);
+      background-color: oklch(
+        from var(--primary, accentcolor) calc(l * 0.9) c h
+      );
     }
   }
 
@@ -593,13 +589,15 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, #3366cc);
+    background-color: var(--primary, accentcolor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
 
     &:hover {
-      background-color: oklch(from var(--primary, #3366cc) calc(l * 0.9) c h);
+      background-color: oklch(
+        from var(--primary, accentcolor) calc(l * 0.9) c h
+      );
     }
   }
 }
@@ -1076,7 +1074,7 @@ hr {
 
   /* Variante couleur primaire */
   &.hr-primary {
-    --hr-border-color: var(--primary);
+    --hr-border-color: var(--primary, accentcolor);
   }
 
   /* Variante épaisseur moyenne (x2) */
