@@ -10,7 +10,7 @@
 button,
 a:where(.btn),
 input:where([type="button"], [type="reset"], [type="submit"]) {
-  --button-background-color: var(--form-control-background, ButtonFace);
+  --button-background-color: var(--form-control-background, Field);
   --button-background-color-hover: oklch(
     from var(--button-background-color) calc(l * 0.9) c h
   );
@@ -103,13 +103,13 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
  * -------------------- */
 
 [type="checkbox"]:not([role="switch"]) {
-  --checkbox-background-color: var(--form-control-background, ButtonFace);
+  --checkbox-background-color: var(--form-control-background, Field);
   --checkbox-background-color-checked: var(--primary, Field);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
 
-  display: inline-flex;
+  display: inline-grid;
   position: relative;
   flex: 0 0 auto;
   align-items: center;
@@ -385,7 +385,7 @@ dialog {
   height: 2rem;
   padding: 2px;
   transition: background-color var(--transition-duration, 0.25s);
-  border-radius: var(--radius-full, 50%);
+  border-radius: var(--radius-full, 9999px);
   font-size: 2rem;
   place-content: center;
   place-self: center;
@@ -471,7 +471,7 @@ input:not(
     [type="radio"],
     [type="range"]
   ) {
-  --input-background-color: var(--form-control-background, ButtonFace);
+  --input-background-color: var(--form-control-background, Field);
   --input-border-color: var(--form-control-border-color, ButtonBorder);
   --input-border-radius: var(--form-control-border-radius, 0);
   --input-border-width: var(--form-control-border-width, 1px);
@@ -615,13 +615,13 @@ input:not(
  * -------------------- */
 
 [type="radio"] {
-  --radio-background-color: var(--form-control-background, ButtonFace);
+  --radio-background-color: var(--form-control-background, Field);
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
-  --radio-border-radius: var(--radius-full);
+  --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
   --radio-thumb-color: var(--accent, Field);
 
-  display: grid;
+  display: inline-grid;
   width: var(--checkable-size, 1.25em);
   height: var(--checkable-size, 1.25em);
   margin: 0;
@@ -642,8 +642,8 @@ input:not(
     height: calc(var(--checkable-size, 1.25em) / 1.8);
     transition-property: scale;
     transition-duration: var(--transition-duration, 0.25s);
-    border-radius: var(--radius-full);
-    background-color: var(--radio-thumb-color);
+    border-radius: var(--radius-full, 9999px);
+    background-color: var(--radio-thumb-color, ButtonText);
     scale: 0;
   }
 
@@ -889,8 +889,8 @@ select {
 [role="switch"] {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
-  --switch-track-color: var(--form-control-background, ButtonFace);
-  --switch-track-color-checked: var(--success, #ffffff);
+  --switch-track-color: var(--form-control-background, Field);
+  --switch-track-color-checked: var(--success, ButtonFace);
   --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: ButtonBorder;
   --switch-thumb-color-checked: var(--success, #ffffff);
@@ -951,7 +951,7 @@ select {
     }
 
     &::after {
-      scale: 0.9;
+      scale: 0.8;
       background-color: var(--on-primary, #ffffff);
       background-size: 70%;
     }
@@ -979,7 +979,7 @@ select {
  * -------------------- */
 
 textarea {
-  --textarea-background-color: var(--form-control-background, ButtonFace);
+  --textarea-background-color: var(--form-control-background, Field);
   --textarea-border-color: var(--form-control-border-color, ButtonBorder);
   --textarea-border-radius: var(--form-control-border-radius, 0);
   --textarea-border-width: var(--form-control-border-width, 1px);
