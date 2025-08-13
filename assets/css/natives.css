@@ -68,7 +68,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Primary button */
   &.btn-primary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--primary, accentcolor);
+    --button-background-color: var(--primary, AccentColor);
     --button-border-color: transparent;
     --button-text-color: var(--on-primary, #ffffff);
   }
@@ -104,7 +104,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
 [type="checkbox"]:not([role="switch"]) {
   --checkbox-background-color: var(--form-control-background, Field);
-  --checkbox-background-color-checked: var(--primary, accentcolor);
+  --checkbox-background-color-checked: var(--primary, AccentColor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
@@ -118,7 +118,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   height: var(--checkable-size, 1.25rem);
   margin: 0;
   transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.3s);
+  transition-duration: var(--transition-duration, 0.25s);
   border: 0;
   border-radius: var(--checkbox-border-radius);
   background-color: var(--checkbox-background-color);
@@ -182,7 +182,7 @@ details {
     from var(--details-summary-background-color) calc(l * 0.9) c h
   );
   --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
-  --details-content-background-color: var(--layer-1, Field);
+  --details-content-background-color: var(--layer-1, ButtonFace);
   --details-text-color: var(--on-form-control, FieldText);
 
   border: var(--details-border-width) solid var(--details-border-color);
@@ -214,7 +214,7 @@ details {
       content: "";
       width: 1rem;
       height: 1rem;
-      transition: rotate var(--transition-duration);
+      transition: rotate var(--transition-duration, 0.25s);
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
       background-repeat: no-repeat;
       background-position: center;
@@ -264,7 +264,7 @@ details {
     /* État de fin de transition */
     display: none;
     height: 0;
-    transition: var(--transition-duration) allow-discrete;
+    transition: var(--transition-duration, 0.25s) allow-discrete;
     transition-property: opacity, height, display;
     interpolate-size: allow-keywords;
   }
@@ -364,7 +364,7 @@ dialog {
   padding: var(--dialog-header-padding);
   border-bottom: 1px solid var(--dialog-border-color);
   border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
-  background: var(--layer-1, #f9fafb);
+  background: var(--layer-1, ButtonFace);
   gap: var(--spacing-16, 1rem);
 }
 
@@ -391,7 +391,7 @@ dialog {
   aspect-ratio: 1;
 
   &:hover {
-    background-color: var(--layer-2, #f3f4f6);
+    background-color: var(--layer-2, GrayText);
   }
 }
 
@@ -414,7 +414,7 @@ dialog {
   padding: var(--dialog-footer-padding);
   border-top: 1px solid var(--dialog-border-color);
   border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
-  background: var(--layer-1, #f9fafb);
+  background: var(--layer-1, ButtonFace);
 }
 
 /* Animations */
@@ -569,14 +569,14 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, accentcolor);
+    background-color: var(--primary, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
 
     &:hover {
       background-color: oklch(
-        from var(--primary, accentcolor) calc(l * 0.9) c h
+        from var(--primary, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -588,14 +588,14 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, accentcolor);
+    background-color: var(--primary, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
 
     &:hover {
       background-color: oklch(
-        from var(--primary, accentcolor) calc(l * 0.9) c h
+        from var(--primary, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -616,7 +616,7 @@ input:not(
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
-  --radio-thumb-color: var(--accent, accentcolor);
+  --radio-thumb-color: var(--accent, AccentColor);
 
   display: inline-grid;
   width: var(--checkable-size, 1.25em);
@@ -674,7 +674,7 @@ input:not(
   width: 100%;
   overflow: hidden;
   background: #ffffff00;
-  color: accentcolor;
+  color: AccentColor;
 
   --range-thumb-size: 24px;
   --range-thumb-border-width: 4px;
@@ -890,7 +890,7 @@ select {
   --switch-track-color-checked: var(--success, ButtonBorder);
   --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: ButtonBorder;
-  --switch-thumb-color-checked: var(--success, ButtonBorder);
+  --switch-thumb-color-checked: var(--success, Field);
   --switch-border-radius: var(--radius-full, 9999px);
   --switch-border-color: var(--checkables-border-color, ButtonBorder);
   --switch-border-width: 1px;
@@ -1073,7 +1073,7 @@ hr {
 
   /* Variante couleur primaire */
   &.hr-primary {
-    --hr-border-color: var(--primary, accentcolor);
+    --hr-border-color: var(--primary, AccentColor);
   }
 
   /* Variante épaisseur moyenne (x2) */
