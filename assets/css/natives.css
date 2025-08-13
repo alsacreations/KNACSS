@@ -297,8 +297,8 @@ details {
  * -------------------- */
 
 dialog {
-  --dialog-background-color: var(--surface, #ffffff);
-  --dialog-text-color: var(--on-surface, #000000);
+  --dialog-background-color: var(--surface, Canvas);
+  --dialog-text-color: var(--on-surface, CanvasText);
   --dialog-border-color: var(--form-control-border-color, ButtonBorder);
   --dialog-border-radius: var(--form-control-border-radius, 0);
   --dialog-border-width: var(--form-control-border-width, 1px);
@@ -886,7 +886,7 @@ select {
 [role="switch"] {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
-  --switch-track-color: var(--form-control-background, GrayText);
+  --switch-track-color: var(--form-control-background, ButtonFace);
   --switch-track-color-checked: var(--success, GrayText);
   --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: ButtonBorder;
