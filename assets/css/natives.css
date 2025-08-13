@@ -177,12 +177,12 @@ details {
   --details-border-color: var(--form-control-border-color, ButtonBorder);
   --details-border-radius: var(--form-control-border-radius, 0);
   --details-border-width: var(--form-control-border-width, 1px);
-  --details-summary-background-color: var(--form-control-background, Field);
+  --details-summary-background-color: var(--layer-1, Canvas);
   --details-summary-background-hover: oklch(
     from var(--details-summary-background-color) calc(l * 0.9) c h
   );
   --details-summary-padding: var(--spacing-12, 0.75rem) var(--spacing-16, 1rem);
-  --details-content-background-color: var(--layer-1, ButtonFace);
+  --details-content-background-color: var(--surface, Field);
   --details-text-color: var(--on-form-control, FieldText);
 
   border: var(--details-border-width) solid var(--details-border-color);
@@ -313,7 +313,7 @@ dialog {
   padding: 0;
   overflow: visible;
   border: none;
-  background: transparent;
+  background-color: transparent;
   color: var(--dialog-text-color);
 
   /* État fermé par défaut */
@@ -364,7 +364,7 @@ dialog {
   padding: var(--dialog-header-padding);
   border-bottom: 1px solid var(--dialog-border-color);
   border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
-  background: var(--layer-1, Canvas);
+  background-color: var(--layer-1, Canvas);
   gap: var(--spacing-16, 1rem);
 }
 
@@ -414,7 +414,7 @@ dialog {
   padding: var(--dialog-footer-padding);
   border-top: 1px solid var(--dialog-border-color);
   border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
-  background: var(--layer-1, Canvas);
+  background-color: var(--layer-1, Canvas);
 }
 
 /* Animations */
