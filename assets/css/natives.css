@@ -75,7 +75,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Secondary button */
   &.btn-secondary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--color-slate-300, ButtonText);
+    --button-background-color: var(--color-slate-300, GrayText);
     --button-border-color: transparent;
     --button-text-color: var(--primary, #ffffff);
   }
@@ -887,10 +887,10 @@ select {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
   --switch-track-color: var(--form-control-background, Field);
-  --switch-track-color-checked: var(--success, ButtonFace);
+  --switch-track-color-checked: var(--success, ButtonBorder);
   --switch-thumb-size: var(--switch-height);
   --switch-thumb-color: ButtonBorder;
-  --switch-thumb-color-checked: var(--success, Field);
+  --switch-thumb-color-checked: var(--success, ButtonBorder);
   --switch-border-radius: var(--radius-full, 9999px);
   --switch-border-color: var(--checkables-border-color, ButtonBorder);
   --switch-border-width: 1px;
@@ -1029,7 +1029,7 @@ textarea {
 .character-counter {
   min-width: max-content;
   margin-left: auto;
-  color: var(--on-surface-secondary, #6b7280);
+  color: var(--on-surface-secondary, GrayText);
   font-size: var(--text-14, 0.875rem);
   font-weight: var(--font-weight-medium, 500);
   text-align: right;
