@@ -297,7 +297,7 @@ details {
  * -------------------- */
 
 dialog {
-  --dialog-background-color: var(--surface, Canvas);
+  --dialog-background-color: var(--surface, Field);
   --dialog-text-color: var(--on-surface, CanvasText);
   --dialog-border-color: var(--form-control-border-color, ButtonBorder);
   --dialog-border-radius: var(--form-control-border-radius, 0);
@@ -364,7 +364,7 @@ dialog {
   padding: var(--dialog-header-padding);
   border-bottom: 1px solid var(--dialog-border-color);
   border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
-  background: var(--layer-1, ButtonFace);
+  background: var(--layer-1, Canvas);
   gap: var(--spacing-16, 1rem);
 }
 
@@ -414,7 +414,7 @@ dialog {
   padding: var(--dialog-footer-padding);
   border-top: 1px solid var(--dialog-border-color);
   border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
-  background: var(--layer-1, ButtonFace);
+  background: var(--layer-1, Canvas);
 }
 
 /* Animations */
