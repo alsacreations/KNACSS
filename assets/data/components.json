@@ -1,0 +1,18 @@
+[
+  {
+    "id": "pages/presentation",
+    "label": "accueil",
+    "slug": "presentation"
+  },
+  { "id": "button/button", "label": "button", "slug": "button" },
+  { "id": "checkbox/checkbox", "label": "checkbox", "slug": "checkbox" },
+  { "id": "radio/radio", "label": "radio", "slug": "radio" },
+  { "id": "select/select", "label": "select", "slug": "select" },
+  { "id": "switch/switch", "label": "switch", "slug": "switch" },
+  { "id": "input/input", "label": "input", "slug": "input" },
+  { "id": "textarea/textarea", "label": "textarea", "slug": "textarea" },
+  { "id": "range/range", "label": "range", "slug": "range" },
+  { "id": "details/details", "label": "details", "slug": "details" },
+  { "id": "dialog/dialog", "label": "dialog", "slug": "dialog" },
+  { "id": "hr/hr", "label": "hr", "slug": "hr" }
+]

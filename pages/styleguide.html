@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{base}}images/favicon.svg" />
+    <meta
+      name="description"
+      content="Styleguide KNACSS - Guide des composants et éléments HTML disponibles" />
+    <title>{{title}}</title>
+    <link
+      rel="stylesheet"
+      href="{{base}}assets/app.css" />
+    <link
+      rel="stylesheet"
+      href="{{base}}assets/css/styleguide.css" />
+  </head>
+  <body data-base="{{base}}">
+    <a
+      href="#main-content"
+      class="visually-hidden"
+      tabindex="1"
+      >Aller au contenu principal</a
+    >
+
+    {{> header}}
+
+    <div
+      class="styleguide-layout"
+      data-layout="site">
+      {{> sidebar}}
+
+      <main
+        class="styleguide-main"
+        role="main"
+        aria-labelledby="styleguide-title"
+        id="main-content">
+        <section
+          class="styleguide-section"
+          aria-labelledby="component-title">
+          <h2
+            id="component-title"
+            class="visually-hidden">
+            Composant en cours de visualisation
+          </h2>
+          <article
+            class="styleguide-component-wrapper"
+            role="region"
+            aria-labelledby="component-title">
+            <div
+              class="styleguide-component-preview"
+              data-layout="stack"
+              role="group"
+              aria-label="Aperçu du composant">
+              <!-- Contenu injecté par JS -->
+            </div>
+            <div
+              class="styleguide-component-actions"
+              role="toolbar"
+              aria-label="Actions pour le composant">
+              <button
+                type="button"
+                class="js-show-code"
+                aria-expanded="false"
+                aria-controls="code-component-block"
+                aria-label="Afficher ou masquer le code source du composant">
+                Afficher le code
+              </button>
+            </div>
+            <div
+              class="styleguide-component-code"
+              id="code-component-block"
+              role="region"
+              aria-label="Code source du composant"
+              hidden>
+              <pre><code class="language-html"></code></pre>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    {{> footer}}
+
+    <script
+      type="module"
+      src="{{base}}assets/js/styleguide.js"></script>
+    <script
+      type="module"
+      src="{{base}}assets/main.js"></script>
+    <script
+      type="module"
+      src="{{base}}natives/textarea/textarea.js"></script>
+    <script
+      type="module"
+      src="{{base}}natives/dialog/dialog.js"></script>
+  </body>
+</html>

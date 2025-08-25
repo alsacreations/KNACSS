@@ -1,0 +1,11 @@
+<aside class="styleguide-sidebar" role="complementary" aria-label="Liste des composants">
+  <nav class="styleguide-nav" role="navigation" aria-label="Composants">
+    <ul role="list">
+      {{#each components}}
+      <li>
+        <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  </nav>
+</aside>
