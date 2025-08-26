@@ -8,25 +8,25 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="{{base}}images/favicon.svg" />
+      href="/images/favicon.svg" />
     <meta
       name="description"
       content="KNACSS - Guide des composants et éléments HTML disponibles" />
     <title>{{title}}</title>
     <link
       rel="stylesheet"
-      href="{{base}}assets/app.css" />
+      href="/assets/app.css" />
     <link
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-      href="{{base}}assets/css/styleguide.css" />
+      rel="stylesheet"
+      href="/assets/css/styleguide.css" />
   </head>
   <body data-base="{{base}}">
     <a
       href="#main-content"
       class="visually-hidden"
       tabindex="1"
-    <link rel="stylesheet" href="/assets/app.css" />
-    <link rel="stylesheet" href="/assets/css/styleguide.css" />
+      >Aller au contenu principal</a
+    >
 
     {{> header}}
 
@@ -41,10 +41,10 @@
         aria-labelledby="styleguide-title"
         id="main-content">
         <section
-    <script type="module" src="/assets/js/styleguide.js"></script>
-    <script type="module" src="/assets/main.js"></script>
-    <script type="module" src="/natives/textarea/textarea.js"></script>
-    <script type="module" src="/natives/dialog/dialog.js"></script>
+          class="styleguide-section"
+          aria-labelledby="component-title">
+          <h2 id="component-title">Composant en cours de visualisation</h2>
+          <article
             class="styleguide-component-wrapper"
             role="region"
             aria-labelledby="component-title">
@@ -86,15 +86,15 @@
 
     <script
       type="module"
-      src="{{base}}assets/js/styleguide.js"></script>
+      src="/assets/js/styleguide.js"></script>
     <script
       type="module"
-      src="{{base}}assets/main.js"></script>
+      src="/assets/main.js"></script>
     <script
       type="module"
-      src="{{base}}natives/textarea/textarea.js"></script>
+      src="/natives/textarea/textarea.js"></script>
     <script
       type="module"
-      src="{{base}}natives/dialog/dialog.js"></script>
+      src="/natives/dialog/dialog.js"></script>
   </body>
 </html>
