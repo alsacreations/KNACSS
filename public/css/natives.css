@@ -172,6 +172,10 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
  * Details native styles
  * -------------------- */
 
+/* --------------------
+ * Details native styles
+ * -------------------- */
+
 details {
   --details-padding: var(--spacing-16, 1rem);
   --details-border-color: var(--form-control-border-color, ButtonBorder);
@@ -189,7 +193,7 @@ details {
   border-radius: var(--details-border-radius);
 
   /* Summary (titre cliquable) */
-  & .details-title {
+  & summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -237,13 +241,13 @@ details {
 
   /* Support des modes sombres pour l'icône */
   @media (prefers-color-scheme: dark) {
-    & .details-title::after {
+    & summary::after {
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
     }
   }
 
   /* Contenu du details */
-  & .details-content {
+  & summary + * {
     padding: var(--details-padding);
     border-top: none;
     background-color: var(--details-content-background-color);
@@ -260,7 +264,7 @@ details {
 
 /* Support moderne pour les transitions fluides */
 @supports (interpolate-size: allow-keywords) {
-  .details-content {
+  summary + * {
     /* État de fin de transition */
     display: none;
     height: 0;
@@ -269,7 +273,7 @@ details {
     interpolate-size: allow-keywords;
   }
 
-  details[open] .details-content {
+  details[open] summary + * {
     display: grid;
     height: auto;
 
@@ -282,11 +286,11 @@ details {
 /* Accessibilité améliorée */
 @media (prefers-reduced-motion: reduce) {
   details {
-    & .details-title::after {
+    & summary::after {
       transition: none;
     }
 
-    & .details-content {
+    & summary + * {
       transition: none;
     }
   }
