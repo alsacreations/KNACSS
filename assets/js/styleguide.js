@@ -8,18 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function ensureNativesCssText() {
     if (nativesCssText) return Promise.resolve(nativesCssText)
     if (!nativesCssTextPromise) {
-      const base = document.body?.getAttribute("data-base") || "/"
-      const url = new URL(
-        "assets/css/natives.css",
-        window.location.origin + base,
-      )
-      nativesCssTextPromise = fetch(url.toString())
-        .then((r) => (r.ok ? r.text() : ""))
-        .then((t) => {
-          nativesCssText = t || ""
+      // 1) Essaye d'importer le fichier en raw (OK en dev et build Vite)
+      nativesCssTextPromise = import("/assets/css/natives.css?raw")
+        .then((mod) => {
+          const txt = typeof mod?.default === "string" ? mod.default : ""
+          nativesCssText = txt || ""
           return nativesCssText
         })
-        .catch(() => "")
+        .catch(() => {
+          // 2) Repli: fetch (utile si l'import raw échoue dans un contexte atypique)
+          const base = document.body?.getAttribute("data-base") || "/"
+          const url = new URL(
+            "assets/css/natives.css",
+            window.location.origin + base,
+          )
+          return fetch(url.toString())
+            .then((r) => (r.ok ? r.text() : ""))
+            .then((t) => {
+              nativesCssText = t || ""
+              return nativesCssText
+            })
+            .catch(() => "")
+        })
     }
     return nativesCssTextPromise
   }
