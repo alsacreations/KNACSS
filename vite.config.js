@@ -15,8 +15,7 @@ export default defineConfig(({ command }) => {
     // config options
     base: base, // Défini dynamiquement
     appType: "mpa",
-    // Évite l'analyse JS sur les fichiers HTML, ils sont gérés par handlebars
-    assetsInclude: ["**/*.html"],
+    // Ne pas marquer les .html comme assets (évite des exports d'URL en build)
     plugins: [
       // Réécriture des URLs friendly en DEV (ex: /presentation, /button, ...)
       {
