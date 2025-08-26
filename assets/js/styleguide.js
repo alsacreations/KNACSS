@@ -437,6 +437,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const prev = document.querySelector(".styleguide-component-variables")
     if (prev) prev.remove()
 
+    // Certains composants n'exposent pas (ou pas encore) de variables utiles
+    const EXCLUDED = new Set(["list"]) // masque le tableau pour "List"
+    if (EXCLUDED.has(baseName)) return
+
     ensureNativesCssText().then((cssText) => {
       if (!cssText) return
       const prefix = `--${baseName}-`
@@ -473,9 +477,14 @@ document.addEventListener("DOMContentLoaded", () => {
             ? ""
             : v.comment || ""
         const safeComment = escapeHtml(chosenComment)
+        // Ajoute un retour chariot HTML avant la mention d'héritage si présente
+        const commentWithBreak = safeComment.replace(
+          /\s*\(hérite de --/gi,
+          "<br>(hérite de --",
+        )
         tr.innerHTML = `
           <td><code>${safeName}</code></td>
-          <td>${safeComment}</td>
+          <td>${commentWithBreak}</td>
         `
         tbody.appendChild(tr)
       }

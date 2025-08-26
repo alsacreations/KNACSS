@@ -115,9 +115,21 @@ q {
  * LISTES
  * ========================================== */
 
-/* Suppression des styles des listes avec classe (version accessible) */
-:where(ul[role="list"], ol[role="list"]) {
-  list-style: none;
+ul,
+ol {
+  margin: 0;
+  padding-inline-start: 1em;
+  list-style-position: outside;
+
+  /* Suppression des styles des listes avec classe (version accessible) */
+  &[role="list"] {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  & li {
+    margin-block: 0.1em;
+  }
 }
 
 /* ==========================================

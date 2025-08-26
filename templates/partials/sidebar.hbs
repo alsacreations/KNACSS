@@ -1,11 +1,41 @@
 <aside class="styleguide-sidebar" role="complementary" aria-label="Liste des composants">
   <nav class="styleguide-nav" role="navigation" aria-label="Composants">
     <ul role="list">
-      {{#each components}}
-      <li>
-        <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
-      </li>
-      {{/each}}
+      {{#if home}}
+        <li>
+          <a href="{{base}}{{home.slug}}" data-component-id="{{home.id}}" data-component-slug="{{home.slug}}">{{home.label}}</a>
+        </li>
+      {{else}}
+        {{!-- Fallback: premier composant --}}
+        {{#each components}}
+          {{#if @first}}
+            <li>
+              <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+            </li>
+          {{/if}}
+        {{/each}}
+      {{/if}}
+    </ul>
+
+    <h2 id="sidebar-components-title">Éléments HTML</h2>
+    <ul role="list" aria-labelledby="sidebar-components-title">
+      {{#if componentsSorted}}
+        {{#each componentsSorted}}
+          <li>
+            <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+          </li>
+        {{/each}}
+      {{else}}
+        {{!-- Fallback: tous sauf le premier, non trié --}}
+        {{#each components}}
+          {{#unless @first}}
+            <li>
+              <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+            </li>
+          {{/unless}}
+        {{/each}}
+      {{/if}}
     </ul>
   </nav>
+
 </aside>
