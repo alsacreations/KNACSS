@@ -14,5 +14,6 @@
   { "id": "range/range", "label": "range", "slug": "range" },
   { "id": "details/details", "label": "details", "slug": "details" },
   { "id": "dialog/dialog", "label": "dialog", "slug": "dialog" },
-  { "id": "hr/hr", "label": "hr", "slug": "hr" }
+  { "id": "hr/hr", "label": "hr", "slug": "hr" },
+  { "id": "table/table", "label": "table", "slug": "table" }
 ]

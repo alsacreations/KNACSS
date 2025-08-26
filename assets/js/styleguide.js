@@ -1,6 +1,28 @@
 // Script pour le guide de style
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Chargement paresseux du CSS natif pour extraire les variables
+  let nativesCssText = ""
+  /** @type {Promise<string> | null} */
+  let nativesCssTextPromise = null
+  function ensureNativesCssText() {
+    if (nativesCssText) return Promise.resolve(nativesCssText)
+    if (!nativesCssTextPromise) {
+      const base = document.body?.getAttribute("data-base") || "/"
+      const url = new URL(
+        "assets/css/natives.css",
+        window.location.origin + base,
+      )
+      nativesCssTextPromise = fetch(url.toString())
+        .then((r) => (r.ok ? r.text() : ""))
+        .then((t) => {
+          nativesCssText = t || ""
+          return nativesCssText
+        })
+        .catch(() => "")
+    }
+    return nativesCssTextPromise
+  }
   /**
    * Met à jour l'état actif dans la sidebar (aria-current)
    */
@@ -116,13 +138,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Ajoute le tableau des variables CSS pour les composants
+    if (!isPage) {
+      const baseName = componentName.split("/").pop() || ""
+      renderVariablesTable(baseName)
+    } else {
+      // Nettoie l'éventuel tableau précédent
+      const prev = document.querySelector(".styleguide-component-variables")
+      if (prev) prev.remove()
+    }
+
     if (!isPage) {
       reinitializeComponentModules(componentName)
     }
     updateActiveSidebarLink(componentName)
-    // Gestion focus accessibilité
-    const h3 = componentPreviewContainer.querySelector("h3, h2, h1")
-    if (h3) h3.setAttribute("tabindex", "-1"), h3.focus()
+    // Gestion focus accessibilité: place le focus sur le titre H2 global
+    const subtitleEl = document.getElementById("component-title")
+    if (subtitleEl) {
+      subtitleEl.setAttribute("tabindex", "-1")
+      subtitleEl.focus()
+    }
   }
   // Importe les modules des composants HTML comme texte brut.
   // Vite traitera ces imports lors du build pour inclure les fichiers.
@@ -238,8 +273,32 @@ document.addEventListener("DOMContentLoaded", () => {
           : "Afficher le code"
 
         if (!codeBlock.hidden) {
-          // Regénère à la volée depuis le DOM actuel
-          const componentHtmlContent = componentPreviewContainer.innerHTML
+          // Regénère à la volée depuis le DOM actuel, en ne gardant que le code du composant
+          let componentHtmlContent = ""
+          const roots = componentPreviewContainer.querySelectorAll(
+            "[data-component-root]",
+          )
+          if (roots.length) {
+            componentHtmlContent = Array.from(roots)
+              .map((el) => {
+                // Clone le nœud et supprime l'attribut data-component-root (sur lui et ses descendants)
+                const clone = el.cloneNode(true)
+                if (clone instanceof Element) {
+                  clone.removeAttribute("data-component-root")
+                  const innerMarked = clone.querySelectorAll(
+                    "[data-component-root]",
+                  )
+                  innerMarked.forEach((n) =>
+                    n.removeAttribute("data-component-root"),
+                  )
+                }
+                return clone.outerHTML.trim()
+              })
+              .join("\n\n")
+          } else {
+            // Fallback: aucun marqueur, on prend tout le contenu actuel
+            componentHtmlContent = componentPreviewContainer.innerHTML.trim()
+          }
           const codeElement = codeBlock.querySelector("code.language-html")
           if (codeElement) {
             const formattedHtml = formatHtml(componentHtmlContent.trim())
@@ -267,19 +326,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Normaliser les attributs booléens (ex: checked="" -> checked)
     cleanHtml = cleanHtml.replace(/(\s\w+)=["']{2}/g, "$1")
 
-    // Séparer les balises et le texte pour une meilleure granularité des lignes
-    // 1. Ajouter un saut de ligne après chaque '>'
-    cleanHtml = cleanHtml.replace(/>/g, ">\n")
-    // 2. Ajouter un saut de ligne avant chaque '<'
-    cleanHtml = cleanHtml.replace(/</g, "\n<")
-    // 3. Supprimer les sauts de ligne multiples et les espaces autour des sauts de ligne
-    cleanHtml = cleanHtml.replace(/\s*\n\s*/g, "\n")
-    // 4. Supprimer les sauts de ligne au début et à la fin après le nettoyage
-    cleanHtml = cleanHtml.trim()
+    // Découper grossièrement en lignes
+    cleanHtml = cleanHtml.replace(/>/g, ">\n").replace(/</g, "\n<")
+    cleanHtml = cleanHtml.replace(/\s*\n\s*/g, "\n").trim()
 
-    let indentLevel = 0
-    const lines = cleanHtml.split("\n")
-    const indentChar = "  "
     const voidElements = new Set([
       "area",
       "base",
@@ -297,39 +347,38 @@ document.addEventListener("DOMContentLoaded", () => {
       "wbr",
     ])
 
-    let resultLines = []
+    const lines = cleanHtml.split("\n").filter(Boolean)
+    const indentChar = "  "
+    let indentLevel = 0
+    const resultLines = []
 
-    for (const rawLine of lines) {
-      const line = rawLine.trim()
-      if (!line) continue // Ignorer les lignes vides après trim
-
+    for (const raw of lines) {
+      const line = raw.trim()
       let currentIndent = indentLevel
 
-      // Si la ligne est une balise fermante, décrémenter le niveau pour cette ligne.
-      if (line.startsWith("</")) {
-        currentIndent = Math.max(0, indentLevel - 1)
-      }
-
-      resultLines.push(indentChar.repeat(currentIndent) + line)
-
-      // Mettre à jour indentLevel pour la PROCHAINE ligne.
       if (line.startsWith("</")) {
         // Balise fermante
         indentLevel = Math.max(0, indentLevel - 1)
-      } else if (line.startsWith("<") && !line.endsWith("/>")) {
-        // Balise ouvrante (pas auto-fermante style XML)
-        const tagNameMatch = line.match(/^<([a-zA-Z0-9]+)/)
-        if (tagNameMatch) {
-          const tagName = tagNameMatch[1].toLowerCase()
-          // N'incrémente pas si c'est une balise void.
-          // La vérification de la fermeture sur la même ligne n'est plus nécessaire ici
-          // car la tokenisation a déjà séparé les balises.
-          if (!voidElements.has(tagName)) {
-            indentLevel++
-          }
+        currentIndent = indentLevel
+      } else if (
+        line.startsWith("<") &&
+        line.endsWith(">") &&
+        !line.startsWith("<!--") &&
+        !line.startsWith("<!") &&
+        !line.endsWith("/>") &&
+        !/^<[^>]+>.*<\/[^>]+>$/.test(line)
+      ) {
+        const tagNameMatch = line.match(/^<\s*([a-z0-9-]+)/i)
+        const tag = tagNameMatch ? tagNameMatch[1].toLowerCase() : ""
+        if (!voidElements.has(tag)) {
+          currentIndent = indentLevel
+          indentLevel++
         }
       }
+
+      resultLines.push(indentChar.repeat(currentIndent) + line)
     }
+
     return resultLines.join("\n")
   }
 
@@ -378,4 +427,186 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Active la navigation côté client
   setupClientSideNav()
+
+  /**
+   * Rendu du tableau des variables CSS du composant (extraites de natives.css)
+   * @param {string} baseName Nom simple du composant (ex: "button")
+   */
+  function renderVariablesTable(baseName) {
+    // Nettoyer ancien tableau si présent
+    const prev = document.querySelector(".styleguide-component-variables")
+    if (prev) prev.remove()
+
+    ensureNativesCssText().then((cssText) => {
+      if (!cssText) return
+      const prefix = `--${baseName}-`
+      const vars = parseVariablesForPrefix(cssText, prefix)
+      if (!vars.length) return
+
+      const section = document.createElement("section")
+      section.className = "styleguide-component-variables"
+      section.setAttribute("aria-label", "Variables CSS du composant")
+
+      const table = document.createElement("table")
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th scope="col">variable</th>
+            <th scope="col">commentaire</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      `
+      const tbody = table.querySelector("tbody")
+      for (const v of vars) {
+        const tr = document.createElement("tr")
+        const safeName = escapeHtml(v.name)
+        // Infère un libellé d'usage depuis le nom de variable
+        const purpose = inferVariablePurpose(v.name)
+        // Ne garde le commentaire existant que s'il n'est pas un simple héritage
+        const isHeritage =
+          typeof v.comment === "string" &&
+          v.comment.trim().toLowerCase().startsWith("hérite de ")
+        const chosenComment = purpose
+          ? `${purpose}${isHeritage ? ` (${v.comment})` : ""}`
+          : isHeritage
+            ? ""
+            : v.comment || ""
+        const safeComment = escapeHtml(chosenComment)
+        tr.innerHTML = `
+          <td><code>${safeName}</code></td>
+          <td>${safeComment}</td>
+        `
+        tbody.appendChild(tr)
+      }
+      section.appendChild(table)
+
+      // Injection sous l'aperçu du composant
+      const preview = document.querySelector(".styleguide-component-preview")
+      if (preview) preview.insertAdjacentElement("afterend", section)
+    })
+  }
+
+  /**
+   * Devine l'usage d'une variable CSS depuis son nom.
+   * Retourne une courte description FR ou une chaîne vide si inconnu.
+   * @param {string} varName
+   * @param {string} baseName
+   */
+  function inferVariablePurpose(varName) {
+    const n = String(varName).toLowerCase()
+    // Spécifiques Table
+    if (n === "--table-layout") return "Mode de mise en page du tableau"
+    if (n === "--table-border-collapse") return "Mode de fusion des bordures"
+    if (n === "--table-border-spacing")
+      return "Espacement entre cellules (mode separate)"
+    if (n === "--table-zebra-mix") return "Intensité du zébrage des lignes"
+    if (n === "--table-min-width")
+      return "Largeur minimale du tableau en mode responsive"
+    // Spécifiques Hr
+    if (n === "--hr-border-color") return "Couleur du trait"
+    if (n === "--hr-border-width") return "Épaisseur du trait"
+    if (n === "--hr-wave-length") return "Longueur d’un motif de vague"
+    if (n === "--hr-wave-height") return "Hauteur du motif ondulé"
+
+    // Patterns communs (du plus spécifique au plus générique)
+    const patterns = [
+      [/background-color-hover$/, "Couleur de fond au survol"],
+      [/background-color-active$/, "Couleur de fond à l’activation"],
+      [/background-color$/, "Couleur de fond"],
+      [/text-color-hover$/, "Couleur du texte au survol"],
+      [/text-color-active$/, "Couleur du texte à l’activation"],
+      [/text-color$/, "Couleur du texte"],
+      [/color-hover$/, "Couleur au survol"],
+      [/color-active$/, "Couleur à l’activation"],
+      [/border-color-hover$/, "Couleur de bordure au survol"],
+      [/border-color-active$/, "Couleur de bordure à l’activation"],
+      [/border-color$/, "Couleur de bordure"],
+      [/border-radius$/, "Rayon de bordure"],
+      [/border-width$/, "Épaisseur de bordure"],
+      [/font-weight$/, "Graisse de police"],
+      [/padding$/, "Espacement intérieur"],
+      [/spacing$/, "Espacement"],
+      [/size$/, "Taille"],
+      [/max-width$/, "Largeur maximale"],
+      [/max-height$/, "Hauteur maximale"],
+      [/min-width$/, "Largeur minimale"],
+      [/min-height$/, "Hauteur minimale"],
+      // Range/Slider
+      [/-track-color$/, "Couleur de la piste"],
+      [/-track-height$/, "Hauteur de la piste"],
+      [/-thumb-size$/, "Taille du curseur"],
+      [/-thumb-color$/, "Couleur du curseur"],
+      // Dialog
+      [/^--dialog-header-padding$/, "Espacement intérieur de l’en-tête"],
+      [/^--dialog-footer-padding$/, "Espacement intérieur du pied de modale"],
+      // Details
+      [/^--details-summary-padding$/, "Espacement intérieur du résumé (titre)"],
+      [/^--details-padding$/, "Espacement intérieur du contenu"],
+    ]
+    for (const [re, label] of patterns) {
+      if (re.test(n)) return label
+    }
+    // Heuristique: si le var commence par --${baseName}-color
+    if (n.includes("-color")) return "Couleur"
+    return ""
+  }
+
+  /**
+   * Extrait les variables CSS d'un certain préfixe depuis un texte CSS
+   * @param {string} cssText
+   * @param {string} prefix (ex: "--button-")
+   * @returns {{name:string,value:string,comment?:string}[]}
+   */
+  function parseVariablesForPrefix(cssText, prefix) {
+    const out = []
+    const seen = new Set()
+    // Capture multi-ligne jusqu'au premier point-virgule
+    const re = /(--[a-z0-9-]+)\s*:\s*([\s\S]*?)\s*;/gi
+    let m
+    while ((m = re.exec(cssText)) !== null) {
+      const name = m[1]
+      if (!name.startsWith(prefix)) continue
+      if (seen.has(name)) continue
+      let valueRaw = m[2] || ""
+
+      // Commentaire inline éventuel
+      let comment = ""
+      const cm = valueRaw.match(/\/\*\s*([\s\S]*?)\s*\*\//)
+      if (cm) comment = cm[1].trim()
+
+      // Nettoyage: retirer commentaires et compacter espaces
+      valueRaw = valueRaw.replace(/\/\*[\s\S]*?\*\//g, "")
+      const value = valueRaw.replace(/\s+/g, " ").trim()
+
+      // Déduire commentaire depuis var(--token, fallback)
+      if (!comment) {
+        const varMatch = value.match(
+          /var\((--[a-z0-9-]+)(?:\s*,\s*([^)]+))?\)/i,
+        )
+        if (varMatch) {
+          const token = varMatch[1]
+          const fb = (varMatch[2] || "").trim()
+          comment = `hérite de ${token}${fb ? ` (fallback: ${fb})` : ""}`
+        }
+      }
+
+      out.push({ name, value, comment })
+      seen.add(name)
+    }
+    out.sort((a, b) => a.name.localeCompare(b.name))
+    return out
+  }
+
+  /**
+   * Échappe quelques caractères HTML pour un rendu sûr
+   */
+  function escapeHtml(s) {
+    return String(s)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;")
+  }
 })

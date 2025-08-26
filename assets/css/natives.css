@@ -1101,3 +1101,86 @@ hr {
       left center / var(--hr-wave-length) 100% repeat-x;
   }
 }
+
+/* --------------------
+ * Table native styles
+ * -------------------- */
+
+table {
+  /* Variables du composant Table */
+  --table-border-color: var(
+    --form-control-border-color,
+    ButtonBorder
+  ); /* couleur des bordures du tableau */
+
+  --table-border-width: var(
+    --form-control-border-width,
+    1px
+  ); /* épaisseur des bordures du tableau */
+
+  --table-layout: fixed; /* mode de mise en page du tableau: fixed | auto */
+  --table-border-collapse: collapse; /* collapse | separate — valeurs CSS valides */
+  --table-border-spacing: 0; /* utilisé quand border-collapse = separate */
+  --table-zebra-mix: 95%; /* pourcentage de mélange pour le zébrage (mettre 0% pour désactiver) */
+
+  width: 100%;
+  table-layout: var(--table-layout, fixed);
+  border-spacing: var(--table-border-spacing, 0);
+  border-collapse: var(--table-border-collapse, collapse);
+  color: var(--on-surface, CanvasText);
+
+  /* Légende */
+  & caption {
+    margin-block: var(--spacing-8, 0.5rem);
+    color: var(--on-surface-secondary, inherit);
+    text-align: left;
+  }
+
+  /* Cellules */
+  & th,
+  & td {
+    padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
+    border: var(--table-border-width) solid var(--table-border-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  /* En-têtes */
+  & thead th {
+    background-color: var(--layer-1, Canvas);
+    font-weight: var(--font-weight-semibold, 600);
+  }
+
+  /* Pied de tableau */
+  & tfoot th,
+  & tfoot td {
+    background-color: var(--layer-1, Canvas);
+    font-weight: var(--font-weight-medium, 500);
+  }
+
+  /* Zébrage léger (conditionné par --table-zebra-mix) */
+  & tbody tr:nth-child(odd) {
+    background-color: color-mix(
+      in oklch,
+      var(--surface, Field) var(--table-zebra-mix, 95%),
+      transparent
+    );
+  }
+}
+
+/* Wrapper responsive pour permettre le scroll horizontal sur petits écrans */
+.table-responsive {
+  --table-min-width: 48rem; /* largeur minimale par défaut pour un tableau lisible */
+
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
+
+  & > table {
+    min-width: var(
+      --table-min-width,
+      48rem
+    ); /* largeur minimale pour maintenir la lisibilité */
+  }
+}
