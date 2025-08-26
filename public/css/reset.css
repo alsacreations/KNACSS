@@ -2,7 +2,7 @@
  * Alsa Reset CSS et print
  * Made par Alsacréations
  * Consignes : à placer dans un layer `reset` sous les autres layers
- * Mise à jour : 2025-06-25
+ * Mise à jour : 2025-08-26
  * ========================================== */
 
 /* ==========================================
@@ -240,6 +240,14 @@ pre {
   line-height: normal;
   white-space: pre-wrap;
   tab-size: 2;
+}
+
+/* Configuration spécifique code */
+:where(:not(pre)) > code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background-color: oklch(50% 0 0 / 20%);
+  font-size: 0.9em;
 }
 
 /* ==========================================
