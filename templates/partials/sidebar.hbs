@@ -1,20 +1,9 @@
 <aside class="styleguide-sidebar" role="complementary" aria-label="Liste des composants">
   <nav class="styleguide-nav" role="navigation" aria-label="Composants">
     <ul role="list">
-      {{#if home}}
-        <li>
-          <a href="{{base}}{{home.slug}}" data-component-id="{{home.id}}" data-component-slug="{{home.slug}}">{{home.label}}</a>
-        </li>
-      {{else}}
-        {{!-- Fallback: premier composant --}}
-        {{#each components}}
-          {{#if @first}}
-            <li>
-              <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
-            </li>
-          {{/if}}
-        {{/each}}
-      {{/if}}
+      <li>
+        <a href="{{base}}" class="js-home-link" data-home>accueil</a>
+      </li>
     </ul>
 
     <h2 id="sidebar-components-title">Éléments HTML</h2>

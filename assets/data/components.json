@@ -1,9 +1,4 @@
 [
-  {
-    "id": "pages/presentation",
-    "label": "accueil",
-    "slug": "presentation"
-  },
   { "id": "button/button", "label": "button", "slug": "button" },
   { "id": "checkbox/checkbox", "label": "checkbox", "slug": "checkbox" },
   { "id": "radio/radio", "label": "radio", "slug": "radio" },

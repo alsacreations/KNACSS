@@ -52,23 +52,13 @@ export default defineConfig(({ command }) => {
               new URL("./assets/data/components.json", import.meta.url),
             ),
           )
-          // Trouve l'entrée d'accueil
-          const home = components.find(
-            (c) =>
-              c.id === "pages/presentation" ||
-              c.slug === "presentation" ||
-              String(c.label || "").toLowerCase() === "accueil",
+          // Trie alphabétiquement les composants par label
+          const componentsSorted = components.slice().sort((a, b) =>
+            String(a.label || "").localeCompare(String(b.label || ""), "fr", {
+              sensitivity: "base",
+            }),
           )
-          // Trie alphabétiquement les autres composants par label
-          const componentsSorted = components
-            .filter((c) => c !== home)
-            .slice()
-            .sort((a, b) =>
-              String(a.label || "").localeCompare(String(b.label || ""), "fr", {
-                sensitivity: "base",
-              }),
-            )
-          return { ...ctx, base, components, home, componentsSorted }
+          return { ...ctx, base, components, componentsSorted }
         },
         partialDirectory: resolve(__dirname, "templates/partials"),
         // Pas de 'entry' en dev: transformIndexHtml traite les fichiers HTML servis (index, styleguide,…)

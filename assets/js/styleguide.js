@@ -47,6 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
         a.removeAttribute("aria-current")
       }
     })
+    // Marque l'accueil si aucun composant n'est actif
+    const homeLink = document.querySelector(".styleguide-sidebar a[data-home]")
+    if (homeLink) {
+      if (!componentName) {
+        homeLink.setAttribute("aria-current", "page")
+      } else {
+        homeLink.removeAttribute("aria-current")
+      }
+    }
   }
 
   /**
@@ -57,6 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sidebar) return
     sidebar.addEventListener("click", (e) => {
       const target = e.target
+      // Lien Accueil (SPA): restaure la vue d’accueil sans recharger
+      if (
+        target instanceof HTMLAnchorElement &&
+        target.hasAttribute("data-home")
+      ) {
+        e.preventDefault()
+        const base = document.body?.getAttribute("data-base") || "/"
+        const basePath = base.endsWith("/") ? base : base + "/"
+        const url = new URL(basePath, window.location.origin)
+        history.pushState({}, "", url.toString())
+        showHome()
+        return
+      }
       if (target instanceof HTMLAnchorElement && target.dataset.componentId) {
         e.preventDefault()
         const id = target.dataset.componentId
@@ -80,7 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (a) id = a.getAttribute("data-component-id")
         }
       }
-      if (id) loadComponent(id)
+      if (id) {
+        loadComponent(id)
+      } else {
+        showHome()
+      }
     })
   }
 
@@ -93,16 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let htmlContent
 
     if (isPage) {
-      // Pages éditoriales (ex: pages/presentation)
-      const pagePath = componentName.replace(/^pages\//, "")
-      htmlModuleKey = `/pages/${pagePath}.html`
-      htmlContent = pagesModules[htmlModuleKey]
-      if (htmlContent === undefined) {
-        const errorMessage = `<p style="color: var(--color-error, red);">Impossible de charger la page : ${componentName}.<br>Vérifiez que le fichier ${htmlModuleKey} existe et est inclus par Vite.</p>`
-        componentPreviewContainer.innerHTML = errorMessage
-        console.error(`Page non trouvée pour "${componentName}".`)
-        return
-      }
+      // Plus de pages éditoriales chargées dynamiquement: on revient à l'accueil
+      showHome()
+      return
     } else {
       // Composants natifs (ex: input/input)
       htmlModuleKey = `/natives/${componentName}.html`
@@ -177,11 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     query: "?raw",
     import: "default",
   })
-  const pagesModules = import.meta.glob("/pages/**/*.html", {
-    eager: true,
-    query: "?raw",
-    import: "default",
-  })
+  // Plus d'import de pages; l'accueil est intégré directement dans index.html
 
   /**
    * Réinitialise les modules de composants spécifiques après injection du HTML
@@ -396,6 +411,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const componentPreviewContainer = document.querySelector(
     ".styleguide-component-preview",
   ) // Modifié pour cibler le conteneur de prévisualisation
+  // Conserve le HTML initial (présentation) pour pouvoir le restaurer
+  const initialHomeHTML = componentPreviewContainer
+    ? componentPreviewContainer.innerHTML
+    : ""
 
   // Si le conteneur n'existe pas, arrête le script pour éviter des erreurs.
   if (!componentPreviewContainer) {
@@ -423,16 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (componentName) {
     loadComponent(componentName)
   } else {
-    // Si aucun composant n'est détecté (accès direct au shell), charger la présentation par défaut
-    const a = document.querySelector(
-      '.styleguide-sidebar a[data-component-id="pages/presentation"]',
-    )
-    if (a) {
-      loadComponent("pages/presentation")
-    } else {
-      const msg = `<p>Chargement de la page de présentation…</p>`
-      componentPreviewContainer.innerHTML = msg
-    }
+    showHome()
   }
 
   // Active la navigation côté client
@@ -504,6 +514,42 @@ document.addEventListener("DOMContentLoaded", () => {
       const preview = document.querySelector(".styleguide-component-preview")
       if (preview) preview.insertAdjacentElement("afterend", section)
     })
+  }
+
+  /**
+   * Affiche la vue d’accueil: restaure le contenu initial, titre, et cache actions/code/variables
+   */
+  function showHome() {
+    // Normalise l'URL vers la base si nécessaire
+    const baseAttr = document.body?.getAttribute("data-base") || "/"
+    const basePath = baseAttr.endsWith("/") ? baseAttr : baseAttr + "/"
+    if (window.location.pathname !== basePath) {
+      try {
+        history.replaceState({}, "", new URL(basePath, window.location.origin))
+      } catch {
+        // Ignorer les erreurs d'historique (navigateurs anciens ou contexte restreint)
+      }
+    }
+    const subtitle = document.querySelector("#component-title")
+    if (subtitle) subtitle.textContent = "Accueil"
+    if (componentPreviewContainer) {
+      componentPreviewContainer.innerHTML = initialHomeHTML
+    }
+    // Cache les actions/code
+    const actions = document.querySelector(".styleguide-component-actions")
+    const codeRegion = document.querySelector(".styleguide-component-code")
+    if (actions) actions.hidden = true
+    if (codeRegion) codeRegion.hidden = true
+    // Nettoie tableau des variables éventuel
+    const prev = document.querySelector(".styleguide-component-variables")
+    if (prev) prev.remove()
+    updateActiveSidebarLink("")
+    // Focus accessibilité sur le titre
+    const subtitleEl = document.getElementById("component-title")
+    if (subtitleEl) {
+      subtitleEl.setAttribute("tabindex", "-1")
+      subtitleEl.focus()
+    }
   }
 
   /**
