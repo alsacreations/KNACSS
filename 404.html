@@ -5,10 +5,30 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1" />
+    <title>Redirection…</title>
     <meta
       http-equiv="refresh"
-      content="0; url=/index.html" />
-    <title>Redirection…</title>
+      content="0; url=/KNACSS/" />
+    <script>
+      ;(function () {
+        try {
+          var l = window.location
+          var path = l.pathname.replace(/^\/KNACSS\//, "").replace(/\/$/, "")
+          var slug = path.split("/").filter(Boolean).pop() || ""
+          var base = "/KNACSS/"
+          var target = base
+          if (slug && !slug.endsWith(".html")) {
+            target += "?slug=" + encodeURIComponent(slug)
+          }
+          if (l.search && !/\bslug=/.test(l.search)) {
+            target += (target.includes("?") ? "&" : "?") + l.search.slice(1)
+          }
+          l.replace(target)
+        } catch (e) {
+          /* ignore, meta refresh fallback */
+        }
+      })()
+    </script>
   </head>
   <body>
     <p>Redirection vers le styleguide…</p>

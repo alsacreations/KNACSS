@@ -500,6 +500,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Fallback: si un 404.html nous a redirigés vers la base avec ?slug=...
+  if (!componentName) {
+    const slugParam = params.get("slug")
+    if (slugParam) {
+      const a = document.querySelector(
+        `.styleguide-sidebar a[data-component-slug="${CSS.escape(slugParam)}"]`,
+      )
+      if (a) componentName = a.getAttribute("data-component-id")
+    }
+  }
+
   // Si le paramètre 'component' est présent dans l'URL.
   if (componentName) {
     loadComponent(componentName)
