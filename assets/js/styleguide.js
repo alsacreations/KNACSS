@@ -493,7 +493,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Récupère le composant depuis ?component=... ou, à défaut, depuis un slug /:slug
   const params = new URLSearchParams(window.location.search)
   // Paramètre principal pour identifier l'élément: ?element=slug
-  let componentName = params.get("element")
+  let componentName = null
+  const elementParam = params.get("element")
+  if (elementParam) {
+    const link = document.querySelector(
+      `.styleguide-sidebar a[data-component-slug="${CSS.escape(elementParam)}"]`,
+    )
+    if (link) componentName = link.getAttribute("data-component-id")
+  }
   if (!componentName) {
     const path = window.location.pathname.replace(/\/$/, "")
     const last = path.split("/").pop()
