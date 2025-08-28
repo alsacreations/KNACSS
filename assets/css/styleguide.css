@@ -78,15 +78,23 @@
   background-color: var(--code-bg);
   font-size: var(--text-14);
 
-  & pre {
+  & syntax-highlight {
+    display: block;
     margin: 0;
-    word-break: break-all; /* Pour couper les mots longs si nécessaire */
-    white-space: pre-wrap; /* Pour que le code ne dépasse pas */
+    padding: var(--spacing-12);
+    overflow: auto;
+    border-radius: var(--radius-8, 8px);
+    background: transparent; /* le thème gère les couleurs */
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    white-space: pre-wrap;
   }
+}
 
-  & code {
-    font-family: monospace;
-  }
+/* Optionnel: ajustements minimes du thème pour le fond et le contraste */
+.code-highlight {
+  --she-background: transparent; /* laisse notre fond de panneau */
 }
 
 .styleguide-footer {

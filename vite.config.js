@@ -15,6 +15,14 @@ export default defineConfig(({ command }) => {
     // config options
     base: base, // Défini dynamiquement
     appType: "mpa",
+    esbuild: {
+      target: "es2022",
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        target: "es2022",
+      },
+    },
     // Ne pas marquer les .html comme assets (évite des exports d'URL en build)
     plugins: [
       // Réécriture des URLs friendly en DEV (ex: /presentation, /button, ...)
@@ -65,6 +73,7 @@ export default defineConfig(({ command }) => {
       }),
     ],
     build: {
+      target: "es2022", // nécessaire pour supporter le top-level await du web component de surlignage
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),

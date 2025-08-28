@@ -324,10 +324,17 @@ document.addEventListener("DOMContentLoaded", () => {
             // Fallback: aucun marqueur, on prend tout le contenu actuel
             componentHtmlContent = componentPreviewContainer.innerHTML.trim()
           }
-          const codeElement = codeBlock.querySelector("code.language-html")
-          if (codeElement) {
-            const formattedHtml = formatHtml(componentHtmlContent.trim())
-            codeElement.textContent = formattedHtml
+          const formattedHtml = formatHtml(componentHtmlContent.trim())
+          const she = codeBlock.querySelector("syntax-highlight.code-highlight")
+          if (she) {
+            // Le web component lit le texte du slot/innerText
+            she.textContent = formattedHtml
+            // Déclenche la (re)coloration après mise à jour du contenu
+            if (typeof she.update === "function") she.update()
+          } else {
+            // Fallback si le composant n’est pas disponible
+            const codeElement = codeBlock.querySelector("code.language-html")
+            if (codeElement) codeElement.textContent = formattedHtml
           }
         } else {
           // Optionnel : vider le contenu du code lorsque masqué pour économiser des ressources
@@ -404,7 +411,62 @@ document.addEventListener("DOMContentLoaded", () => {
       resultLines.push(indentChar.repeat(currentIndent) + line)
     }
 
-    return resultLines.join("\n")
+    // Première passe: indentation basique
+    let pretty = resultLines.join("\n")
+
+    // Seconde passe: compaction de certains éléments quand ils ne contiennent qu'un texte simple
+    // Exemple: <li>\n  Texte\n</li> => <li>Texte</li>
+    const compactTags = new Set([
+      // listes/tableaux
+      "li",
+      "dt",
+      "dd",
+      "th",
+      "td",
+      // inlines et titres
+      "a",
+      "button",
+      "label",
+      "summary",
+      "code",
+      "span",
+      "small",
+      "output",
+      "option",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+    ]) // tags autorisés en mono-ligne
+    const rl = pretty.split("\n")
+    const compacted = []
+    for (let i = 0; i < rl.length; i++) {
+      const open = rl[i]
+      const openMatch = open.match(/^(\s*)<([a-z0-9-]+)([^>]*)>\s*$/i)
+      if (
+        openMatch &&
+        i + 2 < rl.length &&
+        compactTags.has(openMatch[2].toLowerCase())
+      ) {
+        const middle = rl[i + 1]
+        const close = rl[i + 2]
+        const closeRe = new RegExp(`^\\s*</${openMatch[2]}\\>\\s*$`, "i")
+        const isTextOnly = /^(\s*[^<>\n\r]+\s*)$/.test(middle)
+        if (closeRe.test(close) && isTextOnly) {
+          const indent = openMatch[1] || ""
+          const tag = openMatch[2]
+          const attrs = openMatch[3] || ""
+          const text = middle.trim()
+          compacted.push(`${indent}<${tag}${attrs}>${text}</${tag}>`)
+          i += 2
+          continue
+        }
+      }
+      compacted.push(open)
+    }
+    return compacted.join("\n")
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.

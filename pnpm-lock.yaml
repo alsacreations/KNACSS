@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      syntax-highlight-element:
+        specifier: ^1.2.0
+        version: 1.2.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.28.0
@@ -1266,6 +1270,9 @@ packages:
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
 
+  syntax-highlight-element@1.2.0:
+    resolution: {integrity: sha512-S6/+oh/Ba7wpPX5f7Glx58fhBq/g8tASwm9noxp+7DLXaR6NFMbC3R2ki3as7pOqyTV7w2BU545Zh61Kw/acVQ==}
+
   table@6.9.0:
     resolution: {integrity: sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==}
     engines: {node: '>=10.0.0'}
@@ -2468,6 +2475,8 @@ snapshots:
       supports-color: 7.2.0
 
   svg-tags@1.0.0: {}
+
+  syntax-highlight-element@1.2.0: {}
 
   table@6.9.0:
     dependencies:
