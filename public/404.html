@@ -13,24 +13,41 @@
       ;(function () {
         try {
           var l = window.location
-          var path = l.pathname.replace(/^\/KNACSS\//, "").replace(/\/$/, "")
-          var slug = path.split("/").filter(Boolean).pop() || ""
           var base = "/KNACSS/"
+          var path = l.pathname.replace(/^\/+/, "/")
+          // Extrait le slug après /KNACSS/
+          var slug = path.replace(/^\/?KNACSS\//, "").replace(/\/$/, "")
+          slug = slug.split("/").filter(Boolean).pop() || ""
           var target = base
           if (slug && !slug.endsWith(".html")) {
             target += "?element=" + encodeURIComponent(slug)
           }
-          if (l.search && !/\bslug=/.test(l.search)) {
+          if (l.search && !/\belement=/.test(l.search)) {
             target += (target.includes("?") ? "&" : "?") + l.search.slice(1)
           }
           l.replace(target)
         } catch (e) {
-          /* ignore, meta refresh fallback */
+          // Fallback assuré par la meta refresh ci-dessus
         }
       })()
     </script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+    </style>
   </head>
   <body>
-    <p>Redirection vers le styleguide…</p>
+    <p>Redirection en cours…</p>
   </body>
 </html>

@@ -11,7 +11,7 @@
       {{#if componentsSorted}}
         {{#each componentsSorted}}
           <li>
-            <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+            <a href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
           </li>
         {{/each}}
       {{else}}
@@ -19,7 +19,7 @@
         {{#each components}}
           {{#unless @first}}
             <li>
-              <a href="{{../base}}{{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+              <a href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
             </li>
           {{/unless}}
         {{/each}}

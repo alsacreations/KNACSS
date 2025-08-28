@@ -83,8 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault()
         const id = target.dataset.componentId
         const slug = target.dataset.componentSlug || id.split("/").pop()
-        const basePath = window.location.pathname.replace(/[^/]*$/, "")
-        const url = new URL(basePath + slug, window.location.origin)
+        const base = document.body?.getAttribute("data-base") || "/"
+        const basePath = base.endsWith("/") ? base : base + "/"
+        const url = new URL(
+          basePath + "?element=" + encodeURIComponent(slug),
+          window.location.origin,
+        )
         history.pushState({ component: id }, "", url.toString())
         loadComponent(id)
       }
@@ -488,7 +492,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Récupère le composant depuis ?component=... ou, à défaut, depuis un slug /:slug
   const params = new URLSearchParams(window.location.search)
-  let componentName = params.get("component")
+  // Paramètre principal pour identifier l'élément: ?element=slug
+  let componentName = params.get("element")
   if (!componentName) {
     const path = window.location.pathname.replace(/\/$/, "")
     const last = path.split("/").pop()
@@ -513,6 +518,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si le paramètre 'component' est présent dans l'URL.
   if (componentName) {
+    // Normalise l'URL pour toujours utiliser ?element=slug
+    try {
+      const a = document.querySelector(
+        `.styleguide-sidebar a[data-component-id="${CSS.escape(componentName)}"]`,
+      )
+      const slug = a?.getAttribute("data-component-slug")
+      if (slug) {
+        const base = document.body?.getAttribute("data-base") || "/"
+        const basePath = base.endsWith("/") ? base : base + "/"
+        const url = new URL(
+          basePath + "?element=" + encodeURIComponent(slug),
+          window.location.origin,
+        )
+        if (window.location.href !== url.toString()) {
+          history.replaceState({}, "", url.toString())
+        }
+      }
+    } catch {
+      // Ignore la normalisation d'URL si indisponible
+    }
     loadComponent(componentName)
   } else {
     showHome()
