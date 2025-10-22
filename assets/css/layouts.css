@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-10-13
+ * Mise à jour : 2025-10-22
  /* ---------------------- */
 
 /* Stack */
@@ -235,6 +235,10 @@
 }
 
 /* Modificateurs globaux */
+[data-gap="xs"] {
+  gap: var(--gap-xs, 0.25rem);
+}
+
 [data-gap="s"] {
   gap: var(--gap-s, 0.5rem);
 }
