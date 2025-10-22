@@ -1,17 +1,21 @@
 <aside class="sidebar" role="complementary" aria-label="Liste des composants">
-  <nav class="nav" role="navigation" aria-label="Composants">
-    <ul role="list">
+  <nav class="nav" role="navigation" aria-label="Pages et composants">
+    <h2 class="title-s" id="sidebar-start-title">🚀 Lancement</h2>
+    <ul role="list" aria-labelledby="sidebar-start-title">
       <li>
-        <a href="{{base}}" class="js-home-link" data-home>accueil</a>
+        <a class="nav-item" href="{{base}}" data-home>Accueil</a>
+      </li>
+      <li>
+        <a class="nav-item" href="{{base}}?page=installation" data-page="installation">Installation</a>
       </li>
     </ul>
 
-    <h2 class="title-s" id="sidebar-components-title">Éléments HTML</h2>
+    <h2 class="title-s" id="sidebar-components-title">🏛️ Éléments HTML</h2>
     <ul role="list" aria-labelledby="sidebar-components-title">
       {{#if componentsSorted}}
         {{#each componentsSorted}}
           <li>
-            <a href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+            <a class="nav-item" href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
           </li>
         {{/each}}
       {{else}}
@@ -19,7 +23,7 @@
         {{#each components}}
           {{#unless @first}}
             <li>
-              <a href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
+              <a class="nav-item" href="{{../base}}?element={{slug}}" data-component-id="{{id}}" data-component-slug="{{slug}}">{{label}}</a>
             </li>
           {{/unless}}
         {{/each}}

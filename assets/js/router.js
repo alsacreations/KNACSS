@@ -37,15 +37,30 @@ document.addEventListener("DOMContentLoaded", () => {
    * Met à jour l'état actif dans la sidebar (aria-current)
    */
   function updateActiveSidebarLink(componentName) {
-    const links = document.querySelectorAll(".sidebar a[data-component-id]")
-    links.forEach((a) => {
+    // Gère les liens de composants
+    const componentLinks = document.querySelectorAll(
+      ".sidebar a[data-component-id]",
+    )
+    componentLinks.forEach((a) => {
       if (a.getAttribute("data-component-id") === componentName) {
         a.setAttribute("aria-current", "page")
       } else {
         a.removeAttribute("aria-current")
       }
     })
-    // Marque l'accueil si aucun composant n'est actif
+
+    // Gère les liens de pages
+    const pageLinks = document.querySelectorAll(".sidebar a[data-page]")
+    pageLinks.forEach((a) => {
+      const pageName = a.getAttribute("data-page")
+      if (componentName === `page:${pageName}`) {
+        a.setAttribute("aria-current", "page")
+      } else {
+        a.removeAttribute("aria-current")
+      }
+    })
+
+    // Marque l'accueil si aucun composant/page n'est actif
     const homeLink = document.querySelector(".sidebar a[data-home]")
     if (homeLink) {
       if (!componentName) {
@@ -64,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sidebar) return
     sidebar.addEventListener("click", (e) => {
       const target = e.target
-      // Lien Accueil (SPA): restaure la vue d’accueil sans recharger
+      // Lien Accueil (SPA): restaure la vue d'accueil sans recharger
       if (
         target instanceof HTMLAnchorElement &&
         target.hasAttribute("data-home")
@@ -77,6 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
         showHome()
         return
       }
+      // Lien Page (ex: lancement)
+      if (target instanceof HTMLAnchorElement && target.dataset.page) {
+        e.preventDefault()
+        const pageName = target.dataset.page
+        const base = document.body?.getAttribute("data-base") || "/"
+        const basePath = base.endsWith("/") ? base : base + "/"
+        const url = new URL(
+          basePath + "?page=" + encodeURIComponent(pageName),
+          window.location.origin,
+        )
+        history.pushState({ page: pageName }, "", url.toString())
+        showPage(pageName)
+        return
+      }
+      // Lien Composant
       if (target instanceof HTMLAnchorElement && target.dataset.componentId) {
         e.preventDefault()
         const id = target.dataset.componentId
@@ -93,7 +123,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     window.addEventListener("popstate", () => {
-      let id = new URLSearchParams(window.location.search).get("component")
+      const params = new URLSearchParams(window.location.search)
+      const pageName = params.get("page")
+      let id = params.get("component")
+
+      // Gère les pages
+      if (pageName) {
+        showPage(pageName)
+        return
+      }
+
+      // Gère les composants
       if (!id) {
         const path = window.location.pathname.replace(/\/$/, "")
         const last = path.split("/").pop()
@@ -197,7 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
     query: "?raw",
     import: "default",
   })
-  // Plus d'import de pages; l'accueil est intégré directement dans index.html
+
+  // Importe les pages HTML comme texte brut
+  const htmlPageModules = import.meta.glob("/templates/partials/main-*.hbs", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })
 
   /**
    * Réinitialise les modules de composants spécifiques après injection du HTML
@@ -481,64 +527,73 @@ document.addEventListener("DOMContentLoaded", () => {
     return
   }
 
-  // Récupère le composant depuis ?component=... ou, à défaut, depuis un slug /:slug
+  // Récupère les paramètres de l'URL
   const params = new URLSearchParams(window.location.search)
-  // Paramètre principal pour identifier l'élément: ?element=slug
-  let componentName = null
-  const elementParam = params.get("element")
-  if (elementParam) {
-    const link = document.querySelector(
-      `.sidebar a[data-component-slug="${CSS.escape(elementParam)}"]`,
-    )
-    if (link) componentName = link.getAttribute("data-component-id")
-  }
-  if (!componentName) {
-    const path = window.location.pathname.replace(/\/$/, "")
-    const last = path.split("/").pop()
-    if (last && !last.endsWith(".html")) {
-      const a = document.querySelector(
-        `.sidebar a[data-component-slug="${CSS.escape(last)}"]`,
-      )
-      if (a) componentName = a.getAttribute("data-component-id")
-    }
-  }
 
-  // Fallback: si un 404.html nous a redirigés vers la base avec ?slug=...
-  if (!componentName) {
-    const slugParam = params.get("slug")
-    if (slugParam) {
-      const a = document.querySelector(
-        `.sidebar a[data-component-slug="${CSS.escape(slugParam)}"]`,
-      )
-      if (a) componentName = a.getAttribute("data-component-id")
-    }
-  }
+  // Récupère la page depuis ?page=...
+  const pageName = params.get("page")
 
-  // Si le paramètre 'component' est présent dans l'URL.
-  if (componentName) {
-    // Normalise l'URL pour toujours utiliser ?element=slug
-    try {
-      const a = document.querySelector(
-        `.sidebar a[data-component-id="${CSS.escape(componentName)}"]`,
-      )
-      const slug = a?.getAttribute("data-component-slug")
-      if (slug) {
-        const base = document.body?.getAttribute("data-base") || "/"
-        const basePath = base.endsWith("/") ? base : base + "/"
-        const url = new URL(
-          basePath + "?element=" + encodeURIComponent(slug),
-          window.location.origin,
-        )
-        if (window.location.href !== url.toString()) {
-          history.replaceState({}, "", url.toString())
-        }
-      }
-    } catch {
-      // Ignore la normalisation d'URL si indisponible
-    }
-    loadComponent(componentName)
+  // Gère les pages
+  if (pageName) {
+    showPage(pageName)
   } else {
-    showHome()
+    // Récupère le composant depuis ?component=... ou, à défaut, depuis un slug /:slug
+    let componentName = params.get("component")
+    if (!componentName) {
+      const elementParam = params.get("element")
+      const link = document.querySelector(
+        `.sidebar a[data-component-slug="${CSS.escape(elementParam)}"]`,
+      )
+      if (link) componentName = link.getAttribute("data-component-id")
+    }
+    if (!componentName) {
+      const path = window.location.pathname.replace(/\/$/, "")
+      const last = path.split("/").pop()
+      if (last && !last.endsWith(".html")) {
+        const a = document.querySelector(
+          `.sidebar a[data-component-slug="${CSS.escape(last)}"]`,
+        )
+        if (a) componentName = a.getAttribute("data-component-id")
+      }
+    }
+
+    // Fallback: si un 404.html nous a redirigés vers la base avec ?slug=...
+    if (!componentName) {
+      const slugParam = params.get("slug")
+      if (slugParam) {
+        const a = document.querySelector(
+          `.sidebar a[data-component-slug="${CSS.escape(slugParam)}"]`,
+        )
+        if (a) componentName = a.getAttribute("data-component-id")
+      }
+    }
+
+    // Si le paramètre 'component' est présent dans l'URL.
+    if (componentName) {
+      // Normalise l'URL pour toujours utiliser ?element=slug
+      try {
+        const a = document.querySelector(
+          `.sidebar a[data-component-id="${CSS.escape(componentName)}"]`,
+        )
+        const slug = a?.getAttribute("data-component-slug")
+        if (slug) {
+          const base = document.body?.getAttribute("data-base") || "/"
+          const basePath = base.endsWith("/") ? base : base + "/"
+          const url = new URL(
+            basePath + "?element=" + encodeURIComponent(slug),
+            window.location.origin,
+          )
+          if (window.location.href !== url.toString()) {
+            history.replaceState({}, "", url.toString())
+          }
+        }
+      } catch {
+        // Ignore la normalisation d'URL si indisponible
+      }
+      loadComponent(componentName)
+    } else {
+      showHome()
+    }
   }
 
   // Active la navigation côté client
@@ -645,6 +700,52 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prev) prev.remove()
     updateActiveSidebarLink("")
     // Focus accessibilité sur le titre
+    const subtitleEl = document.getElementById("component-title")
+    if (subtitleEl) {
+      subtitleEl.setAttribute("tabindex", "-1")
+      subtitleEl.focus()
+    }
+  }
+
+  /**
+   * Affiche une page (ex: lancement)
+   * @param {string} pageName - Nom de la page (ex: "lancement")
+   */
+  function showPage(pageName) {
+    // Construit la clé du module (ex: "/templates/partials/main-lancement.hbs")
+    const pageModuleKey = `/templates/partials/main-${pageName}.hbs`
+    const pageContent = htmlPageModules[pageModuleKey]
+
+    if (!pageContent) {
+      console.error(`Page non trouvée : ${pageName}`)
+      showHome()
+      return
+    }
+
+    // Injecte le contenu de la page
+    componentPreviewContainer.innerHTML = pageContent
+
+    // Met à jour le titre
+    const readablePageName = pageName
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase())
+    const subtitle = document.querySelector("#component-title")
+    if (subtitle) subtitle.textContent = readablePageName
+
+    // Cache les actions/code (pas nécessaires pour les pages)
+    const actions = document.querySelector(".component-actions")
+    const codeRegion = document.querySelector(".component-code")
+    if (actions) actions.hidden = true
+    if (codeRegion) codeRegion.hidden = true
+
+    // Nettoie tableau des variables éventuel
+    const prev = document.querySelector(".component-variables")
+    if (prev) prev.remove()
+
+    // Met à jour l'état actif dans la sidebar
+    updateActiveSidebarLink(`page:${pageName}`)
+
+    // Focus accessibilité
     const subtitleEl = document.getElementById("component-title")
     if (subtitleEl) {
       subtitleEl.setAttribute("tabindex", "-1")

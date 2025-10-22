@@ -60,9 +60,9 @@ Notes d’usage
 Le styleguide adopte un layout modulaire rendu via templates (build-time):
 
 - Dossiers: `templates/` (Handlebars), `templates/partials/` (header, sidebar, footer), `templates/context.json` (métadonnées de page), `assets/data/components.json` (liste des composants de nav)
-- L’injection des démos reste côté client via `assets/js/styleguide.js` et `import.meta.glob("/natives/**/*.html")`.
+- L'injection des démos reste côté client via `assets/js/router.js` et `import.meta.glob("/natives/**/*.html")`.
 
-Intégration plugin (à valider): ajout d’un plugin Handlebars dans Vite pour compiler les templates au build; aucune dépendance ajoutée tant que non validée.
+Intégration plugin (à valider): ajout d'un plugin Handlebars dans Vite pour compiler les templates au build; aucune dépendance ajoutée tant que non validée.
 
 ## Coloration syntaxique du code (Custom Highlight API)
 
@@ -99,8 +99,8 @@ Le thème `prettylights` applique les couleurs via `::highlight()`; vous pouvez 
 
 ### Injection du code et mise à jour
 
-- Fichier: `assets/js/styleguide.js`
-  - Lors du clic sur “Afficher le code”, le HTML du composant est sérialisé, formaté, puis injecté:
+- Fichier: `assets/js/router.js`
+  - Lors du clic sur "Afficher le code", le HTML du composant est sérialisé, formaté, puis injecté:
     - `she.textContent = formattedHtml`
     - `she.update()` est appelé si disponible pour déclencher (ou re‑déclencher) la coloration.
   - Fallback: si le web component n’est pas disponible, le code est inséré dans `<code class="language-html">`.
