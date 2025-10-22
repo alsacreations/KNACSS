@@ -36,9 +36,6 @@
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
   --error: light-dark(var(--color-red-500), var(--color-red-300));
   --success: light-dark(var(--color-green-300), var(--color-green-500));
-  --border-light: var(--color-gray-200);
-  --border-medium: var(--color-gray-400);
-  --border-dark: var(--color-gray-600);
 
   /* Typo Tokens */
   --text-m: clamp(var(--text-16), 0.9565rem + 0.2174vw, var(--text-18));
@@ -71,8 +68,8 @@
 
   /* Forms Tokens */
   --form-control-background: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-700)
+    var(--color-gray-200),
+    var(--color-gray-700)
   );
   --on-form-control: light-dark(var(--color-gray-900), var(--color-gray-100));
   --form-control-spacing: var(--spacing-12) var(--spacing-16);

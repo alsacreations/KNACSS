@@ -75,7 +75,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Secondary button */
   &.btn-secondary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--color-slate-300, GrayText);
+    --button-background-color: var(--color-gray-300, GrayText);
     --button-border-color: transparent;
     --button-text-color: var(--primary, #ffffff);
   }
