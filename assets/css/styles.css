@@ -62,6 +62,10 @@ body {
   color: var(--accent);
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-semibold);
+
+  .component-base & {
+    margin-bottom: 0;
+  }
 }
 
 .title-m {
@@ -191,6 +195,7 @@ body {
   grid-template-areas:
     "base"
     "info";
+  gap: var(--spacing-m);
 
   @media (width >= 64rem) {
     grid-template-areas: "base info";
