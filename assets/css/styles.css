@@ -122,14 +122,6 @@ body {
   }
 }
 
-.component-variables {
-  margin-top: var(--spacing-m);
-}
-
-.component-actions {
-  margin-top: var(--spacing-m);
-}
-
 /* ----------------------------------
  * Header
  * ----------------------------------
@@ -177,11 +169,11 @@ body {
 
     &:hover,
     &:focus-visible {
-      background-color: var(--layer-2);
+      background-color: var(--layer-1);
     }
 
     &[aria-current="page"] {
-      background-color: var(--layer-2);
+      background-color: var(--layer-1);
       color: var(--accent);
       font-weight: var(--font-weight-semibold);
     }
@@ -214,6 +206,27 @@ body {
   & > .component-info {
     grid-area: info;
   }
+}
+
+.component-preview {
+  padding: var(--spacing-m) var(--spacing-s) var(--spacing-l);
+  border-radius: var(--radius-xl);
+  background-color: var(--layer-1);
+}
+
+.component-code {
+  translate: 0 -1.8rem;
+}
+
+.component-actions {
+  display: flex;
+  justify-content: end;
+}
+
+.component-code-source {
+  padding: var(--spacing-s);
+  border: 1px solid var(--layer-2);
+  border-radius: var(--radius-xl);
 }
 
 syntax-highlight {
