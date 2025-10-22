@@ -22,6 +22,10 @@
   --boxed-max: 96rem; /* 1536px */
 }
 
+[data-gap="xs"] {
+  gap: var(--spacing-8);
+}
+
 /* ----------------------------------
  * Base
  * ----------------------------------
@@ -125,7 +129,6 @@ body {
 .header {
   padding: var(--spacing-m);
   border-bottom: 1px solid var(--layer-2);
-  background-color: var(--layer-1);
 
   & .title-main {
     margin: 0;
@@ -152,7 +155,7 @@ body {
   border-right: 1px solid var(--layer-2);
 
   & ul {
-    padding-block: var(--spacing-m);
+    padding-block: var(--spacing-s) var(--spacing-m);
   }
 
   & .nav-item {
