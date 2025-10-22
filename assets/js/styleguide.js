@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (subtitle) subtitle.textContent = readableComponentName
 
     // Bouton/code visible uniquement pour les composants
-    const actions = document.querySelector(".styleguide-component-actions")
-    const codeRegion = document.querySelector(".styleguide-component-code")
+    const actions = document.querySelector(".component-actions")
+    const codeRegion = document.querySelector(".component-code")
     if (actions && codeRegion) {
       if (isPage) {
         actions.hidden = true
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderVariablesTable(baseName)
     } else {
       // Nettoie l'éventuel tableau précédent
-      const prev = document.querySelector(".styleguide-component-variables")
+      const prev = document.querySelector(".component-variables")
       if (prev) prev.remove()
     }
 
@@ -265,9 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function initializeShowCodeButtons() {
     const showCodeButton = document.querySelector(".js-show-code")
-    const componentPreviewContainer = document.querySelector(
-      ".styleguide-component-preview",
-    ) // Conteneur où le HTML du composant est injecté
+    const componentPreviewContainer =
+      document.querySelector(".component-preview") // Conteneur où le HTML du composant est injecté
 
     if (!showCodeButton || !componentPreviewContainer) {
       console.warn(
@@ -284,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const codeBlockId = showCodeButton.getAttribute("aria-controls")
       let codeBlock = codeBlockId ? document.getElementById(codeBlockId) : null
       if (!codeBlock) {
-        codeBlock = document.querySelector(".styleguide-component-code")
+        codeBlock = document.querySelector(".component-code")
       }
 
       if (codeBlock) {
@@ -470,9 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Récupère l'élément où le contenu du composant sera injecté.
-  const componentPreviewContainer = document.querySelector(
-    ".styleguide-component-preview",
-  ) // Modifié pour cibler le conteneur de prévisualisation
+  const componentPreviewContainer = document.querySelector(".component-preview") // Modifié pour cibler le conteneur de prévisualisation
   // Conserve le HTML initial (présentation) pour pouvoir le restaurer
   const initialHomeHTML = componentPreviewContainer
     ? componentPreviewContainer.innerHTML
@@ -480,9 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si le conteneur n'existe pas, arrête le script pour éviter des erreurs.
   if (!componentPreviewContainer) {
-    console.error(
-      "Erreur : Le conteneur .styleguide-component-preview est introuvable.",
-    )
+    console.error("Erreur : Le conteneur .component-preview est introuvable.")
     return
   }
 
@@ -555,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function renderVariablesTable(baseName) {
     // Nettoyer ancien tableau si présent
-    const prev = document.querySelector(".styleguide-component-variables")
+    const prev = document.querySelector(".component-variables")
     if (prev) prev.remove()
 
     // Certains composants n'exposent pas (ou pas encore) de variables utiles
@@ -569,7 +564,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!vars.length) return
 
       const section = document.createElement("section")
-      section.className = "styleguide-component-variables"
+      section.className = "component-variables"
       section.setAttribute("aria-label", "Variables CSS du composant")
 
       const table = document.createElement("table")
@@ -612,7 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
       section.appendChild(table)
 
       // Injection sous l'aperçu du composant
-      const preview = document.querySelector(".styleguide-component-preview")
+      const preview = document.querySelector(".component-preview")
       if (preview) preview.insertAdjacentElement("afterend", section)
     })
   }
@@ -637,12 +632,12 @@ document.addEventListener("DOMContentLoaded", () => {
       componentPreviewContainer.innerHTML = initialHomeHTML
     }
     // Cache les actions/code
-    const actions = document.querySelector(".styleguide-component-actions")
-    const codeRegion = document.querySelector(".styleguide-component-code")
+    const actions = document.querySelector(".component-actions")
+    const codeRegion = document.querySelector(".component-code")
     if (actions) actions.hidden = true
     if (codeRegion) codeRegion.hidden = true
     // Nettoie tableau des variables éventuel
-    const prev = document.querySelector(".styleguide-component-variables")
+    const prev = document.querySelector(".component-variables")
     if (prev) prev.remove()
     updateActiveSidebarLink("")
     // Focus accessibilité sur le titre

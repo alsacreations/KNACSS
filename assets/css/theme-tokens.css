@@ -74,9 +74,4 @@
   --form-control-border-radius: var(--radius-md);
   --checkables-border-color: var(--color-gray-400);
   --checkable-size: 1.25em;
-
-  /* States Tokens */
-  --focus-ring-color: AccentColor;
-  --focus-ring-width: 2px;
-  --focus-ring-offset: 2px;
 }

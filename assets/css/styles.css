@@ -36,3 +36,21 @@ body {
 *::selection {
   background: var(--selection);
 }
+
+/* Titres */
+
+.title-main {
+  margin: 0;
+}
+
+.title-l {
+  font-size: var(--text-l);
+}
+
+.title-m {
+  font-size: var(--text-m);
+}
+
+.title-s {
+  font-size: var(--text-s);
+}
