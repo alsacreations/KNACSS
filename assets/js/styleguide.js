@@ -194,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Importe les modules des composants HTML comme texte brut.
   // Vite traitera ces imports lors du build pour inclure les fichiers.
-  // N'importe que les fichiers HTML des composants (exclut /natives/styleguide.html)
   const htmlComponentModules = import.meta.glob("/natives/*/*.html", {
     eager: true,
     query: "?raw",
@@ -267,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
    * Attache les écouteurs d'événements aux boutons .js-show-code.
    */
   function initializeShowCodeButtons() {
-    // Le bouton est maintenant directement dans styleguide.html, pas dans le contenu injecté
     const showCodeButton = document.querySelector(".js-show-code")
     const componentPreviewContainer = document.querySelector(
       ".styleguide-component-preview",

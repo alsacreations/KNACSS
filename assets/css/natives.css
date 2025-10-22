@@ -479,6 +479,7 @@ input:not(
   --input-border-radius: var(--form-control-border-radius, 0);
   --input-border-width: var(--form-control-border-width, 1px);
   --input-text-color: var(--on-form-control, ButtonText);
+  --input-placeholder-color: GrayText;
 
   display: block;
   width: 100%;
@@ -514,7 +515,7 @@ input:not(
   /* Placeholder */
   &::placeholder {
     opacity: 100%;
-    color: var(--on-surface-secondary, #6b7280);
+    color: var(--input-placeholder-color);
   }
 }
 
@@ -828,6 +829,7 @@ select {
   --select-border-radius: var(--form-control-border-radius, 0);
   --select-border-width: var(--form-control-border-width, 1px);
   --select-text-color: var(--on-form-control, FieldText);
+  --select-optgroup-color: GrayText;
 
   display: block;
   width: 100%;
@@ -879,7 +881,7 @@ select {
 
 /* Styles pour les optgroups */
 :where(optgroup) {
-  color: var(--on-surface-secondary, inherit);
+  color: var(--select-optgroup-color);
   font-weight: var(--font-weight-bold, 700);
 }
 
@@ -985,6 +987,7 @@ textarea {
   --textarea-border-radius: var(--form-control-border-radius, 0);
   --textarea-border-width: var(--form-control-border-width, 1px);
   --textarea-text-color: var(--on-form-control, ButtonText);
+  --textarea-counter-color: GrayText;
 
   display: block;
   width: 100%;
@@ -1033,7 +1036,7 @@ textarea {
 .character-counter {
   min-width: max-content;
   margin-left: auto;
-  color: var(--on-surface-secondary, GrayText);
+  color: var(--textarea-counter-color);
   font-size: var(--text-14, 0.875rem);
   font-weight: var(--font-weight-medium, 500);
   text-align: right;
@@ -1111,21 +1114,13 @@ hr {
  * -------------------- */
 
 table {
-  /* Variables du composant Table */
-  --table-border-color: var(
-    --form-control-border-color,
-    ButtonBorder
-  ); /* couleur des bordures du tableau */
-
-  --table-border-width: var(
-    --form-control-border-width,
-    1px
-  ); /* épaisseur des bordures du tableau */
-
-  --table-layout: fixed; /* mode de mise en page du tableau: fixed | auto */
-  --table-border-collapse: collapse; /* collapse | separate — valeurs CSS valides */
-  --table-border-spacing: 0; /* utilisé quand border-collapse = separate */
-  --table-zebra-mix: 95%; /* pourcentage de mélange pour le zébrage (mettre 0% pour désactiver) */
+  --table-border-color: var(--form-control-border-color, ButtonBorder);
+  --table-border-width: var(--form-control-border-width, 1px);
+  --table-layout: fixed;
+  --table-border-collapse: collapse;
+  --table-border-spacing: 0;
+  --table-zebra-mix: 95%;
+  --table-caption-color: GrayText;
 
   width: 100%;
   table-layout: var(--table-layout, fixed);
@@ -1136,7 +1131,7 @@ table {
   /* Légende */
   & caption {
     margin-block: var(--spacing-8, 0.5rem);
-    color: var(--on-surface-secondary, inherit);
+    color: var(--table-caption-color);
     text-align: left;
   }
 

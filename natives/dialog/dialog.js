@@ -312,14 +312,5 @@ function generateUniqueId(prefix = "id") {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
 }
 
-// Auto-initialisation quand le DOM est prêt (sauf dans le styleguide)
-if (!window.location.pathname.includes("/styleguide.html")) {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initDialogs)
-  } else {
-    initDialogs()
-  }
-}
-
 // Export pour utilisation modulaire
 export { initDialogs, openDialog, closeDialog }

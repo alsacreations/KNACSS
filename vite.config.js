@@ -77,7 +77,6 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
-          shell: resolve(__dirname, "pages/styleguide.html"),
         },
       },
     },

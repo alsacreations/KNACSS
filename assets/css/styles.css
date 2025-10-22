@@ -67,7 +67,7 @@ body {
 
 .homepage-header p {
   margin: 0;
-  color: var(--on-surface-secondary);
+  color: var(--on-surface);
   font-size: var(--text-l);
 }
 
@@ -89,7 +89,7 @@ body {
 
 .homepage-section p {
   margin: 0 0 var(--spacing-24) 0;
-  color: var(--on-surface-secondary);
+  color: var(--on-surface);
 }
 
 .homepage-pre {
@@ -153,7 +153,7 @@ body {
 }
 
 .dependency-version {
-  color: var(--on-surface-secondary);
+  color: var(--on-surface);
   font-size: var(--text-14);
 }
 
@@ -161,7 +161,7 @@ body {
   margin-top: var(--spacing-32);
   padding: var(--spacing-32);
   border-top: 1px solid var(--form-control-border-color);
-  color: var(--on-surface-secondary);
+  color: var(--on-surface);
   font-size: var(--text-14);
   text-align: center;
 }

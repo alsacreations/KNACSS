@@ -1,16 +1,15 @@
 # KNACSS
 
-Fournisseur de "Composants natifs" HTML stylés !
+Bibliothèque de composants natifs HTML stylés, accessibles et personnalisables.
 
 ## Fonctionnalités
 
-- Composants natifs HTML stylés, accessibles et responsives (button, input, textarea, select, checkbox, radio, range, switch, details, dialog, table, list…).
-- CSS moderne uniquement (vanilla): resets, tokens, thèmes, custom properties, nesting, media queries modernes, Grid/Flex.
-- Styleguide interactif avec prévisualisation en direct, affichage/masquage du code et coloration syntaxique (Custom Highlight API).
-- Extraction automatique des variables CSS par composant et tableau de référence dans le styleguide.
-- Personnalisation par variables CSS (couleurs, espaces, rayons, typos) sans toucher au HTML.
-- Performance et éco‑conception: faible spécificité, peu de JS, assets légers; utilisable sans framework.
-- Tooling: Vite (dev/build/preview), ES2022.
+- **Composants natifs** : Tous les éléments HTML essentiels (button, input, textarea, select, checkbox, radio, range, switch, details, dialog, table, list…) avec des styles modernes et accessibles.
+- **CSS vanilla moderne** : Custom properties, nesting, Grid/Flexbox, media queries modernes. Aucune dépendance à un framework CSS.
+- **Styleguide interactif** : Prévisualisez tous les composants en direct, affichez le code source et copiez-le facilement.
+- **Personnalisation complète** : Adaptez couleurs, espacements, rayons et typographie via des variables CSS, sans toucher au HTML.
+- **Performance et accessibilité** : Code léger, faible spécificité CSS, JavaScript minimal, navigation clavier complète.
+- **Éco-conception** : Assets optimisés, rendu efficace, compatible avec les approches sobres.
 
 ## Comment s'en servir ?
 
@@ -18,7 +17,7 @@ Deux usages possibles selon votre contexte.
 
 1. Copier-coller le HTML depuis le styleguide
 
-- Ouvrir le styleguide, choisir un composant, cliquer sur « Afficher le code » puis copier le bloc fourni (marqué par data‑component‑root).
+- Ouvrir le styleguide, choisir un composant, cliquer sur « Afficher le code » puis copier le bloc fourni.
 - Inclure la feuille de styles du projet:
   - Avec Vite: importer `assets/app.css` dans votre entrée JS.
   - En statique: utiliser les CSS générées dans `public/css/` (ou le répertoire de build) dans vos pages HTML.
@@ -61,7 +60,6 @@ Notes d’usage
 Le styleguide adopte un layout modulaire rendu via templates (build-time):
 
 - Dossiers: `templates/` (Handlebars), `templates/partials/` (header, sidebar, footer), `templates/context.json` (métadonnées de page), `assets/data/components.json` (liste des composants de nav)
-- Sortie: `natives/styleguide.html`
 - L’injection des démos reste côté client via `assets/js/styleguide.js` et `import.meta.glob("/natives/**/*.html")`.
 
 Intégration plugin (à valider): ajout d’un plugin Handlebars dans Vite pour compiler les templates au build; aucune dépendance ajoutée tant que non validée.
