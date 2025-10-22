@@ -1167,3 +1167,27 @@ table {
     ); /* largeur minimale pour maintenir la lisibilité */
   }
 }
+
+/* Tableau arrondi */
+.table-rounded {
+  --table-border-color: var(--form-control-border-color, ButtonBorder);
+  --table-border-width: var(--form-control-border-width, 1px);
+  --table-border-radius: var(--form-control-border-radius, 0.5rem);
+
+  padding: var(--spacing-8, 0.5rem);
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-radius: var(--table-border-radius);
+
+  & :is(th, td) {
+    border: none;
+  }
+
+  & thead :is(th, td),
+  & tr:not(:last-child) :is(th, td) {
+    border-bottom: var(--table-border-width) solid var(--table-border-color);
+  }
+
+  & tbody tr:nth-child(odd) {
+    background-color: transparent;
+  }
+}
