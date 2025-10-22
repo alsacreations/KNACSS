@@ -1,0 +1,51 @@
+<main
+  class="styleguide-main"
+  role="main"
+  aria-labelledby="styleguide-title"
+  id="main-content"
+>
+  <section class="styleguide-section" aria-labelledby="component-title">
+    <h2 id="component-title">Composant en cours de visualisation</h2>
+    <article
+      class="styleguide-component-wrapper"
+      role="region"
+      aria-labelledby="component-title"
+    >
+      <div
+        class="styleguide-component-preview"
+        data-layout="stack"
+        role="group"
+        aria-label="Aperçu du composant"
+      >
+        <!-- Contenu injecté par JS -->
+      </div>
+      <div
+        class="styleguide-component-actions"
+        role="toolbar"
+        aria-label="Actions pour le composant"
+      >
+        <button
+          type="button"
+          class="js-show-code"
+          aria-expanded="false"
+          aria-controls="code-component-block"
+          aria-label="Afficher ou masquer le code source du composant"
+        >
+          Afficher le code
+        </button>
+      </div>
+      <div
+        class="styleguide-component-code"
+        id="code-component-block"
+        role="region"
+        aria-label="Code source du composant"
+        hidden
+      >
+        <syntax-highlight
+          language="html"
+          class="code-highlight"
+        ></syntax-highlight>
+      </div>
+    </article>
+  </section>
+</main>

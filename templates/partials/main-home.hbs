@@ -1,0 +1,80 @@
+<main
+  class="styleguide-main"
+  role="main"
+  aria-labelledby="styleguide-title"
+  id="main-content"
+>
+  <section class="styleguide-section" aria-labelledby="component-title">
+    <h2 id="component-title">Accueil</h2>
+    <article
+      class="styleguide-component-wrapper"
+      role="region"
+      aria-labelledby="component-title"
+    >
+      <div
+        class="styleguide-component-preview"
+        data-layout="stack"
+        role="group"
+        aria-label="Aperçu du composant"
+      >
+        <!-- Contenu par défaut: présentation (affichée quand aucun composant n'est sélectionné) -->
+        <section aria-labelledby="presentation-title" data-layout="stack">
+          <h3 id="presentation-title">Accueil</h3>
+          <p>
+            KNACSS propose des styles natifs, accessibles et modernes pour les
+            éléments HTML courants (boutons, champs de formulaires, etc.), avec
+            une architecture en layers (config, base, components, utilities) et
+            des tokens de design.
+          </p>
+          <p>
+            Utilisez la barre latérale pour parcourir les composants. Chaque
+            démo est interactive, avec le code source affichable et copiable.
+          </p>
+          <ul>
+            <li>
+              Tokens et thèmes: consultez les fichiers dans
+              <code>assets/css/</code>.
+            </li>
+            <li>
+              Composants natifs: un unique fichier
+              <syntax-highlight language="html" class="code-highlight">
+              </syntax-highlight>
+            </li>
+            <li>
+              Accessibilité: focus visibles, ARIA, clavier, et préférences
+              utilisateur.
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div
+        class="styleguide-component-actions"
+        role="toolbar"
+        aria-label="Actions pour le composant"
+        hidden
+      >
+        <button
+          type="button"
+          class="js-show-code"
+          aria-expanded="false"
+          aria-controls="code-component-block"
+          aria-label="Afficher ou masquer le code source du composant"
+        >
+          Afficher le code
+        </button>
+      </div>
+      <div
+        class="styleguide-component-code"
+        id="code-component-block"
+        role="region"
+        aria-label="Code source du composant"
+        hidden
+      >
+        <syntax-highlight
+          language="html"
+          class="code-highlight"
+        ></syntax-highlight>
+      </div>
+    </article>
+  </section>
+</main>

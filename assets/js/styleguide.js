@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * Met à jour l'état actif dans la sidebar (aria-current)
    */
   function updateActiveSidebarLink(componentName) {
-    const links = document.querySelectorAll(
-      ".styleguide-sidebar a[data-component-id]",
-    )
+    const links = document.querySelectorAll(".sidebar a[data-component-id]")
     links.forEach((a) => {
       if (a.getAttribute("data-component-id") === componentName) {
         a.setAttribute("aria-current", "page")
@@ -48,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     // Marque l'accueil si aucun composant n'est actif
-    const homeLink = document.querySelector(".styleguide-sidebar a[data-home]")
+    const homeLink = document.querySelector(".sidebar a[data-home]")
     if (homeLink) {
       if (!componentName) {
         homeLink.setAttribute("aria-current", "page")
@@ -62,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * Navigation côté client: clique sur la sidebar met à jour l'URL et le contenu
    */
   function setupClientSideNav() {
-    const sidebar = document.querySelector(".styleguide-sidebar")
+    const sidebar = document.querySelector(".sidebar")
     if (!sidebar) return
     sidebar.addEventListener("click", (e) => {
       const target = e.target
@@ -101,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const last = path.split("/").pop()
         if (last && !last.endsWith(".html")) {
           const a = document.querySelector(
-            `.styleguide-sidebar a[data-component-slug="${CSS.escape(last)}"]`,
+            `.sidebar a[data-component-slug="${CSS.escape(last)}"]`,
           )
           if (a) id = a.getAttribute("data-component-id")
         }
@@ -495,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const elementParam = params.get("element")
   if (elementParam) {
     const link = document.querySelector(
-      `.styleguide-sidebar a[data-component-slug="${CSS.escape(elementParam)}"]`,
+      `.sidebar a[data-component-slug="${CSS.escape(elementParam)}"]`,
     )
     if (link) componentName = link.getAttribute("data-component-id")
   }
@@ -504,7 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const last = path.split("/").pop()
     if (last && !last.endsWith(".html")) {
       const a = document.querySelector(
-        `.styleguide-sidebar a[data-component-slug="${CSS.escape(last)}"]`,
+        `.sidebar a[data-component-slug="${CSS.escape(last)}"]`,
       )
       if (a) componentName = a.getAttribute("data-component-id")
     }
@@ -515,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slugParam = params.get("slug")
     if (slugParam) {
       const a = document.querySelector(
-        `.styleguide-sidebar a[data-component-slug="${CSS.escape(slugParam)}"]`,
+        `.sidebar a[data-component-slug="${CSS.escape(slugParam)}"]`,
       )
       if (a) componentName = a.getAttribute("data-component-id")
     }
@@ -526,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Normalise l'URL pour toujours utiliser ?element=slug
     try {
       const a = document.querySelector(
-        `.styleguide-sidebar a[data-component-id="${CSS.escape(componentName)}"]`,
+        `.sidebar a[data-component-id="${CSS.escape(componentName)}"]`,
       )
       const slug = a?.getAttribute("data-component-slug")
       if (slug) {

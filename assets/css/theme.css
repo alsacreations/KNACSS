@@ -37,6 +37,7 @@
   /* Typographie */
   --font-base: system-ui, sans-serif;
   --font-poppins: poppins, sans-serif;
+  --font-mono: ui-monospace, monospace;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;

@@ -1,8 +1,8 @@
 /* ==========================================
  * Alsa Reset CSS et print
  * Made par Alsacréations
- * Consignes : à placer dans un layer `reset` sous les autres layers
- * Mise à jour : 2025-08-26
+ * Consignes : à placer dans un layer inférieur aux autres layers
+ * Mise à jour : 2025-10-22
  * ========================================== */
 
 /* ==========================================
@@ -242,7 +242,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: ui-monospace, monospace;
   font-size: 1em;
 }
 
