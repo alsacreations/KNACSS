@@ -53,11 +53,17 @@ body {
 }
 
 .title-l {
-  font-size: var(--text-l);
+  margin-block: 0 var(--spacing-16);
+  outline: none;
+  color: var(--accent);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 .title-m {
-  font-size: var(--text-m);
+  margin-block: 0 var(--spacing-16);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 .title-s {
@@ -100,4 +106,12 @@ body {
   & > .footer {
     grid-area: footer;
   }
+}
+
+.component-variables {
+  margin-top: var(--spacing-m);
+}
+
+.component-actions {
+  margin-top: var(--spacing-m);
 }

@@ -565,7 +565,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const section = document.createElement("section")
       section.className = "component-variables"
-      section.setAttribute("aria-label", "Variables CSS du composant")
+
+      const heading = document.createElement("h2")
+      heading.className = "title-m"
+      heading.textContent = "Variables CSS du composant"
+      section.appendChild(heading)
 
       const table = document.createElement("table")
       table.innerHTML = `
