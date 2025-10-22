@@ -1,15 +1,80 @@
 [
-  { "id": "button/button", "label": "button", "slug": "button" },
-  { "id": "checkbox/checkbox", "label": "checkbox", "slug": "checkbox" },
-  { "id": "radio/radio", "label": "radio", "slug": "radio" },
-  { "id": "select/select", "label": "select", "slug": "select" },
-  { "id": "switch/switch", "label": "switch", "slug": "switch" },
-  { "id": "input/input", "label": "input", "slug": "input" },
-  { "id": "textarea/textarea", "label": "textarea", "slug": "textarea" },
-  { "id": "range/range", "label": "range", "slug": "range" },
-  { "id": "details/details", "label": "details", "slug": "details" },
-  { "id": "dialog/dialog", "label": "dialog", "slug": "dialog" },
-  { "id": "hr/hr", "label": "hr", "slug": "hr" },
-  { "id": "table/table", "label": "table", "slug": "table" },
-  { "id": "list/list", "label": "list", "slug": "list" }
+  {
+    "id": "button/button",
+    "label": "button",
+    "slug": "button",
+    "description": "Bouton HTML natif avec styles personnalisables"
+  },
+  {
+    "id": "checkbox/checkbox",
+    "label": "checkbox",
+    "slug": "checkbox",
+    "description": "Case à cocher pour sélections multiples"
+  },
+  {
+    "id": "radio/radio",
+    "label": "radio",
+    "slug": "radio",
+    "description": "Bouton radio pour choix unique dans un groupe"
+  },
+  {
+    "id": "select/select",
+    "label": "select",
+    "slug": "select",
+    "description": "Liste déroulante de sélection"
+  },
+  {
+    "id": "switch/switch",
+    "label": "switch",
+    "slug": "switch",
+    "description": "Interrupteur pour options binaires"
+  },
+  {
+    "id": "input/input",
+    "label": "input",
+    "slug": "input",
+    "description": "Champ de saisie texte avec variantes (email, number, date...)"
+  },
+  {
+    "id": "textarea/textarea",
+    "label": "textarea",
+    "slug": "textarea",
+    "description": "Zone de texte multiligne avec compteur de caractères optionnel"
+  },
+  {
+    "id": "range/range",
+    "label": "range",
+    "slug": "range",
+    "description": "Curseur de sélection de valeur numérique"
+  },
+  {
+    "id": "details/details",
+    "label": "details",
+    "slug": "details",
+    "description": "Élément repliable/dépliable natif avec animation"
+  },
+  {
+    "id": "dialog/dialog",
+    "label": "dialog",
+    "slug": "dialog",
+    "description": "Boîte de dialogue modale ou non-modale"
+  },
+  {
+    "id": "hr/hr",
+    "label": "hr",
+    "slug": "hr",
+    "description": "Séparateur horizontal thématique"
+  },
+  {
+    "id": "table/table",
+    "label": "table",
+    "slug": "table",
+    "description": "Tableau de données avec styles responsive"
+  },
+  {
+    "id": "list/list",
+    "label": "list",
+    "slug": "list",
+    "description": "Listes ordonnées, non-ordonnées et de définitions"
+  }
 ]

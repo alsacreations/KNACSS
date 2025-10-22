@@ -182,3 +182,29 @@ body {
  * Main
  * ----------------------------------
  */
+
+.component-wrapper {
+  display: grid;
+  grid-template-areas:
+    "base"
+    "info";
+
+  @media (width >= 64rem) {
+    grid-template-areas: "base info";
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    align-items: start;
+  }
+
+  & > .component-base {
+    grid-area: base;
+  }
+
+  & > .component-info {
+    grid-area: info;
+  }
+}
+
+syntax-highlight {
+  white-space: pre-wrap !important;
+}

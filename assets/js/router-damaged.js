@@ -3,36 +3,6 @@
 // Charge les métadonnées des composants
 import componentsData from "/assets/data/components.json"
 
-// Importe les modules des composants HTML comme texte brut
-const htmlComponentModules = import.meta.glob("/natives/*/*.html", {
-  eager: true,
-  query: "?raw",
-  import: "default",
-})
-
-// Importe les contenus des pages HTML
-const htmlPageContentModules = import.meta.glob("/pages/*.html", {
-  eager: true,
-  query: "?raw",
-  import: "default",
-})
-
-// Importe les templates de structure
-const templateMainPage = import.meta.glob("/templates/partials/main-page.hbs", {
-  eager: true,
-  query: "?raw",
-  import: "default",
-})["/templates/partials/main-page.hbs"]
-
-const templateMainComponent = import.meta.glob(
-  "/templates/partials/main-component.hbs",
-  {
-    eager: true,
-    query: "?raw",
-    import: "default",
-  },
-)["/templates/partials/main-component.hbs"]
-
 document.addEventListener("DOMContentLoaded", () => {
   // Chargement paresseux du CSS natif pour extraire les variables
   let nativesCssText = ""
@@ -196,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showHome()
       return
     }
-
+    
     // Composants natifs (ex: input/input)
     const htmlModuleKey = `/natives/${componentName}.html`
     const htmlContent = htmlComponentModules[htmlModuleKey]
@@ -210,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mainEl && templateMainComponent) {
       mainEl.outerHTML = templateMainComponent
     }
-
+    
     // Injecte le contenu du composant
     const preview = document.querySelector(".component-preview")
     if (preview) preview.innerHTML = htmlContent
@@ -240,9 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Réinitialise les modules de composants spécifiques
     reinitializeComponentModules(componentName)
-
+    
     updateActiveSidebarLink(componentName)
-
+    
     // Focus accessibilité sur le titre
     const subtitleEl = document.getElementById("component-title")
     if (subtitleEl) {
@@ -251,7 +221,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /**
+    // Ajoute le tableau des variables CSS pour les composants
+    if (!isPage) {
+      const baseName = componentName.split("/").pop() || ""
+      renderVariablesTable(baseName)
+    } else {
+      // Nettoie l'éventuel tableau précédent
+      const prev = document.querySelector(".component-variables")
+      if (prev) prev.remove()
+    }
+
+    if (!isPage) {
+      reinitializeComponentModules(componentName)
+    }
+    updateActiveSidebarLink(componentName)
+    // Gestion focus accessibilité: place le focus sur le titre H2 global
+    const subtitleEl = document.getElementById("component-title")
+    if (subtitleEl) {
+      subtitleEl.setAttribute("tabindex", "-1")
+      subtitleEl.focus()
+    }
+  }
+  // Importe les modules des composants HTML comme texte brut.
+  // Vite traitera ces imports lors du build pour inclure les fichiers.
+  const htmlComponentModules = import.meta.glob("/natives/*/*.html", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })
+  
+  // Importe les contenus des pages HTML
+  const htmlPageContentModules = import.meta.glob("/pages/*.html", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })
+  
+  // Importe les templates de structure
+  const templateMainPage = import.meta.glob("/templates/partials/main-page.hbs", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })["/templates/partials/main-page.hbs"]
+  
+  const templateMainComponent = import.meta.glob("/templates/partials/main-component.hbs", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  })["/templates/partials/main-component.hbs"]  /**
    * Réinitialise les modules de composants spécifiques après injection du HTML
    * @param {string} componentName - Le nom du composant (ex: "dialog/dialog")
    */
@@ -520,6 +537,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return compacted.join("\n")
   }
 
+  // Récupère l'élément où le contenu du composant sera injecté.
+  const componentPreviewContainer = document.querySelector(".component-preview") // Modifié pour cibler le conteneur de prévisualisation
+  // Conserve le HTML initial (présentation) pour pouvoir le restaurer
+  const initialHomeHTML = componentPreviewContainer
+    ? componentPreviewContainer.innerHTML
+    : ""
+  
+  // Conserve aussi le <main> complet pour restaurer après affichage d'une page
+  const mainElement = document.querySelector(".main")
+  const initialMainHTML = mainElement ? mainElement.outerHTML : ""
+
+  // Si le conteneur n'existe pas, arrête le script pour éviter des erreurs.
+  if (!componentPreviewContainer) {
+    console.error("Erreur : Le conteneur .component-preview est introuvable.")
+    return
+  }
+
   // Récupère les paramètres de l'URL
   const params = new URLSearchParams(window.location.search)
 
@@ -658,9 +692,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       section.appendChild(table)
 
-      // Injection dans le bloc component-info
-      const componentInfo = document.querySelector(".component-info")
-      if (componentInfo) componentInfo.appendChild(section)
+      // Injection sous l'aperçu du composant
+      const preview = document.querySelector(".component-preview")
+      if (preview) preview.insertAdjacentElement("afterend", section)
     })
   }
 
@@ -678,32 +712,32 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ignorer les erreurs d'historique (navigateurs anciens ou contexte restreint)
       }
     }
-
+    
     // Charge le contenu de la page d'accueil
     const homeContent = htmlPageContentModules["/pages/accueil.html"] || ""
-
+    
     // Remplace le <main> par le template page
     const mainEl = document.querySelector(".main")
     if (mainEl && templateMainPage) {
       mainEl.outerHTML = templateMainPage
     }
-
+    
     // Met à jour le titre et injecte le contenu
     const subtitle = document.querySelector("#component-title")
     if (subtitle) subtitle.textContent = "Accueil"
-
+    
     const pageContent = document.querySelector(".page-content")
     if (pageContent) pageContent.innerHTML = homeContent
-
+    
     updateActiveSidebarLink("")
-
+    
     // Focus accessibilité sur le titre
     const subtitleEl = document.getElementById("component-title")
     if (subtitleEl) {
       subtitleEl.setAttribute("tabindex", "-1")
       subtitleEl.focus()
     }
-  } /**
+  }  /**
    * Affiche une page (ex: installation)
    * @param {string} pageName - Nom de la page (ex: "installation")
    */
@@ -723,7 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mainEl && templateMainPage) {
       mainEl.outerHTML = templateMainPage
     }
-
+    
     // Met à jour le titre
     const readablePageName = pageName
       .replace(/-/g, " ")

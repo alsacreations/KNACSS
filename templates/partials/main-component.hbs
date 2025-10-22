@@ -1,11 +1,19 @@
-<main class="main" role="main" aria-labelledby="site-title" id="main-content">
-  <section class="section" aria-labelledby="component-title">
-    <h2 class="title-l" id="component-title">Composant en cours de visualisation</h2>
+<main
+  class="main"
+  role="main"
+  aria-labelledby="component-title"
+  id="main-content"
+>
+  <section class="section component-wrapper" aria-labelledby="component-title">
     <article
-      class="component-wrapper"
+      class="component-base"
       role="region"
       aria-labelledby="component-title"
     >
+      <h2 class="title-l" id="component-title">Composant</h2>
+      <p class="component-description">
+        <!-- Description du composant (une phrase) -->
+      </p>
       <div
         class="component-preview"
         data-layout="stack"
@@ -14,33 +22,42 @@
       >
         <!-- Contenu injecté par JS -->
       </div>
-      <div
-        class="component-actions"
-        role="toolbar"
-        aria-label="Actions pour le composant"
-      >
-        <button
-          type="button"
-          class="js-show-code"
-          aria-expanded="false"
-          aria-controls="code-component-block"
-          aria-label="Afficher ou masquer le code source du composant"
+      <div class="component-code">
+        <div
+          class="component-actions"
+          role="toolbar"
+          aria-label="Actions pour le composant"
         >
-          Afficher le code
-        </button>
-      </div>
-      <div
-        class="component-code"
-        id="code-component-block"
-        role="region"
-        aria-label="Code source du composant"
-        hidden
-      >
-        <syntax-highlight
-          language="html"
-          class="code-highlight"
-        ></syntax-highlight>
+          <button
+            type="button"
+            class="js-show-code"
+            aria-expanded="false"
+            aria-controls="code-component-block"
+            aria-label="Afficher ou masquer le code source du composant"
+          >
+            Afficher le code
+          </button>
+        </div>
+        <div
+          class="component-code-source"
+          id="code-component-block"
+          role="region"
+          aria-label="Code source du composant"
+          hidden
+        >
+          <syntax-highlight
+            language="html"
+            class="code-highlight"
+          ></syntax-highlight>
+        </div>
       </div>
     </article>
+    <aside
+      class="component-info"
+      role="complementary"
+      aria-label="Informations complémentaires sur le composant"
+    >
+      <!-- Le tableau des variables CSS sera inséré ici par JS -->
+    </aside>
   </section>
 </main>
