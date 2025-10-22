@@ -1180,6 +1180,7 @@ table {
 
   & :is(th, td) {
     border: none;
+    background-color: transparent;
   }
 
   & thead :is(th, td),

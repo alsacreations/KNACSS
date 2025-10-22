@@ -619,6 +619,9 @@ document.addEventListener("DOMContentLoaded", () => {
       heading.textContent = "Variables CSS du composant"
       section.appendChild(heading)
 
+      const tableWrapper = document.createElement("div")
+      tableWrapper.className = "table-rounded"
+
       const table = document.createElement("table")
       table.innerHTML = `
         <thead>
@@ -656,7 +659,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `
         tbody.appendChild(tr)
       }
-      section.appendChild(table)
+      tableWrapper.appendChild(table)
+      section.appendChild(tableWrapper)
 
       // Injection dans le bloc component-info
       const componentInfo = document.querySelector(".component-info")
