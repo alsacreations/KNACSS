@@ -11,20 +11,17 @@
       href="/images/favicon.svg" />
     <meta
       name="description"
-      content="KNACSS - Guide des composants et éléments HTML disponibles" />
+      content="KNACSS, styles de base pour éléments HTML natifs" />
     <title>{{title}}</title>
     <link
       rel="stylesheet"
       href="/assets/app.css" />
   </head>
-  <body data-base="{{base}}">
-    <a
-      href="#main-content"
-      class="visually-hidden"
-      tabindex="1"
-      >Aller au contenu principal</a
-    >
-
+  <body
+    class="page"
+    data-base="{{base}}"
+    data-layout="boxed"
+    data-gap="m">
     {{> header}} {{> sidebar}} {{> main-home}} {{> footer}}
 
     <script
