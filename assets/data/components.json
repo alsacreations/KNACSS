@@ -3,78 +3,78 @@
     "id": "button/button",
     "label": "button",
     "slug": "button",
-    "description": "Bouton HTML natif avec styles personnalisables"
+    "description": "Le bouton est un élément d'interaction avec l'interface permettant à l'usager d'effectuer une action."
   },
   {
     "id": "checkbox/checkbox",
     "label": "checkbox",
     "slug": "checkbox",
-    "description": "Case à cocher pour sélections multiples"
+    "description": "La case à cocher permet de sélectionner une ou plusieurs options indépendantes dans un formulaire."
   },
   {
     "id": "radio/radio",
     "label": "radio",
     "slug": "radio",
-    "description": "Bouton radio pour choix unique dans un groupe"
+    "description": "Le bouton radio permet de sélectionner une seule option parmi un groupe de choix mutuellement exclusifs."
   },
   {
     "id": "select/select",
     "label": "select",
     "slug": "select",
-    "description": "Liste déroulante de sélection"
+    "description": "La liste déroulante permet de sélectionner une ou plusieurs options dans une liste compacte."
   },
   {
     "id": "switch/switch",
     "label": "switch",
     "slug": "switch",
-    "description": "Interrupteur pour options binaires"
+    "description": "L'interrupteur permet d'activer ou désactiver une option de manière binaire (on/off)."
   },
   {
     "id": "input/input",
     "label": "input",
     "slug": "input",
-    "description": "Champ de saisie texte avec variantes (email, number, date...)"
+    "description": "Le champ de saisie permet à l'usager d'entrer des données textuelles ou numériques dans un formulaire."
   },
   {
     "id": "textarea/textarea",
     "label": "textarea",
     "slug": "textarea",
-    "description": "Zone de texte multiligne avec compteur de caractères optionnel"
+    "description": "La zone de texte permet de saisir du contenu textuel sur plusieurs lignes, avec compteur de caractères optionnel."
   },
   {
     "id": "range/range",
     "label": "range",
     "slug": "range",
-    "description": "Curseur de sélection de valeur numérique"
+    "description": "Le curseur permet de sélectionner une valeur numérique dans un intervalle défini par déplacement horizontal."
   },
   {
     "id": "details/details",
     "label": "details",
     "slug": "details",
-    "description": "Élément repliable/dépliable natif avec animation"
+    "description": "L'élément details permet d'afficher ou masquer du contenu additionnel via un mécanisme natif repliable."
   },
   {
     "id": "dialog/dialog",
     "label": "dialog",
     "slug": "dialog",
-    "description": "Boîte de dialogue modale ou non-modale"
+    "description": "La boîte de dialogue affiche un contenu dans une fenêtre modale ou non-modale, superposée à la page."
   },
   {
     "id": "hr/hr",
     "label": "hr",
     "slug": "hr",
-    "description": "Séparateur horizontal thématique"
+    "description": "Le séparateur horizontal marque une rupture thématique entre des sections de contenu."
   },
   {
     "id": "table/table",
     "label": "table",
     "slug": "table",
-    "description": "Tableau de données avec styles responsive"
+    "description": "Le tableau organise et affiche des données structurées en lignes et colonnes de manière responsive."
   },
   {
     "id": "list/list",
     "label": "list",
     "slug": "list",
-    "description": "Listes ordonnées, non-ordonnées et de définitions"
+    "description": "Les listes permettent d'organiser des éléments sous forme ordonnée, non-ordonnée ou de définitions."
   }
 ]
