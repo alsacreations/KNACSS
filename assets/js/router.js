@@ -690,7 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Met à jour le titre et injecte le contenu
     const subtitle = document.querySelector("#component-title")
-    if (subtitle) subtitle.textContent = "Accueil"
+    if (subtitle) subtitle.textContent = "Des éléments HTML stylés\u202F!"
 
     const pageContent = document.querySelector(".page-content")
     if (pageContent) pageContent.innerHTML = homeContent

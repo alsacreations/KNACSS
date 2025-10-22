@@ -26,7 +26,7 @@
   --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
   --link: light-dark(var(--color-green-500), var(--color-orange-300));
   --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
-  --selection: light-dark(var(--color-orange-300), var(--color-orange-500));
+  --selection: light-dark(var(--color-blue-300), var(--color-blue-500));
   --accent: light-dark(var(--primary), var(--color-blue-300));
   --accent-invert: light-dark(var(--color-blue-300), var(--primary));
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));

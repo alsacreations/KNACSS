@@ -1,9 +1,90 @@
-<p>
-  Il n'y a volontairement pas de mode d'installation automatisé de KNACSS, car
-  il est vivement conseillé de prendre le temps dans un premier temps, puis de
-  récupérer les fichiers nécessaires à la main pour les adapter à ta guise
-  (WordPress, etc.).
-</p>
+<section aria-labelledby="installation-title">
+  <p class="intro">
+    Il n'y a volontairement pas de mode d'installation automatisé de KNACSS. Il
+    est vivement conseillé de prendre le temps de découvrir les composants, puis
+    de récupérer les fichiers nécessaires manuellement pour les adapter à vos
+    besoins spécifiques (WordPress, frameworks, etc.).
+  </p>
 
-<h3>Ceci est un sous-titre</h3>
-<p>Blablabla</p>
+  <h3
+    id="installation-title"
+    class="title-m">
+    Téléchargement du fichier de styles
+  </h3>
+  <p>
+    Le fichier <code>natives.css</code> contient l'ensemble des styles pour tous
+    les composants natifs HTML présentés dans ce guide. Ce fichier unique
+    centralise tous les éléments : boutons, formulaires, tableaux, dialogs, etc.
+  </p>
+
+  <div class="download-block">
+    <a
+      href="/css/natives.css"
+      download="natives.css"
+      class="btn btn-primary"
+      data-layout="cluster"
+      data-gap="xs"
+      data-align="center">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line
+          x1="12"
+          y1="15"
+          x2="12"
+          y2="3"></line>
+      </svg>
+      Télécharger natives.css
+    </a>
+  </div>
+
+  <h3 class="title-m">Pré-requis nécessaires</h3>
+  <p>
+    Pour que les styles de KNACSS fonctionnent correctement, deux éléments sont
+    indispensables :
+  </p>
+  <ul>
+    <li>
+      <strong>Un reset CSS</strong> (<a
+        href="https://reset.alsacreations.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >reset.alsacreations.com</a
+      >) — <strong>Obligatoire</strong><br />
+      Le reset permet de partir d'une base neutre en éliminant les styles par
+      défaut des navigateurs.
+    </li>
+    <li>
+      <strong>Un thème de couleurs personnalisé</strong> —
+      <em>Fortement conseillé</em><br />
+      Définissez vos propres variables CSS de couleurs pour adapter KNACSS à
+      votre charte graphique.
+    </li>
+  </ul>
+
+  <h3 class="title-m">Intégration dans votre projet</h3>
+  <p>
+    Une fois téléchargé, importez le fichier <code>natives.css</code> dans votre
+    projet après le reset CSS et avant vos styles personnalisés :
+  </p>
+  <pre><code>&lt;link rel="stylesheet" href="reset.css"&gt;
+&lt;link rel="stylesheet" href="vos-variables.css"&gt;
+&lt;link rel="stylesheet" href="natives.css"&gt;
+&lt;link rel="stylesheet" href="vos-styles.css"&gt;</code></pre>
+
+  <h3 class="title-m">Personnalisation</h3>
+  <p>
+    Chaque composant de KNACSS peut être personnalisé via des variables CSS.
+    Consultez la section "Variables CSS du composant" de chaque élément pour
+    découvrir les options de personnalisation disponibles.
+  </p>
+</section>

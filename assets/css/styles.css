@@ -70,8 +70,12 @@ body {
 
 .title-m {
   margin-block: 0 var(--spacing-m);
-  font-size: var(--text-xl);
+  font-size: var(--text-l);
   font-weight: var(--font-weight-semibold);
+
+  .page-content & {
+    margin-top: var(--spacing-l);
+  }
 }
 
 .title-s {
@@ -215,4 +219,8 @@ body {
 
 syntax-highlight {
   white-space: pre-wrap !important;
+}
+
+.download-block {
+  margin-block: var(--spacing-l);
 }
