@@ -626,10 +626,11 @@ input:not(
 
   &::before {
     content: "";
-    width: calc(var(--checkable-size, 1.25em) / 1.8);
-    height: calc(var(--checkable-size, 1.25em) / 1.8);
+    width: calc(var(--checkable-size, 1.25em) / 1.4);
+    height: calc(var(--checkable-size, 1.25em) / 1.4);
     transition-property: scale;
     transition-duration: var(--transition-duration, 0.25s);
+    border: 1px solid var(--surface, Canvas);
     border-radius: var(--radius-full, 9999px);
     background-color: var(--radio-checked-color);
     scale: 0;
