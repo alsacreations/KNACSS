@@ -21,6 +21,206 @@
     possibles.
   </p>
 
+  <h3 class="title-m">Démonstration interactive</h3>
+  <p>
+    Voici un aperçu de quelques composants stylés par KNACSS. Tous ces éléments
+    sont fonctionnels et utilisent uniquement du HTML natif avec des styles CSS
+    personnalisables.
+  </p>
+
+  <form
+    data-layout="stack"
+    data-gap="m"
+    class="demo">
+    <!-- Champs texte -->
+    <div
+      data-layout="stack"
+      data-gap="xs">
+      <label for="demo-name">Nom complet</label>
+      <input
+        type="text"
+        id="demo-name"
+        name="name"
+        autocomplete="name"
+        placeholder="Jean Dupont" />
+    </div>
+
+    <div
+      data-layout="stack"
+      data-gap="xs">
+      <label for="demo-email">Adresse e-mail</label>
+      <input
+        type="email"
+        id="demo-email"
+        name="email"
+        autocomplete="email"
+        placeholder="jean@exemple.fr" />
+    </div>
+
+    <!-- Checkboxes -->
+    <fieldset
+      data-layout="stack"
+      data-gap="s">
+      <legend>Centres d'intérêt</legend>
+      <div
+        data-layout="cluster"
+        data-gap="m">
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="checkbox"
+            name="interests"
+            value="design"
+            checked />
+          <span>Design</span>
+        </label>
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="checkbox"
+            name="interests"
+            value="dev" />
+          <span>Développement</span>
+        </label>
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="checkbox"
+            name="interests"
+            value="a11y" />
+          <span>Accessibilité</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Radio buttons -->
+    <fieldset
+      data-layout="stack"
+      data-gap="s">
+      <legend>Niveau d'expérience</legend>
+      <div
+        data-layout="cluster"
+        data-gap="m">
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="radio"
+            name="level"
+            value="beginner" />
+          <span>Débutant</span>
+        </label>
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="radio"
+            name="level"
+            value="intermediate"
+            checked />
+          <span>Intermédiaire</span>
+        </label>
+        <label
+          data-layout="cluster"
+          data-gap="xs">
+          <input
+            type="radio"
+            name="level"
+            value="advanced" />
+          <span>Avancé</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Range slider -->
+    <div
+      data-layout="stack"
+      data-gap="xs">
+      <label for="demo-range">Satisfaction (0-100)</label>
+      <input
+        type="range"
+        id="demo-range"
+        name="satisfaction"
+        min="0"
+        max="100"
+        value="75" />
+    </div>
+
+    <!-- Switch -->
+    <div
+      data-layout="stack"
+      data-gap="s">
+      <label
+        class="switch"
+        data-layout="cluster"
+        data-gap="xs"
+        data-align="center">
+        <input
+          type="checkbox"
+          role="switch"
+          data-variant="check"
+          name="newsletter"
+          checked />
+        <span>Recevoir la newsletter</span>
+      </label>
+    </div>
+
+    <!-- Select -->
+    <div
+      data-layout="stack"
+      data-gap="xs">
+      <label for="demo-country">Pays</label>
+      <select
+        id="demo-country"
+        name="country">
+        <option value="">-- Sélectionnez --</option>
+        <option value="fr">France</option>
+        <option value="be">Belgique</option>
+        <option value="ch">Suisse</option>
+        <option value="ca">Canada</option>
+      </select>
+    </div>
+
+    <!-- Details pour informations complémentaires -->
+    <details>
+      <summary>Informations complémentaires</summary>
+      <div
+        data-layout="stack"
+        data-gap="m">
+        <p>
+          Ce formulaire de démonstration illustre les styles appliqués aux
+          éléments natifs HTML. Tous les composants respectent les standards
+          d'accessibilité et peuvent être personnalisés via des variables CSS.
+        </p>
+        <div
+          data-layout="stack"
+          data-gap="s">
+          <label for="demo-textarea">Commentaire (optionnel)</label>
+          <textarea
+            id="demo-textarea"
+            name="comment"
+            rows="4"
+            placeholder="Vos remarques ou suggestions..."></textarea>
+        </div>
+      </div>
+    </details>
+
+    <!-- Boutons d'action -->
+    <div
+      data-layout="cluster"
+      data-gap="m">
+      <button
+        type="submit"
+        class="btn-primary">
+        Envoyer
+      </button>
+      <button type="reset">Réinitialiser</button>
+    </div>
+  </form>
+
   <h3 class="title-m">En pratique</h3>
   <ul>
     <li>
