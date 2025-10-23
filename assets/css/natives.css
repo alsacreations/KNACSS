@@ -667,7 +667,6 @@ input:not(
   --range-color: var(--primary, AccentColor);
   --range-track-color: var(--form-control-border-color, ButtonBorder);
   --range-track-height: 3px;
-  --range-clip-edges: 3px;
 
   width: 100%;
   overflow: hidden;
@@ -709,12 +708,12 @@ input:not(
   filter: brightness(100%);
   clip-path: polygon(
     100% -1px,
-    var(--range-clip-edges) -1px,
+    var(--range-track-height) -1px,
     0 var(--clip-top),
     -100vmax var(--clip-top),
     -100vmax var(--clip-bottom),
     0 var(--clip-bottom),
-    var(--range-clip-edges) 100%,
+    var(--range-track-height) 100%,
     var(--clip-further) var(--clip-further)
   );
 }
