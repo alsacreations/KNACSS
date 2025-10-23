@@ -131,17 +131,34 @@ body {
 }
 
 .main {
+  margin-left: 0;
   padding: var(--spacing-m);
+  transition: var(--transition-duration);
+  transition-property: translate, margin-left, opacity;
+  will-change: translate, margin-left;
   background-color: var(--surface);
-  transition: translate var(--transition-duration);
 }
 
-.main-wrapper[data-state="opened"] .main {
-  translate: var(--sidebar-width, 300px) 0;
+@media (width < 48rem) {
+  [data-state="opened"] .main {
+    translate: var(--sidebar-width, 300px) 0;
+    opacity: 30%;
+  }
+
+  [data-state="closed"] .main {
+    translate: 0;
+    opacity: 100%;
+  }
 }
 
-.main-wrapper[data-state="closed"] .main {
-  translate: 0 0;
+@media (width >= 48rem) {
+  [data-state="opened"] .main {
+    margin-left: var(--sidebar-width, 300px);
+  }
+
+  [data-state="closed"] .main {
+    margin-left: 0;
+  }
 }
 
 .component-wrapper {
@@ -240,12 +257,15 @@ rect {
     opacity 0.3s,
     rotate 0.3s; /* transition au retour */
 }
+
 .rect-1 {
   y: 0; /* coordonnée y */
 }
+
 .rect-2 {
   y: 4px; /* coordonnée y */
 }
+
 .rect-3 {
   y: 8px; /* coordonnée y */
 }
@@ -257,13 +277,16 @@ rect {
     opacity 0.3s,
     rotate 0.3s 0.3s cubic-bezier(0.55, -0.65, 0, 2.32); /* transition à l'aller */
 }
+
 [aria-expanded="true"] .rect-1 {
   y: 4px;
   rotate: 45deg;
 }
+
 [aria-expanded="true"] .rect-2 {
-  opacity: 0;
+  opacity: 0%;
 }
+
 [aria-expanded="true"] .rect-3 {
   y: 4px;
   rotate: -45deg;
@@ -389,9 +412,11 @@ syntax-highlight {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 .demo-preview {
   max-width: 60rem;
 }
+
 .demo,
 .demo-controls {
   background-color: var(--layer-1);
