@@ -15,7 +15,7 @@ export default defineConfig(() => {
   const base = "/"
   return {
     // config options
-    // base: "/KNACSS/",
+    base: base, // Défini dynamiquement pour le domaine personnalisé
     appType: "mpa",
     esbuild: {
       target: "es2022",
