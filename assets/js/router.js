@@ -249,6 +249,12 @@ document.addEventListener("DOMContentLoaded", () => {
       subtitleEl.setAttribute("tabindex", "-1")
       subtitleEl.focus()
     }
+
+    // Synchronise l'état inert après le chargement du composant
+    // Utilise requestAnimationFrame pour s'assurer que le DOM est à jour
+    requestAnimationFrame(() => {
+      syncMainInertState()
+    })
   }
 
   /**
@@ -613,10 +619,35 @@ document.addEventListener("DOMContentLoaded", () => {
       target.setAttribute("data-state", "closed")
       if (button) button.setAttribute("aria-expanded", "false")
     }
+
+    // Synchronise l'état inert
+    syncMainInertState()
   }
 
   /**
-   * Active le bouton burger pour le menu mobile
+   * Synchronise l'attribut inert sur <main> en fonction de l'état de la navigation
+   * Sur mobile, si la navigation est ouverte, main doit être inert
+   */
+  function syncMainInertState() {
+    const target = document.querySelector("#main-content")
+    const mainElement = document.querySelector(".main")
+
+    if (!target || !mainElement) return
+
+    const isMobile = !window.matchMedia("(width >= 48rem)").matches
+    const isNavigationOpened = target.getAttribute("data-state") === "opened"
+
+    // Sur mobile avec navigation ouverte, main doit être inert
+    if (isMobile && isNavigationOpened) {
+      mainElement.setAttribute("inert", "")
+    } else {
+      mainElement.removeAttribute("inert")
+    }
+  }
+
+  /**
+   * Active le bouton burger pour le menu mobile uniquement
+   * Sur desktop, la navigation reste toujours ouverte
    */
   function setupBurgerMenu() {
     const button = document.querySelector(".burger-button")
@@ -625,6 +656,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!button || !target) return
 
     button.addEventListener("click", () => {
+      // Le toggle ne fonctionne que sur mobile
+      const isMobile = !window.matchMedia("(width >= 48rem)").matches
+
+      if (!isMobile) return // Sur desktop, ne rien faire
+
       const currentState = target.getAttribute("data-state")
 
       if (!currentState || currentState === "closed") {
@@ -634,6 +670,9 @@ document.addEventListener("DOMContentLoaded", () => {
         target.setAttribute("data-state", "closed")
         button.setAttribute("aria-expanded", "false")
       }
+
+      // Synchronise l'état inert
+      syncMainInertState()
     })
   }
 
@@ -782,12 +821,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateActiveSidebarLink("")
 
+    // Active les contrôles de démo si présents
+    setupDemoControls()
+
     // Focus accessibilité sur le titre
     const subtitleEl = document.getElementById("component-title")
     if (subtitleEl) {
       subtitleEl.setAttribute("tabindex", "-1")
       subtitleEl.focus()
     }
+
+    // Synchronise l'état inert après le chargement de la page d'accueil
+    requestAnimationFrame(() => {
+      syncMainInertState()
+    })
   } /**
    * Affiche une page (ex: installation)
    * @param {string} pageName - Nom de la page (ex: "installation")
@@ -829,6 +876,11 @@ document.addEventListener("DOMContentLoaded", () => {
       subtitleEl.setAttribute("tabindex", "-1")
       subtitleEl.focus()
     }
+
+    // Synchronise l'état inert après le chargement de la page
+    requestAnimationFrame(() => {
+      syncMainInertState()
+    })
   }
 
   /**

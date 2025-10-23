@@ -131,12 +131,15 @@ body {
 }
 
 .main {
-  margin-left: 0;
   padding: var(--spacing-m);
   transition: var(--transition-duration);
-  transition-property: translate, margin-left, opacity;
-  will-change: translate, margin-left;
+  transition-property: translate, opacity;
+  will-change: translate, opacity;
   background-color: var(--surface);
+
+  @media (width >= 48rem) {
+    margin-left: var(--sidebar-width, 300px);
+  }
 }
 
 @media (width < 48rem) {
@@ -148,16 +151,6 @@ body {
   [data-state="closed"] .main {
     translate: 0;
     opacity: 100%;
-  }
-}
-
-@media (width >= 48rem) {
-  [data-state="opened"] .main {
-    margin-left: var(--sidebar-width, 300px);
-  }
-
-  [data-state="closed"] .main {
-    margin-left: 0;
   }
 }
 
@@ -192,9 +185,6 @@ body {
   width: var(--sidebar-width, 300px);
   padding: var(--spacing-m);
   border-right: 1px solid var(--layer-2);
-
-  @media (width >= 48rem) {
-  }
 
   & ul {
     padding-block: var(--spacing-s) var(--spacing-l);
@@ -237,6 +227,10 @@ body {
   border: none;
   background: none;
   box-shadow: none;
+
+  @media (width >= 48rem) {
+    display: none;
+  }
 }
 
 .burger-icon {
@@ -419,7 +413,7 @@ syntax-highlight {
 
 .demo,
 .demo-controls {
-  background-color: var(--layer-1);
   padding: var(--spacing-m);
   border-radius: var(--radius-xl);
+  background-color: var(--layer-1);
 }
