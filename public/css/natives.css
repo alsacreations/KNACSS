@@ -830,7 +830,7 @@ select {
   background-color: var(--select-background-color);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
   background-repeat: no-repeat;
-  background-position: right var(--spacing-12, 0.75rem) center;
+  background-position: right var(--spacing-16, 1rem) center;
   background-size: 1rem;
   box-shadow: inset 0 0 0 var(--select-border-width) var(--select-border-color);
   color: var(--select-text-color);
