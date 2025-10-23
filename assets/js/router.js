@@ -953,4 +953,34 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;")
   }
+
+  /**
+   * Active les contrôles de personnalisation de la démo sur la page d'accueil
+   */
+  function setupDemoControls() {
+    const radiusControl = document.getElementById("control-radius")
+    const colorControl = document.getElementById("control-color")
+    const borderControl = document.getElementById("control-border")
+    const demoForm = document.getElementById("demo-form")
+
+    if (!radiusControl || !colorControl || !borderControl || !demoForm) return
+
+    // Applique le changement d'arrondi
+    radiusControl.addEventListener("change", (e) => {
+      demoForm.style.setProperty("--form-control-border-radius", e.target.value)
+    })
+
+    // Applique le changement de couleur
+    colorControl.addEventListener("change", (e) => {
+      demoForm.style.setProperty("--primary", e.target.value)
+    })
+
+    // Applique le changement d'épaisseur de bordure
+    borderControl.addEventListener("change", (e) => {
+      demoForm.style.setProperty("--form-control-border-width", e.target.value)
+    })
+  }
+
+  // Active les contrôles de démo si présents
+  setupDemoControls()
 })

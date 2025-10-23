@@ -28,215 +28,284 @@
     personnalisables.
   </p>
 
-  <form
-    data-layout="stack"
-    data-gap="m"
-    class="demo">
-    <!-- Champs texte -->
+  <section
+    class="demo-preview"
+    data-layout="duo"
+    data-split="1-auto reverse"
+    data-align="start"
+    data-gap="s">
+    <!-- Panneau de contrôles pour personnaliser la démo -->
     <div
       data-layout="stack"
-      data-gap="xs">
-      <label for="demo-name">Nom complet</label>
-      <input
-        type="text"
-        id="demo-name"
-        name="name"
-        autocomplete="name"
-        placeholder="Chulia Roberts" />
-    </div>
+      data-gap="m"
+      class="demo-controls">
+      <h4 class="title-s">Personnaliser les styles</h4>
 
-    <div
-      data-layout="stack"
-      data-gap="xs">
-      <label for="demo-email">Adresse e-mail</label>
-      <input
-        type="email"
-        id="demo-email"
-        name="email"
-        autocomplete="email"
-        placeholder="chulia@roberts.fr" />
-    </div>
-
-    <!-- Checkboxes -->
-    <fieldset
-      data-layout="stack"
-      data-gap="s">
-      <legend>Centres d'intérêt</legend>
-      <div
-        data-layout="cluster"
-        data-gap="m">
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="checkbox"
-            name="interests"
-            value="design"
-            checked />
-          <span>Design</span>
-        </label>
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="checkbox"
-            name="interests"
-            value="bretzel" />
-          <span>Bretzel</span>
-        </label>
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="checkbox"
-            name="interests"
-            value="choucroute" />
-          <span>Choucroute</span>
-        </label>
-      </div>
-    </fieldset>
-
-    <!-- Radio buttons -->
-    <fieldset
-      data-layout="stack"
-      data-gap="s">
-      <legend>Niveau d'expérience</legend>
-      <div
-        data-layout="cluster"
-        data-gap="m">
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="radio"
-            name="level"
-            value="beginner" />
-          <span>Débutant</span>
-        </label>
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="radio"
-            name="level"
-            value="intermediate"
-            checked />
-          <span>Intermédiaire</span>
-        </label>
-        <label
-          data-layout="cluster"
-          data-gap="xs">
-          <input
-            type="radio"
-            name="level"
-            value="advanced" />
-          <span>Übercrazy</span>
-        </label>
-      </div>
-    </fieldset>
-
-    <!-- Range slider -->
-    <div
-      class="form-group"
-      data-layout="stack"
-      data-gap="xs">
-      <label for="range_demo">Niveau de satisfaction</label>
-      <div
-        class="range"
-        data-range-output="anchor">
-        <input
-          type="range"
-          id="range_demo"
-          name="range_demo"
-          min="0"
-          max="100"
-          step="1"
-          value="75"
-          oninput="this.nextElementSibling.textContent = this.value + '%'"
-          aria-describedby="range_demo_help" />
-        <output
-          class="range-value"
-          for="range_demo"
-          >75%</output
-        >
-      </div>
-      <small
-        id="range_demo_help"
-        class="form-group-info"
-        >Utilisez le curseur pour sélectionner votre niveau (0% à 100%)</small
-      >
-    </div>
-
-    <!-- Switch -->
-    <div
-      data-layout="stack"
-      data-gap="s">
-      <label
-        class="switch"
-        data-layout="cluster"
-        data-gap="xs"
-        data-align="center">
-        <input
-          type="checkbox"
-          role="switch"
-          data-variant="check"
-          name="newsletter"
-          checked />
-        <span>Recevoir la newsletter</span>
-      </label>
-    </div>
-
-    <!-- Select -->
-    <div
-      data-layout="stack"
-      data-gap="xs">
-      <label for="demo-country">Pays</label>
-      <select
-        id="demo-country"
-        name="country">
-        <option value="">-- Sélectionnez --</option>
-        <option value="fr">France</option>
-        <option value="al">Alsace</option>
-        <option value="de">Allemagne</option>
-        <option value="be">Belgique</option>
-        <option value="ch">Suisse</option>
-      </select>
-    </div>
-
-    <!-- Details pour informations complémentaires -->
-    <details>
-      <summary>Informations complémentaires</summary>
       <div
         data-layout="stack"
         data-gap="m">
-        <p>
-          Ce formulaire de démonstration illustre les styles appliqués aux
-          éléments natifs HTML. Tous les composants respectent les standards
-          d'accessibilité et peuvent être personnalisés via des variables CSS.
-        </p>
+        <!-- Contrôle arrondi -->
         <div
           data-layout="stack"
-          data-gap="s">
-          <label for="demo-textarea">Commentaire (optionnel)</label>
-          <textarea
-            id="demo-textarea"
-            name="comment"
-            rows="4"
-            placeholder="Vos remarques ou suggestions…"></textarea>
+          data-gap="xs">
+          <label for="control-radius">Arrondi des champs</label>
+          <select
+            id="control-radius"
+            name="radius">
+            <option value="var(--radius-xl)">Très arrondi (par défaut)</option>
+            <option value="var(--radius-lg)">Moyennement arrondi</option>
+            <option value="var(--radius-md)">Légèrement arrondi</option>
+            <option value="0">Aucun arrondi</option>
+          </select>
+        </div>
+
+        <!-- Contrôle couleur -->
+        <div
+          data-layout="stack"
+          data-gap="xs">
+          <label for="control-color">Couleur principale</label>
+          <select
+            id="control-color"
+            name="color">
+            <option value="var(--color-blue-500)">Bleu (par défaut)</option>
+            <option value="var(--color-green-500)">Vert</option>
+            <option value="var(--color-orange-500)">Orange</option>
+            <option value="var(--color-red-500)">Rouge</option>
+          </select>
+        </div>
+
+        <!-- Contrôle épaisseur bordure -->
+        <div
+          data-layout="stack"
+          data-gap="xs">
+          <label for="control-border">Épaisseur des bordures</label>
+          <select
+            id="control-border"
+            name="border">
+            <option value="0px">Aucune bordure</option>
+            <option
+              value="1px"
+              selected>
+              Fine (par défaut)
+            </option>
+            <option value="2px">Moyenne</option>
+            <option value="4px">Épaisse</option>
+          </select>
         </div>
       </div>
-    </details>
-
-    <!-- Boutons d'action -->
-    <div
-      data-layout="cluster"
-      data-gap="m">
-      <button
-        type="submit"
-        class="btn-primary">
-        Envoyer
-      </button>
-      <button type="reset">Réinitialiser</button>
     </div>
-  </form>
+
+    <form
+      data-layout="stack"
+      data-gap="m"
+      class="demo"
+      id="demo-form">
+      <!-- Champs texte -->
+      <div
+        data-layout="stack"
+        data-gap="xs">
+        <label for="demo-name">Nom complet</label>
+        <input
+          type="text"
+          id="demo-name"
+          name="name"
+          autocomplete="name"
+          placeholder="Chulia Roberts" />
+      </div>
+
+      <div
+        data-layout="stack"
+        data-gap="xs">
+        <label for="demo-email">Adresse e-mail</label>
+        <input
+          type="email"
+          id="demo-email"
+          name="email"
+          autocomplete="email"
+          placeholder="chulia@roberts.fr" />
+      </div>
+
+      <!-- Checkboxes -->
+      <fieldset
+        data-layout="stack"
+        data-gap="s">
+        <legend>Centres d'intérêt</legend>
+        <div
+          data-layout="cluster"
+          data-gap="m">
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="checkbox"
+              name="interests"
+              value="design"
+              checked />
+            <span>Design</span>
+          </label>
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="checkbox"
+              name="interests"
+              value="bretzel" />
+            <span>Bretzel</span>
+          </label>
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="checkbox"
+              name="interests"
+              value="choucroute" />
+            <span>Choucroute</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Radio buttons -->
+      <fieldset
+        data-layout="stack"
+        data-gap="s">
+        <legend>Niveau d'expérience</legend>
+        <div
+          data-layout="cluster"
+          data-gap="m">
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="radio"
+              name="level"
+              value="beginner" />
+            <span>Débutant</span>
+          </label>
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="radio"
+              name="level"
+              value="intermediate"
+              checked />
+            <span>Intermédiaire</span>
+          </label>
+          <label
+            data-layout="cluster"
+            data-gap="xs">
+            <input
+              type="radio"
+              name="level"
+              value="advanced" />
+            <span>Übercrazy</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Range slider -->
+      <div
+        class="form-group"
+        data-layout="stack"
+        data-gap="xs">
+        <label for="range_demo">Niveau de satisfaction</label>
+        <div
+          class="range"
+          data-range-output="anchor">
+          <input
+            type="range"
+            id="range_demo"
+            name="range_demo"
+            min="0"
+            max="100"
+            step="1"
+            value="75"
+            oninput="this.nextElementSibling.textContent = this.value + '%'"
+            aria-describedby="range_demo_help" />
+          <output
+            class="range-value"
+            for="range_demo"
+            >75%</output
+          >
+        </div>
+        <small
+          id="range_demo_help"
+          class="form-group-info"
+          >Utilisez le curseur pour sélectionner votre niveau (0% à 100%)</small
+        >
+      </div>
+
+      <!-- Switch -->
+      <div
+        data-layout="stack"
+        data-gap="s">
+        <label
+          class="switch"
+          data-layout="cluster"
+          data-gap="xs"
+          data-align="center">
+          <input
+            type="checkbox"
+            role="switch"
+            data-variant="check"
+            name="newsletter"
+            checked />
+          <span>Recevoir la newsletter</span>
+        </label>
+      </div>
+
+      <!-- Select -->
+      <div
+        data-layout="stack"
+        data-gap="xs">
+        <label for="demo-country">Pays</label>
+        <select
+          id="demo-country"
+          name="country">
+          <option value="">-- Sélectionnez --</option>
+          <option value="fr">France</option>
+          <option value="al">Alsace</option>
+          <option value="de">Allemagne</option>
+          <option value="be">Belgique</option>
+          <option value="ch">Suisse</option>
+        </select>
+      </div>
+
+      <!-- Details pour informations complémentaires -->
+      <details>
+        <summary>Informations complémentaires</summary>
+        <div
+          data-layout="stack"
+          data-gap="m">
+          <p>
+            Ce formulaire de démonstration illustre les styles appliqués aux
+            éléments natifs HTML. Tous les composants respectent les standards
+            d'accessibilité et peuvent être personnalisés via des variables CSS.
+          </p>
+          <div
+            data-layout="stack"
+            data-gap="s">
+            <label for="demo-textarea">Commentaire (optionnel)</label>
+            <textarea
+              id="demo-textarea"
+              name="comment"
+              rows="4"
+              placeholder="Vos remarques ou suggestions…"></textarea>
+          </div>
+        </div>
+      </details>
+
+      <!-- Boutons d'action -->
+      <div
+        data-layout="cluster"
+        data-gap="m">
+        <button
+          type="submit"
+          class="btn-primary">
+          Envoyer
+        </button>
+        <button type="reset">Réinitialiser</button>
+      </div>
+    </form>
+  </section>
 </section>
