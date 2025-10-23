@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
   const base = command === "build" ? "/KNACSS/" : "/"
   return {
     // config options
-    base: base, // Défini dynamiquement
+    // base: "/KNACSS/",
     appType: "mpa",
     esbuild: {
       target: "es2022",
