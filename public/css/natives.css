@@ -608,6 +608,7 @@ input:not(
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
   --radio-checked-color: var(--primary, AccentColor);
+  --radio-checked-border-color: #ffffff;
 
   display: inline-grid;
   width: var(--checkable-size, 1.25em);
@@ -630,7 +631,7 @@ input:not(
     height: calc(var(--checkable-size, 1.25em) / 1);
     transition-property: scale;
     transition-duration: var(--transition-duration, 0.25s);
-    border: 1px solid var(--surface, Canvas);
+    border: 2px solid var(--radio-checked-border-color);
     border-radius: var(--radius-full, 9999px);
     background-color: var(--radio-checked-color);
     scale: 0;
