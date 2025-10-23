@@ -637,11 +637,41 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  /**
+   * Ferme la navigation lors d'un clic sur un lien de navigation (mobile uniquement)
+   */
+  function setupNavigationClose() {
+    const target = document.querySelector("#main-content")
+    const navigation = document.querySelector("#navigation")
+    const button = document.querySelector(".burger-button")
+
+    if (!target || !navigation) return
+
+    // Écoute les clics sur tous les liens de navigation
+    navigation.addEventListener("click", (event) => {
+      // Vérifie si l'élément cliqué est un lien de navigation
+      const link = event.target.closest("a.nav-item")
+
+      if (link) {
+        // Ferme la navigation uniquement sur mobile (< 48rem)
+        const isMobile = !window.matchMedia("(width >= 48rem)").matches
+
+        if (isMobile) {
+          target.setAttribute("data-state", "closed")
+          if (button) button.setAttribute("aria-expanded", "false")
+        }
+      }
+    })
+  }
+
   // Initialise l'état de la navigation au chargement
   initializeNavigationState()
 
   // Active le menu burger
   setupBurgerMenu()
+
+  // Active la fermeture de la navigation au clic sur un lien
+  setupNavigationClose()
 
   /**
    * Rendu du tableau des variables CSS du composant (extraites de natives.css)
