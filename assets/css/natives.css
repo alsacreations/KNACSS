@@ -1103,7 +1103,7 @@ table {
   --table-layout: fixed;
   --table-border-collapse: collapse;
   --table-border-spacing: 0;
-  --table-zebra-mix: 95%;
+  --table-zebra: 95%;
   --table-caption-color: GrayText;
 
   width: 100%;
@@ -1145,7 +1145,7 @@ table {
   & tbody tr:nth-child(odd) {
     background-color: color-mix(
       in oklch,
-      var(--surface, Field) var(--table-zebra-mix, 95%),
+      var(--surface, Field) var(--table-zebra, 95%),
       transparent
     );
   }
@@ -1153,7 +1153,7 @@ table {
 
 /* Wrapper responsive pour permettre le scroll horizontal sur petits écrans */
 .table-responsive {
-  --table-min-width: 48rem; /* largeur minimale par défaut pour un tableau lisible */
+  --table-min-width: 30rem; /* largeur minimale par défaut pour un tableau lisible */
 
   display: block;
   overflow-x: auto;
@@ -1161,10 +1161,7 @@ table {
   scrollbar-gutter: stable both-edges;
 
   & > table {
-    min-width: var(
-      --table-min-width,
-      48rem
-    ); /* largeur minimale pour maintenir la lisibilité */
+    min-width: var(--table-min-width, 30rem);
   }
 }
 

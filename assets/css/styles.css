@@ -268,6 +268,7 @@ syntax-highlight {
 .logo-link {
   display: inline-block;
   margin: auto;
+  color: var(--accent);
 
   @media (width >= 48rem) {
     &:focus,

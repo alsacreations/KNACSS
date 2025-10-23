@@ -620,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
       section.appendChild(heading)
 
       const tableWrapper = document.createElement("div")
-      tableWrapper.className = "table-rounded"
+      tableWrapper.className = "table-rounded table-responsive"
 
       const table = document.createElement("table")
       table.innerHTML = `
