@@ -42,7 +42,7 @@
         id="demo-name"
         name="name"
         autocomplete="name"
-        placeholder="Jean Dupont" />
+        placeholder="Chulia Roberts" />
     </div>
 
     <div
@@ -54,7 +54,7 @@
         id="demo-email"
         name="email"
         autocomplete="email"
-        placeholder="jean@exemple.fr" />
+        placeholder="chulia@roberts.fr" />
     </div>
 
     <!-- Checkboxes -->
@@ -81,8 +81,8 @@
           <input
             type="checkbox"
             name="interests"
-            value="dev" />
-          <span>Développement</span>
+            value="bretzel" />
+          <span>Bretzel</span>
         </label>
         <label
           data-layout="cluster"
@@ -90,8 +90,8 @@
           <input
             type="checkbox"
             name="interests"
-            value="a11y" />
-          <span>Accessibilité</span>
+            value="choucroute" />
+          <span>Choucroute</span>
         </label>
       </div>
     </fieldset>
@@ -130,23 +130,41 @@
             type="radio"
             name="level"
             value="advanced" />
-          <span>Avancé</span>
+          <span>Übercrazy</span>
         </label>
       </div>
     </fieldset>
 
     <!-- Range slider -->
     <div
+      class="form-group"
       data-layout="stack"
       data-gap="xs">
-      <label for="demo-range">Satisfaction (0-100)</label>
-      <input
-        type="range"
-        id="demo-range"
-        name="satisfaction"
-        min="0"
-        max="100"
-        value="75" />
+      <label for="range_demo">Niveau de satisfaction</label>
+      <div
+        class="range"
+        data-range-output="anchor">
+        <input
+          type="range"
+          id="range_demo"
+          name="range_demo"
+          min="0"
+          max="100"
+          step="1"
+          value="75"
+          oninput="this.nextElementSibling.textContent = this.value + '%'"
+          aria-describedby="range_demo_help" />
+        <output
+          class="range-value"
+          for="range_demo"
+          >75%</output
+        >
+      </div>
+      <small
+        id="range_demo_help"
+        class="form-group-info"
+        >Utilisez le curseur pour sélectionner votre niveau (0% à 100%)</small
+      >
     </div>
 
     <!-- Switch -->
@@ -178,9 +196,10 @@
         name="country">
         <option value="">-- Sélectionnez --</option>
         <option value="fr">France</option>
+        <option value="al">Alsace</option>
+        <option value="de">Allemagne</option>
         <option value="be">Belgique</option>
         <option value="ch">Suisse</option>
-        <option value="ca">Canada</option>
       </select>
     </div>
 
@@ -203,7 +222,7 @@
             id="demo-textarea"
             name="comment"
             rows="4"
-            placeholder="Vos remarques ou suggestions..."></textarea>
+            placeholder="Vos remarques ou suggestions…"></textarea>
         </div>
       </div>
     </details>
@@ -220,20 +239,4 @@
       <button type="reset">Réinitialiser</button>
     </div>
   </form>
-
-  <h3 class="title-m">En pratique</h3>
-  <ul>
-    <li>
-      Le fichier <code>natives.css</code> contient tous les styles des
-      composants natifs.
-    </li>
-    <li>
-      Chaque élément peut être modifié à l'aide de variables CSS
-      personnalisables.
-    </li>
-    <li>
-      Les styles sont conçus pour être accessibles et respecter les bonnes
-      pratiques du web.
-    </li>
-  </ul>
 </section>
