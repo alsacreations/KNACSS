@@ -9,8 +9,10 @@ import { resolve } from "path"
 // Correction pour __dirname en ES Module
 const __dirname = new URL(".", import.meta.url).pathname
 
-export default defineConfig(({ command }) => {
-  const base = command === "build" ? "/KNACSS/" : "/"
+export default defineConfig(() => {
+  // Utilise "/" comme base pour le domaine personnalisé knacss.com
+  // Si vous utilisez alsacreations.github.io/KNACSS/, changez en "/KNACSS/"
+  const base = "/"
   return {
     // config options
     // base: "/KNACSS/",

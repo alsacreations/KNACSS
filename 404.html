@@ -8,14 +8,14 @@
     <title>Redirection…</title>
     <meta
       http-equiv="refresh"
-      content="0; url=/KNACSS/" />
+      content="0; url=/" />
     <script>
       ;(function () {
         try {
           var l = window.location
-          var path = l.pathname.replace(/^\/KNACSS\//, "").replace(/\/$/, "")
+          var path = l.pathname.replace(/^\//, "").replace(/\/$/, "")
           var slug = path.split("/").filter(Boolean).pop() || ""
-          var base = "/KNACSS/"
+          var base = "/"
           var target = base
           if (slug && !slug.endsWith(".html")) {
             target += "?element=" + encodeURIComponent(slug)
