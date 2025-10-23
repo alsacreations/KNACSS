@@ -138,10 +138,14 @@ body {
     }
   }
 
-  & p {
+  & .tagline {
     margin-block: var(--spacing-s) 0;
     color: var(--on-surface);
     font-size: var(--text-14);
+
+    @media (width < 48rem) {
+      display: none;
+    }
   }
 }
 
@@ -150,8 +154,10 @@ body {
  * ----------------------------------
  */
 .sidebar {
-  padding-right: var(--spacing-16);
-  border-right: 1px solid var(--layer-2);
+  @media (width >= 48rem) {
+    padding-right: var(--spacing-16);
+    border-right: 1px solid var(--layer-2);
+  }
 
   & ul {
     padding-block: var(--spacing-s) var(--spacing-m);
@@ -180,6 +186,62 @@ body {
   }
 }
 
+/* ----------------------------------
+ * Burger
+ * ----------------------------------
+ */
+.burger-button {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.burger-icon {
+  width: 1.8rem;
+  height: 1.8rem; /* taille du SVG */
+  fill: var(--on-surface); /* couleur du SVG */
+}
+
+/* État d'origine */
+rect {
+  x: 0; /* coordonnée x */
+  rx: 1px; /* arrondi */
+  width: 10px; /* largeur */
+  height: 1.5px; /* épaisseur */
+  transform-origin: center;
+  transition:
+    y 0.3s 0.3s,
+    opacity 0.3s,
+    rotate 0.3s; /* transition au retour */
+}
+.rect-1 {
+  y: 0; /* coordonnée y */
+}
+.rect-2 {
+  y: 4px; /* coordonnée y */
+}
+.rect-3 {
+  y: 8px; /* coordonnée y */
+}
+
+/* État au clic (translation + opacity + rotation) */
+[aria-expanded="true"] rect {
+  transition:
+    y 0.3s,
+    opacity 0.3s,
+    rotate 0.3s 0.3s cubic-bezier(0.55, -0.65, 0, 2.32); /* transition à l'aller */
+}
+[aria-expanded="true"] .rect-1 {
+  y: 4px;
+  rotate: 45deg;
+}
+[aria-expanded="true"] .rect-2 {
+  opacity: 0;
+}
+[aria-expanded="true"] .rect-3 {
+  y: 4px;
+  rotate: -45deg;
+}
 /* ----------------------------------
  * Main
  * ----------------------------------

@@ -593,6 +593,31 @@ document.addEventListener("DOMContentLoaded", () => {
   setupClientSideNav()
 
   /**
+   * Active le bouton burger pour le menu mobile
+   */
+  function setupBurgerMenu() {
+    const button = document.querySelector(".burger-button")
+    const target = document.querySelector("#navigation")
+
+    if (!button || !target) return
+
+    button.addEventListener("click", () => {
+      const currentState = target.getAttribute("data-state")
+
+      if (!currentState || currentState === "closed") {
+        target.setAttribute("data-state", "opened")
+        button.setAttribute("aria-expanded", "true")
+      } else {
+        target.setAttribute("data-state", "closed")
+        button.setAttribute("aria-expanded", "false")
+      }
+    })
+  }
+
+  // Active le menu burger
+  setupBurgerMenu()
+
+  /**
    * Rendu du tableau des variables CSS du composant (extraites de natives.css)
    * @param {string} baseName Nom simple du composant (ex: "button")
    */
