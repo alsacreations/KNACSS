@@ -22,7 +22,13 @@
     data-base="{{base}}"
     data-layout="boxed"
     data-gap="m">
-    {{> header}} {{> sidebar}} {{> main-page}} {{> footer}}
+    {{> header}}
+    <div
+      id="main-content"
+      class="main-wrapper">
+      {{> sidebar}} {{> main-page}}
+    </div>
+    {{> footer}}
 
     <script
       type="module"

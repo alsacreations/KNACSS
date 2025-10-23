@@ -597,7 +597,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function setupBurgerMenu() {
     const button = document.querySelector(".burger-button")
-    const target = document.querySelector("#navigation")
+    const target = document.querySelector("#main-content")
 
     if (!button || !target) return
 
