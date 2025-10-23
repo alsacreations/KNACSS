@@ -180,7 +180,7 @@ body {
   }
 
   & ul {
-    padding-block: var(--spacing-m) var(--spacing-l);
+    padding-block: var(--spacing-s) var(--spacing-l);
   }
 
   & .nav-item {
@@ -191,7 +191,6 @@ body {
     color: var(--on-surface);
     font-size: var(--text-16);
     text-decoration: none;
-    text-transform: capitalize;
 
     &:hover,
     &:focus-visible {
@@ -290,6 +289,7 @@ rect {
 }
 
 .component-code-source {
+  margin-top: var(--spacing-s);
   padding: var(--spacing-s);
   border: 1px solid var(--layer-2);
   border-radius: var(--radius-xl);

@@ -593,6 +593,29 @@ document.addEventListener("DOMContentLoaded", () => {
   setupClientSideNav()
 
   /**
+   * Initialise l'état de la navigation selon la taille de l'écran
+   * Desktop (>= 48rem) : opened
+   * Mobile (< 48rem) : closed
+   */
+  function initializeNavigationState() {
+    const target = document.querySelector("#main-content")
+    const button = document.querySelector(".burger-button")
+
+    if (!target) return
+
+    // Utilise matchMedia pour détecter le breakpoint 48rem
+    const isDesktop = window.matchMedia("(width >= 48rem)").matches
+
+    if (isDesktop) {
+      target.setAttribute("data-state", "opened")
+      if (button) button.setAttribute("aria-expanded", "true")
+    } else {
+      target.setAttribute("data-state", "closed")
+      if (button) button.setAttribute("aria-expanded", "false")
+    }
+  }
+
+  /**
    * Active le bouton burger pour le menu mobile
    */
   function setupBurgerMenu() {
@@ -613,6 +636,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   }
+
+  // Initialise l'état de la navigation au chargement
+  initializeNavigationState()
 
   // Active le menu burger
   setupBurgerMenu()
