@@ -661,17 +661,18 @@ input:not(
 }
 
 [type="range"] {
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff00;
-  color: AccentColor;
-
   --range-thumb-size: 24px;
   --range-thumb-border-width: 4px;
   --range-thumb-border-color: #ffffff;
+  --range-color: var(--accent, AccentColor);
   --range-track-color: var(--form-control-border-color, ButtonBorder);
   --range-track-height: 3px;
   --range-clip-edges: 3px;
+
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff00;
+  color: var(--range-color);
 }
 
 /* WebKit specific styles */
