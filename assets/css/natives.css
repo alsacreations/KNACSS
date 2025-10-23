@@ -196,7 +196,6 @@ details {
     border-radius: var(--details-border-radius);
     color: var(--details-text-color, currentcolor);
     font-weight: var(--font-weight-semibold, 600);
-    line-height: 1.3;
     list-style: none;
     cursor: pointer;
     user-select: none;
