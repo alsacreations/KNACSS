@@ -336,7 +336,6 @@ syntax-highlight {
 
 .footer-alsa {
   padding-block: var(--spacing-m);
-  border-bottom: 1px solid var(--primary-color);
   text-align: center;
 
   & p {
