@@ -1,18 +1,12 @@
 /* ==========================================
- * Alsa Reset CSS et print
- * Made par Alsacréations
+ * Reset CSS et print, made par Alsacréations
  * Consignes : à placer dans un layer inférieur aux autres layers
- * Mise à jour : 2025-10-23
+ * Mise à jour : 2025-11-10
  * ========================================== */
 
 /* ==========================================
- * CONFIGURATION GLOBALE
+ * Modèle de boîte
  * ========================================== */
-
-/* Couleurs système pour adaptation automatique dark/light mode */
-:root {
-  color-scheme: light dark;
-}
 
 /* Modèle de boîte uniforme et prévention des débordements flex/grid */
 *,
@@ -23,17 +17,16 @@
 }
 
 /* ==========================================
- * ÉLÉMENTS DE BASE (HTML/BODY)
+ * Document global
  * ========================================== */
 
-/* Configuration globale de la page */
 html {
   interpolate-size: allow-keywords;
   overflow-wrap: break-word;
   text-size-adjust: none;
+  hanging-punctuation: first allow-end last;
 }
 
-/* Styles de base du document */
 body {
   min-height: 100dvh;
   margin: 0;
@@ -43,21 +36,15 @@ body {
 }
 
 /* ==========================================
- * NAVIGATION ET FOCUS
+ * Navigation et focus
  * ========================================== */
 
-/* Masquage de l'outline pour les interactions à la souris/touch */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Outline uniquement pour la navigation au clavier */
+/* Focus clavier */
 :focus-visible {
   outline: 2px solid light-dark(#4285f4, #8ab4f8);
   outline-offset: 2px;
 }
 
-/* Moderne: utilisation de la couleur d'accent système */
 @supports (outline-color: AccentColor) {
   :focus-visible {
     outline-color: AccentColor;
@@ -75,7 +62,7 @@ a:not([class]) {
 }
 
 /* ==========================================
- * TYPOGRAPHIE
+ * Typographie
  * ========================================== */
 
 /* Hauteur de ligne réduite sur les éléments de titre */
@@ -83,6 +70,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 button,
 input,
 label {
@@ -112,7 +101,7 @@ q {
 }
 
 /* ==========================================
- * LISTES
+ * Listes
  * ========================================== */
 
 ul,
@@ -122,6 +111,8 @@ ol {
   list-style-position: outside;
 
   /* Suppression des styles des listes avec classe (version accessible) */
+
+  /* Attention : nécessite attribut role dans le HTML */
   &[role="list"] {
     padding-inline-start: 0;
     list-style: none;
@@ -133,7 +124,7 @@ ol {
 }
 
 /* ==========================================
- * ÉLÉMENTS MÉDIA ET CONTENU
+ * Média et contenus
  * ========================================== */
 
 /* Prévention des débordements */
@@ -177,7 +168,7 @@ figure {
 }
 
 /* ==========================================
- * FORMULAIRES
+ * Formulaires
  * ========================================== */
 
 /* Normalisation des éléments de formulaire */
@@ -213,7 +204,6 @@ legend {
   white-space: normal;
 }
 
-/* Éléments interactifs */
 label {
   display: inline-block;
   cursor: pointer;
@@ -225,7 +215,6 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Configuration spécifique textarea */
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -234,10 +223,9 @@ textarea {
 }
 
 /* ==========================================
- * ÉLÉMENTS PRÉFORMATÉS
+ * Éléments préformatés
  * ========================================== */
 
-/* Famille de polices et taille pour le code */
 pre,
 code,
 kbd,
@@ -246,7 +234,6 @@ samp {
   font-size: 1em;
 }
 
-/* Configuration spécifique pre */
 pre {
   overflow: auto;
   line-height: normal;
@@ -254,7 +241,6 @@ pre {
   tab-size: 2;
 }
 
-/* Configuration spécifique code */
 :where(:not(pre)) > code {
   padding: 2px 6px;
   border-radius: 6px;
@@ -271,7 +257,6 @@ svg:not([fill]) {
   fill: currentcolor;
 }
 
-/* Configuration d'affichage des SVG */
 svg {
   overflow: visible;
 }
@@ -286,10 +271,9 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * ACCESSIBILITÉ (ARIA)
+ * Accessibilité (ARIA)
  * ========================================== */
 
-/* États ARIA avec curseurs appropriés */
 [aria-busy="true"] {
   cursor: progress;
 }
@@ -314,7 +298,7 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * MASQUAGE ACCESSIBLE
+ * Masquage visuel accessible
  * ========================================== */
 
 /* Masquage du contenu visuellement tout en le gardant accessible aux technologies d'assistance. */
@@ -329,7 +313,7 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * PRÉFÉRENCES UTILISATEUR ANIMATIONS
+ * Préférences animations
  * ========================================== */
 
 /* Désactivation des animations pour les utilisateurs sensibles */
@@ -348,7 +332,7 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * RESET PRINT
+ * Reset print
  * ========================================== */
 
 @media print {
@@ -491,5 +475,5 @@ svg:has(symbol) {
 }
 
 /* ==========================================
- * FIN DU RESET CSS
+ * Fin du reset CSS
  * ========================================== */
