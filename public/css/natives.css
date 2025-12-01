@@ -2,7 +2,7 @@
  * KNACSS Natives Components
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-10-23
+ * Mise à jour : 2025-12-01
  * ============================ */
 
 /* ---------------------
@@ -108,6 +108,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   --checkbox-background-color: var(--form-control-background, Field);
   --checkbox-checked-color: var(--primary, AccentColor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
+  --checkbox-border-color-hover: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
 
@@ -137,6 +138,11 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   &:is(:checked, :indeterminate) {
     background-color: var(--checkbox-checked-color);
     box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 var(--checkbox-border-width)
+      var(--checkbox-border-color-hover);
   }
 
   &:checked::after {
@@ -177,6 +183,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 details {
   --details-padding: var(--form-control-spacing, 12px 16px);
   --details-border-color: var(--form-control-border-color, ButtonBorder);
+  --details-border-color-hover: var(--form-control-border-color, ButtonBorder);
   --details-border-width: var(--form-control-border-width, 1px);
   --details-border-radius: var(--form-control-border-radius, 0);
   --details-background-color: var(--layer-1, Canvas);
@@ -186,6 +193,10 @@ details {
   border: var(--details-border-width) solid var(--details-border-color);
   border-radius: var(--details-border-radius);
   background-color: var(--details-background-color);
+
+  &:hover {
+    border-color: var(--details-border-color-hover);
+  }
 
   /* Summary (titre cliquable) */
   & summary {
@@ -463,6 +474,7 @@ input:not(
   ) {
   --input-background-color: var(--form-control-background, Field);
   --input-border-color: var(--form-control-border-color, ButtonBorder);
+  --input-border-color-hover: var(--form-control-border-color, ButtonBorder);
   --input-border-radius: var(--form-control-border-radius, 0);
   --input-border-width: var(--form-control-border-width, 1px);
   --input-text-color: var(--on-form-control, ButtonText);
@@ -481,6 +493,12 @@ input:not(
   font: inherit;
   line-height: 1.5;
 
+  /* État survol */
+  &:hover {
+    box-shadow: inset 0 0 0 var(--input-border-width)
+      var(--input-border-color-hover);
+  }
+
   /* État désactivé */
   &:disabled {
     opacity: 50%;
@@ -490,12 +508,6 @@ input:not(
   /* État invalide après interaction utilisateur */
   &:user-invalid {
     --input-border-color: var(--error);
-    --input-border-width: 2px;
-  }
-
-  /* État valide après interaction utilisateur */
-  &:user-valid {
-    --input-border-color: var(--success);
     --input-border-width: 2px;
   }
 
@@ -606,6 +618,7 @@ input:not(
 [type="radio"] {
   --radio-background-color: var(--form-control-background, Field);
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
+  --radio-border-color-hover: var(--checkables-border-color, ButtonBorder);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
   --radio-checked-color: var(--primary, AccentColor);
@@ -636,6 +649,11 @@ input:not(
     border-radius: var(--radius-full, 9999px);
     background-color: var(--radio-checked-color);
     scale: 0;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 var(--radio-border-width)
+      var(--radio-border-color-hover);
   }
 
   &:checked {
@@ -815,6 +833,7 @@ input:not(
 select {
   --select-background-color: var(--form-control-background, Field);
   --select-border-color: var(--form-control-border-color, ButtonBorder);
+  --select-border-color-hover: var(--form-control-border-color, ButtonBorder);
   --select-border-radius: var(--form-control-border-radius, 0);
   --select-border-width: var(--form-control-border-width, 1px);
   --select-text-color: var(--on-form-control, FieldText);
@@ -841,6 +860,8 @@ select {
   appearance: none;
   -webkit-user-select: none;
   user-select: none;
+
+  /* État survol */
 
   /* État désactivé */
   &:disabled {
