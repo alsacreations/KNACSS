@@ -2,7 +2,7 @@
  * KNACSS Natives Components
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-12-01
+ * Mise à jour : 2025-12-02
  * ============================ */
 
 /* ---------------------
@@ -862,6 +862,10 @@ select {
   user-select: none;
 
   /* État survol */
+  &:hover {
+    box-shadow: inset 0 0 0 var(--select-border-width)
+      var(--select-border-color-hover);
+  }
 
   /* État désactivé */
   &:disabled {
