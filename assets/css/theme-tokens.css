@@ -7,7 +7,7 @@
 
 :root {
   /* Color Tokens */
-  color-scheme: light dark;
+  color-scheme: light;
 
   &[data-theme="light"] {
     color-scheme: light;

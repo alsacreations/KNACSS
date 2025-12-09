@@ -306,10 +306,20 @@ rect {
 }
 
 .component-code-source {
+  position: relative;
   margin-top: var(--spacing-s);
   padding: var(--spacing-s);
   border: 1px solid var(--layer-2);
   border-radius: var(--radius-xl);
+}
+
+.component-code-source .js-copy-code {
+  position: absolute;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
+  padding: var(--spacing-8) var(--spacing-8);
+  border-radius: var(--radius-md);
+  font-size: var(--text-14);
 }
 
 syntax-highlight {
@@ -415,4 +425,11 @@ syntax-highlight {
   padding: var(--spacing-m);
   border-radius: var(--radius-xl);
   background-color: var(--layer-1);
+}
+
+.code-highlight {
+  display: block;
+  padding: var(--spacing-s);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-14);
 }

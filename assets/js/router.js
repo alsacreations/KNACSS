@@ -233,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialise le bouton "Afficher le code"
     initializeShowCodeButtons()
+    initializeCopyCodeButtons()
 
     // Ajoute le tableau des variables CSS
     const baseName = componentName.split("/").pop() || ""
@@ -354,7 +355,11 @@ document.addEventListener("DOMContentLoaded", () => {
           ? "Masquer le code"
           : "Afficher le code"
 
+        const copyButton = document.querySelector(".js-copy-code")
+
         if (!codeBlock.hidden) {
+          if (copyButton) copyButton.hidden = false
+
           // Regénère à la volée depuis le DOM actuel, en ne gardant que le code du composant
           let componentHtmlContent = ""
           const roots = componentPreviewContainer.querySelectorAll(
@@ -394,13 +399,51 @@ document.addEventListener("DOMContentLoaded", () => {
             if (codeElement) codeElement.textContent = formattedHtml
           }
         } else {
-          // Optionnel : vider le contenu du code lorsque masqué pour économiser des ressources
-          // const codeElement = codeBlock.querySelector("code.language-html");
-          // if (codeElement) codeElement.textContent = "";
+          if (copyButton) copyButton.hidden = true
         }
       } else {
         // Pas de bloc code: s'assurer que le bouton reste cohérent
         showCodeButton.setAttribute("aria-expanded", "false")
+      }
+    })
+  }
+
+  /**
+   * Initialise le bouton "Copier".
+   */
+  function initializeCopyCodeButtons() {
+    const copyButton = document.querySelector(".js-copy-code")
+    if (!copyButton) return
+
+    // Évite les doubles bindings
+    if (copyButton.dataset.bound === "true") return
+    copyButton.dataset.bound = "true"
+
+    copyButton.addEventListener("click", async () => {
+      const codeBlock = document.querySelector(".component-code-source")
+      if (!codeBlock) return
+
+      const she = codeBlock.querySelector("syntax-highlight")
+      const codeEl = codeBlock.querySelector("code")
+      // Priorité au contenu du web component syntax-highlight
+      const textToCopy = she
+        ? she.textContent
+        : codeEl
+          ? codeEl.textContent
+          : ""
+
+      if (textToCopy) {
+        try {
+          await navigator.clipboard.writeText(textToCopy)
+          const originalText = copyButton.innerText
+          copyButton.textContent = "Copié !"
+          setTimeout(() => {
+            copyButton.textContent = originalText
+          }, 2000)
+        } catch (err) {
+          console.error("Erreur de copie :", err)
+          copyButton.textContent = "Erreur"
+        }
       }
     })
   }
