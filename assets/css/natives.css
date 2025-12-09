@@ -2,7 +2,7 @@
  * KNACSS Natives Components
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-12-02
+ * Mise à jour : 2025-12-09
  * ============================ */
 
 /* ---------------------
@@ -53,7 +53,8 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Base button */
   &:is(:not(:disabled, [disabled])) {
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: var(--button-background-color-hover);
       box-shadow: inset 0 0 0 var(--button-border-width)
         var(--button-border-color-hover);
@@ -140,7 +141,8 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
     box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     box-shadow: inset 0 0 0 var(--checkbox-border-width)
       var(--checkbox-border-color-hover);
   }
@@ -194,7 +196,8 @@ details {
   border-radius: var(--details-border-radius);
   background-color: var(--details-background-color);
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     border-color: var(--details-border-color-hover);
   }
 
@@ -238,7 +241,7 @@ details {
   }
 
   /* Support des modes sombres pour l'icône */
-  @media (prefers-color-scheme: dark) {
+  [data-theme="dark"] & {
     & summary::after {
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
     }
@@ -392,7 +395,8 @@ dialog {
   place-self: center;
   aspect-ratio: 1;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: var(--layer-2, GrayText);
   }
 }
@@ -494,7 +498,8 @@ input:not(
   line-height: 1.5;
 
   /* État survol */
-  &:hover {
+  &:hover,
+  &:focus-visible {
     box-shadow: inset 0 0 0 var(--input-border-width)
       var(--input-border-color-hover);
   }
@@ -556,7 +561,8 @@ input:not(
     opacity: 60%;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       opacity: 100%;
     }
   }
@@ -578,7 +584,8 @@ input:not(
     font: inherit;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: oklch(
         from var(--primary, AccentColor) calc(l * 0.9) c h
       );
@@ -597,7 +604,8 @@ input:not(
     font: inherit;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: oklch(
         from var(--primary, AccentColor) calc(l * 0.9) c h
       );
@@ -651,7 +659,8 @@ input:not(
     scale: 0;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     box-shadow: inset 0 0 0 var(--radio-border-width)
       var(--radio-border-color-hover);
   }
@@ -862,7 +871,8 @@ select {
   user-select: none;
 
   /* État survol */
-  &:hover {
+  &:hover,
+  &:focus-visible {
     box-shadow: inset 0 0 0 var(--select-border-width)
       var(--select-border-color-hover);
   }
@@ -875,7 +885,7 @@ select {
   }
 
   /* Support des modes sombres pour les flèches */
-  @media (prefers-color-scheme: dark) {
+  [data-theme="dark"] & {
     &:not(:disabled) {
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
     }
