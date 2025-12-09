@@ -109,7 +109,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   --checkbox-background-color: var(--form-control-background, Field);
   --checkbox-checked-color: var(--primary, AccentColor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
-  --checkbox-border-color-hover: var(--checkables-border-color, ButtonBorder);
+  --checkbox-border-color-hover: var(--checkbox-border-color);
   --checkbox-border-radius: var(--form-control-border-radius, 0);
   --checkbox-border-width: var(--form-control-border-width, 1px);
 
@@ -135,18 +135,20 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   user-select: none;
   appearance: none;
 
-  /* States */
+  /* États */
   &:is(:checked, :indeterminate) {
     background-color: var(--checkbox-checked-color);
     box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
   }
 
+  /* État survol */
   &:hover,
   &:focus-visible {
     box-shadow: inset 0 0 0 var(--checkbox-border-width)
       var(--checkbox-border-color-hover);
   }
 
+  /* État coché */
   &:checked::after {
     content: "";
     position: absolute;
@@ -185,7 +187,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 details {
   --details-padding: var(--form-control-spacing, 12px 16px);
   --details-border-color: var(--form-control-border-color, ButtonBorder);
-  --details-border-color-hover: var(--form-control-border-color, ButtonBorder);
+  --details-border-color-hover: var(--details-border-color);
   --details-border-width: var(--form-control-border-width, 1px);
   --details-border-radius: var(--form-control-border-radius, 0);
   --details-background-color: var(--layer-1, Canvas);
@@ -196,6 +198,7 @@ details {
   border-radius: var(--details-border-radius);
   background-color: var(--details-background-color);
 
+  /* État survol */
   &:hover,
   &:focus-visible {
     border-color: var(--details-border-color-hover);
@@ -395,6 +398,7 @@ dialog {
   place-self: center;
   aspect-ratio: 1;
 
+  /* État survol */
   &:hover,
   &:focus-visible {
     background-color: var(--layer-2, GrayText);
@@ -478,7 +482,7 @@ input:not(
   ) {
   --input-background-color: var(--form-control-background, Field);
   --input-border-color: var(--form-control-border-color, ButtonBorder);
-  --input-border-color-hover: var(--form-control-border-color, ButtonBorder);
+  --input-border-color-hover: var(--input-border-color);
   --input-border-radius: var(--form-control-border-radius, 0);
   --input-border-width: var(--form-control-border-width, 1px);
   --input-text-color: var(--on-form-control, ButtonText);
@@ -584,6 +588,7 @@ input:not(
     font: inherit;
     cursor: pointer;
 
+    /* État survol */
     &:hover,
     &:focus-visible {
       background-color: oklch(
@@ -604,6 +609,7 @@ input:not(
     font: inherit;
     cursor: pointer;
 
+    /* État survol */
     &:hover,
     &:focus-visible {
       background-color: oklch(
@@ -626,7 +632,7 @@ input:not(
 [type="radio"] {
   --radio-background-color: var(--form-control-background, Field);
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
-  --radio-border-color-hover: var(--checkables-border-color, ButtonBorder);
+  --radio-border-color-hover: var(--radio-border-color);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-control-border-width, 1px);
   --radio-checked-color: var(--primary, AccentColor);
@@ -659,12 +665,14 @@ input:not(
     scale: 0;
   }
 
+  /* État survol */
   &:hover,
   &:focus-visible {
     box-shadow: inset 0 0 0 var(--radio-border-width)
       var(--radio-border-color-hover);
   }
 
+  /* État coché */
   &:checked {
     &::before {
       scale: 1;
@@ -842,7 +850,7 @@ input:not(
 select {
   --select-background-color: var(--form-control-background, Field);
   --select-border-color: var(--form-control-border-color, ButtonBorder);
-  --select-border-color-hover: var(--form-control-border-color, ButtonBorder);
+  --select-border-color-hover: var(--select-border-color);
   --select-border-radius: var(--form-control-border-radius, 0);
   --select-border-width: var(--form-control-border-width, 1px);
   --select-text-color: var(--on-form-control, FieldText);
@@ -961,12 +969,12 @@ select {
     background-size: 0%;
   }
 
-  /* État activé */
+  /* État coché */
   &:checked::before {
     flex-grow: 1;
   }
 
-  /* État activé (variante) */
+  /* État coché (variante) */
   &[data-variant="check"]:checked {
     border-color: var(--switch-track-color-checked);
     background-color: var(--switch-track-color-checked);
@@ -1006,6 +1014,7 @@ select {
 textarea {
   --textarea-background-color: var(--form-control-background, Field);
   --textarea-border-color: var(--form-control-border-color, ButtonBorder);
+  --textarea-border-color-hover: var(--textarea-border-color);
   --textarea-border-radius: var(--form-control-border-radius, 0);
   --textarea-border-width: var(--form-control-border-width, 1px);
   --textarea-text-color: var(--on-form-control, ButtonText);
@@ -1027,6 +1036,13 @@ textarea {
   line-height: 1.5;
   resize: vertical;
   field-sizing: content;
+
+  /* État survol */
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 var(--textarea-border-width)
+      var(--textarea-border-color-hover);
+  }
 
   /* État désactivé */
   &:disabled {
