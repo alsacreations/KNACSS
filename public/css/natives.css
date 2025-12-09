@@ -680,7 +680,7 @@ input:not(
   /* État coché */
   &:checked {
     &::before {
-      scale: 1;
+      scale: 0.9;
     }
   }
 
