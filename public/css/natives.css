@@ -192,7 +192,8 @@ details {
   --details-border-radius: var(--form-control-border-radius, 0);
   --details-background-color: var(--layer-1, Canvas);
   --details-content-border-radius: 0;
-  --details-text-color: var(--on-form-control, FieldText);
+  --details-title-color: var(--on-form-control, FieldText);
+  --details-title-color-hover: var(--details-title-color);
 
   border: var(--details-border-width) solid var(--details-border-color);
   border-radius: var(--details-border-radius);
@@ -202,6 +203,10 @@ details {
   &:hover,
   &:focus-visible {
     border-color: var(--details-border-color-hover);
+
+    & summary {
+      color: var(--details-title-color-hover);
+    }
   }
 
   /* Summary (titre cliquable) */
@@ -213,7 +218,7 @@ details {
     transition: background-color;
     transition-duration: var(--transition-duration, 0.25s);
     border-radius: var(--details-border-radius);
-    color: var(--details-text-color, currentcolor);
+    color: var(--details-title-color, currentcolor);
     font-weight: var(--font-weight-semibold, 600);
     list-style: none;
     cursor: pointer;
