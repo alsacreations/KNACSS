@@ -1062,7 +1062,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Applique le changement d'arrondi
     radiusControl.addEventListener("change", (e) => {
-      demoForm.style.setProperty("--input-border-radius", e.target.value)
+      demoForm.style.setProperty("--form-border-radius", e.target.value)
     })
 
     // Applique le changement de couleur
@@ -1072,7 +1072,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Applique le changement d'épaisseur de bordure
     borderControl.addEventListener("change", (e) => {
-      demoForm.style.setProperty("--input-border-width", e.target.value)
+      demoForm.style.setProperty("--form-border-width", e.target.value)
     })
   }
 

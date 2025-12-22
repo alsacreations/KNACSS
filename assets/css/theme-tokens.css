@@ -63,15 +63,15 @@
   );
 
   /* Forms Tokens */
-  --input-background: light-dark(
+  --form-background: light-dark(
     var(--color-gray-200),
     var(--color-gray-700)
   );
-  --on-input: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --input-spacing: var(--spacing-12) var(--spacing-16);
-  --input-border-width: 1px;
-  --input-border-color: var(--color-gray-400);
-  --input-border-radius: var(--radius-xl);
+  --on-form: light-dark(var(--color-gray-900), var(--color-gray-100));
+  --form-spacing: var(--spacing-12) var(--spacing-16);
+  --form-border-width: 1px;
+  --form-border-color: var(--color-gray-400);
+  --form-border-radius: var(--radius-xl);
   --checkables-border-color: var(--color-gray-400);
   --checkable-size: 1.25em;
 }
