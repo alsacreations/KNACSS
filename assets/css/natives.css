@@ -485,11 +485,11 @@ input:not(
     [type="radio"],
     [type="range"]
   ) {
-  --form-background-color: var(--form-background, Field);
-  --form-border-color: var(--form-border-color, ButtonBorder);
-  --form-border-color-hover: var(--form-border-color);
-  --form-border-radius: var(--form-border-radius, 0);
-  --form-border-width: var(--form-border-width, 1px);
+  --input-background-color: var(--form-background, Field);
+  --input-border-color: var(--form-border-color, ButtonBorder);
+  --input-border-color-hover: var(--form-border-color);
+  --input-border-radius: var(--form-border-radius, 0);
+  --input-border-width: var(--form-border-width, 1px);
   --input-text-color: var(--on-form, ButtonText);
   --input-placeholder-color: GrayText;
 
