@@ -2,7 +2,7 @@
  * KNACSS Natives Components
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-12-09
+ * Mise à jour : 2025-12-22
  * ============================ */
 
 /* ---------------------
@@ -12,19 +12,19 @@
 button,
 a:where(.btn),
 input:where([type="button"], [type="reset"], [type="submit"]) {
-  --button-background-color: var(--form-control-background, Field);
+  --button-background-color: var(--input-background, Field);
   --button-background-color-hover: oklch(
     from var(--button-background-color) calc(l * 0.9) c h
   );
   --button-background-color-active: oklch(
     from var(--button-background-color) calc(l * 0.8) c h
   );
-  --button-border-color: var(--form-control-border-color, ButtonBorder);
+  --button-border-color: var(--input-border-color, ButtonBorder);
   --button-border-color-hover: var(--button-border-color);
   --button-border-color-active: var(--button-border-color);
-  --button-border-radius: var(--form-control-border-radius, 0);
-  --button-border-width: var(--form-control-border-width, 1px);
-  --button-text-color: var(--on-form-control, ButtonText);
+  --button-border-radius: var(--input-border-radius, 0);
+  --button-border-width: var(--input-border-width, 1px);
+  --button-text-color: var(--on-input, ButtonText);
   --button-text-color-hover: var(--button-text-color);
   --button-text-color-active: var(--button-text-color);
   --button-font-weight: var(--font-weight-regular, 400);
@@ -33,7 +33,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   align-items: center;
   justify-content: center;
   width: fit-content;
-  padding: var(--form-control-spacing, 12px 16px);
+  padding: var(--input-spacing, 12px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -106,12 +106,12 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
  * -------------------- */
 
 [type="checkbox"]:not([role="switch"]) {
-  --checkbox-background-color: var(--form-control-background, Field);
+  --checkbox-background-color: var(--input-background, Field);
   --checkbox-checked-color: var(--primary, AccentColor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-color-hover: var(--checkbox-border-color);
-  --checkbox-border-radius: var(--form-control-border-radius, 0);
-  --checkbox-border-width: var(--form-control-border-width, 1px);
+  --checkbox-border-radius: var(--input-border-radius, 0);
+  --checkbox-border-width: var(--input-border-width, 1px);
 
   display: inline-grid;
   position: relative;
@@ -185,14 +185,14 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
  * -------------------- */
 
 details {
-  --details-padding: var(--form-control-spacing, 12px 16px);
-  --details-border-color: var(--form-control-border-color, ButtonBorder);
+  --details-padding: var(--input-spacing, 12px 16px);
+  --details-border-color: var(--input-border-color, ButtonBorder);
   --details-border-color-hover: var(--details-border-color);
-  --details-border-width: var(--form-control-border-width, 1px);
-  --details-border-radius: var(--form-control-border-radius, 0);
+  --details-border-width: var(--input-border-width, 1px);
+  --details-border-radius: var(--input-border-radius, 0);
   --details-background-color: var(--layer-1, Canvas);
   --details-content-border-radius: 0;
-  --details-title-color: var(--on-form-control, FieldText);
+  --details-title-color: var(--on-input, FieldText);
   --details-title-color-hover: var(--details-title-color);
 
   border: var(--details-border-width) solid var(--details-border-color);
@@ -257,7 +257,7 @@ details {
 
   /* Contenu du details */
   &::details-content {
-    padding: var(--form-control-spacing, 12px 16px);
+    padding: var(--input-spacing, 12px 16px);
     padding-top: 0;
     border-top: none;
 
@@ -312,9 +312,9 @@ details {
 dialog {
   --dialog-background-color: var(--surface, Field);
   --dialog-text-color: var(--on-surface, CanvasText);
-  --dialog-border-color: var(--form-control-border-color, ButtonBorder);
-  --dialog-border-radius: var(--form-control-border-radius, 0);
-  --dialog-border-width: var(--form-control-border-width, 1px);
+  --dialog-border-color: var(--input-border-color, ButtonBorder);
+  --dialog-border-radius: var(--input-border-radius, 0);
+  --dialog-border-width: var(--input-border-width, 1px);
   --dialog-backdrop-color: oklch(0% 0 0 / 50%);
   --dialog-padding: var(--spacing-24, 1.5rem);
   --dialog-header-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
@@ -485,17 +485,17 @@ input:not(
     [type="radio"],
     [type="range"]
   ) {
-  --input-background-color: var(--form-control-background, Field);
-  --input-border-color: var(--form-control-border-color, ButtonBorder);
+  --input-background-color: var(--input-background, Field);
+  --input-border-color: var(--input-border-color, ButtonBorder);
   --input-border-color-hover: var(--input-border-color);
-  --input-border-radius: var(--form-control-border-radius, 0);
-  --input-border-width: var(--form-control-border-width, 1px);
-  --input-text-color: var(--on-form-control, ButtonText);
+  --input-border-radius: var(--input-border-radius, 0);
+  --input-border-width: var(--input-border-width, 1px);
+  --input-text-color: var(--on-input, ButtonText);
   --input-placeholder-color: GrayText;
 
   display: block;
   width: 100%;
-  padding: var(--form-control-spacing, 12px 16px);
+  padding: var(--input-spacing, 12px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -635,11 +635,11 @@ input:not(
  * -------------------- */
 
 [type="radio"] {
-  --radio-background-color: var(--form-control-background, Field);
+  --radio-background-color: var(--input-background, Field);
   --radio-border-color: var(--checkables-border-color, ButtonBorder);
   --radio-border-color-hover: var(--radio-border-color);
   --radio-border-radius: var(--radius-full, 9999px);
-  --radio-border-width: var(--form-control-border-width, 1px);
+  --radio-border-width: var(--input-border-width, 1px);
   --radio-checked-color: var(--primary, AccentColor);
   --radio-checked-border-color: var(--color-white, #ffffff);
 
@@ -709,8 +709,8 @@ input:not(
   --range-thumb-border-width: 4px;
   --range-thumb-border-color: var(--color-white, #ffffff);
   --range-color: var(--primary, AccentColor);
-  --range-track-color: var(--form-control-border-color, ButtonBorder);
-  --range-track-height: calc(var(--form-control-border-width, 1px) + 2px);
+  --range-track-color: var(--input-border-color, ButtonBorder);
+  --range-track-height: calc(var(--input-border-width, 1px) + 2px);
 
   width: 100%;
   overflow: hidden;
@@ -826,8 +826,8 @@ input:not(
   position: absolute;
   left: 0;
   padding: 4px 8px;
-  border-radius: var(--form-control-border-radius, 4px);
-  background-color: var(--form-control-background, ButtonFace);
+  border-radius: var(--input-border-radius, 4px);
+  background-color: var(--input-background, ButtonFace);
   font-size: var(--text-14, 0.875rem);
   translate: 0 1.4rem;
 }
@@ -853,17 +853,17 @@ input:not(
  * -------------------- */
 
 select {
-  --select-background-color: var(--form-control-background, Field);
-  --select-border-color: var(--form-control-border-color, ButtonBorder);
+  --select-background-color: var(--input-background, Field);
+  --select-border-color: var(--input-border-color, ButtonBorder);
   --select-border-color-hover: var(--select-border-color);
-  --select-border-radius: var(--form-control-border-radius, 0);
-  --select-border-width: var(--form-control-border-width, 1px);
-  --select-text-color: var(--on-form-control, FieldText);
+  --select-border-radius: var(--input-border-radius, 0);
+  --select-border-width: var(--input-border-width, 1px);
+  --select-text-color: var(--on-input, FieldText);
   --select-optgroup-color: GrayText;
 
   display: block;
   width: 100%;
-  padding: var(--form-control-spacing, 12px 16px);
+  padding: var(--input-spacing, 12px 16px);
   padding-right: calc(var(--spacing-32, 2rem) + var(--spacing-12, 0.75rem));
   transition-property: background-color, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
@@ -929,7 +929,7 @@ select {
 [role="switch"] {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
-  --switch-track-color: var(--form-control-background, ButtonFace);
+  --switch-track-color: var(--input-background, ButtonFace);
   --switch-track-color-checked: var(--primary, AccentColor);
   --switch-thumb-color: ButtonBorder;
   --switch-border-radius: var(--radius-full, 9999px);
@@ -1017,18 +1017,18 @@ select {
  * -------------------- */
 
 textarea {
-  --textarea-background-color: var(--form-control-background, Field);
-  --textarea-border-color: var(--form-control-border-color, ButtonBorder);
+  --textarea-background-color: var(--input-background, Field);
+  --textarea-border-color: var(--input-border-color, ButtonBorder);
   --textarea-border-color-hover: var(--textarea-border-color);
-  --textarea-border-radius: var(--form-control-border-radius, 0);
-  --textarea-border-width: var(--form-control-border-width, 1px);
-  --textarea-text-color: var(--on-form-control, ButtonText);
+  --textarea-border-radius: var(--input-border-radius, 0);
+  --textarea-border-width: var(--input-border-width, 1px);
+  --textarea-text-color: var(--on-input, ButtonText);
   --textarea-counter-color: GrayText;
 
   display: block;
   width: 100%;
   min-height: 5lh;
-  padding: var(--form-control-spacing, 12px 16px);
+  padding: var(--input-spacing, 12px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -1114,8 +1114,8 @@ textarea {
 
 hr {
   /* Couleur et épaisseur par défaut alignées sur les contrôles de formulaire */
-  --hr-border-color: var(--form-control-border-color, ButtonBorder);
-  --hr-border-width: var(--form-control-border-width, 1px);
+  --hr-border-color: var(--input-border-color, ButtonBorder);
+  --hr-border-width: var(--input-border-width, 1px);
 
   margin-block: var(--spacing-16, 1rem);
   border: 0;
@@ -1128,7 +1128,7 @@ hr {
 
   /* Variante épaisseur moyenne (x2) */
   &.hr-medium {
-    --hr-border-width: calc(var(--form-control-border-width, 1px) * 2);
+    --hr-border-width: calc(var(--input-border-width, 1px) * 2);
   }
 
   /* Variante trait en vague */
@@ -1157,8 +1157,8 @@ hr {
  * -------------------- */
 
 table {
-  --table-border-color: var(--form-control-border-color, ButtonBorder);
-  --table-border-width: var(--form-control-border-width, 1px);
+  --table-border-color: var(--input-border-color, ButtonBorder);
+  --table-border-width: var(--input-border-width, 1px);
   --table-layout: fixed;
   --table-border-collapse: collapse;
   --table-border-spacing: 0;
@@ -1226,9 +1226,9 @@ table {
 
 /* Tableau arrondi */
 .table-rounded {
-  --table-border-color: var(--form-control-border-color, ButtonBorder);
-  --table-border-width: var(--form-control-border-width, 1px);
-  --table-border-radius: var(--form-control-border-radius, 0.5rem);
+  --table-border-color: var(--input-border-color, ButtonBorder);
+  --table-border-width: var(--input-border-width, 1px);
+  --table-border-radius: var(--input-border-radius, 0.5rem);
 
   padding: var(--spacing-8, 0.5rem);
   border: var(--table-border-width) solid var(--table-border-color);
