@@ -495,13 +495,13 @@ input:not(
 
   display: block;
   width: 100%;
-  padding: var(--form-spacing, 12px 16px);
+  padding: var(--input-spacing, 12px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--form-border-radius);
-  background-color: var(--form-background-color);
-  box-shadow: inset 0 0 0 var(--form-border-width) var(--form-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  box-shadow: inset 0 0 0 var(--input-border-width) var(--input-border-color);
   color: var(--input-text-color);
   font: inherit;
   line-height: 1.5;
@@ -509,8 +509,8 @@ input:not(
   /* État survol */
   &:hover,
   &:focus-visible {
-    box-shadow: inset 0 0 0 var(--form-border-width)
-      var(--form-border-color-hover);
+    box-shadow: inset 0 0 0 var(--input-border-width)
+      var(--input-border-color-hover);
   }
 
   /* État désactivé */
@@ -521,8 +521,8 @@ input:not(
 
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    --form-border-color: var(--error);
-    --form-border-width: 2px;
+    --input-border-color: var(--error);
+    --input-border-width: 2px;
   }
 
   /* Placeholder */
@@ -587,7 +587,7 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
-    border-radius: var(--form-border-radius);
+    border-radius: var(--input-border-radius);
     background-color: var(--primary, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
@@ -608,7 +608,7 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
-    border-radius: var(--form-border-radius);
+    border-radius: var(--input-border-radius);
     background-color: var(--primary, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
