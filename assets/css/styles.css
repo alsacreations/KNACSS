@@ -433,3 +433,8 @@ syntax-highlight {
   border-radius: var(--radius-16);
   font-size: var(--text-14);
 }
+
+.natives-details {
+  --details-background-color: transparent;
+  --details-border-color: var(--layer-2);
+}

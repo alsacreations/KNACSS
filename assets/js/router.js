@@ -910,6 +910,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageContentEl = document.querySelector(".page-content")
     if (pageContentEl) pageContentEl.innerHTML = pageContent
 
+    // Initialise le configurateur sur la page d'installation
+    if (pageName === "installation") {
+      console.log("Router: Loading NativesBundler for installation page")
+      import("/assets/js/natives-bundler.js")
+        .then((module) => {
+          if (module.NativesBundler) {
+            console.log("Router: NativesBundler found, initializing...")
+            module.NativesBundler.init()
+          } else {
+            console.error("Router: NativesBundler export not found in module")
+          }
+        })
+        .catch((err) => console.error("Router: Failed to load NativesBundler", err))
+    }
+
     // Met à jour l'état actif dans la sidebar
     updateActiveSidebarLink(`page:${pageName}`)
 
