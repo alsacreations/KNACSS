@@ -1,13 +1,13 @@
 /* ============================
- * KNACSS Natives Components
+ * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-12-22
+ * Mise à jour : 2026-01-14
  * ============================ */
 
 /* ---------------------
- * Button native Styles
- * -------------------- */
+ * Button et liens-boutons
+ * --------------------- */
 
 button,
 a:where(.btn),
@@ -101,87 +101,8 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   }
 }
 
-/* ---------------------
- * Checkbox native Styles
- * -------------------- */
-
-[type="checkbox"]:not([role="switch"]) {
-  --checkbox-background-color: var(--form-background, Field);
-  --checkbox-checked-color: var(--primary, AccentColor);
-  --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
-  --checkbox-border-color-hover: var(--checkbox-border-color);
-  --checkbox-border-radius: var(--form-border-radius, 0);
-  --checkbox-border-width: var(--form-border-width, 1px);
-
-  display: inline-grid;
-  position: relative;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: var(--checkable-size, 1.25rem);
-  height: var(--checkable-size, 1.25rem);
-  margin: 0;
-  transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.25s);
-  border: 0;
-  border-radius: var(--checkbox-border-radius);
-  background-color: var(--checkbox-background-color);
-  box-shadow: inset 0 0 0 var(--checkbox-border-width)
-    var(--checkbox-border-color);
-  font: inherit;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
-  appearance: none;
-
-  /* États */
-  &:is(:checked, :indeterminate) {
-    background-color: var(--checkbox-checked-color);
-    box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
-  }
-
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--checkbox-border-width)
-      var(--checkbox-border-color-hover);
-  }
-
-  /* État coché */
-  &:checked::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--on-primary, #ffffff);
-    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>')
-      center no-repeat;
-  }
-
-  &:indeterminate::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: currentcolor;
-    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M431 256c0 17.7-14.3 32-32 32H49c-17.7 0-32-14.3-32-32s14.3-32 32-32h350c17.7 0 32 14.3 32 32z"/></svg>')
-      center no-repeat;
-  }
-
-  &:is(:disabled, [disabled]) {
-    opacity: 50%;
-    cursor: not-allowed;
-  }
-}
-
-.form-group:has([type="checkbox"]:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 /* --------------------
- * Details native styles
+ * Details (disclosure)
  * -------------------- */
 
 details {
@@ -306,7 +227,7 @@ details {
 }
 
 /* --------------------
- * Dialog native styles
+ * Dialog (modale))
  * -------------------- */
 
 dialog {
@@ -474,7 +395,150 @@ dialog {
 }
 
 /* --------------------
- * Input native styles
+ * Hr : séparateur
+ * -------------------- */
+
+hr {
+  /* Couleur et épaisseur par défaut alignées sur les contrôles de formulaire */
+  --hr-border-color: var(--form-border-color, ButtonBorder);
+  --hr-border-width: var(--form-border-width, 1px);
+
+  margin-block: var(--spacing-16, 1rem);
+  border: 0;
+  border-top: var(--hr-border-width) solid var(--hr-border-color);
+
+  /* Variante couleur primaire */
+  &.hr-primary {
+    --hr-border-color: var(--primary, AccentColor);
+  }
+
+  /* Variante épaisseur moyenne (x2) */
+  &.hr-medium {
+    --hr-border-width: calc(var(--form-border-width, 1px) * 2);
+  }
+
+  /* Variante trait en vague */
+  &.hr-wavy {
+    /* Harmonisation avec les variables ci-dessus */
+    --hr-wave-length: 16px; /* longueur d'une vague */
+    --hr-wave-height: 8px; /* hauteur totale du motif */
+
+    height: var(--hr-wave-height);
+    margin-block: var(--spacing-16, 1rem);
+    border: 0;
+
+    /* La couleur vient de --hr-border-color, modifiable via .hr-primary */
+    background-color: var(--hr-border-color, currentcolor);
+
+    /* Masque SVG répétable pour obtenir un trait ondulé, coloré via background-color */
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      left center / var(--hr-wave-length) 100% repeat-x;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+      left center / var(--hr-wave-length) 100% repeat-x;
+  }
+}
+
+/* --------------------
+ * Table
+ * -------------------- */
+
+table {
+  --table-border-color: var(--form-border-color, ButtonBorder);
+  --table-border-width: var(--form-border-width, 1px);
+  --table-layout: fixed;
+  --table-border-collapse: collapse;
+  --table-border-spacing: 0;
+  --table-zebra: 0%;
+  --table-caption-color: GrayText;
+
+  width: 100%;
+  table-layout: var(--table-layout, fixed);
+  border-spacing: var(--table-border-spacing, 0);
+  border-collapse: var(--table-border-collapse, collapse);
+  color: var(--on-surface, CanvasText);
+
+  /* Légende */
+  & caption {
+    margin-block: var(--spacing-8, 0.5rem);
+    color: var(--table-caption-color);
+    text-align: left;
+  }
+
+  /* Cellules */
+  & th,
+  & td {
+    padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
+    border: var(--table-border-width) solid var(--table-border-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  /* En-têtes */
+  & thead th {
+    background-color: var(--layer-1, Canvas);
+    font-weight: var(--font-weight-semibold, 600);
+  }
+
+  /* Pied de tableau */
+  & tfoot th,
+  & tfoot td {
+    background-color: var(--layer-1, Canvas);
+    font-weight: var(--font-weight-medium, 500);
+  }
+
+  /* Zébrage (conditionné par --table-zebra */
+  & tbody tr:nth-child(odd) {
+    background-color: oklch(from var(--color-black, #000000) l c h / var(--table-zebra, 0%));
+  }
+}
+
+/* Wrapper responsive pour permettre le scroll horizontal sur petits écrans */
+.table-responsive {
+  --table-min-width: 30rem; /* largeur minimale par défaut pour un tableau lisible */
+
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
+
+  & > table {
+    min-width: var(--table-min-width, 30rem);
+  }
+}
+
+/* Tableau arrondi */
+.table-rounded {
+  --table-border-color: var(--form-border-color, ButtonBorder);
+  --table-border-width: var(--form-border-width, 1px);
+  --table-border-radius: var(--form-border-radius, 0.5rem);
+
+  padding: var(--spacing-8, 0.5rem);
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-radius: var(--table-border-radius);
+
+  & :is(th, td) {
+    border: none;
+    background-color: transparent;
+  }
+
+  & thead :is(th, td),
+  & tr:not(:last-child) :is(th, td) {
+    border-bottom: var(--table-border-width) solid var(--table-border-color);
+  }
+
+  & tbody tr:nth-child(odd) {
+    background-color: transparent;
+  }
+}
+
+
+/* --------------------
+ * Formulaires
+ * (input, textarea, select, checkbox, radio, switch, range)
+ * -------------------- */
+
+
+/* Input
  * -------------------- */
 
 input:not(
@@ -532,11 +596,8 @@ input:not(
   }
 }
 
-/* Styles spécifiques pour les types de champs */
-
 /* Champ de recherche */
 :where(input[type="search"]) {
-  /* Suppression du style de recherche WebKit */
   appearance: textfield;
 
   &::-webkit-search-decoration,
@@ -549,14 +610,12 @@ input:not(
 
 /* Champs numériques */
 :where(input[type="number"]) {
-  /* Masquer les spinners pour Chrome/Safari/Edge */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     appearance: none;
     margin: 0;
   }
 
-  /* Masquer les spinners pour Firefox */
   appearance: textfield;
 }
 
@@ -624,232 +683,13 @@ input:not(
   }
 }
 
-/* Support pour les labels associés aux champs désactivés */
 .form-group:has(input:disabled) label {
   opacity: 50%;
   cursor: not-allowed;
 }
 
-/* ---------------------
- * Radio native Styles
- * -------------------- */
 
-[type="radio"] {
-  --radio-background-color: var(--form-background, Field);
-  --radio-border-color: var(--checkables-border-color, ButtonBorder);
-  --radio-border-color-hover: var(--radio-border-color);
-  --radio-border-radius: var(--radius-full, 9999px);
-  --radio-border-width: var(--form-border-width, 1px);
-  --radio-checked-color: var(--primary, AccentColor);
-  --radio-checked-border-color: var(--color-white, #ffffff);
-
-  display: inline-grid;
-  width: var(--checkable-size, 1.25em);
-  height: var(--checkable-size, 1.25em);
-  margin: 0;
-  padding: 0;
-  transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.25s);
-  border: 0;
-  border-radius: var(--radio-border-radius);
-  background-color: var(--radio-background-color);
-  box-shadow: inset 0 0 0 var(--radio-border-width) var(--radio-border-color);
-  cursor: pointer;
-  appearance: none;
-  place-content: center;
-
-  &::before {
-    content: "";
-    width: calc(var(--checkable-size, 1.25em) / 1);
-    height: calc(var(--checkable-size, 1.25em) / 1);
-    transition-property: scale;
-    transition-duration: var(--transition-duration, 0.25s);
-    border: 2px solid var(--radio-checked-border-color);
-    border-radius: var(--radius-full, 9999px);
-    background-color: var(--radio-checked-color);
-    scale: 0;
-  }
-
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--radio-border-width)
-      var(--radio-border-color-hover);
-  }
-
-  /* État coché */
-  &:checked {
-    &::before {
-      scale: 0.9;
-    }
-  }
-
-  &:is(:disabled, [disabled]) {
-    opacity: 50%;
-    cursor: not-allowed;
-  }
-}
-
-.form-group:has([type="radio"]:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
-/* --------------------
- * Range native styles
- * -------------------- */
-
-.range {
-  position: relative;
-  padding-bottom: 2rem; /* Espace pour la valeur affichée */
-}
-
-[type="range"] {
-  --range-thumb-size: 24px;
-  --range-thumb-border-width: 4px;
-  --range-thumb-border-color: var(--color-white, #ffffff);
-  --range-color: var(--primary, AccentColor);
-  --range-track-color: var(--form-border-color, ButtonBorder);
-  --range-track-height: calc(var(--form-border-width, 1px) + 2px);
-
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff00;
-  color: var(--range-color);
-}
-
-/* WebKit specific styles */
-[type="range"],
-[type="range"]::-webkit-slider-runnable-track,
-[type="range"]::-webkit-slider-thumb {
-  height: var(--range-thumb-size);
-  transition: all ease 100ms;
-  appearance: none;
-}
-
-[type="range"]::-webkit-slider-runnable-track,
-[type="range"]::-webkit-slider-thumb {
-  position: relative;
-}
-
-[type="range"]::-webkit-slider-thumb {
-  --thumb-radius: calc((var(--range-thumb-size) * 0.5) - 1px);
-  --clip-top: calc(
-    (var(--range-thumb-size) - var(--range-track-height)) * 0.5 - 0.5px
-  );
-  --clip-bottom: calc(var(--range-thumb-size) - var(--clip-top));
-  --clip-further: calc(100% + 1px);
-  --box-fill: calc(-100vmax - var(--thumb-width, var(--range-thumb-size))) 0 0
-    100vmax currentcolor;
-
-  width: var(--thumb-width, var(--range-thumb-size));
-  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
-  border-radius: var(--thumb-width, var(--range-thumb-size));
-  background: linear-gradient(currentcolor 0 0) scroll no-repeat left center /
-    50% calc(var(--range-track-height) + 1px);
-  background-color: currentcolor;
-  box-shadow: var(--box-fill);
-  filter: brightness(100%);
-  clip-path: polygon(
-    100% -1px,
-    var(--range-track-height) -1px,
-    0 var(--clip-top),
-    -100vmax var(--clip-top),
-    -100vmax var(--clip-bottom),
-    0 var(--clip-bottom),
-    var(--range-track-height) 100%,
-    var(--clip-further) var(--clip-further)
-  );
-}
-
-[type="range"]:hover::-webkit-slider-thumb {
-  cursor: ew-resize;
-}
-
-[type="range"]::-webkit-slider-runnable-track {
-  background: linear-gradient(var(--range-track-color) 0 0) scroll no-repeat
-    center / 100% calc(var(--range-track-height) + 1px);
-}
-
-[type="range"]:disabled::-webkit-slider-thumb {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
-/* Firefox specific styles */
-[type="range"],
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-thumb {
-  height: var(--range-thumb-size);
-  transition: all ease 100ms;
-  appearance: none;
-}
-
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-thumb,
-[type="range"]::-moz-range-progress {
-  background: #ffffff00;
-}
-
-[type="range"]::-moz-range-thumb {
-  box-sizing: border-box;
-  width: var(--thumb-width, var(--range-thumb-size));
-  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
-  border-radius: var(--thumb-width, var(--range-thumb-size));
-  background: currentcolor;
-  cursor: ew-resize;
-}
-
-[type="range"]::-moz-range-track {
-  width: 100%;
-  background: var(--range-track-color);
-}
-
-[type="range"]::-moz-range-progress {
-  transition-delay: 30ms;
-  background: currentcolor;
-  appearance: none;
-}
-
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-progress {
-  height: calc(var(--range-track-height) + 1px);
-  border-radius: var(--range-track-height);
-}
-
-[type="range"]:disabled::-moz-range-thumb {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
-.range-value {
-  position: absolute;
-  left: 0;
-  padding: 4px 8px;
-  border-radius: var(--form-border-radius, 4px);
-  background-color: var(--form-background, ButtonFace);
-  font-size: var(--text-14, 0.875rem);
-  translate: 0 1.4rem;
-}
-
-@supports (position-anchor: initial) {
-  [data-range-output="anchor"] ::-webkit-slider-thumb {
-    anchor-name: --thumb; /* Anchor point for position-anchor */
-  }
-
-  [data-range-output="anchor"] ::-moz-range-thumb {
-    anchor-name: --thumb; /* Anchor point for position-anchor */
-  }
-
-  [data-range-output="anchor"] .range-value {
-    position-anchor: --thumb;
-    position-area: bottom;
-    translate: 0 0.5rem;
-  }
-}
-
-/* --------------------
- * Select native styles
+/* Select
  * -------------------- */
 
 select {
@@ -916,14 +756,256 @@ select {
   }
 }
 
-/* Styles pour les optgroups */
+/* Optgroups */
 :where(optgroup) {
   color: var(--select-optgroup-color);
   font-weight: var(--font-weight-bold, 700);
 }
 
-/* --------------------
- * Switch native styles
+
+/* textarea
+ * -------------------- */
+
+textarea {
+  --textarea-background-color: var(--form-background, Field);
+  --textarea-border-color: var(--form-border-color, ButtonBorder);
+  --textarea-border-color-hover: var(--textarea-border-color);
+  --textarea-border-radius: var(--form-border-radius, 0);
+  --textarea-border-width: var(--form-border-width, 1px);
+  --textarea-text-color: var(--on-form, ButtonText);
+  --textarea-counter-color: GrayText;
+
+  display: block;
+  width: 100%;
+  min-height: 5lh;
+  padding: var(--form-spacing, 12px 16px);
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--textarea-border-radius);
+  background-color: var(--textarea-background-color);
+  box-shadow: inset 0 0 0 var(--textarea-border-width)
+    var(--textarea-border-color);
+  color: var(--textarea-text-color);
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+  field-sizing: content;
+
+  /* État survol */
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 var(--textarea-border-width)
+      var(--textarea-border-color-hover);
+  }
+
+  /* État désactivé */
+  &:disabled {
+    opacity: 50%;
+    resize: none;
+    cursor: not-allowed;
+  }
+
+  /* État invalide après interaction utilisateur */
+  &:user-invalid {
+    --textarea-border-color: var(--error);
+    --textarea-border-width: 2px;
+  }
+
+  /* Placeholder */
+  &::placeholder {
+    opacity: 100%;
+    color: var(--on-surface);
+  }
+}
+
+/* Textarea désactivés */
+.form-group:has(textarea:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+/* Compteur de caractères */
+.character-counter {
+  min-width: max-content;
+  margin-left: auto;
+  color: var(--textarea-counter-color);
+  font-size: var(--text-14, 0.875rem);
+  font-weight: var(--font-weight-medium, 500);
+  text-align: right;
+
+  /* États du compteur selon le pourcentage restant */
+  &.warning {
+    color: var(--warning, #f97316);
+  }
+
+  &.danger {
+    color: var(--error, #ef4444);
+    font-weight: var(--font-weight-semibold, 600);
+  }
+}
+
+/* Adaptations responsive */
+@media (width < 48rem) {
+  .form-group-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .character-counter {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+
+/* Checkbox
+ * -------------------- */
+
+[type="checkbox"]:not([role="switch"]) {
+  --checkbox-background-color: var(--form-background, Field);
+  --checkbox-checked-color: var(--primary, AccentColor);
+  --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
+  --checkbox-border-color-hover: var(--checkbox-border-color);
+  --checkbox-border-radius: var(--form-border-radius, 0);
+  --checkbox-border-width: var(--form-border-width, 1px);
+
+  display: inline-grid;
+  position: relative;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--checkable-size, 1.25rem);
+  height: var(--checkable-size, 1.25rem);
+  margin: 0;
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--checkbox-border-radius);
+  background-color: var(--checkbox-background-color);
+  box-shadow: inset 0 0 0 var(--checkbox-border-width)
+    var(--checkbox-border-color);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  appearance: none;
+
+  /* États */
+  &:is(:checked, :indeterminate) {
+    background-color: var(--checkbox-checked-color);
+    box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
+  }
+
+  /* État survol */
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 var(--checkbox-border-width)
+      var(--checkbox-border-color-hover);
+  }
+
+  /* État coché */
+  &:checked::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--on-primary, #ffffff);
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>')
+      center no-repeat;
+  }
+
+  &:indeterminate::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: currentcolor;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M431 256c0 17.7-14.3 32-32 32H49c-17.7 0-32-14.3-32-32s14.3-32 32-32h350c17.7 0 32 14.3 32 32z"/></svg>')
+      center no-repeat;
+  }
+
+  /* Checkbox désactivé */
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+}
+
+.form-group:has([type="checkbox"]:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+
+/* Radio
+ * -------------------- */
+
+[type="radio"] {
+  --radio-background-color: var(--form-background, Field);
+  --radio-border-color: var(--checkables-border-color, ButtonBorder);
+  --radio-border-color-hover: var(--radio-border-color);
+  --radio-border-radius: var(--radius-full, 9999px);
+  --radio-border-width: var(--form-border-width, 1px);
+  --radio-checked-color: var(--primary, AccentColor);
+  --radio-checked-border-color: var(--color-white, #ffffff);
+
+  display: inline-grid;
+  width: var(--checkable-size, 1.25em);
+  height: var(--checkable-size, 1.25em);
+  margin: 0;
+  padding: 0;
+  transition-property: background, border, box-shadow, color;
+  transition-duration: var(--transition-duration, 0.25s);
+  border: 0;
+  border-radius: var(--radio-border-radius);
+  background-color: var(--radio-background-color);
+  box-shadow: inset 0 0 0 var(--radio-border-width) var(--radio-border-color);
+  cursor: pointer;
+  appearance: none;
+  place-content: center;
+
+  &::before {
+    content: "";
+    width: calc(var(--checkable-size, 1.25em) / 1);
+    height: calc(var(--checkable-size, 1.25em) / 1);
+    transition-property: scale;
+    transition-duration: var(--transition-duration, 0.25s);
+    border: 2px solid var(--radio-checked-border-color);
+    border-radius: var(--radius-full, 9999px);
+    background-color: var(--radio-checked-color);
+    scale: 0;
+  }
+
+  /* État survol */
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 var(--radio-border-width)
+      var(--radio-border-color-hover);
+  }
+
+  /* État coché */
+  &:checked {
+    &::before {
+      scale: 0.9;
+    }
+  }
+
+  /* Radio désactivé */
+  &:is(:disabled, [disabled]) {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+}
+
+.form-group:has([type="radio"]:disabled) label {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+
+/* Switch
  * -------------------- */
 
 [role="switch"] {
@@ -1006,245 +1088,160 @@ select {
   }
 }
 
-/* Support pour les labels des switches désactivés */
 .form-group:has([type="checkbox"][role="switch"]:disabled) label {
   opacity: 50%;
   cursor: not-allowed;
 }
 
-/* --------------------
- * Textarea native styles
+
+/* Range
  * -------------------- */
 
-textarea {
-  --textarea-background-color: var(--form-background, Field);
-  --textarea-border-color: var(--form-border-color, ButtonBorder);
-  --textarea-border-color-hover: var(--textarea-border-color);
-  --textarea-border-radius: var(--form-border-radius, 0);
-  --textarea-border-width: var(--form-border-width, 1px);
-  --textarea-text-color: var(--on-form, ButtonText);
-  --textarea-counter-color: GrayText;
-
-  display: block;
-  width: 100%;
-  min-height: 5lh;
-  padding: var(--form-spacing, 12px 16px);
-  transition-property: background, border, box-shadow, color;
-  transition-duration: var(--transition-duration, 0.25s);
-  border: 0;
-  border-radius: var(--textarea-border-radius);
-  background-color: var(--textarea-background-color);
-  box-shadow: inset 0 0 0 var(--textarea-border-width)
-    var(--textarea-border-color);
-  color: var(--textarea-text-color);
-  font: inherit;
-  line-height: 1.5;
-  resize: vertical;
-  field-sizing: content;
-
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--textarea-border-width)
-      var(--textarea-border-color-hover);
-  }
-
-  /* État désactivé */
-  &:disabled {
-    opacity: 50%;
-    resize: none;
-    cursor: not-allowed;
-  }
-
-  /* État invalide après interaction utilisateur */
-  &:user-invalid {
-    --textarea-border-color: var(--error);
-    --textarea-border-width: 2px;
-  }
-
-  /* Placeholder */
-  &::placeholder {
-    opacity: 100%;
-    color: var(--on-surface);
-  }
+.range {
+  position: relative;
+  padding-bottom: 2rem; /* Espace pour la valeur affichée */
 }
 
-/* Support pour les labels associés aux textarea désactivés */
-.form-group:has(textarea:disabled) label {
+[type="range"] {
+  --range-thumb-size: 24px;
+  --range-thumb-border-width: 4px;
+  --range-thumb-border-color: var(--color-white, #ffffff);
+  --range-color: var(--primary, AccentColor);
+  --range-track-color: var(--form-border-color, ButtonBorder);
+  --range-track-height: calc(var(--form-border-width, 1px) + 2px);
+
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff00;
+  color: var(--range-color);
+}
+
+/* WebKit */
+[type="range"],
+[type="range"]::-webkit-slider-runnable-track,
+[type="range"]::-webkit-slider-thumb {
+  height: var(--range-thumb-size);
+  transition: all ease 100ms;
+  appearance: none;
+}
+
+[type="range"]::-webkit-slider-runnable-track,
+[type="range"]::-webkit-slider-thumb {
+  position: relative;
+}
+
+[type="range"]::-webkit-slider-thumb {
+  --thumb-radius: calc((var(--range-thumb-size) * 0.5) - 1px);
+  --clip-top: calc(
+    (var(--range-thumb-size) - var(--range-track-height)) * 0.5 - 0.5px
+  );
+  --clip-bottom: calc(var(--range-thumb-size) - var(--clip-top));
+  --clip-further: calc(100% + 1px);
+  --box-fill: calc(-100vmax - var(--thumb-width, var(--range-thumb-size))) 0 0
+    100vmax currentcolor;
+
+  width: var(--thumb-width, var(--range-thumb-size));
+  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
+  border-radius: var(--thumb-width, var(--range-thumb-size));
+  background: linear-gradient(currentcolor 0 0) scroll no-repeat left center /
+    50% calc(var(--range-track-height) + 1px);
+  background-color: currentcolor;
+  box-shadow: var(--box-fill);
+  filter: brightness(100%);
+  clip-path: polygon(
+    100% -1px,
+    var(--range-track-height) -1px,
+    0 var(--clip-top),
+    -100vmax var(--clip-top),
+    -100vmax var(--clip-bottom),
+    0 var(--clip-bottom),
+    var(--range-track-height) 100%,
+    var(--clip-further) var(--clip-further)
+  );
+}
+
+[type="range"]:hover::-webkit-slider-thumb {
+  cursor: ew-resize;
+}
+
+[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--range-track-color) 0 0) scroll no-repeat
+    center / 100% calc(var(--range-track-height) + 1px);
+}
+
+[type="range"]:disabled::-webkit-slider-thumb {
   opacity: 50%;
   cursor: not-allowed;
 }
 
-/* Compteur de caractères */
-.character-counter {
-  min-width: max-content;
-  margin-left: auto;
-  color: var(--textarea-counter-color);
-  font-size: var(--text-14, 0.875rem);
-  font-weight: var(--font-weight-medium, 500);
-  text-align: right;
-
-  /* États du compteur selon le pourcentage restant */
-  &.warning {
-    color: var(--warning, #f97316);
-  }
-
-  &.danger {
-    color: var(--error, #ef4444);
-    font-weight: var(--font-weight-semibold, 600);
-  }
+/* Firefox */
+[type="range"],
+[type="range"]::-moz-range-track,
+[type="range"]::-moz-range-thumb {
+  height: var(--range-thumb-size);
+  transition: all ease 100ms;
+  appearance: none;
 }
 
-/* Responsive : compteur sur nouvelle ligne sur petits écrans */
-@media (width < 48rem) {
-  .form-group-footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .character-counter {
-    margin-left: 0;
-    text-align: left;
-  }
+[type="range"]::-moz-range-track,
+[type="range"]::-moz-range-thumb,
+[type="range"]::-moz-range-progress {
+  background: #ffffff00;
 }
 
-/* --------------------
- * Hr (separator) native styles
- * -------------------- */
-
-hr {
-  /* Couleur et épaisseur par défaut alignées sur les contrôles de formulaire */
-  --hr-border-color: var(--form-border-color, ButtonBorder);
-  --hr-border-width: var(--form-border-width, 1px);
-
-  margin-block: var(--spacing-16, 1rem);
-  border: 0;
-  border-top: var(--hr-border-width) solid var(--hr-border-color);
-
-  /* Variante couleur primaire */
-  &.hr-primary {
-    --hr-border-color: var(--primary, AccentColor);
-  }
-
-  /* Variante épaisseur moyenne (x2) */
-  &.hr-medium {
-    --hr-border-width: calc(var(--form-border-width, 1px) * 2);
-  }
-
-  /* Variante trait en vague */
-  &.hr-wavy {
-    /* Harmonisation avec les variables ci-dessus */
-    --hr-wave-length: 16px; /* longueur d'une vague */
-    --hr-wave-height: 8px; /* hauteur totale du motif */
-
-    height: var(--hr-wave-height);
-    margin-block: var(--spacing-16, 1rem);
-    border: 0;
-
-    /* La couleur vient de --hr-border-color, modifiable via .hr-primary */
-    background-color: var(--hr-border-color, currentcolor);
-
-    /* Masque SVG répétable pour obtenir un trait ondulé, coloré via background-color */
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
-      left center / var(--hr-wave-length) 100% repeat-x;
-    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
-      left center / var(--hr-wave-length) 100% repeat-x;
-  }
+[type="range"]::-moz-range-thumb {
+  box-sizing: border-box;
+  width: var(--thumb-width, var(--range-thumb-size));
+  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
+  border-radius: var(--thumb-width, var(--range-thumb-size));
+  background: currentcolor;
+  cursor: ew-resize;
 }
 
-/* --------------------
- * Table native styles
- * -------------------- */
-
-table {
-  --table-border-color: var(--form-border-color, ButtonBorder);
-  --table-border-width: var(--form-border-width, 1px);
-  --table-layout: fixed;
-  --table-border-collapse: collapse;
-  --table-border-spacing: 0;
-  --table-zebra: 95%;
-  --table-caption-color: GrayText;
-
+[type="range"]::-moz-range-track {
   width: 100%;
-  table-layout: var(--table-layout, fixed);
-  border-spacing: var(--table-border-spacing, 0);
-  border-collapse: var(--table-border-collapse, collapse);
-  color: var(--on-surface, CanvasText);
-
-  /* Légende */
-  & caption {
-    margin-block: var(--spacing-8, 0.5rem);
-    color: var(--table-caption-color);
-    text-align: left;
-  }
-
-  /* Cellules */
-  & th,
-  & td {
-    padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
-    border: var(--table-border-width) solid var(--table-border-color);
-    text-align: left;
-    vertical-align: top;
-  }
-
-  /* En-têtes */
-  & thead th {
-    background-color: var(--layer-1, Canvas);
-    font-weight: var(--font-weight-semibold, 600);
-  }
-
-  /* Pied de tableau */
-  & tfoot th,
-  & tfoot td {
-    background-color: var(--layer-1, Canvas);
-    font-weight: var(--font-weight-medium, 500);
-  }
-
-  /* Zébrage léger (conditionné par --table-zebra-mix) */
-  & tbody tr:nth-child(odd) {
-    background-color: color-mix(
-      in oklch,
-      var(--surface, Field) var(--table-zebra, 95%),
-      transparent
-    );
-  }
+  background: var(--range-track-color);
 }
 
-/* Wrapper responsive pour permettre le scroll horizontal sur petits écrans */
-.table-responsive {
-  --table-min-width: 30rem; /* largeur minimale par défaut pour un tableau lisible */
-
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-gutter: stable both-edges;
-
-  & > table {
-    min-width: var(--table-min-width, 30rem);
-  }
+[type="range"]::-moz-range-progress {
+  transition-delay: 30ms;
+  background: currentcolor;
+  appearance: none;
 }
 
-/* Tableau arrondi */
-.table-rounded {
-  --table-border-color: var(--form-border-color, ButtonBorder);
-  --table-border-width: var(--form-border-width, 1px);
-  --table-border-radius: var(--form-border-radius, 0.5rem);
+[type="range"]::-moz-range-track,
+[type="range"]::-moz-range-progress {
+  height: calc(var(--range-track-height) + 1px);
+  border-radius: var(--range-track-height);
+}
 
-  padding: var(--spacing-8, 0.5rem);
-  border: var(--table-border-width) solid var(--table-border-color);
-  border-radius: var(--table-border-radius);
+[type="range"]:disabled::-moz-range-thumb {
+  opacity: 50%;
+  cursor: not-allowed;
+}
 
-  & :is(th, td) {
-    border: none;
-    background-color: transparent;
+.range-value {
+  position: absolute;
+  left: 0;
+  padding: 4px 8px;
+  border-radius: var(--form-border-radius, 4px);
+  background-color: var(--form-background, ButtonFace);
+  font-size: var(--text-14, 0.875rem);
+  translate: 0 1.4rem;
+}
+
+@supports (position-anchor: initial) {
+  [data-range-output="anchor"] ::-webkit-slider-thumb {
+    anchor-name: --thumb;
   }
 
-  & thead :is(th, td),
-  & tr:not(:last-child) :is(th, td) {
-    border-bottom: var(--table-border-width) solid var(--table-border-color);
+  [data-range-output="anchor"] ::-moz-range-thumb {
+    anchor-name: --thumb;
   }
 
-  & tbody tr:nth-child(odd) {
-    background-color: transparent;
+  [data-range-output="anchor"] .range-value {
+    position-anchor: --thumb;
+    position-area: bottom;
+    translate: 0 0.5rem;
   }
 }

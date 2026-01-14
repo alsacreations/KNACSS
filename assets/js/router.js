@@ -939,7 +939,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (n === "--table-border-collapse") return "Mode de fusion des bordures"
     if (n === "--table-border-spacing")
       return "Espacement entre cellules (mode separate)"
-    if (n === "--table-zebra-mix") return "Intensité du zébrage des lignes"
+    if (n === "--table-zebra") return "% de zebrage une rangée sur deux"
     if (n === "--table-min-width")
       return "Largeur minimale du tableau en mode responsive"
     // Spécifiques Hr
