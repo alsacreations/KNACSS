@@ -2,8 +2,21 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-01-14
+ * Mise à jour : 2026-01-18
  * ============================ */
+
+/* ---------------------
+ * Tokens globaux de formulaires
+ * --------------------- */
+
+--form-background: light-dark(var(--color-gray-50), var(--color-gray-800));
+--on-form: light-dark(var(--color-gray-900), var(--color-gray-100));
+--form-spacing: var(--spacing-12) var(--spacing-16);
+--form-border-width: 1px;
+--form-border-color: var(--color-gray-400);
+--form-border-radius: var(--radius-4);
+--checkables-border-color: var(--color-gray-400);
+--checkable-size: 1.25em;
 
 /* ---------------------
  * Button et liens-boutons
