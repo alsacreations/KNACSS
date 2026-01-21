@@ -115,6 +115,12 @@ body {
   }
 }
 
+.header-content {
+  display: flex;
+  gap: var(--spacing-s);
+  align-items: center;
+}
+
 /* ----------------------------------
  * Main
  * ----------------------------------
@@ -437,4 +443,79 @@ syntax-highlight {
 .natives-details {
   --details-background-color: transparent;
   --details-border-color: var(--layer-2);
+}
+
+
+/* ----------------------------------
+ * Theme Switcher
+ * ----------------------------------
+ */
+
+.theme-switcher {
+  --theme-switcher-width: 42px;
+  --theme-switcher-radius: 40px;
+  --theme-switcher-padding: 4px;
+  --theme-switcher-border-color: light-dark(#111827, #d4d4d4);
+  --theme-switcher-border-size: 1px;
+  --theme-switcher-background: light-dark(#d1d5db, #6b7280);
+  --theme-switcher-icon-size: 16px;
+  --theme-switcher-icon-color: light-dark(#111827, #ffffff);
+  --theme-switcher-icon-background: light-dark(#ffffff, #1e293b);
+  --theme-switcher-transition: 0.25s;
+
+  display: inline-flex;
+  justify-content: start;
+  width: var(--theme-switcher-width);
+  padding: var(--theme-switcher-padding);
+  border: 0;
+  border-radius: var(--theme-switcher-radius);
+  background-color: var(--theme-switcher-background);
+  box-shadow: 0 0 0 var(--theme-switcher-border-size) var(--theme-switcher-border-color) inset;
+  line-height: 0;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    flex: 0 0 0;
+    transition: var(--theme-switcher-transition) flex-grow;
+    will-change: flex-grow;
+  }
+
+  & * {
+    pointer-events: none;
+  }
+
+  & > .theme-icon {
+    padding: 2px;
+    transition: var(--theme-switcher-transition) rotate;
+    border-radius: 50%;
+    background-color: var(--theme-switcher-icon-background);
+    color: var(--theme-switcher-icon-color);
+    rotate: 0deg;
+  }
+
+  & [class^="theme-icon-"] {
+    width: var(--theme-switcher-icon-size);
+    height: var(--theme-switcher-icon-size);
+  }
+
+  &[aria-pressed="false"] {
+    & .theme-icon-dark {
+      display: none;
+    }
+  }
+
+  &[aria-pressed="true"] {
+    & .theme-icon-light {
+      display: none;
+    }
+
+    & > .theme-icon {
+      rotate: 240deg;
+    }
+
+    &::before {
+      flex: 1 0 0;
+    }
+  }
 }

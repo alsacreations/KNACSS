@@ -1091,6 +1091,50 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  /**
+   * Initialise le commutateur de thème (clair/sombre)
+   */
+  function setupThemeSwitcher() {
+    const button = document.querySelector(".js-theme-switcher")
+    if (!button) return
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
+
+    /**
+     * Applique le thème choisi
+     * @param {'light' | 'dark'} theme
+     */
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme)
+      localStorage.setItem("theme", theme)
+      button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false")
+    }
+
+    // Initialisation
+    const storedTheme = localStorage.getItem("theme")
+    const initialTheme = storedTheme || (prefersDark.matches ? "dark" : "light")
+    setTheme(initialTheme)
+
+    // Événements
+    button.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "light"
+          : "dark"
+      setTheme(currentTheme)
+    })
+
+    prefersDark.addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches ? "dark" : "light")
+      }
+    })
+  }
+
+  // Active les fonctionnalités globales
+  setupThemeSwitcher()
   // Active les contrôles de démo si présents
   setupDemoControls()
 })
+
+

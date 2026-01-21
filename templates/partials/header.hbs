@@ -1,8 +1,15 @@
 <header class="header" role="banner" data-layout="repel" data-align="center">
-  <h1 class="title-main" id="site-title">
-    <img src="/images/knacss-logo.svg" alt="KNACSS" width="197" height="76" />
-  </h1>
-  <p class="tagline">Stylé et accessible, comme une flammekueche bien cuite.</p>
+  <div class="header-content">
+    <h1 class="title-main" id="site-title">
+      <img src="/images/knacss-logo.svg" alt="KNACSS" width="197" height="76" />
+    </h1>
+    <p class="tagline">Stylé et accessible, comme une flammekueche bien cuite.</p>
+  </div>
+
+  {{!-- Theme Switcher --}}
+  {{> theme-switcher}}
+
+  {{!-- Burger --}}
   <button
     class="burger-button"
     aria-controls="navigation"
