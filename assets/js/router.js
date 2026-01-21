@@ -1071,24 +1071,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const radiusControl = document.getElementById("control-radius")
     const colorControl = document.getElementById("control-color")
     const borderControl = document.getElementById("control-border")
-    const demoForm = document.getElementById("demo-form")
+    const previewContainer = document.querySelector(".demo-preview")
 
-    if (!radiusControl || !colorControl || !borderControl || !demoForm) return
+    if (!radiusControl || !colorControl || !borderControl || !previewContainer) return
 
-    // Applique le changement d'arrondi
-    radiusControl.addEventListener("change", (e) => {
-      demoForm.style.setProperty("--form-border-radius", e.target.value)
-    })
+    // Applique les changements sur le conteneur global pour que les contrôles
+    // et le formulaire adoptent les choix
+    const updateStyles = () => {
+      previewContainer.style.setProperty("--form-border-radius", radiusControl.value)
+      previewContainer.style.setProperty("--primary", colorControl.value)
+      previewContainer.style.setProperty("--form-border-width", borderControl.value)
+    }
 
-    // Applique le changement de couleur
-    colorControl.addEventListener("change", (e) => {
-      demoForm.style.setProperty("--primary", e.target.value)
-    })
+    radiusControl.addEventListener("change", updateStyles)
+    colorControl.addEventListener("change", updateStyles)
+    borderControl.addEventListener("change", updateStyles)
 
-    // Applique le changement d'épaisseur de bordure
-    borderControl.addEventListener("change", (e) => {
-      demoForm.style.setProperty("--form-border-width", e.target.value)
-    })
+    // Applique initialement pour synchroniser l'affichage
+    updateStyles()
   }
 
   /**
