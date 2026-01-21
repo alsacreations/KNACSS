@@ -1079,7 +1079,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // et le formulaire adoptent les choix
     const updateStyles = () => {
       previewContainer.style.setProperty("--form-border-radius", radiusControl.value)
-      previewContainer.style.setProperty("--primary", colorControl.value)
+      previewContainer.style.setProperty("--form-accent-color", colorControl.value)
       previewContainer.style.setProperty("--form-border-width", borderControl.value)
     }
 
