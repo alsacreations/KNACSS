@@ -2,22 +2,47 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-01-18
+ * Mise à jour : 2026-01-21
  * ============================ */
 
 /* ---------------------
- * Tokens globaux de formulaires
+ * Variables globales de formulaires
  * --------------------- */
 
+/*
+ * Ces variables pilotent l'ensemble des contrôles de formulaire (input, textarea, select, button)
+ * Elles peuvent être surchargées individuellement sur chacun des éléments.
+*/
 :root {
+  /* Couleur de fond des champs */
   --form-background: light-dark(var(--color-gray-50), var(--color-gray-800));
+
+  /* Couleur du texte des champs */
   --on-form: light-dark(var(--color-gray-900), var(--color-gray-100));
+
+  /* Espacement interne (padding) */
   --form-spacing: var(--spacing-12) var(--spacing-16);
+
+  /* Épaisseur de bordure (par défaut 1px) */
   --form-border-width: 1px;
+
+  /* Couleur de bordure */
   --form-border-color: var(--color-gray-400);
+
+  /* Arrondi des bordures (border-radius) */
   --form-border-radius: var(--radius-4);
+
+  /* Couleur de bordure spécifique pour radio/checkbox */
   --checkables-border-color: var(--color-gray-400);
+
+  /* Taille des radio/checkbox */
   --checkable-size: 1.25em;
+
+  /* Chevron pour fond clair (trait sombre %23222222) (le %23 remplace le #) */
+  --chevron-lightmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+  /* Chevron pour fond sombre (trait clair %23FFFFFF) (le %23 remplace le #) */
+  --chevron-darkmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
 }
 
 /* ---------------------
@@ -171,7 +196,7 @@ details {
       width: 1rem;
       height: 1rem;
       transition: rotate var(--transition-duration, 0.25s);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-image: var(--chevron-lightmode);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -187,7 +212,7 @@ details {
   /* Support des modes sombres pour l'icône */
   [data-theme="dark"] & {
     & summary::after {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-image: var(--chevron-darkmode);
     }
   }
 
@@ -446,8 +471,6 @@ hr {
     background-color: var(--hr-border-color, currentcolor);
 
     /* Masque SVG répétable pour obtenir un trait ondulé, coloré via background-color */
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
-      left center / var(--hr-wave-length) 100% repeat-x;
     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
       left center / var(--hr-wave-length) 100% repeat-x;
   }
@@ -725,7 +748,7 @@ select {
   border: 0;
   border-radius: var(--select-border-radius);
   background-color: var(--select-background-color);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+  background-image: var(--chevron-lightmode);
   background-repeat: no-repeat;
   background-position: right var(--spacing-16, 1rem) center;
   background-size: 1rem;
@@ -748,18 +771,18 @@ select {
   /* État désactivé */
   &:disabled {
     opacity: 50%;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    background-image: var(--chevron-lightmode);
     cursor: not-allowed;
   }
 
   /* Support des modes sombres pour les flèches */
   [data-theme="dark"] & {
     &:not(:disabled) {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-image: var(--chevron-darkmode);
     }
 
     &:disabled {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23777777' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+      background-image: var(--chevron-darkmode);
     }
   }
 
