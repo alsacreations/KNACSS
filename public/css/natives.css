@@ -20,6 +20,9 @@
   /* Couleur du texte des champs */
   --on-form: light-dark(var(--color-gray-900), var(--color-gray-100));
 
+  /* Couleur d'accent principale des champs */
+  --form-accent-color: var(--primary, AccentColor);
+
   /* Espacement interne (padding) */
   --form-spacing: var(--spacing-12) var(--spacing-16);
 
@@ -111,7 +114,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
 
   /* Primary button */
   &.btn-primary:where(:not(:disabled, [disabled])) {
-    --button-background-color: var(--primary, AccentColor);
+    --button-background-color: var(--form-accent-color, AccentColor);
     --button-border-color: transparent;
     --button-text-color: var(--on-primary, #ffffff);
   }
@@ -120,7 +123,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   &.btn-secondary:where(:not(:disabled, [disabled])) {
     --button-background-color: var(--color-gray-200, GrayText);
     --button-border-color: transparent;
-    --button-text-color: var(--primary, #000000);
+    --button-text-color: var(--form-accent-color, AccentColor);
   }
 
   /* Reset button */
@@ -449,7 +452,7 @@ hr {
 
   /* Variante couleur primaire */
   &.hr-primary {
-    --hr-border-color: var(--primary, AccentColor);
+    --hr-border-color: var(--form-accent-color, AccentColor);
   }
 
   /* Variante épaisseur moyenne (x2) */
@@ -685,7 +688,7 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, AccentColor);
+    background-color: var(--form-accent-color, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
@@ -694,7 +697,7 @@ input:not(
     &:hover,
     &:focus-visible {
       background-color: oklch(
-        from var(--primary, AccentColor) calc(l * 0.9) c h
+        from var(--form-accent-color, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -706,7 +709,7 @@ input:not(
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
     border-radius: var(--input-border-radius);
-    background-color: var(--primary, AccentColor);
+    background-color: var(--form-accent-color, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
@@ -715,7 +718,7 @@ input:not(
     &:hover,
     &:focus-visible {
       background-color: oklch(
-        from var(--primary, AccentColor) calc(l * 0.9) c h
+        from var(--form-accent-color, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -902,7 +905,7 @@ textarea {
 
 [type="checkbox"]:not([role="switch"]) {
   --checkbox-background-color: var(--form-background, Field);
-  --checkbox-checked-color: var(--primary, AccentColor);
+  --checkbox-checked-color: var(--form-accent-color, AccentColor);
   --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
   --checkbox-border-color-hover: var(--checkbox-border-color);
   --checkbox-border-radius: var(--form-border-radius, 0);
@@ -986,7 +989,7 @@ textarea {
   --radio-border-color-hover: var(--radio-border-color);
   --radio-border-radius: var(--radius-full, 9999px);
   --radio-border-width: var(--form-border-width, 1px);
-  --radio-checked-color: var(--primary, AccentColor);
+  --radio-checked-color: var(--form-accent-color, AccentColor);
   --radio-checked-border-color: var(--color-white, #ffffff);
 
   display: inline-grid;
@@ -1050,7 +1053,7 @@ textarea {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
   --switch-track-color: var(--form-background, ButtonFace);
-  --switch-track-color-checked: var(--primary, AccentColor);
+  --switch-track-color-checked: var(--form-accent-color, AccentColor);
   --switch-thumb-color: ButtonBorder;
   --switch-border-radius: var(--radius-full, 9999px);
   --switch-border-color: var(--checkables-border-color, ButtonBorder);
@@ -1144,7 +1147,7 @@ textarea {
   --range-thumb-size: 24px;
   --range-thumb-border-width: 4px;
   --range-thumb-border-color: var(--color-white, #ffffff);
-  --range-color: var(--primary, AccentColor);
+  --range-color: var(--form-accent-color, AccentColor);
   --range-track-color: var(--form-border-color, ButtonBorder);
   --range-track-height: calc(var(--form-border-width, 1px) + 2px);
 
