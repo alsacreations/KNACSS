@@ -1,0 +1,15 @@
+# robots.txt pour primary.alsacreations.com
+# Optimisé pour le référencement
+
+User-agent: *
+
+# Autoriser l'accès à tout le site par défaut
+Allow: /
+
+# Ne pas indexer les dossiers de données sources et de configuration interne
+Disallow: /source/
+Disallow: /config_files/
+Disallow: /scripts/
+
+# Référence au sitemap (à créer si absent)
+Sitemap: https://knacss.com/sitemap.xml
