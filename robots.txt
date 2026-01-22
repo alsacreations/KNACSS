@@ -1,4 +1,4 @@
-# robots.txt pour primary.alsacreations.com
+# robots.txt pour knacss.com
 # Optimisé pour le référencement
 
 User-agent: *
