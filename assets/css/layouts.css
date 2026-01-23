@@ -3,20 +3,25 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-10-22
+ * Mise à jour : 2026-01-23
  /* ---------------------- */
+
+/* Suppression des marges des enfants directs d'un Layout */
+[data-layout] > * {
+  margin-block: 0;
+}
 
 /* Stack */
 [data-layout*="stack"] {
   display: grid;
-  row-gap: var(--gap-m, 1rem);
+  row-gap: var(--spacing-s, 0.5rem);
 }
 
 /* Cluster */
 [data-layout*="cluster"] {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
   align-items: start;
 }
 
@@ -30,7 +35,7 @@
     var(--grid-fill),
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
 }
 
 /* Switcher */
@@ -39,7 +44,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
 
   & > * {
     flex-basis: calc((var(--switcher-min-size) - 100%) * 999);
@@ -53,7 +58,7 @@
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
 }
 
 /* Reel */
@@ -65,7 +70,7 @@
   height: auto;
   margin-inline: auto; /* reel est centré horizontalement */
   overflow-x: auto;
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
   scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
   -webkit-overflow-scrolling: touch;
 
@@ -99,7 +104,7 @@
 [data-layout*="duo"] {
   display: grid;
   align-content: start;
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-s, 0.5rem);
 
   /* Deux colonnes si >=768px */
   @media (width >= 48rem) {
@@ -142,6 +147,53 @@
     }
 
     /* "auto" = taille initiale conservée */
+    &[data-split*="auto-1"] {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    &[data-split*="1-auto"] {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  /* Mode desktop forcé */
+  &[data-layout*="desktop"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    &[data-split*="reverse"] {
+      & > *:first-child {
+        order: 1;
+      }
+    }
+
+    &[data-split*="1-1"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="2-1"] {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-2"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+
+    &[data-split*="3-1"] {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-3"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+
+    &[data-split*="4-1"] {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-4"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+    }
+
     &[data-split*="auto-1"] {
       grid-template-columns: auto minmax(0, 1fr);
     }
@@ -222,6 +274,14 @@
   :where(& > *) {
     grid-column: content-start / half;
   }
+
+  @media (width < 48rem) {
+    grid-column: liquid;
+
+    & > * {
+      grid-column: content;
+    }
+  }
 }
 
 [data-layout*="splash-half-end"] {
@@ -232,27 +292,35 @@
   :where(& > *) {
     grid-column: half / content-end;
   }
+
+  @media (width < 48rem) {
+    grid-column: liquid;
+
+    & > * {
+      grid-column: content;
+    }
+  }
 }
 
 /* Modificateurs globaux */
 [data-gap="xs"] {
-  gap: var(--gap-xs, 0.25rem);
+  gap: var(--spacing-xs, 0.25rem);
 }
 
 [data-gap="s"] {
-  gap: var(--gap-s, 0.5rem);
+  gap: var(--spacing-s, 0.5rem);
 }
 
 [data-gap="m"] {
-  gap: var(--gap-m, 1rem);
+  gap: var(--spacing-m, 1rem);
 }
 
 [data-gap="l"] {
-  gap: var(--gap-l, 2rem);
+  gap: var(--spacing-l, 2rem);
 }
 
 [data-gap="xl"] {
-  gap: var(--gap-xl, 3rem);
+  gap: var(--spacing-xl, 3rem);
 }
 
 [data-gap="none"] {
