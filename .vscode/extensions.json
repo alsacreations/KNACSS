@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "prettier.prettier-vscode",
+    "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
