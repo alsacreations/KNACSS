@@ -633,13 +633,13 @@ input:not(
 
 /* Champs numériques */
 :where(input[type="number"]) {
+  appearance: textfield;
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     appearance: none;
     margin: 0;
   }
-
-  appearance: textfield;
 }
 
 /* Champ de date et heure */
