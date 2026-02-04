@@ -2,7 +2,7 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-01-21
+ * Mise à jour : 2026-02-04
  * ============================ */
 
 /* ---------------------
@@ -95,52 +95,40 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   user-select: none;
 
   /* Base button */
-  &:is(:not(:disabled, [disabled])) {
-    &:hover,
-    &:focus-visible {
-      background-color: var(--button-background-color-hover);
-      box-shadow: inset 0 0 0 var(--button-border-width)
-        var(--button-border-color-hover);
-      color: var(--button-text-color-hover);
-    }
+  &:hover,
+  &:focus-visible {
+    background-color: var(--button-background-color-hover);
+    box-shadow: inset 0 0 0 var(--button-border-width)
+      var(--button-border-color-hover);
+    color: var(--button-text-color-hover);
+  }
 
-    &:active {
-      background-color: var(--button-background-color-active);
-      box-shadow: inset 0 0 0 var(--button-border-width)
-        var(--button-border-color-active);
-      color: var(--button-text-color-active);
-    }
+  &:active {
+    background-color: var(--button-background-color-active);
+    box-shadow: inset 0 0 0 var(--button-border-width)
+      var(--button-border-color-active);
+    color: var(--button-text-color-active);
   }
 
   /* Primary button */
-  &.btn-primary:where(:not(:disabled, [disabled])) {
+  &.btn-primary {
     --button-background-color: var(--form-accent-color, AccentColor);
     --button-border-color: transparent;
     --button-text-color: var(--on-primary, #ffffff);
   }
 
   /* Secondary button */
-  &.btn-secondary:where(:not(:disabled, [disabled])) {
+  &.btn-secondary {
     --button-background-color: var(--color-gray-200, GrayText);
     --button-border-color: transparent;
     --button-text-color: var(--form-accent-color, AccentColor);
   }
 
   /* Reset button */
-  &.btn-reset:where(:not(:disabled, [disabled])) {
+  &.btn-reset {
     --button-background-color: transparent;
     --button-border-color: transparent;
     --button-text-color: currentcolor;
-  }
-
-  /* States */
-  &:is(:disabled, [disabled]) {
-    opacity: 50%;
-    cursor: not-allowed;
-
-    & * {
-      pointer-events: none;
-    }
   }
 }
 
@@ -529,7 +517,9 @@ table {
 
   /* Zébrage (conditionné par --table-zebra */
   & tbody tr:nth-child(odd) {
-    background-color: oklch(from var(--color-black, #000000) l c h / var(--table-zebra, 0%));
+    background-color: oklch(
+      from var(--color-black, #000000) l c h / var(--table-zebra, 0%)
+    );
   }
 }
 
@@ -572,12 +562,10 @@ table {
   }
 }
 
-
 /* --------------------
  * Formulaires
  * (input, textarea, select, checkbox, radio, switch, range)
  * -------------------- */
-
 
 /* Input
  * -------------------- */
@@ -616,12 +604,6 @@ input:not(
   &:focus-visible {
     box-shadow: inset 0 0 0 var(--input-border-width)
       var(--input-border-color-hover);
-  }
-
-  /* État désactivé */
-  &:disabled {
-    opacity: 50%;
-    cursor: not-allowed;
   }
 
   /* État invalide après interaction utilisateur */
@@ -724,12 +706,6 @@ input:not(
   }
 }
 
-.form-group:has(input:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
-
 /* Select
  * -------------------- */
 
@@ -771,22 +747,9 @@ select {
       var(--select-border-color-hover);
   }
 
-  /* État désactivé */
-  &:disabled {
-    opacity: 50%;
-    background-image: var(--chevron-lightmode);
-    cursor: not-allowed;
-  }
-
   /* Support des modes sombres pour les flèches */
   [data-theme="dark"] & {
-    &:not(:disabled) {
-      background-image: var(--chevron-darkmode);
-    }
-
-    &:disabled {
-      background-image: var(--chevron-darkmode);
-    }
+    background-image: var(--chevron-darkmode);
   }
 
   /* Sélection multiple */
@@ -802,7 +765,6 @@ select {
   color: var(--select-optgroup-color);
   font-weight: var(--font-weight-bold, 700);
 }
-
 
 /* Textarea
  * -------------------- */
@@ -840,13 +802,6 @@ textarea {
       var(--textarea-border-color-hover);
   }
 
-  /* État désactivé */
-  &:disabled {
-    opacity: 50%;
-    resize: none;
-    cursor: not-allowed;
-  }
-
   /* État invalide après interaction utilisateur */
   &:user-invalid {
     --textarea-border-color: var(--error);
@@ -858,12 +813,6 @@ textarea {
     opacity: 100%;
     color: var(--on-surface);
   }
-}
-
-/* Textarea désactivés */
-.form-group:has(textarea:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
 }
 
 /* Compteur de caractères */
@@ -898,7 +847,6 @@ textarea {
     text-align: left;
   }
 }
-
 
 /* Checkbox
  * -------------------- */
@@ -966,19 +914,7 @@ textarea {
     mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M431 256c0 17.7-14.3 32-32 32H49c-17.7 0-32-14.3-32-32s14.3-32 32-32h350c17.7 0 32 14.3 32 32z"/></svg>')
       center no-repeat;
   }
-
-  /* Checkbox désactivé */
-  &:is(:disabled, [disabled]) {
-    opacity: 50%;
-    cursor: not-allowed;
-  }
 }
-
-.form-group:has([type="checkbox"]:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 
 /* Radio
  * -------------------- */
@@ -1032,19 +968,7 @@ textarea {
       scale: 0.9;
     }
   }
-
-  /* Radio désactivé */
-  &:is(:disabled, [disabled]) {
-    opacity: 50%;
-    cursor: not-allowed;
-  }
 }
-
-.form-group:has([type="radio"]:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 
 /* Switch
  * -------------------- */
@@ -1117,23 +1041,7 @@ textarea {
       background-size: 70%;
     }
   }
-
-  /* État désactivé */
-  &:disabled {
-    opacity: 50%;
-    cursor: not-allowed;
-
-    &::after {
-      box-shadow: none;
-    }
-  }
 }
-
-.form-group:has([type="checkbox"][role="switch"]:disabled) label {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 
 /* Range
  * -------------------- */
@@ -1210,11 +1118,6 @@ textarea {
     center / 100% calc(var(--range-track-height) + 1px);
 }
 
-[type="range"]:disabled::-webkit-slider-thumb {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 /* Firefox */
 [type="range"],
 [type="range"]::-moz-range-track,
@@ -1254,11 +1157,6 @@ textarea {
 [type="range"]::-moz-range-progress {
   height: calc(var(--range-track-height) + 1px);
   border-radius: var(--range-track-height);
-}
-
-[type="range"]:disabled::-moz-range-thumb {
-  opacity: 50%;
-  cursor: not-allowed;
 }
 
 .range-value {
