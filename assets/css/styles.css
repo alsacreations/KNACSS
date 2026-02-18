@@ -376,6 +376,25 @@ syntax-highlight {
   }
 }
 
+.btn-github {
+  gap: var(--spacing-8);
+
+  --button-background-color: oklch(51.33% 0.18 256.37);
+  --button-background-color-hover: oklch(
+    from oklch(51.33% 0.18 256.37) calc(l * 0.9) c h
+  );
+  --button-border-color: transparent;
+  --button-text-color: var(--color-white);
+
+  border-radius: var(--radius-24);
+  color: var(--color-white);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-white);
+  }
+}
+
 @keyframes spaceboots {
   0% {
     transform: translate(2px, 1px) rotate(0);
@@ -445,7 +464,6 @@ syntax-highlight {
   --details-border-color: var(--layer-2);
 }
 
-
 /* ----------------------------------
  * Theme Switcher
  * ----------------------------------
@@ -470,7 +488,8 @@ syntax-highlight {
   border: 0;
   border-radius: var(--theme-switcher-radius);
   background-color: var(--theme-switcher-background);
-  box-shadow: 0 0 0 var(--theme-switcher-border-size) var(--theme-switcher-border-color) inset;
+  box-shadow: 0 0 0 var(--theme-switcher-border-size)
+    var(--theme-switcher-border-color) inset;
   line-height: 0;
   cursor: pointer;
 
