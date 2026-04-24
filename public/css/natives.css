@@ -2,7 +2,7 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-02-04
+ * Mise à jour : 2026-04-24
  * ============================ */
 
 /* ---------------------
@@ -91,7 +91,6 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   vertical-align: middle;
   white-space: nowrap;
   cursor: pointer;
-  -webkit-user-select: none;
   user-select: none;
 
   /* Base button */
@@ -571,13 +570,13 @@ table {
  * -------------------- */
 
 input:not(
-    [type="button"],
-    [type="reset"],
-    [type="submit"],
-    [type="checkbox"],
-    [type="radio"],
-    [type="range"]
-  ) {
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  [type="checkbox"],
+  [type="radio"],
+  [type="range"]
+) {
   --input-background-color: var(--form-background, Field);
   --input-border-color: var(--form-border-color, ButtonBorder);
   --input-border-color-hover: var(--form-border-color);
@@ -737,7 +736,6 @@ select {
   line-height: 1.5;
   cursor: pointer;
   appearance: none;
-  -webkit-user-select: none;
   user-select: none;
 
   /* État survol */
@@ -877,7 +875,6 @@ textarea {
   font: inherit;
   line-height: 1;
   cursor: pointer;
-  -webkit-user-select: none;
   user-select: none;
   appearance: none;
 
@@ -1053,110 +1050,65 @@ textarea {
 
 [type="range"] {
   --range-thumb-size: 24px;
-  --range-thumb-border-width: 4px;
-  --range-thumb-border-color: var(--color-white, #ffffff);
   --range-color: var(--form-accent-color, AccentColor);
-  --range-track-color: var(--form-border-color, ButtonBorder);
-  --range-track-height: calc(var(--form-border-width, 1px) + 2px);
+  --range-track-color: oklch(
+    from var(--form-border-color, ButtonBorder) calc(l * 1.5) c h
+  );
+  --range-track-height: 6px;
 
   width: 100%;
-  overflow: hidden;
-  background: #ffffff00;
+  height: var(--range-thumb-size);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--range-color);
+  appearance: none;
+  cursor: pointer;
+}
+
+[type="range"]:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
 }
 
 /* WebKit */
-[type="range"],
-[type="range"]::-webkit-slider-runnable-track,
-[type="range"]::-webkit-slider-thumb {
-  height: var(--range-thumb-size);
-  transition: all ease 100ms;
-  appearance: none;
-}
-
-[type="range"]::-webkit-slider-runnable-track,
-[type="range"]::-webkit-slider-thumb {
-  position: relative;
-}
-
-[type="range"]::-webkit-slider-thumb {
-  --thumb-radius: calc((var(--range-thumb-size) * 0.5) - 1px);
-  --clip-top: calc(
-    (var(--range-thumb-size) - var(--range-track-height)) * 0.5 - 0.5px
-  );
-  --clip-bottom: calc(var(--range-thumb-size) - var(--clip-top));
-  --clip-further: calc(100% + 1px);
-  --box-fill: calc(-100vmax - var(--thumb-width, var(--range-thumb-size))) 0 0
-    100vmax currentcolor;
-
-  width: var(--thumb-width, var(--range-thumb-size));
-  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
-  border-radius: var(--thumb-width, var(--range-thumb-size));
-  background: linear-gradient(currentcolor 0 0) scroll no-repeat left center /
-    50% calc(var(--range-track-height) + 1px);
-  background-color: currentcolor;
-  box-shadow: var(--box-fill);
-  filter: brightness(100%);
-  clip-path: polygon(
-    100% -1px,
-    var(--range-track-height) -1px,
-    0 var(--clip-top),
-    -100vmax var(--clip-top),
-    -100vmax var(--clip-bottom),
-    0 var(--clip-bottom),
-    var(--range-track-height) 100%,
-    var(--clip-further) var(--clip-further)
-  );
-}
-
-[type="range"]:hover::-webkit-slider-thumb {
-  cursor: ew-resize;
-}
-
 [type="range"]::-webkit-slider-runnable-track {
-  background: linear-gradient(var(--range-track-color) 0 0) scroll no-repeat
-    center / 100% calc(var(--range-track-height) + 1px);
-}
-
-/* Firefox */
-[type="range"],
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-thumb {
-  height: var(--range-thumb-size);
-  transition: all ease 100ms;
-  appearance: none;
-}
-
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-thumb,
-[type="range"]::-moz-range-progress {
-  background: #ffffff00;
-}
-
-[type="range"]::-moz-range-thumb {
-  box-sizing: border-box;
-  width: var(--thumb-width, var(--range-thumb-size));
-  border: var(--range-thumb-border-width) solid var(--range-thumb-border-color);
-  border-radius: var(--thumb-width, var(--range-thumb-size));
-  background: currentcolor;
-  cursor: ew-resize;
-}
-
-[type="range"]::-moz-range-track {
-  width: 100%;
+  height: var(--range-track-height);
+  border-radius: var(--range-track-height);
   background: var(--range-track-color);
 }
 
-[type="range"]::-moz-range-progress {
-  transition-delay: 30ms;
-  background: currentcolor;
+[type="range"]::-webkit-slider-thumb {
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) * 0.5);
+  border: 4px solid var(--color-white, #ffffff);
+  border-radius: 50%;
+  background-color: currentcolor;
   appearance: none;
 }
 
-[type="range"]::-moz-range-track,
-[type="range"]::-moz-range-progress {
-  height: calc(var(--range-track-height) + 1px);
+/* Firefox */
+[type="range"]::-moz-range-track {
+  height: var(--range-track-height);
   border-radius: var(--range-track-height);
+  background: var(--range-track-color);
+}
+
+[type="range"]::-moz-range-thumb {
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  border: 4px solid var(--color-white, #ffffff);
+  border-radius: 50%;
+  background: currentcolor;
+  cursor: pointer;
+}
+
+[type="range"]::-moz-range-progress {
+  height: var(--range-track-height);
+  border-radius: var(--range-track-height);
+  background: currentcolor;
 }
 
 .range-value {
@@ -1181,6 +1133,6 @@ textarea {
   [data-range-output="anchor"] .range-value {
     position-anchor: --thumb;
     position-area: bottom;
-    translate: 0 0.5rem;
+    translate: 0 0;
   }
 }
