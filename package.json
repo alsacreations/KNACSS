@@ -23,7 +23,13 @@
     "stylelint-config-property-sort-order-smacss": "^11.2.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
-    "vite": "^8.0.0",
-    "vite-plugin-handlebars": "^2.0.0"
+    "vite": "^8.0.14",
+    "vite-plugin-handlebars": "^2.0.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "fast-uri": "3.1.2",
+      "picomatch": "2.3.2"
+    }
   }
 }
