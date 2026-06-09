@@ -2,7 +2,7 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-04-24
+ * Mise à jour : 2026-06-09
  * ============================ */
 
 /* ---------------------
@@ -1123,18 +1123,18 @@ textarea {
   translate: 0 1.4rem;
 }
 
-@supports (position-anchor: initial) {
-  [data-range-output="anchor"] ::-webkit-slider-thumb {
+@supports (position-anchor: --i) {
+  [data-range-output="anchor"] input::-webkit-slider-thumb {
     anchor-name: --thumb;
   }
 
-  [data-range-output="anchor"] ::-moz-range-thumb {
+  [data-range-output="anchor"] input::-moz-range-thumb {
     anchor-name: --thumb;
   }
 
   [data-range-output="anchor"] .range-value {
     position-anchor: --thumb;
-    position-area: bottom;
-    translate: 0 4px;
+    position-area: bottom span-all;
+    inset: anchor(top);
   }
 }
