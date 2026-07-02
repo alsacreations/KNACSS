@@ -25,11 +25,5 @@
     "stylelint-order": "^8.1.1",
     "vite": "^8.0.14",
     "vite-plugin-handlebars": "^2.0.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "fast-uri": "3.1.2",
-      "picomatch": "2.3.2"
-    }
   }
 }
