@@ -351,7 +351,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "aria-expanded",
           (!codeBlock.hidden).toString(),
         )
-        showCodeButton.textContent = !codeBlock.hidden
+        const showCodeLabel =
+          showCodeButton.querySelector("span") || showCodeButton
+        showCodeLabel.textContent = !codeBlock.hidden
           ? "Masquer le code"
           : "Afficher le code"
 
@@ -433,16 +435,17 @@ document.addEventListener("DOMContentLoaded", () => {
           : ""
 
       if (textToCopy) {
+        const copyLabel = copyButton.querySelector("span") || copyButton
         try {
           await navigator.clipboard.writeText(textToCopy)
-          const originalText = copyButton.innerText
-          copyButton.textContent = "Copié !"
+          const originalText = copyLabel.textContent
+          copyLabel.textContent = "Copié !"
           setTimeout(() => {
-            copyButton.textContent = originalText
+            copyLabel.textContent = originalText
           }, 2000)
         } catch (err) {
           console.error("Erreur de copie :", err)
-          copyButton.textContent = "Erreur"
+          copyLabel.textContent = "Erreur"
         }
       }
     })

@@ -24,7 +24,7 @@
   --form-accent-color: var(--primary, AccentColor);
 
   /* Espacement interne (padding) */
-  --form-spacing: var(--spacing-12) var(--spacing-16);
+  --form-spacing: var(--spacing-16) var(--spacing-16);
 
   /* Épaisseur de bordure (par défaut 1px) */
   --form-border-width: 1px;
@@ -72,11 +72,8 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   --button-text-color-active: var(--button-text-color);
   --button-font-weight: var(--font-weight-regular, 400);
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: fit-content;
-  padding: var(--form-spacing, 12px 16px);
+  padding: var(--form-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -86,7 +83,8 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   color: var(--button-text-color);
   font: inherit;
   font-weight: var(--button-font-weight);
-  line-height: 1;
+  line-height: normal;
+  text-align: center;
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -131,12 +129,36 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   }
 }
 
+/* Bouton et lien-bouton : flex pour permettre icône + texte alignés verticalement */
+button,
+a:where(.btn) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* text-box-trim ne s'applique pas au bouton lui-même car le flex n'établit pas
+   * de contexte de formatage en ligne directement : on le pose donc sur le span
+   * qui enveloppe le libellé */
+  & > span {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+}
+
+/* Bouton input : pas de contenu HTML possible (le libellé vient de l'attribut
+ * value), donc pas besoin de flex — le texte est recadré directement */
+input:where([type="button"], [type="reset"], [type="submit"]) {
+  display: inline-block;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
 /* --------------------
  * Details (disclosure)
  * -------------------- */
 
 details {
-  --details-padding: var(--form-spacing, 12px 16px);
+  --details-padding: var(--form-spacing, 16px 16px);
   --details-border-color: var(--form-border-color, ButtonBorder);
   --details-border-color-hover: var(--details-border-color);
   --details-border-width: var(--form-border-width, 1px);
@@ -208,7 +230,7 @@ details {
 
   /* Contenu du details */
   &::details-content {
-    padding: var(--form-spacing, 12px 16px);
+    padding: var(--form-spacing, 16px 16px);
     padding-top: 0;
     border-top: none;
 
@@ -587,7 +609,7 @@ input:not(
 
   display: block;
   width: 100%;
-  padding: var(--input-spacing, 12px 16px);
+  padding: var(--form-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -597,6 +619,8 @@ input:not(
   color: var(--input-text-color);
   font: inherit;
   line-height: 1.5;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 
   /* État survol */
   &:hover,
@@ -719,7 +743,7 @@ select {
 
   display: block;
   width: 100%;
-  padding: var(--form-spacing, 12px 16px);
+  padding: var(--form-spacing, 16px 16px);
   padding-right: calc(var(--spacing-32, 2rem) + var(--spacing-12, 0.75rem));
   transition-property: background-color, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
@@ -734,6 +758,8 @@ select {
   color: var(--select-text-color);
   font: inherit;
   line-height: 1.5;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
   cursor: pointer;
   appearance: none;
   user-select: none;
@@ -779,7 +805,7 @@ textarea {
   display: block;
   width: 100%;
   min-height: 5lh;
-  padding: var(--form-spacing, 12px 16px);
+  padding: var(--form-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
@@ -790,6 +816,8 @@ textarea {
   color: var(--textarea-text-color);
   font: inherit;
   line-height: 1.5;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
   resize: vertical;
   field-sizing: content;
 

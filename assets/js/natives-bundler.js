@@ -196,7 +196,9 @@ export const NativesBundler = {
     const btn = document.createElement("button")
     btn.type = "submit"
     btn.className = "btn btn-primary"
-    btn.textContent = "Télécharger natives-subset.css"
+    const btnLabel = document.createElement("span")
+    btnLabel.textContent = "Télécharger natives-subset.css"
+    btn.appendChild(btnLabel)
 
     formEl.appendChild(listWrapper)
     formEl.appendChild(btn)
