@@ -71,8 +71,10 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 
-  /* text-box-trim pour croper le texte du libellé */
+  /* text-box-trim non applicable directement sur button */
   & > span {
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
