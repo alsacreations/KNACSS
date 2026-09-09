@@ -2,50 +2,44 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-09-07
+ * Mise à jour : 2026-09-09
  * ============================ */
 
 /* ---------------------
- * Variables globales de formulaires
+ * Variables globales
  * --------------------- */
 
 /*
- * Ces variables pilotent l'ensemble des contrôles de formulaire (input, textarea, select, button)
- * Elles peuvent être surchargées individuellement sur chacun des éléments.
+ * Ces variables pilotent l'ensemble des éléments natifs
+ * (input, textarea, select, button, details, dialog, …)
 */
 :root {
-  /* Couleur de fond des champs */
-  --form-background: light-dark(var(--color-gray-50), var(--color-gray-800));
+  /* Couleur de fond */
+  --natives-background: light-dark(var(--color-gray-50), var(--color-gray-800));
 
-  /* Couleur du texte des champs */
-  --on-form: light-dark(var(--color-gray-900), var(--color-gray-100));
+  /* Couleur du texte */
+  --natives-text: light-dark(var(--color-gray-900), var(--color-gray-100));
 
-  /* Couleur d'accent principale des champs */
-  --form-accent-color: var(--primary, AccentColor);
+  /* Couleur d'accent principale */
+  --natives-accent-color: var(--primary, AccentColor);
 
   /* Espacement interne (padding) */
-  --form-spacing: var(--spacing-16) var(--spacing-16);
+  --natives-spacing: var(--spacing-16) var(--spacing-16);
 
-  /* Épaisseur de bordure (par défaut 1px) */
-  --form-border-width: 1px;
+  /* Épaisseur de bordure (box-shadow) */
+  --natives-border-width: 1px;
 
-  /* Couleur de bordure */
-  --form-border-color: var(--color-gray-400);
+  /* Couleur de bordure (box-shadow) */
+  --natives-border-color: var(--color-gray-400);
 
   /* Arrondi des bordures (border-radius) */
-  --form-border-radius: var(--radius-4);
-
-  /* Couleur de bordure spécifique pour radio/checkbox */
-  --checkables-border-color: var(--color-gray-400);
-
-  /* Taille des radio/checkbox */
-  --checkable-size: 1.25em;
+  --natives-border-radius: var(--radius-4);
 
   /* Chevron pour fond clair (trait sombre %23222222) (le %23 remplace le #) */
-  --chevron-lightmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+  --natives-chevron-lightmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23222222' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
 
   /* Chevron pour fond sombre (trait clair %23FFFFFF) (le %23 remplace le #) */
-  --chevron-darkmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+  --natives-chevron-darkmode: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
 }
 
 /* ---------------------
@@ -55,34 +49,21 @@
 button,
 a:where(.btn),
 input:where([type="button"], [type="reset"], [type="submit"]) {
-  --button-background-color: var(--form-background, Field);
-  --button-background-color-hover: oklch(
-    from var(--button-background-color) calc(l * 0.9) c h
-  );
-  --button-background-color-active: oklch(
-    from var(--button-background-color) calc(l * 0.8) c h
-  );
-  --button-border-color: var(--form-border-color, ButtonBorder);
-  --button-border-color-hover: var(--button-border-color);
-  --button-border-color-active: var(--button-border-color);
-  --button-border-radius: var(--form-border-radius, 0);
-  --button-border-width: var(--form-border-width, 1px);
-  --button-text-color: var(--on-form, ButtonText);
-  --button-text-color-hover: var(--button-text-color);
-  --button-text-color-active: var(--button-text-color);
-  --button-font-weight: var(--font-weight-regular, 400);
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
-  padding: var(--form-spacing, 16px 16px);
+  padding: var(--natives-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--button-border-radius);
-  background-color: var(--button-background-color);
-  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color);
-  color: var(--button-text-color);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--natives-background, Field);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--natives-border-color, ButtonBorder);
+  color: var(--natives-text, ButtonText);
   font: inherit;
-  font-weight: var(--button-font-weight);
+  font-weight: var(--font-weight-regular, 400);
   line-height: normal;
   text-align: center;
   text-decoration: none;
@@ -91,66 +72,72 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   cursor: pointer;
   user-select: none;
 
-  /* Base button */
-  &:hover,
-  &:focus-visible {
-    background-color: var(--button-background-color-hover);
-    box-shadow: inset 0 0 0 var(--button-border-width)
-      var(--button-border-color-hover);
-    color: var(--button-text-color-hover);
-  }
-
-  &:active {
-    background-color: var(--button-background-color-active);
-    box-shadow: inset 0 0 0 var(--button-border-width)
-      var(--button-border-color-active);
-    color: var(--button-text-color-active);
-  }
-
-  /* Primary button */
-  &.btn-primary {
-    --button-background-color: var(--form-accent-color, AccentColor);
-    --button-border-color: transparent;
-    --button-text-color: var(--on-primary, #ffffff);
-  }
-
-  /* Secondary button */
-  &.btn-secondary {
-    --button-background-color: var(--color-gray-200, GrayText);
-    --button-border-color: transparent;
-    --button-text-color: var(--form-accent-color, AccentColor);
-  }
-
-  /* Reset button */
-  &.btn-reset {
-    --button-background-color: transparent;
-    --button-border-color: transparent;
-    --button-text-color: currentcolor;
-  }
-}
-
-/* Bouton et lien-bouton : flex pour permettre icône + texte alignés verticalement */
-button,
-a:where(.btn) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  /* text-box-trim ne s'applique pas au bouton lui-même car le flex n'établit pas
-   * de contexte de formatage en ligne directement : on le pose donc sur le span
-   * qui enveloppe le libellé */
+  /* text-box-trim pour croper le texte du libellé */
   & > span {
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
   }
-}
 
-/* Bouton input : pas de contenu HTML possible (le libellé vient de l'attribut
- * value), donc pas besoin de flex — le texte est recadré directement */
-input:where([type="button"], [type="reset"], [type="submit"]) {
-  display: inline-block;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  /* Base button */
+  &:hover,
+  &:focus-visible {
+    background-color: oklch(
+      from var(--natives-background, Field) calc(l * 0.9) c h
+    );
+  }
+
+  &:active {
+    background-color: oklch(
+      from var(--natives-background, Field) calc(l * 0.8) c h
+    );
+  }
+
+  /* Primary button */
+  &.btn-primary {
+    background-color: var(--natives-accent-color, AccentColor);
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px) transparent;
+    color: var(--on-primary, #ffffff);
+
+    &:hover,
+    &:focus-visible {
+      background-color: oklch(
+        from var(--natives-accent-color, AccentColor) calc(l * 0.9) c h
+      );
+    }
+
+    &:active {
+      background-color: oklch(
+        from var(--natives-accent-color, AccentColor) calc(l * 0.8) c h
+      );
+    }
+  }
+
+  /* Secondary button */
+  &.btn-secondary {
+    background-color: var(--color-gray-200, GrayText);
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px) transparent;
+    color: var(--natives-accent-color, AccentColor);
+
+    &:hover,
+    &:focus-visible {
+      background-color: oklch(
+        from var(--color-gray-200, GrayText) calc(l * 0.9) c h
+      );
+    }
+
+    &:active {
+      background-color: oklch(
+        from var(--color-gray-200, GrayText) calc(l * 0.8) c h
+      );
+    }
+  }
+
+  /* Reset button */
+  &.btn-reset {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px) transparent;
+    color: currentcolor;
+  }
 }
 
 /* --------------------
@@ -158,40 +145,21 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
  * -------------------- */
 
 details {
-  --details-padding: var(--form-spacing, 16px 16px);
-  --details-border-color: var(--form-border-color, ButtonBorder);
-  --details-border-color-hover: var(--details-border-color);
-  --details-border-width: var(--form-border-width, 1px);
-  --details-border-radius: var(--form-border-radius, 0);
-  --details-background-color: var(--layer-1, Canvas);
-  --details-content-border-radius: 0;
-  --details-title-color: var(--on-form, FieldText);
-  --details-title-color-hover: var(--details-title-color);
-
-  border: var(--details-border-width) solid var(--details-border-color);
-  border-radius: var(--details-border-radius);
-  background-color: var(--details-background-color);
-
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    border-color: var(--details-border-color-hover);
-
-    & summary {
-      color: var(--details-title-color-hover);
-    }
-  }
+  border: var(--natives-border-width, 1px) solid
+    var(--natives-border-color, ButtonBorder);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--layer-1, Canvas);
 
   /* Summary (titre cliquable) */
   & summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--details-padding);
+    padding: var(--natives-spacing, 16px 16px);
     transition: background-color;
     transition-duration: var(--transition-duration, 0.25s);
-    border-radius: var(--details-border-radius);
-    color: var(--details-title-color, currentcolor);
+    border-radius: var(--natives-border-radius, 0);
+    color: var(--natives-text, currentcolor);
     font-weight: var(--font-weight-semibold, 600);
     list-style: none;
     cursor: pointer;
@@ -208,7 +176,7 @@ details {
       width: 1rem;
       height: 1rem;
       transition: rotate var(--transition-duration, 0.25s);
-      background-image: var(--chevron-lightmode);
+      background-image: var(--natives-chevron-lightmode);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -224,13 +192,13 @@ details {
   /* Support des modes sombres pour l'icône */
   [data-theme="dark"] & {
     & summary::after {
-      background-image: var(--chevron-darkmode);
+      background-image: var(--natives-chevron-darkmode);
     }
   }
 
   /* Contenu du details */
   &::details-content {
-    padding: var(--form-spacing, 16px 16px);
+    padding: var(--natives-spacing, 16px 16px);
     padding-top: 0;
     border-top: none;
 
@@ -283,24 +251,15 @@ details {
  * -------------------- */
 
 dialog {
-  --dialog-background-color: var(--surface, Field);
-  --dialog-text-color: var(--on-surface, CanvasText);
-  --dialog-border-color: var(--form-border-color, ButtonBorder);
-  --dialog-border-radius: var(--form-border-radius, 0);
-  --dialog-border-width: var(--form-border-width, 1px);
   --dialog-backdrop-color: oklch(0% 0 0 / 50%);
-  --dialog-padding: var(--spacing-24, 1.5rem);
-  --dialog-header-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
-  --dialog-footer-padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
   --dialog-max-width: 32rem;
-  --dialog-max-height: calc(100vh - var(--spacing-32, 2rem));
 
   max-width: var(--dialog-max-width);
   padding: 0;
   overflow: visible;
   border: none;
   background-color: transparent;
-  color: var(--dialog-text-color);
+  color: var(--on-surface, CanvasText);
 
   /* État fermé par défaut */
   &:not([open]) {
@@ -337,9 +296,10 @@ dialog {
 /* Contenu principal de la modale */
 .dialog-content {
   display: grid;
-  border: var(--dialog-border-width) solid var(--dialog-border-color);
-  border-radius: var(--dialog-border-radius);
-  background-color: var(--dialog-background-color);
+  border: var(--natives-border-width, 1px) solid
+    var(--natives-border-color, ButtonBorder);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--surface, Field);
 }
 
 /* En-tête de la modale */
@@ -347,16 +307,17 @@ dialog {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--dialog-header-padding);
-  border-bottom: 1px solid var(--dialog-border-color);
-  border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
+  padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  border-bottom: 1px solid var(--natives-border-color, ButtonBorder);
+  border-radius: var(--natives-border-radius, 0) var(--natives-border-radius, 0)
+    0 0;
   background-color: var(--layer-1, Canvas);
   gap: var(--spacing-16, 1rem);
 }
 
 .dialog-title {
   margin: 0;
-  color: var(--dialog-text-color);
+  color: var(--on-surface, CanvasText);
   font-size: var(--text-xl, 1.25rem);
   font-weight: var(--font-weight-semibold, 600);
 }
@@ -385,7 +346,7 @@ dialog {
 
 /* Corps de la modale */
 .dialog-body {
-  padding: var(--dialog-padding);
+  padding: var(--spacing-24, 1.5rem);
   overflow-y: auto;
 
   & > :first-child {
@@ -399,9 +360,10 @@ dialog {
 
 /* Pied de la modale */
 .dialog-footer {
-  padding: var(--dialog-footer-padding);
-  border-top: 1px solid var(--dialog-border-color);
-  border-radius: 0 0 var(--dialog-border-radius) var(--dialog-border-radius);
+  padding: var(--spacing-16, 1rem) var(--spacing-24, 1.5rem);
+  border-top: 1px solid var(--natives-border-color, ButtonBorder);
+  border-radius: 0 0 var(--natives-border-radius, 0)
+    var(--natives-border-radius, 0);
   background-color: var(--layer-1, Canvas);
 }
 
@@ -433,7 +395,6 @@ dialog {
 @media (width < 48rem) {
   dialog {
     --dialog-max-width: calc(100vw - var(--spacing-16, 1rem));
-    --dialog-max-height: calc(100vh - var(--spacing-16, 1rem));
   }
 
   .dialog-header,
@@ -451,40 +412,39 @@ dialog {
  * -------------------- */
 
 hr {
-  /* Couleur et épaisseur par défaut alignées sur les contrôles de formulaire */
-  --hr-border-color: var(--form-border-color, ButtonBorder);
-  --hr-border-width: var(--form-border-width, 1px);
-
   margin-block: var(--spacing-16, 1rem);
   border: 0;
-  border-top: var(--hr-border-width) solid var(--hr-border-color);
+  border-top: var(--natives-border-width, 1px) solid
+    var(--natives-border-color, ButtonBorder);
 
   /* Variante couleur primaire */
   &.hr-primary {
-    --hr-border-color: var(--form-accent-color, AccentColor);
+    border-top-color: var(--natives-accent-color, AccentColor);
   }
 
   /* Variante épaisseur moyenne (x2) */
   &.hr-medium {
-    --hr-border-width: calc(var(--form-border-width, 1px) * 2);
+    border-top-width: calc(var(--natives-border-width, 1px) * 2);
   }
 
   /* Variante trait en vague */
   &.hr-wavy {
-    /* Harmonisation avec les variables ci-dessus */
     --hr-wave-length: 16px; /* longueur d'une vague */
     --hr-wave-height: 8px; /* hauteur totale du motif */
 
     height: var(--hr-wave-height);
     margin-block: var(--spacing-16, 1rem);
     border: 0;
-
-    /* La couleur vient de --hr-border-color, modifiable via .hr-primary */
-    background-color: var(--hr-border-color, currentcolor);
+    background-color: var(--natives-border-color, ButtonBorder);
 
     /* Masque SVG répétable pour obtenir un trait ondulé, coloré via background-color */
     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'><path d='M0,4 C4,0 12,8 16,4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
       left center / var(--hr-wave-length) 100% repeat-x;
+
+    /* Combinaison avec la variante couleur primaire */
+    &.hr-primary {
+      background-color: var(--natives-accent-color, AccentColor);
+    }
   }
 }
 
@@ -493,13 +453,10 @@ hr {
  * -------------------- */
 
 table {
-  --table-border-color: var(--form-border-color, ButtonBorder);
-  --table-border-width: var(--form-border-width, 1px);
   --table-layout: fixed;
   --table-border-collapse: collapse;
   --table-border-spacing: 0;
   --table-zebra: 0%;
-  --table-caption-color: GrayText;
 
   width: 100%;
   table-layout: var(--table-layout, fixed);
@@ -510,7 +467,7 @@ table {
   /* Légende */
   & caption {
     margin-block: var(--spacing-8, 0.5rem);
-    color: var(--table-caption-color);
+    color: GrayText;
     text-align: left;
   }
 
@@ -518,7 +475,8 @@ table {
   & th,
   & td {
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
-    border: var(--table-border-width) solid var(--table-border-color);
+    border: var(--natives-border-width, 1px) solid
+      var(--natives-border-color, ButtonBorder);
     text-align: left;
     vertical-align: top;
   }
@@ -560,13 +518,10 @@ table {
 
 /* Tableau arrondi */
 .table-rounded {
-  --table-border-color: var(--form-border-color, ButtonBorder);
-  --table-border-width: var(--form-border-width, 1px);
-  --table-border-radius: var(--form-border-radius, 0.5rem);
-
   padding: var(--spacing-8, 0.5rem);
-  border: var(--table-border-width) solid var(--table-border-color);
-  border-radius: var(--table-border-radius);
+  border: var(--natives-border-width, 1px) solid
+    var(--natives-border-color, ButtonBorder);
+  border-radius: var(--natives-border-radius, 0.5rem);
 
   & :is(th, td) {
     border: none;
@@ -575,7 +530,8 @@ table {
 
   & thead :is(th, td),
   & tr:not(:last-child) :is(th, td) {
-    border-bottom: var(--table-border-width) solid var(--table-border-color);
+    border-bottom: var(--natives-border-width, 1px) solid
+      var(--natives-border-color, ButtonBorder);
   }
 
   & tbody tr:nth-child(odd) {
@@ -599,46 +555,31 @@ input:not(
   [type="radio"],
   [type="range"]
 ) {
-  --input-background-color: var(--form-background, Field);
-  --input-border-color: var(--form-border-color, ButtonBorder);
-  --input-border-color-hover: var(--form-border-color);
-  --input-border-radius: var(--form-border-radius, 0);
-  --input-border-width: var(--form-border-width, 1px);
-  --input-text-color: var(--on-form, ButtonText);
-  --input-placeholder-color: GrayText;
-
   display: block;
   width: 100%;
-  padding: var(--form-spacing, 16px 16px);
+  padding: var(--natives-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--input-border-radius);
-  background-color: var(--input-background-color);
-  box-shadow: inset 0 0 0 var(--input-border-width) var(--input-border-color);
-  color: var(--input-text-color);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--natives-background, Field);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--natives-border-color, ButtonBorder);
+  color: var(--natives-text, ButtonText);
   font: inherit;
   line-height: 1.5;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--input-border-width)
-      var(--input-border-color-hover);
-  }
-
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    --input-border-color: var(--error);
-    --input-border-width: 2px;
+    box-shadow: inset 0 0 0 2px var(--error);
   }
 
   /* Placeholder */
   &::placeholder {
     opacity: 100%;
-    color: var(--input-placeholder-color);
+    color: GrayText;
   }
 }
 
@@ -692,8 +633,8 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
-    border-radius: var(--input-border-radius);
-    background-color: var(--form-accent-color, AccentColor);
+    border-radius: var(--natives-border-radius, 0);
+    background-color: var(--natives-accent-color, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
@@ -702,7 +643,7 @@ input:not(
     &:hover,
     &:focus-visible {
       background-color: oklch(
-        from var(--form-accent-color, AccentColor) calc(l * 0.9) c h
+        from var(--natives-accent-color, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -713,8 +654,8 @@ input:not(
     padding: var(--spacing-8, 0.5rem) var(--spacing-12, 0.75rem);
     transition: background-color var(--transition-duration, 0.25s);
     border: 0;
-    border-radius: var(--input-border-radius);
-    background-color: var(--form-accent-color, AccentColor);
+    border-radius: var(--natives-border-radius, 0);
+    background-color: var(--natives-accent-color, AccentColor);
     color: var(--on-primary, #ffffff);
     font: inherit;
     cursor: pointer;
@@ -723,7 +664,7 @@ input:not(
     &:hover,
     &:focus-visible {
       background-color: oklch(
-        from var(--form-accent-color, AccentColor) calc(l * 0.9) c h
+        from var(--natives-accent-color, AccentColor) calc(l * 0.9) c h
       );
     }
   }
@@ -733,29 +674,22 @@ input:not(
  * -------------------- */
 
 select {
-  --select-background-color: var(--form-background, Field);
-  --select-border-color: var(--form-border-color, ButtonBorder);
-  --select-border-color-hover: var(--select-border-color);
-  --select-border-radius: var(--form-border-radius, 0);
-  --select-border-width: var(--form-border-width, 1px);
-  --select-text-color: var(--on-form, FieldText);
-  --select-optgroup-color: GrayText;
-
   display: block;
   width: 100%;
-  padding: var(--form-spacing, 16px 16px);
+  padding: var(--natives-spacing, 16px 16px);
   padding-right: calc(var(--spacing-32, 2rem) + var(--spacing-12, 0.75rem));
   transition-property: background-color, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--select-border-radius);
-  background-color: var(--select-background-color);
-  background-image: var(--chevron-lightmode);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--natives-background, Field);
+  background-image: var(--natives-chevron-lightmode);
   background-repeat: no-repeat;
   background-position: right var(--spacing-16, 1rem) center;
   background-size: 1rem;
-  box-shadow: inset 0 0 0 var(--select-border-width) var(--select-border-color);
-  color: var(--select-text-color);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--natives-border-color, ButtonBorder);
+  color: var(--natives-text, FieldText);
   font: inherit;
   line-height: 1.5;
   text-box-trim: trim-both;
@@ -764,16 +698,9 @@ select {
   appearance: none;
   user-select: none;
 
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--select-border-width)
-      var(--select-border-color-hover);
-  }
-
   /* Support des modes sombres pour les flèches */
   [data-theme="dark"] & {
-    background-image: var(--chevron-darkmode);
+    background-image: var(--natives-chevron-darkmode);
   }
 
   /* Sélection multiple */
@@ -786,7 +713,7 @@ select {
 
 /* Optgroups */
 :where(optgroup) {
-  color: var(--select-optgroup-color);
+  color: GrayText;
   font-weight: var(--font-weight-bold, 700);
 }
 
@@ -794,26 +721,18 @@ select {
  * -------------------- */
 
 textarea {
-  --textarea-background-color: var(--form-background, Field);
-  --textarea-border-color: var(--form-border-color, ButtonBorder);
-  --textarea-border-color-hover: var(--textarea-border-color);
-  --textarea-border-radius: var(--form-border-radius, 0);
-  --textarea-border-width: var(--form-border-width, 1px);
-  --textarea-text-color: var(--on-form, ButtonText);
-  --textarea-counter-color: GrayText;
-
   display: block;
   width: 100%;
   min-height: 5lh;
-  padding: var(--form-spacing, 16px 16px);
+  padding: var(--natives-spacing, 16px 16px);
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--textarea-border-radius);
-  background-color: var(--textarea-background-color);
-  box-shadow: inset 0 0 0 var(--textarea-border-width)
-    var(--textarea-border-color);
-  color: var(--textarea-text-color);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--natives-background, Field);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--natives-border-color, ButtonBorder);
+  color: var(--natives-text, ButtonText);
   font: inherit;
   line-height: 1.5;
   text-box-trim: trim-both;
@@ -821,23 +740,15 @@ textarea {
   resize: vertical;
   field-sizing: content;
 
-  /* État survol */
-  &:hover,
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--textarea-border-width)
-      var(--textarea-border-color-hover);
-  }
-
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    --textarea-border-color: var(--error);
-    --textarea-border-width: 2px;
+    box-shadow: inset 0 0 0 2px var(--error);
   }
 
   /* Placeholder */
   &::placeholder {
     opacity: 100%;
-    color: var(--on-surface);
+    color: GrayText;
   }
 }
 
@@ -845,7 +756,7 @@ textarea {
 .character-counter {
   min-width: max-content;
   margin-left: auto;
-  color: var(--textarea-counter-color);
+  color: GrayText;
   font-size: var(--text-14, 0.875rem);
   font-weight: var(--font-weight-medium, 500);
   text-align: right;
@@ -878,28 +789,24 @@ textarea {
  * -------------------- */
 
 [type="checkbox"]:not([role="switch"]) {
-  --checkbox-background-color: var(--form-background, Field);
-  --checkbox-checked-color: var(--form-accent-color, AccentColor);
-  --checkbox-border-color: var(--checkables-border-color, ButtonBorder);
-  --checkbox-border-color-hover: var(--checkbox-border-color);
-  --checkbox-border-radius: var(--form-border-radius, 0);
-  --checkbox-border-width: var(--form-border-width, 1px);
+  --checkables-border-color: var(--color-gray-400);
+  --checkable-size: 1.25em;
 
   display: inline-grid;
   position: relative;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: var(--checkable-size, 1.25rem);
-  height: var(--checkable-size, 1.25rem);
+  width: var(--checkable-size, 1.25em);
+  height: var(--checkable-size, 1.25em);
   margin: 0;
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--checkbox-border-radius);
-  background-color: var(--checkbox-background-color);
-  box-shadow: inset 0 0 0 var(--checkbox-border-width)
-    var(--checkbox-border-color);
+  border-radius: var(--natives-border-radius, 0);
+  background-color: var(--natives-background, Field);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--checkables-border-color, ButtonBorder);
   font: inherit;
   line-height: 1;
   cursor: pointer;
@@ -908,15 +815,15 @@ textarea {
 
   /* États */
   &:is(:checked, :indeterminate) {
-    background-color: var(--checkbox-checked-color);
-    box-shadow: inset 0 0 0 var(--checkbox-border-width) transparent;
+    background-color: var(--natives-accent-color, AccentColor);
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px) transparent;
   }
 
   /* État survol */
   &:hover,
   &:focus-visible {
-    box-shadow: inset 0 0 0 var(--checkbox-border-width)
-      var(--checkbox-border-color-hover);
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+      var(--checkables-border-color, ButtonBorder);
   }
 
   /* État coché */
@@ -945,13 +852,8 @@ textarea {
  * -------------------- */
 
 [type="radio"] {
-  --radio-background-color: var(--form-background, Field);
-  --radio-border-color: var(--checkables-border-color, ButtonBorder);
-  --radio-border-color-hover: var(--radio-border-color);
-  --radio-border-radius: var(--radius-full, 9999px);
-  --radio-border-width: var(--form-border-width, 1px);
-  --radio-checked-color: var(--form-accent-color, AccentColor);
-  --radio-checked-border-color: var(--color-white, #ffffff);
+  --checkables-border-color: var(--color-gray-400);
+  --checkable-size: 1.25em;
 
   display: inline-grid;
   width: var(--checkable-size, 1.25em);
@@ -961,9 +863,10 @@ textarea {
   transition-property: background, border, box-shadow, color;
   transition-duration: var(--transition-duration, 0.25s);
   border: 0;
-  border-radius: var(--radio-border-radius);
-  background-color: var(--radio-background-color);
-  box-shadow: inset 0 0 0 var(--radio-border-width) var(--radio-border-color);
+  border-radius: var(--radius-full, 9999px);
+  background-color: var(--natives-background, Field);
+  box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+    var(--checkables-border-color, ButtonBorder);
   cursor: pointer;
   appearance: none;
   place-content: center;
@@ -974,17 +877,17 @@ textarea {
     height: calc(var(--checkable-size, 1.25em) / 1);
     transition-property: scale;
     transition-duration: var(--transition-duration, 0.25s);
-    border: 2px solid var(--radio-checked-border-color);
+    border: 2px solid var(--color-white, #ffffff);
     border-radius: var(--radius-full, 9999px);
-    background-color: var(--radio-checked-color);
+    background-color: var(--natives-accent-color, AccentColor);
     scale: 0;
   }
 
   /* État survol */
   &:hover,
   &:focus-visible {
-    box-shadow: inset 0 0 0 var(--radio-border-width)
-      var(--radio-border-color-hover);
+    box-shadow: inset 0 0 0 var(--natives-border-width, 1px)
+      var(--checkables-border-color, ButtonBorder);
   }
 
   /* État coché */
@@ -1001,12 +904,8 @@ textarea {
 [role="switch"] {
   --switch-width: 2.5rem;
   --switch-height: 1.5rem;
-  --switch-track-color: var(--form-background, ButtonFace);
-  --switch-track-color-checked: var(--form-accent-color, AccentColor);
-  --switch-thumb-color: ButtonBorder;
-  --switch-border-radius: var(--radius-full, 9999px);
-  --switch-border-color: var(--checkables-border-color, ButtonBorder);
   --switch-border-width: 1px;
+  --checkables-border-color: var(--color-gray-400);
 
   display: inline-flex;
   align-items: center;
@@ -1017,9 +916,10 @@ textarea {
   padding: 0;
   transition-property: background;
   transition-duration: var(--transition-duration, 0.25s);
-  border: var(--switch-border-color) solid var(--switch-border-width);
-  border-radius: var(--switch-border-radius);
-  background-color: var(--switch-track-color);
+  border: var(--switch-border-width) solid
+    var(--checkables-border-color, ButtonBorder);
+  border-radius: var(--radius-full, 9999px);
+  background-color: var(--natives-background, ButtonFace);
   cursor: pointer;
   appearance: none;
 
@@ -1037,7 +937,7 @@ textarea {
     height: var(--switch-height);
     transition-property: background, scale;
     transition-duration: var(--transition-duration, 0.25s);
-    border-radius: var(--switch-border-radius);
+    border-radius: var(--radius-full, 9999px);
     background-color: ButtonBorder;
     scale: 0.6;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path fill="currentcolor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');
@@ -1053,8 +953,8 @@ textarea {
 
   /* État coché (variante) */
   &[data-variant="check"]:checked {
-    border-color: var(--switch-track-color-checked);
-    background-color: var(--switch-track-color-checked);
+    border-color: var(--natives-accent-color, AccentColor);
+    background-color: var(--natives-accent-color, AccentColor);
 
     &::before {
       flex-grow: 1;
@@ -1078,10 +978,6 @@ textarea {
 
 [type="range"] {
   --range-thumb-size: 22px;
-  --range-color: var(--form-accent-color, AccentColor);
-  --range-track-color: oklch(
-    from var(--form-border-color, ButtonBorder) calc(l * 1.5) c h
-  );
   --range-track-height: 6px;
 
   width: 100%;
@@ -1090,7 +986,7 @@ textarea {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--range-color);
+  color: var(--natives-accent-color, AccentColor);
   appearance: none;
   cursor: pointer;
 }
@@ -1104,7 +1000,9 @@ textarea {
 [type="range"]::-webkit-slider-runnable-track {
   height: var(--range-track-height);
   border-radius: var(--range-track-height);
-  background: var(--range-track-color);
+  background: oklch(
+    from var(--natives-border-color, ButtonBorder) calc(l * 1.5) c h
+  );
 }
 
 [type="range"]::-webkit-slider-thumb {
@@ -1122,7 +1020,9 @@ textarea {
 [type="range"]::-moz-range-track {
   height: var(--range-track-height);
   border-radius: var(--range-track-height);
-  background: var(--range-track-color);
+  background: oklch(
+    from var(--natives-border-color, ButtonBorder) calc(l * 1.5) c h
+  );
 }
 
 [type="range"]::-moz-range-thumb {
@@ -1145,8 +1045,8 @@ textarea {
   position: absolute;
   left: 0;
   padding: 4px 8px;
-  border-radius: var(--form-border-radius, 4px);
-  background-color: var(--form-background, ButtonFace);
+  border-radius: var(--natives-border-radius, 4px);
+  background-color: var(--natives-background, ButtonFace);
   font-size: var(--text-14, 0.875rem);
   translate: 0 1.4rem;
 }
