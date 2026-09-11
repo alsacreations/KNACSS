@@ -21,7 +21,7 @@
   --natives-text: light-dark(var(--color-gray-900), var(--color-gray-100));
 
   /* Couleur d'accent principale */
-  --natives-accent-color: var(--primary, AccentColor);
+  --natives-accent-color: var(--accent-1, AccentColor);
 
   /* Espacement interne (padding) */
   --natives-spacing: var(--spacing-16) var(--spacing-16);
@@ -98,7 +98,7 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   &.btn-primary {
     background-color: var(--natives-accent-color, AccentColor);
     box-shadow: inset 0 0 0 var(--natives-border-width, 1px) transparent;
-    color: var(--on-primary, #ffffff);
+    color: #ffffff;
 
     &:hover,
     &:focus-visible {
@@ -150,7 +150,7 @@ details {
   border: var(--natives-border-width, 1px) solid
     var(--natives-border-color, ButtonBorder);
   border-radius: var(--natives-border-radius, 0);
-  background-color: var(--layer-1, Canvas);
+  background-color: var(--accent-4, Canvas);
 
   /* Summary (titre cliquable) */
   & summary {
@@ -261,7 +261,7 @@ dialog {
   overflow: visible;
   border: none;
   background-color: transparent;
-  color: var(--on-surface, CanvasText);
+  color: var(--contrast, CanvasText);
 
   /* État fermé par défaut */
   &:not([open]) {
@@ -301,7 +301,7 @@ dialog {
   border: var(--natives-border-width, 1px) solid
     var(--natives-border-color, ButtonBorder);
   border-radius: var(--natives-border-radius, 0);
-  background-color: var(--surface, Field);
+  background-color: var(--base, Field);
 }
 
 /* En-tête de la modale */
@@ -313,13 +313,13 @@ dialog {
   border-bottom: 1px solid var(--natives-border-color, ButtonBorder);
   border-radius: var(--natives-border-radius, 0) var(--natives-border-radius, 0)
     0 0;
-  background-color: var(--layer-1, Canvas);
+  background-color: var(--accent-4, Canvas);
   gap: var(--spacing-16, 1rem);
 }
 
 .dialog-title {
   margin: 0;
-  color: var(--on-surface, CanvasText);
+  color: var(--contrast, CanvasText);
   font-size: var(--text-xl, 1.25rem);
   font-weight: var(--font-weight-semibold, 600);
 }
@@ -342,7 +342,7 @@ dialog {
   /* État survol */
   &:hover,
   &:focus-visible {
-    background-color: var(--layer-2, GrayText);
+    background-color: var(--accent-5, GrayText);
   }
 }
 
@@ -366,7 +366,7 @@ dialog {
   border-top: 1px solid var(--natives-border-color, ButtonBorder);
   border-radius: 0 0 var(--natives-border-radius, 0)
     var(--natives-border-radius, 0);
-  background-color: var(--layer-1, Canvas);
+  background-color: var(--accent-4, Canvas);
 }
 
 /* Animations */
@@ -464,7 +464,7 @@ table {
   table-layout: var(--table-layout, fixed);
   border-spacing: var(--table-border-spacing, 0);
   border-collapse: var(--table-border-collapse, collapse);
-  color: var(--on-surface, CanvasText);
+  color: var(--contrast, CanvasText);
 
   /* Légende */
   & caption {
@@ -485,14 +485,14 @@ table {
 
   /* En-têtes */
   & thead th {
-    background-color: var(--layer-1, Canvas);
+    background-color: var(--accent-4, Canvas);
     font-weight: var(--font-weight-semibold, 600);
   }
 
   /* Pied de tableau */
   & tfoot th,
   & tfoot td {
-    background-color: var(--layer-1, Canvas);
+    background-color: var(--accent-4, Canvas);
     font-weight: var(--font-weight-medium, 500);
   }
 
@@ -637,7 +637,7 @@ input:not(
     border: 0;
     border-radius: var(--natives-border-radius, 0);
     background-color: var(--natives-accent-color, AccentColor);
-    color: var(--on-primary, #ffffff);
+    color: #ffffff;
     font: inherit;
     cursor: pointer;
 
@@ -658,7 +658,7 @@ input:not(
     border: 0;
     border-radius: var(--natives-border-radius, 0);
     background-color: var(--natives-accent-color, AccentColor);
-    color: var(--on-primary, #ffffff);
+    color: #ffffff;
     font: inherit;
     cursor: pointer;
 
@@ -834,7 +834,7 @@ textarea {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--on-primary, #ffffff);
+    background-color: #ffffff;
     mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>')
       center no-repeat;
   }
@@ -964,7 +964,7 @@ textarea {
 
     &::after {
       scale: 0.8;
-      background-color: var(--on-primary, #ffffff);
+      background-color: #ffffff;
       background-size: 70%;
     }
   }

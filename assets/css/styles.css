@@ -37,8 +37,8 @@
 
 body {
   padding: var(--spacing-s);
-  background-color: var(--surface);
-  color: var(--on-surface);
+  background-color: var(--base);
+  color: var(--contrast);
   font-family: var(--font-poppins);
   font-size: var(--text-16);
   font-weight: var(--font-weight-regular);
@@ -63,7 +63,7 @@ body {
 .title-l {
   margin-block: 0 var(--spacing-m);
   outline: none;
-  color: var(--accent);
+  color: var(--accent-2);
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-semibold);
 
@@ -94,7 +94,7 @@ body {
  */
 .header {
   padding: var(--spacing-m);
-  border-bottom: 1px solid var(--layer-2);
+  border-bottom: 1px solid var(--accent-5);
 
   & .title-main {
     margin: 0;
@@ -106,7 +106,7 @@ body {
 
   & .tagline {
     margin-block: var(--spacing-s) 0;
-    color: var(--on-surface);
+    color: var(--contrast);
     font-size: var(--text-14);
 
     @media (width < 48rem) {
@@ -141,7 +141,7 @@ body {
   transition: var(--transition-duration);
   transition-property: translate, opacity;
   will-change: translate, opacity;
-  background-color: var(--surface);
+  background-color: var(--base);
 
   @media (width >= 48rem) {
     margin-left: var(--sidebar-width, 300px);
@@ -190,7 +190,7 @@ body {
 .sidebar {
   width: var(--sidebar-width, 300px);
   padding: var(--spacing-m);
-  border-right: 1px solid var(--layer-2);
+  border-right: 1px solid var(--accent-5);
 
   & ul {
     padding-block: var(--spacing-s) var(--spacing-l);
@@ -201,18 +201,18 @@ body {
     padding: var(--spacing-12) var(--spacing-16);
     transition: background-color var(--transition-duration);
     border-radius: var(--radius-full);
-    color: var(--on-surface);
+    color: var(--contrast);
     font-size: var(--text-16);
     text-decoration: none;
 
     &:hover,
     &:focus-visible {
-      background-color: var(--layer-1);
+      background-color: var(--accent-4);
     }
 
     &[aria-current="page"] {
-      background-color: var(--layer-1);
-      color: var(--accent);
+      background-color: var(--accent-4);
+      color: var(--accent-2);
       font-weight: var(--font-weight-semibold);
     }
   }
@@ -242,7 +242,7 @@ body {
 .burger-icon {
   width: 1.8rem;
   height: 1.8rem; /* taille du SVG */
-  fill: var(--on-surface); /* couleur du SVG */
+  fill: var(--contrast); /* couleur du SVG */
 }
 
 /* État d'origine */
@@ -299,7 +299,7 @@ rect {
 .component-preview {
   padding: var(--spacing-m) var(--spacing-s) var(--spacing-l);
   border-radius: var(--radius-24);
-  background-color: var(--layer-1);
+  background-color: var(--accent-4);
 }
 
 .component-code {
@@ -315,7 +315,7 @@ rect {
   position: relative;
   margin-top: var(--spacing-s);
   padding: var(--spacing-s);
-  border: 1px solid var(--layer-2);
+  border: 1px solid var(--accent-5);
   border-radius: var(--radius-24);
 }
 
@@ -343,11 +343,11 @@ syntax-highlight {
 
 .footer {
   padding-top: var(--spacing-16);
-  border-top: 1px solid var(--layer-2);
+  border-top: 1px solid var(--accent-5);
 }
 
 .logo-alsacreations-pepins-inner {
-  fill: var(--surface);
+  fill: var(--base);
 }
 
 .footer-alsa {
@@ -366,7 +366,7 @@ syntax-highlight {
 .logo-link {
   display: inline-block;
   margin: auto;
-  color: var(--accent);
+  color: var(--accent-2);
 
   @media (width >= 48rem) {
     &:focus,
@@ -449,7 +449,7 @@ syntax-highlight {
 .demo-controls {
   padding: var(--spacing-m);
   border-radius: var(--radius-24);
-  background-color: var(--layer-1);
+  background-color: var(--accent-4);
 }
 
 .code-highlight {
@@ -461,7 +461,7 @@ syntax-highlight {
 
 .natives-details {
   --details-background-color: transparent;
-  --details-border-color: var(--layer-2);
+  --details-border-color: var(--accent-5);
 }
 
 /* ----------------------------------

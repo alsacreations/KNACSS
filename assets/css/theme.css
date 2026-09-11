@@ -122,18 +122,16 @@
     color-scheme: dark;
   }
 
-  --primary: var(--color-blue-500);
-  --on-primary: var(--color-white);
-  --surface: light-dark(var(--color-white), var(--color-gray-900));
-  --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-800));
-  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
-  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
+  --accent-1: var(--color-blue-500);
+  --base: light-dark(var(--color-white), var(--color-gray-900));
+  --contrast: light-dark(var(--color-gray-900), var(--color-gray-100));
+  --accent-4: light-dark(var(--color-gray-50), var(--color-gray-800));
+  --accent-5: light-dark(var(--color-gray-100), var(--color-gray-700));
   --link: light-dark(var(--color-green-500), var(--color-orange-300));
   --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
   --selection: light-dark(var(--color-blue-300), var(--color-blue-500));
-  --accent: light-dark(var(--primary), var(--color-blue-300));
-  --accent-invert: light-dark(var(--color-blue-300), var(--primary));
+  --accent-2: light-dark(var(--accent-1), var(--color-blue-300));
+  --accent-3: light-dark(var(--color-blue-300), var(--accent-1));
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
   --error: light-dark(var(--color-red-500), var(--color-red-300));
   --success: light-dark(var(--color-green-500), var(--color-green-300));
