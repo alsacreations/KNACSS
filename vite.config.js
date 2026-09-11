@@ -76,6 +76,7 @@ export default defineConfig(() => {
     ],
     build: {
       target: "es2022", // nécessaire pour supporter le top-level await du web component de surlignage
+      cssTarget: false, // évite que lightningcss ne réécrive light-dark() en fallback (déjà supporté nativement)
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
