@@ -2,7 +2,7 @@
  * KNACSS Natives
  * Styles natifs pour éléments HTML
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-09-09
+ * Mise à jour : 2026-09-11
  * ============================ */
 
 /* ---------------------
@@ -575,7 +575,7 @@ input:not(
 
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    box-shadow: inset 0 0 0 2px var(--error);
+    box-shadow: inset 0 0 0 2px var(--error, #b91d1c);
   }
 
   /* Placeholder */
@@ -744,7 +744,7 @@ textarea {
 
   /* État invalide après interaction utilisateur */
   &:user-invalid {
-    box-shadow: inset 0 0 0 2px var(--error);
+    box-shadow: inset 0 0 0 2px var(--error, #b91d1c);
   }
 
   /* Placeholder */
@@ -765,11 +765,11 @@ textarea {
 
   /* États du compteur selon le pourcentage restant */
   &.warning {
-    color: var(--warning, #f97316);
+    color: var(--warning, #d76300);
   }
 
   &.danger {
-    color: var(--error, #ef4444);
+    color: var(--error, #b91d1c);
     font-weight: var(--font-weight-semibold, 600);
   }
 }
