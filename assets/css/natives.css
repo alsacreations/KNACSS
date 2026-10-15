@@ -509,6 +509,9 @@ table {
   --table-min-width: 30rem; /* largeur minimale par défaut pour un tableau lisible */
 
   display: block;
+  /* Contient les éléments en position absolue du tableau (ex. textes
+     .visually-hidden des cellules) sinon ils élargissent la page */
+  position: relative;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-gutter: stable both-edges;
